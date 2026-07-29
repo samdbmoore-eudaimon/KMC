@@ -12,3 +12,8 @@ _gen_test_copy.jsx
 
 # Built APK (regenerate via scripts/build-android-apk.ps1 rather than tracking a binary)
 KangarooMathsQuest.apk
+
+# Raw generated art source images (regenerate via scripts/generate_*.cjs / embed_*.cjs;
+# the compressed versions actually used by the app are embedded as base64 in kq-art.js,
+# kq-ui-art.js and kq-title-art.js, which ARE tracked)
+card_art/
