@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(node scripts/rebuild.cjs)"
-    ]
+    ],
+    "defaultMode": "bypassPermissions"
   }
 }

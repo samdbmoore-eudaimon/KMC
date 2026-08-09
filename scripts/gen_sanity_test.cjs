@@ -69,6 +69,16 @@ function scanLeaks(q, label) {
   if (Array.isArray(q.options)) {
     const hasFiller = q.options.some((o) => typeof o === "string" && /·\d+$/.test(o));
     check(`${label} no "correct·N" filler decoy`, !hasFiller, q.options.join(" | "));
+    // Sam's 2026-08-03 report, narrowed 2026-08-03 after over-correction: the actual bug is
+    // ROGUE unrounded floating-point noise (a 9dp decoy like 14.666666666666666 next to clean
+    // integers) — not "decimals may never sit next to integers." 3-4dp is fine when the
+    // question genuinely calls for it (e.g. unit conversions). Only flag options that clearly
+    // look like unrounded float noise: more than 4 decimal places.
+    if (Array.isArray(q.options) && q.options.length) {
+      const dpOf = (s) => { const i = s.indexOf("."); return i === -1 ? 0 : s.length - i - 1; };
+      const numeric = q.options.filter((o) => /^-?\d+(\.\d+)?$/.test(String(o)));
+      if (numeric.length) check(`${label} no rogue unrounded decoy (>4dp)`, numeric.every((o) => dpOf(String(o)) <= 4), q.options.join(" | "));
+    }
   }
 }
 
