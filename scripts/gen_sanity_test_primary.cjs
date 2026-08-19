@@ -101,7 +101,9 @@ for (const key of ALL_TOPICS) {
         check(`${label} options distinct`, new Set(q.options).size === q.options.length, q.options.join(" | "));
         check(`${label} correctIndex in range`, q.correctIndex >= 0 && q.correctIndex < q.options.length, q.correctIndex);
       }
-      check(`${label} has solution`, Array.isArray(q.solution) && q.solution.length > 0, JSON.stringify(q.solution).slice(0, 150));
+      const solOk = Array.isArray(q.solution) ? q.solution.length > 0
+        : q.solution && typeof q.solution === "object" && Array.isArray(q.solution.steps) && q.solution.steps.length > 0;
+      check(`${label} has solution`, solOk, JSON.stringify(q.solution).slice(0, 150));
       scanLeaks(q, label);
     }
   }
