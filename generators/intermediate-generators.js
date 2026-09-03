@@ -40,6 +40,7 @@ export const INTERMEDIATE_TOPICS = [
   { key: "proofTechniques",           label: "Proof Techniques",     emoji: "🧠", color: "#2fc97a" },
   { key: "speedAndRelativeMotion",    label: "Relative Motion",      emoji: "🚄", color: "#ffc93c" },
   { key: "estimationAndBounds",       label: "Bounds & Estimation",  emoji: "📏", color: "#ff5d8f" },
+  { key: "vectors",                   label: "Vectors",              emoji: "➡️", color: "#e94560", tier: "higher", dia: true },
 ];
 export const INTERMEDIATE_DEEP_TOPICS = [];
 export const INTERMEDIATE_CONCEPTS = {};
@@ -149,6 +150,9 @@ export const INTERMEDIATE_G = {
   },
   estimationAndBounds(d) {
     return pickStructure(ESTIMATION_AND_BOUNDS_STRUCTURES, d);
+  },
+  vectors(d) {
+    return pickStructure(VECTORS_STRUCTURES, d);
   },
 };
 // Structure registry for surdsAndIndices. Covers fractional/negative index evaluation, the
@@ -3448,6 +3452,119 @@ const s20_depreciation_to_fraction_target = {
   },
 };
 
+// ---------------------------------------------------------------------------
+// Growth and decay as a distinct idea from money (population, substance mass,
+// half-life), using the same compound-multiplier method but a non-monetary
+// vocabulary the audit found genuinely missing: growth/decay factor, half-life.
+// ---------------------------------------------------------------------------
+const s21_exponential_growth_population = {
+  difficulties: [1, 2],
+  build(d) {
+    const population = pick([200, 500, 800, 1000, 1500, 2000]);
+    const rate = pick([5, 10, 15, 20]);
+    const years = rand(2, 3);
+    const growthFactor = 1 + rate / 100;
+    const newPop = Math.round(population * Math.pow(growthFactor, years));
+    const wrongLinear = Math.round(population * (1 + (rate * years) / 100));
+    const wrongOneYear = Math.round(population * growthFactor);
+    const wrongExtraYear = Math.round(population * Math.pow(growthFactor, years + 1));
+    const wrongDecayed = Math.round(population * Math.pow(1 - rate / 100, years));
+    const uniq = PCG_dedupeByRoundedCents(newPop, [wrongLinear, wrongOneYear, wrongExtraYear, wrongDecayed]);
+    if (uniq.length < 4) return null;
+    const { options, correctIndex } = buildMC(newPop, uniq.slice(0, 4), (x) => `${Math.round(x)}`);
+    return {
+      q: `A population of ${population} bacteria grows by ${rate}% every hour. What is the population after ${years} hours?`,
+      options, correctIndex,
+      hint: `Multiply by the growth factor (1 + rate/100) once for every hour, exactly as with compound interest, just applied to a population instead of money.`,
+      solution: {
+        idea: `Growing by a fixed percentage each period, repeated, uses the same compound-multiplier idea as compound interest: multiply by the growth factor once per period.`,
+        steps: [`Growth factor = 1 + ${rate}/100 = ${growthFactor}.`, `New population = ${population} × ${growthFactor}^${years} ≈ ${newPop}.`],
+        check: `Check year by year: ${Array.from({ length: years }, (_, i) => Math.round(population * Math.pow(growthFactor, i + 1))).join(" → ")}.`,
+      },
+    };
+  },
+};
+const s22_exponential_decay_substance = {
+  difficulties: [1, 2],
+  build(d) {
+    const amount = pick([200, 400, 500, 800, 1000]);
+    const rate = pick([5, 10, 15, 20]);
+    const periods = rand(2, 3);
+    const decayFactor = 1 - rate / 100;
+    const newAmount = Math.round(amount * Math.pow(decayFactor, periods) * 100) / 100;
+    const wrongLinear = Math.round(amount * (1 - (rate * periods) / 100) * 100) / 100;
+    const wrongOnePeriod = Math.round(amount * decayFactor * 100) / 100;
+    const wrongGrowth = Math.round(amount * Math.pow(1 + rate / 100, periods) * 100) / 100;
+    const wrongExtraPeriod = Math.round(amount * Math.pow(decayFactor, periods + 1) * 100) / 100;
+    const uniq = PCG_dedupeByRoundedCents(newAmount, [wrongLinear, wrongOnePeriod, wrongGrowth, wrongExtraPeriod]);
+    if (uniq.length < 4) return null;
+    const { options, correctIndex } = buildMC(newAmount, uniq.slice(0, 4), (x) => Number(x).toFixed(2));
+    return {
+      q: `A radioactive substance has a mass of ${amount}g. It decays by ${rate}% every day. What mass remains after ${periods} days?`,
+      options, correctIndex,
+      hint: `Multiply by the decay factor (1 - rate/100) once for every day, exactly the reverse of growth.`,
+      solution: {
+        idea: `Decaying by a fixed percentage each period, repeated, uses the same compound-multiplier idea as depreciation: multiply by the decay factor once per period.`,
+        steps: [`Decay factor = 1 - ${rate}/100 = ${decayFactor}.`, `Remaining mass = ${amount} × ${decayFactor}^${periods} ≈ ${newAmount}g.`],
+      },
+    };
+  },
+};
+const s23_half_life_remaining = {
+  difficulties: [3, 4],
+  build(d) {
+    const initial = pick([64, 128, 256, 512, 1024, 2048]);
+    const halfLives = rand(2, 5);
+    const remaining = initial / Math.pow(2, halfLives);
+    if (!Number.isInteger(remaining)) return null;
+    const wrongDivideByHalfLives = Math.round((initial / halfLives) * 100) / 100;
+    const wrongOneExtra = initial / Math.pow(2, halfLives + 1);
+    const wrongOneFewer = initial / Math.pow(2, halfLives - 1);
+    const wrongMultipliedInstead = initial * Math.pow(2, halfLives);
+    const wrongAmountLost = initial - remaining;
+    const uniq = PCG_dedupeByRoundedCents(remaining, [wrongDivideByHalfLives, wrongOneExtra, wrongOneFewer, wrongMultipliedInstead, wrongAmountLost].filter((v) => v > 0));
+    if (uniq.length < 4) return null;
+    const { options, correctIndex } = buildMC(remaining, uniq.slice(0, 4));
+    return {
+      q: `A sample of ${initial}g of a radioactive isotope has a fixed half-life. After ${halfLives} half-lives, how much of the original sample remains?`,
+      options, correctIndex,
+      hint: `Each half-life halves whatever amount is currently left, so after n half-lives, the remaining amount is the original divided by 2ⁿ.`,
+      solution: {
+        idea: `A half-life is the time it takes for exactly half of whatever is currently present to decay, so repeated half-lives repeatedly halve the remaining amount: an exponential decay with a decay factor of exactly ½ each time.`,
+        steps: [`After each half-life, halve the previous amount: ${Array.from({ length: halfLives }, (_, i) => initial / Math.pow(2, i + 1)).join(" → ")}.`, `After ${halfLives} half-lives: ${initial} ÷ 2^${halfLives} = ${remaining}g.`],
+      },
+    };
+  },
+};
+const s24_periods_to_threshold = {
+  difficulties: [4],
+  build(d) {
+    const initial = pick([1000, 2000, 4000, 5000]);
+    const rate = pick([10, 15, 20, 25, 30, 50]);
+    const decayFactor = 1 - rate / 100;
+    const threshold = initial / 2;
+    let n = 0, amt = initial;
+    while (amt >= threshold && n < 15) { amt *= decayFactor; n++; }
+    if (n === 0 || n > 12) return null;
+    const wrongOneFewer = n - 1 > 0 ? n - 1 : n + 1;
+    const wrongOneMore = n + 1;
+    const wrongDouble = n * 2;
+    const uniq = PCG_dedupeByRoundedCents(n, [wrongOneFewer, wrongOneMore, wrongDouble, n + 2]);
+    if (uniq.length < 4) return null;
+    const { options, correctIndex } = buildMC(n, uniq.slice(0, 4));
+    return {
+      q: `A population of ${initial} decreases by ${rate}% each year. After how many whole years does the population first fall below half its original size?`,
+      options, correctIndex,
+      hint: `Multiply repeatedly by the decay factor, year by year, and count how many multiplications it takes to drop below half.`,
+      solution: {
+        idea: `With no simple one-step formula for the exact year, check year by year until the population first drops below half its starting value.`,
+        steps: Array.from({ length: n }, (_, i) => `After year ${i + 1}: ${initial} × ${decayFactor}^${i + 1} ≈ ${Math.round(initial * Math.pow(decayFactor, i + 1))}.`),
+        check: `Half of ${initial} is ${threshold}; after year ${n} the population (≈${Math.round(initial * Math.pow(decayFactor, n))}) has dropped below that, while after year ${n - 1} it had not yet.`,
+      },
+    };
+  },
+};
+
 const PERCENTAGE_AND_COMPOUND_GROWTH_STRUCTURES = {
   s1_percentage_of_amount,
   s2_percentage_change_multiplier,
@@ -3469,6 +3586,10 @@ const PERCENTAGE_AND_COMPOUND_GROWTH_STRUCTURES = {
   s18_multistep_population_percentage,
   s19_reverse_engineer_periods,
   s20_depreciation_to_fraction_target,
+  s21_exponential_growth_population,
+  s22_exponential_decay_substance,
+  s23_half_life_remaining,
+  s24_periods_to_threshold,
 };
 
 
@@ -4907,6 +5028,57 @@ const QUADRATICS_STRUCTURES = {
             greaterThan
               ? `${qText} > 0 outside the roots: x < ${lo} or x > ${hi}.`
               : `${qText} < 0 between the roots: ${lo} < x < ${hi}.`,
+          ],
+        },
+      };
+    },
+  },
+
+  // ---------- Set notation for inequalities ----------
+  set_notation_translate: {
+    difficulties: [2, 3],
+    build() {
+      const val = rand(-8, 8);
+      const symbol = pick(["<", ">", "≤", "≥"]);
+      const symbolWord = { "<": "less than", ">": "greater than", "≤": "less than or equal to", "≥": "greater than or equal to" }[symbol];
+      const flipped = { "<": ">", ">": "<", "≤": "≥", "≥": "≤" }[symbol];
+      const correct = `{x : x ${symbol} ${val}}`;
+      const candidates = [`{x : x ${flipped} ${val}}`, `{x : x ${symbol} ${val + 1}}`, `{x ${symbol} ${val}}`, `(x : x ${symbol} ${val})`, `{x : x ${symbol} ${val - 1}}`];
+      const { options, correctIndex } = cgSafeStr(correct, candidates, (i) => `{x : x = ${100 + i}}`);
+      return { q: `Write "x is ${symbolWord} ${val}" using set notation.`, options, correctIndex,
+        hint: `Set notation always has the same shape: curly brackets, the variable, a colon, then the condition it must satisfy.`,
+        solution: { idea: `Set notation {x : condition} means 'the set of all values of x for which the condition holds'.`, steps: [`The condition is x ${symbol} ${val}.`, `In set notation: {x : x ${symbol} ${val}}.`] },
+      };
+    },
+  },
+  quadratic_inequality_set_notation: {
+    difficulties: [4],
+    build() {
+      let r1 = rand(-9, 9), r2 = rand(-9, 9);
+      if (r1 === r2) return null;
+      const lo = Math.min(r1, r2), hi = Math.max(r1, r2);
+      const b = -(r1 + r2);
+      const c = r1 * r2;
+      const greaterThan = pick([true, false]);
+      const qText = QD_fmtQuadExpr(1, b, c);
+      let correct, candidates;
+      if (greaterThan) {
+        correct = `{x : x < ${lo}} ∪ {x : x > ${hi}}`;
+        candidates = [`{x : ${lo} < x < ${hi}}`, `{x : x < ${hi}} ∪ {x : x > ${lo}}`, `{x : x > ${hi}}`, `{x : x < ${lo}}`, `{x : x < ${lo} or x > ${hi}}`];
+      } else {
+        correct = `{x : ${lo} < x < ${hi}}`;
+        candidates = [`{x : x < ${lo}} ∪ {x : x > ${hi}}`, `{x : ${hi} < x < ${lo}}`, `{x : x < ${hi}}`, `{x : x > ${lo}}`];
+      }
+      const { options, correctIndex } = cgSafeStr(correct, candidates, (i) => `{x : x = ${100 + i}}`);
+      return { q: `Solve the inequality ${qText} ${greaterThan ? '>' : '<'} 0, giving your answer using set notation.`, options, correctIndex,
+        hint: `Find the roots first, then use the shape of the graph to decide which region(s) satisfy the inequality; write each region as {x : ...}, joining two separate regions with ∪.`,
+        solution: {
+          idea: `The roots of ${qText} = 0 are x = ${lo} and x = ${hi}. Since the graph opens upward, it is above the x-axis outside the roots and below the x-axis between them. Two separate regions are joined with ∪ (the union symbol), meaning 'either of these sets'.`,
+          steps: [
+            `Roots: x = ${lo}, x = ${hi}.`,
+            greaterThan
+              ? `${qText} > 0 outside the roots: x < ${lo} or x > ${hi}, written {x : x < ${lo}} ∪ {x : x > ${hi}}.`
+              : `${qText} < 0 between the roots: ${lo} < x < ${hi}, written {x : ${lo} < x < ${hi}}.`,
           ],
         },
       };
@@ -6480,6 +6652,16 @@ function GR_fmtCoeffX(b) {
   return `${sign}${abs === 1 ? 'x' : `${abs}x`}`;
 }
 function GR_fmtQuadratic(a, b, c) { return `y = ${GR_fmtCoeffX2(a)}${GR_fmtCoeffX(b)}${GR_fmtConstTerm(c)}`; }
+function GR_fmtCoeffX3(a) { if (a === 1) return 'x³'; if (a === -1) return '-x³'; return `${a}x³`; }
+function GR_fmtCoeffX2Term(b) { if (b === 0) return ''; const sign = b > 0 ? ' + ' : ' - '; const abs = Math.abs(b); return `${sign}${abs === 1 ? 'x²' : `${abs}x²`}`; }
+function GR_fmtCubic(a, b, c, d) { return `y = ${GR_fmtCoeffX3(a)}${GR_fmtCoeffX2Term(b)}${GR_fmtCoeffX(c)}${GR_fmtConstTerm(d)}`; }
+const GR_FAMILY_EXPLAIN = {
+  linear: "The equation has x to the power 1 only, with no x², x³, or x in a denominator or exponent, so its graph is a straight line.",
+  quadratic: "The equation has an x² term as its highest power, with no x³ or higher, so its graph is a parabola: a single smooth curve with exactly one turning point.",
+  cubic: "The equation has an x³ term as its highest power, so its graph is an S-shaped curve that can turn twice and can cross the x-axis up to three times.",
+  reciprocal: "The equation has x in the denominator, dividing into a fixed number, so its graph is two separate curved branches that never touch either axis, since x can never equal zero.",
+  exponential: "The equation has x itself sitting in the power, not as a base, so its graph grows (or shrinks) faster and faster, curving steeply rather than turning.",
+};
 function GR_fmtCoeffXAt(b, xVal) {
   if (b === 0) return '';
   const sign = b > 0 ? ' + ' : ' - ';
@@ -7067,6 +7249,151 @@ const GRAPHS_AND_RATES_OF_CHANGE_STRUCTURES = {
             `x = ${r1} or x = ${r2}`,
             `The larger value is x = ${r2}`,
           ],
+        },
+      };
+    },
+  },
+
+  // ---------- Cubic, reciprocal and exponential graph shapes ----------
+  reciprocal_evaluate: {
+    difficulties: [1],
+    build() {
+      const k = pick([6, 8, 10, 12, 18, 24]);
+      const divisors = [1, 2, 3, 4, 6].filter((d) => k % d === 0);
+      const x = pick(divisors) * pick([1, -1]);
+      const y = k / x;
+      const q = `y = ${k}/x. Find y when x = ${x}.`;
+      const candidates = [k * x, k + x, -y, y + 1, y - 1];
+      const distractors = GR_pickNumericDistractors(y, candidates);
+      if (!distractors) return null;
+      const { options, correctIndex } = buildMC(y, distractors);
+      return { q, options, correctIndex,
+        hint: `Substitute the given x-value directly into y = ${k}/x and divide.`,
+        solution: { idea: `For a reciprocal graph y = k/x, substitute the given x-value and divide.`, steps: [`y = ${k} ÷ ${x} = ${y}.`] },
+      };
+    },
+  },
+  exponential_evaluate: {
+    difficulties: [1],
+    build() {
+      const a = pick([2, 3, 5, 10]);
+      const b = pick([2, 3]);
+      const x = rand(1, 4);
+      const bx = Math.pow(b, x);
+      const y = a * bx;
+      const q = `y = ${a} × ${b}ˣ. Find y when x = ${x}.`;
+      const candidates = [a * b * x, a + bx, bx, y + a, y - a];
+      const distractors = GR_pickNumericDistractors(y, candidates);
+      if (!distractors) return null;
+      const { options, correctIndex } = buildMC(y, distractors);
+      return { q, options, correctIndex,
+        hint: `Work out ${b} raised to the power ${x} first, then multiply the result by ${a}.`,
+        solution: { idea: `For an exponential y = a × bˣ, work out the power term first, then multiply by a.`, steps: [`${b}^${x} = ${bx}.`, `y = ${a} × ${bx} = ${y}.`] },
+      };
+    },
+  },
+  identify_graph_family: {
+    difficulties: [2, 3],
+    build() {
+      const allFamilies = ["linear", "quadratic", "cubic", "reciprocal", "exponential"];
+      const family = pick(allFamilies);
+      let eq;
+      if (family === "linear") eq = GR_fmtLinearEq(GR_randNonZero(-6, 6), rand(-9, 9));
+      else if (family === "quadratic") eq = GR_fmtQuadratic(pick([1, -1, 2, -2, 3]), rand(-6, 6), rand(-6, 6));
+      else if (family === "cubic") eq = GR_fmtCubic(pick([1, -1, 2, -2]), rand(-5, 5), rand(-5, 5), rand(-8, 8));
+      else if (family === "reciprocal") eq = `y = ${pick([2, 3, 4, 5, 6, -2, -3, -4])}/x`;
+      else eq = `y = ${pick([2, 3, 5])} × ${pick([2, 3])}ˣ`;
+      const decoys = allFamilies.filter((f) => f !== family);
+      const { options, correctIndex } = buildMCStr(family, decoys);
+      return { q: `${eq}. What type of graph does this equation produce?`, options, correctIndex,
+        hint: `Look at the highest power of x, and whether x appears in a denominator or as an exponent, to identify the graph family.`,
+        solution: {
+          idea: GR_FAMILY_EXPLAIN[family],
+          steps: [`Compare the general forms: y = mx + c (linear), y = ax² + bx + c (quadratic), y = ax³ + bx² + cx + d (cubic), y = k/x (reciprocal), y = a × bˣ (exponential).`, GR_FAMILY_EXPLAIN[family]],
+        },
+      };
+    },
+  },
+  reciprocal_undefined_x: {
+    difficulties: [2, 3],
+    build() {
+      const k = pick([4, 6, 8, 10, 12]);
+      const shift = rand(-6, 6);
+      const denomStr = shift === 0 ? "x" : (shift > 0 ? `x - ${shift}` : `x + ${Math.abs(shift)}`);
+      const candidates = [-shift, shift + 1, shift - 1, k, 0];
+      const distractors = GR_pickNumericDistractors(shift, candidates);
+      if (!distractors) return null;
+      const { options, correctIndex } = buildMC(shift, distractors);
+      return { q: `y = ${k}/(${denomStr}). For which value of x does this equation break down (become impossible to calculate)?`, options, correctIndex,
+        hint: `A fraction breaks down exactly when its denominator equals zero; set the denominator to zero and solve for x.`,
+        solution: { idea: `Division by zero is not allowed, so a reciprocal graph has a gap exactly where its denominator would become zero.`, steps: [`Set the denominator to zero: ${denomStr} = 0.`, `x = ${shift}.`] },
+      };
+    },
+  },
+  cubic_roots_from_factorised_form: {
+    difficulties: [3, 4],
+    build() {
+      const [p, q1, r] = shuffle([rand(-5, -1), rand(1, 3), rand(4, 6)]);
+      const fmtRoot = (v) => (v > 0 ? `(x - ${v})` : `(x + ${Math.abs(v)})`);
+      const eq = `y = ${fmtRoot(p)}${fmtRoot(q1)}${fmtRoot(r)}`;
+      const answer = `x = ${p}, ${q1} and ${r}`;
+      const candidates = [`x = ${-p}, ${-q1} and ${-r}`, `x = ${p} and ${q1} only`, `x = ${p * q1 * r}`, `x = ${p + q1 + r}`, `x = ${p + 1}, ${q1 + 1} and ${r + 1}`];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `x = ${100 + i}, ${101 + i} and ${102 + i}`);
+      return { q: `${eq}. Find every x-intercept of this cubic graph, where it crosses the x-axis.`, options, correctIndex,
+        hint: `A cubic in factorised form crosses the x-axis at each value of x that makes one of the brackets equal zero.`,
+        solution: { idea: `Each factor (x − value) contributes exactly one x-intercept, at that value, since the whole product is zero whenever any single factor is zero.`, steps: [`(x − (${p})) = 0 gives x = ${p}.`, `(x − (${q1})) = 0 gives x = ${q1}.`, `(x − (${r})) = 0 gives x = ${r}.`], check: `A cubic can cross the x-axis up to three times, and this one uses all three of its available crossings.` },
+      };
+    },
+  },
+  reciprocal_behaviour_as_x_grows: {
+    difficulties: [3, 4],
+    build() {
+      const k = pick([3, 5, 8, 10]);
+      const askLarge = pick([true, false]);
+      const correct = askLarge ? "y gets closer and closer to 0, but never reaches it" : "y grows larger and larger without limit";
+      const decoys = ["y gets closer and closer to 0, but never reaches it", "y grows larger and larger without limit", "y stays exactly the same", "y becomes negative", "y reaches exactly 0"].filter((v) => v !== correct).slice(0, 4);
+      const { options, correctIndex } = buildMCStr(correct, decoys);
+      return { q: `y = ${k}/x. As x ${askLarge ? "gets larger and larger (a huge positive number)" : "gets closer and closer to 0 (from the positive side)"}, what happens to y?`, options, correctIndex,
+        hint: `Think about what happens to a fraction when you divide a fixed number by something huge, versus by something tiny.`,
+        solution: {
+          idea: askLarge ? `Dividing a fixed number by an ever-larger number gives an ever-smaller result, so y shrinks towards 0 without ever actually reaching it, since ${k}/x can never equal exactly 0.` : `Dividing a fixed number by an ever-smaller (but still positive) number gives an ever-larger result, so y grows without any upper limit.`,
+          steps: askLarge ? [`${k}/100 = ${(k / 100).toFixed(3)}.`, `${k}/1000000 = ${(k / 1000000).toFixed(6)}, even closer to 0.`] : [`${k}/0.1 = ${k * 10}.`, `${k}/0.0001 = ${k * 10000}, far larger still.`],
+        },
+      };
+    },
+  },
+  exponential_growth_decay_identify: {
+    difficulties: [4],
+    build() {
+      const a = pick([2, 3, 5, 10]);
+      const isGrowth = pick([true, false]);
+      const b = isGrowth ? pick([2, 3, 4, 1.5]) : pick([0.5, 0.25, 0.1]);
+      const correct = isGrowth ? "Growth: y increases as x increases, since the base is greater than 1" : "Decay: y decreases as x increases, since the base is between 0 and 1";
+      const decoys = ["Growth: y increases as x increases, since the base is greater than 1", "Decay: y decreases as x increases, since the base is between 0 and 1", "Neither: y stays constant as x increases", "Growth, but only for negative x", "Decay, but only for negative x"].filter((v) => v !== correct).slice(0, 4);
+      const { options, correctIndex } = buildMCStr(correct, decoys);
+      return { q: `y = ${a} × ${b}ˣ. Does this equation represent exponential growth or decay, and why?`, options, correctIndex,
+        hint: `Compare the base (the number being raised to the power x) with 1: bigger than 1 means growth, between 0 and 1 means decay.`,
+        solution: {
+          idea: `In y = a × bˣ, the base b controls growth or decay: if b > 1, repeatedly multiplying by b makes y bigger each time (growth); if 0 < b < 1, repeatedly multiplying by b makes y smaller each time (decay).`,
+          steps: [`Here the base is ${b}, which is ${isGrowth ? "greater than 1" : "between 0 and 1"}.`, `So this equation represents ${isGrowth ? "growth" : "decay"}.`, `For example, at x=1, y=${(a * b).toFixed(2)}; at x=2, y=${(a * b * b).toFixed(2)}, ${isGrowth ? "increasing" : "decreasing"} each time x goes up by 1.`],
+        },
+      };
+    },
+  },
+  cubic_end_behaviour: {
+    difficulties: [4],
+    build() {
+      const a = pick([1, 2, 3, -1, -2, -3]);
+      const positive = a > 0;
+      const correct = positive ? "As x → +∞, y → +∞; as x → -∞, y → -∞" : "As x → +∞, y → -∞; as x → -∞, y → +∞";
+      const decoys = ["As x → +∞, y → +∞; as x → -∞, y → -∞", "As x → +∞, y → -∞; as x → -∞, y → +∞", "y approaches 0 in both directions", "y stays roughly constant for large x", "As x → +∞, y → +∞; as x → -∞, y → +∞"].filter((v) => v !== correct).slice(0, 4);
+      const { options, correctIndex } = buildMCStr(correct, decoys);
+      const eq = GR_fmtCubic(a, rand(-4, 4), rand(-4, 4), rand(-6, 6));
+      return { q: `${eq}. Describe what happens to y as x becomes a very large positive number, and as x becomes a very large negative number.`, options, correctIndex,
+        hint: `For a cubic, the sign of the x³ coefficient alone decides which way each end of the graph points; the other terms barely matter once x is huge.`,
+        solution: {
+          idea: `For huge values of x, whether positive or negative, the x³ term completely dominates every other term in the equation, so only its sign matters for the graph's long-term direction.`,
+          steps: [`The x³ coefficient here is ${a}, which is ${positive ? "positive" : "negative"}.`, positive ? `A positive leading coefficient means the graph rises to +∞ on the right and falls to −∞ on the left, exactly like y = x³ itself.` : `A negative leading coefficient flips this: the graph falls to −∞ on the right and rises to +∞ on the left, the mirror image of y = x³.`],
         },
       };
     },
@@ -17570,6 +17897,91 @@ const CIRCLE_THEOREMS_AND_TANGENTS_STRUCTURES = {
       };
     },
   },
+
+  // ---------- Sector area and arc length ----------
+  arc_length_basic: {
+    difficulties: [1, 2],
+    build() {
+      const r = rand(3, 10);
+      const theta = pick([30, 45, 60, 90, 120, 150, 180, 270]);
+      const circumference = 2 * 3.14 * r;
+      const arc = Math.round((theta / 360) * circumference * 100) / 100;
+      const decoys = [Math.round((theta / 360) * 3.14 * r * r * 100) / 100, Math.round(circumference * 100) / 100, Math.round((theta / 360) * 2 * r * 100) / 100, Math.round(arc * 2 * 100) / 100].filter((v) => v !== arc);
+      const { options, correctIndex } = buildMC(arc, decoys, (x) => Number(x).toFixed(2));
+      const [px, py] = ctPt(90 + theta / 2), [qx, qy] = ctPt(90 - theta / 2);
+      const svg = svgBox(SC(CT_cx, CT_cy, CT_R, "#2a1a5e", 1.5) + SL(CT_cx, CT_cy, px, py, "#7c5cff", 2) + SL(CT_cx, CT_cy, qx, qy, "#7c5cff", 2) + ST(CT_cx, CT_cy - 34, `${theta}°`, undefined, 12, "#ff5d8f", 700) + ST(CT_cx, CT_cy + 20, `r = ${r}cm`, undefined, 12), 280, 220);
+      return { q: `A sector of a circle with radius ${r}cm has an angle of ${theta}° at the centre. Find the length of its arc (use π ≈ 3.14).`, options, correctIndex, svg,
+        hint: `Arc length is the same fraction of the full circumference as the sector's angle is of the full 360° turn.`,
+        solution: { idea: `An arc with angle θ at the centre is the fraction θ/360 of the whole circumference, 2πr.`, steps: [`Full circumference = 2 × 3.14 × ${r} = ${circumference.toFixed(2)}cm.`, `Arc length = (${theta}/360) × ${circumference.toFixed(2)} = ${arc}cm.`] },
+      };
+    },
+  },
+  sector_area_basic: {
+    difficulties: [1, 2],
+    build() {
+      const r = rand(3, 10);
+      const theta = pick([30, 45, 60, 90, 120, 150, 180, 270]);
+      const fullArea = 3.14 * r * r;
+      const area = Math.round((theta / 360) * fullArea * 100) / 100;
+      const decoys = [Math.round((theta / 360) * 2 * 3.14 * r * 100) / 100, Math.round(fullArea * 100) / 100, Math.round((theta / 360) * r * r * 100) / 100, Math.round(area * 2 * 100) / 100].filter((v) => v !== area);
+      const { options, correctIndex } = buildMC(area, decoys, (x) => Number(x).toFixed(2));
+      const [px, py] = ctPt(90 + theta / 2), [qx, qy] = ctPt(90 - theta / 2);
+      const svg = svgBox(SC(CT_cx, CT_cy, CT_R, "#2a1a5e", 1.5) + SL(CT_cx, CT_cy, px, py, "#7c5cff", 2) + SL(CT_cx, CT_cy, qx, qy, "#7c5cff", 2) + ST(CT_cx, CT_cy - 34, `${theta}°`, undefined, 12, "#ff5d8f", 700) + ST(CT_cx, CT_cy + 20, `r = ${r}cm`, undefined, 12), 280, 220);
+      return { q: `A sector of a circle with radius ${r}cm has an angle of ${theta}° at the centre. Find its area (use π ≈ 3.14).`, options, correctIndex, svg,
+        hint: `A sector's area is the same fraction of the full circle's area as its angle is of the full 360° turn.`,
+        solution: { idea: `A sector with angle θ at the centre covers the fraction θ/360 of the whole circle's area, πr².`, steps: [`Full circle area = 3.14 × ${r}² = 3.14 × ${r * r} = ${fullArea.toFixed(2)}cm².`, `Sector area = (${theta}/360) × ${fullArea.toFixed(2)} = ${area}cm².`] },
+      };
+    },
+  },
+  sector_perimeter: {
+    difficulties: [2, 3],
+    build() {
+      const r = rand(4, 10);
+      const theta = pick([30, 45, 60, 90, 120, 150]);
+      const arc = Math.round((theta / 360) * 2 * 3.14 * r * 100) / 100;
+      const perim = Math.round((arc + 2 * r) * 100) / 100;
+      const decoys = [arc, Math.round((arc + r) * 100) / 100, Math.round(2 * 3.14 * r * 100) / 100, Math.round((perim + 2) * 100) / 100].filter((v) => v !== perim);
+      const { options, correctIndex } = buildMC(perim, decoys, (x) => Number(x).toFixed(2));
+      const [px, py] = ctPt(90 + theta / 2), [qx, qy] = ctPt(90 - theta / 2);
+      const svg = svgBox(SC(CT_cx, CT_cy, CT_R, "#2a1a5e", 1.5) + SL(CT_cx, CT_cy, px, py, "#7c5cff", 2) + SL(CT_cx, CT_cy, qx, qy, "#7c5cff", 2) + ST(CT_cx, CT_cy - 34, `${theta}°`, undefined, 12, "#ff5d8f", 700) + ST(CT_cx, CT_cy + 20, `r = ${r}cm`, undefined, 12), 280, 220);
+      return { q: `A sector of a circle with radius ${r}cm has an angle of ${theta}° at the centre. Find the perimeter of the sector (use π ≈ 3.14).`, options, correctIndex, svg,
+        hint: `The perimeter of a sector is its curved arc plus the two straight radii on either side, not the arc by itself.`,
+        solution: { idea: `A sector's boundary has three parts: two straight radii and one curved arc; the perimeter adds all three together.`, steps: [`Arc length = (${theta}/360) × 2 × 3.14 × ${r} = ${arc}cm.`, `Perimeter = arc + 2 radii = ${arc} + (2 × ${r}) = ${arc} + ${2 * r} = ${perim}cm.`], check: `A common mistake is forgetting the two straight radii and giving only the arc length (${arc}cm) as the perimeter.` },
+      };
+    },
+  },
+  reverse_find_angle_from_arc: {
+    difficulties: [3, 4],
+    build() {
+      const r = pick([4, 5, 6, 8, 10]);
+      const theta = pick([45, 90, 180, 270]);
+      const circumference = 2 * 3.14 * r;
+      const arc = Math.round((theta / 360) * circumference * 100) / 100;
+      const decoys = [theta + 30, theta - 30 > 0 ? theta - 30 : theta + 60, theta === 180 ? 90 : theta * 2, Math.round(theta / 2)].filter((v) => v !== theta);
+      const { options, correctIndex } = buildMC(theta, decoys, deg);
+      const svg = svgBox(SC(CT_cx, CT_cy, CT_R, "#2a1a5e", 1.5) + ST(CT_cx, CT_cy - 34, "?", undefined, 13, "#ff5d8f", 700) + ST(CT_cx, CT_cy + 20, `r = ${r}cm`, undefined, 12), 280, 220);
+      return { q: `A sector of a circle with radius ${r}cm has an arc length of ${arc}cm (use π ≈ 3.14). Find the angle at the centre.`, options, correctIndex, svg,
+        hint: `Rearrange the arc length formula to make the angle the subject: θ = (arc ÷ full circumference) × 360.`,
+        solution: { idea: `Since arc length = (θ/360) × 2πr, dividing the arc by the full circumference and multiplying by 360 recovers θ.`, steps: [`Full circumference = 2 × 3.14 × ${r} = ${circumference.toFixed(2)}cm.`, `θ = (${arc} ÷ ${circumference.toFixed(2)}) × 360 = ${theta}°.`], check: `Check: (${theta}/360) × ${circumference.toFixed(2)} = ${arc}cm, matching the given arc length.` },
+      };
+    },
+  },
+  reverse_find_radius_from_sector_area: {
+    difficulties: [4],
+    build() {
+      const r = pick([4, 5, 6, 8, 10]);
+      const theta = pick([45, 90, 180, 270]);
+      const coeff = (theta / 360) * 3.14;
+      const area = Math.round(coeff * r * r * 100) / 100;
+      const decoys = [r + 2, r - 2 > 0 ? r - 2 : r + 3, r * 2, Math.round(Math.sqrt(area))].filter((v) => v !== r);
+      const { options, correctIndex } = buildMC(r, decoys);
+      const svg = svgBox(SC(CT_cx, CT_cy, CT_R, "#2a1a5e", 1.5) + ST(CT_cx, CT_cy - 34, `${theta}°`, undefined, 12, "#ff5d8f", 700) + ST(CT_cx, CT_cy + 20, "r = ?", undefined, 12), 280, 220);
+      return { q: `A sector of a circle has an angle of ${theta}° at the centre and an area of ${area}cm² (use π ≈ 3.14). Find the radius.`, options, correctIndex, svg,
+        hint: `Rearrange the sector area formula to make r² the subject, then take a square root: r² = area ÷ [(θ/360) × π].`,
+        solution: { idea: `Since sector area = (θ/360) × πr², dividing by (θ/360) × π and then square-rooting recovers r.`, steps: [`(θ/360) × π = (${theta}/360) × 3.14 = ${coeff.toFixed(4)}.`, `r² = ${area} ÷ ${coeff.toFixed(4)} = ${r * r}.`, `r = √${r * r} = ${r}cm.`], check: `Check: (${theta}/360) × 3.14 × ${r}² = ${area}cm², matching the given area.` },
+      };
+    },
+  },
 };
 
 
@@ -19243,6 +19655,425 @@ const COORDINATE_GEOMETRY_STRUCTURES = {
   },
 };
 
+function vecArrow(x1, y1, x2, y2, col = "#7c5cff", label) {
+  const dx = x2 - x1, dy = y2 - y1;
+  const len = Math.sqrt(dx * dx + dy * dy) || 1;
+  const ux = dx / len, uy = dy / len;
+  const ah = 9, aw = 4.5;
+  const bx = x2 - ah * ux, by = y2 - ah * uy;
+  const lx = bx - aw * uy, ly = by + aw * ux;
+  const rx = bx + aw * uy, ry = by - aw * ux;
+  return SL(x1, y1, x2, y2, col, 2.5) +
+    `<polygon points="${x2},${y2} ${lx},${ly} ${rx},${ry}" fill="${col}"/>` +
+    (label ? ST((x1 + x2) / 2 + (dx >= 0 ? 10 : -10), (y1 + y2) / 2 - 6, label, dx >= 0 ? "start" : "end", 13, "#2a1a5e", 700) : "");
+}
+function vecFmt(v) { return `(${v[0]}, ${v[1]})`; }
+function vecNZ() { return pick([1, 2, 3, 4, -1, -2, -3, -4]); }
+
+const VECTORS_STRUCTURES = {
+  // ---------- D1 ----------
+  vector_addition: {
+    difficulties: [1],
+    build() {
+      const a = [vecNZ(), vecNZ()], b = [vecNZ(), vecNZ()];
+      const sum = [a[0] + b[0], a[1] + b[1]];
+      const answer = vecFmt(sum);
+      const diff = [a[0] - b[0], a[1] - b[1]];
+      const candidates = [vecFmt(diff), vecFmt([sum[0], diff[1]]), vecFmt([diff[0], sum[1]]), vecFmt([sum[1], sum[0]]), vecFmt([sum[0] + 1, sum[1]]), vecFmt([sum[0], sum[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `a = ${vecFmt(a)} and b = ${vecFmt(b)}. Find a + b.`, options, correctIndex,
+        hint: `Add the top numbers together, and add the bottom numbers together, separately.`,
+        solution: { idea: `Adding column vectors means adding matching components: top with top, bottom with bottom.`, steps: [`Top: ${a[0]} + ${b[0]} = ${sum[0]}.`, `Bottom: ${a[1]} + ${b[1]} = ${sum[1]}.`], check: `Check: a + b = ${answer}.` },
+      };
+    },
+  },
+  vector_subtraction: {
+    difficulties: [1],
+    build() {
+      const a = [vecNZ(), vecNZ()], b = [vecNZ(), vecNZ()];
+      const diff = [a[0] - b[0], a[1] - b[1]];
+      const answer = vecFmt(diff);
+      const sum = [a[0] + b[0], a[1] + b[1]];
+      const candidates = [vecFmt(sum), vecFmt([b[0] - a[0], b[1] - a[1]]), vecFmt([diff[0], sum[1]]), vecFmt([sum[0], diff[1]]), vecFmt([diff[0] + 1, diff[1]]), vecFmt([diff[0], diff[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `a = ${vecFmt(a)} and b = ${vecFmt(b)}. Find a − b.`, options, correctIndex,
+        hint: `Subtract the bottom vector's components from the top vector's, matching top with top and bottom with bottom.`,
+        solution: { idea: `Subtracting column vectors means subtracting matching components: top minus top, bottom minus bottom.`, steps: [`Top: ${a[0]} − ${b[0]} = ${diff[0]}.`, `Bottom: ${a[1]} − ${b[1]} = ${diff[1]}.`], check: `Check: a − b = ${answer}, and (a − b) + b = ${vecFmt([diff[0] + b[0], diff[1] + b[1]])} = a. ✓` },
+      };
+    },
+  },
+  scalar_multiplication: {
+    difficulties: [1],
+    build() {
+      const a = [vecNZ(), vecNZ()];
+      const k = pick([2, 3, 4, -2, -3]);
+      const result = [k * a[0], k * a[1]];
+      const answer = vecFmt(result);
+      const candidates = [vecFmt([k + a[0], k + a[1]]), vecFmt([k * a[0], a[1]]), vecFmt([a[0], k * a[1]]), vecFmt([-k * a[0], -k * a[1]]), vecFmt([result[0] + 1, result[1]]), vecFmt([result[0], result[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `a = ${vecFmt(a)}. Find ${k}a.`, options, correctIndex,
+        hint: `Multiply every component of the vector by the scalar.`,
+        solution: { idea: `Multiplying a column vector by a scalar multiplies every component by that scalar.`, steps: [`Top: ${k} × ${a[0]} = ${result[0]}.`, `Bottom: ${k} × ${a[1]} = ${result[1]}.`], check: `Check: ${k}a = ${answer}.` },
+      };
+    },
+  },
+  vector_magnitude_triple: {
+    difficulties: [1],
+    build() {
+      const triples = [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [9, 12, 15], [4, 3, 5]];
+      let [dx, dy, mag] = pick(triples);
+      dx *= pick([1, -1]); dy *= pick([1, -1]);
+      const decoys = [dx + dy > 0 ? dx + dy : Math.abs(dx) + Math.abs(dy), mag + 2, mag - 2 > 0 ? mag - 2 : mag + 3, dx * dx + dy * dy].filter((v) => v !== mag);
+      const { options, correctIndex } = buildMC(mag, decoys);
+      return { q: `Find the magnitude of the vector (${dx}, ${dy}), written |v|.`, options, correctIndex,
+        hint: `The magnitude is the vector's length: form a right-angled triangle from its components and use Pythagoras' theorem.`,
+        solution: { idea: `|v| = √(x² + y²), since the vector's horizontal and vertical components form the two shorter sides of a right-angled triangle, with the vector itself as the hypotenuse.`, steps: [`|v| = √(${dx}² + ${dy}²) = √(${dx * dx} + ${dy * dy}) = √${dx * dx + dy * dy} = ${mag}.`], check: `Check: ${mag}² = ${mag * mag} = ${dx * dx} + ${dy * dy}.` },
+      };
+    },
+  },
+  vector_between_two_points: {
+    difficulties: [1],
+    build() {
+      const ax = rand(-4, 2), ay = rand(-3, 3);
+      const bx = ax + pick([2, 3, 4, -2, -3, -4]), by = ay + pick([1, 2, 3, -1, -2, -3]);
+      const ab = [bx - ax, by - ay];
+      const answer = vecFmt(ab);
+      const ba = [ax - bx, ay - by];
+      const candidates = [vecFmt(ba), vecFmt([ab[0], ba[1]]), vecFmt([ba[0], ab[1]]), vecFmt([bx, by]), vecFmt([ab[0] + 1, ab[1]]), vecFmt([ab[0], ab[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      const svg = cgGridSvg(vecArrow(CG_ox + ax * CG_S, CG_oy - ay * CG_S, CG_ox + bx * CG_S, CG_oy - by * CG_S, "#7c5cff") + cgDot(ax, ay, `A(${ax}, ${ay})`) + cgDot(bx, by, `B(${bx}, ${by})`, "#22c8b8"));
+      return { q: `Find the column vector AB, the displacement from A to B.`, options, correctIndex, svg,
+        hint: `Subtract A's coordinates from B's coordinates: AB = B − A.`,
+        solution: { idea: `The vector from one point to another is found by subtracting the starting point's coordinates from the finishing point's, component by component.`, steps: [`Top: ${bx} − ${ax} = ${ab[0]}.`, `Bottom: ${by} − ${ay} = ${ab[1]}.`], check: `Check: starting at A(${ax}, ${ay}) and moving by ${answer} lands at (${ax + ab[0]}, ${ay + ab[1]}) = B.` },
+      };
+    },
+  },
+
+  // ---------- D2 ----------
+  combined_vector_expression: {
+    difficulties: [2, 3],
+    build() {
+      const a = [vecNZ(), vecNZ()], b = [vecNZ(), vecNZ()];
+      const [m, n] = pick([[2, 3], [3, 2], [2, -1], [3, -2], [2, 1], [1, -2]]);
+      const result = [m * a[0] + n * b[0], m * a[1] + n * b[1]];
+      const answer = vecFmt(result);
+      const wrongSign = [m * a[0] - n * b[0], m * a[1] - n * b[1]];
+      const swapped = [n * a[0] + m * b[0], n * a[1] + m * b[1]];
+      const candidates = [vecFmt(wrongSign), vecFmt(swapped), vecFmt([result[0] + 1, result[1]]), vecFmt([result[0], result[1] - 1]), vecFmt([m * a[0] + n * b[0] + n, m * a[1] + n * b[1]])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `a = ${vecFmt(a)} and b = ${vecFmt(b)}. Find ${m}a ${n >= 0 ? "+ " + n : "− " + Math.abs(n)}b.`, options, correctIndex,
+        hint: `Scale each vector first, keeping top and bottom separate, then add the two scaled vectors together.`,
+        solution: {
+          idea: `Work out each scaled vector on its own first, then combine them component by component.`,
+          steps: [`${m}a = ${vecFmt([m * a[0], m * a[1]])}.`, `${n}b = ${vecFmt([n * b[0], n * b[1]])}.`, `Add them: ${answer}.`],
+        },
+      };
+    },
+  },
+  vector_magnitude_surd: {
+    difficulties: [2, 3],
+    build() {
+      const pairs = [[1, 3], [3, 1], [2, 4], [4, 2], [3, 3], [1, 7], [7, 1], [2, 6], [6, 2], [5, 5]];
+      let [ax, ay] = pick(pairs);
+      ax *= pick([1, -1]); ay *= pick([1, -1]);
+      const n = ax * ax + ay * ay;
+      const [coeff, rem] = simplifySurd(n);
+      const answer = fmtSurd(coeff, rem);
+      const decoys = [String(n), String(ax + ay >= 0 ? ax + ay : -(ax + ay)), fmtSurd(coeff + 1, rem), fmtSurd(coeff, rem + 1), fmtSurd(coeff > 1 ? coeff - 1 : coeff + 2, rem)].filter((v) => v !== answer);
+      const { options, correctIndex } = buildMCStr(answer, decoys.slice(0, 4));
+      return { q: `Find the magnitude of the vector (${ax}, ${ay}), giving your answer as a simplified surd where necessary.`, options, correctIndex,
+        hint: `Use |v| = √(x² + y²) as usual, then simplify the surd exactly as in the surds lesson.`,
+        solution: { idea: `The magnitude formula always gives √(x² + y²); when that sum isn't a perfect square, the answer stays as a simplified surd rather than a decimal.`, steps: [`x² + y² = ${ax}² + ${ay}² = ${ax * ax} + ${ay * ay} = ${n}.`, `√${n} simplifies to ${answer}, since ${coeff}² × ${rem} = ${n}.`], check: `Check: ${coeff}² × ${rem} = ${coeff * coeff} × ${rem} = ${n}.` },
+      };
+    },
+  },
+  vector_reverse_direction: {
+    difficulties: [2, 3],
+    build() {
+      const ax = rand(-4, 2), ay = rand(-3, 3);
+      const bx = ax + pick([2, 3, 4, -2, -3, -4]), by = ay + pick([1, 2, 3, -1, -2, -3]);
+      const ba = [ax - bx, ay - by];
+      const answer = vecFmt(ba);
+      const ab = [bx - ax, by - ay];
+      const candidates = [vecFmt(ab), vecFmt([ba[0], ab[1]]), vecFmt([ab[0], ba[1]]), vecFmt([ax, ay]), vecFmt([ba[0] + 1, ba[1]]), vecFmt([ba[0], ba[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      const svg = cgGridSvg(vecArrow(CG_ox + bx * CG_S, CG_oy - by * CG_S, CG_ox + ax * CG_S, CG_oy - ay * CG_S, "#ff5d8f") + cgDot(ax, ay, `A(${ax}, ${ay})`) + cgDot(bx, by, `B(${bx}, ${by})`, "#22c8b8"));
+      return { q: `A is at (${ax}, ${ay}) and B is at (${bx}, ${by}). Find the column vector BA, the displacement from B to A.`, options, correctIndex, svg,
+        hint: `BA runs the opposite way to AB, so it is A's coordinates minus B's, not the other way round.`,
+        solution: { idea: `BA = A − B, the exact reverse of AB = B − A; reversing the direction of travel negates every component.`, steps: [`Top: ${ax} − ${bx} = ${ba[0]}.`, `Bottom: ${ay} − ${by} = ${ba[1]}.`], check: `Check: BA = −AB = ${vecFmt([-ab[0], -ab[1]])}, matching ${answer}.` },
+      };
+    },
+  },
+  check_vectors_parallel: {
+    difficulties: [2, 3],
+    build() {
+      const isParallel = pick([true, false]);
+      const a = [vecNZ(), vecNZ()];
+      let b, k;
+      if (isParallel) {
+        k = pick([2, 3, -2, 3, -3].filter((v) => v !== 1));
+        b = [k * a[0], k * a[1]];
+      } else {
+        b = [a[0] + pick([1, -1, 2]), a[1] + pick([1, -1, 2])];
+        if (a[0] * b[1] === a[1] * b[0]) return null;
+      }
+      const correct = isParallel ? `Yes, parallel (b = ${k}a)` : "No, not parallel";
+      const decoys = ["Yes, parallel (b = 2a)", "Yes, parallel (b = 3a)", "No, not parallel", "Yes, parallel (b = −a)", "Cannot be determined"].filter((v) => v !== correct).slice(0, 4);
+      const { options, correctIndex } = buildMCStr(correct, decoys);
+      return { q: `a = ${vecFmt(a)} and b = ${vecFmt(b)}. Are a and b parallel?`, options, correctIndex,
+        hint: `Two vectors are parallel exactly when one is a scalar multiple of the other: check whether the same scale factor takes both components of a to both components of b.`,
+        solution: {
+          idea: `Vectors point in the same (or exactly opposite) direction, and so are parallel, precisely when one is a number times the other in every component at once.`,
+          steps: isParallel
+            ? [`Compare components: ${b[0]} ÷ ${a[0]} = ${k}, and ${b[1]} ÷ ${a[1]} = ${k}.`, `Both give the same scale factor, ${k}, so b = ${k}a and the vectors are parallel.`]
+            : [`Compare components: ${b[0]} ÷ ${a[0]} = ${(b[0] / a[0]).toFixed(2)}, but ${b[1]} ÷ ${a[1]} = ${(b[1] / a[1]).toFixed(2)}.`, `These scale factors differ, so no single number takes a to b: the vectors are not parallel.`],
+        },
+      };
+    },
+  },
+  parallelogram_side_vector: {
+    difficulties: [2, 3],
+    build() {
+      const a = [vecNZ(), vecNZ()], c = [vecNZ(), vecNZ()];
+      const b = [a[0] + c[0], a[1] + c[1]];
+      const answer = vecFmt(b);
+      const candidates = [vecFmt([a[0] - c[0], a[1] - c[1]]), vecFmt(a), vecFmt(c), vecFmt([b[0] + 1, b[1]]), vecFmt([b[0], b[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `OABC is a parallelogram with OA = a = ${vecFmt(a)} and OC = c = ${vecFmt(c)}. Find the diagonal OB in terms of a and c, as a column vector.`, options, correctIndex,
+        hint: `In a parallelogram built from two sides meeting at O, the diagonal from O is simply the sum of the two side vectors.`,
+        solution: {
+          idea: `Since OABC is a parallelogram, side AB is equal and parallel to OC, so travelling O → A → B is the same as travelling along a then along c: OB = OA + AB = a + c.`,
+          steps: [`OB = a + c = ${vecFmt(a)} + ${vecFmt(c)}.`, `Top: ${a[0]} + ${c[0]} = ${b[0]}. Bottom: ${a[1]} + ${c[1]} = ${b[1]}.`],
+          check: `Check: OB = ${answer}.`,
+        },
+      };
+    },
+  },
+
+  // ---------- D3 ----------
+  midpoint_vector_expression: {
+    difficulties: [3, 4],
+    build() {
+      const M = [rand(-3, 3), rand(-3, 3)];
+      const d = [vecNZ(), vecNZ()];
+      const a = [M[0] - d[0], M[1] - d[1]];
+      const b = [M[0] + d[0], M[1] + d[1]];
+      const answer = vecFmt(M);
+      const candidates = [vecFmt([2 * M[0], 2 * M[1]]), vecFmt(a), vecFmt(b), vecFmt([M[0] + 1, M[1]]), vecFmt([M[0], M[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `O is the origin. A has position vector a = ${vecFmt(a)} and B has position vector b = ${vecFmt(b)}. M is the midpoint of AB. Find the position vector of M, OM, in terms of a and b.`, options, correctIndex,
+        hint: `Travel to A first, then go halfway along AB: OM = OA + ½AB = a + ½(b − a), which simplifies to ½(a + b).`,
+        solution: {
+          idea: `The midpoint's position vector is the average of the two endpoints' position vectors: OM = a + ½(b − a) = ½(a + b).`,
+          method: ["Find AB = b − a.", "Add half of AB onto a."],
+          steps: [`b − a = ${vecFmt([b[0] - a[0], b[1] - a[1]])}.`, `½(b − a) = ${vecFmt([d[0], d[1]])}.`, `OM = a + ½(b − a) = ${vecFmt(a)} + ${vecFmt(d)} = ${answer}.`],
+          check: `Check: ½(a + b) = ½${vecFmt([a[0] + b[0], a[1] + b[1]])} = ${answer}, matching.`,
+        },
+      };
+    },
+  },
+  ratio_point_vector_expression: {
+    difficulties: [3, 4],
+    build() {
+      const [m, n] = pick([[1, 2], [2, 1], [1, 3], [3, 1], [2, 3], [3, 2]]);
+      const a = [rand(-3, 3), rand(-3, 3)];
+      const t = [vecNZ(), vecNZ()];
+      const b = [a[0] + (m + n) * t[0], a[1] + (m + n) * t[1]];
+      const op = [a[0] + m * t[0], a[1] + m * t[1]];
+      const answer = vecFmt(op);
+      const candidates = [vecFmt([a[0] + n * t[0], a[1] + n * t[1]]), vecFmt(b), vecFmt(a), vecFmt([op[0] + 1, op[1]]), vecFmt([op[0], op[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `O is the origin. A has position vector a = ${vecFmt(a)} and B has position vector b = ${vecFmt(b)}. P lies on AB with AP:PB = ${m}:${n}. Find the position vector of P, OP.`, options, correctIndex,
+        hint: `P is a fraction ${m}/${m + n} of the way from A to B, so OP = a + (${m}/${m + n})(b − a).`,
+        solution: {
+          idea: `Since AP:PB = ${m}:${n}, P sits ${m}/${m + n} of the way along AB from A, so add that fraction of AB onto a.`,
+          method: [`Find AB = b − a.`, `Take ${m}/${m + n} of AB.`, `Add this onto a.`],
+          steps: [`AB = b − a = ${vecFmt([(m + n) * t[0], (m + n) * t[1]])}.`, `(${m}/${m + n}) × AB = ${vecFmt([m * t[0], m * t[1]])}.`, `OP = a + (${m}/${m + n})AB = ${vecFmt(a)} + ${vecFmt([m * t[0], m * t[1]])} = ${answer}.`],
+        },
+      };
+    },
+  },
+  express_side_in_terms_of_two_vectors: {
+    difficulties: [3, 4],
+    build() {
+      const half = [vecNZ(), vecNZ()];
+      const a = [2 * half[0], 2 * half[1]];
+      const c = [vecNZ(), vecNZ()];
+      const n = [half[0] + c[0], half[1] + c[1]];
+      const answer = vecFmt(n);
+      const b = [a[0] + c[0], a[1] + c[1]];
+      const candidates = [vecFmt(b), vecFmt(a), vecFmt(c), vecFmt([n[0] + 1, n[1]]), vecFmt([n[0], n[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `OABC is a parallelogram with OA = a = ${vecFmt(a)} and OC = c = ${vecFmt(c)}. N is the midpoint of BC. Find ON in terms of a and c, as a column vector.`, options, correctIndex,
+        hint: `First find OB (the diagonal), then average B and C to reach their midpoint N.`,
+        solution: {
+          idea: `Reach B first via the diagonal rule OB = a + c, then N is the midpoint of B and C, so ON = ½OB + ½OC.`,
+          method: ["Find OB = a + c.", "Average OB and OC to reach the midpoint N."],
+          steps: [`OB = a + c = ${vecFmt(b)}.`, `ON = ½(OB + OC) = ½(${vecFmt(b)} + ${vecFmt(c)}) = ½${vecFmt([b[0] + c[0], b[1] + c[1]])} = ${answer}.`],
+          check: `Check: ON also equals ½a + c = ${vecFmt(half)} + ${vecFmt(c)} = ${answer}, matching.`,
+        },
+      };
+    },
+  },
+  vector_magnitude_of_combination: {
+    difficulties: [3, 4],
+    build() {
+      const triples = [[3, 4, 5], [6, 8, 10], [5, 12, 13], [8, 15, 17], [9, 12, 15]];
+      let [dx, dy, mag] = pick(triples);
+      dx *= pick([1, -1]); dy *= pick([1, -1]);
+      const k1 = pick([1, -1, 2, -2]), k2 = pick([1, -1, 2, -2]);
+      const a = [dx + k1, dy + k2];
+      const b = [dx + 2 * k1, dy + 2 * k2];
+      const decoys = [mag + 2, mag - 2 > 0 ? mag - 2 : mag + 3, Math.round(Math.sqrt(a[0] * a[0] + a[1] * a[1])), Math.abs(2 * a[0] - b[0]) + Math.abs(2 * a[1] - b[1])].filter((v) => v !== mag);
+      const { options, correctIndex } = buildMC(mag, decoys);
+      return { q: `a = ${vecFmt(a)} and b = ${vecFmt(b)}. Find |2a − b|, the magnitude of the vector 2a − b.`, options, correctIndex,
+        hint: `Work out the column vector 2a − b first, then apply the magnitude formula to that result.`,
+        solution: {
+          idea: `Find the combined vector first, then take its magnitude; the two operations cannot be swapped, since |2a − b| does not mean 2|a| − |b|.`,
+          method: ["Compute 2a.", "Subtract b to get 2a − b.", "Find the magnitude of that result."],
+          steps: [`2a = ${vecFmt([2 * a[0], 2 * a[1]])}.`, `2a − b = ${vecFmt([2 * a[0] - b[0], 2 * a[1] - b[1]])} = (${dx}, ${dy}).`, `|2a − b| = √(${dx}² + ${dy}²) = ${mag}.`],
+        },
+      };
+    },
+  },
+  simplify_vector_expression: {
+    difficulties: [3, 4],
+    build() {
+      const a = [vecNZ(), vecNZ()], b = [vecNZ(), vecNZ()];
+      const result = [a[0] + 5 * b[0], a[1] + 5 * b[1]];
+      const answer = vecFmt(result);
+      const wrong1 = [5 * a[0] + b[0], 5 * a[1] + b[1]];
+      const wrong2 = [-a[0] + b[0], -a[1] + b[1]];
+      const wrong3 = [a[0] + a[0] + b[0], a[1] + a[1] + b[1]];
+      const candidates = [vecFmt(wrong1), vecFmt(wrong2), vecFmt(wrong3), vecFmt([result[0] + 1, result[1]]), vecFmt([result[0], result[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `a = ${vecFmt(a)} and b = ${vecFmt(b)}. Simplify 3(a + b) − 2(a − b), giving your answer as a single column vector.`, options, correctIndex,
+        hint: `Expand each bracket first, exactly as with ordinary algebra, before collecting the a-terms and the b-terms.`,
+        solution: {
+          idea: `A vector expression with brackets expands and collects just like an algebraic one: 3(a + b) − 2(a − b) = 3a + 3b − 2a + 2b = a + 5b.`,
+          method: ["Expand both brackets.", "Collect the a-terms and the b-terms separately.", "Substitute the actual column vectors."],
+          steps: [`3(a + b) = 3a + 3b. −2(a − b) = −2a + 2b.`, `Adding: (3a − 2a) + (3b + 2b) = a + 5b.`, `a + 5b = ${vecFmt(a)} + ${vecFmt([5 * b[0], 5 * b[1]])} = ${answer}.`],
+        },
+      };
+    },
+  },
+
+  // ---------- D4 ----------
+  parallelogram_collinear_ratio: {
+    difficulties: [4],
+    build() {
+      const a = [vecNZ(), vecNZ()], b = [vecNZ(), vecNZ()];
+      if (a[0] * b[1] === a[1] * b[0]) return null;
+      const answer = "OC : OM = 2 : 1";
+      const decoys = ["OC : OM = 1 : 1", "OC : OM = 1 : 2", "OC : OM = 3 : 1", "OC : OM = 3 : 2"];
+      const { options, correctIndex } = buildMCStr(answer, decoys);
+      const c = [a[0] + b[0], a[1] + b[1]];
+      const m = [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+      return { q: `OACB is a parallelogram with OA = a = ${vecFmt(a)} and OB = b = ${vecFmt(b)}, so C = A + B. M is the midpoint of AB. Find the ratio OC : OM, and hence state what this shows about O, M and C.`, options, correctIndex,
+        hint: `Write both OC and OM in terms of a and b, then compare them: if one is a scalar multiple of the other, the three points must be collinear.`,
+        solution: {
+          idea: `OC = a + b (the diagonal rule), and OM = ½(a + b) (the midpoint rule), so OM is exactly half of OC. Since OM and OC point along the same line through O, O, M and C are collinear, with M the midpoint of OC too.`,
+          method: ["Find OC in terms of a and b.", "Find OM in terms of a and b.", "Compare the two to find the ratio, and note they share the same direction from O."],
+          steps: [`OC = a + b = ${vecFmt(c)}.`, `OM = ½(a + b) = ${vecFmt(m)}.`, `OC is exactly twice OM, so OC : OM = 2 : 1.`],
+          check: `Because OM is a scalar multiple of OC (specifically ½ of it), and both start at O, this proves O, M and C lie on the same straight line: they are collinear.`,
+        },
+      };
+    },
+  },
+  midpoint_theorem_vector: {
+    difficulties: [4],
+    build() {
+      const a = [vecNZ(), vecNZ()], b = [vecNZ(), vecNZ()];
+      if (a[0] * b[1] === a[1] * b[0]) return null;
+      const half = [(b[0] - a[0]) / 2, (b[1] - a[1]) / 2];
+      // ensure clean halves
+      if (!Number.isInteger(half[0]) || !Number.isInteger(half[1])) return null;
+      const answer = vecFmt(half);
+      const ab = [b[0] - a[0], b[1] - a[1]];
+      const candidates = [vecFmt(ab), vecFmt([-half[0], -half[1]]), vecFmt([half[1], half[0]]), vecFmt([half[0] + 1, half[1]]), vecFmt([half[0], half[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `Triangle OAB has O as the origin, OA = a = ${vecFmt(a)} and OB = b = ${vecFmt(b)}. C is the midpoint of OA and D is the midpoint of OB. Find CD in terms of a and b, as a column vector, and state how CD relates to AB.`, options, correctIndex,
+        hint: `Find OC and OD first (half of a and half of b), then CD = OD − OC.`,
+        solution: {
+          idea: `CD = OD − OC = ½b − ½a = ½(b − a) = ½AB. Since CD is exactly half of AB and points the same way, CD is parallel to AB with half its length: this is the midpoint theorem, proved using vectors.`,
+          method: ["Find OC = ½a and OD = ½b.", "Find CD = OD − OC.", "Compare with AB = b − a."],
+          steps: [`OC = ½a = ${vecFmt([a[0] / 2, a[1] / 2])}. OD = ½b = ${vecFmt([b[0] / 2, b[1] / 2])}.`, `CD = OD − OC = ${answer}.`, `AB = b − a = ${vecFmt(ab)}, and CD is exactly half of AB.`],
+          check: `Because CD is a scalar multiple (½) of AB, CD is parallel to AB, and its length is half of AB's length.`,
+        },
+      };
+    },
+  },
+  vector_proof_find_unknown_ratio: {
+    difficulties: [4],
+    build() {
+      const a0 = [vecNZ(), vecNZ()], b0 = [vecNZ(), vecNZ()];
+      const a = [4 * a0[0], 4 * a0[1]];
+      const b = [2 * b0[0], 2 * b0[1]];
+      if (a[0] * b[1] === a[1] * b[0]) return null;
+      const ox = [a0[0] + b0[0], a0[1] + b0[1]];
+      const answer = vecFmt(ox);
+      const candidates = [vecFmt([a[0] / 2 + b[0] / 4, a[1] / 2 + b[1] / 4]), vecFmt([a0[0] + 2 * b0[0], a0[1] + 2 * b0[1]]), vecFmt([2 * a0[0] + b0[0], 2 * a0[1] + b0[1]]), vecFmt([ox[0] + 1, ox[1]]), vecFmt([ox[0], ox[1] - 1])];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `(${100 + i}, ${101 + i})`);
+      return { q: `Triangle OAB has O as the origin, OA = a = ${vecFmt(a)} and OB = b = ${vecFmt(b)}. C is the midpoint of OA. D is the point on OB with OD:DB = 2:1. Lines AD and BC cross at X. Find the position vector of X, OX.`, options, correctIndex,
+        hint: `Write X as a point on line AD using one unknown fraction, and separately as a point on line BC using another; since a and b point in different directions, matching their coefficients on both sides gives two equations for the two unknowns.`,
+        solution: {
+          idea: `Because a and b are not parallel, any vector can only be written one way as a combination of a and b. Writing X's position two different ways, once along AD and once along BC, and matching the a-coefficients and b-coefficients separately turns a geometry problem into simultaneous equations.`,
+          method: ["Parametrise X on line AD: X = a + t(OD − a).", "Parametrise X on line BC: X = b + s(OC − b).", "Match the a-coefficient and the b-coefficient from both expressions to form two equations.", "Solve the simultaneous equations for s and t, then substitute back."],
+          steps: [
+            `On AD: X = a + t(⅔b − a) = (1 − t)a + (2t/3)b.`,
+            `On BC: X = b + s(½a − b) = (s/2)a + (1 − s)b.`,
+            `Matching coefficients: 1 − t = s/2, and 2t/3 = 1 − s. Solving these simultaneously gives t = 3/4 and s = 1/2.`,
+            `OX = (1 − ¾)a + (2×¾/3)b = ¼a + ½b = ${vecFmt([a[0] / 4, a[1] / 4])} + ${vecFmt([b[0] / 2, b[1] / 2])} = ${answer}.`,
+          ],
+          check: `Check using the other line: OX = ½(½a) + ½b = ¼a + ½b, the same result — confirming X genuinely lies on both lines.`,
+        },
+      };
+    },
+  },
+  full_vector_geometry_synthesis: {
+    difficulties: [4],
+    build() {
+      const triples = [[3, 4, 5], [6, 8, 10], [9, 12, 15], [5, 12, 13], [8, 6, 10]];
+      const [tx, ty, mag] = pick(triples);
+      const sx = tx * pick([1, -1]), sy = ty * pick([1, -1]);
+      const a = [rand(-4, 4), rand(-4, 4)];
+      const b = [2 * sx - a[0], 2 * sy - a[1]];
+      if (a[0] * b[1] === a[1] * b[0]) return null;
+      const decoys = [mag * 2, mag + 2, mag - 2 > 0 ? mag - 2 : mag + 3, Math.round(Math.sqrt(a[0] * a[0] + a[1] * a[1]))].filter((v) => v !== mag);
+      const { options, correctIndex } = buildMC(mag, decoys);
+      return { q: `Triangle OAB has O as the origin, OA = a = ${vecFmt(a)} and OB = b = ${vecFmt(b)}. M is the midpoint of AB. Find |OM|, the distance from O to M.`, options, correctIndex,
+        hint: `Find OM as a column vector first (the midpoint rule), then apply the magnitude formula to that vector.`,
+        solution: {
+          idea: `This combines two separate skills: finding a midpoint's position vector, then finding that vector's magnitude with Pythagoras.`,
+          method: ["Find OM = ½(a + b).", "Find |OM| using Pythagoras on OM's components."],
+          steps: [`OM = ½(a + b) = ½${vecFmt([a[0] + b[0], a[1] + b[1]])} = (${sx}, ${sy}).`, `|OM| = √(${sx}² + ${sy}²) = √${sx * sx + sy * sy} = ${mag}.`],
+        },
+      };
+    },
+  },
+  algebraic_vector_equation: {
+    difficulties: [4],
+    build() {
+      const p = pick([2, 3, 4, -2, -3]), q = pick([2, 3, -2, -4].filter((v) => v !== p));
+      const a = [vecNZ(), vecNZ()], b = [vecNZ(), vecNZ()];
+      if (a[0] * b[1] === a[1] * b[0]) return null;
+      const c = [p * a[0] + q * b[0], p * a[1] + q * b[1]];
+      const answer = `p = ${p}, q = ${q}`;
+      const candidates = [`p = ${q}, q = ${p}`, `p = ${p + 1}, q = ${q}`, `p = ${p}, q = ${q + 1}`, `p = ${-p}, q = ${-q}`, `p = ${p - 1}, q = ${q}`, `p = ${p}, q = ${q - 1}`, `p = ${q + 1}, q = ${p - 1}`];
+      const { options, correctIndex } = cgSafeStr(answer, candidates, (i) => `p = ${100 + i}, q = ${101 + i}`);
+      return { q: `a = ${vecFmt(a)}, b = ${vecFmt(b)} and c = ${vecFmt(c)}. Given that pa + qb = c, find the values of p and q.`, options, correctIndex,
+        hint: `Write out the top-component equation and the bottom-component equation separately: this gives two ordinary simultaneous equations in p and q.`,
+        solution: {
+          idea: `A single vector equation pa + qb = c is really two ordinary equations in disguise, one from the top components and one from the bottom, since both sides must match component by component.`,
+          method: ["Write the top-component equation.", "Write the bottom-component equation.", "Solve the two simultaneous equations for p and q."],
+          steps: [`Top: ${a[0]}p + ${b[0]}q = ${c[0]}.`, `Bottom: ${a[1]}p + ${b[1]}q = ${c[1]}.`, `Solving these simultaneously (exactly as in the simultaneous equations lesson) gives p = ${p}, q = ${q}.`],
+          check: `Check: ${p}(${vecFmt(a)}) + ${q}(${vecFmt(b)}) = ${vecFmt([p * a[0], p * a[1]])} + ${vecFmt([q * b[0], q * b[1]])} = ${vecFmt(c)}, matching c.`,
+        },
+      };
+    },
+  },
+};
+
 const THREE_D_GEOMETRY_AND_NETS_STRUCTURES = {
   // ---------- D1 ----------
   cuboid_surface_area: {
@@ -19966,9 +20797,88 @@ const STATISTICS_ADVANCED_STRUCTURES = {
   },
 };
 
-export const INTERMEDIATE_STRUCTURES = { surdsAndIndices: SURDS_AND_INDICES_STRUCTURES, numberTheoryDivisibility: NUMBER_THEORY_DIVISIBILITY_STRUCTURES, algebraicManipulation: ALGEBRAIC_MANIPULATION_STRUCTURES, percentageAndCompoundGrowth: PERCENTAGE_AND_COMPOUND_GROWTH_STRUCTURES, simultaneousEquations: SIMULTANEOUS_EQUATIONS_STRUCTURES, quadratics: QUADRATICS_STRUCTURES, ratioProportionAlgebraic: RATIO_PROPORTION_ALGEBRAIC_STRUCTURES, sequencesAndSeries: SEQUENCES_AND_SERIES_STRUCTURES, graphsAndRatesOfChange: GRAPHS_AND_RATES_OF_CHANGE_STRUCTURES, surdicModularNumberTheory: SURDIC_MODULAR_NUMBER_THEORY_STRUCTURES, algebraicProof: ALGEBRAIC_PROOF_STRUCTURES, functionsAndIteration: FUNCTIONS_AND_ITERATION_STRUCTURES, combinatoricsAndCounting: COMBINATORICS_AND_COUNTING_STRUCTURES, diophantineEquations: DIOPHANTINE_EQUATIONS_STRUCTURES, advancedProbability: ADVANCED_PROBABILITY_STRUCTURES, invariantsAndParity: INVARIANTS_AND_PARITY_STRUCTURES, logicAndDeduction: LOGIC_AND_DEDUCTION_STRUCTURES, optimisationAndExtremal: OPTIMISATION_AND_EXTREMAL_STRUCTURES, proofTechniques: PROOF_TECHNIQUES_STRUCTURES, speedAndRelativeMotion: SPEED_AND_RELATIVE_MOTION_STRUCTURES, estimationAndBounds: ESTIMATION_AND_BOUNDS_STRUCTURES, circleTheoremsAndTangents: CIRCLE_THEOREMS_AND_TANGENTS_STRUCTURES, trigonometryAdvanced: TRIGONOMETRY_ADVANCED_STRUCTURES, similarShapesAndScaleFactors: SIMILAR_SHAPES_AND_SCALE_FACTORS_STRUCTURES, multiStepGeometryProof: MULTI_STEP_GEOMETRY_PROOF_STRUCTURES, coordinateGeometry: COORDINATE_GEOMETRY_STRUCTURES, threeDGeometryAndNets: THREE_D_GEOMETRY_AND_NETS_STRUCTURES, statisticsAdvanced: STATISTICS_ADVANCED_STRUCTURES };
-export const INTERMEDIATE_OLYMPIAD_PLAYBOOK = { steps: [], tactics: [] };
-export const INTERMEDIATE_OLYMPIAD = [];
+export const INTERMEDIATE_STRUCTURES = { surdsAndIndices: SURDS_AND_INDICES_STRUCTURES, numberTheoryDivisibility: NUMBER_THEORY_DIVISIBILITY_STRUCTURES, algebraicManipulation: ALGEBRAIC_MANIPULATION_STRUCTURES, percentageAndCompoundGrowth: PERCENTAGE_AND_COMPOUND_GROWTH_STRUCTURES, simultaneousEquations: SIMULTANEOUS_EQUATIONS_STRUCTURES, quadratics: QUADRATICS_STRUCTURES, ratioProportionAlgebraic: RATIO_PROPORTION_ALGEBRAIC_STRUCTURES, sequencesAndSeries: SEQUENCES_AND_SERIES_STRUCTURES, graphsAndRatesOfChange: GRAPHS_AND_RATES_OF_CHANGE_STRUCTURES, surdicModularNumberTheory: SURDIC_MODULAR_NUMBER_THEORY_STRUCTURES, algebraicProof: ALGEBRAIC_PROOF_STRUCTURES, functionsAndIteration: FUNCTIONS_AND_ITERATION_STRUCTURES, combinatoricsAndCounting: COMBINATORICS_AND_COUNTING_STRUCTURES, diophantineEquations: DIOPHANTINE_EQUATIONS_STRUCTURES, advancedProbability: ADVANCED_PROBABILITY_STRUCTURES, invariantsAndParity: INVARIANTS_AND_PARITY_STRUCTURES, logicAndDeduction: LOGIC_AND_DEDUCTION_STRUCTURES, optimisationAndExtremal: OPTIMISATION_AND_EXTREMAL_STRUCTURES, proofTechniques: PROOF_TECHNIQUES_STRUCTURES, speedAndRelativeMotion: SPEED_AND_RELATIVE_MOTION_STRUCTURES, estimationAndBounds: ESTIMATION_AND_BOUNDS_STRUCTURES, circleTheoremsAndTangents: CIRCLE_THEOREMS_AND_TANGENTS_STRUCTURES, trigonometryAdvanced: TRIGONOMETRY_ADVANCED_STRUCTURES, similarShapesAndScaleFactors: SIMILAR_SHAPES_AND_SCALE_FACTORS_STRUCTURES, multiStepGeometryProof: MULTI_STEP_GEOMETRY_PROOF_STRUCTURES, coordinateGeometry: COORDINATE_GEOMETRY_STRUCTURES, threeDGeometryAndNets: THREE_D_GEOMETRY_AND_NETS_STRUCTURES, statisticsAdvanced: STATISTICS_ADVANCED_STRUCTURES, vectors: VECTORS_STRUCTURES };
+export const INTERMEDIATE_OLYMPIAD_PLAYBOOK = {
+  steps: [
+    { t: "Comprehend", d: "Read the problem twice. What are you asked to FIND or PROVE? What are you TOLD? Restate every condition in your own words before writing a single calculation." },
+    { t: "Link the facts", d: "Connect what you're told to a method you know: an equation, an inequality, a factorisation, a geometric fact. If nothing jumps out, try small or extreme cases first." },
+    { t: "Explain the route", d: "Before calculating, say in one sentence what your plan is and why it should work. This single sentence is often worth as many marks as the calculation itself." },
+    { t: "Apply it carefully", d: "Write every step. Never divide by an expression without first checking it cannot be zero. Never drop the boundary case of an inequality. A correct final number with an unjustified step scores far less than a fully justified one." },
+    { t: "Review and conclude", d: "Feed your answer back into every original condition. State the final conclusion in a full sentence, not just a bare value." },
+  ],
+  tactics: [
+    "🔁 Work backwards: undo a chain of operations or function applications in reverse order.",
+    "📝 Be systematic: list every case of a Diophantine or casework problem in a fixed order.",
+    "🎭 Use parity or a modular invariant: track a quantity that a process can only change in a fixed, predictable way.",
+    "🎨 Colour or label: assign a rule-based colouring to a grid or set to reveal a hidden constraint.",
+    "⚖️ Push to extremes, or use AM-GM: for a fixed sum, the product is largest when the terms are equal (and vice versa).",
+    "🧮 Introduce a letter, or use the sum/product of roots: for ax²+bx+c=0, the roots add to −b/a and multiply to c/a — no need to solve for them individually.",
+    "🪞 Assume the opposite: proof by contradiction turns 'show this is impossible' into 'assume it happens and find a contradiction'.",
+    "🔢 Check the boundary: for an inequality, always test what happens at equality, and never divide by an expression that could be zero.",
+  ],
+};
+export const INTERMEDIATE_OLYMPIAD = [
+  { id: "i1", section: "A", q: "Find all values of x satisfying x² − 5x − 24 = 0.", answer: "x = 8 or x = −3", tactic: "Factorise the quadratic.", sol: ["Look for two numbers multiplying to −24 and adding to −5: these are −8 and 3.", "So x² − 5x − 24 = (x−8)(x+3) = 0.", "This gives x = 8 or x = −3."],
+    markScheme: [ { pts: 1, desc: "Found the correct factor pair (−8 and 3)." }, { pts: 1, desc: "Correctly factorised and solved for both values of x." } ] },
+  { id: "i2", section: "B", q: "Two numbers have a sum of 15 and the sum of their squares is 117. Find the two numbers.", answer: "9 and 6", tactic: "Use (a+b)² = a² + 2ab + b² to find the product first.", sol: ["Let the numbers be a and b, with a+b=15 and a²+b²=117.", "(a+b)² = a² + 2ab + b², so 225 = 117 + 2ab, giving ab = 54.", "a and b are roots of t² − 15t + 54 = 0. Factorising: (t−9)(t−6)=0, so t=9 or t=6.", "The two numbers are 9 and 6. Check: 9+6=15, 9²+6²=81+36=117 ✓"],
+    markScheme: [ { pts: 1, desc: "Used (a+b)² to find ab = 54." }, { pts: 2, desc: "Correctly formed and factorised the quadratic for the two numbers." }, { pts: 1, desc: "Checked both conditions." } ] },
+  { id: "i3", section: "A", q: "Find the smallest positive whole number that leaves remainder 2 when divided by 7 and remainder 3 when divided by 5.", answer: "23", tactic: "List numbers satisfying the first condition, then test the second.", sol: ["Numbers leaving remainder 2 mod 7: 2, 9, 16, 23, 30, ...", "Test each against remainder 3 mod 5: 2 mod 5 = 2 (no); 9 mod 5 = 4 (no); 16 mod 5 = 1 (no); 23 mod 5 = 3 (yes).", "The smallest such number is 23."],
+    markScheme: [ { pts: 1, desc: "Correctly listed numbers satisfying the first condition." }, { pts: 1, desc: "Correctly tested each against the second condition to find 23." } ] },
+  { id: "i4", section: "A", q: "Find the minimum value of x + 25/x for x > 0.", answer: "10 (at x = 5)", tactic: "Apply AM-GM to x and 25/x.", sol: ["By AM-GM, x + 25/x ≥ 2√(x × 25/x) = 2√25 = 10.", "Equality holds when x = 25/x, i.e. x² = 25, so x = 5 (since x > 0)."],
+    markScheme: [ { pts: 1, desc: "Correctly applied AM-GM to get the bound 10." }, { pts: 1, desc: "Correctly found the equality case x = 5." } ] },
+  { id: "i5", section: "A", q: "A function satisfies f(xy) = f(x) + f(y) for all positive x, y, and f(2) = 1. Find f(8).", answer: "3", tactic: "Build up values using the given rule.", sol: ["f(4) = f(2×2) = f(2) + f(2) = 1 + 1 = 2.", "f(8) = f(4×2) = f(4) + f(2) = 2 + 1 = 3."],
+    markScheme: [ { pts: 1, desc: "Correctly found f(4) = 2." }, { pts: 1, desc: "Correctly found f(8) = 3." } ] },
+  { id: "i6", section: "A", q: "A chord subtends an angle of 70° at the centre of a circle. Find the angle it subtends at the circumference, on the major arc.", answer: "35°", tactic: "Use the circle theorem: the angle at the centre is twice the angle at the circumference.", sol: ["The angle at the centre (70°) is always twice the angle at the circumference standing on the same arc.", "So the circumference angle is 70° ÷ 2 = 35°."],
+    markScheme: [ { pts: 1, desc: "Correctly identified and applied the centre-circumference angle theorem." }, { pts: 1, desc: "Computed the correct angle (35°)." } ] },
+  { id: "i7", section: "B", q: "Prove that 4ⁿ − 1 is divisible by 3, for every positive whole number n.", answer: "Proof (by induction).", tactic: "Use induction.", sol: ["BASE CASE (n=1): 4¹−1 = 3, divisible by 3.", "INDUCTIVE STEP: assume 4^k − 1 = 3m for some whole number m, so 4^k = 3m+1.", "Then 4^(k+1) − 1 = 4×4^k − 1 = 4(3m+1) − 1 = 12m + 4 − 1 = 12m + 3 = 3(4m+1), divisible by 3.", "The base case holds and each true case forces the next, so 4ⁿ−1 is divisible by 3 for every positive whole number n."],
+    markScheme: [ { pts: 1, desc: "Correctly verified the base case." }, { pts: 2, desc: "Correctly carried out the inductive step." }, { pts: 1, desc: "Concluded the induction correctly." } ] },
+  { id: "i8", section: "B", q: "Prove that there is no smallest positive rational number.", answer: "Proof — no smallest exists.", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["Suppose, for contradiction, that there IS a smallest positive rational number, call it r.", "Consider r/2. Since r is positive, r/2 is also positive and rational.", "But r/2 < r, so r/2 is a smaller positive rational number — contradicting that r was the smallest.", "The assumption must be false, so there is no smallest positive rational number."],
+    markScheme: [ { pts: 1, desc: "Explicitly assumed a smallest positive rational r exists." }, { pts: 2, desc: "Correctly used r/2 to find a smaller positive rational." }, { pts: 1, desc: "Concluded the contradiction correctly." } ] },
+  { id: "i9", section: "A", topic: "invariantsAndParity", q: "Prove that among any 7 whole numbers, two must leave the same remainder when divided by 6.", answer: "Proof — always true.", tactic: "Use the pigeonhole principle with remainder classes.", sol: ["Dividing by 6 gives 6 possible remainders (0-5), the 'holes'. There are 7 numbers, the 'pigeons'.", "If every remainder class held at most 1 number, at most 6 numbers could be placed in total.", "But there are 7 numbers, more than 6, so two numbers must share the same remainder mod 6."],
+    markScheme: [ { pts: 1, desc: "Identified the 6 remainder classes as the holes." }, { pts: 1, desc: "Applied the pigeonhole principle correctly to conclude a repeat is forced." } ] },
+  { id: "i10", section: "B", q: "A sequence starts at 4. Each term is obtained from the previous by either adding 6 or subtracting 9. Can the sequence ever reach 50?", answer: "No, it's impossible.", tactic: "Find an invariant: track the remainder mod 3.", sol: ["Both possible changes, +6 and −9, are multiples of 3, so every move changes the term by a multiple of 3.", "Changing a number by a multiple of 3 never changes its remainder when divided by 3.", "The starting value 4 leaves remainder 1 mod 3, so every term in the sequence must also leave remainder 1 mod 3.", "50 divided by 3 leaves remainder 2, not 1, so 50 can never be reached."],
+    markScheme: [ { pts: 1, desc: "Identified remainder mod 3 as the invariant to track." }, { pts: 1, desc: "Showed both moves preserve this remainder." }, { pts: 1, desc: "Computed the starting remainder (1) and 50's remainder (2) correctly." }, { pts: 1, desc: "Concluded correctly that 50 is unreachable." } ] },
+  { id: "i11", section: "B", q: "A 6×6 board is coloured like a chessboard (18 black, 18 white). Two black squares are removed, leaving 34 squares (16 black, 18 white). Can these be tiled exactly by 17 dominoes?", answer: "No, it's impossible.", tactic: "Use a colouring argument: each domino covers one square of each colour.", sol: ["Every domino covers two adjacent squares, and adjacent squares on a chessboard colouring are always different colours.", "So a full tiling by 17 dominoes must cover exactly 17 black and 17 white squares.", "Only 16 black squares remain (18−2), which is fewer than the 17 needed.", "So no such tiling is possible."],
+    markScheme: [ { pts: 1, desc: "Identified that each domino covers one black and one white square." }, { pts: 1, desc: "Stated a tiling needs 17 of each colour." }, { pts: 2, desc: "Correctly used the remaining colour counts (16 black, 18 white) to conclude impossibility." } ] },
+  { id: "i12", section: "A", q: "A quadratic x² − 6x − 3 = 0 has roots p and q. Without solving for p and q individually, find p² + q².", answer: "42", tactic: "Use p+q and pq directly, without solving the quadratic.", sol: ["Comparing with x² − (sum)x + (product): p+q = 6 and pq = −3.", "p² + q² = (p+q)² − 2pq = 36 − 2(−3) = 36 + 6 = 42."],
+    markScheme: [ { pts: 1, desc: "Correctly identified p+q = 6 and pq = −3." }, { pts: 1, desc: "Correctly applied the identity to reach 42." } ] },
+  { id: "i13", section: "A", q: "Two positive numbers multiply to 49. Find the minimum possible value of their sum.", answer: "14 (at 7 and 7)", tactic: "Apply AM-GM to the two numbers.", sol: ["By AM-GM, a + b ≥ 2√(ab) = 2√49 = 14.", "Equality holds when a = b, and since a×a=49 gives a=7, this minimum is achieved at a=b=7."],
+    markScheme: [ { pts: 1, desc: "Correctly applied AM-GM to get the bound 14." }, { pts: 1, desc: "Correctly identified the equality case (7 and 7)." } ] },
+  { id: "i14", section: "A", q: "Prove that the sum of any three consecutive whole numbers is always a multiple of 3.", answer: "Proof.", tactic: "Introduce a letter for the smallest number.", sol: ["Let the three consecutive whole numbers be n, n+1, n+2.", "Their sum is n + (n+1) + (n+2) = 3n + 3 = 3(n+1).", "This is 3 times a whole number, so it is always a multiple of 3."],
+    markScheme: [ { pts: 1, desc: "Defined the three consecutive numbers correctly." }, { pts: 1, desc: "Correctly simplified the sum to 3(n+1)." } ] },
+  { id: "i15", section: "B", q: "Find all pairs of positive whole numbers (x, y) satisfying 4x + 3y = 27.", answer: "(6,1) and (3,5)", tactic: "Isolate one variable and test systematically.", sol: ["Isolate x: x = (27 − 3y)/4. Since x must be positive, 3y < 27, so y ≤ 8 (y=9 gives x=0, not positive).", "Test y = 1 to 8: only y=1 (24/4=6) and y=5 (12/4=3) give whole numbers.", "The solutions are (x,y) = (6,1) and (3,5)."],
+    markScheme: [ { pts: 1, desc: "Isolated x correctly and found the upper bound for y." }, { pts: 2, desc: "Systematically tested and correctly found both valid pairs." }, { pts: 1, desc: "Correctly excluded y=9 (giving x=0, not positive)." } ] },
+  { id: "i16", section: "A", q: "A cyclic quadrilateral has opposite angles 105° and (2x+15)°. Find x.", answer: "30", tactic: "Use the cyclic quadrilateral angle fact: opposite angles sum to 180°.", sol: ["Opposite angles in a cyclic quadrilateral always sum to 180°.", "105 + (2x+15) = 180, so 2x + 120 = 180, giving 2x = 60.", "x = 30."],
+    markScheme: [ { pts: 1, desc: "Used the correct cyclic quadrilateral fact." }, { pts: 1, desc: "Solved correctly for x = 30." } ] },
+  { id: "i17", section: "A", q: "A function satisfies f(x+1) = f(x) + 3 for all x, and f(0) = 2. Find f(10).", answer: "32", tactic: "Build up a general formula from the rule.", sol: ["Each step of +1 in the input adds 3 to the output, so f(n) = f(0) + 3n = 2 + 3n.", "f(10) = 2 + 3(10) = 32."],
+    markScheme: [ { pts: 1, desc: "Correctly derived the general formula f(n) = 2 + 3n." }, { pts: 1, desc: "Computed f(10) = 32 correctly." } ] },
+  { id: "i18", section: "A", q: "Prove that the product of two consecutive even numbers is always divisible by 8.", answer: "Proof.", tactic: "Introduce a letter and factorise.", sol: ["Let the two consecutive even numbers be 2n and 2n+2.", "Their product is 2n(2n+2) = 4n(n+1).", "n(n+1) is a product of two consecutive whole numbers, so one of them is always even, meaning n(n+1) = 2m for some whole number m.", "So the product is 4 × 2m = 8m, a multiple of 8."],
+    markScheme: [ { pts: 1, desc: "Defined the two consecutive even numbers correctly." }, { pts: 1, desc: "Correctly factorised the product to 4n(n+1)." }, { pts: 2, desc: "Correctly argued n(n+1) is always even and concluded divisibility by 8." } ] },
+  { id: "i19", section: "A", q: "In a group of 13 people, prove that at least two people share a birth month.", answer: "Proof — always true.", tactic: "Apply the pigeonhole principle.", sol: ["There are 12 possible birth months (holes) and 13 people (pigeons).", "If every month held at most 1 person, at most 12 people could be placed in total.", "But there are 13 people, more than 12, so at least one month must contain 2 or more people."],
+    markScheme: [ { pts: 1, desc: "Identified the 12 months as the holes." }, { pts: 1, desc: "Applied the pigeonhole principle correctly." } ] },
+  { id: "i20", section: "B", q: "Three different positive whole numbers have a sum of 21. What is the SMALLEST that the largest of them could possibly be?", answer: "8", tactic: "Push to extremes: make the numbers as close together as possible.", sol: ["To minimise the largest number, make all three numbers as close together as possible.", "21 ÷ 3 = 7 exactly, and the three closest different whole numbers are 6, 7, 8, which sum to exactly 21.", "Could the largest be 7 or less? Then all three are different and at most 7, so the biggest possible sum is 5+6+7=18, less than 21 — impossible.", "So the largest cannot be 7 or less, but 8 works. The smallest possible value of the largest number is 8."],
+    markScheme: [ { pts: 1, desc: "Stated the strategy of making the numbers as close together as possible." }, { pts: 1, desc: "Found 6,7,8 summing to exactly 21." }, { pts: 2, desc: "Showed the largest being 7 or less is impossible." } ] },
+  { id: "i21", section: "B", q: "Prove that 2 + 4 + 6 + ... + 2n = n(n+1) for every positive whole number n, using induction.", answer: "Proof (by induction).", tactic: "Use induction.", sol: ["BASE CASE (n=1): LHS = 2. RHS = 1(2) = 2. They match.", "INDUCTIVE STEP: assume 2+4+...+2k = k(k+1). Add 2(k+1) to both sides: k(k+1) + 2(k+1) = (k+1)(k+2), matching the formula at n=k+1.", "The base case holds and each true case forces the next, so the formula holds for every positive whole number n."],
+    markScheme: [ { pts: 1, desc: "Correctly verified the base case." }, { pts: 2, desc: "Correctly carried out the inductive step." }, { pts: 1, desc: "Concluded the induction correctly." } ] },
+  { id: "i22", section: "A", q: "Solve the inequality (x−2)(x+5) ≥ 0, stating the boundary values.", answer: "x ≤ −5 or x ≥ 2", tactic: "Find the roots, then test the sign in each region.", sol: ["The expression is zero at x=2 and x=−5 — these are the boundary values.", "Since the coefficient of x² is positive, the expression is positive OUTSIDE the roots and negative between them.", "So (x−2)(x+5) ≥ 0 for x ≤ −5 or x ≥ 2, including the boundary values themselves (since the inequality is ≥, not >)."],
+    markScheme: [ { pts: 1, desc: "Correctly found both roots (boundary values)." }, { pts: 2, desc: "Correctly determined the sign pattern and the solution regions." }, { pts: 1, desc: "Correctly included the boundary values (≥, not >)." } ] },
+  { id: "i23", section: "B", q: "A rectangle has a perimeter of 40 cm. Using AM-GM, find the maximum possible area, and state the shape achieving it.", answer: "100 cm² (a square, 10cm × 10cm)", tactic: "Use the perimeter to fix the sum of length and width, then apply AM-GM.", sol: ["Perimeter 40 means 2(l+w)=40, so l+w=20.", "By AM-GM, l+w ≥ 2√(lw), so 20 ≥ 2√(lw), giving √(lw) ≤ 10, so lw ≤ 100.", "Equality (the maximum) holds when l = w, i.e. l=w=10 — a square."],
+    markScheme: [ { pts: 1, desc: "Correctly found l+w=20 from the perimeter." }, { pts: 2, desc: "Correctly applied AM-GM to bound the area at 100." }, { pts: 1, desc: "Correctly identified the square (10×10) as the equality case." } ] },
+  { id: "i24", section: "B", q: "A 5×5 grid of lamps are all OFF. Each move toggles (flips) exactly one lamp. After 13 moves, could all 25 lamps be back OFF?", answer: "No, it's impossible.", tactic: "Find an invariant: track the parity of the number of lamps that are ON.", sol: ["Each move toggles exactly one lamp, so the number of lamps that are ON changes by exactly 1 every move (up or down).", "Changing a count by 1 always flips its parity. Starting from 0 lamps ON (even), after an odd number of moves the count of ON lamps must be odd.", "13 is odd, so after 13 moves the number of ON lamps must be odd — it cannot be 0.", "All lamps OFF means 0 lamps ON, which is even, so this is impossible after 13 moves."],
+    markScheme: [ { pts: 1, desc: "Identified the count of ON lamps as the invariant to track." }, { pts: 1, desc: "Explained that each move changes this count by exactly 1." }, { pts: 1, desc: "Linked the odd number of moves (13) to the parity of the final count." }, { pts: 1, desc: "Concluded correctly that 0 (even) is impossible after 13 (odd) moves." } ] },
+  { id: "i25", section: "B", q: "A function satisfies f(2x+1) = 2f(x) + 3 for all x, and f(1) = 5. Find f(7).", answer: "29", tactic: "Apply the rule twice, building up from the given value.", sol: ["To find f(3), set 2x+1=3, so x=1: f(3) = 2f(1) + 3 = 2(5) + 3 = 13.", "To find f(7), set 2x+1=7, so x=3: f(7) = 2f(3) + 3 = 2(13) + 3 = 29."],
+    markScheme: [ { pts: 1, desc: "Correctly identified which x-value to substitute for each step." }, { pts: 1, desc: "Correctly found f(3) = 13." }, { pts: 1, desc: "Correctly found f(7) = 29." } ] },
+  { id: "i26", section: "A", q: "How many different 3-digit codes can be formed using digits 1-9 (repeats allowed), such that the code is even (its last digit is even)?", answer: "324", tactic: "Count in order, choosing the constrained position first.", sol: ["The last digit must be even: 2, 4, 6, or 8 — 4 choices.", "The first and second digits can be any of the 9 digits, independently, since repeats are allowed: 9 choices each.", "Total: 9 × 9 × 4 = 324."],
+    markScheme: [ { pts: 1, desc: "Correctly identified 4 choices for the constrained last digit." }, { pts: 1, desc: "Correctly multiplied by 9 choices for each of the other two digits." } ] },
+  { id: "i27", section: "A", q: "A quadratic 2x² − 8x + 3 = 0 has roots p and q. Find p² + q².", answer: "13", tactic: "Use p+q = −b/a and pq = c/a directly.", sol: ["For ax²+bx+c=0: p+q = −b/a = 8/2 = 4, and pq = c/a = 3/2.", "p² + q² = (p+q)² − 2pq = 16 − 3 = 13."],
+    markScheme: [ { pts: 1, desc: "Correctly found p+q = 4 and pq = 3/2 from the coefficients." }, { pts: 1, desc: "Correctly applied the identity to reach 13." } ] },
+  { id: "i28", section: "B", q: "Find the remainder when 3¹⁰⁰ is divided by 7.", answer: "4", tactic: "Find the repeating cycle of powers modulo 7.", sol: ["Powers of 3 mod 7 cycle: 3¹≡3, 3²≡2, 3³≡6, 3⁴≡4, 3⁵≡5, 3⁶≡1, then the cycle repeats — a cycle of length 6.", "100 = 16×6 + 4, so 3¹⁰⁰ sits at position 4 of the cycle.", "Position 4 in the cycle is 4, so the remainder is 4."],
+    markScheme: [ { pts: 1, desc: "Found the repeating cycle of powers of 3 mod 7 (length 6)." }, { pts: 1, desc: "Correctly used 100 mod 6 to find the position in the cycle." }, { pts: 1, desc: "Concluded the correct remainder (4)." } ] },
+  { id: "i29", section: "B", q: "Four different positive whole numbers multiply to 24. Find the combination that minimises their sum.", answer: "1, 2, 3, 4 (sum 10)", tactic: "Search systematically for sets of 4 distinct factors.", sol: ["24 = 2³ × 3. To use 4 DIFFERENT positive whole number factors multiplying to 24, try the smallest possible factors first: 1, 2, 3, 4 multiply to 1×2×3×4=24 exactly.", "Any other set of 4 distinct positive whole numbers multiplying to 24 would need to reuse a factor or include a larger gap, which only increases the sum.", "So the minimising combination is 1, 2, 3, 4, with sum 1+2+3+4=10."],
+    markScheme: [ { pts: 2, desc: "Correctly found the factor set 1,2,3,4 multiplying to 24." }, { pts: 1, desc: "Checked no other distinct 4-factor set achieves a smaller sum." }, { pts: 1, desc: "Stated the correct minimum sum (10)." } ] },
+  { id: "i30", section: "A", q: "Prove that if x is a positive whole number and x² is even, then x must be even.", answer: "Proof.", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["Suppose, for contradiction, that x² is even but x is ODD.", "Since x is odd, write x = 2k+1 for some whole number k. Then x² = 4k²+4k+1 = 2(2k²+2k)+1, which is ODD.", "This contradicts the assumption that x² is even.", "So the assumption (x odd) must be false — whenever x² is even, x itself must be even."],
+    markScheme: [ { pts: 1, desc: "Explicitly assumed the opposite (x odd)." }, { pts: 2, desc: "Correctly expanded (2k+1)² and showed it is odd." }, { pts: 1, desc: "Identified the contradiction and concluded correctly." } ] },
+];
 export const INTERMEDIATE_RARITY = JUNIOR_RARITY;
 // Only commons + uncommons get a class (class only matters for adventure party composition,
 // which doesn't exist yet for Gifford) — same rule as JUNIOR_CARD_CLASS/PRIMARY_CARD_CLASS.
@@ -20044,7 +20954,653 @@ export const INTERMEDIATE_CARDS = [
   { id: "gf_pip", name: "Pip", emoji: "👁️", r: "common", s: [2, 3, 2, 2, 3], bv: 13, set: "gifford", flavor: "One of hundreds. Given a face on purpose." },
   { id: "gf_adavoss", name: "Second Examiner Ada Voss", emoji: "🕯️", r: "common", s: [4, 1, 3, 2, 1], bv: 12, set: "gifford", flavor: "Her hands are not quite steady, and she has stopped writing." },
 ];
-export const INTERMEDIATE_ACADEMY = [];
+export const INTERMEDIATE_ACADEMY = [
+  {
+    id: "gm1", title: "Writing a complete solution", teacher: "gf_tambrindle", rarity: "common", mins: 14,
+    intro: "GCSE and Olympiad problems reward the same thing: a reader who can follow every step without guessing. This module recaps STATE-WORK-CONCLUDE for straightforward problems, then introduces CLEAR (Comprehend, Link the facts, Explain the route, Apply it carefully, Review and conclude) for harder multi-step work.",
+    steps: [
+      { kind: "teach", heading: "Choosing the right format", body: [
+        "A short calculation only needs STATE-WORK-CONCLUDE: say what's known and wanted, show the working, conclude clearly.",
+        "A genuinely multi-step problem — several connected ideas, a proof, or a case split — benefits from CLEAR: Comprehend the problem fully, Link it to a known method, Explain your route before calculating, Apply the method carefully, Review the result against every condition.",
+        "Choose the lightest format that makes the reasoning visible. Forcing CLEAR onto a one-line calculation just pads it with empty structure." ] },
+      { kind: "example", problem: "A rectangle's length is 3 cm more than its width. Its area is 40 cm². Find both dimensions.",
+        working: [
+          "STATE: Let the width be w cm, so the length is w + 3 cm. The area is w(w+3) = 40.",
+          "WORK: Expanding: w² + 3w = 40, so w² + 3w − 40 = 0.",
+          "WORK: Factorise: two numbers multiplying to −40 and adding to 3 are 8 and −5, so (w+8)(w−5) = 0, giving w = −8 or w = 5.",
+          "WORK: Width must be positive, so w = 5.",
+          "CONCLUDE: The width is 5 cm and the length is 8 cm. Check: 5 × 8 = 40 ✓" ],
+        answer: "Width 5 cm, length 8 cm" },
+      { kind: "example", problem: "A ladder 10 m long leans against a wall with its foot 6 m from the wall. The foot is then pulled out a further 2 m. By how much does the top of the ladder slide down? Use CLEAR.",
+        working: [
+          "COMPREHEND: The ladder length (10 m) is fixed. The foot moves from 6 m to 8 m from the wall. I want the difference between the two heights the ladder reaches up the wall.",
+          "LINK: The ladder, wall and ground form a right-angled triangle, so Pythagoras' theorem connects the base distance and the height for each position.",
+          "EXPLAIN: Find the height for base = 6, then for base = 8, using height = √(10² − base²), then subtract.",
+          "APPLY: Height 1 = √(100 − 36) = √64 = 8. Height 2 = √(100 − 64) = √36 = 6. The top slides down by 8 − 6 = 2 m.",
+          "REVIEW: Check both triangles: 6² + 8² = 36 + 64 = 100 = 10² ✓, and 8² + 6² = 64 + 36 = 100 = 10² ✓." ],
+        answer: "2 m" },
+      { kind: "choose", problem: "Which format best suits the question: 'What is 15% of 60?'",
+        prompt: "Pick the lightest suitable format.",
+        options: [
+          "Full CLEAR, with all five stages written out.",
+          "Simple: Think, Work, Answer.",
+          "State-Work-Conclude with a full justification of the percentage rule.",
+          "It needs no working at all." ],
+        correctIndex: 1,
+        explain: "There is no multi-step reasoning or case split here — a direct calculation deserves a direct, light format. Forcing CLEAR onto it would pad a trivial calculation with empty structure." },
+      { kind: "write", problem: "A right-angled triangle has legs of length x and x+7, and hypotenuse 13. Find x, using CLEAR.",
+        prompt: "Comprehend the unknowns, link to Pythagoras, explain the plan, apply it carefully (reject any impossible length), then review. Compare with the model.",
+        model: [
+          "COMPREHEND: The two legs are x and x+7, and the hypotenuse is 13. I want the value of x.",
+          "LINK: Pythagoras' theorem connects the two legs and the hypotenuse: x² + (x+7)² = 13².",
+          "EXPLAIN: Expand the equation into a quadratic, solve it by factorising, and reject any negative length.",
+          "APPLY: x² + x² + 14x + 49 = 169, so 2x² + 14x − 120 = 0. Dividing by 2: x² + 7x − 60 = 0. Factorising: (x+12)(x−5) = 0, so x = −12 or x = 5. Reject the negative solution.",
+          "REVIEW: Check: 5² + 12² = 25 + 144 = 169 = 13² ✓." ],
+        answer: "x = 5",
+        markScheme: [
+          { pts: 1, desc: "Set up the correct equation x² + (x+7)² = 13²." },
+          { pts: 1, desc: "Expanded and simplified correctly to x² + 7x − 60 = 0." },
+          { pts: 1, desc: "Factorised correctly and rejected the negative solution." },
+          { pts: 1, desc: "Checked the answer against Pythagoras' theorem." } ] },
+    ],
+  },
+  {
+    id: "gm2", title: "Working backwards through functions", teacher: "gf_nettle", rarity: "common", mins: 13,
+    intro: "Working backwards through a chain of operations extends naturally to function notation: undoing f(f(x)) one application at a time, exactly as an earlier chain of arithmetic operations was undone.",
+    steps: [
+      { kind: "teach", heading: "Undoing a function chain", body: [
+        "If f(x) = ax + b, undoing f means isolating x: given f(x) = y, solve ax + b = y for x.",
+        "When a problem gives f(f(x)) = (some value), undo the OUTER application of f first (to find f(x)), then undo the inner application (to find x).",
+        "Writing 'let f(x) = y' as an intermediate step keeps the two undoings completely separate and easy to check." ] },
+      { kind: "example", problem: "A function is defined by f(x) = 2x + 1. Given that f(f(x)) = 19, find x.",
+        working: [
+          "STATE: f(x) = 2x + 1, and f(f(x)) = 19. I want x.",
+          "WORK: Let f(x) = y. Then f(y) = 19, so 2y + 1 = 19, giving y = 9.",
+          "WORK: Now f(x) = 9, so 2x + 1 = 9, giving x = 4.",
+          "CONCLUDE: x = 4. Check: f(4) = 9, f(9) = 19 ✓" ],
+        answer: "x = 4" },
+      { kind: "example", problem: "A function is defined by f(x) = 4x − 3. Given that f(f(x)) = 33, find x.",
+        working: [
+          "STATE: f(x) = 4x − 3, and f(f(x)) = 33. I want x.",
+          "WORK: Let f(x) = y. Then f(y) = 33, so 4y − 3 = 33, giving 4y = 36, so y = 9.",
+          "WORK: Now f(x) = 9, so 4x − 3 = 9, giving 4x = 12, so x = 3.",
+          "CONCLUDE: x = 3. Check: f(3) = 9, f(9) = 33 ✓" ],
+        answer: "x = 3" },
+      { kind: "choose", problem: "A function is defined by f(x) = 5x + 3, and f(f(x)) = 38. Which is the correct FIRST move?",
+        prompt: "Pick the correct first step.",
+        options: [
+          "Undo the outer application first: let f(x) = y, then solve 5y + 3 = 38 for y.",
+          "Divide 38 by 5 immediately.",
+          "Subtract 3 from x directly.",
+          "Multiply x by 5 straight away." ],
+        correctIndex: 0,
+        explain: "Just like a chain of operations, undo the OUTER layer first: name f(x) as y, solve for y, then use that to solve for x." },
+      { kind: "write", problem: "A function is defined by f(x) = 4x − 3. Given that f(f(x)) = 45, find x, writing a full solution.",
+        prompt: "Let f(x) = y, undo the outer application, then the inner one. Check your answer. Compare with the model.",
+        model: [
+          "STATE: f(x) = 4x − 3, and f(f(x)) = 45. I want x.",
+          "WORK: Let f(x) = y. Then f(y) = 45, so 4y − 3 = 45, giving 4y = 48, so y = 12.",
+          "WORK: Now f(x) = 12, so 4x − 3 = 12, giving 4x = 15, so x = 15/4.",
+          "CONCLUDE: x = 15/4. Check: f(15/4) = 4(15/4) − 3 = 15 − 3 = 12, and f(12) = 4(12) − 3 = 45 ✓" ],
+        answer: "x = 15/4",
+        markScheme: [
+          { pts: 1, desc: "Correctly let f(x) = y and formed 4y − 3 = 45." },
+          { pts: 1, desc: "Solved correctly for y = 12." },
+          { pts: 1, desc: "Solved correctly for x = 15/4." },
+          { pts: 1, desc: "Checked the answer using both applications of f." } ] },
+    ],
+  },
+  {
+    id: "gm3", title: "Systematic search for whole-number solutions", teacher: "gf_higgins", rarity: "common", mins: 15,
+    intro: "An equation with two unknowns usually has infinitely many real solutions, but only finitely many WHOLE NUMBER solutions. Finding every one uses the same ordered, systematic search as before, now guided by divisibility.",
+    steps: [
+      { kind: "teach", heading: "Isolate, then test in order", body: [
+        "Rearrange the equation to isolate one variable in terms of the other, then test values of the second variable in increasing order.",
+        "At each value, check whether the isolated expression gives a whole, positive number. Keep only the values that do.",
+        "Work out a sensible upper bound first (from where the expression would become negative), so the search is guaranteed to be complete." ] },
+      { kind: "example", problem: "Find all pairs of positive whole numbers (x, y) satisfying 3x + 5y = 34.",
+        working: [
+          "STATE: I want every pair of positive whole numbers with 3x + 5y = 34.",
+          "WORK: Isolate x: x = (34 − 5y)/3. Since x must be positive, 5y < 34, so y ≤ 6.",
+          "WORK: Test y = 1 to 6 in order: y=1 gives 29/3 (no); y=2 gives 24/3=8 (yes, x=8); y=3 gives 19/3 (no); y=4 gives 14/3 (no); y=5 gives 9/3=3 (yes, x=3); y=6 gives 4/3 (no).",
+          "CONCLUDE: The solutions are (x,y) = (8,2) and (3,5)." ],
+        answer: "(8,2) and (3,5)" },
+      { kind: "example", problem: "Find all pairs of positive whole numbers (x, y) satisfying 2x + 7y = 41.",
+        working: [
+          "STATE: I want every pair of positive whole numbers with 2x + 7y = 41.",
+          "WORK: Isolate x: x = (41 − 7y)/2. Since x must be positive, 7y < 41, so y ≤ 5.",
+          "WORK: Test y = 1 to 5 in order: y=1 gives 34/2=17 (yes, x=17); y=2 gives 27/2 (no); y=3 gives 20/2=10 (yes, x=10); y=4 gives 13/2 (no); y=5 gives 6/2=3 (yes, x=3).",
+          "CONCLUDE: The solutions are (x,y) = (17,1), (10,3) and (3,5)." ],
+        answer: "(17,1), (10,3), (3,5)" },
+      { kind: "choose", problem: "For 4x + 9y = 50 with x, y positive whole numbers, which range of y should be tested to guarantee every solution is found?",
+        prompt: "Pick the correctly reasoned bound.",
+        options: [
+          "y = 1 to 5, since 9y < 50 means y ≤ 5.",
+          "y = 1 to 50, to be safe.",
+          "y = 1 to 9, since 9 is the coefficient.",
+          "There is no way to bound y in advance." ],
+        correctIndex: 0,
+        explain: "Since x must stay positive, 9y must be less than 50, giving y ≤ 5 (as 9×6=54 would force x negative). Testing beyond this range wastes effort and testing less risks missing a solution." },
+      { kind: "write", problem: "Find all pairs of positive whole numbers (x, y) satisfying 5x + 3y = 43. Write a full systematic solution.",
+        prompt: "Isolate one variable, find a sensible upper bound, then test every value in order. Compare with the model.",
+        model: [
+          "STATE: I want every pair of positive whole numbers with 5x + 3y = 43.",
+          "WORK: Isolate x: x = (43 − 3y)/5. Since x must be positive, 3y < 43, so y ≤ 14.",
+          "WORK: Test y = 1 to 14 in order: only y=1 (40/5=8), y=6 (25/5=5) and y=11 (10/5=2) give whole numbers; every other value in the range fails.",
+          "CONCLUDE: The solutions are (x,y) = (8,1), (5,6) and (2,11)." ],
+        answer: "(8,1), (5,6), (2,11)",
+        markScheme: [
+          { pts: 1, desc: "Isolated x correctly and found the upper bound y ≤ 14." },
+          { pts: 2, desc: "Systematically tested the range and correctly identified all three valid pairs." },
+          { pts: 1, desc: "Stated the complete solution set clearly." } ] },
+    ],
+  },
+  {
+    id: "gm4", title: "The pigeonhole principle with remainders", teacher: "gf_tessa", rarity: "rare", mins: 14,
+    intro: "The pigeonhole principle extends naturally to remainder classes: if more integers are chosen than there are possible remainders on division by some number, two must share a remainder.",
+    steps: [
+      { kind: "teach", heading: "Remainders as holes", body: [
+        "Dividing by n always leaves one of exactly n possible remainders: 0, 1, 2, ..., n−1. Think of these n remainders as n 'holes'.",
+        "If more than n integers are chosen (more pigeons than holes), the pigeonhole principle guarantees two of them share the same remainder.",
+        "If two integers a and b leave the same remainder on division by n, then a − b is exactly divisible by n, since the remainders cancel." ] },
+      { kind: "example", problem: "Prove that among any 6 whole numbers, two must have the same remainder when divided by 5.",
+        working: [
+          "STATE: 6 whole numbers (pigeons); 5 is the divisor, giving 5 possible remainders 0,1,2,3,4 (holes). I want to show two share a remainder.",
+          "WORK: If every one of the 5 remainder classes held at most 1 of the 6 numbers, that would place at most 5 numbers in total.",
+          "WORK: But there are 6 numbers, more than 5.",
+          "CONCLUDE: So at least one remainder class must hold 2 or more numbers — two of the six numbers share the same remainder mod 5." ],
+        answer: "Proof — always true." },
+      { kind: "example", problem: "Prove that among any 3 whole numbers, two must have a sum that is even.",
+        working: [
+          "STATE: 3 whole numbers (pigeons); each is either odd or even, giving 2 possible parities (holes). I want to show two of them sum to an even number.",
+          "WORK: With 3 numbers and only 2 possible parities, the pigeonhole principle forces two of the numbers to share the same parity.",
+          "WORK: Two numbers of the SAME parity always sum to an even number: odd+odd=even, and even+even=even.",
+          "CONCLUDE: So two of the three numbers must have an even sum." ],
+        answer: "Proof — always true." },
+      { kind: "choose", problem: "A school has 400 students. Which reasoning correctly proves at least two share a birthday (ignoring leap years, 365 days)?",
+        prompt: "Pick the correctly reasoned pigeonhole argument.",
+        options: [
+          "400 is a big number, so it's obviously true.",
+          "There are 365 possible birthdays (holes) and 400 students (pigeons); since 400 > 365, at least one birthday must be shared by two or more students.",
+          "Each student has a 1-in-365 chance, so it's likely but not certain.",
+          "It depends on which year it is." ],
+        correctIndex: 1,
+        explain: "This is a direct pigeonhole argument: more pigeons (400 students) than holes (365 possible birthdays) forces a repeat, with total certainty, not just likelihood." },
+      { kind: "write", problem: "Prove that among any 5 whole numbers, two must have a difference that is a multiple of 4.",
+        prompt: "Name the pigeons and the holes (remainders mod 4) explicitly, then apply the principle. Write a full solution.",
+        model: [
+          "STATE: 5 whole numbers (pigeons); dividing by 4 gives 4 possible remainders 0,1,2,3 (holes). I want to show two numbers have a difference that is a multiple of 4.",
+          "WORK: If every remainder class held at most 1 number, at most 4 numbers could be placed in total.",
+          "WORK: But there are 5 numbers, more than 4, so by the pigeonhole principle two numbers must share the same remainder mod 4.",
+          "CONCLUDE: If two numbers a and b leave the same remainder mod 4, then a − b is exactly divisible by 4 (the remainders cancel), so their difference is a multiple of 4." ],
+        answer: "Proof — always true.",
+        markScheme: [
+          { pts: 1, desc: "Identified the 4 remainder classes mod 4 as the holes." },
+          { pts: 1, desc: "Applied the pigeonhole principle with 5 numbers and 4 holes." },
+          { pts: 2, desc: "Correctly explained why equal remainders force a difference divisible by 4." } ] },
+    ],
+  },
+  {
+    id: "gm5", title: "Invariants in algebraic rules", teacher: "gf_kade", rarity: "rare", mins: 14,
+    intro: "An earlier idea — a quantity that stays fixed no matter what happens — extends to a RULE applied repeatedly to a number. Checking what the rule forces about remainder or parity can prove a target value can never be reached, without ever running the rule step by step.",
+    steps: [
+      { kind: "teach", heading: "What does the rule force every time?", body: [
+        "For a rule like x → 2x − 3, ask: whatever whole number x is, what can be said for certain about the OUTPUT?",
+        "Here, 2x is always even (for whole number x), so 2x − 3 is always odd, regardless of whether x itself was odd or even.",
+        "If every output of a rule is forced into some fixed remainder class, and the target value is NOT in that class, the target can never be produced by the rule." ] },
+      { kind: "example", problem: "A number is transformed repeatedly by the rule x → 2x − 3, starting from x = 5. Could the value 100 ever appear in the sequence, after the rule has been applied at least once?",
+        working: [
+          "STATE: The rule x → 2x − 3 is applied repeatedly from x = 5. I want to know if 100 can appear after at least one application.",
+          "WORK: For ANY whole number x, 2x is always even, so 2x − 3 is always odd — this holds no matter what x's own parity was.",
+          "WORK: So every output of the rule, after any number of applications, must be odd.",
+          "CONCLUDE: 100 is even, so it can never be produced by the rule. (The starting value 5 is not 100 either, so 100 never appears at all.)" ],
+        answer: "No, it's impossible." },
+      { kind: "example", problem: "A number is transformed repeatedly by the rule x → 4x − 1, starting from x = 3. Could the value 100 ever appear, after the rule has been applied at least once?",
+        working: [
+          "STATE: The rule x → 4x − 1 is applied repeatedly from x = 3. I want to know if 100 can appear after at least one application.",
+          "WORK: For ANY whole number x, 4x is always a multiple of 4, so 4x − 1 always leaves remainder 3 when divided by 4.",
+          "WORK: So every output of the rule, after any number of applications, leaves remainder 3 on division by 4.",
+          "WORK: 100 ÷ 4 = 25 exactly, remainder 0 — not remainder 3.",
+          "CONCLUDE: 100 can never appear after the rule is applied." ],
+        answer: "No, it's impossible." },
+      { kind: "choose", problem: "A number is transformed by the rule x → 3x + 6, starting from x = 2. Which fact about every output is always true?",
+        prompt: "Pick the correctly reasoned invariant.",
+        options: [
+          "Every output is a multiple of 3, since 3x + 6 = 3(x+2) is always 3 times a whole number.",
+          "Every output is odd.",
+          "Every output is a multiple of 2.",
+          "No fact can be determined without knowing x exactly." ],
+        correctIndex: 0,
+        explain: "3x + 6 factorises as 3(x+2), which is always 3 times a whole number, so every output is a multiple of 3 regardless of the input." },
+      { kind: "write", problem: "A number is transformed repeatedly by the rule x → 6x + 2, starting from x = 1. Could the value 100 ever appear, after the rule has been applied at least once? Write a full solution using an invariant.",
+        prompt: "Work out what remainder (mod 3) every output must leave, then compare with 100. Write it all out.",
+        model: [
+          "STATE: The rule x → 6x + 2 is applied repeatedly from x = 1. I want to know if 100 can appear after at least one application.",
+          "WORK: For ANY whole number x, 6x is always a multiple of 3 (since 6 = 3×2), so 6x + 2 always leaves remainder 2 when divided by 3.",
+          "WORK: So every output of the rule leaves remainder 2 on division by 3.",
+          "WORK: 100 ÷ 3 = 33 remainder 1, not remainder 2.",
+          "CONCLUDE: 100 can never appear after the rule is applied." ],
+        answer: "No, it's impossible.",
+        markScheme: [
+          { pts: 1, desc: "Identified remainder mod 3 as the invariant to track." },
+          { pts: 1, desc: "Correctly showed every output leaves remainder 2 mod 3." },
+          { pts: 1, desc: "Correctly computed 100's remainder mod 3 (1)." },
+          { pts: 1, desc: "Concluded correctly that 100 is unreachable." } ] },
+    ],
+  },
+  {
+    id: "gm6", title: "Colouring a coordinate grid", teacher: "gf_bramwell", rarity: "rare", mins: 14,
+    intro: "The chessboard-colouring idea extends to any coordinate grid: colouring point (x, y) by the parity of x + y turns a question about a path on the grid into a simple parity argument.",
+    steps: [
+      { kind: "teach", heading: "Colouring by x + y", body: [
+        "Colour every grid point (x, y) black if x + y is even, and white if x + y is odd — this is exactly a chessboard colouring extended across the whole coordinate grid.",
+        "Any single move changes x + y by some fixed amount, depending on the move's rule. If that amount is odd, the move always flips colour; if it is even, the move always preserves colour.",
+        "Working out what a single move does to the colour tells you, without checking any specific path, which points are ever reachable." ] },
+      { kind: "example", problem: "A grasshopper starts at (0,0) and each jump moves it either 1 unit right or 1 unit up. After 7 jumps, what colour is its point, using the x+y colouring?",
+        working: [
+          "STATE: The grid is coloured by parity of x+y; (0,0) has x+y=0, which is even (black). I want the colour after 7 jumps.",
+          "WORK: Moving 1 right (x→x+1) or 1 up (y→y+1) both increase x+y by exactly 1, so EVERY jump flips the colour, regardless of direction chosen.",
+          "WORK: After an odd number of jumps, the colour has flipped an odd number of times from the start.",
+          "CONCLUDE: Starting black, after 7 (odd) jumps the grasshopper is on a white point." ],
+        answer: "White" },
+      { kind: "example", problem: "A grasshopper starts at (0,0) and each jump moves it either 2 units right or 2 units up. Explain why the grasshopper can only ever land on black points (where x+y is even).",
+        working: [
+          "STATE: (0,0) has x+y=0 (black). Each jump moves 2 right or 2 up. I want to show every reachable point is black.",
+          "WORK: Moving 2 right or 2 up both increase x+y by exactly 2 — an EVEN change, which never flips parity.",
+          "WORK: Since every jump preserves the parity of x+y, and the starting parity is even (black), the parity stays even after any number of jumps.",
+          "CONCLUDE: The grasshopper can only ever land on black points." ],
+        answer: "Proof — always black." },
+      { kind: "choose", problem: "A grasshopper starts at (0,0) and each jump moves it either 3 units right or 3 units up. Which colours can it reach?",
+        prompt: "Pick the correctly reasoned answer.",
+        options: [
+          "Only black points, since 3 is odd but the start is black.",
+          "Only white points.",
+          "Both colours, since a jump of 3 (an odd change to x+y) flips the colour every time, so the colour alternates jump by jump.",
+          "It cannot be determined." ],
+        correctIndex: 2,
+        explain: "A jump of 3 changes x+y by an odd amount, flipping the colour every single jump — so after an even number of jumps the grasshopper is black, and after an odd number it is white. Both colours are reachable." },
+      { kind: "write", problem: "A grasshopper starts at (0,0) and each jump moves it either 1 unit right or 1 unit up. After 12 jumps, what colour must it be on? Write a full solution using the colouring argument.",
+        prompt: "Work out what one jump does to the colour, then apply that to 12 jumps. Compare with the model.",
+        model: [
+          "STATE: (0,0) has x+y=0 (black). Each jump moves 1 right or 1 up. I want the colour after 12 jumps.",
+          "WORK: Each jump increases x+y by exactly 1, an odd change, so every jump flips the colour.",
+          "WORK: After an even number of jumps, the colour has flipped an even number of times, returning to the starting colour.",
+          "CONCLUDE: 12 is even, so after 12 jumps the grasshopper is back on a black point." ],
+        answer: "Black",
+        markScheme: [
+          { pts: 1, desc: "Identified the starting colour correctly (black)." },
+          { pts: 1, desc: "Correctly explained that each jump flips the colour." },
+          { pts: 1, desc: "Used the parity of 12 (even) correctly." },
+          { pts: 1, desc: "Concluded correctly (black)." } ] },
+    ],
+  },
+  {
+    id: "gm7", title: "Fixed sum, maximum product", teacher: "gf_adelina", rarity: "rare", mins: 14,
+    intro: "When two positive numbers have a fixed sum, their product is not fixed — it changes depending on how the sum is split, and there is a single split that makes it largest. This module finds that maximum using completing the square, previewing a key inequality idea.",
+    steps: [
+      { kind: "teach", heading: "For a fixed sum, equal numbers maximise the product", body: [
+        "If two positive numbers add to a fixed total S, write them as x and S − x. Their product is x(S − x) = Sx − x².",
+        "Completing the square on this expression always reveals the same pattern: the product is largest when x = S/2, i.e. when the two numbers are EQUAL.",
+        "This is worth remembering as a general principle: for a fixed sum, the product is maximised when the numbers are as close together as possible — ideally equal." ] },
+      { kind: "example", problem: "Two positive numbers have a sum of 20. Find the maximum possible value of their product.",
+        working: [
+          "STATE: Two positive numbers sum to 20. Write them as x and 20 − x. I want the maximum of their product.",
+          "WORK: Product = x(20 − x) = 20x − x².",
+          "WORK: Complete the square: 20x − x² = −(x² − 20x) = −[(x−10)² − 100] = 100 − (x−10)².",
+          "WORK: Since (x−10)² ≥ 0 always, the product is at most 100, with equality when x = 10.",
+          "CONCLUDE: The maximum product is 100, achieved when both numbers equal 10." ],
+        answer: "100 (at 10 and 10)" },
+      { kind: "example", problem: "Two positive numbers have a sum of 14. Find the maximum possible value of their product.",
+        working: [
+          "STATE: Two positive numbers sum to 14. Write them as x and 14 − x. I want the maximum of their product.",
+          "WORK: Product = x(14 − x) = 14x − x².",
+          "WORK: Complete the square: 14x − x² = −(x² − 14x) = −[(x−7)² − 49] = 49 − (x−7)².",
+          "WORK: Since (x−7)² ≥ 0 always, the product is at most 49, with equality when x = 7.",
+          "CONCLUDE: The maximum product is 49, achieved when both numbers equal 7." ],
+        answer: "49 (at 7 and 7)" },
+      { kind: "choose", problem: "Find the minimum value of x² − 6x + 11.",
+        prompt: "Pick the correctly completed square and minimum.",
+        options: [
+          "(x − 3)² + 2, minimum value 2 at x = 3.",
+          "(x − 6)² + 11, minimum value 11.",
+          "(x − 3)² + 11, minimum value 11 at x = 3.",
+          "There is no minimum." ],
+        correctIndex: 0,
+        explain: "x² − 6x + 11 = (x−3)² − 9 + 11 = (x−3)² + 2. Since (x−3)² ≥ 0, the minimum value is 2, at x = 3." },
+      { kind: "write", problem: "The sum of two positive numbers is 30. Prove that their product is at most 225, and state when equality holds. Write a full solution.",
+        prompt: "Write the numbers as x and 30−x, complete the square on the product, and identify the equality case. Compare with the model.",
+        model: [
+          "STATE: Two positive numbers sum to 30. Write them as x and 30 − x. I want to show their product is at most 225.",
+          "WORK: Product = x(30 − x) = 30x − x².",
+          "WORK: Complete the square: 30x − x² = −(x² − 30x) = −[(x−15)² − 225] = 225 − (x−15)².",
+          "CONCLUDE: Since (x−15)² ≥ 0 always, the product is 225 − (x−15)² ≤ 225, with equality exactly when x = 15, i.e. when both numbers equal 15." ],
+        answer: "Maximum product 225, at x = 15 and 15",
+        markScheme: [
+          { pts: 1, desc: "Wrote the numbers as x and 30 − x and formed the product expression." },
+          { pts: 2, desc: "Correctly completed the square to reach 225 − (x−15)²." },
+          { pts: 1, desc: "Correctly identified the equality case (x = 15) and concluded the maximum is 225." } ] },
+    ],
+  },
+  {
+    id: "gm8", title: "The AM-GM inequality", teacher: "gf_thorncastle", rarity: "epic", mins: 16,
+    intro: "The 'equal numbers maximise the product' idea from the last module is a special case of a named, provable inequality: the Arithmetic Mean-Geometric Mean (AM-GM) inequality. This module proves it for two numbers and puts it to work minimising an expression.",
+    steps: [
+      { kind: "teach", heading: "Proving a+b ≥ 2√(ab)", body: [
+        "For any two positive numbers a and b, the AM-GM inequality states a + b ≥ 2√(ab), with equality exactly when a = b.",
+        "The proof starts from a fact that is always true: a square can never be negative, so (√a − √b)² ≥ 0 for any non-negative a, b.",
+        "Expanding: a − 2√a√b + b ≥ 0, which rearranges to a + b ≥ 2√(ab) — the inequality falls straight out of a squared quantity being non-negative." ] },
+      { kind: "example", problem: "Prove that for any two positive numbers a and b, a + b ≥ 2√(ab), stating when equality holds.",
+        working: [
+          "STATE: I want to prove a + b ≥ 2√(ab) for positive a, b, and identify the equality case.",
+          "WORK: Start from a fact that is always true: (√a − √b)² ≥ 0, since a square can never be negative.",
+          "WORK: Expand: a − 2√a√b + b ≥ 0, i.e. a + b − 2√(ab) ≥ 0.",
+          "WORK: Rearranging gives a + b ≥ 2√(ab).",
+          "CONCLUDE: The inequality holds for all positive a, b. Equality holds exactly when (√a − √b)² = 0, i.e. when a = b." ],
+        answer: "Proof; equality when a = b." },
+      { kind: "example", problem: "Using AM-GM, find the minimum value of x + 9/x for x > 0, and the value of x where it occurs.",
+        working: [
+          "STATE: I want the minimum of x + 9/x for x > 0, using AM-GM with a = x and b = 9/x.",
+          "WORK: By AM-GM, x + 9/x ≥ 2√(x × 9/x) = 2√9 = 6.",
+          "WORK: Equality holds when x = 9/x, i.e. x² = 9, giving x = 3 (taking the positive root, since x > 0).",
+          "CONCLUDE: The minimum value is 6, occurring at x = 3." ],
+        answer: "Minimum 6, at x = 3" },
+      { kind: "choose", problem: "Using AM-GM on x + 16/x for x > 0, which application is correct?",
+        prompt: "Pick the correct use of AM-GM.",
+        options: [
+          "x + 16/x ≥ 2√(x × 16/x) = 2√16 = 8, equality when x² = 16, so x = 4.",
+          "x + 16/x ≥ 16, since 16 is the larger term.",
+          "x + 16/x ≥ 2 × 16 = 32.",
+          "AM-GM cannot be applied here because 16/x is a fraction." ],
+        correctIndex: 0,
+        explain: "The product x × 16/x = 16 (the x's cancel), so AM-GM gives a minimum of 2√16 = 8, with equality when the two terms are equal (x = 16/x, so x = 4)." },
+      { kind: "write", problem: "Using AM-GM, prove that for any positive number x, x + 1/x ≥ 2, and state when equality holds. Write a full solution.",
+        prompt: "Apply AM-GM with a = x and b = 1/x, then find the equality condition. Compare with the model.",
+        model: [
+          "STATE: I want to prove x + 1/x ≥ 2 for x > 0, using AM-GM with a = x, b = 1/x.",
+          "WORK: By AM-GM, x + 1/x ≥ 2√(x × 1/x) = 2√1 = 2.",
+          "WORK: Equality holds when x = 1/x, i.e. x² = 1, giving x = 1 (since x > 0).",
+          "CONCLUDE: x + 1/x ≥ 2 for all x > 0, with equality exactly when x = 1." ],
+        answer: "Proof; equality when x = 1.",
+        markScheme: [
+          { pts: 1, desc: "Correctly identified a = x, b = 1/x for AM-GM." },
+          { pts: 1, desc: "Correctly computed the product ab = 1 and the bound 2√1 = 2." },
+          { pts: 2, desc: "Correctly found the equality condition (x = 1) and stated the full conclusion." } ] },
+    ],
+  },
+  {
+    id: "gm9", title: "Functional equations", teacher: "gf_vane", rarity: "epic", mins: 15,
+    intro: "A functional equation gives a rule connecting f at different inputs, without stating a formula for f directly. This module shows how to build up specific values of f one step at a time, spotting the pattern along the way.",
+    steps: [
+      { kind: "teach", heading: "Build values step by step", body: [
+        "A functional equation like f(x+y) = f(x) + f(y) is a RULE, not a formula — it must be applied repeatedly, using known values to generate new ones.",
+        "Start from the given value (such as f(1)), and apply the rule to build up f(2), f(3), and so on, watching for a pattern.",
+        "Once a pattern is spotted, state it as a general formula, then verify it fits the original rule before relying on it." ] },
+      { kind: "example", problem: "A function satisfies f(x+y) = f(x) + f(y) for all x, y, and f(1) = 3. Find f(5).",
+        working: [
+          "STATE: f(x+y) = f(x) + f(y) for all x, y, and f(1) = 3. I want f(5).",
+          "WORK: f(2) = f(1+1) = f(1) + f(1) = 6. f(3) = f(2+1) = f(2) + f(1) = 6 + 3 = 9. f(4) = f(3+1) = 9 + 3 = 12. f(5) = f(4+1) = 12 + 3 = 15.",
+          "WORK: The pattern is f(n) = 3n, matching every value found so far.",
+          "CONCLUDE: f(5) = 15." ],
+        answer: "15" },
+      { kind: "example", problem: "A function satisfies f(2x) = f(x) + 4 for all x, and f(1) = 5. Find f(8).",
+        working: [
+          "STATE: f(2x) = f(x) + 4 for all x, and f(1) = 5. I want f(8).",
+          "WORK: f(2) = f(1) + 4 = 9. f(4) = f(2) + 4 = 13. f(8) = f(4) + 4 = 17.",
+          "CONCLUDE: f(8) = 17." ],
+        answer: "17" },
+      { kind: "choose", problem: "A function satisfies f(x+y) = f(x) + f(y), with f(1) = 2. Which value follows correctly?",
+        prompt: "Pick the correctly derived value.",
+        options: [
+          "f(3) = f(2) + f(1) = 4 + 2 = 6, since f(2) = f(1) + f(1) = 4.",
+          "f(3) = 3 × 2 + 1 = 7.",
+          "f(3) cannot be found without more information.",
+          "f(3) = f(1) × f(1) × f(1) = 8." ],
+        correctIndex: 0,
+        explain: "Build up step by step using only the given rule and f(1): f(2) = f(1)+f(1) = 4, then f(3) = f(2)+f(1) = 6." },
+      { kind: "write", problem: "A function satisfies f(x+y) = f(x) + f(y) for all x, y, and f(1) = 4. Find f(6), writing a full solution.",
+        prompt: "Build up f(2), f(3), ... step by step from f(1), spot the pattern, then state f(6). Compare with the model.",
+        model: [
+          "STATE: f(x+y) = f(x) + f(y), and f(1) = 4. I want f(6).",
+          "WORK: f(2) = f(1)+f(1) = 8. f(3) = f(2)+f(1) = 12. f(4) = f(3)+f(1) = 16. f(5) = f(4)+f(1) = 20. f(6) = f(5)+f(1) = 24.",
+          "WORK: The pattern is f(n) = 4n, matching every value found.",
+          "CONCLUDE: f(6) = 24." ],
+        answer: "24",
+        markScheme: [
+          { pts: 2, desc: "Correctly built up the values f(2) through f(6) step by step." },
+          { pts: 1, desc: "Spotted and stated the pattern f(n) = 4n." },
+          { pts: 1, desc: "Concluded correctly with f(6) = 24." } ] },
+    ],
+  },
+  {
+    id: "gm10", title: "Proof by induction", teacher: "gf_kell", rarity: "epic", mins: 16,
+    intro: "Proof by induction proves a statement for EVERY whole number at once, by checking it for the first case, then showing that whenever it holds for one case, it must hold for the next.",
+    steps: [
+      { kind: "teach", heading: "Base case, then the domino effect", body: [
+        "Induction has two parts. The BASE CASE checks the statement is true for the smallest value (usually n=1).",
+        "The INDUCTIVE STEP assumes the statement is true for some value n=k, and uses that assumption to prove it must also be true for n=k+1.",
+        "Together these two parts prove the statement for every whole number: the base case starts the chain, and the inductive step means each true case forces the next, like a row of dominoes." ] },
+      { kind: "example", problem: "Prove that 1 + 2 + 3 + ... + n = n(n+1)/2 for every positive whole number n.",
+        working: [
+          "STATE: I want to prove 1+2+...+n = n(n+1)/2 for every positive whole number n, using induction.",
+          "WORK: BASE CASE (n=1): LHS = 1. RHS = 1(2)/2 = 1. They match.",
+          "WORK: INDUCTIVE STEP: assume the formula holds for n=k, i.e. 1+2+...+k = k(k+1)/2. Add (k+1) to both sides: 1+2+...+k+(k+1) = k(k+1)/2 + (k+1).",
+          "WORK: Factorise the right side: k(k+1)/2 + (k+1) = (k+1)[k/2 + 1] = (k+1)(k+2)/2 — exactly the formula for n = k+1.",
+          "CONCLUDE: The base case holds, and each true case forces the next, so the formula holds for every positive whole number n." ],
+        answer: "Proof (by induction)." },
+      { kind: "example", problem: "Prove that 1 + 3 + 5 + ... + (2n−1) = n² for every positive whole number n (the sum of the first n odd numbers).",
+        working: [
+          "STATE: I want to prove the sum of the first n odd numbers equals n², using induction.",
+          "WORK: BASE CASE (n=1): LHS = 1. RHS = 1² = 1. They match.",
+          "WORK: INDUCTIVE STEP: assume true for n=k, i.e. 1+3+...+(2k−1) = k². Add the next odd number, 2(k+1)−1 = 2k+1, to both sides: 1+3+...+(2k−1)+(2k+1) = k² + 2k + 1.",
+          "WORK: The right side factorises as k² + 2k + 1 = (k+1)² — exactly the formula for n = k+1.",
+          "CONCLUDE: The base case holds, and each true case forces the next, so the formula holds for every positive whole number n." ],
+        answer: "Proof (by induction)." },
+      { kind: "choose", problem: "In an inductive step proving a sum formula, which is the CORRECT structure?",
+        prompt: "Pick the correct inductive-step reasoning.",
+        options: [
+          "Assume the formula is true for n=k, add the (k+1)th term to both sides, and show the result matches the formula at n=k+1.",
+          "Check the formula is true for n=1 and n=2, and assume that's enough.",
+          "Substitute a very large value of n and check it works.",
+          "Assume the formula is true for n=k+1, and work backwards to n=k." ],
+        correctIndex: 0,
+        explain: "The inductive step must assume the case n=k, then genuinely derive the n=k+1 case from it — not assume the later case, and not simply test values." },
+      { kind: "write", problem: "Prove that 2ⁿ > n for every positive whole number n, using induction. Write a full solution.",
+        prompt: "State the base case, then the inductive step (using that multiplying both sides of an inequality by a positive number preserves it). Compare with the model.",
+        model: [
+          "STATE: I want to prove 2ⁿ > n for every positive whole number n, using induction.",
+          "WORK: BASE CASE (n=1): 2¹ = 2 > 1. True.",
+          "WORK: INDUCTIVE STEP: assume 2^k > k for some positive whole number k. Multiplying both sides by 2 (a positive number, which preserves the inequality): 2^(k+1) = 2 × 2^k > 2k.",
+          "WORK: Since k ≥ 1, we have 2k ≥ k+1 (because 2k − (k+1) = k − 1 ≥ 0). So 2^(k+1) > 2k ≥ k+1, giving 2^(k+1) > k+1.",
+          "CONCLUDE: The base case holds, and each true case forces the next, so 2ⁿ > n for every positive whole number n." ],
+        answer: "Proof (by induction).",
+        markScheme: [
+          { pts: 1, desc: "Correctly verified the base case n=1." },
+          { pts: 1, desc: "Correctly assumed the case n=k and multiplied the inequality by 2." },
+          { pts: 2, desc: "Correctly linked 2k ≥ k+1 (for k≥1) to complete the inductive step." } ] },
+    ],
+  },
+  {
+    id: "gm11", title: "Number theory with algebra", teacher: "gf_halloway", rarity: "epic", mins: 16,
+    intro: "Writing numbers algebraically — an odd number as 2n+1, a general whole number in cases by remainder — turns a number-theory claim about EVERY number of a type into a single, checkable piece of algebra.",
+    steps: [
+      { kind: "teach", heading: "Represent the whole family with a letter", body: [
+        "To prove a fact about every odd number, write a general odd number as 2n+1 (for whole number n), and manipulate it algebraically.",
+        "To prove a fact using remainders (e.g. mod 3), split into cases based on the possible remainders, and show the fact holds in every case.",
+        "Look for a factorisation that reveals the required divisibility directly, such as (product of consecutive integers) × 2, which is always even." ] },
+      { kind: "example", problem: "Prove that the square of any odd number always leaves remainder 1 when divided by 8.",
+        working: [
+          "STATE: I want to prove that (2n+1)² leaves remainder 1 on division by 8, for any whole number n.",
+          "WORK: Expand: (2n+1)² = 4n² + 4n + 1 = 4n(n+1) + 1.",
+          "WORK: n(n+1) is a product of two consecutive whole numbers, so one of them is always even — meaning n(n+1) is always even, i.e. n(n+1) = 2m for some whole number m.",
+          "WORK: So 4n(n+1) = 4 × 2m = 8m, a multiple of 8.",
+          "CONCLUDE: (2n+1)² = 8m + 1, which leaves remainder 1 when divided by 8." ],
+        answer: "Proof." },
+      { kind: "example", problem: "Prove that the difference between the squares of any two consecutive odd numbers is always a multiple of 8.",
+        working: [
+          "STATE: Let the two consecutive odd numbers be 2n+1 and 2n+3. I want to show (2n+3)² − (2n+1)² is a multiple of 8.",
+          "WORK: Use the difference of two squares: (2n+3)² − (2n+1)² = [(2n+3)+(2n+1)] × [(2n+3)−(2n+1)] = (4n+4)(2).",
+          "WORK: This equals 8n + 8 = 8(n+1).",
+          "CONCLUDE: The difference is 8(n+1), which is 8 times a whole number, so it is always a multiple of 8." ],
+        answer: "Proof." },
+      { kind: "choose", problem: "Which case split correctly proves that n² ≡ 0 or 1 (mod 3) for every whole number n?",
+        prompt: "Pick the correctly structured case-based argument.",
+        options: [
+          "Split into n ≡ 0, 1, or 2 (mod 3), and square each: 0²≡0, 1²≡1, 2²≡4≡1 (mod 3) — so n² is always 0 or 1 (mod 3), never 2.",
+          "Only check n=1, 2, 3 and assume it always works.",
+          "Assume n² can be anything mod 3, so no proof is needed.",
+          "Split into n even or odd, which is enough to determine n mod 3." ],
+        correctIndex: 0,
+        explain: "A remainder-mod-3 claim needs all 3 remainder cases checked (0, 1, 2), not a parity split, which is a different classification entirely." },
+      { kind: "write", problem: "Prove that if a whole number n is not a multiple of 3, then n² leaves remainder 1 when divided by 3. Write a full solution.",
+        prompt: "Split into the two remaining cases (n ≡ 1 and n ≡ 2 mod 3) and check both. Compare with the model.",
+        model: [
+          "STATE: n is not a multiple of 3, so n leaves remainder 1 or 2 when divided by 3. I want to show n² leaves remainder 1.",
+          "WORK: Case n ≡ 1 (mod 3): write n = 3k+1. Then n² = 9k²+6k+1 = 3(3k²+2k)+1, which leaves remainder 1 (mod 3).",
+          "WORK: Case n ≡ 2 (mod 3): write n = 3k+2. Then n² = 9k²+12k+4 = 3(3k²+4k+1)+1, which also leaves remainder 1 (mod 3).",
+          "CONCLUDE: In both possible cases, n² leaves remainder 1 when divided by 3, so the claim holds for every n not a multiple of 3." ],
+        answer: "Proof.",
+        markScheme: [
+          { pts: 1, desc: "Correctly identified the two cases (n ≡ 1 and n ≡ 2 mod 3)." },
+          { pts: 2, desc: "Correctly expanded and simplified both cases to remainder 1." },
+          { pts: 1, desc: "Concluded clearly that both cases confirm the claim." } ] },
+    ],
+  },
+  {
+    id: "gm12", title: "Two costly mistakes: division and boundaries", teacher: "gf_ashcombe", rarity: "epic", mins: 15,
+    intro: "Two specific errors cost more marks than any other in written algebra: dividing by an expression that might be zero, and dropping a boundary case in an inequality. This module builds the habit of catching both.",
+    steps: [
+      { kind: "teach", heading: "Never divide by something that could be zero", body: [
+        "Dividing both sides of an equation by an unknown expression silently assumes that expression is NOT zero — and if it could be zero, that case is lost entirely.",
+        "The safe method is to move everything to one side and factorise, rather than dividing: this keeps every solution, including zero.",
+        "The same care applies to inequalities: multiplying or dividing by a NEGATIVE number reverses the inequality's direction, and this is easy to forget under pressure." ] },
+      { kind: "example", problem: "Solve x² = 5x. A method divides both sides by x to get x = 5. What went wrong, and what is the FULL solution set?",
+        working: [
+          "STATE: The equation is x² = 5x. I want the complete solution set, and to explain the error in dividing by x.",
+          "WORK: Dividing by x assumes x is not zero — but x = 0 might genuinely be a solution, and dividing by it silently throws that solution away.",
+          "WORK: The safe method: move everything to one side, x² − 5x = 0, then factorise: x(x − 5) = 0.",
+          "CONCLUDE: This gives x = 0 or x = 5 — the full solution set. Dividing by x directly loses the solution x = 0." ],
+        answer: "x = 0 or x = 5" },
+      { kind: "example", problem: "Solve the inequality x² ≥ 9, being careful with the boundary.",
+        working: [
+          "STATE: I want every x satisfying x² ≥ 9.",
+          "WORK: x² ≥ 9 means x is at least as far from 0 as 3 or −3 are — this happens when x ≥ 3 OR x ≤ −3 (not just x ≥ 3, since squaring a negative number can also give a large result).",
+          "WORK: Check the boundary: x = 3 gives 9 ≥ 9 (true), and x = −3 gives 9 ≥ 9 (true), so both boundaries are included.",
+          "CONCLUDE: The solution is x ≤ −3 or x ≥ 3." ],
+        answer: "x ≤ −3 or x ≥ 3" },
+      { kind: "choose", problem: "A method solves −3x ≤ 12 by dividing both sides by −3, writing x ≤ −4. What is the error?",
+        prompt: "Pick the correct diagnosis and fix.",
+        options: [
+          "No error — x ≤ −4 is correct.",
+          "Dividing an inequality by a NEGATIVE number reverses its direction; the correct solution is x ≥ −4.",
+          "The error is arithmetic: −12 ÷ −3 = −4 is wrong.",
+          "The inequality sign should become an equals sign." ],
+        correctIndex: 1,
+        explain: "Dividing (or multiplying) both sides of an inequality by a negative number flips its direction. −3x ≤ 12 divided by −3 gives x ≥ −4, not x ≤ −4." },
+      { kind: "write", problem: "Solve x² = 9x, showing the FULL solution set (do not divide by x). Write a full solution.",
+        prompt: "Move everything to one side and factorise, rather than dividing by x. State both solutions. Compare with the model.",
+        model: [
+          "STATE: The equation is x² = 9x. I want the complete solution set, without dividing by x.",
+          "WORK: Move everything to one side: x² − 9x = 0.",
+          "WORK: Factorise: x(x − 9) = 0.",
+          "CONCLUDE: x = 0 or x = 9 — the full solution set, including the solution that dividing by x would have lost." ],
+        answer: "x = 0 or x = 9",
+        markScheme: [
+          { pts: 1, desc: "Avoided dividing by x and instead moved everything to one side." },
+          { pts: 1, desc: "Factorised correctly as x(x − 9) = 0." },
+          { pts: 2, desc: "Stated both solutions (x = 0 and x = 9), explicitly including the one dividing by x would lose." } ] },
+    ],
+  },
+  {
+    id: "gm13", title: "Symmetry between the roots of a quadratic", teacher: "gf_prewitt", rarity: "epic", mins: 15,
+    intro: "The two roots of a quadratic are connected to its coefficients directly, without ever solving for either root individually. This symmetry between the roots often answers a question faster than finding both roots explicitly.",
+    steps: [
+      { kind: "teach", heading: "Sum and product of roots, without solving", body: [
+        "For a quadratic ax² + bx + c = 0 with roots p and q, the roots satisfy p + q = −b/a and pq = c/a — this follows from comparing a(x−p)(x−q) with ax²+bx+c.",
+        "Many questions about p and q (like p²+q², or 1/p+1/q) can be answered using ONLY p+q and pq, without ever solving for p and q individually.",
+        "The key identities are p² + q² = (p+q)² − 2pq, and 1/p + 1/q = (p+q)/pq." ] },
+      { kind: "example", problem: "A quadratic x² − 7x + 10 = 0 has roots p and q. Without solving for p and q individually, find p² + q².",
+        working: [
+          "STATE: x² − 7x + 10 = 0 has roots p, q. Comparing with x² − (sum)x + (product), p+q = 7 and pq = 10. I want p² + q².",
+          "WORK: Use the identity p² + q² = (p+q)² − 2pq.",
+          "WORK: Substitute: p² + q² = 7² − 2(10) = 49 − 20 = 29.",
+          "CONCLUDE: p² + q² = 29." ],
+        answer: "29" },
+      { kind: "example", problem: "A quadratic x² − 4x − 5 = 0 has roots p and q. Without solving for p and q individually, find p² + q².",
+        working: [
+          "STATE: x² − 4x − 5 = 0 has roots p, q, so p+q = 4 and pq = −5. I want p² + q².",
+          "WORK: Use the identity p² + q² = (p+q)² − 2pq.",
+          "WORK: Substitute: p² + q² = 4² − 2(−5) = 16 + 10 = 26.",
+          "CONCLUDE: p² + q² = 26. (Check by factorising: x²−4x−5=(x−5)(x+1), roots 5 and −1, and 5²+(−1)²=25+1=26 ✓)" ],
+        answer: "26" },
+      { kind: "choose", problem: "For x² − 7x + 10 = 0 with roots p, q, find 1/p + 1/q.",
+        prompt: "Use the identity 1/p + 1/q = (p+q)/pq.",
+        options: [
+          "7/10.",
+          "10/7.",
+          "7 × 10 = 70.",
+          "It cannot be found without solving for p and q." ],
+        correctIndex: 0,
+        explain: "1/p + 1/q = (p+q)/pq = 7/10, using the sum and product directly (Check: the roots are 2 and 5, and 1/2+1/5 = 0.7 = 7/10 ✓)." },
+      { kind: "write", problem: "A quadratic x² − 9x + 8 = 0 has roots p and q. Without solving for p and q individually, find p² + q² and (p−q)². Write a full solution.",
+        prompt: "Use p+q, pq and the identities for p²+q² and (p−q)². Compare with the model.",
+        model: [
+          "STATE: x² − 9x + 8 = 0 has roots p, q, so p+q = 9 and pq = 8. I want p²+q² and (p−q)².",
+          "WORK: p² + q² = (p+q)² − 2pq = 81 − 16 = 65.",
+          "WORK: (p−q)² = (p+q)² − 4pq = 81 − 32 = 49.",
+          "CONCLUDE: p² + q² = 65, and (p−q)² = 49. (Check by factorising: x²−9x+8=(x−1)(x−8), roots 1 and 8: 1²+8²=1+64=65 ✓, and (1−8)²=49 ✓)" ],
+        answer: "p²+q² = 65, (p−q)² = 49",
+        markScheme: [
+          { pts: 1, desc: "Correctly identified p+q = 9 and pq = 8." },
+          { pts: 1, desc: "Correctly applied the identity for p²+q² (= 65)." },
+          { pts: 1, desc: "Correctly applied the identity for (p−q)² (= 49)." },
+          { pts: 1, desc: "Checked the results against the factorised roots." } ] },
+    ],
+  },
+  {
+    id: "gm14", title: "The Master Challenge", teacher: "gf_aldous", rarity: "legendary", mins: 18,
+    intro: "Every technique from earlier modules now combines in problems written at genuine Olympiad standard. This module shows a full synthesis solution, then sets two master problems requiring the same complete, checked reasoning.",
+    steps: [
+      { kind: "teach", heading: "Difference of two squares as a factorising tool", body: [
+        "An equation like x² − y² = N, with x and y positive whole numbers, factorises as (x−y)(x+y) = N.",
+        "Since x−y and x+y multiply to give N, every factor pair of N gives a candidate solution — solved by adding and subtracting the pair.",
+        "Not every factor pair works: x−y and x+y must have the same parity (since their sum, 2x, is always even), so only factor pairs where BOTH factors are the same parity give whole-number solutions." ] },
+      { kind: "example", problem: "Find all pairs of positive whole numbers (x, y) satisfying x² − y² = 15.",
+        working: [
+          "STATE: x² − y² = 15 factorises as (x−y)(x+y) = 15. I want every positive whole-number pair (x,y).",
+          "WORK: Since 15 is odd, every factor pair of 15 consists of two odd numbers (15 = 3 × 5 has no factor of 2), so parity is automatically satisfied.",
+          "WORK: The factor pairs of 15 (smaller × larger) are 1×15 and 3×5. For x−y=1, x+y=15: adding gives 2x=16, x=8, y=7. For x−y=3, x+y=5: adding gives 2x=8, x=4, y=1.",
+          "CONCLUDE: The solutions are (x,y) = (8,7) and (4,1). Check: 8²−7²=64−49=15 ✓, and 4²−1²=16−1=15 ✓." ],
+        answer: "(8,7) and (4,1)" },
+      { kind: "write", problem: "MASTER PROBLEM 1. Find all pairs of positive whole numbers (x, y) satisfying x² − y² = 45. Write a full justified solution.",
+        prompt: "Factorise using the difference of two squares, list every valid factor pair systematically, and solve each. Compare with the model.",
+        model: [
+          "STATE: x² − y² = 45 factorises as (x−y)(x+y) = 45. I want every positive whole-number pair (x,y).",
+          "WORK: 45 is odd, so every factor pair of 45 consists of two odd numbers, automatically satisfying the matching-parity requirement.",
+          "WORK: The factor pairs of 45 (smaller × larger) are 1×45, 3×15, 5×9.",
+          "WORK: For x−y=1, x+y=45: 2x=46, x=23, y=22. For x−y=3, x+y=15: 2x=18, x=9, y=6. For x−y=5, x+y=9: 2x=14, x=7, y=2.",
+          "CONCLUDE: The solutions are (23,22), (9,6) and (7,2). Check: 23²−22²=529−484=45 ✓; 9²−6²=81−36=45 ✓; 7²−2²=49−4=45 ✓." ],
+        answer: "(23,22), (9,6), (7,2)",
+        markScheme: [
+          { pts: 1, desc: "Correctly factorised x²−y²=45 as (x−y)(x+y)=45." },
+          { pts: 1, desc: "Correctly listed all three factor pairs of 45 systematically." },
+          { pts: 2, desc: "Correctly solved all three pairs for (x,y) and checked each." } ] },
+      { kind: "write", problem: "MASTER PROBLEM 2. Two positive whole numbers have a product of 36. Using AM-GM (or otherwise), find the pair that minimises their sum, and prove no smaller sum is possible. Write a full justified solution.",
+        prompt: "Apply AM-GM to the fixed product, find the equality case, and verify it is achievable with whole numbers. Compare with the model.",
+        model: [
+          "STATE: Two positive numbers a, b satisfy ab = 36. I want the pair minimising a+b, with proof no smaller sum is possible.",
+          "WORK: By AM-GM, a + b ≥ 2√(ab) = 2√36 = 12, with equality exactly when a = b.",
+          "WORK: Since ab = 36 is fixed, a+b can never be less than 12 for ANY positive a, b (not just whole numbers) — this is a genuine lower bound.",
+          "WORK: Equality needs a = b, and since a×a=36 gives a=6, both a and b equal 6, which are positive whole numbers, so this minimum is actually achievable.",
+          "CONCLUDE: The minimum sum is 12, achieved at (6,6), and AM-GM proves no smaller sum is possible for any positive a, b with ab=36." ],
+        answer: "Minimum sum 12, at (6,6)",
+        markScheme: [
+          { pts: 1, desc: "Correctly applied AM-GM to get a+b ≥ 2√36 = 12." },
+          { pts: 1, desc: "Correctly identified the equality condition (a=b)." },
+          { pts: 1, desc: "Verified a=b=6 are whole numbers, making the bound achievable." },
+          { pts: 1, desc: "Concluded clearly that 12 is the true minimum, with proof it cannot be beaten." } ] },
+    ],
+  },
+];
 export const INTERMEDIATE_NAMES_COMMON = ["Tam Brindle", "Nettle", "Corporal Higgins", "Marta the Grocer", "Jory Fenwick", "Ratchet", "Magistrate Colworth", "Pip", "Ada Voss"];
 export const INTERMEDIATE_NAMES_RARE = ["Tessa Brindle", "Inspector Kade", "Old Bramwell", "Lady Adelina Corvain", "Whistle"];
 export const INTERMEDIATE_NAMES_EPIC = ["Rooke", "Corvain", "Marrow", "Chancellor Prewitt", "Silas Vane", "Captain Ashcombe", "Professor Thorncastle", "Mother Halloway", "Grandmaster Kell"];

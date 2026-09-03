@@ -1,115 +1,6 @@
 import { applyIntermediateLessonRewrites } from "./intermediate-lessons-rewrite.js";
 
 export const INTERMEDIATE_LESSONS = {};
-INTERMEDIATE_LESSONS.surdsAndIndices = {
-  title: "Surds & Indices: exact answers, no rounding",
-  minutes: 18,
-  order: 3,
-  prereq: ["algebraicManipulation"],
-  intro: "A surd is a square root (or other root) that doesn't simplify to a whole number — √2, √7, √50. Rather than rounding it to a decimal and losing accuracy, this lesson shows you how to simplify, combine and rationalise surds so the answer stays exact, plus the index laws that let you handle fractional and negative powers the same clean way. Go slowly through the 'why' sections — once you've SEEN why a rule is true, you stop needing to memorise it.",
-  sections: [
-    { h: "1. Simplifying a surd", body: [
-      "Start with something you can check by hand. Is √4 × √9 the same as √(4×9)? Work out each side on its own.",
-      "First deal with √4 × √9:\n√4 = 2 and √9 = 3, so\n√4 × √9 =\n2 × 3 =\n6.",
-      "Then look at √(4×9):\n4×9 =\n36, so\n√(4×9) =\n√36 =\n6.",
-      "Both sides give 6 — they match. That wasn't luck.",
-      "The same thing is true for ANY two numbers under the roots, not just 4 and 9 — here's the proof. Let a and b stand for any two numbers that are zero or positive (square roots of negative numbers aren't needed at GCSE level).",
-      "Squaring undoes a square root. Square the left side:\n(√a × √b)² =\n(√a)² × (√b)² =\na × b.",
-      "Now square the right side:\n(√(a×b))² =\na × b (by definition of squaring a root).",
-      "Both squarings give exactly a × b. Since a and b are positive, there's only one positive number that squares to give any particular result, so the two original (unsquared) quantities must have been equal all along. That's the whole proof of the rule √a × √b = √(a×b), and it's the entire engine behind everything in this section.",
-      "Now use that rule backwards. Instead of starting with two roots and multiplying them, start with ONE ugly root and split the number underneath into two friendlier factors.",
-      "√50 isn't a whole number, but:\n50 =\n25 × 2, so\n√50 =\n√(25×2) =\n√25 × √2\n(using the rule above).",
-      "√25 IS a whole number (5), so it walks out from under the root sign, leaving 5√2.",
-      "The whole skill is choosing the right split. Any factor pair of 50 lets you use the rule, but only a perfect-square factor (a number that is itself something squared: 4, 9, 16, 25, 36, 49...) lets a whole number actually escape.",
-      "Split 50 as 10×5 instead:\n√50 =\n√(10×5) =\n√10 × √5\n— true, but useless, since neither 10 nor 5 is a perfect square, so nothing comes out from under either root.",
-      "Always hunt for the LARGEST perfect square that divides the number, so the job is done in one go.",
-    ], examples: [
-      { q: "Simplify √72.", steps: [
-        "List perfect squares to test against, largest first, so you only need to check a couple: 64, 49, 36, 25, 16, 9, 4.",
-        "Does 64 divide 72 exactly? 72 ÷ 64 is not a whole number, so no.",
-        "Does 36 divide 72 exactly? 72 ÷ 36 = 2 — yes. 36 is a perfect square (6×6=36), so this is the split to use.",
-        "Rewrite the number under the root using that factor:\n72 =\n36 × 2, so\n√72 =\n√(36 × 2).",
-        "Apply the splitting rule:\n√(36 × 2) =\n√36 × √2.",
-        "√36 is a whole number (6), so it comes out from under the root:\n√72 =\n6√2.",
-      ], answer: "6√2" },
-      { q: "Simplify √180 (a bigger number, to check the method still works).", steps: [
-        "Test the larger perfect squares first: is 180 divisible by 100? No. By 81? No (180 ÷ 81 isn't whole). By 36? 180 ÷ 36 = 5 — yes.",
-        "So:\n180 =\n36 × 5, giving\n√180 =\n√(36 × 5) =\n√36 × √5\n(splitting rule again).",
-        "√36 = 6, so √180 = 6√5.",
-        "Final check: does 5 itself hide another perfect-square factor? No — 5 is prime, so it can't be split any further. 6√5 is fully simplified.",
-      ], answer: "6√5" },
-      { q: "Simplify √12 + √75 - √27.", steps: [
-        "Simplify each surd separately by finding the largest perfect-square factor of the number underneath.",
-        "√12: the largest perfect-square factor of 12 is 4 (since 12 = 4 × 3), so √12 = √(4 × 3) = √4 × √3 = 2√3.",
-        "√75: the largest perfect-square factor of 75 is 25 (since 75 = 25 × 3), so √75 = √(25 × 3) = √25 × √3 = 5√3.",
-        "√27: the largest perfect-square factor of 27 is 9 (since 27 = 9 × 3), so √27 = √(9 × 3) = √9 × √3 = 3√3.",
-        "All three surds are now multiples of √3, so combine them like terms: 2√3 + 5√3 - 3√3 = (2 + 5 - 3)√3 = 4√3.",
-      ], answer: "4√3" },
-    ],
-      tryit: { q: "Simplify √48.", answer: "4√3. The largest perfect-square factor of 48 is 16 (check: 48 ÷ 16 = 3), so √48 = √16 × √3 = 4√3. Since 3 is prime, it can't be split any further." } },
-    { h: "2. Rationalising the denominator", body: [
-      "Here's a pattern worth checking by hand first: what is √5 × √5? Using the splitting rule from Section 1 in reverse:\n√5 × √5 =\n√(5×5) =\n√25 =\n5\n— a whole number, no root left at all.",
-      "Try it again with a different number to make sure it's not a one-off:\n√11 × √11 =\n√(11×11) =\n√121 =\n11.",
-      "Multiplying any surd by an exact copy of itself always clears the root completely. Here's why, in general: let n stand for whatever number sits under the root (5, 11, or anything else). Multiplying √n by itself is really just computing √(n²), and squaring then square-rooting a positive number gets you straight back to that same number, n.",
-      "That single fact is the whole secret of 'rationalising'. A fraction like 1/√5 isn't mathematically wrong, but a root sitting on the bottom of a fraction is awkward to compare, add, or estimate by eye, so it's treated as untidy.",
-      "To clean it up, multiply the WHOLE fraction by √5/√5. Why is that allowed? Because √5/√5 is 'something divided by itself', which always equals exactly 1, and multiplying any number by 1 never changes its value, only how it's written.",
-      "Once you multiply through:\n1/√5 =\n(1×√5) / (√5×√5) =\n(1×√5) / 5\n(since √5×√5 = 5, a whole number, as shown above) =\n√5/5\n— the exact same value as before, just rearranged so the root sits harmlessly on top.",
-    ], examples: [
-      { q: "Rationalise 1/√5.", steps: [
-        "Multiply the fraction by √5/√5 — allowed because √5/√5 equals 1, so the value of the fraction doesn't change:\n(1/√5) × (√5/√5).",
-        "Multiply the numerators:\n1 × √5 =\n√5.",
-        "Multiply the denominators:\n√5 × √5 =\n5\n(a surd times an identical copy of itself always gives a whole number, as shown above).",
-        "Write the new numerator over the new denominator:\n√5/5.",
-      ], answer: "√5/5" },
-      { q: "Rationalise 6/√8 (the denominator isn't in simplest form yet, so there's an extra step first).", steps: [
-        "Simplify the surd on the bottom before doing anything else:\n√8 =\n√(4×2) =\n√4 × √2 =\n2√2\n(Section 1's method).",
-        "Rewrite the fraction using that simplified root:\n6/√8 =\n6/(2√2).",
-        "Simplify the whole-number part of the fraction first:\n6 ÷ 2 =\n3, leaving\n3/√2.",
-        "Now rationalise as before, multiplying top and bottom by √2:\n(3×√2) / (√2×√2).",
-        "The denominator becomes √2×√2 = 2. The numerator becomes 3√2.",
-        "Final answer: 3√2/2.",
-      ], answer: "3√2/2" },
-      { q: "Rationalise the denominator of 3/(2 + √5), giving your answer in the form a + b√5 where a and b are integers.", steps: [
-        "The conjugate of (2 + √5) is (2 - √5). Multiplying by (2 - √5)/(2 - √5) equals 1, so the fraction's value is unchanged.",
-        "Multiply the numerators: 3 × (2 - √5) = 6 - 3√5.",
-        "Multiply the denominators using the difference-of-two-squares identity: (2 + √5)(2 - √5) = 2² - (√5)² = 4 - 5 = -1.",
-        "Write the resulting fraction: (6 - 3√5) / (-1).",
-        "Dividing by -1 reverses every sign: (6 - 3√5) / (-1) = -6 + 3√5, which is written as 3√5 - 6.",
-      ], answer: "3√5 - 6" },
-    ],
-      tryit: { q: "Rationalise 7/√7 and simplify fully.", answer: "√7. Multiplying top and bottom by √7 gives (7×√7)/7 = 7√7/7, and the 7s cancel exactly, leaving just √7." } },
-    { h: "3. Fractional and negative indices", body: [
-      "Let n stand for any positive number, the base of the power about to be examined. Where does n^(1/2) actually come from? It isn't a new rule to memorise, it falls straight out of the ordinary law for multiplying powers (add the indices when the base is the same):\nn^(1/2) × n^(1/2) =\nn^(1/2 + 1/2) =\nn^1 =\nn.",
-      "So whatever number n^(1/2) actually is, squaring it gets you back to n. But 'the number that squares to give n' is exactly the definition of √n. So n^(1/2) simply means √n.",
-      "The same logic stretches to any root:\nn^(1/3) × n^(1/3) × n^(1/3) =\nn^(1/3 + 1/3 + 1/3) =\nn^1 =\nn,",
-      "so n^(1/3) is the number that CUBES to give n, the cube root. In general, letting q stand for any whole number, n^(1/q) means the qth root of n, because multiplying it by itself q times always lands back on n^1.",
-      "What about a fraction like n^(p/q), with a numerator as well — here p just stands for another whole number, sitting on top of q? The denominator q says 'take this root'; the numerator p says 'then raise to this power', and the order doesn't actually matter, since:\n(n^(1/q))^p =\nn^(p/q) =\n(n^p)^(1/q)\n(indices multiply either way round).",
-      "In practice, always take the root FIRST: it keeps the numbers small, and THEN raising that small result to a power is easy arithmetic instead of a huge one.",
-      "Negative indices come from a different index law, but the same style of reasoning. Let k stand for any whole number, the power involved. Multiplying powers with a matching base adds the indices, so:\nn^k × n^(-k) =\nn^(k + (-k)) =\nn^0 =\n1\n(anything to the power 0 equals 1 — check it yourself: 5³×5⁻³ must equal 5⁰=1).",
-      "If n^k multiplied by n^(-k) always gives exactly 1, then n^(-k) must be the reciprocal of n^k, i.e. n^(-k) = 1/n^k. The minus sign was never a mysterious symbol, it's simply 'take the reciprocal', and it drops straight out of the same index law used everywhere else.",
-    ], examples: [
-      { q: "Evaluate 27^(-2/3).", steps: [
-        "Deal with the negative sign first, using n^(-k) = 1/n^k:\n27^(-2/3) =\n1 / (27^(2/3)).",
-        "Now evaluate 27^(2/3) by taking the root first (the denominator, 3, means cube root):\n27^(1/3) = 3\n(since 3×3×3=27).",
-        "Raise that result to the numerator's power:\n27^(2/3) =\n(27^(1/3))² =\n3² =\n9.",
-        "Put this back under the reciprocal from step 1:\n27^(-2/3) =\n1/9.",
-      ], answer: "1/9" },
-      { q: "Evaluate (1/8)^(-2/3) (a fraction base, to check the rules combine correctly).", steps: [
-        "Handle the negative index first — it flips the base upside down and removes the minus sign:\n(1/8)^(-2/3) =\n8^(2/3).",
-        "Take the root first, using the denominator 3:\n8^(1/3) = 2\n(since 2×2×2=8).",
-        "Raise that to the numerator's power:\n8^(2/3) =\n(8^(1/3))² =\n2² =\n4.",
-      ], answer: "4" },
-      { q: "Evaluate 4^(5/2) + 8^(-2/3), writing your answer as a single fraction.", steps: [
-        "Evaluate 4^(5/2): the denominator 2 means square root, so 4^(1/2) = 2, then raise to the power 5: 2^5 = 32.",
-        "Evaluate 8^(-2/3): the negative index means take the reciprocal first, giving 1 / (8^(2/3)).",
-        "Evaluate 8^(2/3): the denominator 3 means cube root, so 8^(1/3) = 2 (since 2 × 2 × 2 = 8), then raise to the power 2: 2² = 4.",
-        "Therefore 8^(-2/3) = 1/4.",
-        "Add the two results: 32 + 1/4 = 128/4 + 1/4 = 129/4.",
-      ], answer: "129/4" },
-    ],
-      tryit: { q: "Evaluate 16^(3/4).", answer: "8. Take the root first: 16^(1/4) = 2, since 2×2×2×2=16 (the fourth root). Then raise to the numerator's power: 2³ = 8." } },
-  ],
-};
 
 INTERMEDIATE_LESSONS.numberTheoryDivisibility = {
   title: "Number Theory: factors, multiples and remainders",
@@ -214,17 +105,6 @@ INTERMEDIATE_LESSONS.numberTheoryDivisibility = {
   ],
 };
 
-INTERMEDIATE_LESSONS.numberTheoryDivisibility.intro = "Number theory studies the structure of whole numbers. In this lesson we will begin with the familiar ideas of factors and division, then use them to develop prime factorisation, highest common factors, lowest common multiples and remainders. Each method will be justified before it is shortened into a rule. The aim is not merely to remember procedures, but to see why they must work.";
-INTERMEDIATE_LESSONS.numberTheoryDivisibility.sections[0].body = [
-  "A factor of a whole number divides it exactly, leaving no remainder. For example, 3 is a factor of 12 because 12 ÷ 3 = 4. We can also say that 3 and 4 form a factor pair because 3 × 4 = 12.",
-  "The complete factor pairs of 12 are 1 × 12, 2 × 6 and 3 × 4. Listing pairs is useful because it prevents us from missing a factor. Once the first number in a pair has passed the square root of 12, the later pairs would only repeat ones already found in reverse order.",
-  "Some factors can themselves be broken down. Starting with 12 = 2 × 6, we can replace 6 with 2 × 3. This gives 12 = 2 × 2 × 3. We stop because 2 and 3 are prime: their only positive factors are 1 and themselves.",
-  "Beginning with another pair gives the same result. From 12 = 3 × 4 and 4 = 2 × 2, we again obtain 12 = 2 × 2 × 3. The order differs, but the prime building blocks do not. This uniqueness is called the fundamental theorem of arithmetic.",
-  "In practice, divide by the smallest prime that fits, record the quotient and continue. When a prime no longer divides exactly, move to the next prime. Stop only when the remaining quotient is prime, then verify the result by multiplying all the factors back together."
-];
-INTERMEDIATE_LESSONS.numberTheoryDivisibility.sections[0].examples.push({ q: "A student writes 420 = 2² × 3 × 5 and stops. Find the error and complete the factorisation.", steps: ["Multiply the stated factors: 2² × 3 × 5 = 60, not 420, so factors are missing.", "Continue from 420: divide by 2 to get 210, by 2 again to get 105, by 3 to get 35, by 5 to get 7.", "The remaining 7 is prime.", "Multiply back: 4 × 3 × 5 × 7 = 420."], answer: "420 = 2² × 3 × 5 × 7." });
-INTERMEDIATE_LESSONS.numberTheoryDivisibility.sections[1].examples.push({ q: "Two gears complete turns every 84 seconds and 126 seconds. They begin together. After how many seconds will they next begin a turn together, and what is the greatest interval that divides both turn times?", steps: ["Prime factorise: 84 = 2² × 3 × 7 and 126 = 2 × 3² × 7.", "For the LCM, take the higher power of each prime: 2² × 3² × 7 = 252.", "For the HCF, take the lower shared powers: 2 × 3 × 7 = 42.", "Check: 252 ÷ 84 = 3 and 252 ÷ 126 = 2."], answer: "They coincide after 252 seconds, and the HCF is 42 seconds." });
-INTERMEDIATE_LESSONS.numberTheoryDivisibility.sections[2].examples.push({ q: "Find the last digit of 7²⁰²⁶.", steps: ["The last digit is the remainder modulo 10.", "Powers of 7 modulo 10 cycle: 7, 9, 3, 1, then repeat, so the cycle length is 4.", "2026 = 506 × 4 + 2, so the exponent lies in position 2 of the cycle.", "The second remainder in the cycle is 9."], answer: "The last digit is 9." });
 
 INTERMEDIATE_LESSONS.algebraicManipulation = {
   title: "Algebraic Manipulation: expanding, factorising, simplifying",
@@ -633,22 +513,24 @@ INTERMEDIATE_LESSONS.surdicModularNumberTheory = {
         "Check whether 7/16 is already fully simplified: 7 is prime and does not divide into 16, so yes, it is already in simplest form.",
         "Find the prime factors of the denominator:\n16 =\n2×2×2×2 =\n2⁴.",
         "The only prime factor present is 2, which is allowed, so 7/16 terminates.",
-        "Confirm by dividing: 7 ÷ 16 = 0.4375, which does stop.",
-      ], answer: "Yes - 7/16 = 0.4375" , structureId: "terminating_decimal_identify"},
+      ], answer: "Yes - 7/16 = 0.4375", structureId: "terminating_decimal_identify", understand: "Check the denominator's prime factors only after confirming the fraction is fully simplified.", check: "Confirm by dividing: 7 ÷ 16 = 0.4375, which does stop, matching the prediction."},
       { q: "Does 21/56 terminate? (needs simplifying first)", steps: [
         "Check whether 21/56 is fully simplified: 21 = 3×7 and 56 = 8×7, so both share a factor of 7 - it is not yet simplified.",
         "Cancel the shared factor of 7: 21/56 = 3/8.",
         "Find the prime factors of the simplified denominator:\n8 =\n2×2×2 =\n2³.",
         "Only the prime factor 2 appears, so 3/8 (and therefore the original 21/56) terminates.",
-        "Confirm by dividing: 3 ÷ 8 = 0.375.",
-      ], answer: "Yes - 21/56 = 3/8 = 0.375" , structureId: "terminating_decimal_identify"},
+      ], answer: "Yes - 21/56 = 3/8 = 0.375", structureId: "terminating_decimal_identify", understand: "The unsimplified denominator, 56, contains a factor of 7, which would wrongly suggest the decimal recurs; simplifying first is essential.", check: "Confirm by dividing: 3 ÷ 8 = 0.375, which does stop, matching the prediction."},
       { q: "Does 77/350 terminate? If so, write it as a terminating decimal.", steps: [
         "Check whether 77/350 is fully simplified: 77 = 7 × 11 and 350 = 2 × 5² × 7, so both share the factor 7.",
         "Cancel the common factor: 77/350 = 11/50.",
         "Find the prime factors of the simplified denominator: 50 = 2 × 5². The only prime factors are 2 and 5, so the decimal terminates.",
         "To convert: 50 × 2 = 100, so multiply numerator and denominator by 2: 11/50 = 22/100 = 0.22.",
-        "Check: 0.22 × 350 = 77. ✓",
-      ], answer: "Yes - 77/350 = 0.22" , structureId: "terminating_decimal_identify"},
+      ], answer: "Yes - 77/350 = 0.22", structureId: "terminating_decimal_identify", understand: "Beyond just confirming it terminates, this question asks for the actual decimal, so convert the simplified fraction to have a power-of-10 denominator.", check: "0.22 × 350 = 77, confirming the decimal conversion is correct."},
+      { q: "Does 5/12 terminate?", steps: [
+        "Check whether 5/12 is fully simplified: 5 is prime and does not divide into 12, so it is already in simplest form.",
+        "Find the prime factors of the denominator: 12 = 2×2×3 = 2²×3.",
+        "The prime factor 3 is present, which is not allowed, so the decimal recurs rather than terminating.",
+      ], answer: "No, 5/12 recurs.", structureId: "terminating_decimal_identify", understand: "Apply the same prime-factor test used throughout this section: a terminating decimal needs a denominator built only from 2s and 5s.", check: "Confirm by dividing: 5 ÷ 12 = 0.41666..., which does not stop, matching the prediction."},
     ],
       tryit: { q: "Does 5/12 terminate?", answer: "No - 12 = 2² × 3, and the leftover 3 means it recurs (5/12 = 0.41666...)." , structureId: "terminating_decimal_identify"} },
     { h: "2. The surd conjugate trick", body: [
@@ -664,20 +546,26 @@ INTERMEDIATE_LESSONS.surdicModularNumberTheory = {
         "Work out x²: (√11)² = 11, since squaring undoes the root.",
         "Work out y²: (√3)² = 3.",
         "Subtract:\nx² - y² =\n11 - 3 =\n8.",
-      ], answer: "8" , structureId: "surd_difference_of_squares"},
+      ], answer: "8", structureId: "surd_difference_of_squares", understand: "Recognising this as a conjugate pair avoids expanding all four terms; only x² and y² need to be found.", check: "A decimal check confirms it: √11≈3.317 and √3≈1.732, so (3.317+1.732)(3.317-1.732)≈5.049×1.585≈8.0, matching."},
       { q: "Simplify (5+√6)(5-√6) (a whole number paired with a surd).", steps: [
         "Recognise the pattern: this still matches (x+y)(x-y), with x=5 and y=√6 - x does not need to be a surd itself for the identity to apply.",
         "Work out x²: 5² = 25.",
         "Work out y²: (√6)² = 6.",
         "Subtract:\nx² - y² =\n25 - 6 =\n19.",
-      ], answer: "19" , structureId: "surd_difference_of_squares"},
+      ], answer: "19", structureId: "surd_difference_of_squares", understand: "The identity applies just as well when only one of the two terms is a surd, since the derivation never required both x and y to be irrational.", check: "A decimal check confirms it: √6≈2.449, so (5+2.449)(5-2.449)≈7.449×2.551≈19.0, matching."},
       { q: "Rationalise the denominator of 4/(√7 - √3), writing your answer in simplified form.", steps: [
         "The conjugate of (√7 - √3) is (√7 + √3). Multiplying by (√7 + √3)/(√7 + √3) equals 1, so the fraction's value is unchanged.",
         "Multiply the numerators: 4 × (√7 + √3) = 4√7 + 4√3.",
         "Multiply the denominators using the conjugate rule: (√7 - √3)(√7 + √3) = (√7)² - (√3)² = 7 - 3 = 4.",
         "Write the fraction: (4√7 + 4√3) / 4.",
         "Simplify by dividing numerator and denominator by 4: (4√7 + 4√3) / 4 = √7 + √3.",
-      ], answer: "√7 + √3" , structureId: "rationalise_denominator_numeric"},
+      ], answer: "√7 + √3", structureId: "rationalise_denominator_numeric", understand: "The denominator has two terms, so multiplying by its conjugate is needed to remove the surds from the denominator completely.", check: "A decimal check confirms it: 4/(√7-√3)≈4/(2.646-1.732)≈4/0.914≈4.377, and √7+√3≈2.646+1.732≈4.377, matching."},
+      { q: "Simplify (√15+√2)(√15-√2).", steps: [
+        "Recognise the pattern: this is (x+y)(x-y) with x=√15 and y=√2, which always equals x² - y².",
+        "Work out x²: (√15)² = 15.",
+        "Work out y²: (√2)² = 2.",
+        "Subtract: x² - y² = 15 - 2 = 13.",
+      ], answer: "13", structureId: "surd_difference_of_squares", understand: "Apply the same conjugate-pair method used throughout this section.", check: "A decimal check confirms it: √15≈3.873 and √2≈1.414, so (3.873+1.414)(3.873-1.414)≈5.287×2.459≈13.0, matching."},
     ],
       tryit: { q: "Simplify (√15+√2)(√15-√2).", answer: "13, since this matches x² - y² with x=√15 and y=√2, giving 15 - 2 = 13." , structureId: "surd_difference_of_squares"} },
     { h: "3. Modular exponentiation", body: [
@@ -690,21 +578,25 @@ INTERMEDIATE_LESSONS.surdicModularNumberTheory = {
       { q: "Find 3⁴ mod 7.", steps: [
         "Compute the actual power:\n3⁴ =\n3×3×3×3 =\n81.",
         "Divide by 7 and find the remainder: 81 ÷ 7 = 11 remainder 4, since 11×7 = 77 and 81-77 = 4.",
-        "So 3⁴ mod 7 = 4.",
-      ], answer: "4" , structureId: "modular_exponentiation_direct"},
+      ], answer: "4", structureId: "modular_exponentiation_direct", understand: "The exponent is small enough here that the power can simply be computed directly before finding the remainder.", check: "11×7=77, and 77+4=81, confirming the division and remainder are correct."},
       { q: "Find 3²⁰ mod 7 without computing 3²⁰ directly.", steps: [
         "List the remainders of successive powers of 3 mod 7 until they repeat: 3¹→3, 3²→2, 3³→6, 3⁴→4, 3⁵→5, 3⁶→1.",
         "3⁶ mod 7 = 1 signals the cycle restarting, since multiplying by 3 again reproduces 3¹'s remainder. So the cycle has length 6: 3, 2, 6, 4, 5, 1, repeating.",
         "Find where exponent 20 falls in a cycle of length 6: 20 ÷ 6 = 3 remainder 2, so exponent 20 matches the same position as exponent 2.",
         "Read off the remainder at position 2 from the list: 2.",
-      ], answer: "2" , structureId: "modular_exponentiation_repeated_squaring"},
+      ], answer: "2", structureId: "modular_exponentiation_repeated_squaring", understand: "The exponent 20 is far too large to compute 3²⁰ directly, so the remainder cycle must be found and used instead.", check: "The cycle was generated correctly since 3⁷ mod 7 would give (1×3) mod 7 = 3, matching 3¹ mod 7 exactly, confirming the cycle genuinely restarts at length 6."},
       { q: "Find 7⁵⁰ mod 4.", steps: [
         "Reduce the base first: 7 ÷ 4 = 1 remainder 3, so 7 ≡ 3 (mod 4). Powers of 7 mod 4 behave exactly like powers of 3 mod 4.",
         "Find the cycle of remainders for powers of 3 mod 4: 3¹ mod 4 = 3; 3² mod 4 = 9 mod 4 = 1; 3³ mod 4 = 3×1 = 3. The cycle (3, 1) has length 2.",
         "Divide the exponent 50 by the cycle length 2: 50 = 25×2, remainder 0.",
         "A remainder of 0 places the exponent at the same position as exponent 2 (the last step in each cycle), so 7⁵⁰ mod 4 = 1.",
-        "Check: 7 ≡ -1 (mod 4), so 7⁵⁰ ≡ (-1)⁵⁰ = 1 (mod 4). ✓",
-      ], answer: "1" , structureId: "modular_exponentiation_repeated_squaring"},
+      ], answer: "1", structureId: "modular_exponentiation_repeated_squaring", understand: "The base, 7, can first be reduced modulo 4 to a smaller equivalent base, 3, before finding the cycle, since remainders only depend on the base's own remainder.", check: "7 ≡ -1 (mod 4), so 7⁵⁰ ≡ (-1)⁵⁰ = 1 (mod 4), matching, since an even power of -1 is always 1."},
+      { q: "Find 5¹⁰⁰ mod 3 by spotting a short cycle.", steps: [
+        "Reduce the base first: 5 mod 3 = 2, so powers of 5 mod 3 behave like powers of 2 mod 3.",
+        "Find the cycle of remainders for powers of 2 mod 3: 2¹ mod 3 = 2; 2² mod 3 = 4 mod 3 = 1; 2³ mod 3 = 2×1 = 2. The cycle (2, 1) has length 2.",
+        "Divide the exponent 100 by the cycle length 2: 100 = 50×2, remainder 0.",
+        "A remainder of 0 places the exponent at the same position as exponent 2 (the last step in each cycle), so 5¹⁰⁰ mod 3 = 1.",
+      ], answer: "1", structureId: "modular_exponentiation_repeated_squaring", understand: "Apply the same reduce-then-cycle method used throughout this section.", check: "5 ≡ -1 (mod 3), so 5¹⁰⁰ ≡ (-1)¹⁰⁰ = 1 (mod 3), matching, since an even power of -1 is always 1."},
     ],
       tryit: { q: "Find 5¹⁰⁰ mod 3 by spotting a short cycle.", answer: "1. Since 5 mod 3 = 2, the remainders of powers of 2 mod 3 cycle as 2, 1, 2, 1, ... with cycle length 2. Because 100 is even, it matches the same position as exponent 2, which gives remainder 1." , structureId: "modular_exponentiation_repeated_squaring"} },
   ],
@@ -811,33 +703,56 @@ INTERMEDIATE_LESSONS.algebraicProof = {
   intro: "A proof has to work for every possible number, not just the ones you happen to try. This lesson covers the standard building blocks, expressing 'any even number' as 2n, 'consecutive integers' as n, n+1, n+2, and shows exactly why testing a handful of examples can never be enough, before finishing with a full worked proof.",
   sections: [
     { h: "1. Representing number types algebraically", body: [
-      "Try the claim 'the sum of two consecutive integers is always odd' on two actual numbers first. n=3: the integers are 3 and 4, sum = 7 (odd). n=100: the integers are 100 and 101, sum = 201 (odd). Both worked, but neither one, nor both together, proves it for every integer, there's no way to write down a general argument yet, only two checks.",
-      "To argue about EVERY integer at once, algebra uses a single letter, say n, to stand for 'any integer whatsoever' - not one particular number, but a placeholder for every integer at once. Any even number can then be written 2n. That works because every even number is, by definition, exactly 2 times some whole number, so as n runs through every integer in turn (..., -1, 0, 1, 2, 3, ...), the expression 2n runs through every even number, and only even numbers: n=1 gives 2, n=2 gives 4, n=0 gives 0, n=-1 gives -2.",
-      "Any odd number is 2n+1. Odd numbers sit exactly one more than an even number, so taking the same 2n and adding 1 shifts every even number up to the odd number right next to it: n=0 gives 1, n=1 gives 3, n=2 gives 5. Consecutive integers are written n, n+1, n+2, and consecutive EVEN numbers are 2n, 2n+2, 2n+4 (each one 2 more than the last).",
-      "This is why algebra can prove something a handful of examples cannot: n is not one fixed number, it's a placeholder standing for ANY integer simultaneously. A calculation carried out using n (rather than a specific value) is therefore true for every integer at once, the moment the algebra is finished, the proof is finished too.",
-      "One care point: n ranges over ALL integers, including zero and negative numbers, not just the positive counting numbers you'd list first. Check 2n+1 still behaves correctly at n=-1: 2×(-1)+1 = -1, which is indeed odd, so the representation holds even at the edge cases.",
+      "Try the claim 'the sum of two consecutive integers is always odd' on two actual numbers. Take n = 3: the integers are 3 and 4, and 3 + 4 = 7, which is odd. Take n = 100: the integers are 100 and 101, and 100 + 101 = 201, which is also odd. Both cases work, but neither one, nor both together, proves the claim for every integer. There is no way yet to write down an argument that covers every case at once, only two separate checks.",
+      "To argue about every integer simultaneously, algebra uses a single letter, say n, to stand for any integer at once, not one particular value. Any even number can then be written 2n. That works because every even number is, by definition, exactly 2 times some whole number: as n runs through every integer in turn (..., -1, 0, 1, 2, 3, ...), the expression 2n runs through every even number, and only even numbers.",
+      "Any odd number is 2n + 1. Odd numbers sit exactly one more than an even number, so taking the same 2n and adding 1 shifts every even number up to the odd number next to it: n = 0 gives 1, n = 1 gives 3, n = 2 gives 5.",
+      "This is why algebra can prove something a handful of examples cannot: n is not one fixed number, it is a placeholder standing for every integer at once. A calculation carried out using n, rather than a specific value, is true for every integer the moment the algebra is finished, the proof is finished too. Substituting n = 3 into 2n + 1 gives 7; substituting n = 100 gives 201. The single algebraic line already contains both checks from above, and every other integer besides.",
+      "Consecutive integers are written n, n + 1, n + 2. Consecutive even integers are 2n, 2n + 2, 2n + 4 (each one 2 more than the last).",
+      "One care point: n ranges over all integers, including zero and negative numbers, not just the positive counting numbers you would list first. Check that 2n + 1 still behaves correctly at n = -1: 2×(-1) + 1 = -1, which is indeed odd, so the representation holds even at the edge cases.",
+      "When a proof involves two numbers that do not have to be related to each other, for instance any even number and any odd number, which could be any pair at all, not a matched pair, represent them with two different letters, such as n and m. Using the same letter twice would silently force the two numbers to be tied together, which the claim never actually requires.",
+      "A representation should expose the exact property you need to prove. A multiple of 5 is 5n; a number leaving remainder 3 on division by 5 is 5n + 3.",
     ], examples: [
       { q: "Prove that the sum of two consecutive integers is always odd.", steps: [
-        "Represent the two consecutive integers algebraically: let them be n and n+1, where n stands for any integer.",
-        "Add them: sum = n + (n+1).",
-        "Simplify: n + (n+1) = 2n+1.",
-        "2n+1 matches the general form for an odd number, 2 times something plus 1, so the sum is odd.",
-        "Because n could have been any integer, this holds for every possible pair of consecutive integers, including the n=3 and n=100 cases checked above, and every other integer besides.",
-      ], answer: "2n+1 is always odd, so the sum of two consecutive integers is always odd, true for every integer n." , structureId: "parity_check_linear"},
+        "Represent the two consecutive integers algebraically: n and n + 1, where n stands for any integer.",
+        "Add them, without simplifying yet: n + (n + 1).",
+        "The brackets are not doing anything here, since we are only adding, so we can remove them: n + n + 1.",
+        "Collect the two n terms together: n + n = 2n. So the sum becomes 2n + 1.",
+        "2n + 1 matches the pattern 2 × (something) + 1, the general form for an odd number.",
+      ], answer: "The sum is always odd, for every integer n.", structureId: "parity_check_linear", understand: "We must show that n + (n + 1) always simplifies to the general form for an odd number, 2 × (something) + 1, whatever integer n is.", check: "Substitute n = 5: the integers are 5 and 6, summing to 11. The formula gives 2(5) + 1 = 11. They agree, and 11 is odd."},
       { q: "Prove that the sum of three consecutive integers is always a multiple of 3.", steps: [
-        "Represent three consecutive integers algebraically: n, n+1, n+2.",
-        "Add them: sum = n + (n+1) + (n+2).",
-        "Collect like terms: three n's give 3n, and 1+2 gives 3, so the sum is 3n+3.",
-        "Factorise: 3n+3 = 3(n+1).",
-        "3(n+1) is 3 times a whole number, so it is a multiple of 3 by definition, true for every integer n.",
-      ], answer: "3(n+1), a multiple of 3 for every integer n." , structureId: "three_consecutive_sum"},
-      { q: "Prove that the product of two consecutive even numbers is always divisible by 8.", steps: [
-        "Represent two consecutive even numbers algebraically: let them be 2n and 2n + 2, where n is any integer.",
-        "Write their product: 2n × (2n + 2). Factorise the second bracket: 2n + 2 = 2(n + 1), so the product becomes 2n × 2(n+1) = 4n(n+1).",
-        "Notice that n and n+1 are consecutive integers, so exactly one of them is even, meaning n(n+1) is always even. Write n(n+1) = 2m for some integer m.",
-        "Substitute: 4n(n+1) = 4 × 2m = 8m.",
-        "8m is 8 times a whole number, so the product of two consecutive even numbers is always divisible by 8, for every integer n.",
-      ], answer: "4n(n+1) = 8m, always divisible by 8." , structureId: "consecutive_even_sum"},
+        "Represent three consecutive integers algebraically: n, n + 1, n + 2.",
+        "Add them, without simplifying yet: n + (n + 1) + (n + 2).",
+        "Remove the brackets, since we are only adding: n + n + 1 + n + 2.",
+        "Collect the three n terms together: n + n + n = 3n.",
+        "Collect the two number terms together: 1 + 2 = 3.",
+        "So the sum is 3n + 3.",
+        "Factorise, by taking out the common factor of 3 from both terms: 3n + 3 = 3(n + 1).",
+      ], answer: "3(n + 1) is 3 times a whole number, so the sum is a multiple of 3 for every integer n.", structureId: "three_consecutive_sum", understand: "We must show n + (n + 1) + (n + 2) always simplifies to 3 × (something), whatever integer n is.", check: "Substitute n = 7: the integers are 7, 8, 9, summing to 24 = 3 × 8. The formula gives 3(7 + 1) = 3 × 8 = 24. They agree."},
+      { q: "Show that any even number added to any odd number gives an odd number.", steps: [
+        "Represent the even number as 2n, where n stands for any integer.",
+        "Represent the odd number as 2m + 1. We use the different letter m, not n again, because this odd number does not have to be related to the even number we just wrote down.",
+        "Write down their sum exactly as it stands, without simplifying yet: 2n + (2m + 1).",
+        "The brackets around (2m + 1) are not doing any work here, since we are only adding, not subtracting, so we can drop them: 2n + 2m + 1.",
+        "Both 2n and 2m share a common factor of 2, so group them together: (2n + 2m) + 1.",
+        "Factorise the grouped part: 2n + 2m = 2(n + m).",
+        "So the whole sum becomes 2(n + m) + 1.",
+      ], answer: "Any even number plus any odd number is always odd, for all integers n and m.", structureId: "parity_check_linear", understand: "The even number and the odd number do not have to be related to each other, one could be 8 and the other 1,001, with nothing connecting them, so they need two different letters, not the same letter twice.", check: "Take n = 4 (so the even number is 2n = 8) and m = 10 (so the odd number is 2m + 1 = 21): 8 + 21 = 29, which is odd. The formula gives 2(4 + 10) + 1 = 2(14) + 1 = 29. The two routes agree, and n and m did not need to be equal, or even close, which is exactly why they needed different letters."},
+      { q: "Prove that the product of two consecutive even numbers is always divisible by 8.", answer: "The product of two consecutive even numbers is always divisible by 8.", structureId: "consecutive_even_sum", solutionFormat: "clear", clear: {
+        comprehend: "We must show that 2n × (2n + 2) always simplifies to 8 × (something), whatever integer n is. Along the way we will need one extra fact: that n(n + 1), the product of two consecutive integers, is always even. We prove that small fact first, then use it.",
+        link: "Among any two consecutive integers, such as n and n + 1, one of them must be even and the other must be odd, two consecutive whole numbers can never both be even, or both be odd. So the product n(n + 1) always contains at least one even factor. A product with at least one even factor is always even, because that even factor already supplies a 2 that divides the whole product exactly.",
+        explain: "We will factorise 2n + 2 to pull one factor of 2 out of it, which leaves 4n(n + 1) after multiplying the two 2s together. Then we use the fact just established, that n(n + 1) is even, to pull one more factor of 2 out of that, giving 2 × 2 × 2 = 8 altogether.",
+        apply: [
+          "Represent the two consecutive even numbers as 2n and 2n + 2, where n is any integer.",
+          "Look at the second number, 2n + 2. Both terms share a factor of 2, so factorise it: 2n + 2 = 2(n + 1).",
+          "Write the product of the two even numbers, using this factorised form for the second one: 2n × 2(n + 1).",
+          "Multiply the two number parts (the 2 from the first term and the 2 just factored out of the second) together first: 2 × 2 = 4.",
+          "So the product becomes 4 × n × (n + 1), which we write as 4n(n + 1).",
+          "We showed above that n(n + 1) is always even. Being even means it can be written as 2 times some whole number, call that whole number k. So n(n + 1) = 2k.",
+          "Substitute 2k in place of n(n + 1) inside our expression: 4n(n + 1) becomes 4 × (2k).",
+          "Multiply the number parts: 4 × 2 = 8. So 4 × (2k) = 8k.",
+        ],
+        review: "We have shown 2n × (2n + 2) = 8k, where k is a whole number. 8k is 8 times a whole number, which is exactly what it means for something to be divisible by 8. Since n could have been any integer, this holds for every pair of consecutive even numbers. Check: take n = 5, so the two consecutive even numbers are 2n = 10 and 2n + 2 = 12. Multiplying directly: 10 × 12 = 120. Checking against the working: n(n + 1) = 5 × 6 = 30, so k = 15 (since n(n+1) = 2k means 30 = 2k). The formula says the product should be 8k = 8 × 15 = 120, and 120 ÷ 8 = 15 exactly, confirming the product really is divisible by 8.",
+      }},
     ],
       tryit: { q: "Show that any even number added to any odd number gives an odd number.", answer: "Odd. Represent the even number as 2n and the odd number as 2m+1, using a DIFFERENT letter m since the two numbers need not be related. The sum is 2n+(2m+1) = 2(n+m)+1, which matches the form for an odd number, true for all integers n and m." , structureId: "parity_check_linear"} },
     { h: "2. Why one example is never a proof", body: [
@@ -858,8 +773,7 @@ INTERMEDIATE_LESSONS.algebraicProof = {
         "Expand using FOIL: 2n×2n + 2n×1 + 1×2n + 1×1 = 4n² + 2n + 2n + 1.",
         "Collect like terms: 4n² + 4n + 1.",
         "Factor 2 out of the terms that allow it: 4n² + 4n + 1 = 2(2n² + 2n) + 1.",
-        "2(2n² + 2n) is 2 times a whole number, so the whole expression is 2×(something)+1, exactly the form for an odd number, true for every integer n.",
-      ], answer: "2(2n²+2n)+1 is always odd, so the square of any odd number is odd." , structureId: "odd_square_identity"},
+      ], answer: "2(2n²+2n)+1 is always odd, so the square of any odd number is odd.", structureId: "odd_square_identity", understand: "Following the standard proof recipe: represent the odd number algebraically, square it, expand, then simplify into the general form for an odd number.", check: "Substitute n=3 (odd number 2(3)+1=7): 7²=49, and the formula gives 2(2(9)+2(3))+1=2(18+6)+1=2(24)+1=49, matching."},
       { q: "Prove that the difference between the squares of two consecutive odd numbers is always a multiple of 8.", steps: [
         "Represent two consecutive odd numbers algebraically: 2n+1 and 2n+3 (each odd number is 2 more than the last).",
         "Write the difference of their squares: (2n+3)² - (2n+1)².",
@@ -869,15 +783,21 @@ INTERMEDIATE_LESSONS.algebraicProof = {
         "The 4n² terms cancel, leaving 12n + 9 - 4n - 1.",
         "Collect like terms: 8n + 8.",
         "Factorise: 8n + 8 = 8(n+1).",
-        "8(n+1) is 8 times a whole number, so it is a multiple of 8 by definition, true for every integer n.",
-      ], answer: "8(n+1) is always a multiple of 8, proving the claim for every pair of consecutive odd numbers." , structureId: "consecutive_odd_sum_mult4"},
+      ], answer: "8(n+1) is always a multiple of 8, proving the claim for every pair of consecutive odd numbers.", structureId: "consecutive_odd_sum_mult4", understand: "This needs particular care with signs, since the second expanded bracket is being subtracted as a whole, not just its first term.", check: "Substitute n=1 (odd numbers 3 and 5): 5²-3²=25-9=16=8×2, and the formula gives 8(1+1)=16, matching."},
       { q: "Prove that n³ - n is always divisible by 6.", steps: [
         "Factorise: n³ - n = n(n² - 1) = n(n-1)(n+1), which can be rewritten as (n-1)n(n+1), the product of three consecutive integers.",
         "Divisibility by 2: if n is even, 2 divides n. If n is odd, both n-1 and n+1 are even, so 2 divides the product either way.",
         "Divisibility by 3: among any three consecutive integers, exactly one is a multiple of 3 (since remainders on division by 3 cycle through 0, 1, 2 and three consecutive integers cover all three).",
         "Since 2 and 3 both divide (n-1)n(n+1) and 2 and 3 are coprime, their product 6 also divides it.",
-        "So n³ - n is always divisible by 6. Check: n=4 gives 64-4=60=6×10 ✓; n=-2 gives -8+2=-6=6×(-1). ✓",
-      ], answer: "(n-1)n(n+1) is always divisible by 6." , structureId: "product_three_consecutive_div6"},
+      ], answer: "(n-1)n(n+1) is always divisible by 6.", structureId: "product_three_consecutive_div6", understand: "This proof combines two separate divisibility arguments, by 2 and by 3, rather than expanding and simplifying a single expression.", check: "n=4 gives 64-4=60=6×10; n=-2 gives -8+2=-6=6×(-1); both confirm the claim, including at a negative value of n."},
+      { q: "Prove that the difference between the squares of two consecutive integers equals the sum of those two integers.", steps: [
+        "Represent two consecutive integers algebraically: n and n+1.",
+        "Write the difference of their squares, larger minus smaller: (n+1)² - n².",
+        "Expand (n+1)² using FOIL: (n+1)(n+1) = n²+n+n+1 = n²+2n+1.",
+        "Subtract n²: (n²+2n+1) - n² = 2n+1.",
+        "Now write the sum of the same two integers: n + (n+1) = 2n+1.",
+        "The two results, 2n+1 and 2n+1, are identical.",
+      ], answer: "True for every integer n: (n+1)² - n² and n + (n+1) are both equal to 2n+1, so the two expressions are identical for every integer n.", structureId: "diff_two_squares", understand: "This asks to show two different-looking expressions are always equal, which can be done by simplifying each one separately and comparing the results.", check: "Substitute n=6: (7²-6²)=49-36=13, and 6+7=13, matching, for these two consecutive integers."},
     ],
       tryit: { q: "Prove that the difference between the squares of two consecutive integers equals the sum of those two integers.", answer: "True for every integer n: with integers n and n+1,\n(n+1)² - n² =\n(n²+2n+1) - n² =\n2n+1,\nand n+(n+1) also equals 2n+1, so the two expressions are identical for every integer n." , structureId: "diff_two_squares"} },
   ],
@@ -898,25 +818,24 @@ INTERMEDIATE_LESSONS.functionsAndIteration = {
       "The most common mistake is reading fg(x) left to right, like reading English, and doing f first. Always look at which letter is touching the bracket around x - that's the one that goes first.",
     ], examples: [
       { q: "f(x) = 2x+1, g(x) = x-3. Find fg(5).", steps: [
-        "In fg(x), the function touching the bracket is g, so g acts on x first.",
         "Work out g(5):\ng(5) =\n5 - 3 =\n2.",
         "Feed that result into f:\nf(2) =\n2(2) + 1 =\n5.",
-        "So fg(5) =\nf(g(5)) =\n5.",
-      ], answer: "5" , structureId: "composite_fg_linear"},
+      ], answer: "5", structureId: "composite_fg_linear", understand: "In fg(x), the function touching the bracket is g, so g acts on x first.", check: "Doing the reverse order, gf(5), gives g(f(5))=g(11)=8, a different answer, confirming that order genuinely matters for composite functions."},
       { q: "Using the same f(x) = 2x+1 and g(x) = x-3, find gf(x) as a single expression in x, then check it against the gf(5) = 8 found earlier.", steps: [
-        "In gf(x), the function touching the bracket is f, so f acts on x first.",
         "Write out f(x): f(x) = 2x + 1.",
         "Feed this whole expression into g in place of x: g(f(x)) = (2x+1) - 3.",
         "Simplify: 2x + 1 - 3 = 2x - 2. So gf(x) = 2x - 2.",
-        "Check the formula against the number worked out earlier:\ngf(5) =\n2(5) - 2 =\n10 - 2 =\n8, matching the 8 found directly. The formula is confirmed correct.",
-      ], answer: "gf(x) = 2x - 2" , structureId: "composite_expression_linear"},
+      ], answer: "gf(x) = 2x - 2", structureId: "composite_expression_linear", understand: "In gf(x), the function touching the bracket is f, so f acts on x first.", check: "Substitute x=5 into the formula: gf(5) = 2(5)-2 = 10-2 = 8, matching the 8 found directly earlier."},
       { q: "f(x) = x² and g(x) = 2x + 1. Show that fg(x) ≠ gf(x) in general, and find all values of x for which fg(x) = gf(x).", steps: [
         "Find fg(x): g acts first, so fg(x) = f(g(x)) = f(2x+1) = (2x+1)² = 4x² + 4x + 1.",
         "Find gf(x): f acts first, so gf(x) = g(f(x)) = g(x²) = 2x² + 1.",
         "The expressions 4x²+4x+1 and 2x²+1 are different in general (since 4x² ≠ 2x² for most x), confirming fg(x) ≠ gf(x) in general.",
         "Set fg(x) = gf(x) and solve: 4x²+4x+1 = 2x²+1, which gives 2x²+4x = 0, then 2x(x+2) = 0, so x = 0 or x = -2.",
-        "Check both values: fg(0) = 1 and gf(0) = 1 ✓; fg(-2) = (-3)² = 9 and gf(-2) = 2(4)+1 = 9. ✓",
-      ], answer: "fg(x) = gf(x) when x = 0 or x = -2" , structureId: "composite_expression_quadratic"},
+      ], answer: "fg(x) = gf(x) when x = 0 or x = -2", structureId: "composite_expression_quadratic", understand: "This asks two separate things: first to show the two composites usually differ, then to find the specific values where they happen to coincide.", check: "fg(0) = 1 and gf(0) = 1, matching; fg(-2) = (-3)² = 9 and gf(-2) = 2(4)+1 = 9, matching."},
+      { q: "f(x) = x+4, g(x) = 3x. Find fg(2).", steps: [
+        "Work out g(2): g(2) = 3(2) = 6.",
+        "Feed that result into f: f(6) = 6+4 = 10.",
+      ], answer: "10", structureId: "composite_fg_linear", understand: "Apply the same inside-out method used throughout this section: whichever function touches the bracket around x acts first.", check: "Doing the reverse order, gf(2), gives g(f(2))=g(6)=18, a different answer, confirming order matters here too."},
     ],
       tryit: { q: "f(x) = x+4, g(x) = 3x. Find fg(2).", answer: "10. In fg(x), g acts first:\ng(2) =\n3(2) =\n6.\nThen f(6) =\n6+4 =\n10." , structureId: "composite_fg_linear"} },
     { h: "2. Inverse functions", body: [
@@ -931,24 +850,26 @@ INTERMEDIATE_LESSONS.functionsAndIteration = {
         "Swap x and y: x = 3y - 4.",
         "Add 4 to both sides: x + 4 = 3y.",
         "Divide both sides by 3: y = (x+4)/3.",
-        "So f⁻¹(x) = (x+4)/3.",
-        "Check:\nf(3) =\n3(3)-4 =\n5,\nand f⁻¹(5) =\n(5+4)/3 =\n9/3 =\n3,\nrecovering the original input. Confirmed.",
-      ], answer: "f⁻¹(x) = (x+4)/3" , structureId: "inverse_linear"},
+      ], answer: "f⁻¹(x) = (x+4)/3", structureId: "inverse_linear", understand: "The swap-and-rearrange method needs the equation fully isolated as y=... before swapping, and fully isolated again afterwards.", check: "f(3) = 3(3)-4 = 5, and f⁻¹(5) = (5+4)/3 = 9/3 = 3, recovering the original input."},
       { q: "Find the inverse of f(x) = (2x+5)/3, and check it against f(2).", steps: [
         "Write the function as y = (2x+5)/3.",
         "Swap x and y: x = (2y+5)/3.",
         "Multiply both sides by 3 to clear the fraction: 3x = 2y+5.",
         "Subtract 5 from both sides: 3x-5 = 2y.",
         "Divide both sides by 2: y = (3x-5)/2. So f⁻¹(x) = (3x-5)/2.",
-        "Check:\nf(2) =\n(2(2)+5)/3 =\n9/3 =\n3,\nand f⁻¹(3) =\n(3(3)-5)/2 =\n4/2 =\n2,\nrecovering the original input 2. Confirmed.",
-      ], answer: "f⁻¹(x) = (3x-5)/2" , structureId: "inverse_fraction"},
+      ], answer: "f⁻¹(x) = (3x-5)/2", structureId: "inverse_fraction", understand: "With a fraction in the original function, clear it by multiplying both sides before continuing to rearrange.", check: "f(2) = (2(2)+5)/3 = 9/3 = 3, and f⁻¹(3) = (3(3)-5)/2 = 4/2 = 2, recovering the original input."},
       { q: "Find the inverse of f(x) = (3x - 1)/(x + 2), stating any restriction on the domain of f⁻¹.", steps: [
         "Write the function as y = (3x-1)/(x+2), then swap x and y to set up the inverse: x = (3y-1)/(y+2).",
         "Multiply both sides by (y+2) to clear the fraction: x(y+2) = 3y-1. Expand: xy+2x = 3y-1.",
         "Collect all y terms on the left: xy-3y = -1-2x. Factorise: y(x-3) = -(1+2x).",
         "Divide by (x-3): y = -(1+2x)/(x-3), which is written as f⁻¹(x) = (2x+1)/(3-x). The restriction is x ≠ 3.",
-        "Check with x=1: f(1) = (3-1)/(1+2) = 2/3, and f⁻¹(2/3) = (2(2/3)+1)/(3-2/3) = (7/3)/(7/3) = 1. ✓",
-      ], answer: "f⁻¹(x) = (2x + 1)/(3 - x), x ≠ 3" , structureId: "inverse_fraction"},
+      ], answer: "f⁻¹(x) = (2x + 1)/(3 - x), x ≠ 3", structureId: "inverse_fraction", understand: "With the unknown y appearing in two places (both multiplied and on its own), collecting the y terms and factorising is needed before dividing.", check: "With x=1: f(1) = (3-1)/(1+2) = 2/3, and f⁻¹(2/3) = (2(2/3)+1)/(3-2/3) = (7/3)/(7/3) = 1, recovering the original input."},
+      { q: "Find the inverse of f(x) = (x-2)/5.", steps: [
+        "Write the function as y = (x-2)/5.",
+        "Swap x and y: x = (y-2)/5.",
+        "Multiply both sides by 5: 5x = y-2.",
+        "Add 2 to both sides: y = 5x+2.",
+      ], answer: "f⁻¹(x) = 5x+2", structureId: "inverse_linear", understand: "Apply the same swap-and-rearrange method used throughout this section.", check: "f(7) = (7-2)/5 = 1, and f⁻¹(1) = 5(1)+2 = 7, recovering the original input."},
     ],
       tryit: { q: "Find the inverse of f(x) = (x-2)/5.", answer: "f⁻¹(x) = 5x+2. Swap:\nx =\n(y-2)/5, multiply both sides by 5:\n5x =\ny-2, add 2:\ny =\n5x+2.\nCheck:\nf(7) =\n(7-2)/5 =\n1,\nand f⁻¹(1) =\n5(1)+2 =\n7,\nmatching." , structureId: "inverse_linear"} },
     { h: "3. Iteration to approximate a solution", body: [
@@ -969,8 +890,7 @@ INTERMEDIATE_LESSONS.functionsAndIteration = {
         "Work out 5/2.25 = 2.2222 (to 4 dp).",
         "Add: 2.25 + 2.2222 = 4.4722.",
         "Divide by 2: 4.4722/2 = 2.2361 (to 4 dp). So x_2 = 2.2361.",
-        "Compare to √5 = 2.2361 (to 4 dp) - already matching after just two steps.",
-      ], answer: "x_1 = 2.25, x_2 ≈ 2.2361 (√5 to 4 dp)" , structureId: "iteration_sqrt_two_steps"},
+      ], answer: "x_1 = 2.25, x_2 ≈ 2.2361 (√5 to 4 dp)", structureId: "iteration_sqrt_two_steps", understand: "Each new approximation comes from substituting the PREVIOUS approximation into the formula, not the original starting value each time.", check: "Compare to √5 = 2.2361 (to 4 dp): the iteration has already converged after just two steps."},
       { q: "Use x_(n+1) = (x_n + 10/x_n)/2 with x_0=3 to find x_1, x_2 and x_3 (converging toward √10, a bigger and messier target).", steps: [
         "Substitute x_0 = 3 into the formula: x_1 = (3 + 10/3)/2.",
         "Work out 10/3 = 3.3333 (to 4 dp).",
@@ -980,15 +900,19 @@ INTERMEDIATE_LESSONS.functionsAndIteration = {
         "Work out 10/3.1667 = 3.1579 (to 4 dp).",
         "Add and halve:\n(3.1667 + 3.1579)/2 =\n6.3246/2 =\n3.1623 (to 4 dp). So x_2 = 3.1623.",
         "Substitute x_2 = 3.1623 into the formula:\nx_3 =\n(3.1623 + 10/3.1623)/2 =\n(3.1623 + 3.1623)/2 =\n3.1623 (to 4 dp).",
-        "x_2 and x_3 agree to 4 decimal places, so the iteration has settled down: √10 = 3.1623 (to 4 dp).",
-      ], answer: "x_1 = 3.1667, x_2 ≈ 3.1623, x_3 ≈ 3.1623 (√10 to 4 dp)" , structureId: "iteration_sqrt_two_steps"},
+      ], answer: "x_1 = 3.1667, x_2 ≈ 3.1623, x_3 ≈ 3.1623 (√10 to 4 dp)", structureId: "iteration_sqrt_two_steps", understand: "This target needs three steps rather than two before the approximation settles down, since √10 is a slightly harder case to converge on quickly.", check: "x_2 and x_3 agree to 4 decimal places, so the iteration has settled down: √10 = 3.1623 (to 4 dp)."},
       { q: "Use x_(n+1) = (2x_n + 6/x_n²)/3 with x_0 = 2 to find x_1 and x_2 (this iteration converges toward ∛6).", steps: [
         "This formula is Newton's method for finding ∛6. The starting guess x_0 = 2 is sensible since 1³ = 1 < 6 < 8 = 2³.",
         "Substitute x_0 = 2 to find x_1: x_1 = (2(2) + 6/2²)/3 = (4 + 6/4)/3 = (4 + 1.5)/3 = 5.5/3 ≈ 1.8333 (to 4 dp).",
         "Substitute x_1 = 1.8333 to find x_2: compute 6/(1.8333)² = 6/3.3610 ≈ 1.7851 (to 4 dp).",
         "Then x_2 = (2(1.8333) + 1.7851)/3 = (3.6666 + 1.7851)/3 = 5.4517/3 ≈ 1.8172 (to 4 dp).",
-        "Compare to ∛6 ≈ 1.8171 (to 4 dp): the iteration has already converged after just two steps.",
-      ], answer: "x_1 ≈ 1.8333, x_2 ≈ 1.8172 (converging to ∛6 ≈ 1.8171)" , structureId: "iteration_sqrt_two_steps"},
+      ], answer: "x_1 ≈ 1.8333, x_2 ≈ 1.8172 (converging to ∛6 ≈ 1.8171)", structureId: "iteration_sqrt_two_steps", understand: "This formula targets a cube root rather than a square root, so the formula's shape is different, but the same substitute-and-repeat method still applies.", check: "Compare to ∛6 ≈ 1.8171 (to 4 dp): the iteration has already converged after just two steps."},
+      { q: "Use x_(n+1) = (x_n + 7/x_n)/2 with x_0=3 to find x_1 (this iteration converges toward √7).", steps: [
+        "Substitute x_0 = 3 into the formula: x_1 = (3 + 7/3)/2.",
+        "Work out 7/3 = 2.3333 (to 4 dp).",
+        "Add: 3 + 2.3333 = 5.3333.",
+        "Divide by 2: 5.3333/2 = 2.6667 (to 4 dp).",
+      ], answer: "x_1 = 2.6667", structureId: "iteration_sqrt_one_step", understand: "Apply the same substitute-into-the-formula method used throughout this section, for just one step here.", check: "√7 ≈ 2.6458, and x_1 = 2.6667 is already fairly close after just one step."},
     ],
       tryit: { q: "Use x_(n+1) = (x_n + 7/x_n)/2 with x_0=3 to find x_1 (this iteration converges toward √7).", answer: "x_1 = 2.6667.\nx_1 =\n(3 + 7/3)/2 =\n(3+2.3333)/2 =\n5.3333/2 =\n2.6667,\nalready fairly close to √7 ≈ 2.6458 after just one step." , structureId: "iteration_sqrt_one_step"} },
   ],
@@ -1015,24 +939,29 @@ INTERMEDIATE_LESSONS.sequencesAndSeries = {
         "Substitute into the formula:\nnth term =\na+(n-1)d =\n5+(n-1)(3).",
         "Expand the bracket: 5+3n-3.",
         "Simplify: 3n+2.",
-        "Check against n=1: 3(1)+2=5, matching the first term. Confirmed.",
-      ], answer: "3n + 2" , structureId: "deduce_linear_nth_term"},
+      ], answer: "3n + 2", structureId: "deduce_linear_nth_term", understand: "This sequence has a constant difference between consecutive terms, so it is arithmetic, and the formula a + (n-1)d applies.", check: "Check against n=1: 3(1)+2=5, matching the first term of the original sequence."},
       { q: "Find the nth term of 20, 15, 10, 5, ..., then use it to find the 15th term.", steps: [
         "Find the common difference: 15-20=-5, 10-15=-5, 5-10=-5. d=-5 (the sequence is decreasing).",
         "Identify the first term: a=20.",
         "Substitute into the formula: nth term = 20+(n-1)(-5).",
         "Expand the bracket: 20-5n+5.",
         "Simplify: 25-5n.",
-        "Check against n=1: 25-5(1)=20, matching. Confirmed the formula.",
         "Find the 15th term by substituting n=15:\n25-5(15) =\n25-75 =\n-50.",
-      ], answer: "nth term = 25-5n; 15th term = -50" , structureId: "deduce_linear_nth_term"},
+      ], answer: "nth term = 25-5n; 15th term = -50", structureId: "deduce_linear_nth_term", understand: "This sequence decreases by a constant amount each time, so it is still arithmetic, just with a negative common difference.", check: "Check against n=1: 25-5(1)=20, matching the first term of the original sequence."},
       { q: "An arithmetic sequence has 3rd term 11 and 8th term 31. Find the nth term formula and the first term that exceeds 100.", steps: [
         "Find the common difference: d = (8th term − 3rd term) ÷ (8 − 3) = (31 − 11) ÷ 5 = 20 ÷ 5 = 4.",
         "Find the first term: a = 3rd term − 2d = 11 − 2(4) = 11 − 8 = 3.",
         "Write the nth term formula: a + (n−1)d = 3 + (n−1)(4) = 4n − 1.",
         "Set 4n − 1 > 100: rearrange to 4n > 101, giving n > 25.25. The first whole number is n = 26.",
         "26th term = 4(26) − 1 = 104 − 1 = 103.",
-      ], answer: "nth term = 4n − 1; first term exceeding 100 is 103 (at n = 26)" , structureId: "find_a_d_two_terms_arithmetic"},
+      ], answer: "nth term = 4n − 1; first term exceeding 100 is 103 (at n = 26)", structureId: "find_a_d_two_terms_arithmetic", understand: "Only two specific terms are given, not the first few terms in a row, so use the fact that moving from the 3rd term to the 8th term takes exactly 5 steps of size d.", check: "Check the formula against both given terms: 4(3)-1=11 and 4(8)-1=31, both matching."},
+      { q: "Find the nth term of 9, 13, 17, 21, ...", steps: [
+        "Find the common difference by subtracting consecutive terms: 13-9=4, 17-13=4, 21-17=4. d=4.",
+        "Identify the first term: a=9.",
+        "Substitute into the formula: nth term = 9+(n-1)(4).",
+        "Expand the bracket: 9+4n-4.",
+        "Simplify: 4n+5.",
+      ], answer: "4n + 5", structureId: "deduce_linear_nth_term", understand: "Apply the same arithmetic-sequence method used throughout this section: find d, find a, then substitute into a+(n-1)d.", check: "Check against n=1: 4(1)+5=9, matching the first term of the original sequence."},
     ],
       tryit: { q: "Find the nth term of 9, 13, 17, 21, ...", answer: "4n+5. Common difference d=4, first term a=9, so:\nnth term =\n9+(n-1)(4) =\n9+4n-4 =\n4n+5.\nCheck: n=1 gives 4+5=9, matching." , structureId: "deduce_linear_nth_term"} },
     { h: "2. Quadratic sequences", body: [
@@ -1049,8 +978,7 @@ INTERMEDIATE_LESSONS.sequencesAndSeries = {
         "Subtract n² from each term to find the leftover:\nterm1: 3-1² = 3-1 = 2.\nterm2: 8-2² = 8-4 = 4.\nterm3: 15-3² = 15-9 = 6.\nterm4: 24-4² = 24-16 = 8.",
         "The leftover sequence 2,4,6,8 is arithmetic with common difference 2 and first term 2, so its nth term is 2n.",
         "Add the leftover back to the n² part: nth term = n² + 2n.",
-        "Check against the original sequence: n=1: 1+2=3, correct. n=2: 4+4=8, correct. n=3: 9+6=15, correct. n=4: 16+8=24, correct.",
-      ], answer: "n² + 2n" , structureId: "quadratic_second_difference"},
+      ], answer: "n² + 2n", structureId: "quadratic_second_difference", understand: "The first differences are not constant, but checking the SECOND differences reveals whether the sequence is quadratic.", check: "Check against the original sequence: n=1 gives 1+2=3, n=2 gives 4+4=8, n=3 gives 9+6=15, n=4 gives 16+8=24, all matching."},
       { q: "Find the nth term of 5, 16, 33, 56, 85, ... (bigger numbers, and this time the n² coefficient isn't 1).", steps: [
         "Find the first differences: 16-5=11, 33-16=17, 56-33=23, 85-56=29 - not constant.",
         "Find the second differences: 17-11=6, 23-17=6, 29-23=6 - constant, so the sequence is quadratic.",
@@ -1058,13 +986,19 @@ INTERMEDIATE_LESSONS.sequencesAndSeries = {
         "Subtract 3n² (not just n²) from each term:\nterm1: 5-3(1²) = 5-3 = 2.\nterm2: 16-3(2²) = 16-12 = 4.\nterm3: 33-3(3²) = 33-27 = 6.\nterm4: 56-3(4²) = 56-48 = 8.",
         "The leftover 2,4,6,8 is arithmetic with common difference 2 and first term 2, so its nth term is 2n.",
         "Add the leftover to the 3n² part: nth term = 3n² + 2n.",
-        "Check against the 5th term: n=5 gives:\n3(25)+2(5) =\n75+10 =\n85,\nmatching the original sequence. Confirmed.",
-      ], answer: "3n² + 2n" , structureId: "quadratic_second_difference"},
+      ], answer: "3n² + 2n", structureId: "quadratic_second_difference", understand: "This time the second differences are not 2, so the n² coefficient will not simply be 1; find it the same way as before, by halving the constant second difference.", check: "Check against the 5th term: n=5 gives 3(25)+2(5)=75+10=85, matching the original sequence."},
       { q: "The nth term of a sequence is n² − 2n + 3. Find the first value of n for which the term exceeds 100.", steps: [
         "The formula is n² − 2n + 3. Try n = 10: 100 − 20 + 3 = 83, which does not exceed 100.",
         "Try n = 11: 121 − 22 + 3 = 102, which exceeds 100.",
-        "Check n = 10 is genuinely the last miss: 83 ≤ 100 ✓. Check n = 11 works: 102 > 100 ✓.",
-      ], answer: "n = 11; the 11th term is 102" , structureId: "multistep_inequality_reasoning"},
+      ], answer: "n = 11; the 11th term is 102", structureId: "multistep_inequality_reasoning", understand: "This asks for the smallest n satisfying an inequality, so test consecutive whole-number values of n until the formula's value first exceeds 100.", check: "Confirmed both ways: n=10 gives 83, which does not exceed 100, and n=11 gives 102, which does."},
+      { q: "Find the nth term of 4, 10, 18, 28, 40, ...", steps: [
+        "Find the first differences: 10-4=6, 18-10=8, 28-18=10, 40-28=12; not constant.",
+        "Find the second differences: 8-6=2, 10-8=2, 12-10=2; constant, so the sequence is quadratic.",
+        "The n² coefficient is half the constant second difference: 2÷2=1.",
+        "Subtract n² from each term: 4-1=3, 10-4=6, 18-9=9, 28-16=12, 40-25=15.",
+        "The leftover 3,6,9,12,15 is arithmetic with common difference 3 and first term 3, so its nth term is 3n.",
+        "Add the parts together: n² + 3n.",
+      ], answer: "n² + 3n", structureId: "quadratic_second_difference", understand: "Apply the same second-difference method used throughout this section: check the second differences, halve them for the n² coefficient, then find the leftover.", check: "Check against n=1: 1+3=4, matching the first term of the original sequence."},
     ],
       tryit: { q: "Find the nth term of 4, 10, 18, 28, 40, ...", answer: "n²+3n. First differences 6,8,10,12 aren't constant, but second differences are all 2, so the n² coefficient is 2÷2=1; subtracting n² from each term leaves 3,6,9,12, which is 3n, so nth term = n²+3n." , structureId: "quadratic_second_difference"} },
     { h: "3. Geometric sequences", body: [
@@ -1081,20 +1015,26 @@ INTERMEDIATE_LESSONS.sequencesAndSeries = {
         "Substitute into the formula for the 6th term:\nterm6 =\na×r^(6-1) =\n3×2⁵.",
         "Work out 2⁵ = 32.",
         "Multiply: 3×32=96.",
-      ], answer: "96" , structureId: "geometric_nth_term"},
+      ], answer: "96", structureId: "geometric_nth_term", understand: "The sequence has a constant ratio between consecutive terms, so it is geometric, and the formula a×r^(n-1) applies.", check: "Check the formula against an earlier known term: term 3 = 3×2² = 3×4 = 12, matching the given sequence."},
       { q: "Find the 7th term of the geometric sequence 8, -4, 2, -1, ... (a negative, fractional ratio this time).", steps: [
         "Find the ratio: -4÷8=-1/2, 2÷(-4)=-1/2 - confirming r=-1/2.",
         "Identify the first term: a=8.",
         "Substitute into the formula for the 7th term:\nterm7 =\na×r^(7-1) =\n8×(-1/2)⁶.",
         "Work out (-1/2)⁶: an even power makes a negative number positive, so this equals (1/2)⁶ = 1/64.",
         "Multiply:\n8×(1/64) =\n8/64 =\n1/8.",
-      ], answer: "1/8" , structureId: "geometric_nth_term"},
+      ], answer: "1/8", structureId: "geometric_nth_term", understand: "The ratio here is negative and a fraction, so extra care is needed with the sign and the power.", check: "Check the formula against an earlier known term: term 3 = 8×(-1/2)² = 8×(1/4) = 2, matching the given sequence."},
       { q: "A geometric sequence has first term 3 and common ratio 2. Find the smallest value of n for which the nth term exceeds 1000.", steps: [
         "The nth term formula is a × r^(n−1) = 3 × 2^(n−1).",
         "Set 3 × 2^(n−1) > 1000: divide both sides by 3 to get 2^(n−1) > 333.33.",
         "Test powers of 2: 2^8 = 256 (not big enough); 2^9 = 512 > 333.33. So n − 1 = 9, giving n = 10.",
-        "Check: 10th term = 3 × 2^9 = 3 × 512 = 1536 > 1000 ✓; 9th term = 3 × 2^8 = 3 × 256 = 768 ≤ 1000 ✓.",
-      ], answer: "n = 10; the 10th term is 1536" , structureId: "multistep_inequality_reasoning"},
+      ], answer: "n = 10; the 10th term is 1536", structureId: "multistep_inequality_reasoning", understand: "This asks for the smallest n satisfying an inequality with a geometric formula, so test consecutive whole-number values of n until the term first exceeds 1000.", check: "Confirmed both ways: 9th term = 3×2⁸ = 3×256 = 768, which does not exceed 1000, and 10th term = 3×2⁹ = 3×512 = 1536, which does."},
+      { q: "Find the 5th term of the geometric sequence 2, 6, 18, 54, ...", steps: [
+        "Find the ratio: 6÷2=3, 18÷6=3, confirming r=3.",
+        "Identify the first term: a=2.",
+        "Substitute into the formula for the 5th term: term5 = a×r^(5-1) = 2×3⁴.",
+        "Work out 3⁴=81.",
+        "Multiply: 2×81=162.",
+      ], answer: "162", structureId: "geometric_nth_term", understand: "Apply the same geometric-sequence method used throughout this section: find r, find a, then substitute into a×r^(n-1).", check: "Check the formula against an earlier known term: term3 = 2×3²=2×9=18, matching the given sequence."},
     ],
       tryit: { q: "Find the 5th term of the geometric sequence 2, 6, 18, 54, ...", answer: "162. Ratio:\nr =\n6÷2 =\n3,\nfirst term a=2, so:\n5th term =\na×r⁴ =\n2×3⁴ =\n2×81 =\n162." , structureId: "geometric_nth_term"} },
   ],
@@ -1118,20 +1058,25 @@ INTERMEDIATE_LESSONS.graphsAndRatesOfChange = {
         "Find the change in y: 15-3=12.",
         "Find the change in x, using the same order as the y-subtraction: 4-1=3.",
         "Divide:\ngradient =\n12/3 =\n4.",
-      ], answer: "4" , structureId: "gradient_two_points"},
+      ], answer: "4", structureId: "gradient_two_points", understand: "Label the two points consistently as point 1 and point 2, then subtract in the same order for both coordinates.", check: "Reversing the labelling gives the same result: using (4,15) as point 1 and (1,3) as point 2, (3-15)/(1-4) = -12/-3 = 4, matching."},
       { q: "Find the gradient of the line through (-2,7) and (4,-5).", steps: [
         "Label the points: (x₁,y₁)=(-2,7), (x₂,y₂)=(4,-5).",
         "Find the change in y: -5-7=-12.",
         "Find the change in x, same order:\n4-(-2) =\n4+2 =\n6.",
         "Divide:\ngradient =\n-12/6 =\n-2.",
-      ], answer: "-2" , structureId: "gradient_two_points"},
+      ], answer: "-2", structureId: "gradient_two_points", understand: "Negative coordinates need extra care with signs, especially when subtracting a negative x-value.", check: "The line falls from left to right (a negative gradient), which matches the points given: y decreases from 7 to -5 as x increases from -2 to 4."},
       { q: "The line through (k, 3) and (2, k) has gradient 4. Find k.", steps: [
         "Apply the gradient formula: (k − 3) ÷ (2 − k) = 4.",
         "Multiply both sides by (2 − k): k − 3 = 4(2 − k) = 8 − 4k.",
         "Collect k terms on the left: k + 4k = 8 + 3, giving 5k = 11.",
         "Divide: k = 11/5.",
-        "Check: gradient = (11/5 − 3) ÷ (2 − 11/5) = (−4/5) ÷ (−1/5) = 4. ✓",
-      ], answer: "k = 11/5" , structureId: "gradient_two_points"},
+      ], answer: "k = 11/5", structureId: "gradient_two_points", understand: "The gradient formula still applies even though the coordinates themselves involve the unknown, k; set up the same formula as usual and solve the resulting equation.", check: "Substitute k = 11/5 back: gradient = (11/5 − 3) ÷ (2 − 11/5) = (−4/5) ÷ (−1/5) = 4, matching the given gradient."},
+      { q: "Find the gradient of the line through (2,-1) and (5,8).", steps: [
+        "Label the points: (x₁,y₁)=(2,-1), (x₂,y₂)=(5,8).",
+        "Find the change in y: 8-(-1)=9.",
+        "Find the change in x, same order: 5-2=3.",
+        "Divide: gradient = 9/3 = 3.",
+      ], answer: "3", structureId: "gradient_two_points", understand: "Apply the same gradient method used throughout this section: label consistently, subtract in the same order, then divide.", check: "Reversing the labelling gives the same result: using (5,8) as point 1 and (2,-1) as point 2, (-1-8)/(2-5) = -9/-3 = 3, matching."},
     ],
       tryit: { q: "Find the gradient of the line through (2,-1) and (5,8).", answer: "3.\nChange in y =\n8-(-1) =\n9.\nChange in x (same order) =\n5-2 =\n3.\nGradient =\n9/3 =\n3." , structureId: "gradient_two_points"} },
     { h: "2. Reading a line's equation", body: [
@@ -1144,8 +1089,8 @@ INTERMEDIATE_LESSONS.graphsAndRatesOfChange = {
         "Compare y=4x-7 to the general form y=mx+c: m=4, c=-7.",
         "Check c by substituting x=0:\ny =\n4(0)-7 =\n-7,\nmatching c=-7 - this is where the line crosses the y-axis.",
         "Check m by finding a second point, substituting x=1:\ny =\n4(1)-7 =\n-3.",
-        "Use the gradient formula between (0,-7) and (1,-3):\n(-3-(-7))/(1-0) =\n4/1 =\n4,\nmatching m=4. Confirmed.",
-      ], answer: "gradient = 4, y-intercept = -7" , structureId: "y_intercept_linear"},
+        "Use the gradient formula between (0,-7) and (1,-3):\n(-3-(-7))/(1-0) =\n4/1 =\n4,\nmatching m=4.",
+      ], answer: "gradient = 4, y-intercept = -7", structureId: "y_intercept_linear", understand: "Once an equation is already written as y = mx + c, the gradient and y-intercept can be read straight off, but it is worth verifying both against actual points on the line.", check: "Both m and c have now been independently confirmed using real points on the line, not just read off and trusted blindly."},
       { q: "A taxi firm charges C = 2.50 + 1.20d, where C is the cost in pounds and d is the distance in miles. What do the numbers 2.50 and 1.20 represent, and what does a 6-mile journey cost?", steps: [
         "Compare C=2.50+1.20d to y=mx+c, with C playing the role of y and d playing the role of x: m=1.20, c=2.50.",
         "c is the value when d=0, i.e. before any distance is travelled - so £2.50 is a fixed charge just for getting in the taxi.",
@@ -1153,14 +1098,21 @@ INTERMEDIATE_LESSONS.graphsAndRatesOfChange = {
         "Find the cost of a 6-mile journey by substituting d=6: C=2.50+1.20(6).",
         "Work out 1.20×6=7.20.",
         "Add:\nC =\n2.50+7.20 =\n9.70.",
-      ], answer: "£2.50 is the fixed charge, £1.20 is the cost per mile; a 6-mile journey costs £9.70" , structureId: "real_world_gradient_rate"},
+      ], answer: "£2.50 is the fixed charge, £1.20 is the cost per mile; a 6-mile journey costs £9.70", structureId: "real_world_gradient_rate", understand: "This is a real-world context, so m and c each need a concrete meaning, not just a numerical value.", check: "A 0-mile journey would cost C = 2.50 + 1.20(0) = £2.50, confirming £2.50 really is the fixed charge before any distance is added."},
       { q: "Rearrange 3x − 2y + 8 = 0 into y = mx + c form. State the gradient and y-intercept, then find where the line crosses the x-axis.", steps: [
         "Rearrange to isolate y: add 2y to both sides to get 2y = 3x + 8.",
         "Divide through by 2: y = (3/2)x + 4.",
         "Read off m = 3/2 (the gradient) and c = 4 (the y-intercept).",
         "For the x-axis crossing, set y = 0: 0 = (3/2)x + 4, giving (3/2)x = −4, so x = −8/3.",
-        "Check: substitute x = −8/3 into the rearranged equation:\ny = (3/2)(−8/3) + 4 = −4 + 4 = 0. ✓",
-      ], answer: "gradient = 3/2, y-intercept = 4, x-axis crossing at x = −8/3" , structureId: "x_intercept_simple"},
+      ], answer: "gradient = 3/2, y-intercept = 4, x-axis crossing at x = −8/3", structureId: "x_intercept_simple", understand: "The equation must be fully rearranged into y = mx + c form before m and c can be safely read off; only once y is isolated does the coefficient of x mean the gradient.", check: "Substitute x = −8/3 back into the rearranged equation: y = (3/2)(−8/3) + 4 = −4 + 4 = 0, confirming this really is where the line crosses the x-axis."},
+      { q: "A phone plan costs C = 15 + 0.05t, where t is minutes used. What do 15 and 0.05 represent, and what is the cost for 200 minutes?", steps: [
+        "Compare C=15+0.05t to y=mx+c: m=0.05, c=15.",
+        "c is the value when t=0, so £15 is a fixed monthly charge before any minutes are used.",
+        "m is the extra cost per minute, so £0.05 is added for every minute used.",
+        "Find the cost for 200 minutes: C=15+0.05×200.",
+        "Work out 0.05×200=10.",
+        "Add: C=15+10=25.",
+      ], answer: "£15 is the fixed monthly charge, £0.05 is the cost per minute; the cost for 200 minutes is £25", structureId: "real_world_gradient_rate", understand: "Apply the same real-world gradient/intercept interpretation used throughout this section.", check: "A 0-minute plan would cost C=15+0.05(0)=£15, confirming £15 really is the fixed charge before any usage."},
     ],
       tryit: { q: "A phone plan costs C = 15 + 0.05t, where t is minutes used. What do 15 and 0.05 represent, and what is the cost for 200 minutes?", answer: "£15 is the fixed monthly charge (the cost when t=0), £0.05 is the cost per minute; for 200 minutes:\nC =\n15+0.05×200 =\n15+10 =\n£25." , structureId: "real_world_gradient_rate"} },
     { h: "3. Area under a velocity-time graph", body: [
@@ -1175,22 +1127,81 @@ INTERMEDIATE_LESSONS.graphsAndRatesOfChange = {
         "Area of a triangle = ½×base×height.",
         "Substitute: ½×8×20.",
         "Work out 8×20=160, then half of that is 80.",
-      ], answer: "80 metres" , structureId: "velocity_time_trapezium_area"},
+      ], answer: "80 metres", structureId: "velocity_time_trapezium_area", understand: "The velocity starts at zero and rises steadily, so the region under the graph is a right-angled triangle, not a rectangle.", check: "The average velocity over the journey is (0+20)/2 = 10 m/s, and distance = average velocity × time = 10 × 8 = 80 m, matching."},
       { q: "A velocity-time graph shows speed rising steadily from 5 m/s to 15 m/s over 6 seconds. What distance was covered?", steps: [
         "The velocity doesn't start at 0, so the region under the graph is a trapezium: two parallel sides of length 5 and 15 (the starting and ending velocities), with width 6 (the time).",
         "Area of a trapezium = ½×(sum of parallel sides)×width.",
         "Sum of the parallel sides: 5+15=20.",
         "Substitute: ½×20×6.",
         "Work out 20×6=120, then half of that is 60.",
-      ], answer: "60 metres" , structureId: "velocity_time_trapezium_area"},
+      ], answer: "60 metres", structureId: "velocity_time_trapezium_area", understand: "Since the velocity does not start at zero, the region is a trapezium rather than a triangle, so the trapezium area formula is needed instead.", check: "The average velocity over the journey is (5+15)/2 = 10 m/s, and distance = average velocity × time = 10 × 6 = 60 m, matching."},
       { q: "A velocity-time graph shows a particle moving at 8 m/s for 3 seconds, then decelerating uniformly to rest over a further 5 seconds. Find the total distance covered.", steps: [
         "Split the journey into two phases.",
         "Phase 1 (constant speed): the region under the graph is a rectangle with height 8 m/s and width 3 s. Area = 8 × 3 = 24 m.",
         "Phase 2 (uniform deceleration to rest): the velocity falls from 8 m/s to 0 m/s over 5 s, so the region is a triangle with height 8 and base 5. Area = ½ × 8 × 5 = 20 m.",
         "Total distance = 24 + 20 = 44 m.",
-      ], answer: "44 metres" , structureId: "multi_segment_total_distance"},
+      ], answer: "44 metres", structureId: "multi_segment_total_distance", understand: "The journey has two distinct phases with different shapes under the graph, so each phase's area must be found separately before adding them together.", check: "Each phase's answer is checked using its own shape formula, and both distances are positive, as expected since deceleration to rest still covers positive distance."},
+      { q: "A cyclist travels at a constant 12 m/s for 10 seconds. Using the area under the velocity-time graph, find the distance travelled.", steps: [
+        "Constant velocity means the region under the graph is a rectangle with height 12 m/s and width 10 s.",
+        "Area = height × width = 12 × 10.",
+        "Work out 12×10=120.",
+      ], answer: "120 metres", structureId: "velocity_time_trapezium_area", understand: "Apply the same area-under-the-graph method used throughout this section.", check: "This matches the ordinary formula distance = speed × time = 12 × 10 = 120, confirming the area method gives the correct answer."},
     ],
       tryit: { q: "A cyclist travels at a constant 12 m/s for 10 seconds. Using the area under the velocity-time graph, find the distance travelled.", answer: "120 metres. Constant velocity makes a rectangle, so:\narea =\nheight×width =\n12×10 =\n120,\nmatching distance=speed×time." , structureId: "velocity_time_trapezium_area"} },
+    { h: "4. Cubic, reciprocal and exponential graph shapes", body: [
+      "Different families of equations produce recognisably different graph shapes, and spotting which family an equation belongs to lets you predict its shape without plotting a single point. y = mx + c always gives a straight line, since x only ever appears to the power 1. y = ax² + bx + c always gives a parabola, a single smooth curve with exactly one turning point, since the highest power of x is 2. Two further families, tested throughout GCSE Higher, look quite different again: reciprocal graphs, where x sits in a denominator, and exponential graphs, where x sits in a power.",
+      "A reciprocal graph, y = k/x, behaves very differently near x = 0 compared with far away from it. Since dividing by zero is impossible, x can never equal 0, so the graph has a gap there: as x gets closer and closer to 0 from the positive side, y shoots up without limit (try k=10: 10/0.1=100, 10/0.01=1000, and so on). But as x grows larger and larger, y shrinks towards 0 without ever quite reaching it (10/100=0.1, 10/1000=0.01). This produces two separate curved branches that never touch either axis: one in the region where x and y are both positive, and one where both are negative (assuming k is positive).",
+      "A cubic graph, y = ax³ + bx² + cx + d, is an S-shaped curve that can turn twice (unlike a parabola's single turn), and can cross the x-axis up to three times. Writing a cubic in factorised form makes those crossings visible immediately: y = (x-1)(x+2)(x-4) crosses the x-axis at exactly x=1, x=-2 and x=4, since the whole product becomes zero whenever any one bracket does. For extremely large x (positive or negative), every other term becomes tiny compared with the x³ term, so the sign of a alone decides which way each end of the curve points: positive a means the curve rises on the far right and falls on the far left, exactly like y=x³ itself, while negative a flips both ends.",
+      "An exponential graph, y = a × bˣ, has x sitting in the power rather than as a base, which makes it behave completely differently from every other family here: instead of adding a fixed amount for each step (like a straight line) or a changing-but-predictable amount (like a curve), it multiplies by the same fixed base b at every step. If b is bigger than 1, repeated multiplying makes y grow faster and faster (growth); if b is between 0 and 1, repeated multiplying makes y shrink towards 0 faster and faster (decay), since multiplying by a fraction less than 1 makes a number smaller each time. An exponential graph with a positive starting value never crosses the x-axis at all, since multiplying a positive number by a positive base can never produce zero.",
+      "To identify a graph family from its equation, check three things in order: does x appear only to the power 1 (linear), does the highest power of x reach exactly 2 (quadratic) or exactly 3 (cubic), does x appear in a denominator (reciprocal), or does x appear in a power/exponent rather than as a base (exponential)."
+    ], examples: [
+      {
+        q: "y = 2/x. What type of graph does this equation produce, and describe two of its key features.",
+        understand: "Check where x appears in the equation: here it is in the denominator, dividing into a fixed number, which is the signature of a reciprocal graph.",
+        steps: [
+          "x appears in the denominator, dividing into the fixed number 2, matching the reciprocal form y = k/x.",
+          "Since dividing by zero is impossible, x can never equal 0: the graph has a gap there.",
+          "As x grows very large, y = 2/x shrinks towards 0 without ever reaching it."
+        ],
+        answer: "Reciprocal graph; x can never equal 0, and y approaches (but never reaches) 0 for very large x",
+        check: "Check with real numbers: 2/1000 = 0.002, very close to 0 but never exactly 0, confirming the graph approaches the x-axis without touching it.",
+        structureId: "identify_graph_family"
+      },
+      {
+        q: "y = 6/(x - 4). For which value of x is this equation undefined?",
+        understand: "A fraction is undefined exactly when its denominator equals zero, so set the denominator to zero and solve for x.",
+        steps: [
+          "Set the denominator to zero: x - 4 = 0.",
+          "x = 4."
+        ],
+        answer: "x = 4",
+        check: "Check by substituting a value close to 4, such as x=4.01: 6/(4.01-4) = 6/0.01 = 600, an extremely large number, confirming the graph shoots off towards infinity right next to x=4.",
+        structureId: "reciprocal_undefined_x"
+      },
+      {
+        q: "y = (x-1)(x+2)(x-4). Find every x-intercept of this cubic graph, where it crosses the x-axis.",
+        understand: "A cubic in factorised form crosses the x-axis at each value of x that makes one of its brackets equal zero, since the whole product becomes zero whenever any single factor does.",
+        steps: [
+          "(x - 1) = 0 gives x = 1.",
+          "(x + 2) = 0 gives x = -2.",
+          "(x - 4) = 0 gives x = 4."
+        ],
+        answer: "x = 1, -2 and 4",
+        check: "A cubic can cross the x-axis up to three times, and this one uses all three of its available crossings; check one root directly by substituting x=1 into the original brackets: (1-1)(1+2)(1-4) = 0×3×(-3) = 0, confirming.",
+        structureId: "cubic_roots_from_factorised_form"
+      },
+      {
+        q: "y = 5 × 0.2ˣ. Does this equation represent exponential growth or decay, and why?",
+        understand: "Compare the base of the power, the number being raised to x, with 1: a base bigger than 1 means growth, a base between 0 and 1 means decay.",
+        steps: [
+          "The base here is 0.2, which is between 0 and 1.",
+          "Repeatedly multiplying by 0.2 makes each result smaller than the one before, so this is decay."
+        ],
+        answer: "Decay, since the base (0.2) is between 0 and 1",
+        check: "Check with real numbers: at x=1, y=5×0.2=1; at x=2, y=5×0.2²=0.2; at x=3, y=5×0.2³=0.04, each value smaller than the last, confirming decay.",
+        structureId: "exponential_growth_decay_identify"
+      }
+    ] },
   ],
 };
 
@@ -1207,25 +1218,42 @@ INTERMEDIATE_LESSONS.advancedProbability = {
       "This only works for independent events - ones where knowing the outcome of one tells you nothing about the other. To use the rule: confirm the events are independent, then simply multiply their individual probabilities.",
       "The danger is applying this same multiplying shortcut to events that DO affect each other (see the next section), where the probabilities themselves change once the first event has happened.",
     ], examples: [
-      { q: "A fair coin is flipped and a fair die is rolled. What is P(heads AND a 6)?", steps: [
-        "Check the events are independent: the coin landing on heads has no effect on what the die shows, and vice versa.",
+      { q: "A fair coin is flipped and a fair die is rolled. What is P(heads AND a 6)?",
+        understand: "Check first that the two events are independent: the coin landing on heads has no effect on what the die shows, and vice versa. Because they are independent, the AND rule applies: multiply the two individual probabilities together.",
+        steps: [
         "Find P(heads) = 1/2.",
         "Find P(a 6) = 1/6.",
         "Multiply: 1/2×1/6=1/12.",
-      ], answer: "1/12" , structureId: "independent_and"},
-      { q: "Two fair dice are rolled and a fair coin is flipped. Find P(the two dice sum to 7 AND the coin shows heads).", steps: [
-        "Check independence: the coin doesn't affect the dice, and the dice don't affect the coin.",
-        "Find P(the two dice sum to 7): the pairs that work are (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) - 6 pairs out of 36 equally likely pairs total, so:\nP =\n6/36 =\n1/6.",
+      ], answer: "1/12",
+        check: "Check by direct counting: there are 2 × 6 = 12 equally likely (coin, die) pairs in total, and exactly 1 of them, (heads, 6), is the one wanted, giving 1/12 by counting too.",
+        structureId: "independent_and"},
+      { q: "Two fair dice are rolled and a fair coin is flipped. Find P(the two dice sum to 7 AND the coin shows heads).",
+        understand: "Check independence first: the coin doesn't affect the dice, and the dice don't affect the coin, so the AND rule applies here too, even though one of the two probabilities itself needs a small calculation first.",
+        steps: [
+        "Find P(the two dice sum to 7): the pairs that work are (1,6),(2,5),(3,4),(4,3),(5,2),(6,1), 6 pairs out of 36 equally likely pairs total, so:\nP =\n6/36 =\n1/6.",
         "Find P(coin shows heads) = 1/2.",
         "Multiply: 1/6×1/2=1/12.",
-      ], answer: "1/12" , structureId: "independent_and"},
-      { q: "Three fair dice are rolled. Find P(all three show the same number).", steps: [
-        "The first die can show any of 6 values; its outcome does not restrict the others.",
+      ], answer: "1/12",
+        check: "It is a coincidence of these particular numbers that the answer again comes out as 1/12, since 1/6 × 1/2 = 1/12 just as 1/2 × 1/6 did in Example 1; the method, not the numeric answer, is what carries over between the two questions.",
+        structureId: "independent_and"},
+      { q: "Three fair dice are rolled. Find P(all three show the same number).",
+        understand: "The first die can show any of 6 values; its outcome does not restrict the others. For the second and third dice to match the first, treat each of those as its own independent event and apply the AND rule twice.",
+        steps: [
         "For all three to match, the second die must equal the first: P = 1/6.",
         "The third die must also equal the first: P = 1/6.",
         "Since the three dice are independent, multiply:\n1/6 × 1/6 =\n1/36.",
-        "Check by counting: there are 6 same-value outcomes (all 1s, all 2s, ..., all 6s) out of 6³ = 216 equally likely outcomes:\n6 ÷ 216 =\n1/36. ✓",
-      ], answer: "1/36" , structureId: "three_stage_independent"},
+      ], answer: "1/36",
+        check: "Check by counting: there are 6 same-value outcomes (all 1s, all 2s, ..., all 6s) out of 6³ = 216 equally likely outcomes:\n6 ÷ 216 =\n1/36, which matches.",
+        structureId: "three_stage_independent"},
+      { q: "A fair coin is tossed and a fair six-sided die is rolled. Find the probability of a head and a multiple of 3.",
+        understand: "The multiples of 3 on a standard die are 3 and 6, so first count how many of the 6 faces qualify before applying the AND rule.",
+        steps: [
+        "P(head) = 1/2.",
+        "P(multiple of 3) = 2/6 = 1/3, since 2 of the 6 faces (3 and 6) are multiples of 3.",
+        "The events are independent, so multiply: 1/2 × 1/3 = 1/6.",
+      ], answer: "1/6",
+        check: "Check by counting: there are 2 × 6 = 12 equally likely (coin, die) pairs, and exactly 2 of them, (head,3) and (head,6), satisfy the condition, giving 2/12 = 1/6, which matches.",
+        structureId: "independent_and"},
     ],
       tryit: { q: "Two independent spinners are used: spinner A has 4 equal sections numbered 1-4, spinner B has 3 equal sections coloured red, blue, green. Find P(spinner A shows 3 AND spinner B shows green).", answer: "1/12. Independent events, so multiply the separate probabilities: P(3)=1/4, P(green)=1/3, giving 1/4×1/3=1/12." , structureId: "independent_and"} },
     { h: "2. Without replacement", body: [
@@ -1236,27 +1264,48 @@ INTERMEDIATE_LESSONS.advancedProbability = {
       "One more rule is worth naming here, since the second example below needs it: when a result can happen via two or more different routes that can't both occur at once - like 'red-then-blue' OR 'blue-then-red' - work out the probability of each route separately and then ADD the routes together. This addition is safe exactly because the routes are non-overlapping (getting red-then-blue on a given pair of draws rules out getting blue-then-red on that same pair), so nothing is being double-counted. This is the OR rule, and it's the opposite move to the AND rule from Section 1, which multiplies rather than adds.",
       "The single most common mistake is forgetting to reduce the total on the second draw (using the original total instead of one fewer) - always ask 'how many counters are left in the bag altogether now?' before writing the second fraction.",
     ], examples: [
-      { q: "A bag has 5 red and 3 blue counters. Two are drawn without replacement. Find P(both red).", steps: [
+      { q: "A bag has 5 red and 3 blue counters. Two are drawn without replacement. Find P(both red).",
+        understand: "Both counters need to be red, so this is a two-stage AND, but because the counter is not replaced, the second stage's probability must be recalculated from what remains in the bag after the first draw.",
+        steps: [
         "Find P(1st red): 5 red out of 8 counters total, so P=5/8.",
         "One red counter and one counter overall are now gone, leaving 7 counters, 4 of them red.",
         "Find P(2nd red, given the 1st was red): 4/7.",
         "Multiply: 5/8×4/7=20/56.",
-        "Simplify: 20/56=5/14 (dividing top and bottom by their highest common factor, 4 - the same simplifying technique as in fraction arithmetic).",
-      ], answer: "5/14" , structureId: "tree_without_replacement_path"},
-      { q: "The same bag (5 red, 3 blue, 8 total) has 2 counters drawn without replacement. Find P(one red and one blue, in either order).", steps: [
-        "'One red and one blue' can happen in two different orders: red-then-blue, or blue-then-red - these are separate, non-overlapping cases, so (by the OR rule above) work each out and add.",
+        "Simplify: 20/56=5/14 (dividing top and bottom by their highest common factor, 4, the same simplifying technique as in fraction arithmetic).",
+      ], answer: "5/14",
+        check: "5/14 should be a little less than P(1st red) = 5/8 on its own, since requiring a second red counter on top of the first can only make the combined event less likely, never more likely.",
+        structureId: "tree_without_replacement_path"},
+      { q: "The same bag (5 red, 3 blue, 8 total) has 2 counters drawn without replacement. Find P(one red and one blue, in either order).",
+        understand: "'One red and one blue' can happen in two different orders: red-then-blue, or blue-then-red. These are separate, non-overlapping cases, so by the OR rule from the body above, work each route out separately and add them.",
+        steps: [
         "Red then blue: P(1st red)=5/8. One counter is now gone (a red one), leaving 7 counters, still all 3 blues. P(2nd blue given 1st red)=3/7. Multiply: 5/8×3/7=15/56.",
         "Blue then red: P(1st blue)=3/8. One counter is now gone (a blue one), leaving 7 counters, still all 5 reds. P(2nd red given 1st blue)=5/7. Multiply: 3/8×5/7=15/56.",
         "Add the two cases together, since either order satisfies the question: 15/56+15/56=30/56.",
         "Simplify: 30/56=15/28.",
-      ], answer: "15/28" , structureId: "tree_multi_path_without_replacement"},
-      { q: "A bag contains 6 red and 4 blue balls. Three are drawn without replacement. Find P(all three are red).", steps: [
+      ], answer: "15/28",
+        check: "Notice both routes gave the same probability, 15/56, which makes sense here since swapping 'red' and 'blue' throughout just swaps which count is used first, and multiplication does not care about order: 5×3 gives the same product as 3×5.",
+        structureId: "tree_multi_path_without_replacement"},
+      { q: "A bag contains 6 red and 4 blue balls. Three are drawn without replacement. Find P(all three are red).",
+        understand: "This extends the two-draw AND idea to three draws: each successive draw needs its own recalculated probability, since every ball removed changes both the total and the red count for the next draw.",
+        steps: [
         "P(1st red): 6 reds out of 10 balls total, so P = 6/10 = 3/5.",
         "One red ball removed, leaving 9 balls of which 5 are red. P(2nd red, given 1st red) = 5/9.",
         "Another red removed, leaving 8 balls of which 4 are red. P(3rd red, given first two red) = 4/8 = 1/2.",
         "Multiply: 3/5 × 5/9 × 1/2 = 15/90 = 1/6.",
-        "Check: (6 × 5 × 4) ÷ (10 × 9 × 8) = 120/720 = 1/6. ✓",
-      ], answer: "1/6" , structureId: "dependent_without_replacement_same_colour"},
+      ], answer: "1/6",
+        check: "Check using the counting form directly: (6 × 5 × 4) ÷ (10 × 9 × 8) = 120/720 = 1/6, matching the running-probability calculation exactly.",
+        structureId: "dependent_without_replacement_same_colour"},
+      { q: "A bag has 4 red, 3 blue and 2 green counters. Two are drawn without replacement. Find P(the two counters are different colours).",
+        understand: "With three colours now, listing every 'different colour' route (red-then-blue, blue-then-red, red-then-green, and so on) would mean working out six separate routes and adding them all. It is much faster to find P(same colour) instead, using the AND and OR rules already covered, and then apply the complement rule: P(different) = 1 - P(same).",
+        steps: [
+        "P(both red) = 4/9 × 3/8 = 12/72 = 1/6.",
+        "P(both blue) = 3/9 × 2/8 = 6/72 = 1/12.",
+        "P(both green) = 2/9 × 1/8 = 2/72 = 1/36.",
+        "Add the three same-colour routes, since they cannot overlap: 1/6 + 1/12 + 1/36. Using a common denominator of 36: 6/36 + 3/36 + 1/36 = 10/36 = 5/18.",
+        "Apply the complement: P(different colours) = 1 - 5/18 = 13/18.",
+      ], answer: "13/18",
+        check: "13/18 is close to 1, which is reasonable: with three different colours available and only 9 counters total, most pairs of draws are likely to come out as different colours rather than matching.",
+        structureId: "dependent_without_replacement_same_colour"},
     ],
       tryit: { q: "A bag has 4 green and 2 yellow counters. Two are drawn without replacement. Find P(both yellow).", answer: "1/15.\nP(1st yellow) =\n2/6 =\n1/3.\nOne yellow and one counter overall are now gone, leaving 5 counters with 1 yellow, so P(2nd yellow given 1st yellow)=1/5. Multiply: 1/3×1/5=1/15." , structureId: "dependent_without_replacement_same_colour"} },
     { h: "3. At-least-one, via the complement", body: [
@@ -1266,26 +1315,43 @@ INTERMEDIATE_LESSONS.advancedProbability = {
       "This is most useful when 'none happening' is much easier to calculate directly than 'at least one happening' - which is almost always true once there are more than two events or trials, since 'at least one' would otherwise mean adding up lots of separate messy cases (exactly one, exactly two, exactly three...), whereas 'none' is just one multiplication.",
       "The pitfall to avoid: P(at least one) is NOT found by adding the individual probabilities of each trial together - that method overcounts (and can even produce an answer bigger than 1 once there are enough trials). Always go via the complement, P(none), instead.",
     ], examples: [
-      { q: "Two fair coins are flipped. Find P(at least one head).", steps: [
-        "'At least one head' is the opposite of 'no heads at all', i.e. both coins landing tails.",
+      { q: "Two fair coins are flipped. Find P(at least one head).",
+        understand: "'At least one head' is the opposite of 'no heads at all', which means both coins landing tails. It is usually easier to find P(no heads) first and then use the complement rule P(at least one) = 1 - P(none).",
+        steps: [
         "Find P(a single coin shows tails) = 1/2.",
         "Since the coins are independent:\nP(both tails) =\n1/2×1/2 =\n1/4.",
         "P(at least one head) =\n1 - P(both tails) =\n1 - 1/4 =\n3/4.",
-        "Check by listing: HH, HT, TH, TT - 3 of these 4 equally likely outcomes contain at least one head, giving 3/4. Matches.",
-      ], answer: "3/4" , structureId: "at_least_one_identical"},
-      { q: "P(rain on a given day) = 0.3. Find P(at least one rainy day in 2 independent days).", steps: [
+      ], answer: "3/4",
+        check: "Check by listing: HH, HT, TH, TT. 3 of these 4 equally likely outcomes contain at least one head, giving 3/4, which matches.",
+        structureId: "at_least_one_identical"},
+      { q: "P(rain on a given day) = 0.3. Find P(at least one rainy day in 2 independent days).",
+        understand: "Again it is easier to find the complement, no rain on either day, first, since 'at least one rainy day' would otherwise mean adding the separate cases of exactly one rainy day and exactly two rainy days.",
+        steps: [
         "P(no rain on a single day) =\n1-0.3 =\n0.7.",
         "Since the two days are independent:\nP(no rain on either day) =\n0.7×0.7 =\n0.49.",
         "P(at least one rainy day) =\n1 - P(no rain at all) =\n1-0.49 =\n0.51.",
-      ], answer: "0.51" , structureId: "at_least_one_non_identical"},
-      { q: "A fair die is rolled three times. Find P(at least one 6).", steps: [
-        "Use the complement: P(at least one 6) = 1 − P(no 6 on any roll).",
+      ], answer: "0.51",
+        check: "0.51 is just over half, which is reasonable: with a 30% chance of rain each day across two days, it is slightly more likely than not that at least one of them turns out rainy.",
+        structureId: "at_least_one_non_identical"},
+      { q: "A fair die is rolled three times. Find P(at least one 6).",
+        understand: "With three trials, listing every way to get at least one 6 (exactly one, exactly two, or exactly three 6s) would take three separate calculations. The complement, no 6 on any of the three rolls, is a single multiplication instead.",
+        steps: [
         "P(not a 6 on one roll) = 5/6.",
         "Since the three rolls are independent:\nP(no 6 on all three rolls) =\n(5/6)³ =\n125/216.",
         "P(at least one 6) =\n1 − 125/216 =\n91/216.",
-      ], answer: "91/216" , structureId: "at_least_one_identical"},
+      ], answer: "91/216",
+        check: "91/216 is a little under a half, which is reasonable: rolling a die three times gives a fair, but not overwhelming, chance of seeing at least one 6 somewhere among the three rolls.",
+        structureId: "at_least_one_identical"},
+      { q: "A biased coin has P(heads) = 0.6, and is flipped twice (independent flips). Find P(at least one tail).",
+        understand: "This time the complement is 'no tails at all', which means both flips landing heads, so start from P(heads) rather than P(tails) as in the earlier examples.",
+        steps: [
+        "P(no tails at all) means both flips are heads: 0.6×0.6=0.36.",
+        "P(at least one tail) =\n1 - P(no tails at all) =\n1-0.36 =\n0.64.",
+      ], answer: "0.64",
+        check: "0.64 should be bigger than 0.5, since heads is more likely than tails on a single flip (P(heads)=0.6), making it fairly likely that at least one of the two flips lands tails.",
+        structureId: "at_least_one_non_identical"},
     ],
-      tryit: { q: "A biased coin has P(heads)=0.6, and is flipped twice (independent flips). Find P(at least one tail).", answer: "0.64. P(no tails at all) means both flips are heads: 0.6×0.6=0.36. So:\nP(at least one tail) =\n1-0.36 =\n0.64." , structureId: "at_least_one_non_identical"} },
+      tryit: { q: "A fair coin is flipped five times. Find P(at least one head).", answer: "P(no heads at all) means five tails: (1/2)⁵ = 1/32. So P(at least one head) = 1 - 1/32 = 31/32." , structureId: "at_least_one_identical"} },
   ],
 };
 
@@ -1302,27 +1368,45 @@ INTERMEDIATE_LESSONS.combinatoricsAndCounting = {
       "Now generalise it. If you're arranging r items chosen from n distinct items INTO ORDER, the first slot has n choices, the second has (n-1) choices (one item is used up), the third has (n-2), and so on, for r slots in total. This count is written nPr (\"n permute r\"): nPr = n × (n-1) × (n-2) × ... down to r terms.",
       "The one thing to watch is where the multiplication stops. It runs for exactly r terms, not all the way down to 1, unless r happens to equal n. If you're placing 3 out of 8 runners into 1st, 2nd and 3rd, you multiply 8 × 7 × 6 (three terms, one per medal) and then STOP - there's no reason to keep going down to 5, 4, 3... because only 3 positions exist.",
     ], examples: [
-      { q: "How many ways can 3 runners finish 1st, 2nd and 3rd out of 8 racers?", steps: [
-        "This is an arrangement into order (1st, 2nd, 3rd are different positions), so it's a permutation problem.",
-        "There are 3 positions to fill, so the multiplication chain will have exactly 3 terms, starting from 8.",
+      { q: "How many ways can 3 runners finish 1st, 2nd and 3rd out of 8 racers?",
+        understand: "1st, 2nd and 3rd are different positions, so order matters here: this is a permutation, not a combination. There are 3 positions to fill, so the multiplication chain will run for exactly 3 terms, starting from 8.",
+        steps: [
         "8 choices for who finishes 1st.",
         "Once 1st is decided, 7 racers remain, so 7 choices for 2nd.",
         "Once 1st and 2nd are decided, 6 racers remain, so 6 choices for 3rd.",
         "Multiply the three stage-counts together: 8 × 7 × 6 = 336.",
-      ], answer: "336" , structureId: "permutations_npr"},
-      { q: "How many ways can 4 contestants out of 10 be awarded 1st, 2nd, 3rd and 4th place (a harder version with more positions)?", steps: [
-        "There are 4 positions this time, so the chain needs exactly 4 terms, starting from 10.",
+      ], answer: "336",
+        check: "Check the method on a case small enough to list by hand: with 3 racers filling all 3 positions, the chain is 3 × 2 × 1 = 6, matching the direct list ABC, ACB, BAC, BCA, CAB, CBA from earlier in the lesson, so the same slot-filling method used here can be trusted.",
+        structureId: "permutations_npr"},
+      { q: "How many ways can 4 contestants out of 10 be awarded 1st, 2nd, 3rd and 4th place (a harder version with more positions)?",
+        understand: "This is again a permutation, since 1st, 2nd, 3rd and 4th place are four distinct positions. There are 4 positions to fill from 10 contestants, so the chain runs for exactly 4 terms, starting from 10.",
+        steps: [
         "10 choices for 1st place.",
         "9 remaining choices for 2nd place.",
         "8 remaining choices for 3rd place.",
         "7 remaining choices for 4th place.",
         "Multiply all four stage-counts:\n10 × 9 = 90, then\n90 × 8 = 720, then\n720 × 7 = 5040.",
-      ], answer: "5040" , structureId: "permutations_npr"},
-      { q: "How many different arrangements of the letters M, A, T, H, S are there? How many of these arrangements begin with M?", steps: [
-        "Part 1 — all arrangements: there are 5 distinct letters, so the total number of arrangements is 5! = 5 × 4 × 3 × 2 × 1 = 120.",
-        "Part 2 — starting with M: fix M in the first position. The remaining 4 letters (A, T, H, S) can be arranged freely in the other 4 positions.",
+      ], answer: "5040",
+        check: "5040 is bigger than the 336 found in Example 1, which makes sense: one more position is being filled from more people, so more arrangements are possible. The chain also correctly stops after 4 terms, at 7, rather than continuing down to 6, 5, ... 1, since only 4 positions exist.",
+        structureId: "permutations_npr"},
+      { q: "How many different arrangements of the letters M, A, T, H, S are there? How many of these arrangements begin with M?",
+        understand: "Part 1 asks for every arrangement of all 5 distinct letters, a permutation of all 5 items into all 5 positions, so it is 5! rather than a chain that stops early. Part 2 fixes one letter, M, in place first, then asks how many ways the rest can be arranged.",
+        steps: [
+        "Part 1, all arrangements: there are 5 distinct letters, so the total number of arrangements is 5! = 5 × 4 × 3 × 2 × 1 = 120.",
+        "Part 2, starting with M: fix M in the first position. The remaining 4 letters (A, T, H, S) can be arranged freely in the other 4 positions.",
         "Number of arrangements of those 4 letters = 4! = 4 × 3 × 2 × 1 = 24.",
-      ], answer: "120 arrangements in total; 24 begin with M" , structureId: "factorial_arrange_all"},
+      ], answer: "120 arrangements in total; 24 begin with M",
+        check: "24 should be exactly one fifth of 120, since M is equally likely to sit in any one of the 5 positions by symmetry: 120 ÷ 5 = 24, which matches.",
+        structureId: "factorial_arrange_all"},
+      { q: "In how many ways can 5 different books be arranged on a shelf if two particular books, P and Q, must stand next to each other?",
+        understand: "Because P and Q must be next to each other, they cannot be arranged independently of the other 3 books. The standard trick is to treat P and Q as if they were glued together into a single block, arrange that block along with the other 3 books, then separately count the internal orders of the block.",
+        steps: [
+        "Glue P and Q into one block. There are now 4 items to arrange: the block, and the other 3 books R, S, T. Arranging 4 distinct items in order is 4! = 4 × 3 × 2 × 1 = 24.",
+        "Inside the block, P and Q can sit in 2 orders: PQ or QP. Each of the 24 block-arrangements can pair with either of these 2 internal orders.",
+        "Multiply: 24 × 2 = 48.",
+      ], answer: "48",
+        check: "Check the block method on a case small enough to list by hand: with just P, Q and one other book R, the method gives 2! × 2 = 2 × 2 = 4. Direct listing of all 6 arrangements of 3 books (PQR, PRQ, QPR, QRP, RPQ, RQP) shows exactly 4 of them have P and Q adjacent (PQR, QPR, RPQ, RQP), confirming the method.",
+        structureId: "adjacent_pair_together"},
     ],
       tryit: { q: "5 sprinters race. In how many ways can gold, silver and bronze medals be awarded?", answer: "60. Three positions to fill from 5 sprinters: 5 × 4 × 3 = 60, stopping after three terms because there are only three medals." , structureId: "permutations_npr"} },
     { h: "2. Combinations: order doesn't matter", body: [
@@ -1332,23 +1416,42 @@ INTERMEDIATE_LESSONS.combinatoricsAndCounting = {
       "In practice it's often quickest to compute nPr first as a short multiplication chain, then divide by r! at the end, cancelling where you can rather than working out huge factorials.",
       "The key question to ask before choosing which formula to use is: are the chosen items being given different roles (positions, medals, ordered slots) or are they just being grouped together as an unordered set (a team, a committee, a handful of toppings)? Different roles mean permutations; an unordered group means combinations, and you must remember to divide out the r! or you'll overcount.",
     ], examples: [
-      { q: "How many ways can a pair of 2 representatives be chosen from a class of 5 (no distinct roles, just 2 people)?", steps: [
-        "This is a combination, since the 2 chosen people aren't given different roles.",
+      { q: "How many ways can a pair of 2 representatives be chosen from a class of 5 (no distinct roles, just 2 people)?",
+        understand: "The 2 representatives are not given different roles, there is no 'first rep' vs 'second rep', so this is a combination rather than a permutation. As shown above, first count the ordered version, then divide out the internal reorderings.",
+        steps: [
         "First find the permutation count nPr with n=5, r=2: 5 × 4 = 20.",
         "The 2 chosen items can be reordered in 2! = 2 ways, and each of those 2 orderings was counted separately in the permutation count.",
         "Divide to remove the overcounting: 20 ÷ 2 = 10.",
-      ], answer: "10" , structureId: "combinations_ncr"},
-      { q: "How many ways can a team of 3 be chosen from 8 people (a harder version with a bigger group)?", steps: [
-        "This is a combination: a 'team' has no internal order, so all 3 members play an equivalent role.",
+      ], answer: "10",
+        check: "List all pairs from 5 people A, B, C, D, E directly: AB, AC, AD, AE, BC, BD, BE, CD, CE, DE. That is 10 pairs, matching the calculation.",
+        structureId: "combinations_ncr"},
+      { q: "How many ways can a team of 3 be chosen from 8 people (a harder version with a bigger group)?",
+        understand: "A 'team' has no internal order, all 3 members play an equivalent role, so this is again a combination. As before, start from the permutation count and divide out the internal reorderings of the 3 chosen people.",
+        steps: [
         "First find nPr with n=8, r=3: 8 × 7 × 6 = 336.",
         "The 3 chosen items can be reordered in:\n3! =\n3 × 2 × 1 =\n6\nways, all counted as the same team inside the 336.",
         "Divide to remove the overcounting: 336 ÷ 6 = 56.",
-      ], answer: "56" , structureId: "combinations_ncr"},
-      { q: "A committee of 3 is to be chosen from 4 men and 5 women. In how many ways can this be done if the committee must contain at least one man?", steps: [
+      ], answer: "56",
+        check: "56 should be noticeably smaller than the permutation count 336, since every group of 3 people has been counted 3! = 6 times inside that 336 before dividing: 336 ÷ 6 = 56, which matches.",
+        structureId: "combinations_ncr"},
+      { q: "A committee of 3 is to be chosen from 4 men and 5 women. In how many ways can this be done if the committee must contain at least one man?",
+        understand: "The committee needs at least one man, and it is usually easier to count the complement, no men at all, and subtract, rather than trying to list every valid combination of men and women directly.",
+        steps: [
         "Count all ways to choose any 3 from all 9 people (no restriction): 9C3 = (9 × 8 × 7) ÷ (3 × 2 × 1) = 504 ÷ 6 = 84.",
         "Count the ways with no men at all (3 women chosen from 5): 5C3 = (5 × 4 × 3) ÷ (3 × 2 × 1) = 60 ÷ 6 = 10.",
         "Subtract: ways with at least one man = 84 − 10 = 74.",
-      ], answer: "74" , structureId: "combinations_must_include"},
+      ], answer: "74",
+        check: "Sanity-check the two combination values separately: 9C3 = 84 should exceed 5C3 = 10 since it is choosing from a bigger pool, and the final answer 74 should be less than 84 since some all-women committees have correctly been removed.",
+        structureId: "combinations_must_include"},
+      { q: "A pizza must have exactly 2 vegetable toppings chosen from a menu of 5 vegetables, and exactly 1 meat topping chosen from a menu of 4 meats. How many different pizzas are possible?",
+        understand: "This selection happens in two independent stages: choosing the vegetables and choosing the meat. Because both choices happen together on the same pizza, the multiplication principle from earlier in the lesson applies again, except each 'choice' here is itself a combination count rather than a single number.",
+        steps: [
+        "Vegetables: choosing 2 from 5 is 5C2. Permutation count 5 × 4 = 20, divide by 2! = 2 to remove ordering: 20 ÷ 2 = 10.",
+        "Meat: choosing 1 from 4 is 4C1 = 4, since choosing a single item leaves no ordering to remove.",
+        "Multiply the two independent stage-counts together, exactly as slot-filling multiplied stage-counts earlier: 10 × 4 = 40.",
+      ], answer: "40",
+        check: "Each of the 10 vegetable pairs can be combined with any of the 4 meats, so listing (vegetable pair, meat) as 10 groups of 4 gives 10 × 4 = 40, matching the multiplication.",
+        structureId: "combinations_ncr"},
     ],
       tryit: { q: "How many ways can 3 pizza toppings be chosen from a menu of 6 toppings?", answer: "20. Permutation count 6 × 5 × 4 = 120, and 3! = 6 (since the 3 chosen toppings have no order), so:\n120 ÷ 6 =\n20." , structureId: "combinations_ncr"} },
     { h: "3. The handshake problem", body: [
@@ -1357,23 +1460,41 @@ INTERMEDIATE_LESSONS.combinatoricsAndCounting = {
       "Since nCr = nPr ÷ r!, setting r = 2 gives:\nnC2 =\nnP2 ÷ 2! =\n[n × (n-1)] ÷ 2.\nFor the group of 4, that's:\n(4 × 3) ÷ 2 =\n12 ÷ 2 =\n6,\nmatching the list exactly.",
       "The division by 2 is doing real work here, not just decoration: without it you'd be counting 'A shakes B's hand' and 'B shakes A's hand' as two separate events, when they're actually the same physical handshake. Dividing by 2! is exactly how section 2 taught you to remove that kind of double-count.",
     ], examples: [
-      { q: "At a small meeting of 6 people, everyone shakes hands with everyone else once. How many handshakes in total?", steps: [
-        "A handshake is an unordered choice of 2 people, so this is nC2 with n=6.",
+      { q: "At a small meeting of 6 people, everyone shakes hands with everyone else once. How many handshakes in total?",
+        understand: "A handshake is an unordered choice of 2 people from the group, exactly the nC2 combination count from section 2, just wearing a different costume, so the same divide-by-2! method applies, here with n=6.",
+        steps: [
         "Ordered pair count: 6 × 5 = 30.",
         "Divide by 2! = 2 to remove the double-count (A-then-B and B-then-A are the same handshake):\n30 ÷ 2 =\n15.",
-      ], answer: "15" , structureId: "handshakes_nc2"},
-      { q: "At a party of 12 people, everyone shakes hands with everyone else once (a harder version with a bigger group). How many handshakes?", steps: [
-        "Again this is nC2, now with n=12.",
+      ], answer: "15",
+        check: "As a smaller sanity check, 4 people (the example used earlier in this section) gives 4 × 3 ÷ 2 = 6 handshakes; scaling up to 6 people should give more handshakes, and 15 is indeed more than 6.",
+        structureId: "handshakes_nc2"},
+      { q: "At a party of 12 people, everyone shakes hands with everyone else once (a harder version with a bigger group). How many handshakes?",
+        understand: "Same idea, now with n=12: count ordered pairs first, then divide by 2! to remove the double-count of A-then-B and B-then-A being the same handshake.",
+        steps: [
         "Ordered pair count: 12 × 11 = 132.",
         "Divide by 2! = 2:\n132 ÷ 2 =\n66.",
-      ], answer: "66" , structureId: "handshakes_nc2"},
-      { q: "A complete graph has n vertices, with exactly one edge connecting every pair of vertices. If the graph has 45 edges in total, find n.", steps: [
+      ], answer: "66",
+        check: "66 is more than 4 times the 15 handshakes found for 6 people in Example 1, which makes sense: the handshake count grows roughly with the square of the number of people, not in direct proportion to it.",
+        structureId: "handshakes_nc2"},
+      { q: "A complete graph has n vertices, with exactly one edge connecting every pair of vertices. If the graph has 45 edges in total, find n.",
+        understand: "The number of edges in a complete graph is again nC2, so this question runs the handshake formula backwards: instead of computing the count from a known n, a known count (45) is used to find the unknown n.",
+        steps: [
         "Each edge is an unordered pair of vertices, so the number of edges = nC2 = n(n−1)/2.",
         "Set n(n−1)/2 = 45: multiply both sides by 2 to get n(n−1) = 90.",
         "Expand and rearrange: n² − n − 90 = 0.",
         "Factorise: (n − 10)(n + 9) = 0, giving n = 10 or n = −9.",
-        "Since n must be a positive number of vertices, n = 10. Check: 10 × 9 ÷ 2 = 45. ✓",
-      ], answer: "n = 10" , structureId: "handshakes_nc2"},
+        "Since n must be a positive number of vertices, n = 10.",
+      ], answer: "n = 10",
+        check: "Substitute n = 10 back into the original count: 10 × 9 ÷ 2 = 45, matching the given number of edges, and the rejected solution n = −9 is discarded since a graph cannot have a negative number of vertices.",
+        structureId: "handshakes_nc2"},
+      { q: "A league has 18 teams, and every pair of teams plays each other twice, once at each team's home ground. How many matches are played in total?",
+        understand: "First count the unique pairings of teams, exactly like the ordinary handshake count, since a pairing of two teams is still an unordered choice of 2 out of the group. Then account for the fact that each pairing corresponds to two separate matches here, not one, since playing once at each home ground creates two distinct events per pair.",
+        steps: [
+        "Unique pairings: 18C2 = (18 × 17) ÷ 2 = 306 ÷ 2 = 153.",
+        "Each pairing plays twice, once at each home ground, so multiply the pairing count by 2: 153 × 2 = 306.",
+      ], answer: "306",
+        check: "Doubling nC2 always reconstructs nPr for r = 2, since multiplying back by 2 undoes the division by 2! that produced nC2 in the first place: 2 × 153 = 306, exactly n × (n-1) = 18 × 17. This confirms the double counting from home-and-away matches has been added back deliberately, not left in by mistake.",
+        structureId: "handshakes_nc2"},
     ],
       tryit: { q: "In a round-robin chess tournament with 9 players, every player plays every other player exactly once. How many games are played?", answer: "36. Each game is an unordered choice of 2 players out of 9:\n(9 × 8) ÷ 2 =\n72 ÷ 2 =\n36." , structureId: "handshakes_nc2"} },
   ],
@@ -1395,21 +1516,40 @@ INTERMEDIATE_LESSONS.invariantsAndParity = {
       "This lets you predict the parity of a long calculation without doing any of the actual arithmetic - just track odd/even through each operation in turn, applying multiplication before addition, exactly as the normal order of operations requires.",
       "The one real trap is doing the tracking in the wrong order. Parity must be worked out in the same sequence you'd calculate the real answer (brackets and multiplication before addition and subtraction), otherwise you can easily flip the final result.",
     ], examples: [
-      { q: "Is 15 + 22 odd or even?", steps: [
+      { q: "Is 15 + 22 odd or even?",
+        understand: "Identify the parity of each number separately first, then apply the addition rule proved above.",
+        steps: [
         "15 is odd, 22 is even.",
         "Odd + even = odd (from the rule above).",
-      ], answer: "Odd" , structureId: "parity_sum_two_numbers"},
-      { q: "Is 37 x 48 + 15 odd or even (a harder version mixing multiplication and addition)?", steps: [
-        "Order of operations: the multiplication must be resolved first.",
+      ], answer: "Odd",
+        check: "Check directly: 15 + 22 = 37, and 37 is indeed odd, matching the rule.",
+        structureId: "parity_sum_two_numbers"},
+      { q: "Is 37 x 48 + 15 odd or even (a harder version mixing multiplication and addition)?",
+        understand: "This mixes multiplication and addition, so the parity must be tracked in the same order the real arithmetic would use: the multiplication resolves first, then the addition.",
+        steps: [
         "37 is odd, 48 is even, so 37 × 48 is odd × even = even.",
         "Now add 15 (odd) to that even result: even + odd = odd.",
-      ], answer: "Odd" , structureId: "parity_products_recognizer"},
-      { q: "Show that 3n² + n is always even for any integer n, using a parity argument.", steps: [
+      ], answer: "Odd",
+        check: "Check directly: 37 × 48 = 1776 (even), and 1776 + 15 = 1791, which is odd, matching the tracked result without needing the full multiplication to decide the parity.",
+        structureId: "parity_products_recognizer"},
+      { q: "Show that 3n² + n is always even for any integer n, using a parity argument.",
+        understand: "This must hold for every integer n, not just one, so split into the two possible cases for n's own parity (even or odd) and show the product is even in both cases.",
+        steps: [
         "Factorise: 3n² + n = n(3n + 1).",
-        "Case 1 — n is even: the product n × (3n + 1) contains the even factor n, so the product is even.",
-        "Case 2 — n is odd: 3n is odd × odd = odd, so 3n + 1 is odd + even = even. The product n × (3n + 1) is odd × even = even.",
-        "In both cases the product is even, so 3n² + n is always even for every integer n.",
-      ], answer: "Always even, since n(3n + 1) always contains an even factor" , structureId: "invariant_preservation_multistep"},
+        "Case 1, n is even: the product n × (3n + 1) contains the even factor n, so the product is even.",
+        "Case 2, n is odd: 3n is odd × odd = odd, so 3n + 1 is odd + even = even. The product n × (3n + 1) is odd × even = even.",
+      ], answer: "Always even, since n(3n + 1) always contains an even factor",
+        check: "Check on a concrete case from each branch: n=4 (even) gives 3(16)+4 = 52, even; n=5 (odd) gives 3(25)+5 = 80, even. Both confirm the general argument.",
+        structureId: "invariant_preservation_multistep"},
+      { q: "Prove that the square of an odd integer is odd.",
+        understand: "This needs to hold for every odd integer, not just one example, so represent a general odd integer algebraically using the 2n+1 form introduced above, then work out its square symbolically.",
+        steps: [
+        "Let the odd integer be 2n + 1, where n is any integer.",
+        "Square it: (2n+1)² = (2n+1)(2n+1) = 4n² + 2n + 2n + 1 = 4n² + 4n + 1.",
+        "Factor out 2 from the first two terms: 4n² + 4n + 1 = 2(2n² + 2n) + 1.",
+      ], answer: "Odd, since 2(2n² + 2n) + 1 matches the form 2k + 1 for the whole number k = 2n² + 2n",
+        check: "Check on a concrete case: take n = 3, so the odd integer is 2(3)+1 = 7. Its square is 49, and the formula gives 2(2(9)+2(3))+1 = 2(24)+1 = 49, matching, and 49 is indeed odd.",
+        structureId: "invariant_preservation_multistep"},
     ],
       tryit: { q: "Is 29 x 13 - 8 odd or even?", answer: "Odd. 29 and 13 are both odd, and odd × odd = odd, giving an odd result. Subtracting 8 (even) from an odd number keeps it odd, since odd - even = odd, the same rule as addition." , structureId: "parity_products_recognizer"} },
     { h: "2. Famous invariant results", body: [
@@ -1421,25 +1561,44 @@ INTERMEDIATE_LESSONS.invariantsAndParity = {
       "Both shortcuts turn a long addition into a single multiplication, which is exactly the point of spotting an invariant pattern - once you know the rule holds for every n, you never need to add term by term again.",
       "The easiest mistake to make is confusing n (how many terms you're adding - the same role k played above, just renamed for the general count) with the value of the LAST term. The nth odd number is (2n-1), not n itself - 'the first 10 odd numbers' means n=10, but the list actually runs up to 19 (= 2×10 - 1), not up to 10.",
     ], examples: [
-      { q: "Find 1+3+5+7+9+11 (the first 6 odd numbers) using the shortcut.", steps: [
+      { q: "Find 1+3+5+7+9+11 (the first 6 odd numbers) using the shortcut.",
+        understand: "Count how many terms are being added, then apply the shortcut proved above, sum of first n odd numbers = n², rather than adding term by term.",
+        steps: [
         "Count the terms: there are 6 of them, so n=6.",
         "Apply the rule: sum of first n odd numbers = n².",
         "6² = 36.",
-        "Check by direct addition:\n1+3 = 4,\n+5 = 9,\n+7 = 16,\n+9 = 25,\n+11 = 36.\nMatches.",
-      ], answer: "36" , structureId: "sum_first_n_odds"},
-      { q: "What is 1+3+5+7+...+19 (the first 10 odd numbers, a harder version with more terms)?", steps: [
+      ], answer: "36",
+        check: "Check by direct addition: 1+3 = 4, +5 = 9, +7 = 16, +9 = 25, +11 = 36, matching the shortcut.",
+        structureId: "sum_first_n_odds"},
+      { q: "What is 1+3+5+7+...+19 (the first 10 odd numbers, a harder version with more terms)?",
+        understand: "Before applying the shortcut, confirm that n really is 10 here by checking 19 against the nth-term rule, since the last term given (19) is not the same thing as the term count (n).",
+        steps: [
         "Confirm 19 really is the 10th odd number using the nth-term rule: 2×10 - 1 = 19. It matches, so n=10.",
         "Apply the rule: sum of first n odd numbers = n².",
         "10² = 100.",
-        "This avoids adding all 10 numbers by hand.",
-      ], answer: "100" , structureId: "sum_first_n_odds"},
-      { q: "Find the sum 1 + 3 + 5 + ... + 99 using the shortcut for odd numbers.", steps: [
+      ], answer: "100",
+        check: "This avoids adding all 10 numbers by hand; a quick partial check, 1+3+5+7+9 = 25 = 5², confirms the pattern is on track before trusting the full n=10 result.",
+        structureId: "sum_first_n_odds"},
+      { q: "Find the sum 1 + 3 + 5 + ... + 99 using the shortcut for odd numbers.",
+        understand: "Here only the last term (99) is given, not the term count, so first work backwards from the nth-term rule 2k-1 to find how many terms are in the list.",
+        steps: [
         "Identify n: the kth odd number is 2k − 1. Set 2k − 1 = 99 to find k: 2k = 100, so k = 50. The list contains 50 odd numbers.",
         "Apply the shortcut: sum of first n odd numbers = n².",
         "Sum = 50² = 2500.",
-      ], answer: "2500" , structureId: "sum_first_n_odds"},
+      ], answer: "2500",
+        check: "Sanity-check the term count: the 50th odd number should be 99, and 2(50)-1 = 99, confirming n=50 was found correctly before squaring it.",
+        structureId: "sum_first_n_odds"},
+      { q: "What is 2+4+6+8+10+12+14 (the first 7 even numbers)?",
+        understand: "This uses the parallel shortcut for even numbers, sum of first n even numbers = n(n+1), proved the same way as the odd-number shortcut above.",
+        steps: [
+        "Count the terms: there are 7 of them, so n=7.",
+        "Apply the rule: sum of first n even numbers = n(n+1).",
+        "7×8 = 56.",
+      ], answer: "56",
+        check: "Check by direct addition: 2+4+6+8+10+12+14 = 56, matching the shortcut.",
+        structureId: "sum_first_n_evens"},
     ],
-      tryit: { q: "What is 2+4+6+8+10+12+14 (the first 7 even numbers)?", answer: "56. Using the shortcut n(n+1) with n=7: 7×8 = 56. Check by direct addition: 2+4+6+8+10+12+14 = 56." , structureId: "sum_first_n_evens"} },
+      tryit: { q: "Find 1 + 3 + 5 + ... + 39 using the shortcut for odd numbers.", answer: "The list runs up to the 20th odd number, since 2(20) - 1 = 39. Using the shortcut, sum of first n odd numbers = n²: 20² = 400." , structureId: "sum_first_n_odds"} },
     { h: "3. Using parity to rule out impossible puzzles", body: [
       "Try a concrete puzzle first. 5 coins all start heads-up. Each move flips exactly 2 coins of your choosing (heads become tails, tails become heads). Could all 5 coins ever end up tails-up? Look at what one move does to the total number of heads: flipping 2 heads turns them both to tails, so heads decreases by 2; flipping 2 tails turns them both to heads, so heads increases by 2; flipping 1 head and 1 tail swaps their roles, so heads stays the same. Every move changes the heads-count by -2, 0 or +2 - always an even amount.",
       "That means the PARITY (odd or even) of the heads-count can never change, no matter how many moves are made or which coins are chosen. It starts at 5, which is odd, so it stays odd forever. All-tails means 0 heads, which is even. Since odd can never become even by adding even amounts, this puzzle is impossible - and no amount of trying different move sequences will ever find a way, because the invariant rules it out completely.",
@@ -1447,25 +1606,41 @@ INTERMEDIATE_LESSONS.invariantsAndParity = {
       "The reasoning is airtight because it doesn't depend on HOW MANY moves are made or in what order - each individual move preserves the parity, so by repeating that fact move after move, the parity at every future point is forced to match the parity at the start. It's a proof about ALL possible move sequences at once, not just the ones you happened to try.",
       "Matching parity is not the same as proving something possible. If the start and target parities agree, this particular invariant simply fails to rule the puzzle out - you'd still need to actually find a working sequence of moves (or a different invariant) to be sure it can be done. Also double-check that every type of allowed move really does preserve the property you're relying on; missing one exceptional move can silently break the whole argument.",
     ], examples: [
-      { q: "A light switch starts OFF. Each flick toggles it (OFF becomes ON, ON becomes OFF). After 15 flicks, could the switch be ON?", steps: [
-        "After 1 flick: ON. After 2 flicks: OFF. After 3 flicks: ON. The state alternates with every single flick.",
-        "So after an ODD number of flicks the switch is ON, and after an EVEN number of flicks it is OFF - the state is entirely determined by the parity of the flick-count.",
+      { q: "A light switch starts OFF. Each flick toggles it (OFF becomes ON, ON becomes OFF). After 15 flicks, could the switch be ON?",
+        understand: "Track the parity of the flick count rather than simulating all 15 flicks individually, since each flick simply toggles the state, so the state after any number of flicks depends only on whether that number is odd or even.",
+        steps: [
+        "After 1 flick: ON. After 2 flicks: OFF. After 3 flicks: ON. The state alternates with every single flick, so after an odd number of flicks the switch is ON, and after an even number of flicks it is OFF.",
         "15 is odd.",
         "So after 15 flicks the switch is ON.",
-      ], answer: "Yes, ON. This is a case where the parities match up, so the target is genuinely reachable (unlike the examples that follow, where a mismatch rules the target out)." , structureId: "coin_flip_invariant"},
-      { q: "A frog starts at 0 on a number line and jumps either +3 or +5 each time (its choice). After exactly 7 jumps, could it be at position 30 (a harder version using an impossibility argument)?", steps: [
-        "Both jump sizes, 3 and 5, are odd numbers.",
-        "The frog's total displacement after 7 jumps is the sum of 7 odd numbers.",
-        "A sum of k odd numbers always has the same parity as k itself. This follows from the addition rules proved in Section 1: start from 0 (even, since an empty sum has nothing in it), then add the odd numbers on one at a time - each single addition of an odd number flips the running total's parity (even+odd=odd, or odd+odd=even, either way it flips). Flipping the parity k times in total lands back on even if k is even, and lands on odd if k is odd.",
+      ], answer: "Yes, ON",
+        check: "This is a case where the parities actually match up: an odd flick-count needs the ON state, which is also reached after an odd number of flicks, unlike Examples 2, 3 and 4, where a mismatch rules the target out.",
+        structureId: "coin_flip_invariant"},
+      { q: "A frog starts at 0 on a number line and jumps either +3 or +5 each time (its choice). After exactly 7 jumps, could it be at position 30 (a harder version using an impossibility argument)?",
+        understand: "Rather than searching through every possible mix of 7 jumps of +3 and +5, track the parity of the total displacement using the addition rules proved in section 1.",
+        steps: [
+        "Both jump sizes, 3 and 5, are odd numbers, so the frog's total displacement after 7 jumps is a sum of 7 odd numbers.",
+        "A sum of k odd numbers always has the same parity as k itself: starting from 0 (even), each single addition of an odd number flips the running total's parity, so flipping k times lands back on even if k is even, and on odd if k is odd.",
         "Here k=7, which is odd, so the total displacement after 7 jumps must be odd, regardless of which mix of +3s and +5s was used.",
-        "30 is even, but the displacement is forced to be odd - a mismatch.",
-      ], answer: "No, impossible. No combination of 7 jumps of +3 or +5 can ever total an even number like 30." , structureId: "frog_jump_parity"},
-      { q: "A 4 × 4 grid is coloured like a chessboard (alternating black and white, 8 squares of each colour). Two diagonally opposite corner squares — both the same colour — are removed, leaving 14 squares. Can 7 dominoes, each covering exactly 2 adjacent squares, tile the 14 remaining squares? Use a parity argument.", steps: [
+      ], answer: "No, impossible",
+        check: "30 is even, but the displacement is forced to be odd by the invariant, a mismatch, so no combination of 7 jumps of +3 or +5 can ever total 30.",
+        structureId: "frog_jump_parity"},
+      { q: "A 4 × 4 grid is coloured like a chessboard (alternating black and white, 8 squares of each colour). Two diagonally opposite corner squares, both the same colour, are removed, leaving 14 squares. Can 7 dominoes, each covering exactly 2 adjacent squares, tile the 14 remaining squares? Use a parity argument.",
+        understand: "Use the chessboard-colouring invariant introduced above: every domino covers one black square and one white square, so count how many of each colour actually remain after the corners are removed.",
+        steps: [
         "On a chequerboard, diagonally opposite corners of a 4 × 4 grid are always the same colour. Removing both leaves 6 of that colour and 8 of the other.",
-        "Each domino covers exactly 2 adjacent squares. Adjacent squares on a chequerboard always differ in colour, so every domino covers exactly 1 black square and 1 white square.",
+        "Each domino covers exactly 2 adjacent squares, and adjacent squares on a chequerboard always differ in colour, so every domino covers exactly 1 black square and 1 white square.",
         "Seven dominoes would therefore cover exactly 7 black and 7 white squares.",
-        "But the remaining board has 6 of one colour and 8 of the other — not 7 and 7. The colour counts cannot match no matter how the dominoes are placed, so tiling is impossible.",
-      ], answer: "No — impossible. Removing two same-colour corners leaves 6 of one colour and 8 of the other, but 7 dominoes must cover 7 of each. The colour imbalance rules it out." , structureId: "chessboard_tiling_parity"},
+      ], answer: "No, impossible",
+        check: "The remaining board has 6 of one colour and 8 of the other, not 7 and 7, so the colour counts cannot match no matter how the dominoes are placed, confirming tiling is impossible.",
+        structureId: "chessboard_tiling_parity"},
+      { q: "A display begins at 0. Each move adds either 4 or subtracts 2. Can it ever show 15?",
+        understand: "Check what each allowed move does to the parity of the displayed number, exactly as the light switch and frog examples did above.",
+        steps: [
+        "Both allowed changes, +4 and −2, are even numbers.",
+        "Adding or subtracting an even number never changes the parity of the running total, so the displayed number stays even after every move, since it starts at 0 (even).",
+      ], answer: "No, impossible",
+        check: "15 is odd, but the display can only ever show an even number, since every move preserves the starting parity, so 15 can never appear on the display.",
+        structureId: "parity_many_terms"},
     ],
       tryit: { q: "A counter starts at 0 and each move adds either 3 or 7 (both odd). After 4 moves, could it show 15?", answer: "No. The total after 4 moves is a sum of 4 odd numbers, and a sum of an even number of odd numbers is always even. 15 is odd, so it can never be reached after exactly 4 moves." , structureId: "parity_many_terms"} },
   ],
@@ -1485,29 +1660,42 @@ INTERMEDIATE_LESSONS.logicAndDeduction = {
       "For puzzles with several statements, work through the consequences of each assumption systematically, one statement at a time, rather than jumping to a conclusion. Write down what each person's statement would have to mean (true or false) under the assumption you're testing, then check that this matches what their type (truth-teller or liar) requires.",
       "The one habit to enforce every time: don't stop the moment one assumption looks consistent. Always finish checking the OTHER assumption too, and confirm it genuinely leads to a contradiction (not just that it 'seems less likely'). A well-posed puzzle guarantees exactly one assumption survives; if you find that both seem to survive, that's a sign to re-read the statements rather than guess.",
     ], examples: [
-      { q: "Two people, Tom and Wendy. Exactly one of them always tells the truth and the other always lies. Tom says: 'At least one of us is a liar.' Who is the truth-teller?", steps: [
-        "Assume Tom is the truth-teller (so Wendy is the liar).",
-        "Then Tom's statement must be true. Check it: is at least one of them a liar? Yes, Wendy is. So the statement is true - consistent, no contradiction.",
-        "Now assume Wendy is the truth-teller (so Tom is the liar).",
-        "Then Tom's statement must be false, since Tom lies. For 'at least one of us is a liar' to be false, NEITHER person can be a liar - but this branch assumes Tom IS a liar. That's a direct contradiction.",
+      { q: "Two people, Tom and Wendy. Exactly one of them always tells the truth and the other always lies. Tom says: 'At least one of us is a liar.' Who is the truth-teller?",
+        understand: "Test each of the two possibilities for Tom in turn, working out exactly what Tom's statement would have to mean under that assumption, and check for a contradiction.",
+        steps: [
+        "Assume Tom is the truth-teller (so Wendy is the liar). Then Tom's statement must be true. Check it: is at least one of them a liar? Yes, Wendy is. So the statement is true: consistent, no contradiction.",
+        "Now assume Wendy is the truth-teller (so Tom is the liar). Then Tom's statement must be false, since Tom lies. For 'at least one of us is a liar' to be false, neither person can be a liar, but this branch assumes Tom is a liar. That's a direct contradiction.",
         "Only the first assumption survives.",
-      ], answer: "Tom is the truth-teller." , structureId: "truth_teller_liar_2person"},
-      { q: "Two people, Priya and Raj. Exactly one always tells the truth. Priya says: 'Raj is a liar.' Raj says: 'Priya and I are both liars.' (A harder version with two statements.) Who is the truth-teller?", steps: [
-        "Assume Priya is the truth-teller (so Raj is the liar).",
-        "Priya's statement 'Raj is a liar' must then be true - and it is, by assumption. Consistent so far.",
-        "Raj's statement must be false, since Raj lies. Check: is 'Priya and I are both liars' actually false? Priya is truthful (not a liar) in this branch, so 'both are liars' is indeed false. Consistent - no contradiction anywhere.",
-        "Now assume Raj is the truth-teller (so Priya is the liar).",
-        "Raj's statement 'Priya and I are both liars' must then be true - but that would mean Raj himself is a liar, directly contradicting the assumption that Raj is truthful.",
+      ], answer: "Tom is the truth-teller.",
+        check: "Check the surviving assignment directly against both facts: Tom (truth-teller) says something true, and Wendy really is the liar, so nothing is left unverified.",
+        structureId: "truth_teller_liar_2person"},
+      { q: "Two people, Priya and Raj. Exactly one always tells the truth. Priya says: 'Raj is a liar.' Raj says: 'Priya and I are both liars.' (A harder version with two statements.) Who is the truth-teller?",
+        understand: "With two statements to satisfy at once, test each assumption fully against both statements before deciding whether it survives, rather than stopping after checking only one of them.",
+        steps: [
+        "Assume Priya is the truth-teller (so Raj is the liar). Priya's statement 'Raj is a liar' must then be true, and it is, by assumption: consistent so far.",
+        "Raj's statement must be false, since Raj lies. Check: is 'Priya and I are both liars' actually false? Priya is truthful (not a liar) in this branch, so 'both are liars' is indeed false. Consistent, no contradiction anywhere.",
+        "Now assume Raj is the truth-teller (so Priya is the liar). Raj's statement 'Priya and I are both liars' must then be true, but that would mean Raj himself is a liar, directly contradicting the assumption that Raj is truthful.",
         "Only the first assumption survives.",
-      ], answer: "Priya is the truth-teller." , structureId: "truth_teller_liar_2person"},
-      { q: "Three people, Ali, Ben and Cara. Exactly one tells the truth and the other two always lie. Ali says: 'Ben is a liar.' Ben says: 'Cara is the truth-teller.' Cara says: 'I tell the truth.' Who is the truth-teller?", steps: [
-        "Test Ali as truth-teller (Ben and Cara are liars): Ali's statement 'Ben is a liar' must be true — consistent, since Ben is a liar in this branch.",
-        "Ben lies, so 'Cara is the truth-teller' must be false — Cara is NOT the truth-teller. Consistent with Ali being the truth-teller.",
-        "Cara lies, so 'I tell the truth' must be false — Cara does not tell the truth. Consistent with Cara being a liar. No contradiction: the Ali branch survives.",
-        "Test Ben as truth-teller: 'Cara is the truth-teller' must be true, meaning both Ben and Cara are truth-tellers — but there is exactly one. Contradiction.",
-        "Test Cara as truth-teller: Ali lies, so 'Ben is a liar' is false — Ben is not a liar, meaning Ben is the truth-teller. But Cara is the truth-teller in this branch. Contradiction.",
-        "Only the Ali branch survives.",
-      ], answer: "Ali is the truth-teller." , structureId: "truth_teller_liar_3person"},
+      ], answer: "Priya is the truth-teller.",
+        check: "Check the surviving assignment against both statements at once: Priya (truthful) correctly says Raj is a liar, and Raj (a liar) falsely claims they are both liars, since only one of them actually is.",
+        structureId: "truth_teller_liar_2person"},
+      { q: "Three people, Ali, Ben and Cara. Exactly one tells the truth and the other two always lie. Ali says: 'Ben is a liar.' Ben says: 'Cara is the truth-teller.' Cara says: 'I tell the truth.' Who is the truth-teller?",
+        understand: "With three people there are three assumptions to test in turn, and now every branch must be checked against all three statements, since a contradiction can come from any one of them.",
+        steps: [
+        "Test Ali as truth-teller (Ben and Cara are liars): Ali's statement 'Ben is a liar' must be true, consistent, since Ben is a liar in this branch. Ben lies, so 'Cara is the truth-teller' must be false, so Cara is not the truth-teller, consistent with Ali being the truth-teller. Cara lies, so 'I tell the truth' must be false, so Cara does not tell the truth, consistent. No contradiction: the Ali branch survives.",
+        "Test Ben as truth-teller: 'Cara is the truth-teller' must be true, meaning both Ben and Cara are truth-tellers, but there is exactly one. Contradiction.",
+        "Test Cara as truth-teller: Ali lies, so 'Ben is a liar' is false, so Ben is not a liar, meaning Ben is the truth-teller. But Cara is the truth-teller in this branch. Contradiction.",
+      ], answer: "Ali is the truth-teller.",
+        check: "Only the Ali branch survived all three statements without contradiction, and every one of the three statements was checked in that branch, not just the first.",
+        structureId: "truth_teller_liar_3person"},
+      { q: "Dev says: 'Both of us are truth-tellers.' Exactly one of Dev and Ella always tells the truth. Who is the truth-teller?",
+        understand: "This statement mentions both people at once, so check carefully what it would require under each assumption, rather than assuming the person named in a statement shares that statement's truth value.",
+        steps: [
+        "Assume Dev is the truth-teller (so Ella is the liar). Dev's statement 'both of us are truth-tellers' must then be true, meaning Ella is also a truth-teller, but only one of Dev and Ella can be. Contradiction.",
+        "Now assume Ella is the truth-teller (so Dev is the liar). Dev's statement must be false, since Dev lies. 'Both of us are truth-tellers' being false is consistent here, since Dev genuinely isn't truthful in this branch.",
+      ], answer: "Ella is the truth-teller.",
+        check: "Check the surviving assignment directly: Dev (a liar) falsely claims both are truth-tellers, and Ella really is the truth-teller, with no statement left unchecked.",
+        structureId: "truth_teller_liar_2person"},
     ],
       tryit: { q: "Jo says: 'Jo and Kim are both liars.' Exactly one of them always tells the truth. Who is the truth-teller?", answer: "Kim. If Jo were truthful, Jo would be admitting to being a liar, a contradiction. So Jo lies, meaning the statement 'both are liars' is false, so Kim must be truthful." , structureId: "truth_teller_liar_2person"} },
     { h: "2. The pigeonhole principle", body: [
@@ -1516,22 +1704,43 @@ INTERMEDIATE_LESSONS.logicAndDeduction = {
       "To use it, imagine spreading the items as EVENLY as possible across the containers - that's the best case for avoiding a big pile-up. If N doesn't divide evenly by k, the leftover items must go somewhere, forcing at least one container one item higher than the even split. Rounding N/k up to the next whole number captures exactly that forced leftover.",
       "Two things catch people out: rounding down instead of up (⌈4.1⌉ is 5, not 4), and forgetting that the principle only guarantees THAT some container is overloaded, not WHICH one.",
     ], examples: [
-      { q: "In a room of 13 people, must at least 2 of them share a birth month (there are 12 months)?", steps: [
+      { q: "In a room of 13 people, must at least 2 of them share a birth month (there are 12 months)?",
+        understand: "Identify the objects and the containers first: the 13 people are the objects (N=13), and the 12 months are the containers (k=12), then apply the ⌈N/k⌉ rule.",
+        steps: [
         "N = 13 people (items), k = 12 months (containers).",
         "Compute N/k:\n13/12 =\n1.0833...",
         "Round up: ⌈13/12⌉ = 2.",
-      ], answer: "Yes - at least 2 people must share a birth month." , structureId: "pigeonhole_basic"},
-      { q: "23 socks are placed into 5 drawers (a harder version with bigger numbers). What's the minimum guaranteed number in the fullest drawer?", steps: [
+      ], answer: "Yes, at least 2 people must share a birth month.",
+        check: "Check the rounding direction: 1.0833... rounds up to 2, not down to 1, since even a tiny fraction left over still forces one more item into some container.",
+        structureId: "pigeonhole_basic"},
+      { q: "23 socks are placed into 5 drawers (a harder version with bigger numbers). What's the minimum guaranteed number in the fullest drawer?",
+        understand: "Same method with bigger numbers: identify N (the socks) and k (the drawers), then round N/k up.",
+        steps: [
         "N = 23 socks, k = 5 drawers.",
         "Compute N/k:\n23/5 =\n4.6.",
         "Round up: ⌈23/5⌉ = 5.",
-      ], answer: "5" , structureId: "pigeonhole_basic"},
-      { q: "Show that among any 10 integers chosen from the set {1, 2, 3, ..., 17}, at least two of the chosen integers must sum to 18.", steps: [
-        "Pair up the integers 1 to 17 into groups whose members sum to 18: {1,17}, {2,16}, {3,15}, {4,14}, {5,13}, {6,12}, {7,11}, {8,10}, and the singleton {9} (since 18 − 9 = 9, there is no distinct partner for 9).",
-        "This gives 8 pairs and 1 singleton — 9 containers altogether, covering every integer from 1 to 17.",
+      ], answer: "5",
+        check: "Check by spreading as evenly as possible: 5 drawers with 4 socks each accounts for only 20 socks, so the remaining 3 socks must each add one extra to some drawer, forcing at least one drawer up to 5, matching the rounded value.",
+        structureId: "pigeonhole_basic"},
+      { q: "Show that among any 10 integers chosen from the set {1, 2, 3, ..., 17}, at least two of the chosen integers must sum to 18.",
+        understand: "The containers here are not obvious from the question itself; the key step is choosing them cleverly, as pairs of numbers that sum to 18, so that landing two chosen integers in the same container automatically gives the required sum.",
+        steps: [
+        "Pair up the integers 1 to 17 into groups whose members sum to 18: {1,17}, {2,16}, {3,15}, {4,14}, {5,13}, {6,12}, {7,11}, {8,10}, and the singleton {9}, since 18 − 9 = 9 leaves no distinct partner for 9.",
+        "This gives 8 pairs and 1 singleton, 9 containers altogether, covering every integer from 1 to 17.",
         "We choose 10 integers from these 9 containers. Since 10 > 9, by the pigeonhole principle at least one container must contain 2 of the chosen integers.",
         "The singleton {9} can contribute at most 1 integer, so the container holding 2 chosen integers must be one of the 8 pairs. Those 2 integers sum to 18.",
-      ], answer: "At least two of the 10 chosen integers must sum to 18." , structureId: "pigeonhole_advanced"},
+      ], answer: "At least two of the 10 chosen integers must sum to 18.",
+        check: "Check the container count itself: 8 pairs plus 1 singleton covers 8×2+1 = 17 integers exactly, matching the full set {1,...,17}, confirming no integer was left out of the pigeonhole setup.",
+        structureId: "pigeonhole_advanced"},
+      { q: "Show that among any 6 integers, at least two of them must leave the same remainder when divided by 5.",
+        understand: "The containers here are not physical objects but the possible remainders on division by 5. Since every integer has exactly one of 5 possible remainders (0, 1, 2, 3, 4), treat those 5 remainder-values as 5 boxes and the 6 chosen integers as the objects being placed into them.",
+        steps: [
+        "There are 5 possible remainders when dividing by 5: 0, 1, 2, 3, 4. These are the boxes, so k = 5.",
+        "There are 6 integers chosen, so N = 6 objects being placed into those 5 boxes.",
+        "Since N = 6 > k = 5, by the pigeonhole principle at least one remainder-box must contain at least 2 of the chosen integers.",
+      ], answer: "At least two of the 6 integers must leave the same remainder when divided by 5.",
+        check: "Test it on a concrete set: 1, 2, 3, 4, 5, 6 leave remainders 1, 2, 3, 4, 0, 1 on division by 5, and indeed 1 and 6 share remainder 1, confirming the guarantee even though the specific pair could not be predicted in advance.",
+        structureId: "pigeonhole_context_randomized"},
     ],
       tryit: { q: "37 pigeons roost in 6 pigeonholes. What is the minimum guaranteed number in the fullest hole?", answer: "7. 37/6 = 6.1666..., and rounding up gives ⌈37/6⌉ = 7 (since 6 holes with 6 pigeons each only accounts for 36, the 37th pigeon forces one hole up to 7)." , structureId: "pigeonhole_basic"} },
   ],
@@ -1564,20 +1773,22 @@ INTERMEDIATE_LESSONS.diophantineEquations = {
       { q: "Does 6x + 9y = 20 have integer solutions?", steps: [
         "Find HCF(6,9): the common factors of 6 and 9 are 1 and 3, so HCF(6,9) = 3.",
         "Check whether 3 divides 20 exactly: 20 ÷ 3 = 6.666..., not a whole number.",
-        "Since HCF(6,9) does not divide 20, no integer solution can exist.",
-      ], answer: "No solution exists" , structureId: "d2_hcf_existence"},
+      ], answer: "No solution exists", structureId: "d2_hcf_existence", understand: "By the argument above, 6x+9y is always a multiple of HCF(6,9), so checking whether 20 is a multiple of that HCF settles the question immediately.", check: "Since HCF(6,9) does not divide 20, no integer solution can exist, without needing to try any specific x and y."},
       { q: "Does 4x + 6y = 10 have integer solutions (a case where the answer is yes)?", steps: [
         "Find HCF(4,6): the common factors of 4 and 6 are 1 and 2, so HCF(4,6) = 2.",
         "Check whether 2 divides 10 exactly: 10 ÷ 2 = 5, a whole number.",
-        "Since HCF(4,6) divides 10, an integer solution must exist.",
-        "Confirm with an actual pair: x=1, y=1 gives:\n4(1) + 6(1) =\n4 + 6 =\n10.\nIt works.",
-      ], answer: "Yes - for example x=1, y=1" , structureId: "d2_hcf_existence"},
+      ], answer: "Yes - for example x=1, y=1", structureId: "d2_hcf_existence", understand: "Since HCF(4,6) divides 10, Bezout's identity guarantees an integer solution exists, even before one is found.", check: "Confirm with an actual pair: x=1, y=1 gives 4(1)+6(1)=4+6=10, which works."},
       { q: "Find all integer values of n for which 6n + 1 is divisible by 4.", steps: [
-        "We need 6n + 1 ≡ 0 (mod 4), i.e. 6n ≡ −1 ≡ 3 (mod 4).",
-        "Since 6 ≡ 2 (mod 4), this becomes 2n ≡ 3 (mod 4).",
-        "The left side 2n is always even, but 3 is odd. An even number can never equal an odd number.",
-        "There is no integer n satisfying the condition.",
-      ], answer: "No integer n makes 6n + 1 divisible by 4" , structureId: "d2_hcf_existence"},
+        "Check the remainder of 6n+1 when divided by 4, for a few values of n: n=0 gives 6(0)+1=1, and 1÷4=0 remainder 1.",
+        "n=1 gives 6(1)+1=7, and 7÷4=1 remainder 3.",
+        "n=2 gives 6(2)+1=13, and 13÷4=3 remainder 1.",
+        "n=3 gives 6(3)+1=19, and 19÷4=4 remainder 3.",
+        "The remainders only ever take the values 1 and 3, alternating forever; 0 never appears.",
+      ], answer: "No integer n makes 6n + 1 divisible by 4", structureId: "d2_hcf_existence", understand: "This asks whether 6n+1 can ever leave remainder 0 when divided by 4; checking a few values of n reveals the remainder pattern directly.", check: "Since 6n only ever contributes a remainder of 0 or 2 (mod 4) depending on whether n is even or odd, 6n+1 only ever contributes 1 or 3, confirming 0 can never appear."},
+      { q: "Does 8x + 12y = 30 have integer solutions?", steps: [
+        "Find HCF(8,12): the common factors of 8 and 12 include 4, and no larger number divides both, so HCF(8,12) = 4.",
+        "Check whether 4 divides 30 exactly: 30 ÷ 4 = 7.5, not a whole number.",
+      ], answer: "No solution exists", structureId: "d2_hcf_existence", understand: "Apply the same HCF test used throughout this section.", check: "Since HCF(8,12) does not divide 30, no integer solution can exist."},
     ],
       tryit: { q: "Does 8x + 12y = 30 have integer solutions?", answer: "No. HCF(8,12) = 4, and 30 ÷ 4 = 7.5, not a whole number, so 4 does not divide 30 exactly - no integer solution can exist." , structureId: "d2_hcf_existence"} },
     { h: "2. Finding solutions by substitution", body: [
@@ -1590,20 +1801,24 @@ INTERMEDIATE_LESSONS.diophantineEquations = {
         "Isolate x: x = (25 - 4y) / 3.",
         "Try y=0:\nx =\n25/3 =\n8.33...,\nnot a whole number - reject.",
         "Try y=1:\nx =\n(25-4)/3 =\n21/3 =\n7,\na whole number - success.",
-        "Check:\n3(7) + 4(1) =\n21 + 4 =\n25.\nCorrect.",
-      ], answer: "x=7, y=1" , structureId: "d2_substitute_solve_for_y"},
+      ], answer: "x=7, y=1", structureId: "d2_substitute_solve_for_y", understand: "We need (25 − 4y) to divide exactly by 3 for some non-negative y, then recover x from it.", check: "3(7) + 4(1) = 21 + 4 = 25. Correct."},
       { q: "Find a positive integer solution to 5x + 8y = 61 (a harder version needing more trials).", steps: [
         "Isolate x: x = (61 - 8y) / 5.",
         "Try y=1:\nx =\n(61-8)/5 =\n53/5 =\n10.6,\nnot a whole number - reject.",
         "Try y=2:\nx =\n(61-16)/5 =\n45/5 =\n9,\na whole number - success.",
-        "Check:\n5(9) + 8(2) =\n45 + 16 =\n61.\nCorrect.",
-      ], answer: "x=9, y=2" , structureId: "d2_substitute_solve_for_y"},
+      ], answer: "x=9, y=2", structureId: "d2_substitute_solve_for_y", understand: "Bigger coefficients mean the trial search may need more attempts before a whole-number x appears.", check: "5(9) + 8(2) = 45 + 16 = 61. Correct."},
       { q: "Find all positive integer solutions to 3x + 5y = 40.", steps: [
-        "Isolate x: x = (40 − 5y) / 3. Try y = 1: 35/3 — not a whole number. Try y = 2: 30/3 = 10. Solution (10, 2). Check: 3(10)+5(2) = 40. ✓",
+        "Try y = 1: 35/3, not whole. Try y = 2: 30/3 = 10. Solution (10, 2). Check: 3(10)+5(2) = 40. ✓",
         "Try y = 3: 25/3 (no). y = 4: 20/3 (no). y = 5: 15/3 = 5. Solution (5, 5). Check: 3(5)+5(5) = 40. ✓",
-        "Try y = 6: 10/3 (no). y = 7: 5/3 (no). y = 8: 0/3 = 0 — x must be a positive integer, so x = 0 is rejected. y ≥ 9 forces x negative.",
-        "No further positive solutions exist.",
-      ], answer: "(x, y) = (10, 2) or (x, y) = (5, 5)" , structureId: "d2_counting_positive_solutions_easy"},
+        "Try y = 6: 10/3 (no). y = 7: 5/3 (no). y = 8: 0/3 = 0 — x must be a positive integer, so x = 0 is rejected.",
+        "For y ≥ 9, 5y > 40, forcing x negative, so no further positive solutions can exist.",
+      ], answer: "(x, y) = (10, 2) or (x, y) = (5, 5)", structureId: "d2_counting_positive_solutions_easy", understand: "This asks for every positive integer pair, not just one, so the trial search must continue past the first success until it is certain no further positive solution exists.", check: "Both pairs satisfy 3x+5y=40, and the search covered every y from 0 up to the point where x would turn negative, so no solution was skipped."},
+      { q: "Find a positive integer solution to 6x + 11y = 82, using the remainder method rather than trial from y = 0.", steps: [
+        "y = 0: 82 − 11(0) = 82. Dividing, 82 ÷ 6 = 13 remainder 4.",
+        "y = 1: 82 − 11(1) = 71. Dividing, 71 ÷ 6 = 11 remainder 5.",
+        "y = 2: 82 − 11(2) = 60. Dividing, 60 ÷ 6 = 10 remainder 0. This is the remainder needed, so we can stop here.",
+        "Since y = 2 gives remainder 0, work out x: x = 60/6 = 10.",
+      ], answer: "x=10, y=2", structureId: "d2_substitute_solve_for_y", understand: "Blind trial from y=0 would work eventually, but the coefficients here are bigger, so predicting the remainder pattern first, exactly as demonstrated in the body, jumps straight to a value of y that works.", check: "6(10) + 11(2) = 60 + 22 = 82. Correct; and because the remainders were checked in order from y=0, this is confirmed to be the smallest value of y that works."},
     ],
       tryit: { q: "Find a positive integer solution to 4x + 9y = 46.", answer: "x=7, y=2. Trying y=1 gives:\nx =\n(46-9)/4 =\n9.25\n(reject); trying y=2 gives:\nx =\n(46-18)/4 =\n7,\na whole number. Check:\n4(7)+9(2) =\n28+18 =\n46." , structureId: "d2_substitute_solve_for_y"} },
     { h: "3. Digit puzzles as Diophantine equations", body: [
@@ -1618,24 +1833,27 @@ INTERMEDIATE_LESSONS.diophantineEquations = {
         "Digit difference clue: t - u = 3.",
         "Add the two equations to eliminate u: (t+u) + (t-u) = 9+3, giving:\n2t =\n12, so\nt =\n6.",
         "Substitute back:\n6 + u =\n9, so\nu =\n3.",
-        "Both digits are valid (0-9, tens digit not 0), so the number is 63.",
-      ], answer: "63" , structureId: "d1_digit_puzzle"},
+      ], answer: "63", structureId: "d1_digit_puzzle", understand: "The two clues about the digits translate directly into a pair of simultaneous equations in t and u.", check: "Both digits are valid (0-9, tens digit not 0), and 6+3=9 while 6-3=3, matching both clues, so the number is 63."},
       { q: "A two-digit number has digit sum 14 and its tens digit is 4 more than its units digit (a harder version with bigger digits). Find it.", steps: [
         "Let the tens digit be t and the units digit be u.",
         "Digit sum clue: t + u = 14.",
         "Digit difference clue: t - u = 4.",
         "Add the two equations:\n2t =\n18, so\nt =\n9.",
         "Substitute back:\n9 + u =\n14, so\nu =\n5.",
-        "Both digits are valid, so the number is 95.",
-      ], answer: "95" , structureId: "d1_digit_puzzle"},
+      ], answer: "95", structureId: "d1_digit_puzzle", understand: "Apply the same elimination method used in the previous example, now with bigger digit values.", check: "Both digits are valid, and 9+5=14 while 9-5=4, matching both clues, so the number is 95."},
       { q: "A two-digit number has the property that reversing its digits gives a number 27 more than the original. Its tens digit is one more than half its units digit. Find the number.", steps: [
         "Let the tens digit be t and the units digit be u. The number is 10t + u; reversed it is 10u + t.",
         "Reversing gives 27 more: (10u + t) − (10t + u) = 27, simplifying to 9u − 9t = 27, so u − t = 3.",
         "Tens digit is one more than half the units digit: t = u/2 + 1, so 2t = u + 2, giving u = 2t − 2.",
         "Substitute into u − t = 3: (2t − 2) − t = 3, giving t − 2 = 3, so t = 5 and u = 8.",
-        "Both digits are valid (0–9, tens digit non-zero). The number is 58.",
-        "Check: reversed number 85 = 58 + 27 ✓; tens digit 5 = 8/2 + 1 ✓.",
-      ], answer: "58" , structureId: "d1_digit_puzzle"},
+      ], answer: "58", structureId: "d1_digit_puzzle", understand: "The reversing clue needs place value written out fully (10t+u and 10u+t) before it can become a simultaneous equation.", check: "Both digits are valid (0-9, tens digit non-zero); reversed number 85 = 58+27, and tens digit 5 = 8/2+1, matching both clues."},
+      { q: "A two-digit number has digit sum 12 and its tens digit is 2 more than its units digit. Find it.", steps: [
+        "Let the tens digit be t and the units digit be u.",
+        "Digit sum clue: t + u = 12.",
+        "Digit difference clue: t - u = 2.",
+        "Add the two equations: 2t = 14, so t = 7.",
+        "Substitute back: 7 + u = 12, so u = 5.",
+      ], answer: "75", structureId: "d1_digit_puzzle", understand: "Apply the same elimination method used throughout this section.", check: "Both digits are valid, and 7+5=12 while 7-5=2, matching both clues, so the number is 75."},
     ],
       tryit: { q: "A two-digit number has digit sum 12 and its tens digit is 2 more than its units digit. Find it.", answer: "75. Adding t+u=12 and t-u=2 gives:\n2t =\n14, so\nt =\n7,\nthen u=5. Both digits are valid, giving the number 75." , structureId: "d1_digit_puzzle"} },
   ],
@@ -1656,24 +1874,41 @@ INTERMEDIATE_LESSONS.optimisationAndExtremal = {
       "So for a fixed sum, hunt for the split where the two numbers are equal (or as close to equal as the integers allow). Divide the total by 2: if that gives a whole number, that's your two equal parts. If it doesn't, round to the two whole numbers on either side of it.",
       "Watch out for two traps: the numbers must be positive (0 and 20 gives a product of 0, the worst possible split, even though it looks extreme), and if the question asks for integers, you cannot split an odd total into two equal integers, so you must use the two nearest whole numbers instead - e.g. 15 splits as 7 and 8, not 7.5 and 7.5.",
     ], examples: [
-      { q: "Two positive integers add to 20. What's the greatest possible product?", steps: [
+      { q: "Two positive integers add to 20. What's the greatest possible product?",
+        understand: "By the equal-split rule proved above, for a fixed sum the product is maximised when the two numbers are as close to equal as possible; since 20 is even, an exactly equal split is possible.",
+        steps: [
         "20 is even, so it splits into two equal whole numbers: 20÷2 = 10 and 10.",
-        "By the equal-split rule just proved, this is the split that maximises the product.",
         "10 × 10 = 100.",
-      ], answer: "100" , structureId: "d1_max_product_fixed_sum"},
-      { q: "Two positive integers add to 15. What's the greatest possible product? (15 is odd, so it can't split into two equal integers - what's the best you can do?)", steps: [
+      ], answer: "100",
+        check: "Compare with a nearby unequal split: 9+11=20, product 9×11=99, which is smaller than 100, confirming the equal split really is best.",
+        structureId: "d1_max_product_fixed_sum"},
+      { q: "Two positive integers add to 15. What's the greatest possible product? (15 is odd, so it can't split into two equal integers - what's the best you can do?)",
+        understand: "15 is odd, so the true optimum, splitting exactly in half, would need non-integers (7.5 and 7.5); since only integers are allowed, use the two whole numbers closest to that midpoint.",
+        steps: [
         "15÷2 = 7.5, which isn't a whole number, so an exactly-equal split isn't possible with integers.",
         "The equal-split rule says the true maximum (allowing non-integers) would be at 7.5 and 7.5, so the best integer split is the pair closest to that: 7 and 8.",
-        "Check both are positive integers adding to 15: 7+8=15. Correct total.",
+        "Check both are positive integers adding to 15: 7+8=15.",
         "7 × 8 = 56.",
-        "Compare with the next-closest split to confirm: 6+9=15, 6×9=54, which is smaller than 56 - confirming 7 and 8 really is the best.",
-      ], answer: "56" , structureId: "d1_max_product_fixed_sum"},
-      { q: "Three positive integers sum to 30. What is the greatest possible product, and which combination of three integers achieves it?", steps: [
-        "The equal-split rule says the product is maximised when the three numbers are as equal as possible.",
+      ], answer: "56",
+        check: "Compare with the next-closest split: 6+9=15, 6×9=54, which is smaller than 56, confirming 7 and 8 really is the best available integer split.",
+        structureId: "d1_max_product_fixed_sum"},
+      { q: "Three positive integers sum to 30. What is the greatest possible product, and which combination of three integers achieves it?",
+        understand: "The same equal-split principle extends to three numbers, not just two: for a fixed sum, the product of several positive numbers is maximised when they are as equal as possible.",
+        steps: [
         "30 ÷ 3 = 10 exactly, so the equal split is 10, 10, 10.",
         "Product = 10 × 10 × 10 = 1000.",
-        "Check against a slightly unequal split: 9 + 10 + 11 = 30, product = 9 × 10 × 11 = 990 < 1000. ✓",
-      ], answer: "1000 (three equal parts of 10)" , structureId: "d1_max_product_fixed_sum"},
+      ], answer: "1000 (three equal parts of 10)",
+        check: "Check against a slightly unequal split: 9 + 10 + 11 = 30, product = 9 × 10 × 11 = 990, which is less than 1000, confirming the equal split is best.",
+        structureId: "d1_max_product_fixed_sum"},
+      { q: "Two positive integers have sum 37. Find their greatest possible product.",
+        understand: "37 is odd, so an exactly equal split is impossible with integers; use the two whole numbers closest to the true midpoint 18.5.",
+        steps: [
+        "37 ÷ 2 = 18.5, so split into the two closest whole numbers either side: 18 and 19.",
+        "Check they add to 37: 18+19=37.",
+        "18 × 19 = 342.",
+      ], answer: "342",
+        check: "Compare with the next-closest split: 17+20=37, 17×20=340, which is smaller than 342, confirming 18 and 19 is the best integer split.",
+        structureId: "d1_max_product_fixed_sum"},
     ],
       tryit: { q: "Two positive integers add to 13. What's the greatest possible product?", answer: "42. 13÷2=6.5 isn't a whole number, so use the closest integers either side, 6 and 7: 6×7=42 (compare with 5×8=40, which is smaller, confirming 6 and 7 is best)." , structureId: "d1_max_product_fixed_sum"} },
     { h: "2. Fixed perimeter, maximise the area", body: [
@@ -1682,24 +1917,43 @@ INTERMEDIATE_LESSONS.optimisationAndExtremal = {
       "So for a fixed perimeter, halve it to get length+width, then split that as evenly as possible - a square (or the closest integer rectangle to a square) always wins.",
       "Don't halve the perimeter twice. The perimeter is 2(length+width), so length+width is HALF the perimeter, not a quarter. A common slip is dividing by 4, which would only be correct for finding a single side length of an actual square, not the length+width sum.",
     ], examples: [
-      { q: "A rectangle has perimeter 28. What integer side lengths give maximum area?", steps: [
+      { q: "A rectangle has perimeter 28. What integer side lengths give maximum area?",
+        understand: "Since the perimeter is fixed, length+width is also fixed at half the perimeter; this reduces the problem to exactly the fixed-sum, maximise-the-product problem from section 1, with length and width playing the roles of the two numbers.",
+        steps: [
         "Halve the perimeter to get length+width: 28÷2=14.",
         "By the equal-split rule from Section 1, this sum is maximised as a product when split evenly: 14÷2=7 and 7.",
         "Area =\n7×7 =\n49.",
-      ], answer: "49 (sides 7 and 7)" , structureId: "d1_max_rect_area"},
-      { q: "A rectangle has perimeter 50. What integer side lengths give the maximum area, and what is it?", steps: [
+      ], answer: "49 (sides 7 and 7)",
+        check: "Compare with an unequal split: 6+8=14, area=6×8=48, which is smaller than 49, confirming the square gives the maximum area.",
+        structureId: "d1_max_rect_area"},
+      { q: "A rectangle has perimeter 50. What integer side lengths give the maximum area, and what is it?",
+        understand: "As before, halve the perimeter to find length+width, then split that sum as evenly as the integers allow.",
+        steps: [
         "Halve the perimeter: 50÷2=25.",
-        "25 is odd, so it can't split into two equal integers - use the closest whole numbers either side: 12 and 13.",
-        "Check they add to 25: 12+13=25. Correct.",
+        "25 is odd, so it can't split into two equal integers; use the closest whole numbers either side: 12 and 13.",
+        "Check they add to 25: 12+13=25.",
         "Area =\n12×13 =\n156.",
-        "Confirm this beats the next-closest split: 11+14=25, so:\narea =\n11×14 =\n154, which is smaller - so 12 and 13 is best.",
-      ], answer: "156 (sides 12 and 13)" , structureId: "d1_max_rect_area"},
-      { q: "A farmer has 100m of fencing to enclose a rectangular field. What is the maximum possible area, and what dimensions achieve it?", steps: [
+      ], answer: "156 (sides 12 and 13)",
+        check: "Confirm this beats the next-closest split: 11+14=25, area=11×14=154, which is smaller, so 12 and 13 is best.",
+        structureId: "d1_max_rect_area"},
+      { q: "A farmer has 100m of fencing to enclose a rectangular field. What is the maximum possible area, and what dimensions achieve it?",
+        understand: "A fully-fenced rectangular field is exactly the fixed-perimeter case above; halve the perimeter to get length+width, then split it as evenly as possible.",
+        steps: [
         "For a fully-fenced rectangle, halve the perimeter to find length+width: 100 ÷ 2 = 50.",
         "By the equal-split rule, the maximum area comes from splitting 50 as evenly as possible: 50 ÷ 2 = 25 and 25 (a square).",
         "Maximum area = 25 × 25 = 625 m².",
-        "Check an unequal split: 20 + 30 = 50, area = 20 × 30 = 600 m² < 625 m². ✓",
-      ], answer: "625 m² (a 25m × 25m square)" , structureId: "d1_max_rect_area"},
+      ], answer: "625 m² (a 25m × 25m square)",
+        check: "Check an unequal split: 20 + 30 = 50, area = 20 × 30 = 600 m², which is less than 625 m², confirming the square is optimal.",
+        structureId: "d1_max_rect_area"},
+      { q: "A rectangle has perimeter 60 cm. Find the dimensions with maximum area.",
+        understand: "Halve the perimeter to get the fixed sum length+width, then apply the equal-split rule exactly as in the previous examples.",
+        steps: [
+        "Halve the perimeter: 60÷2 = 30 cm, so L+W=30.",
+        "30 is even, so it splits exactly evenly: L=W=15.",
+        "Area = 15 × 15 = 225 cm².",
+      ], answer: "225 cm² (a 15cm × 15cm square)",
+        check: "Compare with an unequal split: 14+16=30, area=14×16=224 cm², which is smaller than 225 cm², confirming the square is best.",
+        structureId: "d1_max_rect_area"},
     ],
       tryit: { q: "A rectangle has perimeter 22. What integer side lengths give the maximum area?", answer: "30 (sides 5 and 6). Half the perimeter is 22÷2=11, which is odd, so the closest integer split is 5 and 6 (5+6=11): 5×6=30, which beats 4×7=28." , structureId: "d1_max_rect_area"} },
     { h: "3. Optimisation with a real-world constraint", body: [
@@ -1707,26 +1961,44 @@ INTERMEDIATE_LESSONS.optimisationAndExtremal = {
       "Label the side parallel to the wall (and opposite it) as the length, l, and the two sides running from the wall out to meet it as the width, w. Only 3 sides need fencing: two widths and one length, so the fencing formula is l+2w = (total fencing), not 2(l+w) = (total fencing) as it would be for a fully-fenced rectangle. Because w now appears twice in the formula but l only once, the equal-is-best rule from Sections 1 and 2 - which relied on both sides mattering equally - no longer points to l=w.",
       "With one variable's formula changed, the safest approach at this level is the same table method used in Section 1: fix the total fencing, express l in terms of w, then compute the area for values of w close to a sensible middle guess and see which gives the biggest number.",
     ], examples: [
-      { q: "40m of fencing is used to build a rectangular pen against an existing wall (the wall forms one side, so no fencing is needed there). What integer width and length maximise the area, and how does this compare with using the same 40m of fencing with no wall at all?", steps: [
-        "No-wall case first, for comparison: all four sides need fencing, so:\nlength+width =\n40÷2 =\n20. By the equal-split rule the best is 10+10, giving area 10×10=100.",
-        "Wall case: only 2 widths and 1 length need fencing, so:\nl + 2w =\n40, which rearranges to\nl =\n40 - 2w.",
-        "Area =\nl × w =\n(40-2w) × w. Try w=10 (the value that worked before):\nl =\n40-20 =\n20,\narea =\n20×10 =\n200.",
-        "Test whether moving away from w=10 does better or worse, as in Section 1's table: w=9 gives l=22, area=198. w=11 gives l=18, area=198. w=8 gives l=24, area=192. w=12 gives l=16, area=192.",
-        "The areas rise to a peak at w=10 and fall away on both sides, so w=10, l=20 is the maximum - but notice l=20 is DOUBLE w=10, not equal to it, unlike the no-wall case.",
-        "Compare the two results: with the wall, the maximum area is 200 m², exactly double the no-wall maximum of 100 m², using the identical 40m of fencing - because the wall provides one side for free, and the optimal shape shifts away from a square towards a rectangle twice as long as it is wide.",
-      ], answer: "200 m² (width 10m, length 20m) - double the no-wall maximum of 100 m², with the optimal shape no longer a square because only 3 sides need fencing." , structureId: "d4_max_area_pen_wall"},
-      { q: "A gardener has 24m of fencing to build a rectangular enclosure against a wall. The wall provides one long side, so only the opposite long side and the two short sides need fencing. What dimensions maximise the area?", steps: [
-        "Let the width (the side perpendicular to the wall) be w metres. Two widths and one length use all the fencing: l + 2w = 24, so l = 24 - 2w.",
+      { q: "40m of fencing is used to build a rectangular pen against an existing wall (the wall forms one side, so no fencing is needed there). What integer width and length maximise the area, and how does this compare with using the same 40m of fencing with no wall at all?",
+        understand: "Because the wall replaces one side, the fencing formula changes from the usual 2(length+width) to l + 2w, so the equal-is-best rule from sections 1 and 2 no longer directly applies. Test values of w near a sensible middle guess and compare, as in section 1's table method, and compare against the no-wall case for context.",
+        steps: [
+        "No-wall case first, for comparison: all four sides need fencing, so length+width = 40÷2 = 20. By the equal-split rule the best is 10+10, giving area 10×10=100.",
+        "Wall case: only 2 widths and 1 length need fencing, so l + 2w = 40, which rearranges to l = 40 - 2w.",
+        "Area = l × w = (40-2w) × w. Try w=10 (the value that worked before): l = 40-20 = 20, area = 20×10 = 200.",
+        "Test whether moving away from w=10 does better or worse: w=9 gives l=22, area=198. w=11 gives l=18, area=198. w=8 gives l=24, area=192. w=12 gives l=16, area=192.",
+      ], answer: "200 m² (width 10m, length 20m), double the no-wall maximum of 100 m², with the optimal shape no longer a square because only 3 sides need fencing",
+        check: "The areas rise to a peak at w=10 and fall away on both sides in the table above, confirming w=10 is the maximum; notice l=20 is double w=10, not equal to it, unlike the no-wall case, since w appears twice in the fencing formula but l only once.",
+        structureId: "d4_max_area_pen_wall"},
+      { q: "A gardener has 24m of fencing to build a rectangular enclosure against a wall. The wall provides one long side, so only the opposite long side and the two short sides need fencing. What dimensions maximise the area?",
+        understand: "Set up the same l + 2w fencing equation as the worked example above, then test integer values of w near the middle of the sensible range to find the peak area.",
+        steps: [
+        "Let the width (perpendicular to the wall) be w metres. Two widths and one length use all the fencing: l + 2w = 24, so l = 24 - 2w.",
         "Area A = l × w = (24 - 2w) × w = 24w - 2w².",
         "Test integer values of w: w=5 gives A=70; w=6 gives A=72; w=7 gives A=70.",
-        "The area peaks at w=6, l=12. Note that l = 2w (twice the width), following the same wall-enclosure rule as the earlier example.",
-      ], answer: "72 m² (width 6m, length 12m)" , structureId: "d4_max_area_pen_wall"},
-      { q: "A farmer has 120m of fencing to build a rectangular pen against a barn wall. He installs 2 internal fences parallel to the width, dividing the pen into 3 equal sections. The wall provides one long side. Express the area in terms of w (the width) and find the width that maximises the area.", steps: [
-        "Fencing used: 1 long side (l) opposite the wall, 2 outer short sides (2w), and 2 internal dividers (2w) = l + 4w = 120, so l = 120 - 4w.",
+      ], answer: "72 m² (width 6m, length 12m)",
+        check: "The area rises to w=6 and falls on both sides (70, 72, 70), confirming w=6 is the peak; as before, l=12 is double w=6, following the same wall-enclosure pattern.",
+        structureId: "d4_max_area_pen_wall"},
+      { q: "A farmer has 120m of fencing to build a rectangular pen against a barn wall. He installs 2 internal fences parallel to the width, dividing the pen into 3 equal sections. The wall provides one long side. Express the area in terms of w (the width) and find the width that maximises the area.",
+        understand: "The internal dividers add extra fencing that also runs in the w-direction, so the fencing equation changes again to l + 4w rather than l + 2w; set it up the same way and test values of w near the middle of the range.",
+        steps: [
+        "Fencing used: 1 long side (l) opposite the wall, 2 outer short sides (2w), and 2 internal dividers (2w): l + 4w = 120, so l = 120 - 4w.",
         "Area A = l × w = (120 - 4w) × w = 120w - 4w².",
         "Test integer values near the peak: w=15 gives A = (120-60)×15 = 60×15 = 900; w=14 gives A = 64×14 = 896; w=16 gives A = 56×16 = 896.",
-        "The area peaks at w=15, l=60. Internal dividers shift the optimal width down to l = 4w.",
-      ], answer: "900 m² (width 15m, length 60m, with l = 4w because 4 widths of fencing are required)" , structureId: "d4_divided_pen"},
+      ], answer: "900 m² (width 15m, length 60m, with l = 4w because 4 widths of fencing are required)",
+        check: "The area rises to w=15 and falls on both sides (896, 900, 896), confirming w=15 is the peak.",
+        structureId: "d4_divided_pen"},
+      { q: "A farmer has 80 m of fencing for three sides of a rectangle beside a straight river (no fencing needed on the river side). Find the dimensions that maximise the area, using the turning point of the area function.",
+        understand: "Rather than testing integer values one at a time as in the previous examples, use the quadratics prerequisite directly: write the area as a quadratic function of one variable, then find its maximum from the turning point.",
+        steps: [
+        "Let the two equal widths (perpendicular to the river) be x metres, so the fenced length (parallel to the river) is 80 - 2x.",
+        "Area A = x(80 - 2x) = 80x - 2x².",
+        "Complete the square, factoring out -2 from the x-terms first: 80x - 2x² = -2(x² - 40x) = -2[(x-20)² - 400] = -2(x-20)² + 800.",
+        "Since (x-20)² is never negative, -2(x-20)² is never positive, so A is largest when (x-20)² = 0, that is when x = 20.",
+      ], answer: "800 m² (width 20m each side, length 40m)",
+        check: "Check against a nearby value: x=19 gives length 80-38=42 and area 19×42=798, and x=21 gives length 38 and area 21×38=798, both less than 800, confirming x=20 is the true maximum.",
+        structureId: "d4_max_area_pen_wall"},
     ],
       tryit: { q: "60m of fencing builds a rectangular pen against a wall (no fencing needed on the wall side). What width and length maximise the area?", answer: "450 m² (width 15m, length 30m - the length is double the width, following the same pattern as the worked example: l+2w=60, and testing values near w=15 confirms it's the peak: w=14 gives area 448, w=16 gives area 448, both less than 450)." , structureId: "d4_max_area_pen_wall"} },
   ],
@@ -1745,26 +2017,44 @@ INTERMEDIATE_LESSONS.proofTechniques = {
       "A real proof needs an argument that covers every possible case at once - usually through algebra (see Algebraic Proof) or through a general logical argument that doesn't depend on which specific number you happen to have tried.",
       "The number of examples doesn't matter - checking 3, 30 or 300 cases and finding they all fit is still not a proof, since the very next untested case could be the exception. The only way to be sure is to argue about all cases in one go, or to test literally every case if there are only finitely many (and even then, you must genuinely check every single one, not just most of them).",
     ], examples: [
-      { q: "Someone claims 'every prime number is odd' and checks n=3, 5, 7 to 'prove' it. Show this proof attempt is wrong.", steps: [
+      { q: "Someone claims 'every prime number is odd' and checks n=3, 5, 7 to 'prove' it. Show this proof attempt is wrong.",
+        understand: "Check what the claim covers before checking whether the given examples support it: 'every prime is odd' is about all infinitely many primes, so a few checked cases can never rule out an exception elsewhere.",
+        steps: [
         "Check the claim against the examples given: 3 is prime and odd. 5 is prime and odd. 7 is prime and odd. All three fit, which is why the argument looks convincing.",
-        "But three examples only cover three numbers, not all prime numbers - the claim 'every prime is odd' is about every single one of infinitely many primes, so the checked cases are a tiny fraction, and none of them can rule out an exception elsewhere.",
+        "But three examples only cover three numbers, not all prime numbers, so the checked cases are a tiny fraction, and none of them can rule out an exception elsewhere.",
         "Test the smallest prime number of all, which the example happened to skip: 2.",
         "2 is prime (its only factors are 1 and 2), but 2 is even, not odd.",
-        "So the claim is false, and the reason the proof missed it is precisely because it only ever checked a few chosen examples instead of arguing about every prime.",
-      ], answer: "False - 2 is a prime number that is even, disproving the claim. The one-example check missed it because checking a few cases can never rule out an exception that wasn't tried." , structureId: "proof_by_example_flaw"},
-      { q: "A student claims the formula n² + n + 41 always produces a prime number, and checks it for n = 0, 1, 2, 3 and 4, getting 41, 43, 47, 53 and 61 - all prime. Is this sufficient proof? Find the smallest n for which the formula fails.", steps: [
-        "The student has checked 5 values and found 5 primes, which looks impressive - but this still only covers 5 cases, not all infinitely many possible values of n.",
-        "The reasoning 'I checked five cases and they all worked' is exactly the one-example fallacy scaled up: more examples still only prove those specific cases, never the general claim.",
+      ], answer: "False, since 2 is a prime number that is even, disproving the claim.",
+        check: "The one-example check missed 2 precisely because it only ever tested a few chosen examples instead of arguing about every prime; the exception was there all along, just outside the tested range.",
+        structureId: "proof_by_example_flaw"},
+      { q: "A student claims the formula n² + n + 41 always produces a prime number, and checks it for n = 0, 1, 2, 3 and 4, getting 41, 43, 47, 53 and 61, all prime. Is this sufficient proof? Find the smallest n for which the formula fails.",
+        understand: "The reasoning 'I checked five cases and they all worked' is exactly the one-example fallacy scaled up: more examples still only prove those specific cases, never the general claim, so search further out for a failing case.",
+        steps: [
+        "The student has checked 5 values and found 5 primes, which looks impressive, but this still only covers 5 cases, not all infinitely many possible values of n.",
         "To find a counterexample, try n = 40: 40² + 40 + 41 = 1600 + 40 + 41 = 1681. Is 1681 prime?",
         "Check: 41² = 1681. So 1681 = 41 × 41, which is not prime.",
-        "The formula fails at n = 40, giving 1681 = 41², which has 41 as a factor.",
-      ], answer: "No - checking 5 cases is not a proof. The formula fails at n = 40, giving 41² = 1681, which is not prime." , structureId: "proof_by_example_flaw"},
-      { q: "A student checks that 1 + 3 + 5 + ... + (2n − 1) = n² holds for n = 1, 2 and 3 (giving 1, 4 and 9 respectively), then concludes 'it must always be true because I verified three consecutive cases.' Explain the error and describe what a valid proof would require.", steps: [
+      ], answer: "No, checking 5 cases is not a proof. The formula fails at n = 40, giving 41² = 1681, which is not prime.",
+        check: "Double-check the arithmetic directly: 40² = 1600, and 1600 + 40 + 41 = 1681, matching 41 × 41 exactly, confirming the counterexample is genuine.",
+        structureId: "proof_by_example_flaw"},
+      { q: "A student checks that 1 + 3 + 5 + ... + (2n − 1) = n² holds for n = 1, 2 and 3 (giving 1, 4 and 9 respectively), then concludes 'it must always be true because I verified three consecutive cases.' Explain the error and describe what a valid proof would require.",
+        understand: "Unlike the previous two examples, this particular claim actually IS true for every n; the error is not in the claim but in the reasoning used to support it, since checking three cases still is not the same as proving all of them.",
+        steps: [
         "The formula does hold for n = 1: the sum is just 1, and 1² = 1. For n = 2: 1 + 3 = 4 = 2². For n = 3: 1 + 3 + 5 = 9 = 3². All three cases are correct.",
-        "However, verifying 3 specific cases only proves the formula is true for those 3 values of n - it says nothing about n = 4, 5, or any larger value.",
-        "A valid proof must cover ALL positive integers n in a single argument, not just a sample. One valid approach is to use algebra: assume the formula holds for n = k and deduce it must then hold for n = k + 1 as well, which together with the base case n = 1 covers every n.",
-        "The error is concluding 'always true' from 'sometimes true' - the number of cases checked is irrelevant; only an all-encompassing argument closes the gap.",
-      ], answer: "The three-case check is not a proof - it only confirms the formula for three specific values. A valid proof requires an argument covering every n, such as induction or a general algebraic identity." , structureId: "how_many_examples_needed"},
+        "However, verifying 3 specific cases only proves the formula is true for those 3 values of n; it says nothing about n = 4, 5, or any larger value.",
+        "A valid proof must cover all positive integers n in a single argument, not just a sample. One valid approach is to use algebra: assume the formula holds for n = k and deduce it must then hold for n = k + 1 as well, which together with the base case n = 1 covers every n.",
+      ], answer: "The three-case check is not a proof, it only confirms the formula for three specific values. A valid proof requires an argument covering every n, such as induction or a general algebraic identity.",
+        check: "This example shows the fallacy can occur even when the underlying claim is true, exactly like the multiples-of-6 tryit below; a claim being true does not excuse the proof of it from covering every case.",
+        structureId: "how_many_examples_needed"},
+      { q: "A student checks that 2ⁿ − 1 is prime whenever n is a prime number, for n = 2, 3, 5 and 7 (giving 3, 7, 31 and 127, all prime), and concludes the pattern always holds. Show this is not a valid proof, and find the smallest prime n for which it fails.",
+        understand: "As in the earlier examples, checking several correct cases in a row, however many, only ever confirms those specific cases; the claim is about every prime n, so a single untested prime could still break the pattern.",
+        steps: [
+        "Check the claim against the given cases: n=2 gives 2²−1=3 (prime). n=3 gives 2³−1=7 (prime). n=5 gives 2⁵−1=31 (prime). n=7 gives 2⁷−1=127 (prime). All four fit, which is why the pattern looks convincing.",
+        "But four examples only cover four specific primes, not every prime number, so a fifth, untested prime could still fail.",
+        "Test the next prime after 7, which is 11: 2¹¹ − 1 = 2048 − 1 = 2047.",
+        "Check whether 2047 is prime: 2047 = 23 × 89, so it is not prime.",
+      ], answer: "n = 11 disproves the claim, since 2¹¹ − 1 = 2047 = 23 × 89, which is not prime.",
+        check: "Double-check the factorisation: 23 × 89 = 23 × 90 − 23 = 2070 − 23 = 2047, confirming 2047 really does factor, so it cannot be prime.",
+        structureId: "proof_by_example_flaw"},
     ],
       tryit: { q: "A claim states 'every multiple of 6 is even', and someone 'proves' it by checking 6, 12, 18, 24 - all even. Explain in one or two sentences why this checking process is not a valid general proof, even though the claim happens to be true.", answer: "Checking four examples only tells you about those four multiples, not all infinitely many - even though this particular claim is true, checking specific cases can never rule out a future exception. A proper proof notes that any multiple of 6 can be written as 6k = 2×(3k), which is 2 times a whole number for every integer k, so it's even for every single case at once, not just the four tested." , structureId: "proof_by_example_flaw"} },
     { h: "2. Circular reasoning", body: [
@@ -1773,26 +2063,42 @@ INTERMEDIATE_LESSONS.proofTechniques = {
       "To spot one, work through the argument step by step and ask, for every single step: does this step rely only on things already established (definitions, earlier proven facts, or the given information), or does it quietly lean on the very conclusion we're trying to reach? The moment a step needs the conclusion to already be true, the argument has gone circular.",
       "Circular arguments are especially easy to write by accident when a claim feels obviously true - it's tempting to use the claim itself as a stepping stone without noticing, because it doesn't feel like an assumption, it feels like common sense.",
     ], examples: [
-      { q: "Spot the flaw in this argument: 'Prove that the angles of a triangle add up to 180°. We know a straight line is 180°. Since the three angles of a triangle can be rearranged to form a straight line, they must add up to 180°, because a triangle's angles always add up to 180°.'", steps: [
+      { q: "Spot the flaw in this argument: 'Prove that the angles of a triangle add up to 180°. We know a straight line is 180°. Since the three angles of a triangle can be rearranged to form a straight line, they must add up to 180°, because a triangle's angles always add up to 180°.'",
+        understand: "Work through the argument step by step and check whether the justification for the key step secretly relies on the conclusion the argument is meant to reach.",
+        steps: [
         "Read the argument looking for what it is trying to establish: that the three angles of a triangle sum to 180°.",
-        "Now check the justification given for the key step (that the three angles can be rearranged to form a straight line): the argument justifies this by saying 'because a triangle's angles always add up to 180°'.",
-        "That justification is exactly the statement the argument set out to prove in the first place - the conclusion has been used as its own reason.",
-        "This is circular: strip out the phrase that sounds like a justification, and there is no actual reasoning left connecting 'rearranged into a straight line' to '180°' other than assuming the answer.",
-        "A genuine proof of this fact instead uses parallel lines and alternate angles to show the rearrangement is forced by geometry, never assuming the 180° total along the way.",
-      ], answer: "Circular - the argument justifies 'the angles form a straight line' by re-asserting 'a triangle's angles add up to 180°', which is the very thing being proved. A valid proof must reach 180° using facts established beforehand, such as angle facts on parallel lines, not the conclusion itself." , structureId: "circular_reasoning_flaw"},
-      { q: "Spot the circular step in this argument: 'We want to prove that √2 is irrational. Suppose √2 = p/q in lowest terms. Then 2 = p²/q², so p² = 2q², meaning p² is even, so p is even. Write p = 2k, giving 4k² = 2q², so q² = 2k², meaning q is also even. But p and q were both even, so the fraction p/q was not in lowest terms after all, which is the contradiction we needed. So √2 is irrational.' Is this circular? If not, what technique is being used?", steps: [
+        "Now check the justification given for the key step, that the three angles can be rearranged to form a straight line: the argument justifies this by saying 'because a triangle's angles always add up to 180°'.",
+        "That justification is exactly the statement the argument set out to prove in the first place; the conclusion has been used as its own reason.",
+      ], answer: "Circular: the argument justifies 'the angles form a straight line' by re-asserting 'a triangle's angles add up to 180°', which is the very thing being proved.",
+        check: "Strip out the phrase that sounds like a justification, and there is no actual reasoning left connecting 'rearranged into a straight line' to '180°' other than assuming the answer; a genuine proof instead uses parallel lines and alternate angles to show the rearrangement is forced by geometry.",
+        structureId: "circular_reasoning_flaw"},
+      { q: "Spot the circular step in this argument: 'We want to prove that √2 is irrational. Suppose √2 = p/q in lowest terms. Then 2 = p²/q², so p² = 2q², meaning p² is even, so p is even. Write p = 2k, giving 4k² = 2q², so q² = 2k², meaning q is also even. But p and q were both even, so the fraction p/q was not in lowest terms after all, which is the contradiction we needed. So √2 is irrational.' Is this circular? If not, what technique is being used?",
+        understand: "Not every multi-step argument that assumes something is circular; work through each step and check specifically whether any step uses the final conclusion, rather than an independently established fact, as its justification.",
+        steps: [
         "Work through each step and check whether any step uses the conclusion (that √2 is irrational) as its own justification.",
-        "Step 1 assumes the opposite of the conclusion: that √2 IS rational. Step 2 deduces algebraic consequences of that assumption. Step 3 finds a contradiction with a known fact (that p/q was in lowest terms). Step 4 concludes the original assumption must be false.",
-        "No step relies on the conclusion 'irrational' to justify any other step - the contradiction comes from a separately established fact (the definition of lowest terms) not from the thing being proved.",
-        "This argument is NOT circular. The technique is proof by contradiction: assume the opposite of the claim, derive a logical impossibility, and conclude the original claim must therefore be true.",
-      ], answer: "Not circular. This is a valid proof by contradiction: the argument assumes √2 is rational and derives a contradiction, without using 'irrational' as a justification for any step." , structureId: "logically_valid_check"},
-      { q: "Spot the circular step: 'We want to show that a² + b² = c² for all right-angled triangles. Since the triangle is right-angled, by the theorem governing right-angled triangles, a² + b² = c². Therefore the Pythagorean theorem is proved.'", steps: [
+        "Step 1 assumes the opposite of the conclusion: that √2 is rational. Step 2 deduces algebraic consequences of that assumption. Step 3 finds a contradiction with a known fact, that p/q was in lowest terms. Step 4 concludes the original assumption must be false.",
+        "No step relies on the conclusion 'irrational' to justify any other step; the contradiction comes from a separately established fact (the definition of lowest terms), not from the thing being proved.",
+      ], answer: "Not circular. This is a valid proof by contradiction: the argument assumes √2 is rational and derives a contradiction, without using 'irrational' as a justification for any step.",
+        check: "Compare with example 1's genuinely circular argument: there, the justification for a step WAS the final conclusion itself; here, every step's justification is either an assumption being tested or a separately known fact, which is exactly what keeps a proof by contradiction valid.",
+        structureId: "logically_valid_check"},
+      { q: "Spot the circular step: 'We want to show that a² + b² = c² for all right-angled triangles. Since the triangle is right-angled, by the theorem governing right-angled triangles, a² + b² = c². Therefore the Pythagorean theorem is proved.'",
+        understand: "Check whether the phrase used to justify the key step is really an independent fact, or just the conclusion itself wearing a different name.",
+        steps: [
         "Identify what is being proved: that a² + b² = c² holds for right-angled triangles.",
         "Check the key justification: the argument uses 'the theorem governing right-angled triangles' as the reason for the key step.",
-        "The theorem governing right-angled triangles IS the Pythagorean theorem - that a² + b² = c². The argument is using the Pythagorean theorem to prove the Pythagorean theorem.",
-        "This is purely circular: the conclusion has been silently relabelled as 'the theorem governing right-angled triangles' and used as its own proof.",
-        "A genuine proof of the Pythagorean theorem must build up from more basic geometric facts - area of squares, rearranging triangles, or similar - without invoking the result itself.",
-      ], answer: "Circular - 'the theorem governing right-angled triangles' is just a disguised way of asserting a² + b² = c², which is what the argument was supposed to be proving in the first place." , structureId: "circular_reasoning_flaw"},
+        "The theorem governing right-angled triangles is the Pythagorean theorem, that a² + b² = c². The argument is using the Pythagorean theorem to prove the Pythagorean theorem.",
+      ], answer: "Circular: 'the theorem governing right-angled triangles' is just a disguised way of asserting a² + b² = c², which is what the argument was supposed to be proving in the first place.",
+        check: "This is purely circular: the conclusion has been silently relabelled and used as its own proof; a genuine proof of the Pythagorean theorem must build up from more basic geometric facts, such as areas of squares or rearranging triangles, without invoking the result itself.",
+        structureId: "circular_reasoning_flaw"},
+      { q: "Explain the flaw in: 'Opposite angles are equal because this shape is a parallelogram, and it is a parallelogram because its opposite angles are equal.'",
+        understand: "As in the previous examples, check what justifies each half of the argument, and see whether either half secretly relies on the very thing being proved.",
+        steps: [
+        "The argument makes two claims: (1) the angles are equal because the shape is a parallelogram, and (2) the shape is a parallelogram because the angles are equal.",
+        "Claim (1) is justified using claim (2) being true, and claim (2) is justified using claim (1) being true: each claim's only support is the other claim.",
+        "Neither claim is ever established from an independent starting point, such as a definition of a parallelogram or a separately proven angle fact.",
+      ], answer: "Circular: each claim is being used to justify the other, so neither has independent support.",
+        check: "Compare with a genuine proof: showing 'opposite angles are equal' requires starting from the actual definition of a parallelogram (opposite sides parallel) and using angle facts on parallel lines, not the conclusion itself, exactly as example 1's fix to the triangle-angle argument did.",
+        structureId: "circular_reasoning_flaw"},
     ],
       tryit: { q: "Spot the circular step: 'Every even number greater than 2 can be written as the sum of two primes, because every even number greater than 2 is a sum of two primes.'", answer: "Circular - the second half of the sentence simply restates the claim itself as its own justification, rather than giving an independent reason. (This particular claim, Goldbach's Conjecture, is actually still unproven, which is exactly why no one is allowed to just assert it as a 'because'.)" , structureId: "circular_reasoning_flaw"} },
     { h: "3. Existence vs uniqueness", body: [
@@ -1802,26 +2108,42 @@ INTERMEDIATE_LESSONS.proofTechniques = {
       "So 'a solution exists' and 'this is the best, or the only, solution' are two separate claims, and both need proving separately. Existence needs just one example. Showing something is the maximum - or the unique best answer - needs either a check of every alternative, or a general argument (like the difference-of-squares argument in the Optimisation lesson) that rules all of them out at once.",
       "Watch for the phrase 'I found a value that works, so it must be the best' - finding a value only ever establishes existence. It says nothing about uniqueness or optimality, and the gap between those claims is exactly where invalid proofs hide.",
     ], examples: [
-      { q: "Someone claims: 'For two positive integers adding to 20, the greatest possible product is 96, because 8×12=96 is a large product and I can't think of a bigger split.' Show why this reasoning is flawed, without redoing the full proof.", steps: [
-        "Identify the claim actually being made: not just that 96 is achievable (true - 8+12=20 and 8×12=96), but that 96 is the greatest possible product.",
-        "'I can't think of a bigger one' is not a check of every other split - it's just a report of which splits were or weren't considered.",
+      { q: "Someone claims: 'For two positive integers adding to 20, the greatest possible product is 96, because 8×12=96 is a large product and I can't think of a bigger split.' Show why this reasoning is flawed, without redoing the full proof.",
+        understand: "'I can't think of a bigger one' is not the same as 'no bigger one exists'; it only reports which splits happened to be tried, not a check of every alternative.",
+        steps: [
+        "Identify the claim actually being made: not just that 96 is achievable (true, since 8+12=20 and 8×12=96), but that 96 is the greatest possible product.",
         "Test a split the claim didn't consider: 10+10=20, and 10×10=100.",
-        "100 is bigger than 96, so the claim that 96 is the maximum is false - only the weaker claim, that 96 is achievable, was actually true.",
-      ], answer: "False - 10×10=100 beats 96, so 96 is only a possible product, not the maximum. Finding one large value never proves it's the biggest without checking that nothing else beats it." , structureId: "existence_not_uniqueness_flaw"},
-      { q: "A student finds that x = 3 satisfies x² + x − 12 = 0, and writes: 'I have found the solution, so x = 3.' Identify the error, and find all solutions.", steps: [
-        "Finding one value of x that works proves EXISTENCE: there is at least one solution, and x = 3 is one of them.",
-        "But the claim 'I have found THE solution' implies UNIQUENESS: that 3 is the only solution. Existence does not establish uniqueness.",
+        "100 is bigger than 96, so the claim that 96 is the maximum is false; only the weaker claim, that 96 is achievable, was actually true.",
+      ], answer: "False, since 10×10=100 beats 96, so 96 is only a possible product, not the maximum.",
+        check: "Finding one large value never proves it's the biggest without checking that nothing else beats it, exactly as the equal-split rule from the optimisation lesson would have predicted straight away, since 10 and 10 are closer together than 8 and 12.",
+        structureId: "existence_not_uniqueness_flaw"},
+      { q: "A student finds that x = 3 satisfies x² + x − 12 = 0, and writes: 'I have found the solution, so x = 3.' Identify the error, and find all solutions.",
+        understand: "The word 'the' in 'the solution' claims uniqueness, but finding one value that works only ever proves existence; the only way to check uniqueness here is to solve the equation completely.",
+        steps: [
+        "Finding one value of x that works proves existence: there is at least one solution, and x = 3 is one of them.",
         "To find all solutions, factorise: x² + x − 12 = (x + 4)(x − 3) = 0.",
         "So x + 4 = 0 or x − 3 = 0, giving x = −4 or x = 3.",
-        "There are two solutions, so the unique-solution claim is false. Existence was proved; uniqueness had to be checked separately.",
-      ], answer: "Two solutions: x = 3 and x = −4. Finding x = 3 only proves existence; uniqueness requires checking (by factorising) that no other solution exists." , structureId: "existence_not_uniqueness_flaw"},
-      { q: "A student says: 'The rectangle with perimeter 40 and sides 7cm and 13cm has area 91cm². Therefore 91cm² is the maximum area achievable with a perimeter of 40.' Identify the error and find the true maximum area.", steps: [
-        "Check the given rectangle: perimeter = 2(7 + 13) = 2 × 20 = 40cm. ✓ Area = 7 × 13 = 91cm².",
-        "The student found one specific area (91cm²) and named it the maximum without comparing it to any other rectangle. This proves existence of 91cm², not optimality.",
+      ], answer: "Two solutions: x = 3 and x = −4.",
+        check: "Substitute both back into the original equation: (3)²+3−12 = 9+3−12 = 0 ✓, and (−4)²+(−4)−12 = 16−4−12 = 0 ✓, confirming both are genuine solutions, so the unique-solution claim was false.",
+        structureId: "existence_not_uniqueness_flaw"},
+      { q: "A student says: 'The rectangle with perimeter 40 and sides 7cm and 13cm has area 91cm². Therefore 91cm² is the maximum area achievable with a perimeter of 40.' Identify the error and find the true maximum area.",
+        understand: "As in the previous examples, one specific value being found and named 'the maximum' without comparison to any other case only proves existence of that value, not optimality.",
+        steps: [
+        "Check the given rectangle: perimeter = 2(7 + 13) = 2 × 20 = 40cm. Area = 7 × 13 = 91cm².",
         "Finding the true maximum: with perimeter 40, the half-perimeter is 20, so length + width = 20. The equal-split rule gives the maximum area when length = width = 10.",
         "Maximum area = 10 × 10 = 100cm², which exceeds 91cm².",
-        "So 91cm² is an achievable area but not the maximum - only a separate argument (or exhaustive check) can establish optimality.",
-      ], answer: "The true maximum area is 100cm² (a 10cm × 10cm square). The 91cm² rectangle shows that value is achievable (existence), but not that it is the best (optimality)." , structureId: "existence_not_uniqueness_flaw"},
+      ], answer: "The true maximum area is 100cm² (a 10cm × 10cm square).",
+        check: "The 91cm² rectangle shows that value is achievable (existence), but not that it is the best (optimality); only the equal-split argument, checked against every alternative split at once, establishes the true maximum.",
+        structureId: "existence_not_uniqueness_flaw"},
+      { q: "Show that there exists a prime number between 10 and 15. Does this prove uniqueness?",
+        understand: "Finding one example is enough to establish existence, but showing uniqueness needs every other candidate in the range to be checked and ruled out.",
+        steps: [
+        "Check the numbers between 10 and 15: 11, 12, 13, 14.",
+        "11 is prime, since its only factors are 1 and 11. This alone establishes existence.",
+        "Check whether 11 is the only one: 13 is also prime, since its only factors are 1 and 13.",
+      ], answer: "Existence is proved by 11 being prime. Uniqueness is false, since 13 is another prime in the same interval.",
+        check: "12 and 14 are both even and greater than 2, so neither is prime, confirming exactly two primes (11 and 13) lie in the range, not one, which is why the uniqueness claim fails even though existence holds.",
+        structureId: "existence_not_uniqueness_flaw"},
     ],
       tryit: { q: "A rectangle has perimeter 24. Someone says 'a 4 by 8 rectangle has area 32, so 32 must be the maximum area.' Is this reasoning valid? Find the actual maximum to check.", answer: "No - checking one rectangle only shows 32 is achievable, not that it's the biggest. Half the perimeter is 24÷2=12, so the equal split 6 and 6 gives area:\n6×6 =\n36,\nwhich beats 32. The maximum is 36, not 32." , structureId: "existence_not_uniqueness_flaw"} },
     { h: "4. Counterexamples", body: [
@@ -1831,27 +2153,45 @@ INTERMEDIATE_LESSONS.proofTechniques = {
       "The practical approach is to test small cases first, in order, since counterexamples to well-known nearly-true patterns often show up quickly, as the worked example below demonstrates.",
       "A counterexample must satisfy every condition in the original claim. If the claim is about positive integers, your counterexample must be a positive integer too - finding a failure using a negative number or a fraction doesn't count.",
     ], examples: [
-      { q: "Disprove the claim 'n² + n + 1 is always prime for positive integers n' by finding the smallest counterexample.", steps: [
+      { q: "Disprove the claim 'n² + n + 1 is always prime for positive integers n' by finding the smallest counterexample.",
+        understand: "Test small values of n in order, starting from n=1, since the smallest counterexample to a claim like this often appears quickly.",
+        steps: [
         "n=1: 1+1+1=3, prime.",
         "n=2: 4+2+1=7, prime.",
         "n=3: 9+3+1=13, prime.",
         "n=4:\n16+4+1 =\n21 =\n3×7, NOT prime.",
-      ], answer: "n=4 disproves the claim, since 21 is not prime." , structureId: "smallest_counterexample_search"},
-      { q: "Disprove the claim 'the sum of any two prime numbers is always even' by finding a counterexample.", steps: [
+      ], answer: "n=4 disproves the claim, since 21 is not prime.",
+        check: "21 satisfies the hypothesis (n=4 is a positive integer), and 21=3×7 has factors other than 1 and itself, confirming it genuinely fails the 'always prime' conclusion.",
+        structureId: "smallest_counterexample_search"},
+      { q: "Disprove the claim 'the sum of any two prime numbers is always even' by finding a counterexample.",
+        understand: "Only one counterexample is needed, so test the smallest primes first, since 'always even' would be broken by finding just one pair whose sum is odd.",
+        steps: [
         "The claim is that p + q is always even whenever p and q are both prime.",
         "Test the smallest primes: 2 and 3 are both prime.",
         "2 + 3 = 5, which is odd, not even.",
-        "This one pair of primes gives a sum that is not even, so the claim fails.",
-        "The counterexample is p = 2, q = 3: both prime, sum = 5, which is odd.",
-      ], answer: "2 + 3 = 5 is odd. Since 2 and 3 are both prime and their sum is not even, this disproves the claim." , structureId: "smallest_counterexample_search"},
-      { q: "Disprove 'n² − n + 11 is always prime for positive integers n' by finding the smallest counterexample.", steps: [
+      ], answer: "2 + 3 = 5 is odd. Since 2 and 3 are both prime and their sum is not even, this disproves the claim.",
+        check: "This works because 2 is the only even prime; adding it to any other (odd) prime gives odd+even=odd, so any pair involving 2 breaks the claim, not just this specific one.",
+        structureId: "smallest_counterexample_search"},
+      { q: "Disprove 'n² − n + 11 is always prime for positive integers n' by finding the smallest counterexample.",
+        understand: "Test small values in order as before, but notice that 11 itself is a clue: since 11 appears as a constant term, substituting n=11 is worth checking directly, alongside the values immediately before it.",
+        steps: [
         "Test n = 1: 1 − 1 + 11 = 11. Prime.",
         "Test n = 2: 4 − 2 + 11 = 13. Prime.",
         "Test n = 3: 9 − 3 + 11 = 17. Prime.",
         "Notice the pattern: 11 itself appears as a factor when n = 11. Test n = 11: 121 − 11 + 11 = 121 = 11². Not prime (11² = 11 × 11).",
         "But is there an even smaller counterexample? Check n = 10: 100 − 10 + 11 = 101. Is 101 prime? Test divisors up to 10 (√101 < 11): 101 ÷ 2, 3, 5, 7 are all non-integer. So 101 is prime.",
-        "Therefore n = 11 is the smallest counterexample.",
-      ], answer: "n = 11: 121 − 11 + 11 = 121 = 11², which is not prime. This disproves the claim." , structureId: "smallest_counterexample_search"},
+      ], answer: "n = 11: 121 − 11 + 11 = 121 = 11², which is not prime. This disproves the claim.",
+        check: "Confirming n=10 gives the prime 101 rules out a smaller counterexample, so n=11 really is the smallest one, not just the first one noticed.",
+        structureId: "smallest_counterexample_search"},
+      { q: "Disprove: 'If ab is divisible by 6, then both a and b are divisible by 6.'",
+        understand: "Only one counterexample is needed. Look for values of a and b whose product is divisible by 6 without either factor individually being divisible by 6.",
+        steps: [
+        "Try small values first: a = 2 and b = 3.",
+        "Their product is ab = 2 × 3 = 6, which is divisible by 6.",
+        "Check the individual values: 2 is not divisible by 6, and 3 is not divisible by 6.",
+      ], answer: "a = 2, b = 3 disproves the claim: ab = 6 is divisible by 6, but neither 2 nor 3 is.",
+        check: "Confirm the counterexample satisfies the hypothesis (ab divisible by 6) before it is allowed to break the conclusion: 6 ÷ 6 = 1 exactly, so the hypothesis genuinely holds, making this a valid counterexample rather than an irrelevant case.",
+        structureId: "smallest_counterexample_search"},
     ],
       tryit: { q: "Disprove the claim 'all odd numbers greater than 1 are prime' by finding the smallest counterexample.", answer: "9. Check in order: 3 is prime, 5 is prime, 7 is prime, but 9 = 3×3, which is not prime since it has a factor other than 1 and itself. So 9 is the smallest counterexample." , structureId: "smallest_counterexample_search"} },
   ],
@@ -1871,25 +2211,43 @@ INTERMEDIATE_LESSONS.speedAndRelativeMotion = {
       "A quick way to keep all three straight: distance is always on its own (distance=speed×time, or speed=distance÷time, or time=distance÷speed) - distance never gets divided BY something else, it only gets divided INTO something else, or multiplied out.",
       "The most common slip is dividing the wrong way round, e.g. writing time=speed÷distance. If a rearrangement gives a 'time' that's smaller for a longer distance, or a 'speed' that increases as time increases, that's the signal something's flipped.",
     ], examples: [
-      { q: "A cyclist travels 45km in 3 hours at a constant speed. (a) Find the speed. (b) Using that speed, find how far she'd travel in 5 hours. (c) Using that speed, find how long it would take her to travel 60km.", steps: [
+      { q: "A cyclist travels 45km in 3 hours at a constant speed. (a) Find the speed. (b) Using that speed, find how far she'd travel in 5 hours. (c) Using that speed, find how long it would take her to travel 60km.",
+        understand: "Use the same base formula speed=distance÷time throughout, just solving for a different letter in each part, exactly as shown in the three rearrangements above.",
+        steps: [
         "(a) Speed =\ndistance÷time =\n45÷3 =\n15km/h.",
         "(b) Distance =\nspeed×time =\n15×5 =\n75km.",
         "(c) Time =\ndistance÷speed =\n60÷15 =\n4 hours.",
-        "Sanity check each answer against common sense: going for longer (5h vs 3h) at the same speed should cover more ground (75km > 45km) - correct. Covering a bit more distance (60km vs 45km) at the same speed should take a bit longer (4h > 3h) - correct.",
-      ], answer: "(a) 15km/h (b) 75km (c) 4 hours" , structureId: "d1_speed_from_dt"},
-      { q: "A car's odometer reads 24,500km at 09:00 and 24,860km at 13:30. Find the car's average speed, and calculate how far it would travel in 6 hours at that speed.", steps: [
+      ], answer: "(a) 15km/h (b) 75km (c) 4 hours",
+        check: "Sanity check each answer against common sense: going for longer (5h vs 3h) at the same speed should cover more ground (75km > 45km), correct; covering a bit more distance (60km vs 45km) at the same speed should take a bit longer (4h > 3h), correct.",
+        structureId: "d1_speed_from_dt"},
+      { q: "A car's odometer reads 24,500km at 09:00 and 24,860km at 13:30. Find the car's average speed, and calculate how far it would travel in 6 hours at that speed.",
+        understand: "Convert the time difference into a decimal number of hours first, since the odometer readings are given as clock times rather than an elapsed time directly.",
+        steps: [
         "Time elapsed: 13:30 minus 09:00 = 4 hours 30 minutes = 4.5 hours.",
         "Distance covered: 24,860 − 24,500 = 360km.",
         "Average speed = distance ÷ time = 360 ÷ 4.5 = 80km/h.",
-        "Distance in 6 hours = speed × time = 80 × 6 = 480km.",
-      ], answer: "80km/h; it would travel 480km in 6 hours." , structureId: "d1_speed_from_dt"},
-      { q: "A hiker walks at 4km/h for t hours, then at 6km/h for a further t hours. The total distance covered is 30km. Find t and the total time taken.", steps: [
+      ], answer: "80km/h; it would travel 480km in 6 hours.",
+        check: "Check the final step separately: distance = speed × time = 80 × 6 = 480km, using the same formula rearranged for a different unknown.",
+        structureId: "d1_speed_from_dt"},
+      { q: "A hiker walks at 4km/h for t hours, then at 6km/h for a further t hours. The total distance covered is 30km. Find t and the total time taken.",
+        understand: "Since the same time t is spent at each speed, write each stage's distance in terms of t, add them, and solve the resulting equation for t.",
+        steps: [
         "Distance in the first stage: 4 × t = 4t km.",
         "Distance in the second stage: 6 × t = 6t km.",
         "Total distance: 4t + 6t = 10t = 30, so t = 3 hours.",
         "Total time = t + t = 2t = 6 hours.",
-        "Check: 4 × 3 + 6 × 3 = 12 + 18 = 30km. ✓",
-      ], answer: "t = 3 hours; total time taken = 6 hours." , structureId: "d1_distance_from_st"},
+      ], answer: "t = 3 hours; total time taken = 6 hours.",
+        check: "Check: 4 × 3 + 6 × 3 = 12 + 18 = 30km, matching the given total distance.",
+        structureId: "d1_distance_from_st"},
+      { q: "A cyclist travels 42 km at 24 km/h. Find the time in hours and minutes.",
+        understand: "Dividing distance by speed gives a decimal number of hours, which then needs converting into whole hours and minutes using 60 minutes per hour, rather than misreading the decimal part as minutes directly.",
+        steps: [
+        "Time = distance ÷ speed = 42 ÷ 24 = 1.75 hours.",
+        "Separate the whole part: 1 whole hour, plus 0.75 of an hour remaining.",
+        "Convert the decimal part to minutes: 0.75 × 60 = 45 minutes.",
+      ], answer: "1 hour 45 minutes",
+        check: "Check by converting back: 1 hour 45 minutes = 1.75 hours, and 24 × 1.75 = 42km, matching the original distance.",
+        structureId: "d1_speed_from_dt"},
     ],
       tryit: { q: "A train travels at 80km/h for 3.5 hours. How far does it travel, and how long would it take to cover 200km at the same speed?", answer: "280km, and 2.5 hours to cover 200km.\nDistance =\nspeed×time =\n80×3.5 =\n280;\ntime =\ndistance÷speed =\n200÷80 =\n2.5." , structureId: "d1_distance_from_st"} },
     { h: "2. Moving toward each other: add the speeds", body: [
@@ -1898,22 +2256,42 @@ INTERMEDIATE_LESSONS.speedAndRelativeMotion = {
       "Once you have the closing speed, treat the whole problem as one object closing a single gap: time to meet = (starting distance) ÷ (sum of the two speeds).",
       "Don't average the two speeds - averaging (75km/h here) would be the speed of a single object needing to cover the whole 300km alone, not the combined rate at which two objects shrink the gap between them. Averaging always under-counts here, since it ignores that both objects are moving at once.",
     ], examples: [
-      { q: "Two trains, 300km apart, travel toward each other at 60km/h and 90km/h. How long until they meet?", steps: [
+      { q: "Two trains, 300km apart, travel toward each other at 60km/h and 90km/h. How long until they meet?",
+        understand: "Since both trains are shrinking the same gap at once, combine their speeds into a single closing speed before dividing into the distance, exactly as shown above.",
+        steps: [
         "Combined closing speed =\n60+90 =\n150 km/h (the gap shrinks by 150km every hour, as shown above).",
         "Time =\ndistance ÷ closing speed =\n300 ÷ 150 =\n2 hours.",
-      ], answer: "2 hours" , structureId: "d1_towards_meet_time"},
-      { q: "Two friends start 96km apart and walk toward each other, meeting after 2.4 hours. One walks at 15km/h. How fast does the other walk?", steps: [
+      ], answer: "2 hours",
+        check: "Check by tracking each train separately: in 2 hours the 60km/h train covers 120km and the 90km/h train covers 180km, and 120+180=300km, matching the original gap exactly.",
+        structureId: "d1_towards_meet_time"},
+      { q: "Two friends start 96km apart and walk toward each other, meeting after 2.4 hours. One walks at 15km/h. How fast does the other walk?",
+        understand: "Work out the combined closing speed first from the given time and distance, then use the fact that the closing speed is the sum of both individual speeds to find the missing one.",
+        steps: [
         "Together, they must close the whole 96km gap in 2.4 hours, so:\ntheir combined closing speed =\n96÷2.4 =\n40km/h.",
         "The closing speed is the SUM of both walking speeds, so: 15 + (other speed) = 40.",
         "Other speed =\n40 - 15 =\n25km/h.",
-        "Check: combined speed 15+25=40km/h, and 40×2.4=96km, matching the original gap - correct.",
-      ], answer: "25km/h" , structureId: "d2_towards_meet_distance"},
-      { q: "Two boats leave ports A and B simultaneously, sailing toward each other. Boat A travels at 15km/h and boat B at 10km/h. They meet after 2 hours. How wide is the lake, and how far from port A do they meet?", steps: [
+      ], answer: "25km/h",
+        check: "Check: combined speed 15+25=40km/h, and 40×2.4=96km, matching the original gap.",
+        structureId: "d2_towards_meet_distance"},
+      { q: "Two boats leave ports A and B simultaneously, sailing toward each other. Boat A travels at 15km/h and boat B at 10km/h. They meet after 2 hours. How wide is the lake, and how far from port A do they meet?",
+        understand: "Find the combined closing speed first, then use it both to find the total gap and to track how far each boat individually travels before they meet.",
+        steps: [
         "Combined closing speed = 15 + 10 = 25km/h.",
         "Width of the lake = closing speed × time = 25 × 2 = 50km.",
         "Boat A's position at meeting: distance = speed × time = 15 × 2 = 30km from port A.",
-        "Check: boat B travels 10 × 2 = 20km from port B, and 30 + 20 = 50km = width. ✓",
-      ], answer: "The lake is 50km wide; they meet 30km from port A." , structureId: "d2_towards_meet_distance"},
+      ], answer: "The lake is 50km wide; they meet 30km from port A.",
+        check: "Check: boat B travels 10 × 2 = 20km from port B, and 30 + 20 = 50km, matching the lake width found from the combined closing speed.",
+        structureId: "d2_towards_meet_distance"},
+      { q: "Two cyclists start 120km apart and cycle toward each other. Cyclist A cycles at 20km/h and cyclist B at 30km/h, but cyclist B starts 1 hour after cyclist A. How long after cyclist A starts do they meet?",
+        understand: "Before applying the ordinary combined-closing-speed method, work out how much the gap has already changed during the head start, since only cyclist A is moving during that first hour.",
+        steps: [
+        "In the first hour, only cyclist A is moving, covering 20×1=20km, so the gap reduces from 120km to 120-20=100km by the time B starts.",
+        "From this point, apply the ordinary combined-closing-speed method to the remaining gap: closing speed = 20+30 = 50km/h.",
+        "Time to close the remaining 100km gap: 100÷50 = 2 hours, measured from when B starts.",
+        "Total time from when A starts = 1 hour (before B starts) + 2 hours (after B starts) = 3 hours.",
+      ], answer: "3 hours after cyclist A starts (2 hours after cyclist B starts).",
+        check: "Check by tracking each cyclist's total distance: A travels 20×3=60km in 3 hours; B travels 30×2=60km in the 2 hours it actually cycles; 60+60=120km, matching the original gap exactly.",
+        structureId: "d2_towards_meet_distance"},
     ],
       tryit: { q: "Two cyclists start 117km apart and cycle toward each other at 26km/h and 13km/h. How long until they meet?", answer: "3 hours.\nClosing speed =\n26+13 =\n39km/h,\ntime =\n117÷39 =\n3 hours." , structureId: "d1_towards_meet_time"} },
     { h: "3. Chasing: subtract the speeds", body: [
@@ -1922,23 +2300,42 @@ INTERMEDIATE_LESSONS.speedAndRelativeMotion = {
       "Time to catch up = (starting gap) ÷ (difference between the two speeds) - always subtract the slower speed from the faster one, so the answer comes out positive.",
       "If the chasing object's speed isn't actually bigger than the one it's chasing, it will never catch up at all - always check that the chaser's speed exceeds the other's before doing the subtraction, otherwise the gap grows forever instead of closing.",
     ], examples: [
-      { q: "A car at 70km/h chases another at 50km/h, starting 40km behind. How long to catch up?", steps: [
+      { q: "A car at 70km/h chases another at 50km/h, starting 40km behind. How long to catch up?",
+        understand: "Since the front car is still moving away as it is chased, only the difference between the two speeds actually closes the gap each hour, not their sum.",
+        steps: [
         "Relative speed =\n70-50 =\n20 km/h (the gap shrinks by 20km every hour, as shown above).",
         "Time =\ngap ÷ relative speed =\n40 ÷ 20 =\n2 hours.",
-      ], answer: "2 hours" , structureId: "d2_chase_catchup"},
-      { q: "A cyclist 15km ahead is caught after 3 hours by a second cyclist riding at 22km/h. How fast was the first cyclist riding?", steps: [
+      ], answer: "2 hours",
+        check: "Check by tracking both cars: in 2 hours the chaser covers 140km and the car in front covers 100km, and 140-100=40km, exactly closing the original gap.",
+        structureId: "d2_chase_catchup"},
+      { q: "A cyclist 15km ahead is caught after 3 hours by a second cyclist riding at 22km/h. How fast was the first cyclist riding?",
+        understand: "Work out the relative speed first from the given gap and time, then use the fact that relative speed is the difference between the two speeds to find the missing one.",
+        steps: [
         "The 15km gap is closed entirely in 3 hours, so:\nthe relative speed =\n15÷3 =\n5km/h.",
         "Relative speed is the DIFFERENCE between the two speeds: 22 - (first cyclist's speed) = 5.",
         "First cyclist's speed =\n22 - 5 =\n17km/h.",
-        "Check: relative speed 22-17=5km/h, and 5×3=15km, matching the original gap - correct.",
-      ], answer: "17km/h" , structureId: "d2_chase_catchup"},
-      { q: "A rabbit runs at 12m/s. A dog starts chasing it from a position 30m behind, running at 17m/s. How long does it take the dog to catch the rabbit, and how far does the dog travel in that time?", steps: [
-        "Check the chaser is faster: 17m/s > 12m/s. ✓ The gap will close.",
+      ], answer: "17km/h",
+        check: "Check: relative speed 22-17=5km/h, and 5×3=15km, matching the original gap.",
+        structureId: "d2_chase_catchup"},
+      { q: "A rabbit runs at 12m/s. A dog starts chasing it from a position 30m behind, running at 17m/s. How long does it take the dog to catch the rabbit, and how far does the dog travel in that time?",
+        understand: "Check first that the chaser is actually faster, since otherwise the gap could never close at all, then apply the relative-speed method.",
+        steps: [
+        "Check the chaser is faster: 17m/s > 12m/s. The gap will close.",
         "Relative speed = 17 − 12 = 5m/s (the gap closes by 5m every second).",
         "Time to catch up = gap ÷ relative speed = 30 ÷ 5 = 6 seconds.",
         "Distance the dog travels = dog's speed × time = 17 × 6 = 102m.",
-        "Check: rabbit travels 12 × 6 = 72m; dog starts 30m behind and travels 102m, so dog ends up at 102 − 30 = 72m ahead of the start — same position as the rabbit. ✓",
-      ], answer: "6 seconds; the dog travels 102m." , structureId: "d2_chase_catchup"},
+      ], answer: "6 seconds; the dog travels 102m.",
+        check: "Check: rabbit travels 12 × 6 = 72m; dog starts 30m behind and travels 102m, so the dog ends up at 102 − 30 = 72m ahead of the start, the same position as the rabbit.",
+        structureId: "d2_chase_catchup"},
+      { q: "A runner at 12 km/h starts 30 minutes before a cyclist at 24 km/h. How long after the cyclist starts are they caught?",
+        understand: "Before applying the ordinary relative-speed method, work out how big the gap actually is by the time the cyclist starts, since the runner has already been moving alone for 30 minutes.",
+        steps: [
+        "The runner's head start: 12 km/h × 0.5 hours = 6km lead by the time the cyclist starts.",
+        "From this point, apply the relative-speed method: relative speed = 24 - 12 = 12 km/h.",
+        "Time to close the 6km gap = 6 ÷ 12 = 0.5 hours, which is 30 minutes.",
+      ], answer: "30 minutes after the cyclist starts",
+        check: "Check by tracking both: in 30 minutes the cyclist covers 24×0.5=12km, and the runner, having already run 6km before the cyclist started, covers a further 12×0.5=6km, reaching 6+6=12km total, exactly matching the cyclist's distance.",
+        structureId: "d2_chase_catchup"},
     ],
       tryit: { q: "A cheetah runs at 100km/h chasing a gazelle running at 80km/h, starting 0.5km (500m) behind. How long until the cheetah catches up?", answer: "0.025 hours, which is 1.5 minutes (90 seconds).\nRelative speed =\n100-80 =\n20km/h;\ntime =\n0.5÷20 =\n0.025 hours =\n90 seconds." , structureId: "d2_chase_catchup"} },
     { h: "4. Average speed over a whole journey", body: [
@@ -1947,28 +2344,47 @@ INTERMEDIATE_LESSONS.speedAndRelativeMotion = {
       "The naive average of the two speeds silently assumes equal time in each half, but here the equal-distance halves actually took different amounts of time (2 hours at the slow speed, only 1 hour at the fast speed) - more of the total time was spent at the slower speed, which drags the true average down below the halfway point between 30 and 60.",
       "Whenever a journey is split into stages, work out the distance covered and time taken for each stage separately, add up both totals, then divide - never average the speeds directly unless you've separately confirmed equal time (not equal distance) was spent at each speed.",
     ], examples: [
-      { q: "A journey is 120 miles: the first 60 miles at 30mph, the second 60 miles at 60mph. Find the true average speed for the whole journey, and compare it with simply averaging 30 and 60.", steps: [
+      { q: "A journey is 120 miles: the first 60 miles at 30mph, the second 60 miles at 60mph. Find the true average speed for the whole journey, and compare it with simply averaging 30 and 60.",
+        understand: "Work out the time spent on each half separately, since the two halves take different amounts of time despite covering equal distances, then divide total distance by total time rather than averaging the two speeds directly.",
+        steps: [
         "Naive average of the two speeds: (30+60)÷2 = 45mph.",
         "Time for the first half: 60÷30 = 2 hours.",
         "Time for the second half: 60÷60 = 1 hour.",
         "Total distance =\n60+60 =\n120 miles.\nTotal time =\n2+1 =\n3 hours.",
         "True average speed =\ntotal distance ÷ total time =\n120÷3 =\n40mph.",
-        "40mph (true) is less than 45mph (naive average) - because twice as much time (2 hours vs 1 hour) was spent travelling at the slower 30mph, pulling the true average down toward 30 more than toward 60.",
-      ], answer: "40mph (not 45mph) - more time was spent at the slower speed, so the true average sits closer to 30mph than a simple average of the two speeds would suggest." , structureId: "d2_two_leg_avg_speed"},
-      { q: "A car drives from town A to town B at 40km/h and returns from B to A at 60km/h. Let the one-way distance be d km. Find the true average speed for the whole round trip, in terms of d, and verify that the answer does not depend on d.", steps: [
+      ], answer: "40mph (not 45mph)",
+        check: "40mph is closer to 30mph than to 60mph, which makes sense: twice as much time (2 hours vs 1 hour) was spent travelling at the slower 30mph, pulling the true average down below the halfway point of 45.",
+        structureId: "d2_two_leg_avg_speed"},
+      { q: "A car drives from town A to town B at 40km/h and returns from B to A at 60km/h. Let the one-way distance be d km. Find the true average speed for the whole round trip, in terms of d, and verify that the answer does not depend on d.",
+        understand: "Since the actual distance d is unknown, express both times in terms of d, add them, and see whether d cancels out of the final average-speed calculation.",
+        steps: [
         "Total distance for the round trip = 2d km.",
         "Time for the outward journey: d ÷ 40 hours. Time for the return: d ÷ 60 hours.",
         "Total time = d/40 + d/60. Find a common denominator: d/40 + d/60 = 3d/120 + 2d/120 = 5d/120 = d/24.",
         "Average speed = total distance ÷ total time = 2d ÷ (d/24) = 2d × (24/d) = 48km/h.",
-        "The d cancels completely, so the answer (48km/h) is the same for any distance d - only the two speeds matter, not how far apart A and B are.",
-      ], answer: "48km/h (the same for any value of d, since d cancels; the harmonic mean of 40 and 60, not their arithmetic mean of 50)." , structureId: "d2_two_leg_avg_speed"},
-      { q: "A cyclist completes a 3-stage race. Stage 1: 45km at 15km/h. Stage 2: 60km at 20km/h. Stage 3: 30km at 10km/h. Find the average speed for the whole race.", steps: [
+      ], answer: "48km/h (the same for any value of d, since d cancels)",
+        check: "Check with a concrete value: if d=120km, outward time=120/40=3h, return time=120/60=2h, total distance=240km, total time=5h, average=240/5=48km/h, matching the general result.",
+        structureId: "d2_two_leg_avg_speed"},
+      { q: "A cyclist completes a 3-stage race. Stage 1: 45km at 15km/h. Stage 2: 60km at 20km/h. Stage 3: 30km at 10km/h. Find the average speed for the whole race.",
+        understand: "Since each of the three stages happens to take exactly the same time (3 hours), the total-distance-over-total-time method still applies directly, and it happens to agree with the plain average of the three speeds in this special equal-time case.",
+        steps: [
         "Time for each stage: Stage 1 = 45 ÷ 15 = 3 hours. Stage 2 = 60 ÷ 20 = 3 hours. Stage 3 = 30 ÷ 10 = 3 hours.",
         "Total distance = 45 + 60 + 30 = 135km.",
         "Total time = 3 + 3 + 3 = 9 hours.",
         "Average speed = 135 ÷ 9 = 15km/h.",
-        "Note: each stage takes equal time here (3 hours each), so the average speed equals the distance-weighted mean of the three speeds: (45×15 + 60×20 + 30×10) ÷ 135 = (675 + 1200 + 300) ÷ 135 = 2175 ÷ 135 = ... wait, let's just confirm: 135 ÷ 9 = 15. ✓",
-      ], answer: "15km/h (total 135km in 9 hours)." , structureId: "d3_three_leg_avg_speed"},
+      ], answer: "15km/h (total 135km in 9 hours)",
+        check: "Because all three stages took equal time, the average speed here also equals the plain arithmetic mean of the three speeds: (15+20+10)÷3 = 45÷3 = 15km/h, matching, though this shortcut only works because the times happened to be equal, not the distances.",
+        structureId: "d3_three_leg_avg_speed"},
+      { q: "A delivery van drives 90km at 45km/h, stops for 1 hour to unload, then drives a further 60km at 30km/h. Find the average speed for the whole trip, including the stop.",
+        understand: "The stationary time during the stop still counts as part of the total time for the journey, even though no distance is covered during it, so it must be added into the total time before dividing.",
+        steps: [
+        "Time for the first leg: 90 ÷ 45 = 2 hours.",
+        "Stop time: 1 hour (0 km covered).",
+        "Time for the second leg: 60 ÷ 30 = 2 hours.",
+        "Total distance = 90 + 60 = 150km. Total time = 2 + 1 + 2 = 5 hours.",
+      ], answer: "30 km/h",
+        check: "150 ÷ 5 = 30, which is lower than either driving speed (45 and 30km/h) considered alone; the naive average of the two driving speeds would have been (45+30)/2=37.5km/h, well above the true value, showing how much a stop can drag the overall average down.",
+        structureId: "d2_two_leg_avg_speed"},
     ],
       tryit: { q: "A cyclist rides 40km at 20km/h, then a further 40km at 40km/h. Find her average speed for the whole 80km.", answer: "80÷3 ≈ 26.7km/h (not 30km/h).\nTime for the first 40km =\n40÷20 =\n2 hours;\ntime for the second 40km =\n40÷40 =\n1 hour;\ntotal time = 3 hours;\naverage speed =\n80÷3 ≈\n26.7km/h - closer to 20km/h since twice as long was spent at that slower speed." , structureId: "d2_two_leg_avg_speed"} },
   ],
@@ -1988,22 +2404,41 @@ INTERMEDIATE_LESSONS.estimationAndBounds = {
       "Lower bound = rounded value minus half the unit. Upper bound = rounded value plus half the unit.",
       "The upper bound is technically not quite reachable (24.5cm would round UP to 25, not down to 24), but at GCSE/JMC level it's standard to still write the upper bound as exactly 24.5 - just be aware the true value is always strictly less than the upper bound, even though it can equal the lower bound.",
     ], examples: [
-      { q: "A length is given as 24cm, to the nearest cm. Find the upper and lower bounds.", steps: [
+      { q: "A length is given as 24cm, to the nearest cm. Find the upper and lower bounds.",
+        understand: "Since the measurement was rounded to the nearest whole cm, half a unit either side (0.5cm) gives the range of possible true values, following the boundary logic explained above.",
+        steps: [
         "The length was rounded to the nearest whole cm, so half a unit = 0.5cm either side.",
         "Lower bound =\n24 - 0.5 =\n23.5.",
         "Upper bound =\n24 + 0.5 =\n24.5.",
-      ], answer: "23.5cm to 24.5cm" , structureId: "s1_bound_nearest_whole"},
-      { q: "A crowd size is reported as 3,400 people, to the nearest 100. Find the upper and lower bounds.", steps: [
+      ], answer: "23.5cm to 24.5cm",
+        check: "Check the boundary logic directly: 23.5 rounds up to 24, and anything just under 24.5 still rounds down to 24, while 24.5 itself would round up to 25, confirming the range.",
+        structureId: "s1_bound_nearest_whole"},
+      { q: "A crowd size is reported as 3,400 people, to the nearest 100. Find the upper and lower bounds.",
+        understand: "The rounding unit here is 100, not 1, so half a unit is 50, not 0.5; always match the half-unit to the actual rounding unit stated.",
+        steps: [
         "The number was rounded to the nearest 100, so:\nhalf a unit here =\n100÷2 =\n50.",
         "Lower bound =\n3400 - 50 =\n3350.",
         "Upper bound =\n3400 + 50 =\n3450.",
-        "Check the boundary logic: 3350 rounds up to 3400, while 3449 still rounds down to 3400, but 3450 would round up to 3500 - confirming the range 3350 to 3450.",
-      ], answer: "3350 to 3450 people" , structureId: "s3_bound_nearest_10_100"},
-      { q: "A speed is recorded as 72km/h, to the nearest whole km/h. A distance is recorded as 180km, to the nearest 10km. Find the upper and lower bounds of each measurement.", steps: [
+      ], answer: "3350 to 3450 people",
+        check: "Check the boundary logic: 3350 rounds up to 3400, while 3449 still rounds down to 3400, but 3450 would round up to 3500, confirming the range 3350 to 3450.",
+        structureId: "s3_bound_nearest_10_100"},
+      { q: "A speed is recorded as 72km/h, to the nearest whole km/h. A distance is recorded as 180km, to the nearest 10km. Find the upper and lower bounds of each measurement.",
+        understand: "Each measurement has its own rounding unit, so find each half-unit separately before stating either range.",
+        steps: [
         "Speed (rounded to the nearest 1km/h): half a unit = 0.5km/h. Lower bound = 72 − 0.5 = 71.5km/h. Upper bound = 72 + 0.5 = 72.5km/h.",
         "Distance (rounded to the nearest 10km): half a unit = 5km. Lower bound = 180 − 5 = 175km. Upper bound = 180 + 5 = 185km.",
-        "Check the boundary logic for the speed: any speed from 71.5 up to (but not including) 72.5 rounds to 72. ✓",
-      ], answer: "Speed: 71.5km/h to 72.5km/h. Distance: 175km to 185km." , structureId: "s3_bound_nearest_10_100"},
+      ], answer: "Speed: 71.5km/h to 72.5km/h. Distance: 175km to 185km.",
+        check: "Check the boundary logic for the speed: any speed from 71.5 up to (but not including) 72.5 rounds to 72.",
+        structureId: "s3_bound_nearest_10_100"},
+      { q: "A mass is 3.47 kg correct to the nearest 0.01 kg. State its error interval.",
+        understand: "This time state the bounds as a single inequality rather than a plain range, remembering that the lower bound can actually be reached (≤) while the upper bound cannot quite be reached (<), as explained above.",
+        steps: [
+        "The mass was rounded to the nearest 0.01kg, so half a unit = 0.01÷2 = 0.005kg.",
+        "Lower bound = 3.47 − 0.005 = 3.465kg.",
+        "Upper bound = 3.47 + 0.005 = 3.475kg.",
+      ], answer: "3.465 ≤ m < 3.475",
+        check: "Check the strict inequality at the top end: 3.475kg would round up to 3.48kg, not down to 3.47kg, confirming the upper bound must be excluded, while 3.465kg genuinely does round to 3.47kg, so it can be included.",
+        structureId: "s19_error_interval_notation"},
     ],
       tryit: { q: "A journey distance is given as 60km, to the nearest 10km. Find the upper and lower bounds.", answer: "55km to 65km. Rounded to the nearest 10, half a unit = 5, so:\nlower bound =\n60-5 =\n55,\nupper bound =\n60+5 =\n65." , structureId: "s3_bound_nearest_10_100"} },
     { h: "2. Bounding a calculation", body: [
@@ -2013,25 +2448,43 @@ INTERMEDIATE_LESSONS.estimationAndBounds = {
       "By the same logic, the SMALLEST possible value of a-b uses the smallest possible a and the largest possible b: minimum of (a-b) = (lower bound of a) - (upper bound of b).",
       "It's tempting to always pair upper with upper, but that's only correct for addition (and multiplication of positives). For subtraction (and division), the maximum mixes the upper bound of one measurement with the LOWER bound of the other - work out which combination genuinely gives the biggest number before calculating, rather than pattern-matching.",
     ], examples: [
-      { q: "A plank has length a=150cm (to the nearest cm) and a piece of length b=35cm (to the nearest cm) is cut from it. Find the maximum possible length of the remaining plank, a−b.", steps: [
+      { q: "A plank has length a=150cm (to the nearest cm) and a piece of length b=35cm (to the nearest cm) is cut from it. Find the maximum possible length of the remaining plank, a−b.",
+        understand: "To make a−b as large as possible, take as much as possible for a (its upper bound) and subtract as little as possible for b (its lower bound); pairing upper with upper would be wrong here since it would not give the largest possible gap.",
+        steps: [
         "Find the bounds of a: rounded to the nearest cm, half a unit=0.5, so a is between 149.5 and 150.5.",
         "Find the bounds of b: likewise, b is between 34.5 and 35.5.",
-        "To make a−b as large as possible, start with as much plank as possible (upper bound of a=150.5) and cut away as little as possible (lower bound of b=34.5) - any other combination either starts with less plank or cuts away more, both of which shrink the remainder.",
         "Maximum of a−b =\n150.5 − 34.5 =\n116.",
-      ], answer: "116cm (using the upper bound of a, 150.5cm, minus the lower bound of b, 34.5cm)" , structureId: "s8_min_sum_rounded_measurements"},
-      { q: "A rectangle has length a = 8.3m and width b = 4.7m, each measured to the nearest 0.1m. Find the maximum possible area of the rectangle.", steps: [
+      ], answer: "116cm (using the upper bound of a, 150.5cm, minus the lower bound of b, 34.5cm)",
+        check: "Check this is really the maximum by trying another combination: upper bound of a minus upper bound of b gives 150.5−35.5=115, which is smaller than 116, confirming the lower bound of b was the right choice for a maximum.",
+        structureId: "s8_min_sum_rounded_measurements"},
+      { q: "A rectangle has length a = 8.3m and width b = 4.7m, each measured to the nearest 0.1m. Find the maximum possible area of the rectangle.",
+        understand: "For a product of two positive quantities, both being as large as possible makes the product as large as possible, unlike the subtraction case above, so pair upper bound with upper bound here.",
+        steps: [
         "Bounds for a: half a unit = 0.05m. Lower bound = 8.25m. Upper bound = 8.35m.",
         "Bounds for b: half a unit = 0.05m. Lower bound = 4.65m. Upper bound = 4.75m.",
-        "For a product a × b, the maximum is achieved using the upper bound of BOTH a and b (both being larger makes the product larger): 8.35 × 4.75.",
         "8.35 × 4.75: calculate as 8.35 × 4 + 8.35 × 0.75 = 33.4 + 6.2625 = 39.6625m².",
-      ], answer: "Maximum area = 39.6625m² (using upper bounds 8.35m and 4.75m)." , structureId: "s14_bound_area_from_rounded_sides"},
-      { q: "A time t = 12s (to the nearest second) is used to calculate speed from distance d = 60m (to the nearest 5m), using speed = d ÷ t. Find the upper and lower bounds of the speed.", steps: [
+      ], answer: "Maximum area = 39.6625m² (using upper bounds 8.35m and 4.75m).",
+        check: "Check this is bigger than using the rounded values directly: 8.3×4.7=39.01m², which is smaller than 39.6625m², confirming the upper-bound pairing genuinely gives a larger result.",
+        structureId: "s14_bound_area_from_rounded_sides"},
+      { q: "A time t = 12s (to the nearest second) is used to calculate speed from distance d = 60m (to the nearest 5m), using speed = d ÷ t. Find the upper and lower bounds of the speed.",
+        understand: "For a quotient d÷t, making the quotient as large as possible needs the numerator as large as possible and the denominator as small as possible at the same time, the opposite pairing from what maximises a product.",
+        steps: [
         "Bounds for d (rounded to nearest 5m): half a unit = 2.5m. Lower bound = 57.5m. Upper bound = 62.5m.",
         "Bounds for t (rounded to nearest 1s): half a unit = 0.5s. Lower bound = 11.5s. Upper bound = 12.5s.",
-        "Maximum speed = (upper bound of d) ÷ (lower bound of t) = 62.5 ÷ 11.5. Calculate: 62.5 ÷ 11.5 = 625 ÷ 115 = 125 ÷ 23 ≈ 5.43m/s.",
+        "Maximum speed = (upper bound of d) ÷ (lower bound of t) = 62.5 ÷ 11.5 ≈ 5.43m/s.",
         "Minimum speed = (lower bound of d) ÷ (upper bound of t) = 57.5 ÷ 12.5 = 4.6m/s.",
-        "Note: for d ÷ t, maximum speed uses the largest d and smallest t (a shorter time to cover more distance), while minimum speed uses the smallest d and largest t.",
-      ], answer: "Maximum speed ≈ 5.43m/s (62.5 ÷ 11.5); minimum speed = 4.6m/s (57.5 ÷ 12.5)." , structureId: "s18_max_speed_bounds_quotient"},
+      ], answer: "Maximum speed ≈ 5.43m/s (62.5 ÷ 11.5); minimum speed = 4.6m/s (57.5 ÷ 12.5).",
+        check: "Check the pairing logic is consistent: the maximum used the largest d with the smallest t, and the minimum used the smallest d with the largest t, exactly the opposite pairing from the rectangle-area example, because here d is being divided rather than multiplied.",
+        structureId: "s18_max_speed_bounds_quotient"},
+      { q: "A distance is 120 m to the nearest metre and a time is 15 s to the nearest second. Find the upper bound for the speed.",
+        understand: "Only the upper bound is asked for here, so identify which pairing of bounds maximises a quotient, exactly as in example 3, and compute just that one value.",
+        steps: [
+        "Bounds for distance (nearest 1m): half a unit = 0.5m. Upper bound = 120.5m.",
+        "Bounds for time (nearest 1s): half a unit = 0.5s. Lower bound = 14.5s.",
+        "Maximum speed = (upper bound of distance) ÷ (lower bound of time) = 120.5 ÷ 14.5 ≈ 8.31 m/s.",
+      ], answer: "≈ 8.31 m/s",
+        check: "Check the pairing is correct: using the largest possible distance with the smallest possible time gives the largest possible speed, exactly the same pairing rule used in example 3.",
+        structureId: "s18_max_speed_bounds_quotient"},
     ],
       tryit: { q: "x=80 (to the nearest 10) and y=12 (to the nearest 1). Find the minimum possible value of x−y.", answer: "62.5. Minimum of x−y uses the smallest possible x (lower bound 75, since x is rounded to the nearest 10, half unit=5) and the largest possible y (upper bound 12.5, half unit=0.5): 75−12.5=62.5." , structureId: "s8_min_sum_rounded_measurements"} },
     { h: "3. Standard form and estimation", body: [
@@ -2040,23 +2493,43 @@ INTERMEDIATE_LESSONS.estimationAndBounds = {
       "This works well WITH standard form because standard form splits a number into a digit part (between 1 and 10) and a power part (a power of 10) - e.g. 400 = 4×10², 60=6×10¹. Multiplying two numbers in standard form means multiplying the digit parts together and adding the powers of ten:\n4×6 =\n24 (the digit parts), and\n10²×10¹ =\n10³ (the power parts), giving\n24×10³ =\n24,000, matching the estimate exactly.",
       "Rounding EACH number separately before multiplying is safe, but rounding the ANSWER at the end to the same number of significant figures as the least-precise input is what makes the estimate meaningful - don't report an estimate to more significant figures than the original rounding actually supports.",
     ], examples: [
-      { q: "Estimate 412 × 58 by rounding to 1 significant figure first.", steps: [
+      { q: "Estimate 412 × 58 by rounding to 1 significant figure first.",
+        understand: "Round each factor to 1 significant figure first, since that keeps the numbers easy to multiply mentally while staying close to the true product.",
+        steps: [
         "412 rounds to 400 (1 significant figure). 58 rounds to 60 (1 significant figure).",
         "400 × 60 = 24,000.",
-      ], answer: "≈ 24,000 (actual value is 23,896)" , structureId: "s2_estimate_product_1sf"},
-      { q: "Estimate 6,150,000 ÷ 305 by rounding to 1 significant figure and using standard form.", steps: [
+      ], answer: "≈ 24,000 (actual value is 23,896)",
+        check: "The estimate 24,000 is close to the actual 23,896, confirming rounding each factor separately before multiplying still gives a sensible estimate.",
+        structureId: "s2_estimate_product_1sf"},
+      { q: "Estimate 6,150,000 ÷ 305 by rounding to 1 significant figure and using standard form.",
+        understand: "Round each number to 1 significant figure and convert to standard form first, then divide the digit parts and subtract the powers of ten separately.",
+        steps: [
         "Round each number to 1 significant figure: 6,150,000 → 6,000,000. 305 → 300.",
         "Write both in standard form: 6,000,000 = 6×10⁶. 300 = 3×10².",
         "Divide the simple digit parts: 6÷3=2. Subtract the powers of ten (since dividing subtracts indices): 10⁶÷10²=10⁴.",
         "Combine: 2×10⁴ = 20,000.",
-      ], answer: "≈ 20,000 (actual value is about 20,164)" , structureId: "s4_estimate_quotient_1sf"},
-      { q: "Write 0.000047 and 8,300,000 in standard form. Then calculate their product, giving your answer in standard form.", steps: [
+      ], answer: "≈ 20,000 (actual value is about 20,164)",
+        check: "The estimate 20,000 is close to the actual value of about 20,164, confirming the method.",
+        structureId: "s4_estimate_quotient_1sf"},
+      { q: "Write 0.000047 and 8,300,000 in standard form. Then calculate their product, giving your answer in standard form.",
+        understand: "Convert each number to standard form first by finding its first significant digit and counting how many places the decimal point has moved, then multiply the digit parts and add the powers separately.",
+        steps: [
         "0.000047: the first significant digit (4) is 5 places after the decimal point. In standard form: 4.7 × 10⁻⁵.",
         "8,300,000: the first significant digit (8) is at the millions place. In standard form: 8.3 × 10⁶.",
-        "Multiply the digit parts: 4.7 × 8.3 = 39.01.",
-        "Multiply the power parts: 10⁻⁵ × 10⁶ = 10⁽⁻⁵⁺⁶⁾ = 10¹.",
+        "Multiply the digit parts: 4.7 × 8.3 = 39.01. Multiply the power parts: 10⁻⁵ × 10⁶ = 10⁽⁻⁵⁺⁶⁾ = 10¹.",
         "Combine: 39.01 × 10¹ = 390.1. To express in standard form (one digit before the decimal): 3.901 × 10².",
-      ], answer: "4.7 × 10⁻⁵ and 8.3 × 10⁶; product = 3.901 × 10² = 390.1." , structureId: "s16_multiply_standard_form"},
+      ], answer: "4.7 × 10⁻⁵ and 8.3 × 10⁶; product = 3.901 × 10² = 390.1.",
+        check: "Check the digit part is within the valid range for standard form (between 1 and 10): 39.01 is not, so it must be renormalised by one more power of 10, giving 3.901 × 10², which is why the power increased from 1 to 2.",
+        structureId: "s16_multiply_standard_form"},
+      { q: "Estimate (6.2 × 10⁷)(3.8 × 10⁻⁴) ÷ (1.9 × 10²) by rounding each coefficient to 1 significant figure first.",
+        understand: "With three numbers combined by both multiplication and division, round each coefficient to 1 significant figure first, then combine all the digit parts and all the powers of ten in the same order as the original expression.",
+        steps: [
+        "Round each coefficient to 1 significant figure: 6.2→6, 3.8→4, 1.9→2, giving (6×10⁷)(4×10⁻⁴)÷(2×10²).",
+        "Combine the digit parts in the same order: 6×4÷2 = 24÷2 = 12.",
+        "Combine the powers of ten: 10⁷×10⁻⁴÷10² = 10^(7−4−2) = 10¹.",
+      ], answer: "12 × 10¹ = 1.2 × 10²",
+        check: "12×10¹ = 120, and 1.2×10² is the same value written with a valid standard-form digit part (between 1 and 10), confirming the renormalisation step.",
+        structureId: "s20_standard_form_multistep_real_world"},
     ],
       tryit: { q: "Estimate 0.00089 × 5,200 by rounding to 1 significant figure first.", answer: "≈4.5 (actual value is about 4.628). Rounding: 0.00089→0.0009=9×10⁻⁴, 5200→5000=5×10³; multiply digit parts:\n9×5 =\n45, add powers:\n10⁻⁴×10³ =\n10⁻¹, giving\n45×10⁻¹ =\n4.5." , structureId: "s2_estimate_product_1sf"} },
   ],
@@ -2075,25 +2548,45 @@ INTERMEDIATE_LESSONS.coordinateGeometry = {
       "Try this on a concrete pair of points: (1, 2) and (4, 8). Label them so x₁=1, y₁=2, x₂=4, y₂=8. Change in y = y₂ − y₁ =\n8 − 2 =\n6. Change in x = x₂ − x₁ =\n4 − 1 =\n3. So the gradient =\n6 ÷ 3 =\n2 - the line climbs 2 units up for every 1 unit across.",
       "It doesn't matter which point you call 'first' and which you call 'second', as long as you're consistent - swapping them flips the sign of both the change in y and the change in x, and those two minus signs cancel out, giving the exact same gradient either way.",
     ], examples: [
-      { q: "Find the gradient of the line through (1, 2) and (4, 8).", steps: [
+      { q: "Find the gradient of the line through (1, 2) and (4, 8).",
+        understand: "Label the two points consistently as (x₁,y₁) and (x₂,y₂), then apply the gradient formula from the change in y over the change in x shown above.",
+        steps: [
         "Label the points: x₁=1, y₁=2, x₂=4, y₂=8.",
         "Change in y = y₂ − y₁ =\n8 − 2 =\n6.",
         "Change in x = x₂ − x₁ =\n4 − 1 =\n3.",
         "Gradient =\n6 ÷ 3 =\n2.",
-      ], answer: "2" , structureId: "gradient_two_points"},
-      { q: "Find the gradient of the line through (2, 3) and (5, −1) (a harder version with a negative, fractional result).", steps: [
+      ], answer: "2",
+        check: "Check by swapping which point is labelled first: using (4,8) as point 1 and (1,2) as point 2 gives change in y = 2-8=-6 and change in x = 1-4=-3, and -6÷-3=2, the same gradient either way.",
+        structureId: "gradient_two_points"},
+      { q: "Find the gradient of the line through (2, 3) and (5, −1) (a harder version with a negative, fractional result).",
+        understand: "The same labelling and formula apply even when the result is negative and fractional; just keep the subtraction order consistent between the y's and the x's.",
+        steps: [
         "Label the points: x₁=2, y₁=3, x₂=5, y₂=−1.",
         "Change in y = y₂ − y₁ =\n−1 − 3 =\n−4.",
         "Change in x = x₂ − x₁ =\n5 − 2 =\n3.",
         "Gradient =\n−4 ÷ 3 =\n−4/3.",
-      ], answer: "−4/3" , structureId: "gradient_two_points"},
-      { q: "Three points A(1, 2), B(3, 6) and C(7, k) are collinear (all lying on the same straight line). Find k.", steps: [
+      ], answer: "−4/3",
+        check: "Check the sign makes sense: the line falls from y=3 to y=-1 while x increases from 2 to 5, so a negative gradient (falling left to right) is exactly what should be expected.",
+        structureId: "gradient_two_points"},
+      { q: "Three points A(1, 2), B(3, 6) and C(7, k) are collinear (all lying on the same straight line). Find k.",
+        understand: "Since three collinear points all lie on the same straight line, the gradient between any two of them must be equal; use the two points with known coordinates (A and B) to find that shared gradient, then apply it to the pair involving the unknown.",
+        steps: [
         "Find the gradient of AB first: gradient = (y₂ − y₁) ÷ (x₂ − x₁) = (6 − 2) ÷ (3 − 1) = 4 ÷ 2 = 2.",
         "Since A, B and C are collinear, the gradient of AC must also equal 2.",
         "Gradient of AC = (k − 2) ÷ (7 − 1) = (k − 2) ÷ 6 = 2.",
         "Solve for k: k − 2 = 12, so k = 14.",
-        "Check by finding gradient AC directly: (14 − 2) ÷ (7 − 1) = 12 ÷ 6 = 2 = gradient of AB. ✓",
-      ], answer: "k = 14" , structureId: "gradient_two_points"},
+      ], answer: "k = 14",
+        check: "Check by finding gradient AC directly: (14 − 2) ÷ (7 − 1) = 12 ÷ 6 = 2, matching the gradient of AB found in the first step.",
+        structureId: "gradient_two_points"},
+      { q: "Find the gradient from A(-4, 7) to B(6, -3).",
+        understand: "Apply the same gradient formula, taking extra care with the signs when subtracting negative coordinates.",
+        steps: [
+        "Change in y = -3 - 7 = -10.",
+        "Change in x = 6 - (-4) = 6 + 4 = 10.",
+        "Gradient = -10 ÷ 10 = -1.",
+      ], answer: "-1",
+        check: "Check the sign: the line falls from y=7 down to y=-3 as x increases from -4 to 6, so a negative gradient makes sense.",
+        structureId: "gradient_two_points"},
     ],
       tryit: { q: "Find the gradient through (0, 5) and (2, 1).", answer: "−2, since change in y = 1 − 5 = −4, change in x = 2 − 0 = 2, and −4 ÷ 2 = −2." , structureId: "gradient_two_points"} },
     { h: "2. Midpoint of two points", body: [
@@ -2101,20 +2594,39 @@ INTERMEDIATE_LESSONS.coordinateGeometry = {
       "Check this makes sense on a simple case first: the midpoint of (2, 3) and (8, 7). Midpoint x = (2+8)/2 =\n10/2 =\n5. Midpoint y = (3+7)/2 =\n10/2 =\n5. So the midpoint is (5, 5) - exactly halfway between x=2 and x=8, and exactly halfway between y=3 and y=7.",
       "Negative coordinates work exactly the same way - just be careful adding a negative number, since adding a negative is the same as subtracting.",
     ], examples: [
-      { q: "Find the midpoint of (2, 3) and (8, 7).", steps: [
+      { q: "Find the midpoint of (2, 3) and (8, 7).",
+        understand: "Average the two x-coordinates and the two y-coordinates separately, exactly as shown above.",
+        steps: [
         "Midpoint x = (2+8)/2 =\n10/2 =\n5.",
         "Midpoint y = (3+7)/2 =\n10/2 =\n5.",
-      ], answer: "(5, 5)" , structureId: "midpoint"},
-      { q: "Find the midpoint of (−3, 4) and (6, −9) (a harder version with negative coordinates).", steps: [
+      ], answer: "(5, 5)",
+        check: "Check that (5,5) really is equidistant from both points: horizontally it is 3 across from x=2 and 3 across from x=8, and vertically 2 up from y=3 and 2 down from y=7, confirming it sits exactly halfway.",
+        structureId: "midpoint"},
+      { q: "Find the midpoint of (−3, 4) and (6, −9) (a harder version with negative coordinates).",
+        understand: "The same averaging method applies with negative coordinates; just take care adding a negative number, since that is the same as subtracting.",
+        steps: [
         "Midpoint x = (−3+6)/2 =\n3/2 =\n1.5.",
         "Midpoint y = (4+(−9))/2 =\n−5/2 =\n−2.5.",
-      ], answer: "(1.5, −2.5)" , structureId: "midpoint"},
-      { q: "M is the midpoint of PQ. M has coordinates (4, −1) and P has coordinates (1, 5). Find the coordinates of Q.", steps: [
+      ], answer: "(1.5, −2.5)",
+        check: "Check: (1.5,-2.5) is 4.5 across from x=-3 and 4.5 across from x=6 (halfway), and 6.5 up from y=-9 and 6.5 down from y=4 (halfway), confirming the midpoint.",
+        structureId: "midpoint"},
+      { q: "M is the midpoint of PQ. M has coordinates (4, −1) and P has coordinates (1, 5). Find the coordinates of Q.",
+        understand: "Since the midpoint formula gives an equation relating the known point, the unknown point and the midpoint, set up and solve that equation separately for the x-coordinate and the y-coordinate.",
+        steps: [
         "The midpoint formula gives M = ((x_P + x_Q)/2, (y_P + y_Q)/2).",
         "Using the x-coordinates: 4 = (1 + x_Q) / 2, so 1 + x_Q = 8, giving x_Q = 7.",
         "Using the y-coordinates: −1 = (5 + y_Q) / 2, so 5 + y_Q = −2, giving y_Q = −7.",
-        "So Q = (7, −7). Check midpoint: x = (1+7)/2 = 4, y = (5+(−7))/2 = −1. ✓",
-      ], answer: "Q = (7, −7)" , structureId: "midpoint_reverse"},
+      ], answer: "Q = (7, −7)",
+        check: "Check midpoint: x = (1+7)/2 = 4, y = (5+(−7))/2 = −1, matching the given midpoint M(4,-1) exactly.",
+        structureId: "midpoint_reverse"},
+      { q: "A has coordinates (-3, 8) and midpoint M is (4, 1). Find B.",
+        understand: "This is the same reverse-midpoint technique as example 3, just with a different labelling and negative coordinates involved.",
+        steps: [
+        "For the x-coordinate: (-3 + x_B)/2 = 4, so -3 + x_B = 8, giving x_B = 11.",
+        "For the y-coordinate: (8 + y_B)/2 = 1, so 8 + y_B = 2, giving y_B = -6.",
+      ], answer: "B = (11, -6)",
+        check: "Check midpoint: x = (-3+11)/2 = 4, y = (8+(-6))/2 = 1, matching the given midpoint M(4,1) exactly.",
+        structureId: "midpoint_reverse"},
     ],
       tryit: { q: "Find the midpoint of (7, −2) and (−1, 10).", answer: "(3, 4), since midpoint x = (7+(−1))/2 = 3 and midpoint y = (−2+10)/2 = 4." , structureId: "midpoint"} },
     { h: "3. Equation of a line: y = mx + c", body: [
@@ -2122,44 +2634,164 @@ INTERMEDIATE_LESSONS.coordinateGeometry = {
       "If you already know the gradient m and just ONE point (x, y) that lies on the line, you can find c: substitute the gradient and the point's coordinates into y = mx + c, and the only unknown left is c, so solve for it.",
       "For example, a line has gradient 3 and passes through (2, 11). Substitute m=3, x=2, y=11 into y = mx + c:\n11 =\n3×2 + c =\n6 + c,\nso c = 11 − 6 =\n5. The line's equation is y = 3x + 5.",
     ], examples: [
-      { q: "A line has gradient 3 and passes through (2, 11). Find its equation.", steps: [
+      { q: "A line has gradient 3 and passes through (2, 11). Find its equation.",
+        understand: "Substitute the known gradient and the coordinates of the given point into y = mx + c, leaving c as the only unknown to solve for.",
+        steps: [
         "Substitute into y = mx + c: 11 = 3(2) + c.",
         "11 =\n6 + c, so\nc =\n5.",
-      ], answer: "y = 3x + 5" , structureId: "equation_from_gradient_point"},
-      { q: "A line has gradient −2 and passes through (−3, 7) (a harder version with negative numbers). Find its equation.", steps: [
+      ], answer: "y = 3x + 5",
+        check: "Check by substituting the original point back in: y = 3(2) + 5 = 6 + 5 = 11, matching the given y-value.",
+        structureId: "equation_from_gradient_point"},
+      { q: "A line has gradient −2 and passes through (−3, 7) (a harder version with negative numbers). Find its equation.",
+        understand: "The same substitution method applies with negative numbers; take extra care with the double negative when substituting a negative x into a negative gradient.",
+        steps: [
         "Substitute into y = mx + c: 7 = −2(−3) + c.",
         "7 =\n6 + c, so\nc =\n1.",
-      ], answer: "y = −2x + 1" , structureId: "equation_from_gradient_point"},
-      { q: "Find the equation of the straight line passing through the points (1, 5) and (3, 1).", steps: [
+      ], answer: "y = −2x + 1",
+        check: "Check by substituting the original point back in: y = −2(−3) + 1 = 6 + 1 = 7, matching the given y-value.",
+        structureId: "equation_from_gradient_point"},
+      { q: "Find the equation of the straight line passing through the points (1, 5) and (3, 1).",
+        understand: "Since the gradient isn't given directly, calculate it first from the two points using the section 1 formula, then use either point to find c exactly as before.",
+        steps: [
         "Find the gradient: m = (1 − 5) ÷ (3 − 1) = −4 ÷ 2 = −2.",
         "Substitute m = −2 and the point (1, 5) into y = mx + c: 5 = −2(1) + c.",
         "5 = −2 + c, so c = 7.",
-        "Equation: y = −2x + 7. Check using (3, 1): y = −2(3) + 7 = −6 + 7 = 1. ✓",
-      ], answer: "y = −2x + 7" , structureId: "equation_from_two_points"},
+      ], answer: "y = −2x + 7",
+        check: "Check using the other point, (3, 1): y = −2(3) + 7 = −6 + 7 = 1, matching, confirming the equation fits both original points.",
+        structureId: "equation_from_two_points"},
+      { q: "A vertical line passes through the point (5, 2). What is its equation, and why can't it be written in the form y = mx + c?",
+        understand: "A vertical line has no defined gradient at all, since every point on it shares the same x-coordinate no matter how far up or down you go, meaning the 'change in x' used to calculate gradient would be zero, and dividing by zero is not allowed. Because y = mx + c always needs a genuine value for m, a vertical line needs a different form entirely.",
+        steps: [
+        "Every point on this vertical line has x = 5, no matter what y is: (5, -3), (5, 0), (5, 100) all lie on it.",
+        "Since x never changes, the equation is simply x = 5, with no y or m needed at all.",
+      ], answer: "x = 5",
+        check: "Check with the ordinary gradient formula: change in x between any two points on this line is always 5-5=0, and dividing by 0 is undefined, confirming why the usual y=mx+c form cannot describe a vertical line.",
+        structureId: "equation_from_gradient_point"},
     ],
       tryit: { q: "A line has gradient 1/2 and passes through (4, 1). Find its equation.", answer: "y = 0.5x − 1, since 1 = 0.5(4) + c gives 1 = 2 + c, so c = −1." , structureId: "equation_from_gradient_point"} },
     { h: "4. Parallel and perpendicular lines", body: [
       "Parallel lines point in exactly the same direction and never meet, however far they're extended. Since the gradient measures direction, two lines are parallel exactly when they have the SAME gradient.",
       "Perpendicular lines meet at a right angle (90°). Their gradients are always negative reciprocals of each other. A reciprocal means 'flip the fraction upside down' (the reciprocal of 2/3 is 3/2, and the reciprocal of a whole number n is 1/n, since n is really n/1). 'Negative reciprocal' means flip it AND change its sign. The test that always works: multiply the two gradients together, and if the lines are perpendicular, the answer is always exactly −1.",
     ], examples: [
-      { q: "Are the lines y = 2x + 5 and y = 2x − 3 parallel?", steps: [
+      { q: "Are the lines y = 2x + 5 and y = 2x − 3 parallel?",
+        understand: "Compare the gradients (the coefficients of x) directly; equal gradients mean parallel lines, regardless of the y-intercepts.",
+        steps: [
         "Compare gradients: both lines have m = 2.",
-        "Same gradient means same direction, so the lines are parallel (they never meet, since their different y-intercepts, 5 and −3, mean they're not the same line either).",
-      ], answer: "Yes, they are parallel" , structureId: "parallel_line_equation"},
-      { q: "A line has gradient 2/3. What is the gradient of a line perpendicular to it? (a harder version, needing the flip-and-negate rule)", steps: [
+        "Same gradient means same direction, so the lines are parallel.",
+      ], answer: "Yes, they are parallel",
+        check: "Check that they are not actually the same line: their y-intercepts, 5 and −3, are different, so they are two distinct parallel lines, not one line written twice.",
+        structureId: "parallel_line_equation"},
+      { q: "A line has gradient 2/3. What is the gradient of a line perpendicular to it? (a harder version, needing the flip-and-negate rule)",
+        understand: "Apply the flip-and-negate rule to find a negative reciprocal, then verify it using the product test that two perpendicular gradients always multiply to −1.",
+        steps: [
         "Flip the fraction 2/3 upside down (find its reciprocal): 3/2.",
         "Negate it (change its sign) to get the negative reciprocal: −3/2.",
-        "Check by multiplying the two gradients:\n(2/3) × (−3/2) =\n−1.\nCorrect.",
-      ], answer: "−3/2" , structureId: "perpendicular_gradient"},
-      { q: "A line is perpendicular to y = 3x − 5 and passes through (6, 2). Find its equation.", steps: [
+      ], answer: "−3/2",
+        check: "Check by multiplying the two gradients: (2/3) × (−3/2) = −1, confirming the negative reciprocal is correct.",
+        structureId: "perpendicular_gradient"},
+      { q: "A line is perpendicular to y = 3x − 5 and passes through (6, 2). Find its equation.",
+        understand: "First find the perpendicular gradient using the flip-and-negate rule, then use it together with the given point to find the equation, exactly as in section 3.",
+        steps: [
         "The gradient of y = 3x − 5 is 3 (the coefficient of x).",
         "The perpendicular gradient is the negative reciprocal: flip 3/1 to get 1/3, then negate: gradient = −1/3.",
-        "Check: 3 × (−1/3) = −1. ✓",
         "Substitute the gradient and point (6, 2) into y = mx + c: 2 = (−1/3)(6) + c = −2 + c, so c = 4.",
-        "Equation: y = −x/3 + 4.",
-      ], answer: "y = −x/3 + 4" , structureId: "perpendicular_gradient"},
+      ], answer: "y = −x/3 + 4",
+        check: "Check by substituting the original point (6,2) back in: y = −(6)/3 + 4 = −2 + 4 = 2, matching the given y-value.",
+        structureId: "perpendicular_gradient"},
+      { q: "Two lines have gradients 3/4 and −4/3. Are they perpendicular? Justify your answer using the product test.",
+        understand: "Rather than constructing an equation, this only asks whether two known gradients satisfy the perpendicularity test: multiply them together and check whether the result is exactly −1.",
+        steps: [
+        "Multiply the two gradients: (3/4) × (−4/3) = −12/12 = −1.",
+        "The product is exactly −1, which is the defining test for perpendicular gradients.",
+      ], answer: "Yes, they are perpendicular.",
+        check: "Confirm the negative-reciprocal relationship directly: flipping 3/4 gives 4/3, and negating that gives −4/3, exactly matching the second gradient, confirming the product test agrees with the flip-and-negate rule.",
+        structureId: "perpendicular_gradient"},
     ],
       tryit: { q: "What gradient is perpendicular to a line with gradient −4?", answer: "1/4, since −4 = −4/1, flipping gives −1/4, and negating that gives 1/4. Check: (−4) × (1/4) = −1." , structureId: "perpendicular_gradient"} },
+    { h: "5. Distance, triangle area and intersecting lines", body: [
+      "The distance between two points on a grid is just Pythagoras' theorem in disguise. The horizontal gap and the vertical gap between the two points form the two shorter sides of a right-angled triangle, and the straight-line distance between the points is the hypotenuse. So distance = √((horizontal gap)² + (vertical gap)²).",
+      "Try this concretely on A(1, 2) and B(4, 6). Horizontal gap = 4 − 1 = 3. Vertical gap = 6 − 2 = 4. Distance = √(3² + 4²) = √(9 + 16) = √25 = 5.",
+      "Finding a triangle's area on a grid is easiest when one side lies flat along the x-axis: that side becomes the base, and the height is simply how far the third point sits above the x-axis (its y-coordinate). The usual area formula, ½ × base × height, then applies exactly as normal.",
+      "Two lines cross at exactly the point where both equations agree: the same x-value gives the same y-value in both. Setting the two right-hand sides (both in terms of x) equal to each other turns the problem into a single equation in x alone, which can be solved as usual; substituting that x back into either original equation then gives the matching y.",
+      "A perpendicular bisector combines two ideas already met in this lesson. It passes through the midpoint of a segment AB (so it is equidistant from A and B), and its gradient is the negative reciprocal of AB's gradient (so it meets AB at a right angle). Finding its equation is simply: find the midpoint, find the perpendicular gradient, then substitute the midpoint into y = mx + c as usual."
+    ], examples: [
+      { q: "Find the distance between A(1, 2) and B(4, 6).",
+        understand: "Form a right-angled triangle from the horizontal and vertical gaps between the two points, then apply Pythagoras' theorem to find the hypotenuse (the direct distance).",
+        steps: [
+          "Horizontal gap: 4 − 1 = 3.",
+          "Vertical gap: 6 − 2 = 4.",
+          "Distance = √(3² + 4²) = √(9 + 16) = √25 = 5.",
+        ], answer: "5",
+        check: "Check: 5² = 25 = 3² + 4², confirming Pythagoras' theorem is satisfied.",
+        structureId: "distance_two_points" },
+      { q: "Triangle ABC has A(0, 0), B(6, 0) and C(2, 5). Find its area.",
+        understand: "Since AB lies along the x-axis, it can be used directly as the base, and C's y-coordinate gives the perpendicular height above that base.",
+        steps: [
+          "Base AB = 6 (the distance along the x-axis from A to B).",
+          "Height = 5 (C's y-coordinate, its perpendicular distance above line AB).",
+          "Area = ½ × 6 × 5 = 15.",
+        ], answer: "15",
+        check: "Check: because AB sits on the x-axis, the height is measured straight up to C, so ½ × base × height applies exactly as with any triangle.",
+        structureId: "area_of_triangle_coordinates" },
+      { q: "Find the point where the lines y = 2x − 1 and y = −x + 5 intersect.",
+        understand: "At the point where two lines cross, both equations give the same y for the same x, so setting the two expressions equal produces a single equation in x alone.",
+        steps: [
+          "2x − 1 = −x + 5.",
+          "3x = 6, so x = 2.",
+          "y = 2(2) − 1 = 3.",
+        ], answer: "(2, 3)",
+        check: "Check by substituting x = 2 into the other equation: y = −(2) + 5 = 3, matching.",
+        structureId: "intersection_of_two_lines" },
+      { q: "Find the equation of the perpendicular bisector of AB, where A(−2, 1) and B(2, 5).",
+        understand: "The perpendicular bisector passes through the midpoint of AB, with a gradient that is the negative reciprocal of AB's own gradient.",
+        steps: [
+          "Midpoint M = ((−2+2)/2, (1+5)/2) = (0, 3).",
+          "Gradient of AB = (5 − 1) ÷ (2 − (−2)) = 4/4 = 1, so the perpendicular gradient = −1.",
+          "Substitute M into y = −x + c: 3 = −(0) + c, so c = 3.",
+          "Equation: y = −x + 3.",
+        ], answer: "y = −x + 3",
+        check: "Check the line passes through M(0, 3): −(0) + 3 = 3. Check perpendicularity: 1 × (−1) = −1.",
+        structureId: "perpendicular_bisector_equation" },
+    ] },
+    { h: "6. Circles on a coordinate grid", body: [
+      "A circle centred on the origin with radius r has equation x² + y² = r². This is really the distance formula from earlier in this lesson, applied to every point on the circle at once: any point (x, y) on the circle is a distance r from the origin, so √(x² + y²) = r, and squaring both sides gives x² + y² = r².",
+      "To test whether a given point lies on a circle, substitute its coordinates into x² + y² and compare the result with r². If they match, the point lies exactly on the circle; if not, the point lies either inside or outside it.",
+      "A tangent to a circle touches it at exactly one point and is always perpendicular to the radius drawn to that point. So finding a tangent's gradient uses the same perpendicular-gradient rule from earlier in this lesson: find the radius's gradient (rise over run from the centre to the point), then take its negative reciprocal.",
+      "Finding where a straight line meets a circle uses the same substitution idea as intersecting two lines: substitute the line's equation into the circle's equation, which reduces a two-dimensional problem to a single equation in one variable. Solving that equation gives the x-coordinate(s) of the intersection point(s); there may be two points (the line crosses the circle), one point (the line is a tangent), or none (the line misses the circle entirely)."
+    ], examples: [
+      { q: "A circle has equation x² + y² = 25 (centre the origin, radius 5). Does the point (3, 4) lie on the circle?",
+        understand: "Substitute the point's coordinates into x² + y²; if the result equals r², the point lies exactly on the circle.",
+        steps: [
+          "3² + 4² = 9 + 16 = 25.",
+          "Compare with r² = 25: they match.",
+        ], answer: "Yes, (3, 4) lies on the circle",
+        check: "Check using distance: the distance from the origin to (3, 4) is √25 = 5, exactly the radius.",
+        structureId: "circle_equation_radius" },
+      { q: "Using the same circle x² + y² = 25, does the point (3, 5) lie on the circle?",
+        understand: "The same substitution test applies even when the point does not lie on the circle: the result simply will not match r².",
+        steps: [
+          "3² + 5² = 9 + 25 = 34.",
+          "Compare with r² = 25: they do not match.",
+        ], answer: "No, (3, 5) does not lie on the circle",
+        check: "Check using distance: the distance from the origin to (3, 5) is √34 ≈ 5.83, further than the radius of 5, so the point lies outside the circle.",
+        structureId: "circle_equation_radius" },
+      { q: "A circle has centre O(0, 0) and passes through P(3, 4). Find the gradient of the tangent to the circle at P.",
+        understand: "A tangent to a circle is always perpendicular to the radius at the point where it touches, so its gradient is the negative reciprocal of the radius's gradient.",
+        steps: [
+          "Gradient of radius OP = 4 ÷ 3 = 4/3.",
+          "Negative reciprocal: flip to 3/4, then negate to −3/4.",
+        ], answer: "−3/4",
+        check: "Check: (4/3) × (−3/4) = −1, confirming the radius and tangent are perpendicular.",
+        structureId: "tangent_to_circle_gradient" },
+      { q: "A circle has equation x² + y² = 25. The horizontal line y = 3 crosses it. Find the two points of intersection.",
+        understand: "Substituting the line's equation into the circle's equation turns a two-dimensional intersection problem into a single equation in x alone.",
+        steps: [
+          "Substitute y = 3 into x² + y² = 25: x² + 9 = 25.",
+          "x² = 16, so x = ±4.",
+        ], answer: "(−4, 3) and (4, 3)",
+        check: "Check: (−4)² + 3² = 16 + 9 = 25, and 4² + 3² = 16 + 9 = 25.",
+        structureId: "line_meets_circle" },
+    ] },
   ],
 };
 
@@ -2175,19 +2807,38 @@ INTERMEDIATE_LESSONS.similarShapesAndScaleFactors = {
       "This uses ratio: comparing two quantities by dividing one by the other, the same idea used for comparing amounts in ratio basics - here the 'amounts' happen to be two lengths instead of two quantities of something.",
       "For example, if triangle A has a side of 4cm and the similar triangle B has the matching side at 10cm, the scale factor from A to B is 10 ÷ 4 = 2.5 - every length on A gets multiplied by 2.5 to give the matching length on B. Going the other way, from B to A, would use the reciprocal instead (4 ÷ 10 = 0.4), since that direction shrinks rather than enlarges.",
     ], examples: [
-      { q: "Triangle A has a side of 4cm. The similar triangle B has the matching side at 10cm. What is the scale factor from A to B?", steps: [
+      { q: "Triangle A has a side of 4cm. The similar triangle B has the matching side at 10cm. What is the scale factor from A to B?",
+        understand: "Find the scale factor by dividing the new (matching) length by the corresponding original length, exactly as shown above.",
+        steps: [
         "Scale factor = new length ÷ matching original length.",
         "Scale factor =\n10 ÷ 4 =\n2.5.",
-      ], answer: "2.5" , structureId: "find_scale_factor_from_pair"},
-      { q: "Rectangle P has a side of 12cm. The similar rectangle Q has the matching side at 9cm (a harder version where the scale factor is a reduction). Find the scale factor from P to Q.", steps: [
+      ], answer: "2.5",
+        check: "Check the direction: since B's side (10cm) is bigger than A's (4cm), a scale factor bigger than 1 makes sense for an enlargement from A to B.",
+        structureId: "find_scale_factor_from_pair"},
+      { q: "Rectangle P has a side of 12cm. The similar rectangle Q has the matching side at 9cm (a harder version where the scale factor is a reduction). Find the scale factor from P to Q.",
+        understand: "The same division still applies even though this scale factor is less than 1, since Q is smaller than P; a scale factor between 0 and 1 always signals a reduction rather than an enlargement.",
+        steps: [
         "Scale factor = matching length on Q ÷ corresponding length on P.",
         "Scale factor =\n9 ÷ 12 =\n0.75 (that is, 3/4).",
-      ], answer: "0.75 (3/4)" , structureId: "find_scale_factor_from_pair"},
-      { q: "Two similar triangles have matching sides of 3cm and 4.5cm. Find the scale factor from the smaller to the larger, then find the length on the larger triangle that corresponds to a 4cm side on the smaller triangle.", steps: [
+      ], answer: "0.75 (3/4)",
+        check: "Check the direction: since Q's side (9cm) is smaller than P's (12cm), a scale factor less than 1 correctly signals a reduction.",
+        structureId: "find_scale_factor_from_pair"},
+      { q: "Two similar triangles have matching sides of 3cm and 4.5cm. Find the scale factor from the smaller to the larger, then find the length on the larger triangle that corresponds to a 4cm side on the smaller triangle.",
+        understand: "Find the scale factor from the given matching pair first, then apply that same factor to the other side, since every length on the smaller triangle scales by the identical factor to give the matching length on the larger.",
+        steps: [
         "Scale factor k = (length on larger) ÷ (matching length on smaller) = 4.5 ÷ 3 = 1.5.",
         "Multiply the 4cm side on the smaller triangle by the scale factor: 4 × 1.5 = 6cm.",
-        "Check: all other corresponding sides would also multiply by 1.5, keeping the shapes similar. ✓",
-      ], answer: "Scale factor = 1.5; the corresponding side on the larger triangle is 6cm." , structureId: "length_scale_factor_find_side"},
+      ], answer: "Scale factor = 1.5; the corresponding side on the larger triangle is 6cm.",
+        check: "Check that all other corresponding sides would also multiply by 1.5, keeping the shapes similar: 3cm becoming 4.5cm is 3×1.5=4.5, confirming the factor.",
+        structureId: "length_scale_factor_find_side"},
+      { q: "Two similar triangles have corresponding sides 8 cm and 14 cm. A second side of the smaller triangle is 12 cm. Find its match.",
+        understand: "As in example 3, find the scale factor from the one known matching pair first, then apply it to the other given side.",
+        steps: [
+        "Scale factor = (larger side) ÷ (matching smaller side) = 14 ÷ 8 = 7/4.",
+        "Multiply the 12cm side by the scale factor: 12 × 7/4 = 21cm.",
+      ], answer: "21cm",
+        check: "Check the direction: since 14cm is bigger than 8cm, the scale factor 7/4 is bigger than 1, so the matching side (21cm) should indeed be bigger than the original 12cm, which it is.",
+        structureId: "length_scale_factor_find_side"},
     ],
       tryit: { q: "Shape A has a side of 6cm. The similar shape B has the matching side at 9cm. Find the scale factor from A to B.", answer: "1.5, since 9 ÷ 6 = 1.5." , structureId: "find_scale_factor_from_pair"} },
     { h: "2. Area scales by the SQUARE of the scale factor", body: [
@@ -2195,61 +2846,118 @@ INTERMEDIATE_LESSONS.similarShapesAndScaleFactors = {
       "Check this on a simple square first. A square of side 2cm has area 2×2 = 4cm². Scale every length by k=3: the new side is 2×3 = 6cm, so the new area is 6×6 = 36cm². Compare the two areas: 36 ÷ 4 = 9, and 9 is exactly 3² - the area scale factor is the square of the length scale factor, exactly as claimed.",
       "So whenever a length scale factor k is given, the area scale factor is k², and you multiply the original area by k² to get the new area.",
     ], examples: [
-      { q: "Two similar rectangles have a length scale factor of 3. The smaller rectangle has area 8cm². What is the area of the larger one?", steps: [
+      { q: "Two similar rectangles have a length scale factor of 3. The smaller rectangle has area 8cm². What is the area of the larger one?",
+        understand: "Since area scales by the square of the length scale factor, square k first, then multiply the smaller area by that squared value.",
+        steps: [
         "Area scale factor = k² =\n3² =\n9.",
         "New area = 8 × 9 =\n72cm².",
-      ], answer: "72cm²" , structureId: "area_scale_factor"},
-      { q: "Two similar shapes X and Y have a length scale factor from X to Y of 2/5 (a harder version where Y is smaller than X). Shape X has area 50cm². Find the area of Y.", steps: [
+      ], answer: "72cm²",
+        check: "Check the direction: since k=3 is an enlargement, the new area (72cm²) should be bigger than the original (8cm²), which it is, and by a factor of exactly 9=3², not 3.",
+        structureId: "area_scale_factor"},
+      { q: "Two similar shapes X and Y have a length scale factor from X to Y of 2/5 (a harder version where Y is smaller than X). Shape X has area 50cm². Find the area of Y.",
+        understand: "The same squaring rule applies for a fractional scale factor smaller than 1, which represents a reduction rather than an enlargement.",
+        steps: [
         "Area scale factor = k² =\n(2/5)² =\n4/25.",
         "New area = 50 × 4/25 =\n200/25 =\n8cm².",
-      ], answer: "8cm²" , structureId: "area_scale_factor"},
-      { q: "Two similar shapes have areas 48cm² and 75cm². Find the length scale factor from the smaller to the larger, and state the ratio of their perimeters.", steps: [
+      ], answer: "8cm²",
+        check: "Check the direction: since k=2/5 is a reduction, the new area (8cm²) should be smaller than the original (50cm²), which it is.",
+        structureId: "area_scale_factor"},
+      { q: "Two similar shapes have areas 48cm² and 75cm². Find the length scale factor from the smaller to the larger, and state the ratio of their perimeters.",
+        understand: "Since the area ratio is given rather than the length scale factor, work backwards by taking a square root of the area ratio to recover the length scale factor, then apply that same factor to perimeter, since perimeter is a length.",
+        steps: [
         "Area ratio = (larger area) ÷ (smaller area) = 75 ÷ 48 = 25/16.",
         "Length scale factor k = √(area ratio) = √(25/16) = 5/4 = 1.25.",
         "Perimeter (like any length) also scales by the same factor k = 5/4, so the perimeter ratio is 5:4.",
-        "Check: if k = 5/4, area scale factor = k² = (5/4)² = 25/16. Area ratio = 25/16. ✓",
-      ], answer: "Length scale factor = 5/4; perimeter ratio = 5:4." , structureId: "find_length_scale_from_area"},
+      ], answer: "Length scale factor = 5/4; perimeter ratio = 5:4.",
+        check: "Check: squaring the recovered scale factor gives (5/4)²=25/16, matching the original area ratio 75/48=25/16 exactly.",
+        structureId: "find_length_scale_from_area"},
+      { q: "Similar shapes have length scale factor 3/2. A smaller area is 40 cm². Find the larger area.",
+        understand: "Square the fractional scale factor first, then multiply the smaller area by that squared value, exactly as in example 2 but with an enlarging fraction instead of a reducing one.",
+        steps: [
+        "Area scale factor = k² = (3/2)² = 9/4.",
+        "New area = 40 × 9/4 = 90cm².",
+      ], answer: "90cm²",
+        check: "Check the direction: since k=3/2 is bigger than 1 (an enlargement), the new area (90cm²) should be bigger than the original (40cm²), which it is.",
+        structureId: "area_scale_factor"},
     ],
       tryit: { q: "Two similar shapes have a length scale factor of 5. If the smaller has area 6cm², find the larger's area.", answer: "150cm², since 5² = 25 and 6 × 25 = 150." , structureId: "area_scale_factor"} },
     { h: "3. Volume scales by the CUBE of the scale factor", body: [
       "Volume is a length multiplied by a length multiplied by a length (think of a box: volume = length × width × height). So scaling every length by k multiplies the volume by k three times over - volume scales by k³.",
       "Check this on a simple cube. A cube of side 1cm has volume 1×1×1 = 1cm³. Scale every length by k=2: the new side is 2cm, so the new volume is 2×2×2 = 8cm³. Compare: 8 ÷ 1 = 8, and 8 is exactly 2³ - confirming volume scales by the cube of the length scale factor.",
     ], examples: [
-      { q: "Two similar solids have a length scale factor of 2. The smaller has volume 5cm³. Find the larger's volume.", steps: [
+      { q: "Two similar solids have a length scale factor of 2. The smaller has volume 5cm³. Find the larger's volume.",
+        understand: "Since volume scales by the cube of the length scale factor, cube k first, then multiply the smaller volume by that cubed value.",
+        steps: [
         "Volume scale factor = k³ =\n2³ =\n8.",
         "New volume = 5 × 8 =\n40cm³.",
-      ], answer: "40cm³" , structureId: "volume_scale_factor"},
-      { q: "Two similar solids have a length scale factor of 3/2 (a harder version with a fractional scale factor). The smaller has volume 16cm³. Find the larger's volume.", steps: [
+      ], answer: "40cm³",
+        check: "Check the direction: since k=2 is an enlargement, the new volume (40cm³) should be bigger than the original (5cm³), and by a factor of exactly 8=2³, not 2.",
+        structureId: "volume_scale_factor"},
+      { q: "Two similar solids have a length scale factor of 3/2 (a harder version with a fractional scale factor). The smaller has volume 16cm³. Find the larger's volume.",
+        understand: "The same cubing rule applies for a fractional scale factor bigger than 1, which still represents an enlargement since 3/2 is greater than 1.",
+        steps: [
         "Volume scale factor = k³ =\n(3/2)³ =\n27/8.",
         "New volume = 16 × 27/8 =\n432/8 =\n54cm³.",
-      ], answer: "54cm³" , structureId: "volume_scale_factor"},
-      { q: "Two similar cylinders have volumes 250cm³ and 2000cm³. Find the length scale factor from the smaller to the larger.", steps: [
+      ], answer: "54cm³",
+        check: "Check the direction: since k=3/2 is bigger than 1, the new volume (54cm³) should be bigger than the original (16cm³), which it is.",
+        structureId: "volume_scale_factor"},
+      { q: "Two similar cylinders have volumes 250cm³ and 2000cm³. Find the length scale factor from the smaller to the larger.",
+        understand: "Since the volume ratio is given rather than the length scale factor, work backwards by taking a cube root of the volume ratio to recover the length scale factor.",
+        steps: [
         "Volume ratio = 2000 ÷ 250 = 8.",
         "Length scale factor k = ∛(volume ratio) = ∛8.",
         "Since 2³ = 8, the cube root of 8 is 2, so k = 2.",
-        "Check: volume scale factor = k³ = 2³ = 8, matching the ratio 2000/250 = 8. ✓",
-      ], answer: "Length scale factor = 2." , structureId: "find_length_scale_from_volume"},
+      ], answer: "Length scale factor = 2.",
+        check: "Check: cubing the recovered scale factor gives 2³=8, matching the original volume ratio 2000/250=8 exactly.",
+        structureId: "find_length_scale_from_volume"},
+      { q: "Two similar solids have length scale factor 5/3. The smaller volume is 81 cm³. Find the larger volume.",
+        understand: "Cube the fractional scale factor first, then multiply the smaller volume by that cubed value, exactly as in example 2.",
+        steps: [
+        "Volume scale factor = k³ = (5/3)³ = 125/27.",
+        "New volume = 81 × 125/27 = 375cm³.",
+      ], answer: "375cm³",
+        check: "Check the direction: since k=5/3 is bigger than 1, the new volume (375cm³) should be bigger than the original (81cm³), which it is.",
+        structureId: "volume_scale_factor"},
     ],
       tryit: { q: "Two similar solids have a length scale factor of 4. The smaller has volume 2cm³. Find the larger's volume.", answer: "128cm³, since 4³ = 64 and 2 × 64 = 128." , structureId: "volume_scale_factor"} },
     { h: "4. Working backwards from area or volume", body: [
       "Sometimes you're given an area ratio or a volume ratio and asked to find the length scale factor instead - this means undoing the squaring or cubing from the last two sections. The square root of a number is the value which, multiplied by itself, gives that number back (so undoing 'squared' means taking a square root). The cube root of a number is the value which, multiplied by itself three times, gives that number back (so undoing 'cubed' means taking a cube root).",
       "So: given an area ratio, take its square root to recover the length scale factor. Given a volume ratio, take its cube root.",
     ], examples: [
-      { q: "Two similar shapes have areas 9cm² and 25cm². Find the scale factor of their lengths.", steps: [
+      { q: "Two similar shapes have areas 9cm² and 25cm². Find the scale factor of their lengths.",
+        understand: "Undo the squaring from section 2 by taking a square root of the area ratio, recovering the length scale factor directly.",
+        steps: [
         "Area ratio = 25/9.",
         "Length scale factor = √(25/9) =\n5/3.",
-      ], answer: "5/3" , structureId: "find_length_scale_from_area"},
-      { q: "Two similar solids have volumes 8cm³ and 125cm³ (a harder version, working back from a volume ratio). Find the scale factor of their lengths.", steps: [
+      ], answer: "5/3",
+        check: "Check: squaring 5/3 gives 25/9, matching the given area ratio exactly.",
+        structureId: "find_length_scale_from_area"},
+      { q: "Two similar solids have volumes 8cm³ and 125cm³ (a harder version, working back from a volume ratio). Find the scale factor of their lengths.",
+        understand: "Undo the cubing from section 3 by taking a cube root of the volume ratio, recovering the length scale factor directly.",
+        steps: [
         "Volume ratio = 125/8.",
         "Length scale factor = ∛(125/8) =\n5/2 (since 5³=125 and 2³=8).",
-      ], answer: "5/2" , structureId: "find_length_scale_from_volume"},
-      { q: "Two similar cones have heights 6cm and 10cm. The larger cone has volume 750cm³. Find the volume of the smaller cone.", steps: [
+      ], answer: "5/2",
+        check: "Check: cubing 5/2 gives 125/8, matching the given volume ratio exactly.",
+        structureId: "find_length_scale_from_volume"},
+      { q: "Two similar cones have heights 6cm and 10cm. The larger cone has volume 750cm³. Find the volume of the smaller cone.",
+        understand: "First find the length scale factor from the given heights, then cube it to get the volume scale factor, and finally divide, rather than multiply, since the larger volume is the one already known.",
+        steps: [
         "Length scale factor from smaller to larger: k = 10 ÷ 6 = 5/3.",
         "Volume scale factor = k³ = (5/3)³ = 125/27.",
         "The larger volume is 125/27 times the smaller volume, so: 750 = (125/27) × V_small.",
         "Solve for V_small: V_small = 750 × (27/125) = 20250 ÷ 125 = 162cm³.",
-        "Check: 162 × (125/27) = 162 × 125 ÷ 27 = 20250 ÷ 27 = 750cm³. ✓",
-      ], answer: "162cm³" , structureId: "reverse_engineer_dimension"},
+      ], answer: "162cm³",
+        check: "Check: 162 × (125/27) = 162 × 125 ÷ 27 = 20250 ÷ 27 = 750cm³, matching the given larger volume exactly.",
+        structureId: "reverse_engineer_dimension"},
+      { q: "Two similar solids have volumes in ratio 343:64. Find their length ratio and surface-area ratio.",
+        understand: "First recover the length ratio by taking a cube root of the volume ratio, exactly as in example 2, then use that length ratio to find the surface-area ratio by squaring it, exactly as in section 2.",
+        steps: [
+        "Cube root the volume ratio to find the length ratio: ∛343=7 and ∛64=4, so the length ratio is 7:4.",
+        "Square the length ratio to find the surface-area ratio: 7²=49 and 4²=16, so the surface-area ratio is 49:16.",
+      ], answer: "Length ratio = 7:4; surface-area ratio = 49:16.",
+        check: "Check by going back the other way: cubing the length ratio 7:4 gives 343:64, matching the original volume ratio, and squaring it gives 49:16, confirming both derived ratios.",
+        structureId: "find_length_scale_from_volume"},
     ],
       tryit: { q: "Two similar shapes have areas 16cm² and 49cm². Find the scale factor of their lengths.", answer: "7/4, since √(49/16) = 7/4 (7²=49, 4²=16)." , structureId: "find_length_scale_from_area"} },
   ],
@@ -2267,86 +2975,166 @@ INTERMEDIATE_LESSONS.circleTheoremsAndTangents = {
       "Angles get named using three letters, like 'angle BAC'. The middle letter always names the corner (vertex) where the angle is actually measured - so 'angle BAC' means the angle sitting at corner A, opening out towards B on one side and C on the other.",
       "The theorem: take any triangle where one side is a diameter of the circle, and the third corner sits anywhere else on the circle's circumference. That triangle is always guaranteed to have a right angle (90°) exactly at that third corner - whichever point on the circle it happens to be.",
     ], examples: [
-      { q: "AB is a diameter of a circle, and C is a point on the circle. Angle BAC = 35°. Find angle ACB and angle ABC.", steps: [
+      { q: "AB is a diameter of a circle, and C is a point on the circle. Angle BAC = 35°. Find angle ACB and angle ABC.",
+        understand: "Apply the angle-in-a-semicircle theorem first, since AB is given as the diameter, then use the angle sum of a triangle for the remaining angle.",
+        steps: [
         "Angle ACB = 90° (angle in a semicircle, since AB is the diameter and C is the third corner).",
         "A triangle's angles always sum to 180°, so angle ABC =\n180 − 90 − 35 =\n55°.",
-      ], answer: "ACB = 90°, ABC = 55°" , structureId: "semicircle_rule"},
-      { q: "AB is a diameter of a circle, and C is a point on the circle. Angle ABC = 52° (a harder version with a different angle given). Find angle ACB and angle BAC.", steps: [
+      ], answer: "ACB = 90°, ABC = 55°",
+        check: "Check the three angles sum to 180°: 90+35+55=180°, confirming the triangle angle sum.",
+        structureId: "semicircle_rule"},
+      { q: "AB is a diameter of a circle, and C is a point on the circle. Angle ABC = 52° (a harder version with a different angle given). Find angle ACB and angle BAC.",
+        understand: "The same two facts apply regardless of which angle is given: the semicircle theorem fixes the right angle, and the triangle angle sum finds the rest.",
+        steps: [
         "Angle ACB = 90° (angle in a semicircle).",
         "A triangle's angles sum to 180°, so angle BAC =\n180 − 90 − 52 =\n38°.",
-      ], answer: "ACB = 90°, BAC = 38°" , structureId: "semicircle_rule"},
-      { q: "AB is a diameter of a circle, and C is a point on the circle. AC = 6cm and BC = 8cm. Find the length of the diameter AB.", steps: [
+      ], answer: "ACB = 90°, BAC = 38°",
+        check: "Check: 90+52+38=180°, confirming the triangle angle sum.",
+        structureId: "semicircle_rule"},
+      { q: "AB is a diameter of a circle, and C is a point on the circle. AC = 6cm and BC = 8cm. Find the length of the diameter AB.",
+        understand: "Since the semicircle theorem guarantees a right angle at C, triangle ACB is right-angled, so Pythagoras' theorem can be applied directly to find the hypotenuse AB.",
+        steps: [
         "Angle ACB = 90° (angle in a semicircle, since AB is the diameter).",
         "Triangle ACB is right-angled at C, so Pythagoras' theorem applies: AB² = AC² + BC².",
         "AB² = 6² + 8² = 36 + 64 = 100.",
         "AB = √100 = 10cm.",
-      ], answer: "AB = 10cm." , structureId: "semicircle_rule"},
+      ], answer: "AB = 10cm.",
+        check: "Check: 6, 8, 10 is a well-known Pythagorean triple, since 6²+8²=36+64=100=10², confirming the calculation.",
+        structureId: "semicircle_rule"},
+      { q: "AB is a diameter and C lies on the circle. If angle CAB is 34°, find angle CBA.",
+        understand: "Apply the angle-in-a-semicircle theorem first to fix the right angle, then use the angle sum of a triangle to find the remaining angle, exactly as in examples 1 and 2.",
+        steps: [
+        "Angle ACB = 90° (angle in a semicircle, since AB is the diameter).",
+        "A triangle's angles sum to 180°, so angle CBA = 180 - 90 - 34 = 56°.",
+      ], answer: "56°",
+        check: "Check the three angles sum correctly: 90+34+56=180°, confirming the triangle angle sum.",
+        structureId: "semicircle_rule"},
     ],
       tryit: { q: "AB is a diameter of a circle, and C is a point on the circle. Angle BAC = 61°. Find angle ABC.", answer: "29°, since angle ACB = 90° (semicircle), and 180 − 90 − 61 = 29." , structureId: "semicircle_rule"} },
     { h: "2. Angle at the centre is TWICE the angle at the circumference", body: [
       "An arc is just a section of the circle's circumference lying between two points on the circle. Suppose P and Q are two points on the circle, marking the ends of an arc. From a third point, you can draw lines to P and Q and measure the angle they make - this is called the angle 'standing on' (or subtended by) that arc. The third point could be the centre O, giving angle POQ, or it could be some other point R on the circumference, giving angle PRQ - both are standing on the same arc PQ, just measured from different places.",
       "The theorem: whenever a centre-angle and a circumference-angle are both standing on the SAME arc, the centre-angle is always exactly double the circumference-angle.",
     ], examples: [
-      { q: "The angle at the centre of a circle standing on arc PQ is 100°. Find the angle at the circumference standing on the same arc.", steps: [
+      { q: "The angle at the centre of a circle standing on arc PQ is 100°. Find the angle at the circumference standing on the same arc.",
+        understand: "Apply the centre-is-double-the-circumference rule, dividing rather than multiplying since the centre angle is the one already known.",
+        steps: [
         "Centre angle = 2 × circumference angle.",
         "100 = 2 × circumference angle, so circumference angle =\n100 ÷ 2 =\n50°.",
-      ], answer: "50°" , structureId: "centre_circumference_rule"},
-      { q: "The angle at the circumference of a circle standing on arc PQ is 38° (a harder version, working the other way round). Find the angle at the centre standing on the same arc.", steps: [
+      ], answer: "50°",
+        check: "Check: doubling the found circumference angle gives 2×50=100°, matching the given centre angle.",
+        structureId: "centre_circumference_rule"},
+      { q: "The angle at the circumference of a circle standing on arc PQ is 38° (a harder version, working the other way round). Find the angle at the centre standing on the same arc.",
+        understand: "The same rule applies working the other way round; multiply the circumference angle by 2 rather than dividing.",
+        steps: [
         "Centre angle = 2 × circumference angle.",
         "Centre angle =\n2 × 38 =\n76°.",
-      ], answer: "76°" , structureId: "centre_circumference_rule"},
-      { q: "O is the centre of a circle. Points A, B and C lie on the circle, with C on the major arc AB. Angle AOB = (4x − 10)° and angle ACB = (x + 20)°. Find x and the size of angle AOB.", steps: [
+      ], answer: "76°",
+        check: "Check: halving the found centre angle gives 76÷2=38°, matching the given circumference angle.",
+        structureId: "centre_circumference_rule"},
+      { q: "O is the centre of a circle. Points A, B and C lie on the circle, with C on the major arc AB. Angle AOB = (4x − 10)° and angle ACB = (x + 20)°. Find x and the size of angle AOB.",
+        understand: "Set up an equation using the centre-is-double-the-circumference rule, with the given algebraic expressions in place of numbers, then solve for x.",
+        steps: [
         "The angle at the centre (AOB) is twice the angle at the circumference (ACB) standing on the same arc: 4x − 10 = 2(x + 20).",
         "Expand the right side: 4x − 10 = 2x + 40.",
         "Subtract 2x from both sides: 2x − 10 = 40, so 2x = 50, giving x = 25.",
         "Angle AOB = 4(25) − 10 = 100 − 10 = 90°.",
-        "Check: angle ACB = 25 + 20 = 45° = 90 ÷ 2. ✓",
-      ], answer: "x = 25; angle AOB = 90°." , structureId: "centre_circumference_algebra"},
+      ], answer: "x = 25; angle AOB = 90°.",
+        check: "Check: angle ACB = 25 + 20 = 45° = 90 ÷ 2, confirming the doubling relationship holds with the solved value of x.",
+        structureId: "centre_circumference_algebra"},
+      { q: "O is the centre of a circle. A, B and C are points on the circle, with C on the minor arc AB (the short way round). The reflex angle AOB, going the long way round through the major arc, is 260°. Find angle ACB.",
+        understand: "When the circumference point sits on the minor arc, the angle it forms actually looks across the major arc, so the centre angle that pairs with it is the reflex angle AOB (the one bigger than 180°), not the ordinary angle AOB used in the earlier examples.",
+        steps: [
+        "Since C is on the minor arc, angle ACB stands on the major arc, so it pairs with the reflex angle AOB rather than the ordinary one.",
+        "Apply the centre-is-double-the-circumference rule using the reflex angle: reflex angle AOB = 2 × angle ACB.",
+        "260 = 2 × angle ACB, so angle ACB = 130°.",
+      ], answer: "130°",
+        check: "Check using the ordinary (non-reflex) angle AOB = 360 - 260 = 100°: a point on the major arc would give an angle of 100÷2=50°, and 130°+50°=180°, confirming these two angles (one from each arc) are supplementary, as they always are for a chord AB with points on opposite arcs.",
+        structureId: "centre_circumference_rule"},
     ],
       tryit: { q: "The angle at the circumference of a circle standing on arc PQ is 47°. Find the angle at the centre standing on the same arc.", answer: "94°, since the centre angle is always double the circumference angle: 2 × 47 = 94." , structureId: "centre_circumference_rule"} },
     { h: "3. Angles in the same segment are equal", body: [
       "A chord is a straight line joining any two points on the circle - unlike a diameter, it doesn't have to pass through the centre. Drawing a chord splits the inside of the circle into two regions, and each region is called a segment (usually one bigger 'major' segment and one smaller 'minor' segment).",
       "'Angles in the same segment' means this: take a chord PQ, then pick two more points that both lie in the SAME one of the two segments, and from each of them draw lines to P and Q. The angle formed at each of those points is always equal to the angle formed at the other one - they don't need the centre at all, just both points sitting on the same side of the chord.",
     ], examples: [
-      { q: "PQ is a chord of a circle. R and S are two points on the circle, both in the same segment (the same side of PQ). Angle PRQ = 40°. Find angle PSQ.", steps: [
+      { q: "PQ is a chord of a circle. R and S are two points on the circle, both in the same segment (the same side of PQ). Angle PRQ = 40°. Find angle PSQ.",
+        understand: "Since R and S are both in the same segment relative to chord PQ, the angles they form with P and Q are guaranteed equal by the theorem, with no further calculation needed.",
+        steps: [
         "Angles PRQ and PSQ both stand on chord PQ from within the same segment, so they must be equal.",
         "Angle PSQ = 40°.",
-      ], answer: "40°" , structureId: "angles_same_segment"},
-      { q: "PQ is a chord of a circle. R and S are two points in the same segment. Angle PRQ = (3x+10)° and angle PSQ = (x+50)° (a harder version using algebra). Find x and the size of the equal angles.", steps: [
+      ], answer: "40°",
+        check: "This is a direct application of the theorem, so the check is simply confirming R and S really are stated to be in the same segment, which they are.",
+        structureId: "angles_same_segment"},
+      { q: "PQ is a chord of a circle. R and S are two points in the same segment. Angle PRQ = (3x+10)° and angle PSQ = (x+50)° (a harder version using algebra). Find x and the size of the equal angles.",
+        understand: "Set the two given expressions equal to each other, since angles in the same segment must be equal, then solve for x.",
+        steps: [
         "Angles in the same segment are equal, so: 3x+10 = x+50.",
         "Subtract x from both sides and subtract 10 from both sides:\n3x+10 = x+50\n2x =\n40, so\nx =\n20.",
-        "Substitute back to find the angle: 3(20)+10 =\n60+10 =\n70°. Check the other expression too: 20+50 =\n70°. Both match.",
-      ], answer: "x = 20, angles = 70°" , structureId: "same_segment_algebra"},
-      { q: "PQ is a chord of a circle. R and S are in the same segment. Angle PRQ = (5y − 10)° and angle PSQ = (3y + 14)°. Find y and the size of each angle.", steps: [
+        "Substitute back to find the angle: 3(20)+10 =\n60+10 =\n70°.",
+      ], answer: "x = 20, angles = 70°",
+        check: "Check the other expression too: 20+50 = 70°, matching.",
+        structureId: "same_segment_algebra"},
+      { q: "PQ is a chord of a circle. R and S are in the same segment. Angle PRQ = (5y − 10)° and angle PSQ = (3y + 14)°. Find y and the size of each angle.",
+        understand: "The same equal-angles equation method applies with different expressions and a different letter.",
+        steps: [
         "Angles in the same segment are equal: 5y − 10 = 3y + 14.",
         "Subtract 3y from both sides: 2y − 10 = 14.",
         "Add 10 to both sides: 2y = 24, so y = 12.",
         "Angle PRQ = 5(12) − 10 = 60 − 10 = 50°.",
-        "Check: angle PSQ = 3(12) + 14 = 36 + 14 = 50°. Both equal. ✓",
-      ], answer: "y = 12; each angle is 50°." , structureId: "same_segment_algebra"},
+      ], answer: "y = 12; each angle is 50°.",
+        check: "Check: angle PSQ = 3(12) + 14 = 36 + 14 = 50°, matching angle PRQ exactly.",
+        structureId: "same_segment_algebra"},
+      { q: "PQ is a chord of a circle. R and S are two points in the same segment, with PR = QR (triangle PQR is isosceles). Angle PRQ = 40°. Find angle PSQ and angle RPQ.",
+        understand: "This combines two separate facts: the same-segment circle theorem gives angle PSQ directly, while the isosceles triangle fact (from the prerequisite lesson) is needed separately to find angle RPQ, since S plays no part in triangle PQR.",
+        steps: [
+        "Angles in the same segment are equal, so angle PSQ = angle PRQ = 40°.",
+        "Triangle PQR is isosceles with PR = QR, so the base angles at P and Q are equal: angle RPQ = angle RQP.",
+        "The three angles of triangle PQR sum to 180°: angle RPQ + angle RQP + 40° = 180°, so 2×angle RPQ = 140°, giving angle RPQ = 70°.",
+      ], answer: "angle PSQ = 40°; angle RPQ = 70°",
+        check: "Check triangle PQR's angles sum correctly: 70+70+40=180°, confirming the isosceles calculation, while angle PSQ=40° is confirmed directly and independently by the same-segment theorem.",
+        structureId: "same_segment_algebra"},
     ],
       tryit: { q: "PQ is a chord of a circle. R and S are two points in the same segment. Angle PRQ = 63°. Find angle PSQ.", answer: "63°, since angles in the same segment are always equal." , structureId: "angles_same_segment"} },
     { h: "4. Cyclic quadrilaterals: opposite angles sum to 180°", body: [
       "A quadrilateral is just a four-sided shape. It's called cyclic when all four of its corners lie exactly on a single circle. Labelling the corners P, Q, R, S in order round the shape, 'opposite angles' means pairs of corners that don't share a side - angle P is opposite angle R, and angle Q is opposite angle S.",
       "The theorem: in any cyclic quadrilateral, each pair of opposite angles always adds up to 180° (they're supplementary).",
     ], examples: [
-      { q: "In cyclic quadrilateral PQRS, angle P = 85°. Find angle R.", steps: [
+      { q: "In cyclic quadrilateral PQRS, angle P = 85°. Find angle R.",
+        understand: "Since P and R are opposite corners in the cyclic quadrilateral PQRS, apply the opposite-angles-sum-to-180° theorem directly.",
+        steps: [
         "Opposite angles of a cyclic quadrilateral sum to 180°.",
         "Angle R =\n180 − 85 =\n95°.",
-      ], answer: "95°" , structureId: "cyclic_quadrilateral"},
-      { q: "In cyclic quadrilateral PQRS, angle Q = (2x+10)° and angle S = (3x−5)° (a harder version using algebra). Find x and both angles.", steps: [
+      ], answer: "95°",
+        check: "Check: 85+95=180°, confirming the opposite angles sum correctly.",
+        structureId: "cyclic_quadrilateral"},
+      { q: "In cyclic quadrilateral PQRS, angle Q = (2x+10)° and angle S = (3x−5)° (a harder version using algebra). Find x and both angles.",
+        understand: "Set up an equation using the opposite-angles-sum-to-180° theorem with the given algebraic expressions, then solve for x.",
+        steps: [
         "Q and S are opposite angles, so they sum to 180°: (2x+10) + (3x−5) = 180.",
         "Simplify the left side:\n2x+10+3x−5 =\n5x+5,\nso 5x+5 = 180.",
         "Subtract 5 then divide by 5:\n5x =\n175, so\nx =\n35.",
-        "Angle Q =\n2(35)+10 =\n80°. Angle S =\n3(35)−5 =\n100°. Check: 80+100 =\n180°.",
-      ], answer: "x = 35, Q = 80°, S = 100°" , structureId: "cyclic_quadrilateral"},
-      { q: "ABCD is a cyclic quadrilateral. Angle A = (2p)° and angle C = (p + 30)°. Find p, and state the sizes of angles A and C.", steps: [
+        "Angle Q =\n2(35)+10 =\n80°. Angle S =\n3(35)−5 =\n100°.",
+      ], answer: "x = 35, Q = 80°, S = 100°",
+        check: "Check: 80+100=180°, confirming the opposite angles sum correctly at the solved value of x.",
+        structureId: "cyclic_quadrilateral"},
+      { q: "ABCD is a cyclic quadrilateral. Angle A = (2p)° and angle C = (p + 30)°. Find p, and state the sizes of angles A and C.",
+        understand: "The same opposite-angles equation method applies with a different pair of opposite corners and a different letter.",
+        steps: [
         "Opposite angles of a cyclic quadrilateral sum to 180°: angle A + angle C = 180°.",
         "2p + (p + 30) = 180.",
         "3p + 30 = 180, so 3p = 150, giving p = 50.",
         "Angle A = 2(50) = 100°. Angle C = 50 + 30 = 80°.",
-        "Check: 100 + 80 = 180. ✓",
-      ], answer: "p = 50; angle A = 100°, angle C = 80°." , structureId: "cyclic_quadrilateral"},
+      ], answer: "p = 50; angle A = 100°, angle C = 80°.",
+        check: "Check: 100+80=180°, confirming the opposite angles sum correctly at the solved value of p.",
+        structureId: "cyclic_quadrilateral"},
+      { q: "A quadrilateral WXYZ has angle W = 95°, angle X = 100°, angle Y = 85° and angle Z = 80°. Could all four vertices lie on a single circle? Justify your answer.",
+        understand: "Use the reverse form of the cyclic quadrilateral theorem: if a quadrilateral's opposite angles do not sum to 180°, its four vertices cannot all lie on one circle, since every genuine cyclic quadrilateral must satisfy that condition.",
+        steps: [
+        "Identify the two pairs of opposite angles: W & Y, and X & Z.",
+        "Check W + Y: 95 + 85 = 180°. This pair satisfies the cyclic condition.",
+        "Check X + Z: 100 + 80 = 180°. This pair also satisfies the cyclic condition.",
+      ], answer: "Yes, WXYZ could be a cyclic quadrilateral, since both pairs of opposite angles sum to exactly 180°.",
+        check: "Check the total: all four angles together must sum to 360° for any quadrilateral, and 95+100+85+80=360°, confirming the angle values are at least consistent with being a genuine quadrilateral before checking the cyclic condition specifically.",
+        structureId: "cyclic_quadrilateral"},
     ],
       tryit: { q: "In cyclic quadrilateral PQRS, angle P = 112°. Find angle R.", answer: "68°, since 180 − 112 = 68." , structureId: "cyclic_quadrilateral"} },
     { h: "5. Tangent-radius: always perpendicular", body: [
@@ -2355,24 +3143,97 @@ INTERMEDIATE_LESSONS.circleTheoremsAndTangents = {
       "Fact 2: if you pick a point outside the circle (an external point) and draw the two possible tangent lines from it to the circle, those two tangent lines are always exactly equal in length.",
       "Because fact 1 guarantees a right angle, any triangle built from a tangent, a radius, and the line joining the centre to an external point is right-angled - which means Pythagoras' theorem (the one covered in the Pythagoras lesson) can be used directly to find a missing length in it.",
     ], examples: [
-      { q: "A tangent touches a circle at point T. The radius OT is drawn, and a line from the external point A to T makes angle OTA. What is angle OTA?", steps: [
+      { q: "A tangent touches a circle at point T. The radius OT is drawn, and a line from the external point A to T makes angle OTA. What is angle OTA?",
+        understand: "Apply fact 1 directly: a tangent always meets the radius drawn to its point of contact at exactly 90°.",
+        steps: [
         "The tangent meets the radius at exactly 90° (fact 1).",
         "Angle OTA = 90°.",
-      ], answer: "90°" , structureId: "tangent_radius_right_angle"},
-      { q: "A circle has centre O and radius 5cm. From external point A, a tangent touches the circle at T, with AT = 12cm (a harder version combining both tangent facts with Pythagoras). Find the distance OA, and state the length of the other tangent from A, which touches the circle at S.", steps: [
+      ], answer: "90°",
+        check: "This is a direct statement of fact 1, true regardless of where T or A happen to sit, as long as OT is a radius and TA lies along the tangent.",
+        structureId: "tangent_radius_right_angle"},
+      { q: "A circle has centre O and radius 5cm. From external point A, a tangent touches the circle at T, with AT = 12cm (a harder version combining both tangent facts with Pythagoras). Find the distance OA, and state the length of the other tangent from A, which touches the circle at S.",
+        understand: "Fact 1 guarantees a right angle at T, so Pythagoras' theorem applies to triangle OTA to find OA; fact 2 then gives the other tangent length without any further calculation.",
+        steps: [
         "Angle OTA = 90° (fact 1), so triangle OTA is right-angled at T, with OA as its hypotenuse.",
         "Apply Pythagoras' theorem:\nOA² =\nOT² + AT² =\n5² + 12² =\n25 + 144 =\n169.",
         "OA =\n√169 =\n13cm.",
         "By fact 2, the two tangents from the same external point A are equal in length, so AS = AT =\n12cm.",
-      ], answer: "OA = 13cm, AS = 12cm" , structureId: "tangent_length_from_point"},
-      { q: "From an external point P, two tangents PA and PB touch a circle with centre O. Angle APB = 40°. Find angle AOB.", steps: [
+      ], answer: "OA = 13cm, AS = 12cm",
+        check: "5, 12, 13 is a well-known Pythagorean triple, since 5²+12²=25+144=169=13², confirming the calculation.",
+        structureId: "tangent_length_from_point"},
+      { q: "From an external point P, two tangents PA and PB touch a circle with centre O. Angle APB = 40°. Find angle AOB.",
+        understand: "Both tangent-radius angles in quadrilateral OAPB are 90° by fact 1, so use the fact that a quadrilateral's four interior angles sum to 360° to find the remaining angle.",
+        steps: [
         "The tangent-radius theorem gives angle OAP = 90° (tangent PA is perpendicular to radius OA). Similarly angle OBP = 90°.",
         "In quadrilateral OAPB, all four interior angles sum to 360°.",
         "Angle AOB = 360 − angle OAP − angle OBP − angle APB = 360 − 90 − 90 − 40 = 140°.",
-        "Note: this works because OAPB is a quadrilateral with two right angles at A and B, whose remaining angles (at O and P) must together make up the remaining 360 − 180 = 180°. Since angle P = 40°, angle O = 140°.",
-      ], answer: "Angle AOB = 140°." , structureId: "two_tangents_quadrilateral_angle"},
+      ], answer: "Angle AOB = 140°.",
+        check: "Check all four angles of quadrilateral OAPB sum to 360°: 90+90+40+140=360°, confirming the calculation.",
+        structureId: "two_tangents_quadrilateral_angle"},
+      { q: "From external point P, tangents PA and PB touch a circle at A and B. If PA = 3x + 2 and PB = 5x - 12, find x and the tangent length.",
+        understand: "Use fact 2, that two tangents from the same external point are always equal in length, to set up an equation between the two given expressions, then solve for x.",
+        steps: [
+        "Since PA and PB are both tangents from the same external point P, they must be equal: 3x + 2 = 5x - 12.",
+        "Rearrange: 2 + 12 = 5x - 3x, so 14 = 2x, giving x = 7.",
+        "Substitute back to find the tangent length: PA = 3(7) + 2 = 23.",
+      ], answer: "x = 7; tangent length = 23",
+        check: "Check using the other expression: PB = 5(7) - 12 = 35 - 12 = 23, matching PA exactly, confirming both tangents really are equal.",
+        structureId: "tangent_length_from_point"},
     ],
       tryit: { q: "A circle has centre O and radius 3cm. From external point B, a tangent touches the circle at T, with BT = 4cm. Find OB.", answer: "5cm, since angle OTB = 90° gives OB² = 3² + 4² = 9 + 16 = 25, so OB = √25 = 5." , structureId: "tangent_length_from_point"} },
+    { h: "6. Sector area and arc length", body: [
+      "A sector is the 'pie slice' of a circle cut out by two radii and the arc between them, named after the angle it makes at the centre. A full turn all the way round the centre is 360°, so a sector's angle is always some fraction of that full 360°, and that same fraction applies to everything else about the sector: its share of the circumference, and its share of the whole circle's area.",
+      "The full circumference of a circle is 2πr (already met when finding a cylinder's curved surface area). An arc is simply the fraction of that full circumference matching the sector's own angle out of 360°. For a circle of radius 8cm with a 90° sector, the full circumference is 2 × 3.14 × 8 = 50.24cm, and since 90° is a quarter of 360°, the arc is a quarter of that: 50.24 ÷ 4 = 12.56cm.",
+      "The same fraction idea gives the sector's area, using the full circle's area πr² in place of the circumference. For a circle of radius 9cm with a 120° sector: the full circle's area is 3.14 × 81 = 254.34cm², and since 120° is a third of 360°, the sector's area is a third of that: 254.34 ÷ 3 = 84.78cm².",
+      "The perimeter of a sector is not the arc alone: it is the arc plus the two straight radii bounding it on either side, since those two straight edges are just as much a part of the sector's boundary as the curved one. Forgetting them is the single most common mistake with this topic.",
+      "Both formulas can be rearranged to work backwards: given the arc length and the radius, divide the arc by the full circumference and multiply by 360 to recover the angle; given the sector area and the angle, divide by (angle/360) × π and take a square root to recover the radius."
+    ], examples: [
+      {
+        q: "A sector of a circle with radius 6cm has an angle of 90° at the centre. Find the length of its arc (use π ≈ 3.14).",
+        understand: "The arc is the same fraction of the full circumference (2πr) as the sector's angle is of 360°.",
+        steps: [
+          "Full circumference = 2 × 3.14 × 6 = 37.68cm.",
+          "90° is a quarter of 360°, so the arc is a quarter of the circumference: 37.68 ÷ 4 = 9.42cm."
+        ],
+        answer: "9.42cm",
+        check: "Check the fraction is right: 90 ÷ 360 = ¼, and a quarter of 37.68 is indeed 9.42.",
+        structureId: "arc_length_basic"
+      },
+      {
+        q: "A sector of a circle with radius 9cm has an angle of 120° at the centre. Find its area (use π ≈ 3.14).",
+        understand: "The sector's area is the same fraction of the full circle's area (πr²) as its angle is of 360°.",
+        steps: [
+          "Full circle area = 3.14 × 9² = 3.14 × 81 = 254.34cm².",
+          "120° is a third of 360°, so the sector's area is a third of the full area: 254.34 ÷ 3 = 84.78cm²."
+        ],
+        answer: "84.78cm²",
+        check: "Check the fraction is right: 120 ÷ 360 = ⅓, and a third of 254.34 is indeed 84.78.",
+        structureId: "sector_area_basic"
+      },
+      {
+        q: "A sector of a circle with radius 4cm has an angle of 45° at the centre. Find the perimeter of the sector (use π ≈ 3.14).",
+        understand: "The perimeter needs the arc length plus the two straight radii either side of it, not the arc by itself.",
+        steps: [
+          "Arc length = (45/360) × 2 × 3.14 × 4 = ⅛ × 25.12 = 3.14cm.",
+          "Perimeter = arc + 2 radii = 3.14 + (2 × 4) = 3.14 + 8 = 11.14cm."
+        ],
+        answer: "11.14cm",
+        check: "A common mistake is forgetting the two straight radii and giving only the arc length (3.14cm) as the whole perimeter.",
+        structureId: "sector_perimeter"
+      },
+      {
+        q: "A sector of a circle with radius 10cm has an arc length of 47.1cm (use π ≈ 3.14). Find the angle at the centre.",
+        understand: "Rearrange the arc-length method backwards: find what fraction the arc is of the full circumference, then convert that fraction into an angle out of 360°.",
+        steps: [
+          "Full circumference = 2 × 3.14 × 10 = 62.8cm.",
+          "The arc is 47.1 ÷ 62.8 = 0.75 of the full circumference.",
+          "0.75 × 360° = 270°."
+        ],
+        answer: "270°",
+        check: "Check: (270/360) × 62.8 = 0.75 × 62.8 = 47.1cm, matching the given arc length.",
+        structureId: "reverse_find_angle_from_arc"
+      }
+    ] },
   ],
 };
 
@@ -2388,20 +3249,39 @@ INTERMEDIATE_LESSONS.trigonometryAdvanced = {
       "Sin, cos and tan are just names for three particular ratios (fractions) between these sides: sin(angle) = opposite ÷ hypotenuse, cos(angle) = adjacent ÷ hypotenuse, tan(angle) = opposite ÷ adjacent. SOHCAHTOA is simply a memory aid built from the first letters of those three lines (Sin-Opposite-Hypotenuse, Cos-Adjacent-Hypotenuse, Tan-Opposite-Adjacent) - it isn't new maths, just a way to remember the three ratios above.",
       "Used forwards, if you know an angle and one side, rearrange the matching ratio to find another side. Used backwards, if you know two sides, you can find the angle: for instance if tan(angle) = 0.75, 'undo' the tan using the inverse tan function on a calculator, written tan⁻¹, so angle = tan⁻¹(0.75). The same idea works with sin⁻¹ and cos⁻¹.",
     ], examples: [
-      { q: "A right-angled triangle has hypotenuse 10cm and one angle of 30°. Find the side opposite that angle.", steps: [
+      { q: "A right-angled triangle has hypotenuse 10cm and one angle of 30°. Find the side opposite that angle.",
+        understand: "Identify which two sides are involved (opposite and hypotenuse), then choose sin since SOHCAHTOA pairs sin with exactly those two sides.",
+        steps: [
         "sin(angle) = opposite ÷ hypotenuse, so rearranged: opposite = hypotenuse × sin(angle).",
         "Opposite =\n10 × sin(30°) =\n10 × 0.5 =\n5cm.",
-      ], answer: "5cm" , structureId: "sohcahtoa_find_side"},
-      { q: "A right-angled triangle has an opposite side of 7cm and an adjacent side of 9cm (a harder version, finding the angle instead of a side). Find the angle between the hypotenuse and the adjacent side.", steps: [
+      ], answer: "5cm",
+        check: "Check the answer is smaller than the hypotenuse, as it must be, since the opposite side can never exceed the hypotenuse in a right-angled triangle, and 5cm < 10cm confirms this.",
+        structureId: "sohcahtoa_find_side"},
+      { q: "A right-angled triangle has an opposite side of 7cm and an adjacent side of 9cm (a harder version, finding the angle instead of a side). Find the angle between the hypotenuse and the adjacent side.",
+        understand: "Identify which two sides are involved (opposite and adjacent), then choose tan since SOHCAHTOA pairs tan with exactly those two sides, and use the inverse function to undo it.",
+        steps: [
         "tan(angle) = opposite ÷ adjacent, so:\ntan(angle) =\n7 ÷ 9 ≈\n0.778.",
         "Undo the tan using the inverse function on a calculator:\nangle =\ntan⁻¹(0.778) ≈\n37.9°.",
-      ], answer: "≈37.9°" , structureId: "sohcahtoa_find_angle"},
-      { q: "A ladder of length 5m leans against a vertical wall. The foot of the ladder is 3m from the base of the wall. Find the angle the ladder makes with the ground.", steps: [
+      ], answer: "≈37.9°",
+        check: "Check the angle is less than 45°, since the adjacent side (9cm) is longer than the opposite side (7cm), and ≈37.9° being under 45° is consistent with that.",
+        structureId: "sohcahtoa_find_angle"},
+      { q: "A ladder of length 5m leans against a vertical wall. The foot of the ladder is 3m from the base of the wall. Find the angle the ladder makes with the ground.",
+        understand: "Identify which sides are given relative to the angle at the ground: the foot-to-wall distance is adjacent, and the ladder itself is the hypotenuse, so cosine is the matching ratio.",
+        steps: [
         "Label the sides relative to the angle at the ground (θ): the foot-to-wall distance (3m) is the adjacent side, and the ladder (5m) is the hypotenuse.",
         "Use cosine: cos(θ) = adjacent ÷ hypotenuse = 3 ÷ 5 = 0.6.",
         "Undo the cosine: θ = cos⁻¹(0.6) ≈ 53.1°.",
-        "Check: the vertical height = √(5² − 3²) = √16 = 4m. Using sin(θ) = 4/5 = 0.8, so θ = sin⁻¹(0.8) ≈ 53.1°. ✓",
-      ], answer: "≈53.1°." , structureId: "sohcahtoa_find_angle"},
+      ], answer: "≈53.1°.",
+        check: "Cross-check using a completely different ratio: find the height via Pythagoras (√(5² − 3²) = √16 = 4m), then use sin(θ) = 4/5 = 0.8, giving θ = sin⁻¹(0.8) ≈ 53.1°, matching the cosine-based answer exactly.",
+        structureId: "sohcahtoa_find_angle"},
+      { q: "A right-angled triangle has hypotenuse 13 cm and an angle of 38°. Find the side opposite the 38° angle.",
+        understand: "Identify which two sides are involved (opposite and hypotenuse), then choose sin, exactly as in example 1.",
+        steps: [
+        "sin(angle) = opposite ÷ hypotenuse, so rearranged: opposite = hypotenuse × sin(angle).",
+        "Opposite = 13 × sin(38°) ≈ 13 × 0.6157 ≈ 8.00cm.",
+      ], answer: "≈8.00cm",
+        check: "Check the answer is smaller than the hypotenuse, as it must be: 8.00cm < 13cm confirms this.",
+        structureId: "sohcahtoa_find_side"},
     ],
       tryit: { q: "A right-angled triangle has an adjacent side of 12cm and an angle of 25° next to it. Find the hypotenuse.", answer: "≈13.2cm, since cos(25°) = adjacent ÷ hypotenuse, so hypotenuse = 12 ÷ cos(25°) = 12 ÷ 0.906 ≈ 13.2cm." , structureId: "sohcahtoa_find_side"} },
     { h: "2. The sine rule: a/sin A = b/sin B = c/sin C", body: [
@@ -2409,23 +3289,40 @@ INTERMEDIATE_LESSONS.trigonometryAdvanced = {
       "The sine rule says the ratio (side) ÷ sin(its opposite angle) comes out the SAME no matter which of the three pairs you pick - a strikingly similar idea to the constant scale factor between similar shapes covered earlier: there, one constant ratio linked every pair of matching lengths; here, one constant ratio links every side to the sine of its opposite angle, within a single triangle.",
       "Use the sine rule when you know a side and its opposite angle, plus one more side or angle to complete the picture.",
     ], examples: [
-      { q: "In triangle ABC, a = 8cm, angle A = 40°, angle B = 60°. Find side b.", steps: [
+      { q: "In triangle ABC, a = 8cm, angle A = 40°, angle B = 60°. Find side b.",
+        understand: "Set up the sine rule using the two complete side-angle pairs involved (a with A, b with B), then rearrange to make the unknown side the subject.",
+        steps: [
         "Use a/sin A = b/sin B:\n8/sin(40°) =\nb/sin(60°).",
         "Rearrange to make b the subject:\nb =\n8 × sin(60°) ÷ sin(40°) ≈\n8 × 0.866 ÷ 0.643 ≈\n10.8cm.",
-      ], answer: "≈10.8cm" , structureId: "sine_rule_find_side"},
-      { q: "In triangle ABC, a = 10cm, angle A = 35°, c = 14cm (a harder version, finding an angle rather than a side). Find angle C.", steps: [
+      ], answer: "≈10.8cm",
+        check: "Check the size makes sense: angle B (60°) is bigger than angle A (40°), so side b should be longer than side a (8cm), and 10.8cm > 8cm confirms this.",
+        structureId: "sine_rule_find_side"},
+      { q: "In triangle ABC, a = 10cm, angle A = 35°, c = 14cm (a harder version, finding an angle rather than a side). Find angle C.",
+        understand: "Set up the sine rule using the two complete side-angle pairs involved (a with A, c with C), rearranged to make sin C the subject, then undo the sine with the inverse function.",
+        steps: [
         "Use a/sin A = c/sin C, rearranged to make sin C the subject:\nsin C =\nc × sin A ÷ a.",
         "Substitute the numbers:\nsin C =\n14 × sin(35°) ÷ 10 ≈\n14 × 0.574 ÷ 10 ≈\n0.803.",
         "Undo the sin using the inverse function:\nC =\nsin⁻¹(0.803) ≈\n53.4°.",
-        "Quick sanity check: A + C ≈ 35 + 53.4 = 88.4°, comfortably under 180°, so this angle fits inside a real triangle.",
-      ], answer: "≈53.4°" , structureId: "sine_rule_find_angle"},
-      { q: "In triangle PQR, angle P = 45°, angle Q = 75°, and side p (opposite angle P) = 10cm. Find side q.", steps: [
-        "Find the third angle first: angle R = 180 − 45 − 75 = 60°.",
+      ], answer: "≈53.4°",
+        check: "Quick sanity check: A + C ≈ 35 + 53.4 = 88.4°, comfortably under 180°, so this angle fits inside a real triangle.",
+        structureId: "sine_rule_find_angle"},
+      { q: "In triangle PQR, angle P = 45°, angle Q = 75°, and side p (opposite angle P) = 10cm. Find side q.",
+        understand: "Angle R isn't actually needed here, since P and Q already form a complete side-angle pair with Q; set up the sine rule directly using p with P and q with Q.",
+        steps: [
         "Apply the sine rule: p / sin P = q / sin Q.",
         "10 / sin(45°) = q / sin(75°).",
         "Rearrange: q = 10 × sin(75°) ÷ sin(45°) ≈ 10 × 0.9659 ÷ 0.7071 ≈ 13.66cm.",
-        "So q ≈ 13.7cm (3 significant figures).",
-      ], answer: "q ≈ 13.7cm." , structureId: "sine_rule_find_side"},
+      ], answer: "q ≈ 13.7cm.",
+        check: "Check the size makes sense: angle Q (75°) is bigger than angle P (45°), so side q should be longer than side p (10cm), and 13.7cm > 10cm confirms this.",
+        structureId: "sine_rule_find_side"},
+      { q: "In triangle ABC, a = 9 cm, angle A = 42° and angle B = 71°. Find side b.",
+        understand: "Set up the sine rule using the two complete side-angle pairs involved (a with A, b with B), exactly as in example 1.",
+        steps: [
+        "Use a/sin A = b/sin B: 9/sin(42°) = b/sin(71°).",
+        "Rearrange to make b the subject: b = 9 × sin(71°) ÷ sin(42°) ≈ 9 × 0.9455 ÷ 0.6691 ≈ 12.7cm.",
+      ], answer: "≈12.7cm",
+        check: "Check the size makes sense: angle B (71°) is bigger than angle A (42°), so side b should be longer than side a (9cm), and 12.7cm > 9cm confirms this.",
+        structureId: "sine_rule_find_side"},
     ],
       tryit: { q: "In triangle ABC, angle A = 50°, a = 9cm, angle B = 70°. Find side b.", answer: "≈11.0cm, since b = a × sin B ÷ sin A = 9 × sin(70°) ÷ sin(50°) ≈ 9 × 0.940 ÷ 0.766 ≈ 11.0cm." , structureId: "sine_rule_find_side"} },
     { h: "3. The cosine rule: a² = b² + c² − 2bc cos A", body: [
@@ -2433,46 +3330,124 @@ INTERMEDIATE_LESSONS.trigonometryAdvanced = {
       "There's a link back to Pythagoras' theorem here: if angle A happens to be exactly 90°, then cos(90°) = 0, so the last term vanishes and the formula becomes a² = b² + c² - exactly Pythagoras' theorem. The cosine rule is really Pythagoras' theorem extended to work for ANY angle, not just a right angle.",
       "Use the cosine rule to find a missing side when you know two sides and the included angle between them, as in the formula above. To find a missing ANGLE instead, when all three sides are known, rearrange the formula to make cos A the subject:\ncos A =\n(b² + c² − a²) ÷ (2bc),\nthen undo the cos with cos⁻¹.",
     ], examples: [
-      { q: "Two sides of a triangle are 7cm and 9cm, with an included angle of 50°. Find the third side.", steps: [
+      { q: "Two sides of a triangle are 7cm and 9cm, with an included angle of 50°. Find the third side.",
+        understand: "Identify the two given sides and their included angle, then substitute directly into the cosine rule formula to find the third side.",
+        steps: [
         "Use a² = b² + c² − 2bc cos A with b=7, c=9, A=50°:\na² =\n7² + 9² − 2(7)(9)cos(50°) =\n49 + 81 − 126×0.643.",
         "Work out the last term:\n126 × 0.643 ≈\n81.0, so\na² ≈\n49 + 81 − 81.0 =\n49.0.",
         "a ≈\n√49.0 ≈\n7.0cm.",
-      ], answer: "≈7.0cm" , structureId: "cosine_rule_find_side"},
-      { q: "A triangle has sides a=5cm, b=7cm, c=8cm (a harder version, finding an angle from three known sides). Find angle A.", steps: [
+      ], answer: "≈7.0cm",
+        check: "Check the size is reasonable: the third side (≈7.0cm) is between the difference (9-7=2) and the sum (9+7=16) of the other two sides, as any valid triangle side must be.",
+        structureId: "cosine_rule_find_side"},
+      { q: "A triangle has sides a=5cm, b=7cm, c=8cm (a harder version, finding an angle from three known sides). Find angle A.",
+        understand: "Since all three sides are known but no angle, use the rearranged form of the cosine rule (solved for cos A) rather than the original form.",
+        steps: [
         "Use the rearranged cosine rule:\ncos A =\n(b² + c² − a²) ÷ (2bc) =\n(7² + 8² − 5²) ÷ (2×7×8).",
         "Work out the top and bottom separately:\ntop =\n49 + 64 − 25 =\n88.\nbottom =\n2×7×8 =\n112.",
         "cos A =\n88 ÷ 112 ≈\n0.786.",
         "Undo the cos using the inverse function:\nA =\ncos⁻¹(0.786) ≈\n38.2°.",
-      ], answer: "≈38.2°" , structureId: "cosine_rule_find_angle"},
-      { q: "A triangle has sides of 6cm, 8cm and 11cm. Find the size of the largest angle.", steps: [
+      ], answer: "≈38.2°",
+        check: "Check the angle is less than 90° (acute), consistent with the positive cosine value (0.786) found above.",
+        structureId: "cosine_rule_find_angle"},
+      { q: "A triangle has sides of 6cm, 8cm and 11cm. Find the size of the largest angle.",
+        understand: "The largest angle in any triangle is always opposite the longest side, so label the longest side as a before applying the rearranged cosine rule.",
+        steps: [
         "The largest angle is opposite the longest side. Label a = 11, b = 6, c = 8 (so angle A is what we want).",
         "Use the rearranged cosine rule: cos A = (b² + c² − a²) ÷ (2bc) = (36 + 64 − 121) ÷ (2 × 6 × 8).",
         "Numerator: 36 + 64 − 121 = −21. Denominator: 96.",
         "cos A = −21 ÷ 96 ≈ −0.219.",
-        "A = cos⁻¹(−0.219) ≈ 102.6°. The negative cosine confirms the angle is obtuse (greater than 90°), as expected for the longest side.",
-      ], answer: "≈102.6°." , structureId: "cosine_rule_find_angle"},
+      ], answer: "≈102.6°.",
+        check: "The negative cosine value confirms the angle is obtuse (greater than 90°), which is expected for the angle opposite the longest side in this triangle.",
+        structureId: "cosine_rule_find_angle"},
+      { q: "Two sides of a triangle are 8 cm and 11 cm, and the angle between them is 57°. Find the third side.",
+        understand: "Identify the two given sides and their included angle, then substitute directly into the cosine rule formula, exactly as in example 1.",
+        steps: [
+        "Use a² = b² + c² − 2bc cos A with b=8, c=11, A=57°: a² = 8² + 11² − 2(8)(11)cos(57°) = 64 + 121 − 176×0.5446.",
+        "Work out the last term: 176 × 0.5446 ≈ 95.9, so a² ≈ 64 + 121 − 95.9 = 89.1.",
+        "a ≈ √89.1 ≈ 9.44cm.",
+      ], answer: "≈9.44cm",
+        check: "Check the size is reasonable: the third side (≈9.44cm) is between the difference (11-8=3) and the sum (11+8=19) of the other two sides, as any valid triangle side must be.",
+        structureId: "cosine_rule_find_side"},
     ],
       tryit: { q: "Two sides of a triangle are 4cm and 5cm, with an included angle of 70°. Find the third side.", answer: "≈5.2cm, since a² = 4² + 5² − 2(4)(5)cos(70°) = 16 + 25 − 40×0.342 ≈ 27.3, so a ≈ √27.3 ≈ 5.2cm." , structureId: "cosine_rule_find_side"} },
     { h: "4. Area of any triangle: ½ab sin C", body: [
       "This formula finds a triangle's area directly from two sides and their included angle (the angle sandwiched between them, same meaning as in the cosine rule) - no height measurement needed.",
       "One thing worth noticing: sin stays positive for every angle between 0° and 180°, including obtuse angles (bigger than 90°), so this formula keeps giving a sensible positive area even when the included angle is obtuse.",
     ], examples: [
-      { q: "A triangle has two sides of 6cm and 8cm with an included angle of 45°. Find its area.", steps: [
+      { q: "A triangle has two sides of 6cm and 8cm with an included angle of 45°. Find its area.",
+        understand: "Identify the two given sides and their included angle, then substitute directly into the ½ab sin C formula.",
+        steps: [
         "Area = ½ × 6 × 8 × sin(45°).",
         "Area =\n24 × 0.707 ≈\n17.0cm².",
-      ], answer: "≈17.0cm²" , structureId: "area_half_ab_sinc"},
-      { q: "A triangle has two sides of 10cm and 13cm with an included angle of 110° (a harder version with an obtuse included angle). Find its area.", steps: [
+      ], answer: "≈17.0cm²",
+        check: "Check by comparing with the maximum possible area for these two sides, reached when the included angle is 90°: ½×6×8=24cm², and 17.0cm² is sensibly less than that, since 45° gives a smaller sine than 90° does.",
+        structureId: "area_half_ab_sinc"},
+      { q: "A triangle has two sides of 10cm and 13cm with an included angle of 110° (a harder version with an obtuse included angle). Find its area.",
+        understand: "The same formula applies even when the included angle is obtuse, since sine stays positive for every angle between 0° and 180°.",
+        steps: [
         "Area = ½ × 10 × 13 × sin(110°).",
         "Area =\n65 × 0.940 ≈\n61.1cm².",
-      ], answer: "≈61.1cm²" , structureId: "area_half_ab_sinc"},
-      { q: "A triangle has area 30cm² and two sides of length 10cm and 8cm. Find the included angle between those two sides.", steps: [
+      ], answer: "≈61.1cm²",
+        check: "Check the sine value itself: sin(110°) = sin(180°−110°) = sin(70°) ≈ 0.940, a positive value, confirming the area calculation is valid despite the obtuse angle.",
+        structureId: "area_half_ab_sinc"},
+      { q: "A triangle has area 30cm² and two sides of length 10cm and 8cm. Find the included angle between those two sides.",
+        understand: "Since the area and two sides are given rather than the angle, rearrange the ½ab sin C formula to make sin C the subject before using the inverse sine function.",
+        steps: [
         "Area = ½ × a × b × sin C, so: 30 = ½ × 10 × 8 × sin C = 40 sin C.",
         "sin C = 30 ÷ 40 = 0.75.",
         "C = sin⁻¹(0.75) ≈ 48.6°.",
-        "Note: sin is positive in both the first and second quadrant, so C could also be 180 − 48.6 = 131.4°. Both are valid angles for a triangle (since 131.4° leaves room for the other two angles to sum to under 48.6°), but in an exam context the acute solution is typically expected unless otherwise indicated.",
-      ], answer: "≈48.6° (or 131.4° if an obtuse angle is allowed)." , structureId: "area_half_ab_sinc"},
+      ], answer: "≈48.6° (or 131.4° if an obtuse angle is allowed).",
+        check: "Check both candidate angles give the same area: sin(131.4°) = sin(48.6°), so ½×10×8×sin(131.4°) gives the same 30cm² as the acute solution, confirming why both are mathematically valid.",
+        structureId: "area_half_ab_sinc"},
+      { q: "A triangular field has sides 18 m and 25 m with an included angle of 64°. Find its area.",
+        understand: "Identify the two given sides and their included angle, then substitute directly into the ½ab sin C formula, exactly as in example 1.",
+        steps: [
+        "Area = ½ × 18 × 25 × sin(64°).",
+        "Area = 225 × 0.8988 ≈ 202.2 m².",
+      ], answer: "≈202.2 m²",
+        check: "Check by comparing with the maximum possible area for these two sides, reached when the included angle is 90°: ½×18×25=225m², and 202.2m² is sensibly less than that, since 64° gives a smaller sine than 90° does.",
+        structureId: "area_half_ab_sinc"},
     ],
       tryit: { q: "A triangle has two sides of 5cm and 6cm with an included angle of 60°. Find its area.", answer: "≈13.0cm², since area = ½ × 5 × 6 × sin(60°) = 15 × 0.866 ≈ 13.0cm²." , structureId: "area_half_ab_sinc"} },
+    { h: "5. Bearings", body: [
+      "A bearing describes a direction of travel as an angle measured clockwise from north, always written using three figures, so 30° is written 030° and 5° is written 005°. Three figures are used purely so a bearing can never be mistaken for a two-figure or one-figure number: 070° always means seventy degrees clockwise from north, never seven.",
+      "Any journey on a bearing can be split into two parts: how far north (or south) it moves, and how far east (or west) it moves. These two distances form the two shorter sides of a right-angled triangle, with the actual distance travelled as the hypotenuse and the bearing itself as the angle measured from the north line. That means the SOHCAHTOA ratios from section 1 apply directly: the northward distance is adjacent to the bearing angle, so it equals distance × cos(bearing); the eastward distance is opposite the bearing angle, so it equals distance × sin(bearing).",
+      "Try this concretely: a ship sails 10 km on a bearing of 030°. The northward distance is 10 × cos(30°) ≈ 8.7 km, and the eastward distance is 10 × sin(30°) ≈ 5.0 km. Sketching a small right-angled triangle with north pointing up, the bearing angle at the top, and the sailed distance as the sloped side, makes it easy to see which ratio to use.",
+      "A return bearing (the direction needed to travel straight back) is always found by adding or subtracting 180° from the outward bearing, since travelling directly back reverses the direction exactly, and reversing a direction always means turning through a straight line (180°). Add 180° when the outward bearing is 180° or less, so the result stays under 360°; subtract 180° instead when the outward bearing is more than 180°, since adding would otherwise push the result past 360°."
+    ], examples: [
+      { q: "A ship sails 10 km on a bearing of 030° from a port. Find how far north of the port the ship now is.",
+        understand: "A bearing creates a right-angled triangle against the north direction, with the travelled distance as hypotenuse; the northward distance is the side adjacent to the bearing angle, found using cos.",
+        steps: [
+          "North distance = distance × cos(bearing) = 10 × cos(30°).",
+          "10 × 0.8660 ≈ 8.7 km.",
+        ], answer: "≈8.7 km",
+        check: "Check: since 30° is less than 45°, more of the distance should lie in the northward direction than the eastward direction, and cos(30°) > sin(30°) confirms this.",
+        structureId: "bearings_basic" },
+      { q: "A plane flies 20 km on a bearing of 040° from an airport. Find how far east of the airport the plane now is.",
+        understand: "The eastward distance is the side opposite the bearing angle in the same right-angled triangle against north, found using sin.",
+        steps: [
+          "East distance = distance × sin(bearing) = 20 × sin(40°).",
+          "20 × 0.6428 ≈ 12.9 km.",
+        ], answer: "≈12.9 km",
+        check: "Check: 12.9 km is less than the total distance of 20 km, as any single component of the journey must be.",
+        structureId: "bearings_basic" },
+      { q: "A boat sails from port A to port B on a bearing of 110°. What bearing must it sail on to return directly from B to A?",
+        understand: "A return bearing is the outward bearing plus 180° (or minus 180° if adding would exceed 360°), since reversing a direction on a bearing means turning through a straight line.",
+        steps: [
+          "110° is 180° or less, so add: 110° + 180° = 290°.",
+          "Written as a three-figure bearing: 290°.",
+        ], answer: "290°",
+        check: "Check: reversing 290° again gives 290° − 180° = 110°, back to the original bearing, confirming the two are opposite.",
+        structureId: "bearings_return_journey" },
+      { q: "A boat sails from port A to port B on a bearing of 250°. What bearing must it sail on to return directly from B to A?",
+        understand: "Since the outward bearing is more than 180°, adding 180° would exceed 360°, so subtract 180° instead to keep the result within the normal 0°-360° range.",
+        steps: [
+          "250° + 180° = 430°, which exceeds 360°, so subtract 360°: 430° − 360° = 70°.",
+          "Written as a three-figure bearing: 070°.",
+        ], answer: "070°",
+        check: "Check: reversing 070° again gives 070° + 180° = 250°, back to the original bearing, confirming the two are opposite.",
+        structureId: "bearings_return_journey" },
+    ] },
   ],
 };
 
@@ -2490,23 +3465,42 @@ INTERMEDIATE_LESSONS.threeDGeometryAndNets = {
       "Adding up all six faces: Surface area = 2×(l×w + l×h + w×h). The '2×' is there because each of the three different rectangle sizes appears exactly twice - once on each of two opposite faces.",
       "Check this on a cuboid measuring 4cm×3cm×2cm, so l=4, w=3, h=2:\nl×w =\n4×3 =\n12,\nl×h =\n4×2 =\n8,\nw×h =\n3×2 =\n6.\nAdding these three and doubling:\nSurface area =\n2×(12+8+6) =\n2×26 =\n52cm².",
     ], examples: [
-      { q: "Find the surface area of a cuboid measuring 4cm × 3cm × 2cm.", steps: [
+      { q: "Find the surface area of a cuboid measuring 4cm × 3cm × 2cm.",
+        understand: "Identify the three different pairs of matching rectangular faces first, then add all three pair-areas and double the total, since each distinct rectangle appears on two opposite faces.",
+        steps: [
         "Identify l=4, w=3, h=2 (any assignment of the labels works, as long as it's consistent).",
         "Find each pair's area:\nl×w = 4×3 = 12,\nl×h = 4×2 = 8,\nw×h = 3×2 = 6.",
         "Add the three and double, since each rectangle appears on two opposite faces:\nSurface area =\n2×(12+8+6) =\n2×26 =\n52cm².",
-      ], answer: "52cm²" , structureId: "cuboid_surface_area"},
-      { q: "Find the surface area of a cuboid measuring 6cm × 5cm × 3cm (bigger numbers, same method).", steps: [
+      ], answer: "52cm²",
+        check: "Check by counting faces directly: 2 faces of 12cm² + 2 faces of 8cm² + 2 faces of 6cm² = 24+16+12=52cm², matching.",
+        structureId: "cuboid_surface_area"},
+      { q: "Find the surface area of a cuboid measuring 6cm × 5cm × 3cm (bigger numbers, same method).",
+        understand: "The same method scales up directly to bigger numbers: find the three pair-areas, add them, then double.",
+        steps: [
         "Identify l=6, w=5, h=3.",
         "Find each pair's area:\nl×w = 6×5 = 30,\nl×h = 6×3 = 18,\nw×h = 5×3 = 15.",
         "Add the three and double:\nSurface area =\n2×(30+18+15) =\n2×63 =\n126cm².",
-      ], answer: "126cm²" , structureId: "cuboid_surface_area"},
-      { q: "A cube has surface area 150cm². Find its side length and its volume.", steps: [
+      ], answer: "126cm²",
+        check: "Check by counting faces directly: 2×30+2×18+2×15=60+36+30=126cm², matching.",
+        structureId: "cuboid_surface_area"},
+      { q: "A cube has surface area 150cm². Find its side length and its volume.",
+        understand: "Since a cube's surface area formula is 6s² (all six faces identical), work backwards by dividing by 6 and taking a square root to recover the side length, then use that side length for the volume.",
+        steps: [
         "A cube has 6 identical square faces, each with area s², so surface area = 6s².",
         "6s² = 150, so s² = 25.",
         "s = √25 = 5cm.",
         "Volume = s³ = 5³ = 125cm³.",
-        "Check surface area: 6 × 5² = 6 × 25 = 150cm². ✓",
-      ], answer: "Side length = 5cm; volume = 125cm³." , structureId: "cuboid_surface_area"},
+      ], answer: "Side length = 5cm; volume = 125cm³.",
+        check: "Check surface area: 6 × 5² = 6 × 25 = 150cm², matching the given value.",
+        structureId: "cuboid_surface_area"},
+      { q: "A cuboid measures 8 cm by 5 cm by 3 cm. Find its surface area.",
+        understand: "Identify the three different pairs of matching rectangular faces first, then add all three pair-areas and double the total, exactly as in examples 1 and 2.",
+        steps: [
+        "The three different face areas are 8×5 = 40, 8×3 = 24 and 5×3 = 15.",
+        "Each occurs twice, so the total is 2(40 + 24 + 15) = 2 × 79 = 158cm².",
+      ], answer: "158cm²",
+        check: "Check by counting faces directly: 2×40+2×24+2×15=80+48+30=158cm², matching.",
+        structureId: "cuboid_surface_area"},
     ],
       tryit: { q: "Find the surface area of a cube with side length 7cm (a cube is just a cuboid where l=w=h).", answer: "294cm². A cube has 6 identical square faces, each 7×7=49cm², so surface area = 6×49 = 294cm² (the same formula as a cuboid, just with l=w=h=7, so all three pair-areas equal 49)." , structureId: "cuboid_surface_area"} },
     { h: "2. Volume of a prism = cross-sectional area × length", body: [
@@ -2514,18 +3508,38 @@ INTERMEDIATE_LESSONS.threeDGeometryAndNets = {
       "Volume of a prism = cross-sectional area × length, where 'length' means the distance the cross-section extends through the solid (sometimes called its depth, depending on which way it's sitting). This works because the prism is literally that cross-sectional area, stacked up 'length' times over - the same idea as stacking identical sheets of paper to build a block.",
       "A cube is a special case of a prism: its cross-section is a square, and its 'length' equals its side too - which is exactly why a cube's volume formula (side×side×side, from cubeProps) is just this same prism rule in disguise.",
     ], examples: [
-      { q: "A triangular prism has a cross-section of area 15cm² and length 10cm. Find its volume.", steps: [
+      { q: "A triangular prism has a cross-section of area 15cm² and length 10cm. Find its volume.",
+        understand: "Apply the prism volume rule directly, since the cross-sectional area is already given.",
+        steps: [
         "Volume = cross-sectional area × length.",
         "Volume = 15 × 10 = 150cm³.",
-      ], answer: "150cm³" , structureId: "prism_volume_cross_section"},
-      { q: "A prism's cross-section is a right-angled triangle with base 6cm and height 8cm, and the prism is 12cm long. Find its volume.", steps: [
+      ], answer: "150cm³",
+        check: "This is a direct application of the formula, with no intermediate area calculation needed to check separately.",
+        structureId: "prism_volume_cross_section"},
+      { q: "A prism's cross-section is a right-angled triangle with base 6cm and height 8cm, and the prism is 12cm long. Find its volume.",
+        understand: "Since the cross-sectional area isn't given directly, find it first from the triangle's base and height, then apply the prism volume rule.",
+        steps: [
         "First find the cross-sectional area. A triangle's area is half its base times its height:\nArea =\n½ × 6 × 8 =\n½ × 48 =\n24cm².",
         "Volume = cross-sectional area × length:\nVolume =\n24 × 12 =\n288cm³.",
-      ], answer: "288cm³" , structureId: "prism_volume_cross_section"},
-      { q: "A trapezoidal prism has a cross-section that is a trapezium with parallel sides 5cm and 9cm and perpendicular height 4cm. The prism is 15cm long. Find its volume.", steps: [
+      ], answer: "288cm³",
+        check: "Check the cross-sectional area calculation separately: ½×6×8=24cm², a sensible area for a triangle with those dimensions, before multiplying by the length.",
+        structureId: "prism_volume_cross_section"},
+      { q: "A trapezoidal prism has a cross-section that is a trapezium with parallel sides 5cm and 9cm and perpendicular height 4cm. The prism is 15cm long. Find its volume.",
+        understand: "Find the trapezium's cross-sectional area first using its own area formula, then apply the prism volume rule exactly as in example 2.",
+        steps: [
         "Find the cross-sectional area. For a trapezium: area = ½ × (sum of parallel sides) × height = ½ × (5 + 9) × 4 = ½ × 14 × 4 = 28cm².",
         "Volume = cross-sectional area × length = 28 × 15 = 420cm³.",
-      ], answer: "420cm³." , structureId: "prism_volume_cross_section"},
+      ], answer: "420cm³.",
+        check: "Check the cross-sectional area calculation separately: ½×(5+9)×4=28cm², before multiplying by the length.",
+        structureId: "prism_volume_cross_section"},
+      { q: "A triangular prism has a triangular cross-section with base 7 cm and perpendicular height 4 cm. The prism is 12 cm long. Find its volume.",
+        understand: "Find the triangular cross-sectional area first, then apply the prism volume rule, exactly as in example 2.",
+        steps: [
+        "The cross-sectional area is ½ × 7 × 4 = 14cm².",
+        "Multiply by the length: 14 × 12 = 168cm³.",
+      ], answer: "168cm³",
+        check: "Check the cross-sectional area calculation separately: ½×7×4=14cm², a sensible area for a triangle with those dimensions, before multiplying by the length.",
+        structureId: "prism_volume_cross_section"},
     ],
       tryit: { q: "A prism has a cross-sectional area of 20cm² and length 7cm. Find its volume.", answer: "140cm³, since volume = cross-sectional area × length = 20 × 7 = 140cm³." , structureId: "prism_volume_cross_section"} },
     { h: "3. Volume of a cylinder = πr²h", body: [
@@ -2533,21 +3547,41 @@ INTERMEDIATE_LESSONS.threeDGeometryAndNets = {
       "The area of a circle is π×r², where π (pronounced 'pi') is a fixed number, roughly 3.14159..., equal to a circle's circumference divided by its diameter - it turns up whenever a circle's measurements are involved. For estimating by hand, π ≈ 3.14 is close enough.",
       "Putting the circle's area into the prism rule:\nVolume =\ncross-sectional area × height =\n(π×r²) × h =\nπr²h.",
     ], examples: [
-      { q: "Find the volume of a cylinder with radius 3cm and height 10cm (use π ≈ 3.14).", steps: [
+      { q: "Find the volume of a cylinder with radius 3cm and height 10cm (use π ≈ 3.14).",
+        understand: "Find the circular cross-sectional area first using πr², then apply the prism volume rule, since a cylinder is just a prism with a circular cross-section.",
+        steps: [
         "Cross-sectional area = π×r²:\nπ × 3² =\nπ × 9 ≈\n3.14 × 9 =\n28.26cm².",
         "Volume = cross-sectional area × height:\n28.26 × 10 =\n282.6,\nso volume ≈ 283cm³ (rounded).",
-      ], answer: "≈283cm³" , structureId: "cylinder_volume"},
-      { q: "Find the volume of a cylinder with radius 5cm and height 12cm (use π ≈ 3.14).", steps: [
+      ], answer: "≈283cm³",
+        check: "Check the cross-sectional area separately: π×3²≈28.26cm², a sensible area for a circle of radius 3cm, before multiplying by the height.",
+        structureId: "cylinder_volume"},
+      { q: "Find the volume of a cylinder with radius 5cm and height 12cm (use π ≈ 3.14).",
+        understand: "The same method scales up directly to bigger numbers: find the circular cross-sectional area, then multiply by the height.",
+        steps: [
         "Cross-sectional area = π×r²:\nπ × 5² =\nπ × 25 ≈\n3.14 × 25 =\n78.5cm².",
         "Volume = cross-sectional area × height:\n78.5 × 12 =\n942cm³.",
-      ], answer: "942cm³" , structureId: "cylinder_volume"},
-      { q: "A cylinder has radius 3cm and height 8cm. Describe the shapes in its net, give the dimensions of each, and find the total surface area (use π ≈ 3.14).", steps: [
+      ], answer: "942cm³",
+        check: "Check the cross-sectional area separately: π×5²≈78.5cm², before multiplying by the height.",
+        structureId: "cylinder_volume"},
+      { q: "A cylinder has radius 3cm and height 8cm. Describe the shapes in its net, give the dimensions of each, and find the total surface area (use π ≈ 3.14).",
+        understand: "Break the cylinder's net into its three separate faces (two circles and one rectangle), find each face's area separately, then add them all together.",
+        steps: [
         "The net of a cylinder consists of two circles (the two circular ends) and one rectangle (the curved surface, unrolled flat).",
         "Each circle has radius 3cm. Area of each circle = π × 3² ≈ 3.14 × 9 = 28.26cm². Two circles give 56.52cm².",
         "The rectangle has one side equal to the cylinder's height (8cm) and the other equal to the circumference of the circle: 2 × π × r = 2 × 3.14 × 3 = 18.84cm.",
         "Area of rectangle = 18.84 × 8 = 150.72cm².",
-        "Total surface area = 56.52 + 150.72 ≈ 207.24cm², roughly 207cm².",
-      ], answer: "2 circles (each radius 3cm) and a rectangle (18.84cm × 8cm); total surface area ≈ 207cm²." , structureId: "cylinder_total_surface_area"},
+      ], answer: "2 circles (each radius 3cm) and a rectangle (18.84cm × 8cm); total surface area ≈ 207cm².",
+        check: "Check the rectangle's width matches the circle's circumference exactly, since that's the edge where the rectangle wraps around and joins the two circles: 2×3.14×3=18.84cm, confirming the net would actually fold up correctly with no gap or overlap.",
+        structureId: "cylinder_total_surface_area"},
+      { q: "A cylinder has diameter 10 cm and height 14 cm. Find its exact volume and a decimal approximation.",
+        understand: "The diameter is given rather than the radius, so halve it first before applying the volume formula; leaving π unevaluated in the answer gives an exact value, rather than the rounded decimal used in the earlier examples.",
+        steps: [
+        "Find the radius: 10 ÷ 2 = 5cm.",
+        "Volume = πr²h = π × 5² × 14 = π × 25 × 14 = 350π cm³ (exact value, leaving π unevaluated).",
+        "Decimal approximation: 350 × 3.14159... ≈ 1099.6cm³.",
+      ], answer: "Exact: 350π cm³; decimal: ≈1099.6cm³",
+        check: "Check the radius really is half the diameter, not the diameter itself: using the diameter directly (10) instead of the radius (5) would make the calculated area four times too large, since squaring doubles the error.",
+        structureId: "cylinder_volume"},
     ],
       tryit: { q: "Find the volume of a cylinder with radius 4cm and height 9cm (use π ≈ 3.14).", answer: "≈452cm³. Cross-sectional area = π×4² ≈ 3.14×16 = 50.24cm², so volume ≈ 50.24×9 = 452.16, rounding to 452cm³." , structureId: "cylinder_volume"} },
     { h: "4. Matching a net to its solid", body: [
@@ -2555,25 +3589,163 @@ INTERMEDIATE_LESSONS.threeDGeometryAndNets = {
       "Second, fold it mentally (or on paper): the right number of the right shapes isn't enough on its own - they also have to fold up edge-to-edge with no gaps and no overlaps. Two different arrangements of the same six squares can give one net that folds perfectly into a cube and another that leaves two squares landing on top of each other.",
       "For example, a strip of 4 squares in a row, with 1 more square attached above any one of the 4 and another attached below any one of the 4, always folds into a valid cube: the strip of 4 wraps round into a tube (the four side faces), and the extra two fold flat to become the top and the bottom, wherever along the strip they were attached. This is exactly the kind of check practised with shapeFold earlier.",
     ], examples: [
-      { q: "A square-based pyramid has 1 square base and 4 triangular side faces. How many faces, and of what shapes, should its net show?", steps: [
+      { q: "A square-based pyramid has 1 square base and 4 triangular side faces. How many faces, and of what shapes, should its net show?",
+        understand: "Count the faces on the solid itself first, by type, before even looking at any candidate net.",
+        steps: [
         "Count the faces on the solid itself: 1 square (the base) + 4 triangles (the sloping sides) = 5 faces in total.",
-        "So the net must show exactly 1 square and exactly 4 triangles - any other combination of shapes or count is automatically wrong, even before folding it.",
-      ], answer: "5 faces: 1 square + 4 triangles" , structureId: "net_face_matching"},
-      { q: "A net has six squares: a straight row of four squares, with a fifth square attached to the TOP edge of the leftmost square, and a sixth square also attached to the TOP edge of the rightmost square. Does this fold into a valid cube?", steps: [
-        "Face count is right: 6 squares, matching a cube's 6 faces - so the count check alone doesn't rule it out.",
+        "So the net must show exactly 1 square and exactly 4 triangles: any other combination of shapes or count is automatically wrong, even before folding it.",
+      ], answer: "5 faces: 1 square + 4 triangles",
+        check: "This is a direct count from the solid's description, so the check is simply confirming a square-based pyramid really does have exactly one base and four sloping triangular sides, which it does by definition.",
+        structureId: "net_face_matching"},
+      { q: "A net has six squares: a straight row of four squares, with a fifth square attached to the TOP edge of the leftmost square, and a sixth square also attached to the TOP edge of the rightmost square. Does this fold into a valid cube?",
+        understand: "Face count alone is not enough to guarantee a valid net; mentally fold the strip into a tube first, then check where each extra flap actually lands.",
+        steps: [
+        "Face count is right: 6 squares, matching a cube's 6 faces, so the count check alone doesn't rule it out.",
         "Fold the row of four into a tube: it forms the four side faces of the cube.",
-        "Both extra squares are attached on the SAME side (top) of the strip. When folded up, both try to become the same face (the top) at once - they land on top of each other instead of one becoming the top and the other the bottom.",
-        "Result: two faces overlap and the bottom face is left completely uncovered, so this net does NOT fold into a valid cube, even though the face count was correct.",
-      ], answer: "No - both flaps fold onto the same face (the top), leaving the bottom uncovered, even though the face count (6 squares) looked right." , structureId: "net_face_matching"},
-      { q: "A cylinder has radius r and height h. Write a formula for its total surface area in terms of r and h, and use it to find the total surface area when r = 6cm and h = 10cm (use π ≈ 3.14). Also write down how many faces, and of what shapes, its net contains.", steps: [
+        "Both extra squares are attached on the same side (top) of the strip. When folded up, both try to become the same face (the top) at once, so they land on top of each other instead of one becoming the top and the other the bottom.",
+      ], answer: "No, both flaps fold onto the same face (the top), leaving the bottom uncovered, even though the face count (6 squares) looked right.",
+        check: "Compare with a valid arrangement: attaching the two extra squares to opposite edges (one top, one bottom), even of the same square in the strip, would correctly close both the top and bottom instead of doubling up on one.",
+        structureId: "net_face_matching"},
+      { q: "A cylinder has radius r and height h. Write a formula for its total surface area in terms of r and h, and use it to find the total surface area when r = 6cm and h = 10cm (use π ≈ 3.14). Also write down how many faces, and of what shapes, its net contains.",
+        understand: "Build the general surface-area formula from the two separate face types in the net (two circles and one rectangle) before substituting specific numbers.",
+        steps: [
         "The net contains 2 circular faces (each radius r) and 1 rectangular face (height h, width = circumference = 2πr).",
         "Total surface area = 2 × πr² (two circles) + 2πr × h (rectangle) = 2πr² + 2πrh = 2πr(r + h).",
         "Substitute r = 6, h = 10: surface area = 2 × 3.14 × 6 × (6 + 10) = 2 × 3.14 × 6 × 16.",
         "2 × 3.14 = 6.28; 6.28 × 6 = 37.68; 37.68 × 16 = 602.88cm².",
-        "Net: 3 faces total — 2 circles of radius 6cm and 1 rectangle measuring (2 × 3.14 × 6) cm × 10cm = 37.68cm × 10cm.",
-      ], answer: "Total surface area ≈ 603cm²; net has 3 faces: 2 circles (radius 6cm) and 1 rectangle (37.68cm × 10cm)." , structureId: "cylinder_total_surface_area"},
+      ], answer: "Total surface area ≈ 603cm²; net has 3 faces: 2 circles (radius 6cm) and 1 rectangle (37.68cm × 10cm).",
+        check: "Check the formula reduces correctly to the earlier numeric method: 2πr² is the two circles (2×3.14×36=226.08) and 2πrh is the rectangle (2×3.14×6×10=376.8), and 226.08+376.8=602.88, matching the substituted-formula answer.",
+        structureId: "cylinder_total_surface_area"},
+      { q: "A cube net has four squares in a row, with one square above the second and one below the second. Will it fold into a cube?",
+        understand: "As before, fold the strip of four into a tube first, then check where each extra flap lands; this time both extra flaps are attached to the same square in the strip, but on opposite edges (top and bottom), rather than to different squares.",
+        steps: [
+        "Fold the row of four into a tube: it forms the four side faces of the cube, regardless of which square in the strip an extra flap is attached to.",
+        "The extra square above the second square folds up to become the top face; the extra square below the second square folds down to become the bottom face.",
+      ], answer: "Yes, it folds into a valid cube: the two extra flaps close the top and bottom without overlapping, since they are attached to opposite edges (top and bottom) of the strip, even though both happen to be attached to the same square.",
+        check: "Compare with example 2's invalid net, where both extra flaps were attached to the same edge (top) of the strip and so collided; here they use opposite edges, so they correctly land on different faces.",
+        structureId: "net_face_matching"},
     ],
       tryit: { q: "A net has 2 triangles and 3 rectangles, correctly shaped and sized to match. Which solid could this be the net of?", answer: "A triangular prism - it needs exactly 2 triangular end faces plus 3 rectangular side faces, which matches this net's face count and shapes exactly." , structureId: "net_face_matching"} },
+    { h: "5. Spheres and cones", body: [
+      "A sphere's volume is found from V = (4/3)πr³. This formula is used directly rather than derived here; the important habit is substituting the radius correctly and keeping track of the cubing. Try it concretely with radius 5cm: (4/3) × π × 5³ = (4/3) × π × 125 ≈ 523.6 cm³.",
+      "A cone's volume is exactly one third of the cylinder that shares its base radius and height, giving V = (1/3)πr²h. Concretely, a cone with radius 4cm and height 9cm has volume (1/3) × π × 4² × 9 ≈ 150.8 cm³, exactly a third of the matching cylinder's volume of π × 4² × 9 ≈ 452.4 cm³.",
+      "A sphere's surface area is found from SA = 4πr², a completely separate formula from its volume; do not confuse the two just because they share the same radius. For radius 6cm: 4 × π × 6² = 4π × 36 ≈ 452.4 cm².",
+      "A cone's total surface area combines its circular base with its curved surface: SA = πr² + πrl. The curved surface calculation always uses the SLANT height l (the distance from the tip down the sloping side), never the perpendicular height h; if only h is given, find l first using Pythagoras' theorem on r and h, since the radius, the perpendicular height and the slant height always form a right-angled triangle."
+    ], examples: [
+      { q: "Find the volume of a sphere with radius 5 cm. (Use π ≈ 3.14159, round to 1 d.p.)",
+        understand: "Apply the sphere volume formula directly: V = (4/3)πr³.",
+        steps: [
+          "(4/3) × π × 5³ = (4/3) × π × 125.",
+          "≈523.6 cm³.",
+        ], answer: "≈523.6 cm³",
+        check: "Check the order of magnitude: a sphere of radius 5cm fits inside a cube of side 10cm (volume 1000cm³), and a sphere fills a bit over half of its bounding cube, so ≈523.6cm³ is sensible.",
+        structureId: "sphere_volume" },
+      { q: "Find the volume of a cone with base radius 4 cm and height 9 cm. (Use π ≈ 3.14159, round to 1 d.p.)",
+        understand: "A cone's volume is exactly one third of the cylinder sharing the same base radius and height, so apply V = (1/3)πr²h directly.",
+        steps: [
+          "(1/3) × π × 4² × 9 = (1/3) × π × 16 × 9 = (1/3) × π × 144.",
+          "≈150.8 cm³.",
+        ], answer: "≈150.8 cm³",
+        check: "Check against the matching cylinder: π × 16 × 9 ≈452.4 cm³, and the cone's volume (150.8 cm³) is almost exactly one third of that, confirming the ⅓ relationship.",
+        structureId: "cone_volume" },
+      { q: "Find the surface area of a sphere with radius 6 cm. (Use π ≈ 3.14159, round to 1 d.p.)",
+        understand: "Apply the sphere surface area formula directly: SA = 4πr².",
+        steps: [
+          "4 × π × 6² = 4 × π × 36 = 144π.",
+          "≈452.4 cm².",
+        ], answer: "≈452.4 cm²",
+        check: "Check the formula's structure: 4πr² is exactly four times the area of a single great circle of the sphere (πr²), a well-known fact about spheres.",
+        structureId: "sphere_surface_area" },
+      { q: "A cone has base radius 6 cm, perpendicular height 8 cm and slant height 10 cm. Find its total surface area. (Use π ≈ 3.14159, round to 1 d.p.)",
+        understand: "Total surface area of a cone uses the base circle plus the curved surface, and the curved-surface calculation needs the SLANT height, not the perpendicular height.",
+        steps: [
+          "Base: π × 6² = 36π.",
+          "Curved surface: π × 6 × 10 = 60π (using the slant height 10, not the perpendicular height 8).",
+          "Total: 36π + 60π = 96π ≈301.6 cm².",
+        ], answer: "≈301.6 cm²",
+        check: "Check the slant height is consistent with Pythagoras' theorem: 6² + 8² = 36 + 64 = 100 = 10², confirming l = 10 is correct for r = 6, h = 8.",
+        structureId: "cone_surface_area" },
+    ] },
+    { h: "6. Pyramids, composite solids and frustums", body: [
+      "A pyramid's volume is V = (1/3) × base area × height, the same ⅓ relationship met with cones (a cone is really just a pyramid with a circular base). Concretely, a pyramid with a rectangular base 6cm × 5cm and height 9cm has base area 6 × 5 = 30 cm², so its volume is (1/3) × 30 × 9 = 90 cm³.",
+      "A composite solid is built from two or more recognisable simple solids joined together. Find each part's volume separately, using the correct formula for that part's own shape, then add the parts together. Never invent a single combined formula for the whole solid; always work part by part.",
+      "A frustum is what remains of a cone once its top has been sliced off by a cut running parallel to the base. Because the cut is parallel to the base, the removed top piece is a smaller cone, similar to the original whole cone. The frustum's volume is therefore: (volume of the whole, uncut cone) minus (volume of the small cone removed).",
+      "When a composite solid mixes genuinely different shapes, such as a cuboid topped by a pyramid on the same rectangular base, write out both parts' volumes separately using each shape's own formula before adding, exactly as with the cylinder-and-cone composite above."
+    ], examples: [
+      { q: "A pyramid has a rectangular base 6 cm × 5 cm and perpendicular height 9 cm. Find its volume.",
+        understand: "Volume of a pyramid = ⅓ × base area × height, applied directly once the base area is found.",
+        steps: [
+          "Base area = 6 × 5 = 30 cm².",
+          "Volume = (1/3) × 30 × 9 = 90 cm³.",
+        ], answer: "90 cm³",
+        check: "Check against the matching cuboid: 6 × 5 × 9 = 270 cm³, and the pyramid's volume (90 cm³) is exactly one third of that, matching the formula's structure.",
+        structureId: "pyramid_volume" },
+      { q: "A solid is made from a cylinder of radius 3 cm and height 8 cm, topped with a cone of the same radius and height 5 cm. Find the total volume. (Use π ≈ 3.14159, round to 1 d.p.)",
+        understand: "Split the composite solid into recognisable simple solids, find each one's volume separately using its own formula, then add them together.",
+        steps: [
+          "Cylinder: π × 3² × 8 = 72π ≈226.2 cm³.",
+          "Cone: (1/3) × π × 3² × 5 = 15π ≈47.1 cm³.",
+          "Total: 226.2 + 47.1 = 273.3 cm³.",
+        ], answer: "≈273.3 cm³",
+        check: "Check each part uses its own correct formula (cylinder = πr²h, cone = ⅓πr²h) even though they share the same radius; only the two volumes are added, never a shortcut single formula for the whole solid.",
+        structureId: "composite_solid_volume" },
+      { q: "A cone has base radius 8 cm and height 12 cm. Its top is sliced off by a cut parallel to the base, removing a smaller similar cone of radius 4 cm and height 6 cm. Find the volume of the remaining frustum. (Use π ≈ 3.14159, round to 1 d.p.)",
+        understand: "A frustum is what remains of a cone after its top is sliced off; the removed piece is a smaller cone similar to the original, so the frustum's volume is the whole cone's volume minus the small cone's volume.",
+        steps: [
+          "Whole cone: (1/3) × π × 8² × 12 = 256π ≈804.2 cm³.",
+          "Removed small cone: (1/3) × π × 4² × 6 = 32π ≈100.5 cm³.",
+          "Frustum volume: 804.2 − 100.5 = 703.7 cm³.",
+        ], answer: "≈703.7 cm³",
+        check: "Check the removed cone really is similar to the whole cone: its radius (4) is half the whole cone's radius (8), and its height (6) is half the whole cone's height (12), so both dimensions scale by the same factor, confirming similarity.",
+        structureId: "frustum_volume" },
+      { q: "A solid is a cuboid of base 6 cm × 4 cm and height 5 cm, topped by a pyramid with the same rectangular base and height 9 cm. Find the total volume, showing both parts separately.",
+        understand: "Add the cuboid's volume and the pyramid's volume, each found with its own correct formula, since the two parts of the composite solid are genuinely different shapes.",
+        steps: [
+          "Cuboid: 6 × 4 × 5 = 120 cm³.",
+          "Pyramid: (1/3) × (6 × 4) × 9 = (1/3) × 24 × 9 = 72 cm³.",
+          "Total: 120 + 72 = 192 cm³.",
+        ], answer: "192 cm³",
+        check: "Check the two parts share the same rectangular base (6cm × 4cm = 24cm²), which is exactly why the same base area feeds into both formulas.",
+        structureId: "composite_missing_dimension" },
+    ] },
+    { h: "7. Density and similar solids", body: [
+      "Density connects an object's mass to its volume: density = mass ÷ volume, usually in g/cm³. Rearranged, this gives mass = density × volume (when volume is known) or volume = mass ÷ density (when mass is known); which rearrangement to use depends entirely on which quantity the question gives and which it asks for.",
+      "A sphere that touches every face of a cube has a diameter exactly equal to the cube's side length, so its radius is half the cube's side. Finding the empty space inside the cube but outside the sphere just means finding each volume separately (cube and sphere) and subtracting.",
+      "When two solids are similar (one a scaled copy of the other) with length scale factor k, their VOLUMES scale by k³, not by k itself, because volume is a three-dimensional quantity built from three lengths multiplied together. This is the same length-area-volume scaling idea from similar shapes, extended into three dimensions: lengths scale by k, areas by k², volumes by k³.",
+      "Combining similar solids with density: once the larger solid's volume has been correctly scaled by k³, its mass follows in the usual way, mass = density × volume, exactly as with any other density question."
+    ], examples: [
+      { q: "An object has volume 40 cm³ and density 7.9 g/cm³. Find its mass.",
+        understand: "Density connects mass and volume: density = mass ÷ volume, so mass = density × volume.",
+        steps: [
+          "Mass = density × volume = 7.9 × 40 = 316 g.",
+        ], answer: "316 g",
+        check: "Check: 316 ÷ 40 = 7.9, matching the given density.",
+        structureId: "density_mass_volume" },
+      { q: "An object has mass 200 g and density 8 g/cm³. Find its volume.",
+        understand: "The same density formula rearranges the other way: volume = mass ÷ density.",
+        steps: [
+          "Volume = mass ÷ density = 200 ÷ 8 = 25 cm³.",
+        ], answer: "25 cm³",
+        check: "Check: 25 × 8 = 200, matching the given mass.",
+        structureId: "density_mass_volume" },
+      { q: "A sphere of radius 5 cm fits exactly inside a cube of side 10 cm, touching every face. Find the volume of empty space inside the cube but outside the sphere. (Use π ≈ 3.14159, round to 1 d.p.)",
+        understand: "A sphere touching every face of a cube has a diameter equal to the cube's side length, so its radius is half the side; find each volume separately, then subtract.",
+        steps: [
+          "Cube volume: 10³ = 1000 cm³.",
+          "Sphere volume: (4/3) × π × 5³ ≈523.6 cm³.",
+          "Empty space: 1000 − 523.6 = 476.4 cm³.",
+        ], answer: "≈476.4 cm³",
+        check: "Check the empty space is less than the cube's total volume (1000 cm³), as it must be, and represents just under half the cube, matching the well-known fact that a sphere fills a bit over half of its bounding cube.",
+        structureId: "sphere_in_cube_ratio" },
+      { q: "Two similar solids have a length scale factor of 3. The smaller solid has volume 5 cm³. Both solids are made of the same material with density 3 g/cm³. Find the mass of the larger solid.",
+        understand: "Volume scales by the CUBE of the length scale factor, not the scale factor itself, since volume is a three-dimensional quantity; once the larger volume is known, mass follows from density × volume.",
+        steps: [
+          "Larger volume = 5 × 3³ = 5 × 27 = 135 cm³.",
+          "Mass = 135 × 3 = 405 g.",
+        ], answer: "405 g",
+        check: "Check by reversing: 405 ÷ 3 = 135 cm³, and 135 ÷ 27 = 5 cm³, matching the smaller solid's given volume.",
+        structureId: "similar_solids_density_combined" },
+    ] },
   ],
 };
 
@@ -2589,86 +3761,156 @@ INTERMEDIATE_LESSONS.multiStepGeometryProof = {
       "A reminder of what 'isosceles' means: a triangle with (at least) two sides the same length. Whenever two sides in a diagram are equal - very often because they're both radii of the same circle, since every radius of a circle is the same length - the triangle they form is isosceles, and its two base angles (the angles opposite the two equal sides) are automatically equal too.",
       "Naming the shapes you find matters, because each shape brings its own rule with it: a triangle brings 'angles sum to 180°', a parallelogram brings 'opposite angles are equal' and 'co-interior angles between the parallel sides sum to 180°', and a circle brings the circle theorems (from circleTheoremsAndTangents) - such as the fact that a tangent is always perpendicular to the radius drawn to the point where it touches the circle.",
     ], examples: [
-      { q: "A diagram shows quadrilateral ABCD with diagonal AC drawn in. What two shapes can you see once the diagonal is added, and what do they share?", steps: [
+      { q: "A diagram shows quadrilateral ABCD with diagonal AC drawn in. What two shapes can you see once the diagonal is added, and what do they share?",
+        understand: "Trace the diagram's outline first: adding one diagonal to a quadrilateral always splits it into exactly two triangles, sharing that diagonal as a common side.",
+        steps: [
         "The diagonal AC splits the quadrilateral into two separate triangles: triangle ABC and triangle ACD.",
-        "They share the side AC - so any angle or length worked out using AC in one triangle can be reused directly in the other.",
-      ], answer: "Triangle ABC and triangle ACD, sharing the side AC." , structureId: "congruence_criterion_recognition"},
-      { q: "A circle has centre O. A and B are points on the circumference, and a tangent to the circle touches it at A. What separate, nameable shapes and facts can you pick out of this diagram, involving O, A and B?", steps: [
-        "OA and OB are both radii of the same circle, so OA = OB - this makes triangle OAB isosceles, with equal base angles at A and B.",
-        "The tangent at A and the radius OA meet at a right angle - this is the tangent-radius theorem (from circleTheoremsAndTangents): a tangent is always perpendicular (90°) to the radius drawn to its point of contact.",
-        "So this one diagram actually contains an isosceles triangle (OAB) PLUS a separate 90° fact (between the tangent and OA) - two independent tools, ready to be chained together if a question asks for an angle involving the tangent.",
-      ], answer: "An isosceles triangle OAB (since OA = OB are radii) and a 90° angle between the tangent at A and the radius OA (the tangent-radius theorem)." , structureId: "isosceles_exterior_forward"},
-      { q: "Triangle ABC is inscribed in a circle with centre O. OA, OB and OC are all radii. List all the distinct triangles you can identify in the diagram, and state the key property each type has.", steps: [
+        "They share the side AC, so any angle or length worked out using AC in one triangle can be reused directly in the other.",
+      ], answer: "Triangle ABC and triangle ACD, sharing the side AC.",
+        check: "Check that no shape has been missed or invented: the diagonal genuinely creates only these two triangles and no others, since it is the only line added to the original quadrilateral.",
+        structureId: "congruence_criterion_recognition"},
+      { q: "A circle has centre O. A and B are points on the circumference, and a tangent to the circle touches it at A. What separate, nameable shapes and facts can you pick out of this diagram, involving O, A and B?",
+        understand: "Separate the diagram into its two independent facts rather than trying to combine them immediately: one fact comes from the two equal radii, the other from the tangent.",
+        steps: [
+        "OA and OB are both radii of the same circle, so OA = OB, which makes triangle OAB isosceles, with equal base angles at A and B.",
+        "The tangent at A and the radius OA meet at a right angle: this is the tangent-radius theorem (from circleTheoremsAndTangents), a tangent is always perpendicular (90°) to the radius drawn to its point of contact.",
+        "So this one diagram actually contains an isosceles triangle (OAB) plus a separate 90° fact (between the tangent and OA): two independent tools, ready to be chained together if a question asks for an angle involving the tangent.",
+      ], answer: "An isosceles triangle OAB (since OA = OB are radii) and a 90° angle between the tangent at A and the radius OA (the tangent-radius theorem).",
+        check: "Check each fact is genuinely independent of the other: the isosceles triangle only needs OA=OB, and the 90° fact only needs the tangent-radius pairing, so either could be used without the other being true.",
+        structureId: "isosceles_exterior_forward"},
+      { q: "Triangle ABC is inscribed in a circle with centre O. OA, OB and OC are all radii. List all the distinct triangles you can identify in the diagram, and state the key property each type has.",
+        understand: "Look for every pair of radii in the diagram, not just one, since each distinct pair of equal radii creates its own separate isosceles triangle.",
+        steps: [
         "The main triangle is ABC itself: a general triangle whose angles sum to 180°.",
         "OA = OB (both radii), so triangle OAB is isosceles with equal base angles at A and B.",
         "OB = OC (both radii), so triangle OBC is isosceles with equal base angles at B and C.",
         "OA = OC (both radii), so triangle OAC is isosceles with equal base angles at A and C.",
-        "That gives 4 distinct triangles in total: ABC plus three isosceles ones. Each isosceles sub-triangle shares a side with the outer triangle ABC, so angles found in one can be passed into adjacent triangles for further steps.",
-      ], answer: "4 triangles: ABC (general, angle sum 180°) and OAB, OBC, OAC (each isosceles, since two sides are radii of equal length)." , structureId: "isosceles_exterior_forward"},
+      ], answer: "4 triangles: ABC (general, angle sum 180°) and OAB, OBC, OAC (each isosceles, since two sides are radii of equal length).",
+        check: "Check the count is complete: there are exactly 3 ways to pick 2 of the 3 radii OA, OB, OC, giving exactly 3 isosceles triangles, plus the original triangle ABC, matching the 4 found.",
+        structureId: "isosceles_exterior_forward"},
     ] },
     { h: "2. Work from what you're GIVEN, not toward what you WANT", body: [
       "Start at the angle or length you already know, and ask 'what does this fact force?' - rather than staring at the target angle hoping for inspiration. Each individual step should be a single, simple rule: base angles of an isosceles triangle are equal, angles on a straight line sum to 180°, angles round a point sum to 360°, angles in a triangle sum to 180°, or a circle theorem.",
       "Two rules used repeatedly below: the isosceles triangle base angle theorem (the two angles opposite a triangle's two equal sides are equal), and angles on a straight line (angles on one side of a straight line, meeting at a single point, always add up to 180°).",
     ], examples: [
-      { q: "Triangle ABC is isosceles with AB = AC and angle BAC = 40°. BC is extended to a point D. Find angle ACD (the exterior angle at C).", steps: [
+      { q: "Triangle ABC is isosceles with AB = AC and angle BAC = 40°. BC is extended to a point D. Find angle ACD (the exterior angle at C).",
+        understand: "Start from the one fact you're actually given (AB=AC and angle BAC=40°), find what it forces (the two equal base angles), then use a straight-line fact to reach the target exterior angle.",
+        steps: [
         "Base angles of the isosceles triangle are equal (the isosceles triangle base angle theorem), and the triangle's three angles sum to 180°:\nangle ABC = angle ACB =\n(180 − 40) ÷ 2 =\n140 ÷ 2 =\n70°.",
         "Angle ACD and angle ACB lie on the straight line BD, meeting at point C, so together they sum to 180° (angles on a straight line):\nangle ACD =\n180 − 70 =\n110°.",
-      ], answer: "110°" , structureId: "isosceles_exterior_forward"},
-      { q: "O is the centre of a circle, and A, B, C are points on the circumference with C on the major arc AB (the longer way round, not the short arc between A and B). OA and OB are radii, and angle AOB = 100°. Find (a) angle OAB and (b) angle ACB.", steps: [
-        "OA and OB are both radii, so OA = OB - triangle OAB is isosceles, with equal base angles at A and B. Using the triangle's angle sum of 180°:\nangle OAB = angle OBA =\n(180 − 100) ÷ 2 =\n80 ÷ 2 =\n40°.",
+      ], answer: "110°",
+        check: "Check using the exterior angle shortcut: an exterior angle of a triangle equals the sum of the two non-adjacent interior angles, so angle ACD = angle BAC + angle ABC = 40+70=110°, matching.",
+        structureId: "isosceles_exterior_forward"},
+      { q: "O is the centre of a circle, and A, B, C are points on the circumference with C on the major arc AB (the longer way round, not the short arc between A and B). OA and OB are radii, and angle AOB = 100°. Find (a) angle OAB and (b) angle ACB.",
+        understand: "Work forward from the one given fact (angle AOB=100°) in two separate stages: first the isosceles triangle OAB gives angle OAB, then the centre-circumference rule (using the original given angle AOB, not the just-found angle OAB) gives angle ACB.",
+        steps: [
+        "OA and OB are both radii, so OA = OB, so triangle OAB is isosceles, with equal base angles at A and B. Using the triangle's angle sum of 180°:\nangle OAB = angle OBA =\n(180 − 100) ÷ 2 =\n80 ÷ 2 =\n40°.",
         "That answers (a): angle OAB = 40°.",
         "For (b), use the angle at centre theorem (from circleTheoremsAndTangents): the angle at the centre is always twice the angle at the circumference, when both stand on the same arc AB. Here the centre angle AOB = 100°, so:\nangle ACB =\n100 ÷ 2 =\n50°.",
-      ], answer: "(a) 40°  (b) 50°" , structureId: "three_step_angle_chase"},
-      { q: "O is the centre of a circle. A and B are points on the circumference, and angle OAB = 25°. C is a point on the major arc AB. Find (a) angle AOB and (b) angle ACB.", steps: [
+      ], answer: "(a) 40°  (b) 50°",
+        check: "Check both results independently satisfy their own rule: 40+40+100=180° confirms the isosceles triangle, and 100=2×50 confirms the centre-circumference rule.",
+        structureId: "three_step_angle_chase"},
+      { q: "O is the centre of a circle. A and B are points on the circumference, and angle OAB = 25°. C is a point on the major arc AB. Find (a) angle AOB and (b) angle ACB.",
+        understand: "This time the given fact is the isosceles base angle itself, so work forward from it to find angle AOB first, then apply the centre-circumference rule using that just-found angle.",
+        steps: [
         "OA = OB (both radii), so triangle OAB is isosceles with equal base angles at A and B: angle OBA = angle OAB = 25°.",
         "The angles in triangle OAB sum to 180°: angle AOB = 180 − 25 − 25 = 130°. That answers (a).",
         "For (b): C is on the major arc AB, so angle ACB at the circumference and angle AOB at the centre both stand on the minor arc AB. The angle at the centre is twice the angle at the circumference.",
         "Angle ACB = angle AOB ÷ 2 = 130 ÷ 2 = 65°.",
-      ], answer: "(a) angle AOB = 130°  (b) angle ACB = 65°." , structureId: "three_step_angle_chase"},
+      ], answer: "(a) angle AOB = 130°  (b) angle ACB = 65°.",
+        check: "Check both results: 25+25+130=180° confirms the isosceles triangle, and 130=2×65 confirms the centre-circumference rule.",
+        structureId: "three_step_angle_chase"},
+      { q: "AB is a diameter of a circle, C lies on the circle and angle BAC = 28°. Prove that angle BOC, at the centre, is 56°.",
+        understand: "Angle BAC and angle BOC both stand on the same chord BC, one from the circumference (at A) and one from the centre (at O), so the centre-circumference rule applies directly, without needing any isosceles triangle step first.",
+        steps: [
+        "Angle BAC (at the circumference) and angle BOC (at the centre) both stand on chord BC.",
+        "The angle at the centre is twice the angle at the circumference: angle BOC = 2 × angle BAC = 2 × 28° = 56°.",
+      ], answer: "56°",
+        check: "This example needed only one rule, unlike examples 2 and 3, since the given angle (BAC) was already a circumference angle standing on the target chord, with no isosceles step required first.",
+        structureId: "three_step_angle_chase"},
     ],
       tryit: { q: "Triangle PQR is isosceles with PQ = PR and angle QPR = 50°. QR is extended to a point S. Find angle PRS.", answer: "115°. Base angles: angle PQR = angle PRQ = (180−50)÷2 = 65°. Angle PRS and angle PRQ lie on the straight line QS, so angle PRS = 180 − 65 = 115°." , structureId: "isosceles_exterior_forward"} },
     { h: "3. Label every angle as you find it", body: [
       "Write each newly-found angle directly onto (or next to) the diagram immediately, as soon as you find it. A chain of four or five steps is easy to lose track of otherwise, and a diagram with every known angle labelled lets you spot the next available step at a glance, rather than re-deriving something you already worked out.",
       "One more rule appears below: the angles inside any quadrilateral (a four-sided shape) always sum to 360° - the quadrilateral angle sum theorem. It follows from the triangle angle sum theorem, since any quadrilateral can be split into two triangles by one diagonal (exactly as in section 1's example), each contributing 180°.",
     ], examples: [
-      { q: "In triangle ABC, angle A = 55° and angle B = 65°. Find angle C, and label it before moving on to anything else.", steps: [
+      { q: "In triangle ABC, angle A = 55° and angle B = 65°. Find angle C, and label it before moving on to anything else.",
+        understand: "Apply the triangle angle sum directly, then label the result on the diagram immediately, exactly as the labelling habit this section is teaching.",
+        steps: [
         "The three angles of a triangle sum to 180°:\nangle C =\n180 − 55 − 65 =\n60°.",
-        "Label angle C = 60° on the diagram immediately - now every angle in this triangle is visible at a glance for the next step of any longer question.",
-      ], answer: "60°" , structureId: "triangle_angle_sum_basic"},
-      { q: "Quadrilateral ABCD has angle A = 80°, angle B = 100°, angle C = x and angle D = 2x. Find x, then label angle C and angle D in turn.", steps: [
+        "Label angle C = 60° on the diagram immediately: now every angle in this triangle is visible at a glance for the next step of any longer question.",
+      ], answer: "60°",
+        check: "Check: 55+65+60=180°, confirming the triangle angle sum.",
+        structureId: "triangle_angle_sum_basic"},
+      { q: "Quadrilateral ABCD has angle A = 80°, angle B = 100°, angle C = x and angle D = 2x. Find x, then label angle C and angle D in turn.",
+        understand: "Set up the quadrilateral angle sum equation using the given expressions, solve for x, then label each newly found angle immediately before moving on, exactly as the section demonstrates.",
+        steps: [
         "The angles of a quadrilateral sum to 360° (the quadrilateral angle sum theorem):\n80 + 100 + x + 2x =\n360.",
         "Simplify the left side:\n180 + 3x =\n360.",
         "Solve for x:\n3x =\n360 − 180 =\n180, so\nx =\n60.",
         "Label angle C = x = 60° on the diagram, then use it immediately to get angle D = 2x = 2×60 = 120°, and label that too.",
-      ], answer: "x = 60°, so angle C = 60° and angle D = 120°." , structureId: "polygon_algebra"},
-      { q: "In triangle ABC, AB = AC (isosceles) and angle BAC = 50°. D is a point on BC extended beyond C. Find angle ACD, labelling each angle as you find it.", steps: [
+      ], answer: "x = 60°, so angle C = 60° and angle D = 120°.",
+        check: "Check: 80+100+60+120=360°, confirming the quadrilateral angle sum.",
+        structureId: "polygon_algebra"},
+      { q: "In triangle ABC, AB = AC (isosceles) and angle BAC = 50°. D is a point on BC extended beyond C. Find angle ACD, labelling each angle as you find it.",
+        understand: "Work forward step by step, labelling each angle as it's found: first the isosceles base angles, then the straight-line angle at the extension point.",
+        steps: [
         "AB = AC means triangle ABC is isosceles with two equal sides meeting at A. The base angles (at B and C) are equal.",
         "Find the base angles: angle ABC = angle ACB = (180 − 50) ÷ 2 = 130 ÷ 2 = 65°. Label angle ACB = 65° on the diagram.",
         "D lies on the extension of BC beyond C, so angles ACD and ACB lie on the straight line BD, meeting at point C.",
         "Angles on a straight line sum to 180°: angle ACD = 180 − 65 = 115°. Label angle ACD = 115°.",
-        "Note: angle ACD is an exterior angle of the triangle at C; exterior angles equal the sum of the two non-adjacent interior angles: 50 + 65 = 115°. ✓",
-      ], answer: "angle ACD = 115°." , structureId: "isosceles_exterior_forward"},
+      ], answer: "angle ACD = 115°.",
+        check: "Check using the exterior angle shortcut: angle ACD = angle BAC + angle ABC = 50+65=115°, matching.",
+        structureId: "isosceles_exterior_forward"},
+      { q: "In isosceles triangle ABC, AB = AC. The exterior angle at C is 124°. Find angle A and justify each step.",
+        understand: "This runs the earlier examples backwards: instead of being given the apex angle and asked for the exterior angle, the exterior angle is given and the apex angle A must be found, so work from the straight-line fact first, then use the isosceles base angles to reach A.",
+        steps: [
+        "The interior angle at C and the exterior angle (124°) lie on a straight line, so they sum to 180°: interior angle C = 180 - 124 = 56°.",
+        "Since AB=AC, the base angles B and C are equal: angle B = angle C = 56°.",
+        "The three angles of the triangle sum to 180°: angle A = 180 - 56 - 56 = 68°.",
+      ], answer: "68°",
+        check: "Check using the exterior angle shortcut in reverse: the exterior angle should equal the sum of the two non-adjacent interior angles, A and B: 68+56=124°, matching the given exterior angle exactly.",
+        structureId: "isosceles_exterior_reverse"},
     ],
       tryit: { q: "Triangle DEF has angle D = 48° and angle E = 2 × angle D. Find angle F.", answer: "36°. Angle E = 2×48 = 96°. The triangle's angles sum to 180°, so angle F = 180 − 48 − 96 = 36°." , structureId: "triangle_angle_sum_basic"} },
     { h: "4. Sanity-check the final answer", body: [
       "Angles in a triangle should sum to 180°, angles on a straight line to 180°, and angles round a point to 360° (or a quadrilateral's angles to 360°, as in section 3). If a completed chain of reasoning leads to a total that breaks one of these known facts, a step was mis-applied somewhere along the chain - go back and check each link.",
     ], examples: [
-      { q: "A student calculates the three angles of a triangle as 50°, 65° and 70°. Use the angle sum check to decide if this is possible.", steps: [
+      { q: "A student calculates the three angles of a triangle as 50°, 65° and 70°. Use the angle sum check to decide if this is possible.",
+        understand: "Add the three angles and compare with the known total (180° for a triangle) before accepting any of them as correct.",
+        steps: [
         "Add the three angles:\n50 + 65 + 70 =\n185°.",
-        "A triangle's angles must sum to exactly 180°, not 185° - so at least one of these three angles must be wrong, and it's worth re-checking the working that produced them.",
-      ], answer: "Not possible - the three angles add to 185°, not 180°, so a mistake was made somewhere." , structureId: "angle_sum_sanity_check"},
-      { q: "Four angles meeting at a single point are calculated as 90°, 85°, 100° and 90°. Use the angle sum check, then suggest what a corrected second angle would need to be for everything else to stay the same.", steps: [
+        "A triangle's angles must sum to exactly 180°, not 185°, so at least one of these three angles must be wrong, and it's worth re-checking the working that produced them.",
+      ], answer: "Not possible - the three angles add to 185°, not 180°, so a mistake was made somewhere.",
+        check: "This is the check itself, so there is nothing further to verify beyond confirming the arithmetic: 50+65+70=185, not 180.",
+        structureId: "angle_sum_sanity_check"},
+      { q: "Four angles meeting at a single point are calculated as 90°, 85°, 100° and 90°. Use the angle sum check, then suggest what a corrected second angle would need to be for everything else to stay the same.",
+        understand: "Add the four angles and compare with the known total (360° round a point), then work out how much the excess is before deciding which value to adjust.",
+        steps: [
         "Add the four angles:\n90 + 85 + 100 + 90 =\n365°.",
-        "Angles round a point must sum to exactly 360°, not 365° - so something is 5° too big somewhere.",
+        "Angles round a point must sum to exactly 360°, not 365°, so something is 5° too big somewhere.",
         "If only the second angle (85°) was mis-calculated, the corrected value would need to be:\n85 − 5 =\n80°,\nsince\n90 + 80 + 100 + 90 =\n360°, which checks out.",
-      ], answer: "The original total (365°) is 5° too many; correcting the second angle to 80° gives a valid total of 360°." , structureId: "angle_sum_sanity_check"},
-      { q: "A student works out the four interior angles of a cyclic quadrilateral as 80°, 95°, 105° and 80°. Apply two different checks to decide whether these values could all be correct.", steps: [
-        "Check 1 — quadrilateral angle sum: any quadrilateral's interior angles sum to 360°. Add the four values: 80 + 95 + 105 + 80 = 360°. This check passes.",
-        "Check 2 — cyclic quadrilateral opposite-angle property: opposite pairs must each sum to 180°. In order round the quadrilateral, pair the 1st and 3rd angles, and the 2nd and 4th angles.",
+      ], answer: "The original total (365°) is 5° too many; correcting the second angle to 80° gives a valid total of 360°.",
+        check: "Check the corrected total: 90+80+100+90=360°, confirming the correction restores a valid angle sum round a point.",
+        structureId: "angle_sum_sanity_check"},
+      { q: "A student works out the four interior angles of a cyclic quadrilateral as 80°, 95°, 105° and 80°. Apply two different checks to decide whether these values could all be correct.",
+        understand: "Apply two separate sanity checks in sequence, since passing one check (the general quadrilateral angle sum) does not guarantee the other (the cyclic quadrilateral opposite-angle property) also holds.",
+        steps: [
+        "Check 1, quadrilateral angle sum: any quadrilateral's interior angles sum to 360°. Add the four values: 80 + 95 + 105 + 80 = 360°. This check passes.",
+        "Check 2, cyclic quadrilateral opposite-angle property: opposite pairs must each sum to 180°. In order round the quadrilateral, pair the 1st and 3rd angles, and the 2nd and 4th angles.",
         "1st + 3rd = 80 + 105 = 185° ≠ 180°. This check fails immediately.",
-        "Conclusion: the four angles are valid for a quadrilateral (angle sum check passes) but cannot belong to a CYCLIC quadrilateral (opposite-angle check fails).",
-        "The working that produced 105° (or one of the 80° values) contains an error.",
-      ], answer: "Not a valid cyclic quadrilateral — opposite angles 80° and 105° sum to 185° instead of 180°, even though the total of all four (360°) is correct for any quadrilateral." , structureId: "angle_sum_sanity_check"},
+      ], answer: "Not a valid cyclic quadrilateral - opposite angles 80° and 105° sum to 185° instead of 180°, even though the total of all four (360°) is correct for any quadrilateral.",
+        check: "Check the other opposite pair too, for completeness: 95+80=175°, also not 180°, confirming both opposite pairs fail the cyclic condition, not just one.",
+        structureId: "angle_sum_sanity_check"},
+      { q: "A solution gives the angles of a triangle as x + 20°, 2x + 10° and 4x - 25°. Find x and check the result.",
+        understand: "First solve for x using the triangle angle sum, then substitute back and apply the sanity check to confirm all three resulting angles are genuinely positive and sum correctly.",
+        steps: [
+        "Set up the equation using the triangle angle sum: (x+20) + (2x+10) + (4x-25) = 180.",
+        "Simplify: 7x + 5 = 180, so 7x = 175, giving x = 25.",
+        "Substitute back: the angles are 25+20=45°, 2(25)+10=60°, and 4(25)-25=75°.",
+      ], answer: "x = 25; the angles are 45°, 60° and 75°.",
+        check: "Check both required conditions: all three angles (45°, 60°, 75°) are positive, and they sum to 45+60+75=180°, confirming the result is geometrically consistent.",
+        structureId: "algebraic_angle_equation"},
     ],
       tryit: { q: "Two angles on a straight line are calculated as 115° and 60°. Use the angle sum check to decide if this is possible.", answer: "Not possible - 115 + 60 = 175°, not 180°, so the two angles are inconsistent with lying on a straight line; at least one needs to be re-checked." , structureId: "angle_sum_sanity_check"} },
   ],
@@ -2687,21 +3929,39 @@ INTERMEDIATE_LESSONS.statisticsAdvanced = {
       "(If a half itself contains an even number of values, its quartile is the MEAN of the two middle values of that half - the same rule used for finding the median of any even-sized list.)",
       "The INTERQUARTILE RANGE (IQR) is Q3 − Q1 - the width of the middle 50% of the data:\nIQR =\n23 − 9 =\n14.\nA box plot draws a box from Q1 to Q3 (with a line inside it at the median), and then a thin line called a WHISKER stretching out from each end of the box to the minimum and the maximum. So for this dataset, the box runs from 9 to 23 with a line at 15, and whiskers reach out to the minimum (4) and maximum (30).",
     ], examples: [
-      { q: "A box plot has minimum 5, lower quartile Q1 = 12, median 18, upper quartile Q3 = 25, maximum 40. Find the interquartile range.", steps: [
+      { q: "A box plot has minimum 5, lower quartile Q1 = 12, median 18, upper quartile Q3 = 25, maximum 40. Find the interquartile range.",
+        understand: "The interquartile range is always upper quartile minus lower quartile, regardless of the minimum, median or maximum, so those three other values given here aren't actually needed for this particular question.",
+        steps: [
         "The interquartile range is the upper quartile minus the lower quartile:\nIQR =\nQ3 − Q1 =\n25 − 12 =\n13.",
-      ], answer: "13" , structureId: "boxplot_read_off"},
-      { q: "Using the 11 sorted test scores 4, 7, 9, 12, 14, 15, 18, 20, 23, 25, 30, find the median, Q1, Q3 and the interquartile range.", steps: [
+      ], answer: "13",
+        check: "Check the box plot ordering makes sense: 5 ≤ 12 ≤ 18 ≤ 25 ≤ 40, so the five values are correctly ordered, and 25-12=13 confirms the arithmetic.",
+        structureId: "boxplot_read_off"},
+      { q: "Using the 11 sorted test scores 4, 7, 9, 12, 14, 15, 18, 20, 23, 25, 30, find the median, Q1, Q3 and the interquartile range.",
+        understand: "With an odd number of values, both the overall median and each half's quartile are single data values, found by counting into the sorted list rather than averaging.",
+        steps: [
         "Median: the middle (6th) value out of 11 is 15.",
-        "Lower half (the 5 values below the median): 4, 7, 9, 12, 14 - its middle value is Q1 = 9.",
-        "Upper half (the 5 values above the median): 18, 20, 23, 25, 30 - its middle value is Q3 = 23.",
+        "Lower half (the 5 values below the median): 4, 7, 9, 12, 14, its middle value is Q1 = 9.",
+        "Upper half (the 5 values above the median): 18, 20, 23, 25, 30, its middle value is Q3 = 23.",
         "Interquartile range:\nIQR =\nQ3 − Q1 =\n23 − 9 =\n14.",
-      ], answer: "Median = 15, Q1 = 9, Q3 = 23, IQR = 14" , structureId: "boxplot_construct_iqr"},
-      { q: "12 data values in sorted order are: 3, 5, 7, 9, 11, 12, 14, 16, 19, 22, 24, 30. Find the median, Q1, Q3 and the interquartile range.", steps: [
+      ], answer: "Median = 15, Q1 = 9, Q3 = 23, IQR = 14",
+        check: "Check the position count: the median is the 6th of 11 values, and the lower/upper halves (5 values each) sit either side of it, 5+1+5=11, accounting for every value exactly once.",
+        structureId: "boxplot_construct_iqr"},
+      { q: "12 data values in sorted order are: 3, 5, 7, 9, 11, 12, 14, 16, 19, 22, 24, 30. Find the median, Q1, Q3 and the interquartile range.",
+        understand: "With an even number of values, both the overall median and each half's quartile need averaging two middle values, rather than reading off a single one directly.",
+        steps: [
         "With 12 values (an even count), the median is the mean of the 6th and 7th values: (12 + 14) ÷ 2 = 13.",
         "Lower half (the 6 values below the median): 3, 5, 7, 9, 11, 12. Q1 is the median of this half (6 values, even): Q1 = (7 + 9) ÷ 2 = 8.",
         "Upper half (the 6 values above the median): 14, 16, 19, 22, 24, 30. Q3 is the median of this half: Q3 = (19 + 22) ÷ 2 = 20.5.",
-        "IQR = Q3 − Q1 = 20.5 − 8 = 12.5.",
-      ], answer: "Median = 13, Q1 = 8, Q3 = 20.5, IQR = 12.5." , structureId: "boxplot_construct_iqr"},
+      ], answer: "Median = 13, Q1 = 8, Q3 = 20.5, IQR = 12.5.",
+        check: "Check the position count: 6 values in each half, 6+6=12, accounting for every value exactly once, with the median itself sitting exactly between the two halves rather than inside either.",
+        structureId: "boxplot_construct_iqr"},
+      { q: "A box plot has lower quartile 18, median 27 and upper quartile 39. Find the interquartile range and interpret it.",
+        understand: "Find the interquartile range the same way as in example 1, then explain in words what that number actually represents about the middle of the dataset.",
+        steps: [
+        "The interquartile range is the upper quartile minus the lower quartile: IQR = 39 - 18 = 21.",
+      ], answer: "IQR = 21; the middle 50% of the data spans a range of 21 units.",
+        check: "Check the box plot ordering makes sense: 18 ≤ 27 ≤ 39, so the quartiles and median are correctly ordered, and 39-18=21 confirms the arithmetic.",
+        structureId: "boxplot_read_off"},
     ],
       tryit: { q: "9 sorted values are: 2, 5, 6, 9, 11, 13, 15, 18, 20. Find Q1, Q3 and the interquartile range.", answer: "Q1 = 5.5, Q3 = 16.5, IQR = 11. The median (5th value) is 11. The lower half is 2, 5, 6, 9 (4 values, even), so Q1 is the mean of its two middle values: (5+6)÷2 = 5.5. The upper half is 13, 15, 18, 20, so Q3 = (15+18)÷2 = 16.5. IQR = 16.5 − 5.5 = 11." , structureId: "boxplot_construct_iqr"} },
     { h: "2. Cumulative frequency: running totals", body: [
@@ -2709,20 +3969,40 @@ INTERMEDIATE_LESSONS.statisticsAdvanced = {
       "A cumulative frequency GRAPH plots these running totals against the upper boundary of each class, and is always increasing (or flat) - it can never go down, since a running total never shrinks.",
       "Reading UP from a chosen cumulative frequency value to the plotted curve, then ACROSS and DOWN to the horizontal axis, gives the data value below which that many items lie. The median sits at HALF the total frequency; the lower quartile Q1 sits at a QUARTER (¼) of the total; the upper quartile Q3 sits at THREE-QUARTERS (¾) of the total. With the 80-student example above, the median is read off at cumulative frequency\n80 ÷ 2 =\n40.",
     ], examples: [
-      { q: "A cumulative frequency graph has a total frequency of 80. At what cumulative frequency value do you read off the median?", steps: [
+      { q: "A cumulative frequency graph has a total frequency of 80. At what cumulative frequency value do you read off the median?",
+        understand: "The median always sits at half the total frequency on the cumulative frequency axis, regardless of the actual data values.",
+        steps: [
         "The median sits at HALF the total frequency.",
         "80 ÷ 2 = 40.",
-      ], answer: "40" , structureId: "cumulative_frequency_position"},
-      { q: "A cumulative frequency graph has a total frequency of 120. At what cumulative frequency values do you read off the lower quartile (Q1) and the upper quartile (Q3)?", steps: [
+      ], answer: "40",
+        check: "This is a direct application of the half-total rule, true for any dataset with total frequency 80, regardless of what the individual data values happen to be.",
+        structureId: "cumulative_frequency_position"},
+      { q: "A cumulative frequency graph has a total frequency of 120. At what cumulative frequency values do you read off the lower quartile (Q1) and the upper quartile (Q3)?",
+        understand: "Apply the quarter and three-quarter rules directly to the total frequency, exactly as the median used a half.",
+        steps: [
         "Q1 sits at a QUARTER of the total:\n120 ÷ 4 =\n30.",
         "Q3 sits at THREE-QUARTERS of the total:\n3 × 120 ÷ 4 =\n360 ÷ 4 =\n90.",
-      ], answer: "Q1 at cumulative frequency 30, Q3 at cumulative frequency 90" , structureId: "cumulative_frequency_position"},
-      { q: "Students' marks are grouped as follows: 0-20: 8 students, 20-40: 15 students, 40-60: 22 students, 60-80: 12 students, 80-100: 3 students. Find the cumulative frequencies and at what cumulative frequency value would you read off the median on the graph?", steps: [
+      ], answer: "Q1 at cumulative frequency 30, Q3 at cumulative frequency 90",
+        check: "Check the three positions are evenly spaced in proportion: 30, 60 (the median, scaled to 120 as in example 1: 120÷2=60) and 90 sit at ¼, ½ and ¾ of 120 respectively, in the expected order.",
+        structureId: "cumulative_frequency_position"},
+      { q: "Students' marks are grouped as follows: 0-20: 8 students, 20-40: 15 students, 40-60: 22 students, 60-80: 12 students, 80-100: 3 students. Find the cumulative frequencies and at what cumulative frequency value would you read off the median on the graph?",
+        understand: "Build the running totals first, one class at a time, before applying the half-total rule to find where the median should be read.",
+        steps: [
         "Total frequency = 8 + 15 + 22 + 12 + 3 = 60 students.",
         "Cumulative frequencies: after 0-20: 8; after 20-40: 8 + 15 = 23; after 40-60: 23 + 22 = 45; after 60-80: 45 + 12 = 57; after 80-100: 57 + 3 = 60.",
-        "The last cumulative frequency reaches exactly 60 (the total), confirming the running totals are correct.",
         "The median is read off at half the total frequency: 60 ÷ 2 = 30. On the cumulative frequency graph, find cumulative frequency 30 on the vertical axis and read across to the curve, then down to the horizontal axis.",
-      ], answer: "Cumulative frequencies: 8, 23, 45, 57, 60. Read the median at cumulative frequency 30." , structureId: "cumulative_frequency_position"},
+      ], answer: "Cumulative frequencies: 8, 23, 45, 57, 60. Read the median at cumulative frequency 30.",
+        check: "Check the running totals add up correctly: the final cumulative frequency (60) matches the sum of all five individual class frequencies (8+15+22+12+3=60), confirming no class was missed.",
+        structureId: "cumulative_frequency_position"},
+      { q: "A cumulative frequency graph represents 80 values. At cumulative frequencies 20, 40 and 60, the graph gives values 14, 23 and 31. State Q1, the median, Q3 and the IQR.",
+        understand: "This reverses the earlier examples: instead of finding where to read on the cumulative frequency axis, the reading has already been done, so first check that 20, 40 and 60 really are the correct Q1/median/Q3 positions for a total of 80, then read off the corresponding data values.",
+        steps: [
+        "Check the positions: for total 80, Q1 is at 80÷4=20, median at 80÷2=40, Q3 at 3×80÷4=60, matching the given cumulative frequencies exactly.",
+        "Read off the data values at each position: Q1=14 (at cumulative frequency 20), median=23 (at cumulative frequency 40), Q3=31 (at cumulative frequency 60).",
+        "IQR = Q3 - Q1 = 31 - 14 = 17.",
+      ], answer: "Q1 = 14, median = 23, Q3 = 31, IQR = 17.",
+        check: "Check the values are correctly ordered: 14 ≤ 23 ≤ 31, consistent with Q1 ≤ median ≤ Q3 for any dataset.",
+        structureId: "cumulative_frequency_position"},
     ],
       tryit: { q: "A cumulative frequency graph has a total frequency of 200. At what cumulative frequency values do you read off the median and Q3?", answer: "Median at 200 ÷ 2 = 100; Q3 at 3 × 200 ÷ 4 = 150." , structureId: "cumulative_frequency_position"} },
     { h: "3. Histograms: frequency density, not frequency", body: [
@@ -2730,43 +4010,186 @@ INTERMEDIATE_LESSONS.statisticsAdvanced = {
       "The fix is to plot FREQUENCY DENSITY instead, defined as:\nfrequency density =\nfrequency ÷ class width.\nThis keeps the bar's AREA (not its height) proportional to the number of data points, however wide or narrow the class is - since area = height × width = frequency density × class width = frequency, exactly recovering the count.",
       "For example, three classes with frequencies 20, 24 and 24 but widths 5, 10 and 6 respectively have frequency densities:\n20 ÷ 5 =\n4,\n24 ÷ 10 =\n2.4,\n24 ÷ 6 =\n4.\nNotice the first and third classes have the same frequency density (4) despite different frequencies (20 vs 24) - that's because their widths differ too (5 vs 6), and density accounts for that.",
     ], examples: [
-      { q: "A histogram class has frequency 24 and class width 6. Find its frequency density.", steps: [
+      { q: "A histogram class has frequency 24 and class width 6. Find its frequency density.",
+        understand: "Apply the frequency density formula directly, dividing the given frequency by the given class width.",
+        steps: [
         "Frequency density = frequency ÷ class width.",
         "24 ÷ 6 = 4.",
-      ], answer: "4" , structureId: "frequency_density_basic"},
-      { q: "A histogram class has frequency 45 and class width 9. Find its frequency density.", steps: [
+      ], answer: "4",
+        check: "This is a direct application of the formula, checked simply by confirming the division: 24÷6=4.",
+        structureId: "frequency_density_basic"},
+      { q: "A histogram class has frequency 45 and class width 9. Find its frequency density.",
+        understand: "The same formula applies with different numbers.",
+        steps: [
         "Frequency density = frequency ÷ class width.",
         "45 ÷ 9 = 5.",
-      ], answer: "5" , structureId: "frequency_density_basic"},
-      { q: "A histogram has three bars: class 0-5 with frequency density 4, class 5-15 with frequency density 2.5, and class 15-23 with frequency density 3. Find the total frequency represented by all three bars.", steps: [
+      ], answer: "5",
+        check: "Check the division directly: 45÷9=5.",
+        structureId: "frequency_density_basic"},
+      { q: "A histogram has three bars: class 0-5 with frequency density 4, class 5-15 with frequency density 2.5, and class 15-23 with frequency density 3. Find the total frequency represented by all three bars.",
+        understand: "Reverse the formula for each bar separately (frequency = density × width) before adding all three frequencies together, since frequency density itself cannot be added directly across different class widths.",
+        steps: [
         "Frequency = frequency density × class width.",
         "Class 0-5: width = 5, frequency = 4 × 5 = 20.",
         "Class 5-15: width = 10, frequency = 2.5 × 10 = 25.",
         "Class 15-23: width = 8, frequency = 3 × 8 = 24.",
-        "Total frequency = 20 + 25 + 24 = 69.",
-      ], answer: "69." , structureId: "frequency_density_basic"},
+      ], answer: "69.",
+        check: "Check each bar's frequency was recovered before adding: 20+25+24=69, not the raw densities (4+2.5+3=9.5, which would be meaningless added together).",
+        structureId: "frequency_density_basic"},
+      { q: "A class interval 10 < x ≤ 16 contains 27 values. Find its frequency density.",
+        understand: "Find the class width from the given interval boundaries first, then apply the frequency density formula exactly as in examples 1 and 2.",
+        steps: [
+        "Class width = 16 - 10 = 6.",
+        "Frequency density = frequency ÷ class width = 27 ÷ 6 = 4.5.",
+      ], answer: "4.5",
+        check: "Check the division directly: 27÷6=4.5, a sensible non-integer frequency density.",
+        structureId: "frequency_density_basic"},
     ],
       tryit: { q: "A histogram bar has frequency density 5 over a class width of 8. Find the frequency it represents.", answer: "40, since frequency = frequency density × class width = 5 × 8 = 40." , structureId: "frequency_density_basic"} },
     { h: "4. Reading frequency back out of a histogram bar", body: [
       "Rearranging the frequency density formula (frequency density = frequency ÷ class width) to make frequency the subject:\nfrequency =\nfrequency density × class width.\nThis is exactly how you recover an actual COUNT of data points from a histogram bar's height (its frequency density) and width (its class width) - the reverse direction of section 3.",
     ], examples: [
-      { q: "A histogram bar has frequency density 4 and class width 5. Find the frequency it represents.", steps: [
+      { q: "A histogram bar has frequency density 4 and class width 5. Find the frequency it represents.",
+        understand: "Apply the rearranged formula directly, multiplying density by width to recover the frequency, the reverse direction of section 3.",
+        steps: [
         "Frequency = frequency density × class width.",
         "Frequency = 4 × 5 = 20.",
-      ], answer: "20" , structureId: "frequency_density_basic"},
-      { q: "A histogram bar has frequency density 3.5 and class width 12. Find the frequency it represents.", steps: [
+      ], answer: "20",
+        check: "Check by reversing again: 20÷5=4, matching the original frequency density.",
+        structureId: "frequency_density_basic"},
+      { q: "A histogram bar has frequency density 3.5 and class width 12. Find the frequency it represents.",
+        understand: "The same rearranged formula applies with a non-integer density.",
+        steps: [
         "Frequency = frequency density × class width.",
         "Frequency = 3.5 × 12 = 42.",
-      ], answer: "42" , structureId: "frequency_density_basic"},
-      { q: "A histogram has two adjacent bars. The first spans the class 20-35 and has frequency density 4.8. The second spans 35-50 and has frequency density 3.2. How many more data values fall in the first class than the second?", steps: [
+      ], answer: "42",
+        check: "Check by reversing again: 42÷12=3.5, matching the original frequency density.",
+        structureId: "frequency_density_basic"},
+      { q: "A histogram has two adjacent bars. The first spans the class 20-35 and has frequency density 4.8. The second spans 35-50 and has frequency density 3.2. How many more data values fall in the first class than the second?",
+        understand: "Recover each bar's frequency separately using the rearranged formula, then compare the two frequencies, rather than comparing the frequency densities directly.",
+        steps: [
         "Frequency = frequency density × class width.",
         "First class (20-35): width = 15, frequency = 4.8 × 15 = 72.",
         "Second class (35-50): width = 15, frequency = 3.2 × 15 = 48.",
         "Difference = 72 − 48 = 24.",
-        "Even though the two classes have the same width here, the different frequency densities mean different frequencies; more generally, always recover frequency from density × width rather than reading the bar height directly as a count.",
-      ], answer: "24 more data values fall in the first class (72 vs 48)." , structureId: "histogram_compare_frequencies"},
+      ], answer: "24 more data values fall in the first class (72 vs 48).",
+        check: "Check that comparing densities directly would have been wrong here: 4.8 vs 3.2 is a difference of 1.6, not 24, since the class widths still need multiplying in before the two counts can be compared as actual frequencies.",
+        structureId: "histogram_compare_frequencies"},
+      { q: "A histogram class from 20 to 35 has frequency density 2.4. Another class from 35 to 45 has density 3.1. Find the combined frequency.",
+        understand: "Recover each class's frequency separately using the rearranged formula, then add the two frequencies together, exactly as example 3 recovered frequencies before comparing them.",
+        steps: [
+        "First class (20-35): width = 15, frequency = 2.4 × 15 = 36.",
+        "Second class (35-45): width = 10, frequency = 3.1 × 10 = 31.",
+        "Combined frequency = 36 + 31 = 67.",
+      ], answer: "67",
+        check: "Check the two class widths were found correctly from their boundaries: 35-20=15 and 45-35=10, before multiplying by their respective densities.",
+        structureId: "histogram_compare_frequencies"},
     ],
       tryit: { q: "A histogram bar has frequency density 2.5 and class width 20. Find the frequency it represents.", answer: "50, since frequency = frequency density × class width = 2.5 × 20 = 50." , structureId: "frequency_density_basic"} },
+    { h: "5. Scatter graphs, correlation and sampling", body: [
+      "A scatter graph plots two related quantities against each other, one point per pair of values, to show whether they seem connected. If a straight-line pattern is visible, a line of best fit can be drawn through the middle of the points, and its equation can then be used to estimate one quantity from the other, in exactly the same way any straight-line equation is used.",
+      "The direction of the pattern is called correlation. If both quantities tend to increase together, that is positive correlation. If one tends to increase while the other decreases, that is negative correlation. If the points show no clear pattern at all, there is no correlation. Separately from direction, correlation also has a strength: points sitting very close to a clear line show strong correlation, while points still following the same general trend but scattered widely around it show weak correlation. Direction and strength are independent: a scatter graph can show strong positive correlation, weak positive correlation, strong negative correlation, and so on.",
+      "Collecting data from every single member of a population is often impossible or impractical, so statisticians take a sample instead: a smaller group intended to represent the whole population fairly. Different sampling methods have different names. Simple random sampling numbers every member of the population and selects using genuine randomness, giving everyone an equal chance. Systematic sampling selects every nth person from an ordered list. Stratified sampling splits the population into groups (such as year groups in a school) and samples from each group in proportion to its size, so no group is over- or under-represented.",
+      "To find how many should be sampled from one group in a stratified sample: divide that group's size by the total population size to find its proportion, then multiply that proportion by the overall sample size. This guarantees each group's share of the sample matches its share of the whole population as closely as possible.",
+      "Not every sampling method gives a fair picture. A method is biased when it systematically favours a particular kind of person or outcome, usually because the way the sample was gathered is connected to the very thing being measured, such as only surveying people who happen to be in one specific place at one specific time."
+    ], examples: [
+      {
+        q: "A scatter graph plots hours of sunshine against ice cream sales for several days. As the hours of sunshine increase, sales also tend to increase. What type of correlation is this?",
+        understand: "Check whether the two quantities move in the same direction (positive) or opposite directions (negative), or show no pattern at all.",
+        steps: [
+          "Both quantities increase together: more sunshine goes with more sales."
+        ],
+        answer: "Positive correlation",
+        check: "This makes real-world sense: warmer, sunnier days would be expected to increase ice cream sales, matching a positive relationship.",
+        structureId: "correlation_type_recognition"
+      },
+      {
+        q: "A line of best fit on a scatter graph has equation y = 2x + 3. Use it to estimate y when x = 12.",
+        understand: "Substitute the given x-value directly into the line of best fit's equation, exactly as with any straight-line equation.",
+        steps: [
+          "y = 2(12) + 3.",
+          "y = 24 + 3 = 27."
+        ],
+        answer: "27",
+        check: "This estimate is only as reliable as the data it is based on, and should not be trusted for x-values far outside the range of the original data.",
+        structureId: "scatter_graph_read_estimate"
+      },
+      {
+        q: "A council wants to survey opinions on a new park. They number every resident and use a random number generator to select 100 of them. What sampling method is this?",
+        understand: "Check whether every member of the population has an equal, genuinely random chance of selection, rather than being chosen by position in a list or by group.",
+        steps: [
+          "Every resident is numbered, and selection uses a random number generator with no bias towards any particular resident."
+        ],
+        answer: "Simple random sampling",
+        check: "This matches the definition exactly: genuine randomness applied to the whole numbered population, with no groups or fixed intervals involved.",
+        structureId: "sampling_method_recognition"
+      },
+      {
+        q: "A school has 240 Year 10 pupils and 160 Year 11 pupils (400 pupils in total). A stratified sample of 50 pupils is needed across both year groups. How many should come from Year 10?",
+        understand: "Each group contributes to the sample in proportion to its share of the whole population: (group size ÷ total) × sample size.",
+        steps: [
+          "Year 10's proportion of the school: 240 ÷ 400 = 0.6.",
+          "Sample from Year 10: 0.6 × 50 = 30."
+        ],
+        answer: "30 pupils",
+        check: "Check the two groups' samples add to the total: Year 11's proportion is 160 ÷ 400 = 0.4, giving 0.4 × 50 = 20 pupils, and 30 + 20 = 50, matching the required sample size.",
+        structureId: "stratified_sampling"
+      }
+    ] },
+    { h: "6. Outliers and comparing datasets", body: [
+      "An outlier is a value unusually far from the rest of the data. One standard way to decide, rather than just guessing by eye, uses the interquartile range: work out two 'fences', one below the lower quartile and one above the upper quartile, each exactly 1.5 × IQR away from its quartile. Any value beyond either fence counts as an outlier.",
+      "For a dataset with Q1 = 8 and Q3 = 20, the IQR is 20 − 8 = 12, so the upper fence is 20 + 1.5×12 = 20 + 18 = 38, and the lower fence is 8 − 18 = −10. A value of 40 lies beyond the upper fence, so it is an outlier; a value of 30 does not, since it sits comfortably inside both fences.",
+      "Comparing two datasets properly needs two separate statements, not one. The median compares typical value: which dataset tends to score higher overall. The interquartile range compares consistency: which dataset is more spread out, and which is more tightly clustered around its own median. A dataset is not simply 'better' or 'worse' than another; it can score higher on average while also being less consistent, or the other way round, so both comparisons must be made and reported together.",
+      "Grouped frequency data (used for histograms) does not give exact individual values, only how many fall in each class, so the median must be estimated. Find which class contains the middle position (total frequency ÷ 2), then interpolate: assume the data is evenly spread across that class, and take the matching fraction of the way through it. This is the same 'evenly spread within a class' assumption already used for estimating a mean from grouped data."
+    ], examples: [
+      {
+        q: "A dataset has lower quartile 8 and upper quartile 20. Using the rule that a value is an outlier if it lies more than 1.5 × IQR beyond either quartile, is the value 40 an outlier?",
+        understand: "Find the IQR, then the two fences (Q1 − 1.5×IQR and Q3 + 1.5×IQR); any value beyond these fences counts as an outlier.",
+        steps: [
+          "IQR = 20 − 8 = 12.",
+          "Upper fence = 20 + 1.5 × 12 = 20 + 18 = 38.",
+          "40 is beyond the upper fence, since 40 > 38."
+        ],
+        answer: "Yes, 40 is an outlier",
+        check: "Check the lower fence too, for completeness: 8 − 18 = −10, so any value below −10 would also count as an outlier, though that is not relevant to checking 40.",
+        structureId: "outlier_from_iqr_fences"
+      },
+      {
+        q: "Dataset A has median 24 and IQR 8. Dataset B has median 19 and IQR 13. Compare their medians and spreads.",
+        understand: "Compare the medians directly for typical value, and the IQRs directly for spread; a bigger IQR means more spread out.",
+        steps: [
+          "Medians: 24 vs 19, so Dataset A is higher.",
+          "IQRs: 8 vs 13, so Dataset B is more spread out."
+        ],
+        answer: "Dataset A has the higher median (24 vs 19); Dataset B is more spread out (larger IQR: 13 vs 8).",
+        check: "These are two separate comparisons: a dataset can have the higher median without necessarily having the larger or smaller spread, so both must be checked independently.",
+        structureId: "boxplot_compare_datasets"
+      },
+      {
+        q: "Grouped frequency data: 0-10: frequency 5; 10-20: frequency 20; 20-30: frequency 5 (total 30). Estimate the median using linear interpolation.",
+        understand: "Find which class contains the middle value (total ÷ 2), then interpolate proportionally within that class, assuming the data is evenly spread across it.",
+        steps: [
+          "Median position: 30 ÷ 2 = 15.",
+          "Cumulative frequency after the first class (0-10) is 5, still below 15; after the second class (10-20) it reaches 5+20=25, which passes 15, so the median falls in the 10-20 class.",
+          "Fraction through this class: (15 − 5) ÷ 20 = 0.5.",
+          "Estimated median: 10 + 0.5 × 10 = 15."
+        ],
+        answer: "15",
+        check: "Check that 15 sensibly lies between 10 and 20, the boundaries of the class it was found in.",
+        structureId: "histogram_estimate_median"
+      },
+      {
+        q: "Dataset A has median 25 and IQR 10. Dataset B has median 18 and IQR 5. Write a full comparison covering both typical value and consistency.",
+        understand: "A complete comparison always addresses both centre (median) and spread (IQR) separately, since a dataset can be 'better' on one measure and 'worse' on the other.",
+        steps: [
+          "Medians: 25 vs 18, so Dataset A typically scores higher.",
+          "IQRs: 10 vs 5, so Dataset B is more consistent (smaller IQR)."
+        ],
+        answer: "Dataset A typically scores higher (median 25 vs 18), but Dataset B is more consistent (IQR 5 vs 10).",
+        check: "Both statements are needed together: reporting only the median would miss that B is more consistent, and reporting only the IQR would miss that A typically scores higher.",
+        structureId: "compare_boxplots_full_justification"
+      }
+    ] },
   ],
 };
 
@@ -2777,13 +4200,18 @@ INTERMEDIATE_LESSONS.percentageAndCompoundGrowth.prereq = [
 ];
 
 INTERMEDIATE_LESSONS.algebraicProof.sections[1].examples = [
-  { q: "A student checks that n² + n is even for n = 3 and n = 4. Has the statement been proved for every integer?", steps: ["The checks show the statement works for two particular integers.", "There are infinitely many integers, so two successful cases cannot cover them all.", "A proof must use the structure of an arbitrary integer n."], answer: "No. The examples are evidence, not a proof." , structureId: "spot_the_error"},
-  { q: "Disprove the claim that every prime number is odd.", steps: ["A universal claim is disproved by one valid counterexample.", "The number 2 is prime because its only positive factors are 1 and 2.", "Two is even, not odd."], answer: "The counterexample 2 disproves the claim." , structureId: "find_counterexample"},
-  { q: "Why do one thousand successful numerical tests still not prove an identity?", steps: ["The tests cover only finitely many inputs.", "An identity claims to hold for every permitted input, often infinitely many.", "Algebraic reasoning must show that no untested input can fail."], answer: "Testing can build confidence or expose an error, but only a general argument proves the identity." , structureId: "spot_the_error"},
-  { q: "A calculator suggests that n² - n + 41 is prime for n = 0, 1, 2, ... , 20. Explain how to test the claim rather than assuming it is proved.", steps: ["Look for an input connected to the constant 41.", "At n = 41, the expression is 41² - 41 + 41 = 41².", "Since 41² has factors 41 and 41, it is composite."], answer: "The claim is false: n = 41 is a counterexample." , structureId: "find_counterexample"}
+  { q: "A student checks that n² + n is even for n = 3 and n = 4. Has the statement been proved for every integer?", steps: ["The checks show the statement works for two particular integers.", "There are infinitely many integers, so two successful cases cannot cover them all.", "A proof must use the structure of an arbitrary integer n."], answer: "No. The examples are evidence, not a proof.", structureId: "spot_the_error", understand: "Two successful checks might look convincing, but the claim covers every integer, so it is worth asking exactly how many integers two checks actually cover.", check: "Testing a further value, n=5, gives 25+5=30, still even, consistent with the claim but still not a proof for every integer."},
+  { q: "Disprove the claim that every prime number is odd.", steps: ["A universal claim is disproved by one valid counterexample.", "The number 2 is prime because its only positive factors are 1 and 2.", "Two is even, not odd."], answer: "The counterexample 2 disproves the claim.", structureId: "find_counterexample", understand: "A universal claim, 'every prime is odd', is disproved by finding just one prime number that is not odd.", check: "2 is prime, since its only positive factors are 1 and 2, and 2 is even, so this genuinely satisfies both parts of a valid counterexample."},
+  { q: "Why do one thousand successful numerical tests still not prove an identity?", steps: ["The tests cover only finitely many inputs.", "An identity claims to hold for every permitted input, often infinitely many.", "Algebraic reasoning must show that no untested input can fail."], answer: "Testing can build confidence or expose an error, but only a general argument proves the identity.", structureId: "spot_the_error", understand: "This asks for the reasoning behind why testing, however extensive, cannot replace a general algebraic argument.", check: "Even a million successful tests would still only cover a million specific inputs, leaving every other input, of which there are infinitely many, completely unchecked."},
+  { q: "A calculator suggests that n² - n + 41 is prime for n = 0, 1, 2, ... , 20. Explain how to test the claim rather than assuming it is proved.", steps: ["Look for an input connected to the constant 41.", "At n = 41, the expression is 41² - 41 + 41 = 41².", "Since 41² has factors 41 and 41, it is composite."], answer: "The claim is false: n = 41 is a counterexample.", structureId: "find_counterexample", understand: "A calculator confirming 21 consecutive prime outputs looks very convincing, but the claim needs checking against the specific structure of the formula, not just further blind testing.", check: "41² = 1681, and dividing 1681 by 41 gives exactly 41, confirming 1681 is composite and n=41 truly is a counterexample."}
 ];
 
-INTERMEDIATE_LESSONS.multiStepGeometryProof.sections[0].examples.push({ q: "A diagram contains a circle with centre O, tangent PT at T and chord AB parallel to PT. Name three useful facts before calculating any angle.", steps: ["A radius to a tangent is perpendicular, so OT is at 90° to PT.", "Because AB is parallel to PT, corresponding or alternate angles can transfer between them.", "If OA and OB are radii, triangle AOB is isosceles, so its base angles are equal.", "These facts expose the angle links before any arithmetic begins."], answer: "Use radius–tangent perpendicularity, parallel-line angle facts and the isosceles triangle formed by radii." , structureId: "parallel_isosceles_forward"});
+INTERMEDIATE_LESSONS.multiStepGeometryProof.sections[0].examples.push({ q: "A diagram contains a circle with centre O, tangent PT at T and chord AB parallel to PT. Name three useful facts before calculating any angle.",
+  understand: "This diagram carries several separate configurations at once: a tangent-radius pairing, a parallel-line pairing (since AB is parallel to PT), and a possible isosceles triangle if two radii are drawn; list each one before attempting any calculation.",
+  steps: ["A radius to a tangent is perpendicular, so OT is at 90° to PT.", "Because AB is parallel to PT, corresponding or alternate angles can transfer between them.", "If OA and OB are radii, triangle AOB is isosceles, so its base angles are equal."],
+  answer: "Use radius-tangent perpendicularity, parallel-line angle facts and the isosceles triangle formed by radii.",
+  check: "Check each fact really is present in the diagram as described: the radius-tangent fact needs OT drawn to the point of contact T, the parallel fact needs AB stated parallel to PT, and the isosceles fact needs both OA and OB drawn as radii.",
+  structureId: "parallel_isosceles_forward"});
 
 Object.values(INTERMEDIATE_LESSONS).forEach((lesson) => lesson.sections.forEach((section) => {
   if ((section.examples || []).length === 3 && section.tryit) {
@@ -2794,10 +4222,6 @@ Object.values(INTERMEDIATE_LESSONS).forEach((lesson) => lesson.sections.forEach(
   }
 }));
 
-INTERMEDIATE_LESSONS.algebraicManipulation.sections[0].visual = "intermediate-algebra-tiles";
-INTERMEDIATE_LESSONS.percentageAndCompoundGrowth.sections[1].visual = "intermediate-compound-growth";
-INTERMEDIATE_LESSONS.simultaneousEquations.sections[1].visual = "intermediate-line-intersection";
-INTERMEDIATE_LESSONS.quadratics.sections[1].visual = "intermediate-quadratic-roots";
 INTERMEDIATE_LESSONS.advancedProbability.sections[0].visual = "intermediate-probability-tree";
 INTERMEDIATE_LESSONS.circleTheoremsAndTangents.sections[2].visual = "intermediate-circle-theorem";
 INTERMEDIATE_LESSONS.trigonometryAdvanced.sections[0].visual = "intermediate-trig-triangle";
@@ -2805,6 +4229,7 @@ INTERMEDIATE_LESSONS.statisticsAdvanced.sections[3].visual = "intermediate-histo
 
 INTERMEDIATE_LESSONS.surdsAndIndices = {
   title: "Surds and Indices: keeping irrational numbers exact",
+  minutes: 18,
   order: 3,
   prereq: ["algebraicManipulation"],
   intro: "Some square roots are whole numbers. For example, √49 = 7. Others cannot be written as terminating or recurring decimals. These are irrational numbers. A calculator can give a decimal approximation to √2, but the symbol √2 records its exact value. In this lesson we will learn how to simplify and calculate with these exact forms. We will then connect roots to fractional indices and reciprocals to negative indices.",
@@ -2813,51 +4238,59 @@ INTERMEDIATE_LESSONS.surdsAndIndices = {
       h: "1. Simplifying a surd",
       visual: "intermediate-surd-factorisation",
       body: [
-        "A surd is an irrational root written exactly. The number √2 is a surd because its decimal digits continue without ending or settling into a repeating pattern. Writing √2 keeps the value exact. Writing 1.414 gives only an approximation.",
-        "To simplify a square root, look for a square factor inside it. A square factor is a factor that is also a square number, such as 4, 9, 16, 25 or 36. For √12, the useful factorisation is 12 = 4 × 3 because 4 has the whole-number square root 2.",
-        "We can split a product inside a square root: √(a × b) = √a × √b, provided a and b are not negative. Therefore √12 = √4 × √3 = 2√3. The 2 has moved outside the root because √4 = 2. The 3 remains inside because √3 is irrational.",
-        "The aim is to leave no square factor greater than 1 under the root. It is usually quickest to find the largest square factor at the start. If you choose a smaller one, the method still works, but you may need to simplify more than once.",
-        "Surds can be added only when their root parts match. This is the same principle used when collecting algebraic terms. We can add 2√3 and 5√3 because both are multiples of √3, giving 7√3. We cannot combine 2√3 and 5√2 because √3 and √2 are different numbers."
+        "Calculate √4 and √9 first, since these give whole numbers: √4 = 2 because 2 × 2 = 4, and √9 = 3 because 3 × 3 = 9. Now try √2: on a calculator this gives something like 1.414213562..., a decimal that carries on forever without ever settling into a repeating pattern. No matter how many digits are written down, that decimal is only ever an approximation, never the exact value. A surd is a way of writing a value like this exactly, using the root symbol itself instead of an endless decimal: √2 keeps the value precise, while 1.414 is merely close to it.",
+        "Some surds can be made simpler, even though they can never become whole numbers. Before trusting any rule for this, it is worth checking the rule with numbers small enough to work out directly. Is √4 × √9 the same as √(4 × 9)? Work out each side on its own: √4 × √9 = 2 × 3 = 6, and √(4 × 9) = √36 = 6. Both sides give 6. Try a second pair to make sure it was not a lucky coincidence: √9 × √16 = 3 × 4 = 12, and √(9 × 16) = √144 = 12. They match again.",
+        "This pattern, √a × √b = √(a × b), is true for any two numbers a and b that are zero or positive (a and b are just placeholders here, standing for whichever two numbers are actually involved, so one short rule can describe every possible pair at once instead of writing a fresh check for every new pair). Here is why it must always be true, not just true for the pairs already tried: squaring undoes a square root exactly, so squaring the left side gives (√a × √b)² = (√a)² × (√b)² = a × b, and squaring the right side gives (√(a × b))² = a × b, by the very definition of a square root. Both sides square to give the same thing, a × b, and since a and b are not negative, only one non-negative number can square to give any particular result, so the two original, unsquared quantities must have been equal all along.",
+        "Apply this rule to √12 properly: since 12 = 4 × 3, and 4 is itself a perfect square (2 × 2 = 4), √12 = √4 × √3 = 2√3. The 2 has moved outside the root because √4 is a whole number, 2. The 3 stays trapped inside the root because √3 is not a whole number, so it cannot be simplified any further. This whole process, spotting a square factor inside a root and pulling its square root outside, is called simplifying a surd.",
+        "The key skill is spotting the largest square factor straight away, since a smaller one still works but leaves more simplifying to do afterwards. For √72, both 4 and 36 are square factors (72 = 4 × 18 = 36 × 2), but starting with 36 finishes the job in one step: √72 = √36 × √2 = 6√2. Starting with 4 instead would give √72 = √4 × √18 = 2√18, and √18 would then need a second round of simplifying (√18 = √9 × √2 = 3√2, giving the same final answer, 2 × 3√2 = 6√2, just reached in two steps instead of one).",
+        "Surds can only be added or subtracted once their root parts match exactly, in exactly the same way that only like terms can be collected in algebra: 3x and 5x can be added because they are both multiples of x, but 3x and 5y cannot. In the same way, 2√3 and 5√3 can be added because they are both multiples of √3, giving 7√3, but 2√3 and 5√2 cannot be combined, because √3 and √2 are different, unrelated irrational numbers. This is exactly why simplifying every surd first matters: two surds that look different, such as √12 and √27, might turn out to share the same root part once simplified (√12 = 2√3 and √27 = 3√3), and only become combinable after that."
       ],
       examples: [
-        { q: "Simplify √20.", steps: ["Find the largest square factor of 20. It is 4 because 20 = 4 × 5.", "Split the root: √20 = √4 × √5.", "Evaluate √4 as 2. The factor 5 has no square factor greater than 1."], answer: "2√5" , structureId: "simplify_surd"},
-        { q: "Simplify √72.", steps: ["The largest square factor of 72 is 36 because 72 = 36 × 2.", "Split the root: √72 = √36 × √2.", "Evaluate √36 as 6."], answer: "6√2" , structureId: "simplify_surd"},
-        { q: "Simplify 3√50.", steps: ["First simplify the surd. Since 50 = 25 × 2, √50 = 5√2.", "The expression is now 3 × 5√2.", "Multiply the whole-number coefficients: 3 × 5 = 15."], answer: "15√2" , structureId: "simplify_surd"},
-        { q: "Simplify √12 + √75 - √27.", steps: ["Simplify each surd separately: √12 = 2√3, √75 = 5√3 and √27 = 3√3.", "All three terms now contain the same root, √3.", "Collect their coefficients: 2 + 5 - 3 = 4."], answer: "4√3" , structureId: "like_surds_add_sub"}
+        { q: "Simplify √20.", steps: ["Look for the largest square factor of 20. Checking square numbers in turn: 4 divides 20 exactly, since 20 = 4 × 5.", "Split the root using √(a × b) = √a × √b: √20 = √4 × √5.", "Evaluate the square root we know: √4 = 2."], answer: "2√5", structureId: "simplify_surd", understand: "We need to look for a square factor hidden inside 20, then pull its square root out from under the root sign.", check: "The remaining factor under the root, 5, has no square factor greater than 1, so 2√5 is fully simplified; a decimal check also confirms it: √20 ≈ 4.472, and 2√5 ≈ 2 × 2.236 = 4.472."},
+        { q: "Simplify √72.", steps: ["Look for the largest square factor of 72. Checking square numbers: 36 divides 72 exactly, since 72 = 36 × 2.", "Split the root: √72 = √36 × √2.", "Evaluate the square root we know: √36 = 6."], answer: "6√2", structureId: "simplify_surd", understand: "The same method as before applies here, but with a bigger square factor to spot: checking square numbers in turn (4, 9, 16, 25, 36...) against 72 finds that 36 divides it exactly.", check: "√2 has no square factor greater than 1 left inside it, so 6√2 is fully simplified."},
+        { q: "Simplify 3√50.", steps: ["First simplify the surd on its own. The largest square factor of 50 is 25, since 50 = 25 × 2.", "Split the root: √50 = √25 × √2.", "Evaluate the square root we know: √25 = 5, so √50 = 5√2.", "Now bring back the 3 that was multiplying the original surd: the expression is 3 × 5√2.", "Multiply the two whole-number parts together: 3 × 5 = 15."], answer: "15√2", structureId: "simplify_surd", understand: "There is a whole number, 3, multiplying the surd from the start. Simplify the surd part on its own first, then bring the 3 back in at the end.", check: "The remaining factor under the root, 2, has no square factor greater than 1, so 15√2 is fully simplified."},
+        { q: "Simplify √12 + √75 - √27.", steps: [
+          "Simplify √12: the largest square factor of 12 is 4, since 12 = 4 × 3, so √12 = √4 × √3 = 2√3.",
+          "Simplify √75: the largest square factor of 75 is 25, since 75 = 25 × 3, so √75 = √25 × √3 = 5√3.",
+          "Simplify √27: the largest square factor of 27 is 9, since 27 = 9 × 3, so √27 = √9 × √3 = 3√3.",
+          "Rewrite the original expression using these simplified forms: 2√3 + 5√3 - 3√3.",
+          "All three terms now share the same root, √3, so they are like terms and can be collected: 2 + 5 - 3 = 4.",
+        ], answer: "4√3", structureId: "like_surds_add_sub", understand: "Before adding or subtracting, simplify each surd on its own, since they cannot be combined while they look different: √12, √75 and √27 do not obviously share a root part until each is simplified.", check: "A decimal check confirms it: √12 + √75 - √27 ≈ 3.464 + 8.660 - 5.196 ≈ 6.928, and 4√3 ≈ 4 × 1.732 = 6.928."}
       ],
       note: "Before adding or subtracting surds, simplify every root. Terms that look different at first may become like terms."
     },
     {
       h: "2. Multiplying surds and rationalising a denominator",
       body: [
-        "Multiplying a square root by an identical copy removes the root: √5 × √5 = 5. This follows from the meaning of a square root. The positive number whose square is 5 is √5, so multiplying it by itself must return 5.",
-        "This fact is useful when a surd appears in the denominator of a fraction. An answer such as 1/√5 is exact, but it is conventional to rewrite it so that the denominator is rational. A rational number can be written as a fraction of integers and does not contain an unresolved root.",
-        "To rationalise 1/√5, multiply the numerator and denominator by √5. This does not change the value because √5/√5 = 1. The numerator becomes √5 and the denominator becomes 5, so 1/√5 = √5/5.",
-        "If the denominator contains two terms, such as 3 + √2, multiplying by √2 alone will not remove every surd. Instead use the conjugate, 3 - √2. The middle surd terms cancel because (a + b)(a - b) = a² - b². Therefore (3 + √2)(3 - √2) = 9 - 2 = 7.",
-        "Always simplify the final fraction. Rationalising changes the form of an exact number, not its value. A quick decimal check can confirm that the original and final expressions are approximately equal."
+        "Multiplying a square root by an identical copy of itself always removes the root completely: √5 × √5 = 5. This follows directly from what a square root means: √5 is defined as the positive number which, multiplied by itself, gives 5. So multiplying √5 by itself cannot give anything other than 5, by definition, even though √5 itself has no exact decimal form.",
+        "This fact is useful whenever a surd sits in the denominator of a fraction, such as 1/√5. This value is completely exact already, but it is conventional to rewrite it so the denominator contains no root at all, a process called rationalising. A rational number, from which this process gets its name, is one that can be written as a fraction of two whole numbers, with no unresolved root remaining.",
+        "To rationalise 1/√5, multiply both the numerator and denominator by √5. This is really multiplying the whole fraction by √5/√5, which equals 1, so the value of the fraction does not change, only its form. The numerator becomes 1 × √5 = √5. The denominator becomes √5 × √5 = 5, using the fact from the first paragraph. So 1/√5 = √5/5: the same number, now written with a whole number underneath instead of a surd.",
+        "A two-term denominator, such as 3 + √2, needs a different multiplier. Multiplying by √2 alone only removes the surd from one of the two terms, not both. Instead, multiply by the conjugate: the same two terms with the sign between them reversed, 3 - √2. Multiplying a bracket by its conjugate always uses the difference-of-two-squares pattern from an earlier lesson, (a + b)(a - b) = a² - b², so the middle surd terms cancel automatically: (3 + √2)(3 - √2) = 3² - (√2)² = 9 - 2 = 7, a whole number with no surd left at all.",
+        "Rationalising only ever changes the form of a number, never its value, so it is worth a quick decimal check the first few times: 1/√5 ≈ 1 ÷ 2.236 ≈ 0.447, and √5/5 ≈ 2.236 ÷ 5 ≈ 0.447. The two decimals agree, confirming the rationalised form really is the same number as the original."
       ],
       examples: [
-        { q: "Work out √3 × √12 and simplify.", steps: ["Combine the roots: √3 × √12 = √36.", "Evaluate the square root."], answer: "6" , structureId: "multiply_surds"},
-        { q: "Rationalise 1/√5.", steps: ["Multiply by √5/√5, which equals 1.", "The numerator becomes √5.", "The denominator becomes √5 × √5 = 5."], answer: "√5/5" , structureId: "rationalise_simple"},
-        { q: "Rationalise 6/√8 and simplify fully.", steps: ["Simplify √8 to 2√2, so 6/√8 = 3/√2.", "Multiply numerator and denominator by √2.", "This gives 3√2/2."], answer: "3√2/2" , structureId: "two_step_surd_simplify"},
-        { q: "Rationalise 4/(3 + √5).", steps: ["Use the conjugate 3 - √5 and multiply the fraction by (3 - √5)/(3 - √5).", "The numerator becomes 4(3 - √5) = 12 - 4√5.", "The denominator is (3 + √5)(3 - √5) = 9 - 5 = 4.", "Divide every term in the numerator by 4."], answer: "3 - √5" , structureId: "rationalise_conjugate"}
+        { q: "Work out √3 × √12 and simplify.", steps: ["Combine the roots into a single root, since √a × √b = √(a × b): √3 × √12 = √(3 × 12) = √36.", "Evaluate the square root: √36 = 6."], answer: "6", structureId: "multiply_surds", understand: "Multiplying two surds can be combined into one root first, which may simplify to a whole number.", check: "A decimal check confirms it: √3 × √12 ≈ 1.732 × 3.464 ≈ 6."},
+        { q: "Rationalise 1/√5.", steps: ["Multiply by √5/√5, which equals 1, so the value of the fraction is unchanged.", "The numerator becomes 1 × √5 = √5.", "The denominator becomes √5 × √5 = 5."], answer: "√5/5", structureId: "rationalise_simple", understand: "The denominator contains a single surd, so multiply top and bottom by that same surd to make the denominator a whole number.", check: "A decimal check confirms the value is unchanged: 1/√5 ≈ 0.447, and √5/5 ≈ 2.236 ÷ 5 ≈ 0.447."},
+        { q: "Rationalise 6/√8 and simplify fully.", steps: ["First simplify the surd in the denominator, since a smaller surd is easier to rationalise. The largest square factor of 8 is 4, since 8 = 4 × 2, so √8 = √4 × √2 = 2√2.", "Rewrite the fraction using this simplified form: 6/√8 = 6/(2√2).", "The 6 on top and the 2 underneath share a common factor of 2, so simplify the fraction first: 6 ÷ 2 = 3 and 2 ÷ 2 = 1, giving 3/√2.", "Now rationalise: multiply the numerator and denominator by √2, since √2 × √2 = 2 is rational: (3 × √2)/(√2 × √2).", "The denominator becomes √2 × √2 = 2. The numerator becomes 3√2."], answer: "3√2/2", structureId: "two_step_surd_simplify", understand: "This denominator is not yet in its simplest form, so simplify the surd first before rationalising, rather than rationalising the messier version straight away.", check: "A decimal check confirms it: 6/√8 ≈ 6 ÷ 2.828 ≈ 2.121, and 3√2/2 ≈ 3 × 1.414 ÷ 2 ≈ 2.121."},
+        { q: "Rationalise 4/(3 + √5).", steps: ["Use the conjugate, 3 - √5, and multiply the fraction by (3 - √5)/(3 - √5), which equals 1.", "The numerator becomes 4(3 - √5) = 12 - 4√5.", "The denominator is (3 + √5)(3 - √5) = 3² - (√5)² = 9 - 5 = 4.", "Divide every term in the numerator by 4: 12 ÷ 4 = 3, and 4√5 ÷ 4 = √5."], answer: "3 - √5", structureId: "rationalise_conjugate", understand: "The denominator has two terms, so a single surd multiplier will not clear the root from both; the conjugate is needed instead.", check: "A decimal check confirms it: 4/(3 + √5) ≈ 4 ÷ 5.236 ≈ 0.764, and 3 - √5 ≈ 3 - 2.236 ≈ 0.764."}
       ],
       note: "For a single surd denominator, multiply by that surd. For a two-term denominator, multiply by its conjugate."
     },
     {
       h: "3. Fractional and negative indices",
       body: [
-        "Fractional indices are another way to write roots. The expression a^(1/2) means √a because squaring either expression gives a. Similarly, a^(1/3) means the cube root of a because cubing it gives a.",
-        "In an index such as a^(m/n), the denominator n tells us which root to take and the numerator m tells us which power to apply. For example, 64^(2/3) means take the cube root of 64, then square the result. The cube root is 4 and 4² = 16.",
-        "Taking the root first usually keeps the numbers small. The order can be reversed when both forms are defined, but calculating a large power before taking its root often creates unnecessary arithmetic.",
-        "A negative index means take the reciprocal. For any non-zero a, a^(-n) = 1/a^n. This follows from the index law for division: a^p ÷ a^q = a^(p-q). In particular, 1 ÷ a^n = a^0 ÷ a^n = a^(-n).",
-        "When a fractional index is also negative, deal with the two ideas separately. The minus sign tells us to take a reciprocal. The fraction tells us which root and power to use. Writing these as separate steps makes errors much less likely."
+        "A fractional index is not a brand new idea to memorise: it falls straight out of a rule already used with whole-number indices, that multiplying two powers with the same base adds their indices, a^m × a^n = a^(m+n). Apply that rule to a^(1/2) multiplied by itself: a^(1/2) × a^(1/2) = a^(1/2 + 1/2) = a^1 = a. So whatever number a^(1/2) actually is, squaring it gives back a. But 'the number that squares to give a' is exactly the definition of √a. So a^(1/2) simply means √a, and this is forced to be true by the ordinary index law, not a coincidence of similar-looking notation.",
+        "The same reasoning stretches to any root. Multiplying a^(1/3) by itself three times gives a^(1/3) × a^(1/3) × a^(1/3) = a^(1/3+1/3+1/3) = a^1 = a, so a^(1/3) is the number that CUBES to give a: the cube root. In general, for any whole number q, a^(1/q) means the qth root of a, because multiplying it by itself q times always lands back on a^1 = a.",
+        "A fractional index such as a^(m/n) carries two pieces of information at once: the denominator, n, says which root to take, and the numerator, m, says which power to apply afterwards. For example, in 64^(2/3), the denominator 3 says take the cube root of 64 first, and the numerator 2 says square whatever that cube root turns out to be.",
+        "It is almost always easier to take the root first and the power second, even though both orders give the same final answer. Taking the root of 64 first gives a small, manageable number, 4 (since 4 × 4 × 4 = 64), and then squaring 4 is easy: 4² = 16. Doing it the other way round would mean squaring 64 first, to get 4096, and then finding the cube root of that much bigger number for the same final answer, far more arithmetic for no extra benefit.",
+        "A negative index does not mean a negative answer, and this also comes from an index law rather than being a separate new rule: dividing two powers with the same base subtracts their indices, a^p ÷ a^q = a^(p-q). Apply this with p = 0: a^0 ÷ a^n = a^(0-n) = a^(-n). Anything to the power 0 equals 1 (check it: a^0 × a^n = a^(0+n) = a^n, and the only number that multiplies a^n to give a^n back again is 1), so the left side a^0 ÷ a^n is really just 1 ÷ a^n, that is, 1/a^n. So a^(-n) and 1/a^n must be the same value: a negative index simply means take the reciprocal, flip the value upside down.",
+        "When an index is both fractional and negative at once, such as 16^(-3/4), deal with the two ideas completely separately rather than trying to combine them in one step. Deal with the minus sign first: it says the final answer will be the reciprocal of 16^(3/4). Then deal with the fraction on its own: the denominator, 4, says take the fourth root of 16, which is 2 (since 2 × 2 × 2 × 2 = 16); the numerator, 3, says cube that result, 2³ = 8. Only at the very end, take the reciprocal of that 8, giving 1/8. Keeping the two ideas in this order, fraction first and reciprocal at the very end, makes it much harder to lose track of one of them."
       ],
       examples: [
-        { q: "Evaluate 81^(1/2).", steps: ["An index of 1/2 means square root.", "The positive square root of 81 is 9."], answer: "9" , structureId: "frac_index_eval"},
-        { q: "Evaluate 64^(2/3).", steps: ["The denominator 3 means take the cube root first: ∛64 = 4.", "The numerator 2 means square the result: 4² = 16."], answer: "16" , structureId: "frac_index_eval"},
-        { q: "Evaluate 16^(-3/4).", steps: ["The negative index means the answer is the reciprocal of 16^(3/4).", "Take the fourth root of 16 to get 2.", "Raise 2 to the third power to get 8.", "Take the reciprocal."], answer: "1/8" , structureId: "neg_frac_index_eval"},
-        { q: "Evaluate (1/27)^(-2/3).", steps: ["The negative index takes the reciprocal, so (1/27)^(-2/3) = 27^(2/3).", "Take the cube root of 27 to get 3.", "Square 3."], answer: "9" , structureId: "neg_frac_index_eval"}
+        { q: "Evaluate 81^(1/2).", steps: ["An index of 1/2 means square root, by definition.", "The positive square root of 81 is 9, since 9 × 9 = 81."], answer: "9", structureId: "frac_index_eval", understand: "A denominator of 2 in the index says to take a square root; there is no separate numerator power to apply here.", check: "9² = 81, confirming 9 really is the square root of 81."},
+        { q: "Evaluate 64^(2/3).", steps: ["The denominator 3 means take the cube root first: ∛64 = 4, since 4 × 4 × 4 = 64.", "The numerator 2 means square the result: 4² = 16."], answer: "16", structureId: "frac_index_eval", understand: "The denominator names the root to take, and the numerator names the power to apply afterwards; taking the root first keeps the numbers small.", check: "Working the other order also agrees: 64² = 4096, and the cube root of 4096 is 16, since 16 × 16 × 16 = 4096."},
+        { q: "Evaluate 16^(-3/4).", steps: ["Deal with the minus sign first: the answer will be the reciprocal of 16^(3/4).", "Take the fourth root of 16: 2, since 2 × 2 × 2 × 2 = 16.", "Raise 2 to the third power: 2³ = 8.", "Take the reciprocal of 8."], answer: "1/8", structureId: "neg_frac_index_eval", understand: "This index is both negative and fractional, so deal with the two ideas separately: the fraction first, then the reciprocal right at the end.", check: "16^(3/4) = 8, and the reciprocal of 8 is 1/8, so 16^(-3/4) = 1/8 as expected."},
+        { q: "Evaluate (1/27)^(-2/3).", steps: ["The negative index takes the reciprocal of the base first: (1/27)^(-2/3) = 27^(2/3).", "Take the cube root of 27: 3, since 3 × 3 × 3 = 27.", "Square 3: 3² = 9."], answer: "9", structureId: "neg_frac_index_eval", understand: "Here the base itself is already a fraction, so the negative index flips it the right way up before the fractional index is applied.", check: "27^(2/3) = 9, and this matches taking the reciprocal of (1/27)^(2/3): (1/27)^(2/3) = (1/3)² = 1/9, whose reciprocal is 9."}
       ],
       note: "Read a^(m/n) as: take the nth root, then raise to the power m. If the index is negative, take the reciprocal as well."
     }
@@ -2867,7 +4300,8 @@ INTERMEDIATE_LESSONS.surdsAndIndices = {
     "Simplify a square root by removing square factors.",
     "Add or subtract surds only after simplifying them and only when their root parts match.",
     "Rationalising removes a surd from a denominator without changing the number's value.",
-    "A fractional index describes a root and a power. A negative index describes a reciprocal."
+    "A fractional index describes a root and a power. A negative index describes a reciprocal.",
+    "None of these are arbitrary new rules: √a × √b = √(a × b) follows from squaring both sides, and both fractional and negative indices follow directly from the index laws already used with whole-number powers."
   ],
   mistakes: [
     "Assuming √(a + b) equals √a + √b. The product rule does not work for addition.",
@@ -2878,4 +4312,231 @@ INTERMEDIATE_LESSONS.surdsAndIndices = {
   ]
 };
 
+INTERMEDIATE_LESSONS.vectors = {
+  title: "Vectors: column notation and geometric proof",
+  minutes: 16,
+  order: 29,
+  prereq: ["coordinateGeometry", "simultaneousEquations"],
+  intro: "A vector describes a movement: how far across and how far up or down, packaged as a single object rather than two separate numbers. This lesson builds from column-vector arithmetic (adding, subtracting, scaling) up to the single hardest GCSE vector skill: using vectors to prove that two lines are parallel, or that three points lie on a single straight line, purely from the fact that a vector can only ever be written one way in terms of two other non-parallel vectors.",
+  sections: [
+    { h: "1. Column vectors: addition, subtraction and scalar multiplication", body: [
+      "Imagine walking 3 steps east and 2 steps north. That whole movement can be written as a single column vector: the top number is how far across (positive means right/east, negative means left/west), and the bottom number is how far up or down (positive means up/north, negative means down/south). This walk is written (3, 2), stacked vertically rather than side by side. It looks like a coordinate pair, but it means something different: a coordinate pair (3, 2) names a fixed spot on a grid, while the vector (3, 2) names a movement of 3 across and 2 up, which could start from anywhere.",
+      "Adding two vectors means doing one movement, then the other, and finding the single movement that gets you to the same place. Take a = (3, 2) and b = (-1, 4). Walking a then b: first 3 across and 2 up, then 1 back and 4 further up. Adding the across-movements: 3 + (-1) = 2. Adding the up-movements: 2 + 4 = 6. So a + b = (2, 6): add the top numbers together, and separately add the bottom numbers together.",
+      "Subtracting works the same way, component by component, but a - b is not the same as b - a. a - b = (3 - (-1), 2 - 4) = (4, -2), while b - a = (-1 - 3, 4 - 2) = (-4, 2): exactly the reverse movement. That makes sense, since subtracting b is really 'undoing' the b movement, and undoing a movement means reversing its direction entirely, both across and up.",
+      "Multiplying a vector by a scalar (an ordinary number) means repeating the same movement that many times, in the same direction if the scalar is positive, or the exact opposite direction if it's negative. 2a means walking the a movement twice over: 2 × (3, 2) = (6, 4), double every component. -1 × a reverses it completely: (-3, -2), the same as -a.",
+      "A combined expression like 2a + 3b just applies these two rules in order: scale each vector first, keeping the two vectors completely separate, then add the two scaled results together component by component. There is no shortcut that skips scaling first."
+    ], examples: [
+      {
+        q: "a = (3, 2) and b = (-1, 4). Find a + b.",
+        understand: "Add the top components together, and separately add the bottom components together, exactly as shown above.",
+        steps: [
+          "Top: 3 + (-1) = 2.",
+          "Bottom: 2 + 4 = 6."
+        ],
+        answer: "(2, 6)",
+        check: "Check by picturing the walk: 3 across and 2 up, then 1 back and 4 up, nets out to 2 across and 6 up in total, matching (2, 6).",
+        structureId: "vector_addition"
+      },
+      {
+        q: "a = (5, -3) and b = (2, 4). Find a - b.",
+        understand: "Subtract b's components from a's, top from top and bottom from bottom; remember a - b is not the same as b - a, since it reverses which vector is being undone.",
+        steps: [
+          "Top: 5 - 2 = 3.",
+          "Bottom: -3 - 4 = -7."
+        ],
+        answer: "(3, -7)",
+        check: "Check by adding b back on: (3, -7) + (2, 4) = (5, -3), which is a again, confirming the subtraction was correct.",
+        structureId: "vector_subtraction"
+      },
+      {
+        q: "a = (4, -6). Find -3a.",
+        understand: "Multiply every component of the vector by the scalar, including its sign: a negative scalar reverses the direction of the whole vector as well as changing its size.",
+        steps: [
+          "Top: -3 × 4 = -12.",
+          "Bottom: -3 × (-6) = 18."
+        ],
+        answer: "(-12, 18)",
+        check: "Check the direction makes sense: since -3 is negative, the result should point the opposite way to a, and (-12, 18) does indeed point opposite to (4, -6), just three times as far.",
+        structureId: "scalar_multiplication"
+      },
+      {
+        q: "a = (2, 5) and b = (3, -1). Find 2a + 3b.",
+        understand: "Scale each vector on its own first, keeping a and b completely separate, then add the two scaled vectors together component by component.",
+        steps: [
+          "2a = (4, 10).",
+          "3b = (9, -3).",
+          "Add them: (4 + 9, 10 + (-3)) = (13, 7)."
+        ],
+        answer: "(13, 7)",
+        check: "Check each stage separately: 2 × (2,5) = (4,10) and 3 × (3,-1) = (9,-3) are both correct scalar multiplications, and (4,10)+(9,-3) = (13,7) is a correct addition.",
+        structureId: "combined_vector_expression"
+      }
+    ] },
+    { h: "2. Magnitude and the vector between two points", body: [
+      "The magnitude of a vector, written |v|, is its length: how far you actually end up from where you started, in a straight line, not the total distance walked in two separate directions. For v = (3, 4), the across-movement (3) and the up-movement (4) form the two shorter sides of a right-angled triangle, with the straight-line distance as the hypotenuse. So |v| = √(3² + 4²) = √(9 + 16) = √25 = 5: magnitude always uses Pythagoras' theorem on the vector's own components.",
+      "The vector from one point to another is found exactly like section 1's subtraction: if A and B are two points, the vector AB (the displacement needed to walk from A to B) is B's coordinates minus A's coordinates, worked out component by component. For A(1, 2) and B(4, 6), AB = (4 - 1, 6 - 2) = (3, 4). Notice this is the exact same numbers as the first paragraph: the magnitude of AB, |AB|, is simply the straight-line distance from A to B, which is exactly the distance formula from coordinate geometry, just reached by a different route.",
+      "Sometimes the sum of the squared components isn't a perfect square. For v = (2, -6), x² + y² = 4 + 36 = 40, and √40 doesn't come out as a whole number. Rather than rounding, simplify the surd exactly as in the surds lesson: 40 = 4 × 10, so √40 = √4 × √10 = 2√10. The magnitude stays as this exact simplified surd rather than a rounded decimal.",
+      "The reverse vector BA runs the opposite way to AB, so BA = A - B, not B - A. Every component simply negates: if AB = (3, 4), then BA = (-3, -4). This is exactly section 1's scalar multiplication by -1 in disguise: BA = -AB."
+    ], examples: [
+      {
+        q: "Find the magnitude of the vector (5, 12).",
+        understand: "Apply Pythagoras' theorem directly to the vector's own components, treating them as the two shorter sides of a right-angled triangle.",
+        steps: [
+          "|v| = √(5² + 12²) = √(25 + 144) = √169."
+        ],
+        answer: "13",
+        check: "5, 12, 13 is a well-known Pythagorean triple, since 5² + 12² = 169 = 13², confirming the calculation.",
+        structureId: "vector_magnitude_triple"
+      },
+      {
+        q: "A is at (2, -1) and B is at (6, 3). Find the column vector AB.",
+        understand: "Subtract A's coordinates from B's coordinates, top from top and bottom from bottom, exactly as in section 1's subtraction rule.",
+        steps: [
+          "Top: 6 - 2 = 4.",
+          "Bottom: 3 - (-1) = 4."
+        ],
+        answer: "(4, 4)",
+        check: "Check by starting at A(2,-1) and applying the movement (4,4): you land at (2+4, -1+4) = (6, 3), which is B.",
+        structureId: "vector_between_two_points"
+      },
+      {
+        q: "Find the magnitude of the vector (3, 3), giving your answer as a simplified surd.",
+        understand: "Apply the same magnitude formula as always; since 3²+3² isn't a perfect square, simplify the resulting surd rather than leaving it as a decimal.",
+        steps: [
+          "x² + y² = 3² + 3² = 9 + 9 = 18.",
+          "√18 = √(9 × 2) = √9 × √2 = 3√2."
+        ],
+        answer: "3√2",
+        check: "Check: 3² × 2 = 9 × 2 = 18, confirming the surd simplification.",
+        structureId: "vector_magnitude_surd"
+      },
+      {
+        q: "A is at (-2, 4) and B is at (1, -3). Find the column vector BA, the displacement from B to A.",
+        understand: "BA runs the opposite way to AB, so subtract B's coordinates from A's, not the other way round; equivalently, find AB first and then negate every component.",
+        steps: [
+          "Top: -2 - 1 = -3.",
+          "Bottom: 4 - (-3) = 7."
+        ],
+        answer: "(-3, 7)",
+        check: "Check against AB: AB = (1-(-2), -3-4) = (3, -7), and BA = (-3, 7) is exactly its negative, confirming BA = -AB.",
+        structureId: "vector_reverse_direction"
+      }
+    ] },
+    { h: "3. Position vectors: midpoints, ratios and parallelogram sides", body: [
+      "GCSE vector proofs almost always fix one point as the origin, O, and describe every other point by its position vector: the vector from O out to that point. If A is a point, 'the position vector of A' just means the vector OA, and it's normally given the plain label a rather than being written out as OA every time. This is exactly the same information as A's coordinates, just relabelled as a vector for the arithmetic that follows.",
+      "In a parallelogram OABC (the four corners in order round the shape), OA and OC are two sides meeting at O. The diagonal from O, which is OB, is always the sum of those two sides: OB = a + c, where a = OA and c = OC. This is because travelling O to A to B covers the same ground as travelling directly O to C to B (since AB and OC are equal and parallel sides of the parallelogram), so OB = OA + AB = OA + OC = a + c.",
+      "The midpoint M of a segment AB, in position-vector form, is found by a similar idea: travel to A first, then go only halfway along AB. OM = OA + ½AB = a + ½(b - a). Expanding the bracket: a + ½b - ½a = ½a + ½b = ½(a + b). So the midpoint's position vector is simply the average of the two endpoints' position vectors, exactly matching the ordinary coordinate midpoint formula, just written using vectors.",
+      "More generally, if a point P divides AB in the ratio AP:PB = m:n, then P sits exactly m/(m+n) of the way along AB from A, so OP = a + [m/(m+n)](b - a). Setting m = n = 1 gives back the midpoint formula exactly, since 1/(1+1) = ½.",
+      "These two ideas, the parallelogram diagonal and the midpoint/ratio rule, often combine in a single question: finding the midpoint of a side that itself needs the diagonal rule to reach first."
+    ], examples: [
+      {
+        q: "OABC is a parallelogram with OA = a = (5, 1) and OC = c = (2, 6). Find the diagonal OB in terms of a and c, as a column vector.",
+        understand: "The diagonal from O in a parallelogram is the sum of the two sides meeting at O.",
+        steps: [
+          "OB = a + c = (5, 1) + (2, 6)."
+        ],
+        answer: "(7, 7)",
+        check: "Check: OB = a + c, and (5+2, 1+6) = (7,7), confirming the diagonal rule.",
+        structureId: "parallelogram_side_vector"
+      },
+      {
+        q: "O is the origin. A has position vector a = (2, -4) and B has position vector b = (8, 2). M is the midpoint of AB. Find OM.",
+        understand: "Use the midpoint rule OM = ½(a + b), the average of the two position vectors.",
+        steps: [
+          "a + b = (2 + 8, -4 + 2) = (10, -2).",
+          "OM = ½(10, -2) = (5, -1)."
+        ],
+        answer: "(5, -1)",
+        check: "Check by finding AM directly: AM = OM - a = (5-2, -1-(-4)) = (3, 3), and MB = b - OM = (8-5, 2-(-1)) = (3,3), matching, so M really is exactly halfway between A and B.",
+        structureId: "midpoint_vector_expression"
+      },
+      {
+        q: "O is the origin. A has position vector a = (1, 4) and B has position vector b = (10, 4). P lies on AB with AP:PB = 1:2. Find OP.",
+        understand: "P sits 1/(1+2) = 1/3 of the way from A to B, so add a third of the vector AB onto a.",
+        steps: [
+          "AB = b - a = (10-1, 4-4) = (9, 0).",
+          "⅓ of AB = (3, 0).",
+          "OP = a + ⅓AB = (1, 4) + (3, 0) = (4, 4)."
+        ],
+        answer: "(4, 4)",
+        check: "Check the ratio directly: AP = OP - a = (3, 0), and PB = b - OP = (6, 0), and 3:6 simplifies to 1:2, matching the given ratio.",
+        structureId: "ratio_point_vector_expression"
+      },
+      {
+        q: "OABC is a parallelogram with OA = a = (6, 2) and OC = c = (1, 3). N is the midpoint of BC. Find ON in terms of a and c.",
+        understand: "First reach B using the diagonal rule from section 3, then N is the midpoint of B and C, so average their position vectors exactly as in example 2.",
+        steps: [
+          "OB = a + c = (6+1, 2+3) = (7, 5).",
+          "ON = ½(OB + OC) = ½((7,5) + (1,3)) = ½(8, 8) = (4, 4)."
+        ],
+        answer: "(4, 4)",
+        check: "Check using the shortcut ON = ½a + c directly: ½(6,2) + (1,3) = (3,1)+(1,3) = (4,4), matching.",
+        structureId: "express_side_in_terms_of_two_vectors"
+      }
+    ] },
+    { h: "4. Vector proof: showing lines are parallel or points are collinear", body: [
+      "Every vector proof in this section rests on one central fact: two vectors are parallel exactly when one is a scalar multiple of the other, meaning the same number takes the top component of one to the top component of the other, and also takes the bottom component of one to the bottom component of the other. Check (4, 6) and (6, 9): 6 ÷ 4 = 1.5, and 9 ÷ 6 = 1.5. Both give the same scale factor, so (6, 9) = 1.5 × (4, 6), and the two vectors are parallel. If the two ratios ever disagree, the vectors point in genuinely different directions and are not parallel, however similar the numbers might look.",
+      "This one fact proves collinearity (three points lying on a single straight line). If two vectors that both start from the same point, say O, turn out to be scalar multiples of each other, then both point along the same line through O, so all three points, O and the two others, must lie on that single line. This is exactly how the midpoint rule from section 3 doubles up as a collinearity proof: since OM = ½(a+b) and OC (the parallelogram diagonal) = a+b, OM is exactly half of OC, so O, M and C all lie on one straight line.",
+      "The same fact proves two lines are parallel even when they don't share a point. If a vector CD works out to be a scalar multiple of a vector AB, then CD is parallel to AB (and the scalar itself tells you the ratio of their lengths). This is exactly the classic midpoint theorem: if C and D are the midpoints of OA and OB in a triangle, then CD = ½(b - a) = ½AB, proving CD is parallel to AB with exactly half its length, without ever needing to draw the triangle to scale.",
+      "The hardest type of question asks for an unknown point or ratio, using the fact that a vector can only be written one way as a combination of two non-parallel vectors a and b. If a point can be reached along two different paths, each written as some combination of a and b, then the two expressions must have matching coefficients of a and matching coefficients of b, since otherwise the same point would need two different combinations, which is impossible when a and b point in genuinely different directions. Matching those coefficients turns a geometry problem into an ordinary pair of simultaneous equations."
+    ], examples: [
+      {
+        q: "Are the vectors (3, -9) and (-1, 3) parallel? If so, state the scale factor.",
+        understand: "Compare the ratio of top components with the ratio of bottom components; the vectors are parallel exactly when both ratios agree.",
+        steps: [
+          "-1 ÷ 3 = -⅓.",
+          "3 ÷ (-9) = -⅓."
+        ],
+        answer: "Yes, parallel (scale factor -⅓)",
+        check: "Check by multiplying: -⅓ × (3, -9) = (-1, 3), matching the second vector exactly.",
+        structureId: "check_vectors_parallel"
+      },
+      {
+        q: "Triangle OAB has O as the origin, OA = a = (2, 8) and OB = b = (6, 0). C is the midpoint of OA and D is the midpoint of OB. Find CD, and state how it relates to AB.",
+        understand: "Find OC and OD first (half of a and half of b), then CD = OD - OC, and compare the result with AB = b - a.",
+        steps: [
+          "OC = ½a = (1, 4). OD = ½b = (3, 0).",
+          "CD = OD - OC = (3-1, 0-4) = (2, -4).",
+          "AB = b - a = (6-2, 0-8) = (4, -8)."
+        ],
+        answer: "CD = (2, -4), which is exactly ½ of AB",
+        check: "Since CD is a scalar multiple (½) of AB, CD is parallel to AB, with exactly half its length: this is the midpoint theorem, proved with vectors rather than a scale drawing.",
+        structureId: "midpoint_theorem_vector"
+      },
+      {
+        q: "OACB is a parallelogram with OA = a = (3, 5) and OB = b = (7, 1), so C = A + B. M is the midpoint of AB. Find OC and OM, and state the ratio OC:OM.",
+        understand: "Find OC using the diagonal rule and OM using the midpoint rule, then compare the two results directly.",
+        steps: [
+          "OC = a + b = (3+7, 5+1) = (10, 6).",
+          "OM = ½(a+b) = ½(10, 6) = (5, 3)."
+        ],
+        answer: "OC = (10, 6), OM = (5, 3), so OC:OM = 2:1",
+        check: "Since OM is exactly half of OC, and both vectors start at O, this proves O, M and C are collinear, whatever a and b happen to be.",
+        structureId: "parallelogram_collinear_ratio"
+      },
+      {
+        q: "Triangle OAB has O as the origin, OA = a = (8, 4) and OB = b = (2, 10). C is the midpoint of OA. D is the point on OB with OD:DB = 2:1. Lines AD and BC cross at X. Find OX.",
+        understand: "Since a and b point in different directions, X's position can be written only one way as a combination of them. Parametrise X along AD with one unknown fraction, and separately along BC with another, then match the coefficients of a and of b to get two simultaneous equations.",
+        steps: [
+          "On AD: X = a + t(OD - a) = a + t(⅔b - a) = (1-t)a + (2t/3)b.",
+          "On BC: X = b + s(OC - b) = b + s(½a - b) = (s/2)a + (1-s)b.",
+          "Matching coefficients: 1-t = s/2 and 2t/3 = 1-s. Solving simultaneously gives t = ¾ and s = ½.",
+          "OX = ¼a + ½b = ¼(8,4) + ½(2,10) = (2,1) + (1,5) = (3, 6)."
+        ],
+        answer: "(3, 6)",
+        check: "Check using the BC parametrisation instead: OX = ½OC + ½b = ½(4,2) + (1,5) = (2,1)+(1,5) = (3,6), the same answer, confirming X genuinely lies on both lines.",
+        structureId: "vector_proof_find_unknown_ratio"
+      }
+    ] }
+  ]
+};
+
 applyIntermediateLessonRewrites(INTERMEDIATE_LESSONS);
+
+// These four lessons are full-replacement rewrites (see intermediate-lessons-rewrite.js),
+// so their section-level visuals must be applied AFTER the rewrite call, or the rewrite's
+// object replacement silently discards them (as happened before this fix).
+INTERMEDIATE_LESSONS.algebraicManipulation.sections[0].visual = "intermediate-algebra-tiles";
+INTERMEDIATE_LESSONS.percentageAndCompoundGrowth.sections[1].visual = "intermediate-compound-growth";
+INTERMEDIATE_LESSONS.simultaneousEquations.sections[1].visual = "intermediate-line-intersection";
+INTERMEDIATE_LESSONS.quadratics.sections[1].visual = "intermediate-quadratic-roots";

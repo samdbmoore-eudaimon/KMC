@@ -1,0 +1,7 @@
+name = "kq-sync"
+main = "sync-worker.js"
+compatibility_date = "2024-01-01"
+
+kv_namespaces = [
+  { binding = "KQ_SYNC", id = "4735dd800a4449d6a75237853cabbcb5" }
+]

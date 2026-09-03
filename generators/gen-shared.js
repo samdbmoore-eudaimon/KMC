@@ -5,7 +5,7 @@ import { CONTENT_MODULES, LESSONS } from '../kq-content.js';
 
 /* ============================================================
    KANGAROO MATHS QUEST  (Years 7-9)
-   JMC / Junior Kangaroo / Olympiad + Year 9 stretch
+   Ten quest levels across four generator difficulty bands
    + Player profiles with progress saved across sessions
    All questions are ORIGINAL, written in UKMT style, not reproductions.
    ============================================================ */
@@ -65,6 +65,55 @@ export function buildMCStr(correct, distractors) {
 export const gbp = (x) => "£" + x;
 export const deg = (x) => x + "°";
 export function simplifyFrac(n, d) { const g = gcd(n, d); return [n / g, d / g]; }
+// Structure registry picker: registry = { [structureId]: { difficulties: [1-4...], build(d) => q|null } }.
+// Replaces the ad hoc "bank = d<=2 ? tier1 : tier2; while(!result){result=pick(bank)()} return result || G.topic(d)"
+// pattern duplicated across every topic — one safe fallback path instead of N slightly-different ones, and every
+// migrated topic gets a genuine structureId on its output for free. Retries within the difficulty-eligible pool
+// first; only widens to the full registry if every eligible structure fails `tries` times (keeps generate() total
+// rather than throwing on a merely-unlucky run, while still surfacing a real authoring bug via the final throw).
+export function pickStructure(registry, d, { tries = 12 } = {}) {
+  const eligible = Object.entries(registry).filter(([, s]) => s.difficulties.includes(d));
+  const pool = eligible.length ? eligible : Object.entries(registry);
+  for (let i = 0; i < tries; i++) {
+    const [id, s] = pick(pool);
+    const q = s.build(d);
+    if (q) return { ...q, structureId: id, variantId: q.variantId || id, representation: q.representation || (q.svg ? "diagram" : "direct"), stretch: q.stretch ?? !!s.stretch };
+  }
+  for (const [id, s] of pool) { const q = s.build(d); if (q) return { ...q, structureId: id, variantId: q.variantId || id, representation: q.representation || (q.svg ? "diagram" : "direct"), stretch: q.stretch ?? !!s.stretch }; }
+  throw new Error(`pickStructure: all structures failed for d=${d}`);
+}
+// Edge case §6: primaryType = index of highest stat; lowest index wins on tie.
+// Used at card-generation time (never re-derived during battle).
+export function computePrimaryType(s) { const m = Math.max(...s); return s.indexOf(m); }
+export function normaliseJoeyCardStats(card) {
+  const ranges = { common: [12, 15], uncommon: [18, 21], rare: [25, 28], epic: [33, 36], legendary: [44, 46] };
+  const range = ranges[card.r];
+  if (!range || !Array.isArray(card.s) || card.s.length !== 5) return card;
+  const type = computePrimaryType(card.s);
+  const stats = card.s.slice();
+  const current = stats.reduce((sum, value) => sum + value, 0);
+  const target = Math.max(range[0], Math.min(range[1], current));
+  let delta = target - current;
+  while (delta > 0) {
+    const candidates = stats.map((value, index) => ({ value, index }))
+      .filter(({ index, value }) => index !== type && value + 1 <= stats[type])
+      .sort((a, b) => a.value - b.value || a.index - b.index);
+    stats[candidates[0]?.index ?? type]++;
+    delta--;
+  }
+  while (delta < 0) {
+    const candidates = stats.map((value, index) => ({ value, index }))
+      .filter(({ index, value }) => index !== type && value > 1)
+      .sort((a, b) => b.value - a.value || b.index - a.index);
+    const index = candidates[0]?.index ?? type;
+    stats[index]--;
+    delta++;
+  }
+  card.s = stats;
+  card.bv = stats.reduce((sum, value) => sum + value, 0);
+  card.primaryType = type;
+  return card;
+}
 export function sup(n) { const m = { "-": "⁻", 0: "⁰", 1: "¹", 2: "²", 3: "³", 4: "⁴", 5: "⁵", 6: "⁶", 7: "⁷", 8: "⁸", 9: "⁹" }; return String(n).split("").map((c) => m[c] || c).join(""); }
 
 /* ---------------- SVG helpers ---------------- */
@@ -75,56 +124,49 @@ export const txt = (x, y, s, opt = {}) =>
   `<text x="${x}" y="${y}" font-family="Fredoka, sans-serif" font-size="${opt.size || 15}" font-weight="600" fill="${opt.fill || T.ink}" text-anchor="${opt.anchor || "middle"}">${s}</text>`;
 
 /* ---------------- topics ---------------- */
+// JUNIOR_LEGACY_TOPICS and JUNIOR_LEGACY_DEEP_TOPICS (pre-1-September UI topic metadata,
+// superseded by JUNIOR_TOPICS below) were archived 2026-09-03 to
+// archive/junior-calendar-legacy.md's sibling note — confirmed imported nowhere in the
+// codebase. This is distinct from the 45 JUNIOR_G generator functions and 44 JUNIOR_LESSONS
+// objects of the same era, which mostly remain live (reused as raw content by
+// generators/junior-curriculum-overlay.js and content/junior-curriculum-overlay.js) —
+// do not assume those are dead just because these two label/emoji arrays were.
 export const JUNIOR_TOPICS = [
-  { key: "multiExpr",      label: "Expressions",       emoji: "🔢", color: "#ff6b4a" },
-  { key: "countIntegers",  label: "Counting Numbers",  emoji: "🔍", color: "#7c5cff" },
-  { key: "modular",        label: "Cyclic Patterns",   emoji: "🔄", color: "#22c8b8" },
-  { key: "fractionUnusual",label: "Fractions",         emoji: "½",  color: "#ff5d8f" },
-  { key: "cryptarith",     label: "Digit Puzzles",     emoji: "🔐", color: "#5b3df0" },
-  { key: "meanPuzzle",     label: "Averages",          emoji: "📊", color: "#ff5d8f" },
-  { key: "ratioChain",     label: "Ratio Chains",      emoji: "⚖️", color: "#22c8b8" },
-  { key: "systemWord",     label: "Word Equations",    emoji: "🧮", color: "#2fc97a" },
-  { key: "workBackwards",  label: "Work Backwards",    emoji: "↩️", color: "#ff6b4a" },
-  { key: "multiRate",      label: "Multi-Rate",        emoji: "🐟", color: "#22c8b8" },
-  { key: "inverseProp",    label: "Inverse Proportion",emoji: "⚡", color: "#7c5cff" },
-  { key: "sportScore",     label: "Sport Scores",      emoji: "⚽", color: "#2fc97a" },
-  { key: "clockArith",     label: "Clocks & Times",    emoji: "⏰", color: "#ffc93c" },
-  { key: "calendar",       label: "Calendar Puzzles",  emoji: "📅", color: "#ff5d8f" },
-  { key: "angleParallel",  label: "Parallel Lines",    emoji: "📐", color: "#ffc93c", dia: true },
-  { key: "angleIso",       label: "Isosceles Angles",  emoji: "📐", color: "#ffc93c", dia: true },
-  { key: "angleRhombus",   label: "Shape Angles",      emoji: "📐", color: "#ffc93c", dia: true },
-  { key: "trianglesInRect",label: "Area Puzzles",      emoji: "🔺", color: "#2fc97a", dia: true },
-  { key: "midpointSquare", label: "Midpoint Areas",    emoji: "🔷", color: "#22c8b8", dia: true },
-  { key: "partitionRect",  label: "Divided Shapes",    emoji: "🟦", color: "#2fc97a", dia: true },
-  { key: "compoundPerimeter",  label: "Perimeters",        emoji: "📏", color: "#ff6b4a", dia: true },
-  { key: "poolPath",       label: "Pool & Path",       emoji: "🏊", color: "#22c8b8" },
-  { key: "cubeProps",      label: "3D Shapes",         emoji: "🧊", color: "#5b3df0" },
-  { key: "productOpt",     label: "Optimisation",      emoji: "🎯", color: "#7c5cff" },
-  { key: "tiling",         label: "Tiling",            emoji: "🧩", color: "#ff6b4a" },
-  { key: "truthLiars",     label: "Truth & Lies",      emoji: "🃏", color: "#5b3df0" },
-  { key: "seating",        label: "Arrangements",      emoji: "💺", color: "#ff5d8f" },
-  { key: "pigeonhole",     label: "Certainty",         emoji: "🎰", color: "#22c8b8" },
-  { key: "allocation",     label: "Counters & Boxes",  emoji: "📦", color: "#2fc97a" },
-  { key: "repeatOp",       label: "Repeat Operations", emoji: "🔁", color: "#7c5cff" },
-  { key: "customCount",    label: "Number Sequences",  emoji: "🏠", color: "#ff6b4a" },
-  { key: "agePuzzle",      label: "Age Puzzles",       emoji: "🎂", color: "#ff5d8f" },
-  { key: "estimation",     label: "Estimation",        emoji: "📏", color: "#ffc93c" },
-  { key: "bouncing",       label: "Sequences",         emoji: "🏀", color: "#7c5cff" },
-  { key: "coordGeom",      label: "Coordinate Geometry", emoji: "📍", color: "#22c8b8", dia: true },
-  { key: "magicGrid",      label: "Magic Grids",       emoji: "🔯", color: "#e0a72e", dia: true },
-  { key: "shapeFold",      label: "Cuts & Folds",      emoji: "✂️", color: "#ff8a5c", dia: true },
-  { key: "gridLogic",      label: "Logic Grids",       emoji: "🔢", color: "#5b3df0", dia: true },
-  { key: "networkGraph",   label: "Networks",          emoji: "🕸️", color: "#2fc97a", dia: true },
-  { key: "spatialTransform", label: "Nets & Symmetry", emoji: "🧩", color: "#7c5cff", dia: true },
+  { key: "placeValue", label: "Place Value", emoji: "🔢", color: "#7c5cff" },
+  { key: "numberProperties", label: "Number Properties", emoji: "🧩", color: "#2fc97a" },
+  { key: "integerDecimalArithmetic", label: "Integer & Decimal Arithmetic", emoji: "➕", color: "#ff6b4a" },
+  { key: "expressionsEquations", label: "Expressions & Equations", emoji: "🧮", color: "#2fc97a" },
+  { key: "coordGeom", label: "Coordinates", emoji: "📍", color: "#22c8b8", dia: true },
+  { key: "perimeterArea", label: "Perimeter & Area", emoji: "📏", color: "#ff6b4a", dia: true },
+  { key: "fractionUnusual", label: "Fraction Arithmetic", emoji: "½", color: "#ff5d8f" },
+  { key: "ratioChain", label: "Fractions & Ratio", emoji: "⚖️", color: "#22c8b8" },
+  { key: "transformations", label: "Transformations", emoji: "🪞", color: "#ff5d8f", dia: true },
+  { key: "estimation", label: "Estimation & Rounding", emoji: "🎯", color: "#ffc93c" },
+  { key: "sequences", label: "Sequences", emoji: "🔁", color: "#7c5cff" },
+  { key: "linearGraphs", label: "Linear Graphs", emoji: "📈", color: "#22c8b8", dia: true },
+  { key: "linearEquations", label: "Linear Equations", emoji: "🟰", color: "#5b3df0" },
+  { key: "percentProportion", label: "Percentages & Proportion", emoji: "%", color: "#ffc93c" },
+  { key: "statisticsMeasures", label: "Statistics & Measures", emoji: "📊", color: "#ff5d8f", dia: true },
+  { key: "statisticsAnalysis", label: "Statistical Analysis", emoji: "🔎", color: "#22c8b8", dia: true },
+  { key: "areaVolume", label: "Area & Volume", emoji: "🧊", color: "#2fc97a", dia: true },
+  { key: "polygons", label: "Polygons & Angles", emoji: "📐", color: "#ffc93c", dia: true },
+  { key: "constructions", label: "Geometric Constructions", emoji: "🧭", color: "#ff6b4a", dia: true },
+  { key: "similarityPythagoras", label: "Similarity & Pythagoras", emoji: "📐", color: "#3dcb78", dia: true },
+  { key: "probability", label: "Probability", emoji: "🎲", color: "#22c8b8" },
+  { key: "nonLinearRelations", label: "Non-linear Relationships", emoji: "〰️", color: "#7c5cff", dia: true },
+  { key: "expressionsFormulae", label: "Expressions & Formulae", emoji: "🔣", color: "#5b3df0" },
+  { key: "trigonometry", label: "Trigonometry", emoji: "📐", color: "#ff5d8f", dia: true },
+  { key: "standardForm", label: "Standard Form", emoji: "🔬", color: "#22c8b8" },
+  { key: "graphicalRepresentations", label: "Interpreting Graphs", emoji: "📉", color: "#ff6b4a", dia: true },
+  { key: "truthLiars", label: "Truth & Lies", emoji: "🃏", color: "#5b3df0", logicExtension: true, mockFrom: 7 },
+  { key: "seating", label: "Arrangements", emoji: "💺", color: "#ff5d8f", logicExtension: true, mockFrom: 7 },
+  { key: "pigeonhole", label: "Certainty", emoji: "🎰", color: "#22c8b8", logicExtension: true, mockFrom: 7 },
+  { key: "allocation", label: "Counters & Boxes", emoji: "📦", color: "#2fc97a", logicExtension: true, mockFrom: 7 },
+  { key: "magicGrid", label: "Magic Grids", emoji: "🔯", color: "#e0a72e", dia: true, logicExtension: true, mockFrom: 7 },
+  { key: "gridLogic", label: "Logic Grids", emoji: "🔢", color: "#5b3df0", dia: true, logicExtension: true, mockFrom: 7 },
+  { key: "networkGraph", label: "Networks", emoji: "🕸️", color: "#2fc97a", dia: true, logicExtension: true, mockFrom: 7 },
 ];
-/* Deep multi-step topics: injected by the level factory from level 5 upward. */
-export const JUNIOR_DEEP_TOPICS = [
-  { key: "epicJourney",    label: "Epic Journeys",   emoji: "🗺️", color: "#ff6b4a", deep: true },
-  { key: "moneyTrail",     label: "Money Trails",    emoji: "💰", color: "#ffc93c", deep: true },
-  { key: "digitDetective", label: "Digit Detective", emoji: "🕵️", color: "#5b3df0", deep: true },
-  { key: "numberMachine",  label: "Number Machines", emoji: "⚙️", color: "#22c8b8", deep: true },
-  { key: "pythagQuest",    label: "Triangle Trials", emoji: "📐", color: "#3dcb78", deep: true },
-];
+export const JUNIOR_DEEP_TOPICS = [];
 export const topicMeta = (k) => TOPICS.find((t) => t.key === k) || DEEP_TOPICS.find((t) => t.key === k) || TOPICS[0];
 // Recommended-order rank (1, 2, 3...) for every core topic in the currently active module,
 // shared between the Lessons list and the Practice topic picker so the same topic always

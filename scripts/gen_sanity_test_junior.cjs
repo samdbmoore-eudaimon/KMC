@@ -1,40 +1,7 @@
-// Sanity sweep for JUNIOR_G. Same pattern as gen_sanity_test_primary.cjs.
-const fs = require("fs");
 const path = require("path");
-const esbuild = require("esbuild");
-
-const ROOT = "C:/Users/samdb/UKMT App";
-const JSX = path.join(ROOT, "KangarooMathsQuest.jsx");
-
-const src = fs.readFileSync(JSX, "utf-8");
-const patched = src + "\nexport { JUNIOR_G };\n";
-const tmpPath = "C:/Users/samdb/UKMT App/_gen_test_junior_copy.jsx";
-fs.writeFileSync(tmpPath, patched, "utf-8");
-
-let mod;
-try {
-  const result = esbuild.buildSync({
-    entryPoints: [tmpPath], bundle: true, write: false, format: "cjs", platform: "node",
-    external: ["react", "react-dom", "react-dom/client", "lucide-react", "tone"],
-    define: { "process.env.NODE_ENV": '"production"' }, logLevel: "silent",
-  });
-  const code = result.outputFiles[0].text;
-  const Module = require("module");
-  const m = new Module(tmpPath, module);
-  m.filename = tmpPath; m.paths = Module._nodeModulePaths(ROOT);
-  m._compile(code, tmpPath);
-  mod = m.exports;
-} catch (e) {
-  console.error("BUILD/LOAD FAILED:", e.message); process.exit(1);
-} finally {
-  fs.unlinkSync(tmpPath);
-}
-
-const G = mod.JUNIOR_G;
-if (!G) { console.error("JUNIOR_G not exported"); process.exit(1); }
-
-const ALL_TOPICS = Object.keys(G);
-const RUNS_PER_DIFF = 400;
+const { pathToFileURL } = require("url");
+const ROOT = path.resolve(__dirname, "..");
+const RUNS_PER_DIFF = 160;
 
 let fails = 0, total = 0;
 const problems = [];
@@ -54,11 +21,29 @@ function scanLeaks(q, label) {
   }
 }
 
+async function main() {
+const shared = await import(pathToFileURL(path.join(ROOT, "generators", "gen-shared.js")).href);
+const mod = await import(`${pathToFileURL(path.join(ROOT, "generators", "junior-generators.js")).href}?sanity=${Date.now()}`);
+shared.setActiveModuleKey("junior");
+shared.setNamePools(shared.JUNIOR_NAMES_COMMON, shared.JUNIOR_NAMES_RARE, shared.JUNIOR_NAMES_EPIC, shared.JUNIOR_NAMES_LEGENDARY);
+const G = mod.JUNIOR_G;
+const STRUCTURES = mod.JUNIOR_STRUCTURES;
+const ALL_TOPICS = shared.JUNIOR_TOPICS.map((topic) => topic.key);
+if (!G || !STRUCTURES || !ALL_TOPICS.length) throw new Error("Junior curriculum exports missing");
+shared.setModuleSharedVars(shared.JUNIOR_TOPICS, shared.JUNIOR_DEEP_TOPICS, G);
+
 console.log(`Testing ${ALL_TOPICS.length} JUNIOR generators (${RUNS_PER_DIFF} runs per difficulty)...`);
 
 for (const key of ALL_TOPICS) {
   const gen = G[key];
+  const registry = STRUCTURES[key];
+  check(`${key} has generator`, typeof gen === "function");
+  check(`${key} has structure registry`, registry && typeof registry === "object");
+  if (!gen || !registry) continue;
   for (let d = 1; d <= 4; d++) {
+    const eligible = Object.entries(registry).filter(([, structure]) => structure.difficulties.includes(d)).map(([id]) => id);
+    const reached = new Set();
+    check(`${key} d${d} has at least five structures`, eligible.length >= 5, eligible.join(" | "));
     for (let i = 0; i < RUNS_PER_DIFF; i++) {
       let q;
       try { q = gen(d); } catch (e) {
@@ -68,7 +53,12 @@ for (const key of ALL_TOPICS) {
       const label = `${key} d${d}`;
       check(`${label} returned object`, q && typeof q === "object", JSON.stringify(q).slice(0, 150));
       if (!q) continue;
+      if (q.structureId) reached.add(q.structureId);
       check(`${label} has q text`, typeof q.q === "string" && q.q.length > 5);
+      check(`${label} has valid structureId`, typeof q.structureId === "string" && eligible.includes(q.structureId), q.structureId);
+      check(`${label} has variantId`, typeof q.variantId === "string" && q.variantId.length > 0, q.variantId);
+      check(`${label} has representation`, ["story", "diagram", "direct"].includes(q.representation), q.representation);
+      check(`${label} reports difficulty`, q.difficulty === d, q.difficulty);
       const hasMC = Array.isArray(q.options) && Number.isInteger(q.correctIndex);
       check(`${label} has options+correctIndex`, hasMC, JSON.stringify(q).slice(0, 250));
       if (hasMC) {
@@ -81,6 +71,7 @@ for (const key of ALL_TOPICS) {
       check(`${label} has solution`, solOk, JSON.stringify(q.solution).slice(0, 150));
       scanLeaks(q, label);
     }
+    check(`${key} d${d} reaches every structure`, eligible.every((id) => reached.has(id)), eligible.filter((id) => !reached.has(id)).join(" | "));
   }
 }
 
@@ -92,3 +83,6 @@ if (fails > 0) {
 } else {
   console.log("ALL GREEN");
 }
+}
+
+main().catch((error) => { console.error("BUILD/LOAD FAILED:", error.stack || error.message); process.exit(1); });

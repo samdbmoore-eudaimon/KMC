@@ -1,15 +1,16 @@
 // generators/junior-generators.js — Junior module: JUNIOR_G, bosses, cards, and helpers.
 import {
   T, DIFF_LABELS, rand, pick, shuffle, gcd, buildMC, buildMCStr, gbp, deg,
-  simplifyFrac, sup, svgBox, txt,
+  simplifyFrac, sup, svgBox, txt, computePrimaryType, normaliseJoeyCardStats,
   JUNIOR_TOPICS, JUNIOR_DEEP_TOPICS, JUNIOR_CONCEPTS,
   JUNIOR_NAMES_COMMON, JUNIOR_NAMES_RARE, JUNIOR_NAMES_EPIC, JUNIOR_NAMES_LEGENDARY,
   NAMES, namePool, _ND, _NL, NP, N1, DAYS, MONTHS31, SL, SC, SR, ST, dateDigitScenario,
   ACTIVE_MODULE_KEY, TOPICS, DEEP_TOPICS, G,
-  setND, setNL, topicMeta, resolvePrereqInfo,
+  setND, setNL, topicMeta, resolvePrereqInfo, pickStructure,
   examKindFor, EXAM_PASS_MARKS, RARITY, CARD_CLASS, CARDS
 } from './gen-shared.js';
 import { ADVENTURES } from '../kq-content.js';
+import { installJuniorCurriculumGenerators } from './junior-curriculum-overlay.js';
 
 export const JUNIOR_G = {
 
@@ -1643,267 +1644,6 @@ export const JUNIOR_G = {
     return { q:`When it is ${event_h}:00 in ${c1}, it is ${c2Shown}:00 in ${c2} and ${c3Shown}:00 in ${c3}. Someone goes to bed in ${c3} at ${bedH}:00. What time is it in ${c2} at that instant?`, options, correctIndex, solution:[`${c3} is ${off3} hours ${off3<0?"behind":"ahead of"} ${c1} (as a signed offset, ${off3>0?"+":""}${off3}). ${c2} is ${off2} hours ahead.`, `${bedH}:00 in ${c3} = ${wrap24(bedH-off3)}:00 in ${c1} = ${madridTime}:00 in ${c2}.`] };
   },
 
-  /* G15 — calendar / day-of-week: every tier is genuine mod-7 (or leap-year)
-     arithmetic derived from randomised inputs — the old d<=2 branches were
-     hard-coded, non-randomised questions with leaked scratch-work as their
-     "solution" text; this rebuild fixes both. */
-  calendar(d) {
-    const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-    const MONTHS31 = [1, 3, 5, 7, 8, 10, 12];
-    const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const isLeap = (y) => (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
-    // pick 4 distinct wrong weekdays (as offsets from the true day), preferring
-    // pedagogically meaningful offsets first, then filling with guaranteed-fresh ones.
-    const otherDays = (trueIdx, offsetHints) => {
-      const used = new Set([0]); const result = [];
-      for (const off of offsetHints) {
-        const o = ((off % 7) + 7) % 7;
-        if (o !== 0 && !used.has(o)) { used.add(o); result.push(DAYS[(trueIdx + o) % 7]); }
-        if (result.length === 4) break;
-      }
-      let filler = 1;
-      while (result.length < 4 && filler <= 6) { if (!used.has(filler)) { used.add(filler); result.push(DAYS[(trueIdx + filler) % 7]); } filler++; }
-      return result;
-    };
-
-    const tier1 = [
-      // (a) forward gap mod 7
-      () => {
-        const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const gap = rand(9, 60);
-        const trueIdx = (startIdx + gap) % 7; const trueDay = DAYS[trueIdx];
-        const rem = gap % 7;
-        const distractors = otherDays(trueIdx, [1, -1, Math.floor(gap / 7) - startIdx - trueIdx, 2]);
-        const { options, correctIndex } = buildMCStr(trueDay, distractors);
-        return { q: `Today is ${startDay}. What day of the week will it be in ${gap} days' time?`, options, correctIndex, solution: [
-          `Divide the gap by 7: ${gap} ÷ 7 = ${Math.floor(gap / 7)} remainder ${rem}.`,
-          `Only the remainder matters — a whole number of weeks lands back on the same weekday.`,
-          `${rem} day${rem === 1 ? "" : "s"} after ${startDay} is ${trueDay}.`] };
-      },
-      // (b) backward gap mod 7 with wraparound
-      () => {
-        const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const gap = rand(9, 50);
-        let trueIdx = (startIdx - gap) % 7; if (trueIdx < 0) trueIdx += 7;
-        const trueDay = DAYS[trueIdx]; const rem = gap % 7;
-        const distractors = otherDays(trueIdx, [1, -1, 2 * rem, 2]);
-        const { options, correctIndex } = buildMCStr(trueDay, distractors);
-        return { q: `Today is ${startDay}. What day of the week was it ${gap} days ago?`, options, correctIndex, solution: [
-          `Divide the gap by 7: ${gap} ÷ 7 = ${Math.floor(gap / 7)} remainder ${rem}.`,
-          `Going backwards, only the remainder of ${rem} day${rem === 1 ? "" : "s"} matters.`,
-          `${rem} day${rem === 1 ? "" : "s"} before ${startDay} is ${trueDay}.`] };
-      },
-      // (c) cross one month boundary (no leap issue, first month never Feb)
-      () => {
-        const mIdx = pick([0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
-        const m1Len = MONTHS31.includes(mIdx + 1) ? 31 : 30;
-        const day1 = rand(Math.max(1, m1Len - 10), m1Len - 3);
-        const day2 = rand(1, 10);
-        const restOfMonth1 = m1Len - day1;
-        const gap = restOfMonth1 + day2;
-        const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const trueIdx = (startIdx + gap) % 7; const trueDay = DAYS[trueIdx];
-        const distractors = otherDays(trueIdx, [1, -1, day2 - gap, 2]);
-        const { options, correctIndex } = buildMCStr(trueDay, distractors);
-        return { q: `${MONTH_NAMES[mIdx]} ${day1} is a ${startDay}. What day of the week is ${MONTH_NAMES[(mIdx + 1) % 12]} ${day2}?`, options, correctIndex, solution: [
-          `From ${MONTH_NAMES[mIdx]} ${day1} to the end of ${MONTH_NAMES[mIdx]} is ${restOfMonth1} days, plus ${day2} more days into ${MONTH_NAMES[(mIdx + 1) % 12]}: ${restOfMonth1} + ${day2} = ${gap} days.`,
-          `${gap} ÷ 7 leaves remainder ${gap % 7}.`,
-          `${gap % 7} day${gap % 7 === 1 ? "" : "s"} after ${startDay} is ${trueDay}.`] };
-      },
-    ];
-
-    const tier2 = [
-      // (a) date of LAST occurrence of a weekday in the month
-      () => {
-        const L = pick([30, 31]); const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const targetIdx = rand(0, 6); const targetDay = DAYS[targetIdx];
-        const first = ((targetIdx - startIdx) % 7 + 7) % 7 + 1;
-        const dates = []; for (let dte = first; dte <= L; dte += 7) dates.push(dte);
-        const last = dates[dates.length - 1];
-        const distractors = [first, L, last - 7 > 0 ? last - 7 : last + 8, last - 1].filter((v, i, a) => a.indexOf(v) === i && v !== last);
-        while (distractors.length < 4) distractors.push(last + distractors.length + 3);
-        const { options, correctIndex } = buildMC(last, distractors);
-        return { q: `A ${L}-day month starts on a ${startDay}. What is the date of the LAST ${targetDay} in the month?`, options, correctIndex, solution: [
-          `The first ${targetDay} falls on day ${first} (since the month starts on a ${startDay}).`,
-          `Each later ${targetDay} is another 7 days on: ${dates.join(", ")}.`,
-          `The last one within the ${L}-day month is day ${last}.`] };
-      },
-      // (b) which weekdays occur 5 times
-      () => {
-        const L = pick([30, 31]); const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const extra = L - 28;
-        const fiveIdxs = []; for (let i = 0; i < extra; i++) fiveIdxs.push((startIdx + i) % 7);
-        const fiveNames = fiveIdxs.map(i => DAYS[i]);
-        const correctStr = fiveNames.join(", ");
-        const shiftSet = (k) => fiveIdxs.map(i => DAYS[(i + k + 7) % 7]).join(", ");
-        const distractors = [...new Set([shiftSet(1), shiftSet(-1), shiftSet(3), shiftSet(4)])].filter(s => s !== correctStr);
-        let fillN = 5; while (distractors.length < 4) distractors.push(shiftSet(fillN++));
-        const { options, correctIndex } = buildMCStr(correctStr, distractors);
-        return { q: `A ${L}-day month starts on a ${startDay}. Which weekday(s) occur 5 times that month?`, options, correctIndex, solution: [
-          `A ${L}-day month has 4 full weeks (28 days) plus ${extra} extra day${extra === 1 ? "" : "s"}.`,
-          `Those extra day${extra === 1 ? "" : "s"} are day${extra === 1 ? "" : "s"} 29${extra > 1 ? `–${28 + extra}` : ""}, which repeat the weekday${extra === 1 ? "" : "s"} of day${extra === 1 ? "" : "s"} 1${extra > 1 ? `–${extra}` : ""}: ${fiveNames.join(", ")}.`,
-          `Every other weekday occurs only 4 times, so ${fiveNames.length === 1 ? "the 5-times weekday is" : "the 5-times weekdays are"} ${correctStr}.`] };
-      },
-      // (c) next month's start weekday
-      () => {
-        const L = pick([30, 31]); const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const nextIdx = (startIdx + L) % 7; const nextDay = DAYS[nextIdx];
-        const distractors = otherDays(nextIdx, [1, -1, startIdx - nextIdx, 2]);
-        const { options, correctIndex } = buildMCStr(nextDay, distractors);
-        return { q: `A ${L}-day month starts on a ${startDay}. What day does the following month start on?`, options, correctIndex, solution: [
-          `The month has ${L} days, so the next month starts exactly ${L} days after this one did.`,
-          `${L} ÷ 7 leaves remainder ${L % 7}.`,
-          `${L % 7} day${L % 7 === 1 ? "" : "s"} after ${startDay} is ${nextDay}.`] };
-      },
-    ];
-
-    const tier3 = [
-      // (a) leap-year-aware same-date-next-year shift
-      () => {
-        const Y = rand(2000, 2199);
-        const nextLeap = isLeap(Y + 1);
-        const gap = nextLeap ? 366 : 365;
-        const shift = gap % 7;
-        const mIdx = rand(2, 11);
-        const mLenVal = MONTHS31.includes(mIdx + 1) ? 31 : 30;
-        const day = rand(1, mLenVal);
-        const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const trueIdx = (startIdx + shift) % 7; const trueDay = DAYS[trueIdx];
-        const wrongShift = shift === 1 ? 2 : 1;
-        const distractors = otherDays(trueIdx, [wrongShift - shift, 2 - shift, -shift, 1]);
-        const { options, correctIndex } = buildMCStr(trueDay, distractors);
-        return { q: `This year (${Y}), ${MONTH_NAMES[mIdx]} ${day} falls on a ${startDay}. What day of the week does ${MONTH_NAMES[mIdx]} ${day} fall on in ${Y + 1}?`, options, correctIndex, solution: [
-          `From this date to the same date next year spans a full year: ${gap} days, since ${Y + 1} ${nextLeap ? "is a leap year" : "is not a leap year"}.`,
-          `${gap} ÷ 7 leaves remainder ${shift}.`,
-          `${shift} day${shift === 1 ? "" : "s"} after ${startDay} is ${trueDay}.`] };
-      },
-      // (b) multi-month span crossing February (leap-aware)
-      () => {
-        const Y = rand(2000, 2199); const leap = isLeap(Y);
-        const day1 = rand(5, 25);
-        const day2 = rand(1, 28);
-        const restJan = 31 - day1;
-        const febLen = leap ? 29 : 28;
-        const gap = restJan + febLen + day2;
-        const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const trueIdx = (startIdx + gap) % 7; const trueDay = DAYS[trueIdx];
-        const wrongFebLen = leap ? 28 : 29;
-        const wrongGap = restJan + wrongFebLen + day2;
-        const distractors = otherDays(trueIdx, [wrongGap - gap, 1, -1, 2]);
-        const { options, correctIndex } = buildMCStr(trueDay, distractors);
-        return { q: `In ${Y} (${leap ? "a leap year, so February has 29 days" : "not a leap year, so February has 28 days"}), January ${day1} falls on a ${startDay}. What day of the week is March ${day2}?`, options, correctIndex, solution: [
-          `From January ${day1} to March ${day2}: the rest of January is ${restJan} days, all of February is ${febLen} days (${leap ? "a leap year" : "not a leap year"}), plus ${day2} days into March: ${restJan} + ${febLen} + ${day2} = ${gap} days.`,
-          `${gap} ÷ 7 leaves remainder ${gap % 7}.`,
-          `${gap % 7} day${gap % 7 === 1 ? "" : "s"} after ${startDay} is ${trueDay}.`] };
-      },
-      // (c) reverse: weekday-date sum determines the start day (uniqueness verified at generation time)
-      () => {
-        const L = pick([30, 31]);
-        const targetIdx = rand(0, 6); const targetDay = DAYS[targetIdx];
-        const s = rand(0, 6); const startDayTrue = DAYS[s];
-        const first = ((targetIdx - s) % 7 + 7) % 7 + 1;
-        const dates = []; for (let dte = first; dte <= L; dte += 7) dates.push(dte);
-        const sum = dates.reduce((a, b) => a + b, 0);
-        let matches = 0;
-        for (let s2 = 0; s2 < 7; s2++) {
-          const first2 = ((targetIdx - s2) % 7 + 7) % 7 + 1;
-          const dates2 = []; for (let dte = first2; dte <= L; dte += 7) dates2.push(dte);
-          const sum2 = dates2.reduce((a, b) => a + b, 0);
-          if (sum2 === sum) matches++;
-        }
-        if (matches !== 1) return null;
-        const distractors = otherDays(s, [1, -1, 2, 3]);
-        const { options, correctIndex } = buildMCStr(startDayTrue, distractors);
-        return { q: `In a certain ${L}-day month, the dates of every ${targetDay} add up to ${sum}. What day of the week does the 1st of the month fall on?`, options, correctIndex, solution: [
-          `The ${targetDay} dates in this month are ${dates.join(", ")}, which add to ${sum}.`,
-          `Checking every possible starting weekday for the 1st, only starting on a ${startDayTrue} makes the ${targetDay} dates sum to exactly ${sum}.`,
-          `So the 1st falls on a ${startDayTrue}.`] };
-      },
-    ];
-
-    const tier4 = [
-      // (a) same-date-N-years-later, span deliberately crosses a century year
-      // (divisible by 4 but NOT by 400, so NOT a leap year despite looking like one)
-      () => {
-        const boundary = pick([2100, 2200, 2300]);
-        const startOffset = rand(2, 5);
-        const endOffset = rand(1, 4);
-        const Y = boundary - startOffset;
-        const n = startOffset + endOffset;
-        const mIdx = rand(2, 11);
-        const mLenVal = MONTHS31.includes(mIdx + 1) ? 31 : 30;
-        const day = rand(1, mLenVal);
-        let leapCount = 0; const leapYears = [];
-        for (let yy = Y + 1; yy <= Y + n; yy++) { if (isLeap(yy)) { leapCount++; leapYears.push(yy); } }
-        const totalDays = 365 * n + leapCount;
-        const shift = totalDays % 7;
-        const startIdx = rand(0, 6); const startDay = DAYS[startIdx];
-        const trueIdx = (startIdx + shift) % 7; const trueDay = DAYS[trueIdx];
-        // classic error: treating the century year as leap because it's divisible by 4
-        const wrongShift = ((365 * n + leapCount + 1) % 7 + 7) % 7;
-        const distractors = otherDays(trueIdx, [wrongShift - shift, 1, -1, 2]);
-        const { options, correctIndex } = buildMCStr(trueDay, distractors);
-        return { q: `${MONTH_NAMES[mIdx]} ${day} ${Y} falls on a ${startDay}. What day of the week does ${MONTH_NAMES[mIdx]} ${day} fall on in ${Y + n}, ${n} years later?`, options, correctIndex, solution: [
-          `Going forward ${n} years covers ${365 * n} days if there were no leap years at all, plus one extra day for every 29 February crossed along the way.`,
-          `Checking each year from ${Y + 1} to ${Y + n} against the leap rule (divisible by 4, except century years, unless divisible by 400): ${boundary} is divisible by 4 but is a century year NOT divisible by 400, so it is NOT a leap year${leapYears.length ? `; the genuine leap years in this span are ${leapYears.join(", ")}` : ", and in fact no year in this span is a leap year"}.`,
-          `That gives ${leapCount} extra day${leapCount === 1 ? "" : "s"}, so the total gap is 365 × ${n} + ${leapCount} = ${totalDays} days.`,
-          `${totalDays} ÷ 7 leaves remainder ${shift}, so ${shift} day${shift === 1 ? "" : "s"} after ${startDay} is ${trueDay}.`] };
-      },
-      // (b) combines Jan→Feb weekday shift, the century leap exception, and last-occurrence-in-month
-      () => {
-        const boundary = pick([2100, 2200, 2300]);
-        const jan1Idx = rand(0, 6); const jan1Day = DAYS[jan1Idx];
-        const feb1Idx = (jan1Idx + 31) % 7; const feb1Day = DAYS[feb1Idx];
-        const targetIdx = rand(0, 6); const targetDay = DAYS[targetIdx];
-        const first = ((targetIdx - feb1Idx) % 7 + 7) % 7 + 1;
-        const dates = []; for (let dte = first; dte <= 28; dte += 7) dates.push(dte);
-        const last = dates[dates.length - 1];
-        const datesIfWronglyLeap = []; for (let dte = first; dte <= 29; dte += 7) datesIfWronglyLeap.push(dte);
-        const wrongLast = datesIfWronglyLeap[datesIfWronglyLeap.length - 1];
-        const distractors = [wrongLast, last - 7, first].filter((v) => v >= 1 && v <= 29 && v !== last);
-        const { options, correctIndex } = buildMC(last, distractors);
-        return { q: `${boundary} is divisible by 4, but because it is a century year not divisible by 400 it is NOT a leap year, so February has only 28 days that year. 1 January ${boundary} falls on a ${jan1Day}. What is the date of the last ${targetDay} in February that year?`, options, correctIndex, solution: [
-          `1 January is a ${jan1Day}. January always has 31 days, so 1 February is 31 days later: 31 ÷ 7 leaves remainder 3, so 1 February falls on a ${feb1Day}.`,
-          `${boundary} fails the century rule (divisible by 4 but not by 400), so it is not a leap year and February has 28 days, not 29.`,
-          `The first ${targetDay} in February falls on day ${first}, and every 7 days after that is another ${targetDay}: ${dates.join(", ")}.`,
-          `Because February only runs to day 28 that year, day ${last} is the last ${targetDay} — a student who wrongly assumed a 29-day February would land on day ${wrongLast} instead.`] };
-      },
-      // (c) mirror of (a) but backwards in time, forcing the solver to work out the
-      // correct leap-year range for a subtraction rather than an addition
-      () => {
-        const boundary = pick([2100, 2200, 2300]);
-        const endOffset = rand(2, 5);
-        const startOffset = rand(1, 4);
-        const Yend = boundary + endOffset;
-        const n = endOffset + startOffset;
-        const Ystart = Yend - n;
-        const mIdx = rand(2, 11);
-        const mLenVal = MONTHS31.includes(mIdx + 1) ? 31 : 30;
-        const day = rand(1, mLenVal);
-        let leapCount = 0; const leapYears = [];
-        for (let yy = Ystart + 1; yy <= Yend; yy++) { if (isLeap(yy)) { leapCount++; leapYears.push(yy); } }
-        const totalDays = 365 * n + leapCount;
-        const shift = totalDays % 7;
-        const endIdx = rand(0, 6); const endDay = DAYS[endIdx];
-        let trueIdx = (endIdx - shift) % 7; if (trueIdx < 0) trueIdx += 7;
-        const trueDay = DAYS[trueIdx];
-        const wrongShift = ((365 * n + leapCount + 1) % 7 + 7) % 7;
-        let wrongIdx = (endIdx - wrongShift) % 7; if (wrongIdx < 0) wrongIdx += 7;
-        const distractors = otherDays(trueIdx, [trueIdx - wrongIdx, 1, -1, 2]);
-        const { options, correctIndex } = buildMCStr(trueDay, distractors);
-        return { q: `${MONTH_NAMES[mIdx]} ${day} ${Yend} falls on a ${endDay}. What day of the week did ${MONTH_NAMES[mIdx]} ${day} fall on in ${Ystart}, ${n} years earlier?`, options, correctIndex, solution: [
-          `Going back ${n} years covers ${365 * n} days if there were no leap years at all, plus one extra day for every 29 February crossed along the way.`,
-          `Checking each year from ${Ystart + 1} to ${Yend} against the leap rule: ${boundary} looks like a leap year (divisible by 4) but is NOT, since it's a century year not divisible by 400${leapYears.length ? `; the genuine leap years in this span are ${leapYears.join(", ")}` : ", and in fact no year in this span is a leap year"}.`,
-          `That's ${leapCount} extra day${leapCount === 1 ? "" : "s"}, so the total gap is 365 × ${n} + ${leapCount} = ${totalDays} days.`,
-          `${totalDays} ÷ 7 leaves remainder ${shift}, and going backwards, ${shift} day${shift === 1 ? "" : "s"} before ${endDay} is ${trueDay}.`] };
-      },
-    ];
-
-    const bank = d <= 1 ? tier1 : d <= 2 ? tier2 : d === 3 ? tier3 : tier4;
-    let result = null, guard = 0;
-    while (!result && guard < 10) { guard++; result = pick(bank)(); }
-    return result || G.calendar(d);
-  },
 
   // dateDigit retired as a standalone topic — its date-digit-sum scenario now lives inside
   // digitDetective (see the dateDigitScenario() helper used there), with a max/min toggle
@@ -7102,11 +6842,13 @@ spatialTransform(d) {
   },
 };
 
+export const JUNIOR_STRUCTURES = installJuniorCurriculumGenerators(JUNIOR_G, { rand, pick, buildMC, buildMCStr, pickStructure });
+
 export function makeQuestion(topicKey, difficulty) {
   setND(difficulty || 1);
   const key = topicKey || pick(TOPICS).key;
   const gen = G[key] || G[pick(TOPICS).key];
-  let out; try { out = gen(difficulty); } catch (e) { out = G.multiExpr(difficulty); }
+  let out; try { out = gen(difficulty); } catch (e) { out = (G.multiExpr || G[pick(TOPICS).key])(difficulty); }
   return { ...out, topic: key, difficulty, id: Math.random().toString(36).slice(2) };
 }
 
@@ -7137,7 +6879,7 @@ export function makeLevelQuestion(level, topicKey, seen) {
   const lv = Math.min(Math.max(level || 1, 1), MAX_LEVEL);
   setNL(lv);
   const d = levelToDiff(lv);
-  if (!topicKey && Math.random() < deepChance(lv)) {
+  if (!topicKey && DEEP_TOPICS.length && Math.random() < deepChance(lv)) {
     const deepKey = pick(DEEP_TOPICS).key;
     for (let i = 0; i < 25; i++) {
       const q = makeQuestion(deepKey, d);
@@ -7208,7 +6950,7 @@ export const JUNIOR_OLYMPIAD = [
     markScheme: [ { pts: 1, desc: "Recognised each domino covers 2 squares (an even amount)." }, { pts: 1, desc: "Identified 25 as odd." }, { pts: 1, desc: "Concluded correctly that tiling is impossible." } ] },
   { id: "o18", section: "A", q: "Find the smallest 4-digit number that is divisible by both 4 and 9.", answer: "1008", tactic: "Combine divisibility rules: 4 and 9 together mean divisible by 36.", sol: ["A number divisible by both 4 and 9 must be divisible by 4×9=36 (since 4 and 9 share no common factor).", "The smallest 4-digit number is 1000. Dividing: 1000÷36 ≈ 27.8, so the smallest multiple of 36 that is at least 1000 is 28×36.", "28×36 = 1008.", "Check: 1008's last two digits are 08 (divisible by 4); digit sum 1+0+0+8=9 (divisible by 9). Both hold."],
     markScheme: [ { pts: 1, desc: "Recognised that divisible by both 4 and 9 means divisible by 36." }, { pts: 1, desc: "Correctly found the smallest multiple of 36 that is a 4-digit number." }, { pts: 1, desc: "Checked the answer against both divisibility rules." } ] },
-  { id: "o19", section: "A", topic: "workBackwards", q: "After spending 1/3 of her money, then earning £12, Countra now has £30. How much did she start with?", answer: "£27", tactic: "Work backwards, undoing each change in reverse order.", sol: ["Let x be Countra's starting amount.", "After spending 1/3, she has (2/3)x left.", "Then earning £12 gives (2/3)x + 12 = 30, so (2/3)x = 18.", "Solving: x = 18 × 3/2 = 27."],
+  { id: "o19", section: "A", topic: "workBackwards", q: "After spending 1/3 of her money, then earning £12, a shopper now has £30. How much did she start with?", answer: "£27", tactic: "Work backwards, undoing each change in reverse order.", sol: ["Let x be the shopper's starting amount.", "After spending 1/3, she has (2/3)x left.", "Then earning £12 gives (2/3)x + 12 = 30, so (2/3)x = 18.", "Solving: x = 18 × 3/2 = 27."],
     markScheme: [ { pts: 1, desc: "Defined x as the starting amount." }, { pts: 1, desc: "Formed the correct equation (2/3)x + 12 = 30." }, { pts: 1, desc: "Solved correctly for x = 27." } ] },
   { id: "o20", section: "B", topic: "pigeonhole", q: "Show that among any 5 whole numbers, there must be two whose difference is a multiple of 4.", answer: "Proof — always true.", tactic: "Find an invariant/pigeonhole: remainders when dividing by 4.", sol: ["Every whole number leaves one of 4 possible remainders when divided by 4: 0, 1, 2 or 3. Think of these as 4 'holes'.", "With 5 numbers (pigeons) and only 4 possible remainders (holes), by the pigeonhole principle at least two numbers must share the same remainder.", "If two numbers a and b leave the same remainder mod 4, then a − b is exactly divisible by 4 (the remainders cancel).", "So among any 5 whole numbers, two must have a difference that is a multiple of 4."],
     markScheme: [ { pts: 1, desc: "Identified the 4 possible remainders mod 4 as the holes." }, { pts: 1, desc: "Applied the pigeonhole principle with 5 numbers and 4 holes." }, { pts: 2, desc: "Correctly explained why equal remainders force a difference divisible by 4." } ] },
@@ -7224,7 +6966,7 @@ export const JUNIOR_OLYMPIAD = [
     markScheme: [ { pts: 1, desc: "Counted the letter orderings correctly (4×3=12)." }, { pts: 1, desc: "Counted the digit orderings correctly (3×2=6)." }, { pts: 2, desc: "Correctly multiplied the independent parts to reach 72." } ] },
   { id: "o26", section: "B", q: "Prove that if a whole number's square is even, the whole number itself must be even.", answer: "Proof (if n² is even then n is even).", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["Suppose, for contradiction, that n² is even but n is ODD.", "Since n is odd, write n=2k+1 for some whole number k. Then n²=(2k+1)²=4k²+4k+1=2(2k²+2k)+1.", "That final form is 2×(a whole number)+1, which is ODD — but we assumed n² was even. That's a contradiction.", "The assumption (n odd) must be false. So whenever n² is even, n itself must be even."],
     markScheme: [ { pts: 1, desc: "Explicitly assumed the opposite (n odd) for contradiction." }, { pts: 2, desc: "Correctly expanded (2k+1)² and showed it's odd." }, { pts: 1, desc: "Identified the contradiction and concluded correctly." } ] },
-  { id: "o27", section: "A", q: "Multimoo has some cows and some chickens, 15 animals in total with 46 legs (cows have 4 legs, chickens have 2). How many cows are there?", answer: "8 cows", tactic: "Introduce a letter for each unknown, then form two equations.", sol: ["Let c be cows and h be chickens. c+h=15 (total animals) and 4c+2h=46 (total legs).", "Divide the legs equation by 2: 2c+h=23.", "Subtract the animals equation (c+h=15) from this: (2c+h)−(c+h)=23−15, giving c=8.", "There are 8 cows (and 7 chickens). Check: 8×4+7×2=32+14=46 ✓"],
+  { id: "o27", section: "A", q: "A farm has some cows and some chickens, 15 animals in total with 46 legs (cows have 4 legs, chickens have 2). How many cows are there?", answer: "8 cows", tactic: "Introduce a letter for each unknown, then form two equations.", sol: ["Let c be cows and h be chickens. c+h=15 (total animals) and 4c+2h=46 (total legs).", "Divide the legs equation by 2: 2c+h=23.", "Subtract the animals equation (c+h=15) from this: (2c+h)−(c+h)=23−15, giving c=8.", "There are 8 cows (and 7 chickens). Check: 8×4+7×2=32+14=46 ✓"],
     markScheme: [ { pts: 1, desc: "Set up both equations correctly (c+h=15, 4c+2h=46)." }, { pts: 1, desc: "Simplified and solved correctly for c=8." } ] },
   { id: "o28", section: "B", q: "Four different positive whole numbers have a sum of 22. What is the SMALLEST that the largest of them could possibly be?", answer: "7", tactic: "Push to extremes: minimise the spread, not just one number.", sol: ["To make the largest as small as possible, make all four numbers as close together as possible.", "22÷4=5.5, so try numbers near 5.5: the four closest different positive whole numbers are 4,5,6,7, which sum to exactly 22.", "Could the largest be 6 or smaller? Then all four numbers are different and at most 6, so the biggest possible sum is 6+5+4+3=18, less than 22 — impossible.", "So the largest cannot be 6 or less, but 7 works (4+5+6+7=22). The smallest possible value of the largest number is 7."],
     markScheme: [ { pts: 1, desc: "Stated the strategy: make the four numbers as close together as possible." }, { pts: 1, desc: "Tried numbers near 22÷4=5.5 and found 4,5,6,7 sums to 22." }, { pts: 2, desc: "Showed the largest being 6 or less is impossible." } ] },
@@ -7252,6 +6994,26 @@ export const JUNIOR_OLYMPIAD = [
     markScheme: [ { pts: 1, desc: "Correctly formed the largest number (4321) by descending digit order." }, { pts: 1, desc: "Correctly formed the smallest number (1234) by ascending digit order." }, { pts: 1, desc: "Computed the difference correctly (3087)." } ] },
   { id: "o40", section: "B", q: "A row of 7 coins alternates Heads, Tails, Heads, Tails, Heads, Tails, Heads (3 Tails, 4 Heads). In one move, you may flip any TWO ADJACENT coins together. Can you ever reach all 7 coins showing Heads?", answer: "No, it's impossible.", tactic: "Find an invariant: track the parity of one quantity.", sol: ["Track the number of Tails. Flipping two adjacent Heads turns them to Tails: tails count +2. Flipping two adjacent Tails turns them to Heads: tails count −2. Flipping one Head and one Tail swaps them: tails count changes by 0.", "So every move changes the tails count by −2, 0, or +2 — always an EVEN change. This means the PARITY of the tails count never changes.", "The starting tails count is 3, which is ODD, so the tails count must stay odd forever.", "All-Heads means 0 tails, which is even — but the tails count can only ever be odd. So it's impossible to reach all Heads."],
     markScheme: [ { pts: 1, desc: "Chose the tails-count as the invariant to track." }, { pts: 2, desc: "Correctly analysed all three flip-cases (HH, TT, HT/TH) and their effect on the tails count." }, { pts: 1, desc: "Concluded correctly using the starting odd count vs the target even count." } ] },
+  { id: "o41", section: "B", q: "A 6×6 board (36 squares) is coloured like a chessboard (18 black, 18 white). Two opposite corner squares, which are always the SAME colour on this board, are removed, leaving 34 squares. Can these be tiled exactly by 17 dominoes? Explain using colouring.", answer: "No, it's impossible.", tactic: "Use a colouring argument: each domino must cover one square of each colour.", sol: ["Every domino covers two adjacent squares, and adjacent squares on a chessboard colouring are always different colours.", "So a full tiling by 17 dominoes must cover exactly 17 black and 17 white squares.", "The two removed corners are the same colour (say black), leaving 18−2=16 black and 18 white squares — not equal.", "Since a tiling needs 17 of each colour but only 16 black remain, no such tiling is possible."],
+    markScheme: [ { pts: 1, desc: "Identified that each domino covers one black and one white square." }, { pts: 1, desc: "Stated a tiling needs equal black/white counts (17 each)." }, { pts: 2, desc: "Correctly computed the remaining colour counts (16 black, 18 white) and concluded impossibility." } ] },
+  { id: "o42", section: "A", q: "A grid is coloured like a chessboard. A counter starts on a white square, and each move slides it to an ADJACENT square (sharing an edge). What colour must the counter be on after 15 moves?", answer: "Black", tactic: "Use colouring: adjacent squares always differ in colour, so each move flips the colour.", sol: ["Adjacent squares on a chessboard colouring are always different colours, so every move flips the counter's colour.", "Starting on white, after 1 move it's black, after 2 moves white again — after an odd number of moves it is black, after an even number it is white.", "15 is odd, so after 15 moves the counter must be black."],
+    markScheme: [ { pts: 1, desc: "Recognised that each move flips the counter's colour." }, { pts: 1, desc: "Correctly used the parity of 15 (odd) to conclude black." } ] },
+  { id: "o43", section: "A", q: "From 6 different contestants, how many different PAIRS of finalists can be chosen?", answer: "15", tactic: "Count in order, then adjust for the symmetry between a pair and its reverse.", sol: ["Counting in order: 6 choices for the first finalist, 5 for the second, giving 6×5=30 ordered pairs.", "Each unordered pair, like {A,B}, was counted twice in that 30 — once as AB, once as BA.", "So the true number of pairs is 30÷2=15."],
+    markScheme: [ { pts: 1, desc: "Counted the ordered pairs correctly (6×5=30)." }, { pts: 1, desc: "Recognised each pair is counted twice and divided correctly to reach 15." } ] },
+  { id: "o44", section: "B", topic: "pigeonhole", q: "A bag contains beads in only 5 colours. What is the least number of beads that must be drawn (without looking) to guarantee 3 beads of the same colour?", answer: "11", tactic: "Push to extremes: imagine the worst possible luck, colour by colour.", sol: ["The worst case draws as many beads as possible while keeping every colour's count BELOW 3, i.e. at most 2 of each of the 5 colours.", "That worst case uses 2×5=10 beads with no colour reaching 3.", "The 11th bead must push some colour's count to 3, since all 5 colours already have 2 each.", "So 11 beads guarantee 3 of one colour; 10 does not (the unlucky case: exactly 2 of each colour)."],
+    markScheme: [ { pts: 1, desc: "Identified the worst case as 2 of each of the 5 colours." }, { pts: 1, desc: "Computed the worst-case total correctly (10)." }, { pts: 2, desc: "Concluded correctly that the 11th bead forces a 3rd of some colour." } ] },
+  { id: "o45", section: "A", q: "A row of 8 numbers all start at 0. Each move, two of the numbers are chosen and 1 is added to each of them. After several moves, could the total of all 8 numbers be 15?", answer: "No, it's impossible.", tactic: "Find an invariant: track the parity of the total sum.", sol: ["Each move adds 1 to two different numbers, so the total sum increases by exactly 2 every move.", "Increasing a quantity by 2 never changes its parity, so the total sum's parity never changes.", "The starting total is 0, which is even, so the total must stay even after every move.", "15 is odd, so the total can never become 15."],
+    markScheme: [ { pts: 1, desc: "Identified the total sum as the invariant to track." }, { pts: 1, desc: "Showed each move changes the total by exactly 2 (even)." }, { pts: 1, desc: "Linked the even starting total to the total always staying even." }, { pts: 1, desc: "Concluded correctly that 15 (odd) is unreachable." } ] },
+  { id: "o46", section: "B", q: "Five different positive whole numbers have a sum of 40. What is the SMALLEST that the largest of them could possibly be?", answer: "10", tactic: "Push to extremes: minimise the spread, not just one number.", sol: ["To make the largest as small as possible, make all five numbers as close together as possible.", "40÷5=8, and the five closest different positive whole numbers are 6,7,8,9,10, which sum to exactly 40.", "Could the largest be 9 or less? Then all five numbers are different and at most 9, so the biggest possible sum is 5+6+7+8+9=35, less than 40 — impossible.", "So the largest cannot be 9 or less, but 10 works (6+7+8+9+10=40). The smallest possible value of the largest number is 10."],
+    markScheme: [ { pts: 1, desc: "Stated the strategy: make the five numbers as close together as possible." }, { pts: 1, desc: "Found 6,7,8,9,10 summing to exactly 40." }, { pts: 2, desc: "Showed the largest being 9 or less is impossible." } ] },
+  { id: "o47", section: "A", q: "A code is formed using 3 different digits chosen from {1,2,3,4}, arranged in a row (order matters, no repeats). How many different codes are possible?", answer: "24", tactic: "Count in order: a choice for each position, multiplied.", sol: ["There are 4 choices for the first digit.", "For each of those, 3 remaining digits for the second position (must be different from the first).", "For each of those, 2 remaining digits for the third position.", "Total: 4×3×2=24."],
+    markScheme: [ { pts: 1, desc: "Counted the choices correctly at each position (4, then 3, then 2)." }, { pts: 1, desc: "Multiplied correctly to reach 24." } ] },
+  { id: "o48", section: "A", q: "Prove that √3 cannot be written as a whole number.", answer: "Proof — √3 is not a whole number.", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["Suppose, for contradiction, that √3 IS a whole number, call it n. Then n²=3 (squaring both sides).", "Check whole numbers: 1²=1 and 2²=4. There is no whole number whose square is 3 — it would have to sit strictly between 1 and 2, which is impossible for a whole number.", "The assumption that √3 is a whole number leads to an impossible requirement. So √3 cannot be a whole number."],
+    markScheme: [ { pts: 1, desc: "Explicitly assumed the opposite (√3 IS a whole number n)." }, { pts: 1, desc: "Correctly derived that n² would have to equal 3." }, { pts: 1, desc: "Showed no whole number's square equals 3 (strictly between 1² and 2²)." }, { pts: 1, desc: "Concluded clearly that √3 is not a whole number." } ] },
+  { id: "o49", section: "A", q: "Three consecutive odd numbers sum to 51. Find them.", answer: "15, 17, 19", tactic: "Introduce a letter: name the smallest of the three.", sol: ["Consecutive odd numbers step by 2, so call them n, n+2, n+4.", "Their sum is 3n+6=51, so 3n=45, giving n=15.", "The numbers are 15, 17, 19. Check: 15+17+19=51 ✓"],
+    markScheme: [ { pts: 1, desc: "Defined the three consecutive odd numbers as n, n+2, n+4." }, { pts: 1, desc: "Solved 3n+6=51 correctly to find n=15 and stated all three numbers." } ] },
+  { id: "o50", section: "A", q: "A quadrilateral has three angles of 85°, 95° and 100°. Find the fourth angle.", answer: "80°", tactic: "Use the angle-sum fact for quadrilaterals (360°).", sol: ["Angles in a quadrilateral sum to 360°.", "The three known angles add to 85+95+100=280°.", "The fourth angle is 360−280=80°."],
+    markScheme: [ { pts: 1, desc: "Used the correct angle-sum fact for a quadrilateral (360°)." }, { pts: 1, desc: "Computed the fourth angle correctly (80°)." } ] },
 ];
 // Total marks for a problem = its method-mark scheme, PLUS one automatic accuracy mark for
 // the final answer (auto-graded by olympiadMatch — never self-assessed, since that part CAN
@@ -7317,7 +7079,11 @@ export const JUNIOR_CARD_CLASS = {
   hunchik: "ranged", zoomby: "ranged", burrowl: "ranged", voltbird: "ranged",
 };
 export const cardClass = (id) => CLASSES[CARD_CLASS[id]] || null;
-export const isUpgraded = (progress, cardId) => (((progress || {}).cardItems || {})[cardId] || []).length >= 3;
+export const isUpgraded = (progress, cardId) => {
+  const adv = ADVENTURES[cardId];
+  const found = ((progress || {}).cardItems || {})[cardId] || [];
+  return !!adv && adv.items.every((item) => found.includes(item.id));
+};
 // Render view of a card with item stat boosts applied; fully upgraded commons display as uncommon.
 export function adventureCardView(card, progress) {
   const adv = ADVENTURES[card.id];
@@ -7327,7 +7093,8 @@ export function adventureCardView(card, progress) {
   const s = [...card.s];
   for (const it of adv.items) if (items.includes(it.id)) s[it.stat] = Math.min(10, s[it.stat] + 1);
   const nextTier = RARITY_ORDER[RARITY_ORDER.indexOf(card.r) + 1];
-  return { ...card, s, r: items.length >= 3 && nextTier ? nextTier : card.r };
+  const complete = adv.items.every((item) => items.includes(item.id));
+  return { ...card, s, r: complete && nextTier ? nextTier : card.r };
 }
 // Same as adventureCardView, but explicitly scoped to ONE module's own ADVENTURES bundle —
 // needed by Card Lab's three grouped sections (Primary/Junior/Intermediate), which show every
@@ -7341,7 +7108,8 @@ export function moduleCardView(card, progress, m) {
   const s = [...card.s];
   for (const it of adv.items) if (items.includes(it.id)) s[it.stat] = Math.min(10, s[it.stat] + 1);
   const nextTier = RARITY_ORDER[RARITY_ORDER.indexOf(card.r) + 1];
-  return { ...card, s, r: items.length >= 3 && nextTier ? nextTier : card.r };
+  const complete = adv.items.every((item) => items.includes(item.id));
+  return { ...card, s, r: complete && nextTier ? nextTier : card.r };
 }
 
 /* Choose-your-path adventures. One per common card; each fully upgrades its hero.
@@ -7361,16 +7129,16 @@ export const JUNIOR_MAX_LEVEL = 10;
    any boss without an entry falls back to its emoji, so this is safe to
    fill in gradually. Keep pieces roughly square, ~600px, JPEG-compressed. */
 export const JUNIOR_BOSSES = [
-  { n: 1,  name: "The First Smudge",       emoji: "👣", need: 4,   lore: "A thumbprint on the world, squatting on the Counting Stone. Every time your eyes arrive, they slide off and come back apologising." },
-  { n: 2,  name: "Sister Roughly",         emoji: "🌫️", need: 8,   lore: "She drifts through markets in a shawl made of maybes. 'Close enough, dears.' It is so much easier. That is the horror of her." },
-  { n: 3,  name: "The Baron of Backwards", emoji: "↩️", need: 13,  lore: "He undoes. Arrows return to their bows apologising. Never show him a beginning; he cannot resist trying to get behind it." },
-  { n: 4,  name: "The Forgetting Fog",     emoji: "🌁", need: 18,  lore: "Nobody remembers fighting it. You know you did, because you are on the far side of it and your boots are wet." },
-  { n: 5,  name: "General Guesswork",      emoji: "🎲", need: 26,  lore: "His army attacks presumably from the left. Arrows fired at them wander off to land somewhere statistically reasonable." },
-  { n: 6,  name: "The Unshape",            emoji: "🌀", need: 34,  lore: "It eats geometry. Circles come out of it sad and lumpy, like the first pancake, like a wheel drawn by someone crying." },
-  { n: 7,  name: "The Countless",          emoji: "🌪️", need: 50,  lore: "A swarm that cannot be numbered. Count them one at a time and the count changes because you counted. Try counting another way." },
-  { n: 8,  name: "Madam Nought",           emoji: "🕯️", need: 68,  lore: "The Muddle King's herald. Twelve hundred years she carried his letters, and every answer that came back was a locked door." },
-  { n: 9,  name: "The Almost",             emoji: "🌓", need: 90,  lore: "The King's shadow: everything he nearly was. It does not lie. It shows you real might-have-beens, and they weigh nothing." },
-  { n: 10, name: "The Muddle King",        emoji: "👑", need: 105, lore: "Nul, the uncounted number. He cannot be fought, because fighting a thing agrees that it is outside. He can only be counted in." },
+  { n: 1,  name: "The First Smudge",       emoji: "👣", need: 4,   r: "common",    s: [1,2,4,1,5],   bv: 13, set: "little_reckoning", lore: "A thumbprint on the world, squatting on the Counting Stone. Every time your eyes arrive, they slide off and come back apologising." },
+  { n: 2,  name: "Sister Roughly",         emoji: "🌫️", need: 8,   r: "common",    s: [1,2,2,1,6],   bv: 12, set: "little_reckoning", lore: "She drifts through markets in a shawl made of maybes. 'Close enough, dears.' It is so much easier. That is the horror of her." },
+  { n: 3,  name: "The Baron of Backwards", emoji: "↩️", need: 13,  r: "uncommon",  s: [3,3,8,2,2],   bv: 16, set: "little_reckoning", lore: "He undoes. Arrows return to their bows apologising. Never show him a beginning; he cannot resist trying to get behind it." },
+  { n: 4,  name: "The Forgetting Fog",     emoji: "🌁", need: 18,  r: "uncommon",  s: [2,3,4,7,2],   bv: 16, set: "little_reckoning", lore: "Nobody remembers fighting it. You know you did, because you are on the far side of it and your boots are wet." },
+  { n: 5,  name: "General Guesswork",      emoji: "🎲", need: 26,  r: "rare",      s: [8,3,6,4,3],   bv: 25, set: "little_reckoning", lore: "His army attacks presumably from the left. Arrows fired at them wander off to land somewhere statistically reasonable." },
+  { n: 6,  name: "The Unshape",            emoji: "🌀", need: 34,  r: "rare",      s: [3,9,4,5,3],   bv: 25, set: "little_reckoning", lore: "It eats geometry. Circles come out of it sad and lumpy, like the first pancake, like a wheel drawn by someone crying." },
+  { n: 7,  name: "The Countless",          emoji: "🌪️", need: 50,  r: "epic",      s: [7,5,9,5,4],   bv: 32, set: "little_reckoning", lore: "A swarm that cannot be numbered. Count them one at a time and the count changes because you counted. Try counting another way." },
+  { n: 8,  name: "Madam Nought",           emoji: "🕯️", need: 68,  r: "epic",      s: [5,5,8,9,4],   bv: 32, set: "little_reckoning", lore: "The Muddle King's herald. Twelve hundred years she carried his letters, and every answer that came back was a locked door." },
+  { n: 9,  name: "The Almost",             emoji: "🌓", need: 90,  r: "legendary", s: [8,9,9,8,9],   bv: 43, set: "little_reckoning", lore: "The King's shadow: everything he nearly was. It does not lie. It shows you real might-have-beens, and they weigh nothing." },
+  { n: 10, name: "The Muddle King",        emoji: "👑", need: 105, r: "legendary", s: [10,9,10,9,8], bv: 46, set: "little_reckoning", lore: "Nul, the uncounted number. He cannot be fought, because fighting a thing agrees that it is outside. He can only be counted in." },
 ];
 export const bossForLevel = (lv) => BOSSES[Math.min(Math.max(lv, 1), MAX_LEVEL) - 1];
 
@@ -7394,43 +7162,38 @@ export const bossCardId = (n, moduleKey = ACTIVE_MODULE_KEY) => `boss_${moduleKe
 export let BOSSES = JUNIOR_BOSSES;
 export let MAX_LEVEL = JUNIOR_MAX_LEVEL;
 export function setBossesAndMaxLevel(bosses, maxLevel) { BOSSES = bosses; MAX_LEVEL = maxLevel; }
+let _BOSS_ART = {};
+export function setBossArt(art) { _BOSS_ART = art || {}; }
 // Computed per-render (not a frozen constant) from whichever module is currently active,
 // so each module's own boss roster and portrait art show up in its Boss Trophies section.
 export function getBossCards() {
   return BOSSES.map((b) => {
-    const base = 5 + Math.floor((b.n - 1) / 2);          // 5..9 as levels climb
-    const s = [base, base, base, base, base].map((v) => Math.min(10, v + 1));
-    s[(b.n - 1) % 5] = Math.min(10, base + 3);            // rotating signature stat
-    if (b.n === MAX_LEVEL) s.fill(10);                    // the Muddle King maxes everything
+    const s = b.s || [5, 5, 5, 5, 5];
     return {
-      id: bossCardId(b.n), name: b.name, r: "boss", n: b.n,
-      img: BOSS_ART[b.n], emoji: b.emoji, s,
-      flavor: b.lore.split(/(?<=[.!?])\s/)[0],            // first sentence of the lore
+      id: bossCardId(b.n), name: b.name, r: "boss", joeyR: b.r, n: b.n,
+      img: _BOSS_ART[b.n], emoji: b.emoji,
+      s, bv: b.bv || 20, set: b.set || null,
+      primaryType: b.primaryType ?? computePrimaryType(s),
+      flavor: b.lore.split(/(?<=[.!?])\s/)[0],
     };
   });
 }
 
-/* Level exam gate: each level's boss also requires passing a full 25-question
-   mock at that level with at least examPassMarkFor(level) correct. The pass mark
-   scales up within each paper band so early gates are gentle and later ones bite.
-   Which paper counts depends on the level. */
+/* Level exam gate: each boss requires passing its own 25-question level paper
+   with at least examPassMarkFor(level) correct. */
 export const JUNIOR_EXAM_PASS_MARKS = { 1: 12, 2: 14, 3: 16, 4: 18, 5: 12, 6: 14, 7: 16, 8: 18, 9: 12, 10: 14 };
 export const examPassMarkFor = (lv) => EXAM_PASS_MARKS[Math.min(Math.max(lv, 1), MAX_LEVEL)] || 18;
-export const JUNIOR_examKindFor = (lv) => (lv <= 4 ? "jmc" : lv <= 8 ? "kangaroo" : "year9");
-export const JUNIOR_EXAM_NAMES = { jmc: "Junior Maths Challenge", kangaroo: "Junior Kangaroo", year9: "Year 9 Challenge" };
-// A player's best mock result per exam kind, read from their test history. This is
-// what makes a pass carry forward: once you clear the mark on, say, a JMC mock, your
-// best JMC score stands for every JMC-band boss whose mark it meets, so you never
-// have to re-sit the same exam for the next battle. The shimmer bar for a shiny boss
-// trophy is a stronger result (21+) on a relevant mock.
+export const JUNIOR_examKindFor = (lv) => `level-${Math.min(Math.max(lv, 1), 10)}`;
+export const JUNIOR_EXAM_NAMES = Object.fromEntries(Array.from({ length: 10 }, (_, i) => [`level-${i + 1}`, `Level ${i + 1} Mock Test`]));
+// A player's best result for each level paper, read from their test history.
 export const SHINY_MOCK_MARK = 21;
 export const bestMockByKind = (progress) => { const b = {}; for (const h of (progress && progress.testHistory) || []) { if (h && (b[h.kind] == null || h.correct > b[h.kind])) b[h.kind] = h.correct; } return b; };
 export const examClearedFor = (progress, lv) => (bestMockByKind(progress)[examKindFor(lv)] || 0) >= examPassMarkFor(lv);
 // Shiny is a per-boss reward earned by returning to the boss and claiming it. It breeds
 // consistency: each shiny trophy costs one SEPARATE strong mock pass (21+) of that boss's
-// exam kind. `shinyPasses` counts qualifying passes per kind; each shiny already claimed
+// level paper. `shinyPasses` counts qualifying passes per paper; each shiny already claimed
 // spends one, so an available claim exists only when you have more qualifying passes than
-// shiny trophies of that kind. Shining all four JMC bosses therefore needs four JMC passes at 21+.
+// shiny trophies for that paper.
 export const shinyBossCountByKind = (progress, kind) => (progress.shinyBosses || []).filter((n) => examKindFor(n) === kind).length;
 export const availableShinyClaims = (progress, kind) => Math.max(0, ((progress.shinyPasses || {})[kind] || 0) - shinyBossCountByKind(progress, kind));
 
@@ -7488,39 +7251,39 @@ export const STAT_DEFS = [
 /* Embedded card artwork (base64 JPEG data URIs). Resized to 512x512. */
 export const JUNIOR_CARDS = [
   // ---- COMMON (12) ----
-  { id: "addy",      name: "Addy",       emoji: "🐜",  r: "common",    s: [6,1,2,1,3], flavor: "Adds up everything it sees, twice."            },
-  { id: "countra",   name: "Countra",    emoji: "🐞",  r: "common",    s: [4,2,3,2,2], flavor: "Counts its own spots for fun."                  },
-  { id: "tritip",    name: "Tri-Tip",    emoji: "🔺",  r: "common",    s: [1,6,2,1,2], flavor: "Three sides, no worries."                       },
-  { id: "cubble",    name: "Cubble",     emoji: "🧊",  r: "common",    s: [2,5,1,2,1], flavor: "A cube with a very cool head."                  },
-  { id: "hunchik",   name: "Hunchik",   emoji: "🦔",  r: "common",    s: [2,1,6,1,2], flavor: "Always has a clever hunch."                     },
-  { id: "sparkfin",  name: "Sparkfin",  emoji: "🐠",  r: "common",    s: [1,1,2,5,3], flavor: "Bubbles tiny experiments."                      },
-  { id: "zoomby",    name: "Zoomby",    emoji: "🐝",  r: "common",    s: [2,1,1,2,6], flavor: "Buzzes from sum to sum."                        },
-  { id: "pebble",    name: "Pebble",    emoji: "🪨",  r: "common",    s: [2,4,2,2,1], flavor: "Solid, dependable, a bit slow."                 },
-  { id: "loopy",     name: "Loopy",     emoji: "🐌",  r: "common",    s: [3,2,5,1,1], flavor: "Takes the scenic route to every answer."        },
-  { id: "burrowl",   name: "Burrowl",   emoji: "🐛",  r: "common",    s: [5,1,2,3,1], flavor: "Digs through long division without blinking."   },
-  { id: "squarby",   name: "Squarby",   emoji: "🟥",  r: "common",    s: [1,6,1,1,3], flavor: "Lives in a perfectly right-angled world."       },
-  { id: "frostcal",  name: "Frostcal",  emoji: "❄️",  r: "common",    s: [4,2,2,4,1], flavor: "Keeps its calculations ice cold."               },
+  { id: "addy",      name: "Addy",       emoji: "🐜",  r: "common",    s: [3,1,2,1,6], bv: 13, set: "little_reckoning", flavor: "Adds up everything it sees, twice."            },
+  { id: "countra",   name: "Countra",    emoji: "🐞",  r: "common",    s: [4,2,3,2,2], bv: 12, set: "little_reckoning", flavor: "Counts its own spots for fun."                  },
+  { id: "tritip",    name: "Tri-Tip",    emoji: "🔺",  r: "common",    s: [1,6,2,1,2], bv: 13, set: "little_reckoning", flavor: "Three sides, no worries."                       },
+  { id: "cubble",    name: "Cubble",     emoji: "🧊",  r: "common",    s: [2,2,1,5,1], bv: 11, set: "little_reckoning", flavor: "A cube with a very cool head."                  },
+  { id: "hunchik",   name: "Hunchik",   emoji: "🦔",  r: "common",    s: [2,1,6,1,2], bv: 13, set: "little_reckoning", flavor: "Always has a clever hunch."                     },
+  { id: "sparkfin",  name: "Sparkfin",  emoji: "🐠",  r: "common",    s: [1,1,2,5,3], bv: 12, set: "little_reckoning", flavor: "Bubbles tiny experiments."                      },
+  { id: "zoomby",    name: "Zoomby",    emoji: "🐝",  r: "common",    s: [2,1,1,2,6], bv: 13, set: "little_reckoning", flavor: "Buzzes from sum to sum."                        },
+  { id: "pebble",    name: "Pebble",    emoji: "🪨",  r: "common",    s: [2,4,2,2,1], bv: 11, set: "little_reckoning", flavor: "Solid, dependable, a bit slow."                 },
+  { id: "loopy",     name: "Loopy",     emoji: "🐌",  r: "common",    s: [3,2,5,1,1], bv: 12, set: "little_reckoning", flavor: "Takes the scenic route to every answer."        },
+  { id: "burrowl",   name: "Burrowl",   emoji: "🐛",  r: "common",    s: [3,1,2,5,1], bv: 12, set: "little_reckoning", flavor: "Digs through long division without blinking."   },
+  { id: "squarby",   name: "Squarby",   emoji: "🟥",  r: "common",    s: [1,3,1,1,6], bv: 13, set: "little_reckoning", flavor: "Lives in a perfectly right-angled world."       },
+  { id: "frostcal",  name: "Frostcal",  emoji: "❄️",  r: "common",    s: [4,2,2,4,1], bv: 13, set: "little_reckoning", flavor: "Keeps its calculations ice cold."               },
   // ---- UNCOMMON (5) + RARE (5) ----
-  { id: "multimoo",  name: "Multimoo",  emoji: "🐄",  r: "uncommon",      s: [8,3,4,3,3], flavor: "Multiplies the herd in seconds."                },
-  { id: "anglorap",  name: "Angloraptor",emoji:"🦖", r: "rare",      s: [3,8,4,3,4], flavor: "Measures every angle before it pounces."        },
-  { id: "owlgorith", name: "Owlgorithm",emoji: "🦉",  r: "uncommon",      s: [4,3,8,4,2], flavor: "Solves puzzles in its sleep."                   },
-  { id: "flaskfox",  name: "Flaskfox",  emoji: "🦊",  r: "uncommon",      s: [3,3,4,8,4], flavor: "Carries a portable lab in its tail."            },
-  { id: "cheetawat", name: "Cheetawatt",emoji: "🐆",  r: "rare",      s: [3,3,3,4,8], flavor: "Times itself with every dash."                  },
-  { id: "fractail",  name: "Fractail",  emoji: "🦝",  r: "uncommon",      s: [7,4,5,3,4], flavor: "Splits snacks into perfect fractions."          },
-  { id: "hexabug",   name: "Hexabug",   emoji: "🐢",  r: "rare",      s: [3,7,4,4,3], flavor: "Wears a flawless hexagon shell."                },
-  { id: "voltbird",  name: "Voltbird",  emoji: "🦅",  r: "uncommon",      s: [3,3,4,5,7], flavor: "Charges through the sky at full speed."         },
-  { id: "probear",   name: "Probear",   emoji: "🐻",  r: "rare",      s: [5,3,7,4,3], flavor: "Never bets without calculating the odds first." },
-  { id: "seqviper",  name: "Seqviper",  emoji: "🐍",  r: "rare",      s: [6,3,5,3,6], flavor: "Follows every pattern to its logical end."      },
+  { id: "multimoo",  name: "Multimoo",  emoji: "🐄",  r: "uncommon",      s: [8,3,4,3,3], bv: 16, set: "little_reckoning", flavor: "Multiplies the herd in seconds."                },
+  { id: "anglorap",  name: "Angloraptor",emoji:"🦖", r: "rare",      s: [3,8,4,3,4], bv: 26, set: "little_reckoning", flavor: "Measures every angle before it pounces."        },
+  { id: "owlgorith", name: "Owlgorithm",emoji: "🦉",  r: "uncommon",      s: [4,3,8,4,2], bv: 16, set: "little_reckoning", flavor: "Solves puzzles in its sleep."                   },
+  { id: "flaskfox",  name: "Flaskfox",  emoji: "🦊",  r: "uncommon",      s: [3,3,4,8,4], bv: 16, set: "little_reckoning", flavor: "Carries a portable lab in its tail."            },
+  { id: "cheetawat", name: "Cheetawatt",emoji: "🐆",  r: "rare",      s: [3,3,3,4,8], bv: 25, set: "little_reckoning", flavor: "Times itself with every dash."                  },
+  { id: "fractail",  name: "Fractail",  emoji: "🦝",  r: "uncommon",      s: [4,4,5,3,7], bv: 17, set: "little_reckoning", flavor: "Splits snacks into perfect fractions."          },
+  { id: "hexabug",   name: "Hexabug",   emoji: "🐢",  r: "rare",      s: [3,7,4,4,3], bv: 24, set: "little_reckoning", flavor: "Wears a flawless hexagon shell."                },
+  { id: "voltbird",  name: "Voltbird",  emoji: "🦅",  r: "uncommon",      s: [3,3,4,5,7], bv: 16, set: "little_reckoning", flavor: "Charges through the sky at full speed."         },
+  { id: "probear",   name: "Probear",   emoji: "🐻",  r: "rare",      s: [5,3,7,4,3], bv: 25, set: "little_reckoning", flavor: "Never bets without calculating the odds first." },
+  { id: "seqviper",  name: "Seqviper",  emoji: "🐍",  r: "rare",      s: [6,3,5,3,6], bv: 26, set: "little_reckoning", flavor: "Follows every pattern to its logical end."      },
   // ---- EPIC (6) ----
-  { id: "primearch", name: "Primearch", emoji: "🐲",  r: "epic",      s: [9,5,8,6,5], flavor: "Speaks only in prime numbers."                  },
-  { id: "geodrake",  name: "Geodrake",  emoji: "🐉",  r: "epic",      s: [5,9,6,6,5], flavor: "Breathes perfect polygons."                     },
-  { id: "paradox",   name: "Paradox",   emoji: "🦑",  r: "epic",      s: [6,5,9,6,5], flavor: "This card's flavour text is false."             },
-  { id: "quantakit", name: "Quantakit", emoji: "🐙",  r: "epic",      s: [5,6,6,9,5], flavor: "Runs eight experiments at once."                },
-  { id: "sphinxa",   name: "Sphinxa",   emoji: "🦁",  r: "epic",      s: [6,7,8,5,6], flavor: "Guards riddles older than maths itself."        },
-  { id: "novabear",  name: "Novabear",  emoji: "🐻‍❄️", r: "epic",      s: [6,6,7,8,5], flavor: "Glows with pure cosmic curiosity."             },
+  { id: "primearch", name: "Primearch", emoji: "🐲",  r: "epic",      s: [9,5,8,6,5], bv: 34, set: "little_reckoning", flavor: "Speaks only in prime numbers."                  },
+  { id: "geodrake",  name: "Geodrake",  emoji: "🐉",  r: "epic",      s: [5,9,6,6,5], bv: 32, set: "little_reckoning", flavor: "Breathes perfect polygons."                     },
+  { id: "paradox",   name: "Paradox",   emoji: "🦑",  r: "epic",      s: [6,5,9,6,5], bv: 32, set: "little_reckoning", flavor: "This card's flavour text is false."             },
+  { id: "quantakit", name: "Quantakit", emoji: "🐙",  r: "epic",      s: [5,6,6,9,5], bv: 32, set: "little_reckoning", flavor: "Runs eight experiments at once."                },
+  { id: "sphinxa",   name: "Sphinxa",   emoji: "🦁",  r: "epic",      s: [6,7,8,5,6], bv: 33, set: "little_reckoning", flavor: "Guards riddles older than maths itself."        },
+  { id: "novabear",  name: "Novabear",  emoji: "🐻‍❄️", r: "epic",      s: [6,6,7,8,5], bv: 33, set: "little_reckoning", flavor: "Glows with pure cosmic curiosity."             },
   // ---- LEGENDARY (2) ----
-  { id: "infinitus", name: "Infinitus", emoji: "🌌",  r: "legendary", s: [10,9,10,9,8], flavor: "Knows the answer to every question. Almost." },
-  { id: "euclidon",  name: "Euclidon",  emoji: "🛕",  r: "legendary", s: [8,10,9,8,9],  flavor: "The ancient master of all shapes and proof."  },
+  { id: "infinitus", name: "Infinitus", emoji: "🌌",  r: "legendary", s: [10,9,10,9,8], bv: 47, set: "little_reckoning", flavor: "Knows the answer to every question. Almost." },
+  { id: "euclidon",  name: "Euclidon",  emoji: "🛕",  r: "legendary", s: [8,10,9,8,9],  bv: 44, set: "little_reckoning", flavor: "The ancient master of all shapes and proof."  },
 ];
 
 /* ============================================================
@@ -7548,7 +7311,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "addy",
     rarity: "common",
     mins: 12,
-    intro: "Hi! I'm Addy. In the Challenge you just tick a box, but in the Olympiad you have to WRITE OUT how you got your answer. Let me show you what that means.",
+    intro: "In a multiple-choice quiz, only the final letter you pick matters, and nobody sees the thinking behind it. In the Olympiad, the thinking IS the answer: a bare number earns almost no marks on its own. This module shows exactly what a complete written solution looks like, and why it earns full marks.",
     steps: [
       { kind: "teach", heading: "An answer is not a solution", body: [
         "In a multiple-choice quiz, the only thing that matters is the final letter you pick. Nobody sees your thinking.",
@@ -7559,31 +7322,37 @@ export const JUNIOR_ACADEMY = [
         "1. STATE — say what you know and what you are looking for.",
         "2. WORK — show each step of reasoning, one idea at a time.",
         "3. CONCLUDE — write a clear final sentence with the answer." ] },
-      { kind: "example", problem: "Addy has 3 bags. Each bag holds 4 acorns. How many acorns altogether? Write a full solution.",
+      { kind: "example", problem: "A crate holds 3 boxes. Each box holds 4 acorns. How many acorns altogether? Write a full solution.",
         working: [
-          "STATE: There are 3 bags, and each bag holds 4 acorns. I want the total number of acorns.",
+          "STATE: There are 3 boxes, and each box holds 4 acorns. I want the total number of acorns.",
           "WORK: The total is 3 groups of 4, which is 3 × 4 = 12.",
-          "CONCLUDE: So Addy has 12 acorns altogether." ],
+          "CONCLUDE: So the crate holds 12 acorns altogether." ],
         answer: "12 acorns" },
+      { kind: "example", problem: "A shelf holds 5 red books and 7 blue books. Write a full solution to find the total number of books.",
+        working: [
+          "STATE: There are 5 red books and 7 blue books on the shelf. I want the total number of books.",
+          "WORK: The total is 5 + 7 = 12.",
+          "CONCLUDE: So the shelf holds 12 books altogether." ],
+        answer: "12 books" },
       { kind: "teach", heading: "Why bother with all those words?", body: [
         "It feels slow at first. But those three sentences are exactly what earns full marks.",
         "The examiner can follow your thinking with no guessing. Every claim is backed up. That is what a mathematician does.",
         "From now on, every solution you write will STATE, WORK, then CONCLUDE." ] },
-      { kind: "choose", problem: "Countra found 5 red spots and 7 black spots. How many spots in total?",
+      { kind: "choose", problem: "A jar holds 5 red beads and 7 black beads. How many beads in total?",
         prompt: "Which is the best STATE sentence to begin the solution?",
         options: [
           "12.",
           "I want to add them up.",
-          "Countra has 5 red spots and 7 black spots, and I want the total number of spots.",
-          "Spots are easy." ],
+          "The jar has 5 red beads and 7 black beads, and I want the total number of beads.",
+          "Beads are easy." ],
         correctIndex: 2,
         explain: "A good STATE sentence names what you know (5 red, 7 black) AND what you are looking for (the total). Option 3 does both." },
-      { kind: "order", problem: "Tri-Tip walks 6 steps north, then 8 steps north. How far north in total?",
+      { kind: "order", problem: "A hiker walks 6 steps north, then 8 steps north. How far north in total?",
         prompt: "Drag the three parts into the correct order for a full solution.",
         shuffled: [
           "WORK: The total distance is 6 + 8 = 14 steps.",
-          "CONCLUDE: So Tri-Tip is 14 steps north of where it started.",
-          "STATE: Tri-Tip walks 6 steps then 8 steps, all north. I want the total distance north." ],
+          "CONCLUDE: So the hiker is 14 steps north of where they started.",
+          "STATE: A hiker walks 6 steps then 8 steps, all north. I want the total distance north." ],
         correct: [2, 0, 1],
         explain: "Always STATE first, then show your WORK, then CONCLUDE with a clear sentence." },
     ],
@@ -7596,24 +7365,31 @@ export const JUNIOR_ACADEMY = [
     teacher: "countra",
     rarity: "common",
     mins: 12,
-    intro: "I'm Countra, and I count everything carefully — one spot at a time. Solutions work the same way: one idea per line. Let me show you.",
+    intro: "A common mistake is cramming every idea into one messy line, so the reader (and often the writer) loses track. This module builds the habit of writing exactly one idea per line, so each line follows clearly from the one before it.",
     steps: [
       { kind: "teach", heading: "One idea per line", body: [
         "A common mistake is to cram all the maths into one messy line. The examiner gets lost, and so do you.",
         "Instead, put ONE idea on each line. Each line should follow clearly from the line above it.",
         "If a line makes the reader ask \"wait, why?\", it needs breaking into smaller steps." ] },
-      { kind: "example", problem: "Cubble thinks of a number. It doubles the number and adds 5 to get 17. What was the number?",
+      { kind: "example", problem: "A number is doubled, then 5 is added, to give 17. What was the number?",
         working: [
           "STATE: A number is doubled then 5 is added, giving 17. I want the original number.",
           "WORK: Doubling then adding 5 gives 17, so before adding 5 the value was 17 − 5 = 12.",
           "WORK: That value of 12 is the double of the number, so the number is 12 ÷ 2 = 6.",
-          "CONCLUDE: So Cubble's number was 6." ],
+          "CONCLUDE: So the original number was 6." ],
         answer: "6" },
+      { kind: "example", problem: "A number is multiplied by 3, then 4 is subtracted, to give 11. What was the number?",
+        working: [
+          "STATE: A number is multiplied by 3 then has 4 subtracted, giving 11. I want the original number.",
+          "WORK: Before subtracting 4, the value was 11 + 4 = 15.",
+          "WORK: That value of 15 is 3 times the number, so the number is 15 ÷ 3 = 5.",
+          "CONCLUDE: So the original number was 5." ],
+        answer: "5" },
       { kind: "teach", heading: "Undo in reverse", body: [
-        "Notice how Cubble worked BACKWARDS. The number was doubled, THEN 5 was added.",
-        "To undo it, we reverse the order: first subtract the 5, then halve. Last thing done is the first thing undone.",
+        "Notice how each example worked BACKWARDS. One operation happened, THEN another.",
+        "To undo it, reverse the order: undo the LAST operation first, then the one before it. Last thing done is the first thing undone.",
         "Writing each undo on its own line makes the reasoning impossible to misread." ] },
-      { kind: "order", problem: "Hunchik thinks of a number, multiplies by 3, then subtracts 4 to get 11. Find the number.",
+      { kind: "order", problem: "A number is multiplied by 3, then has 4 subtracted, to give 11. Find the number.",
         prompt: "Put the WORK steps in the right order (STATE and CONCLUDE are already placed in your head).",
         shuffled: [
           "So before subtracting 4, the value was 11 + 4 = 15.",
@@ -7621,13 +7397,13 @@ export const JUNIOR_ACADEMY = [
           "The number was multiplied by 3 then had 4 subtracted to give 11." ],
         correct: [2, 0, 1],
         explain: "Restate the situation, undo the last operation first (add the 4 back), then undo the multiply (divide by 3)." },
-      { kind: "write", problem: "Pebble thinks of a number, halves it, then adds 7 to get 12. Find Pebble's number, writing a full solution.",
+      { kind: "write", problem: "A number is halved, then 7 is added, to give 12. Find the number, writing a full solution.",
         prompt: "Write your own solution. Use STATE, WORK (one step per line), CONCLUDE. Then reveal the model answer and tick what you did.",
         model: [
           "STATE: A number is halved then 7 is added, giving 12. I want the original number.",
           "WORK: Before adding 7, the value was 12 − 7 = 5.",
           "WORK: That 5 is half the number, so the number is 5 × 2 = 10.",
-          "CONCLUDE: So Pebble's number was 10." ],
+          "CONCLUDE: So the original number was 10." ],
         answer: "10",
         markScheme: [
           { pts: 1, desc: "Wrote a STATE sentence saying what I knew and wanted." },
@@ -7644,24 +7420,31 @@ export const JUNIOR_ACADEMY = [
     teacher: "hunchik",
     rarity: "common",
     mins: 13,
-    intro: "I'm Hunchik. I always have a hunch — but a hunch isn't enough in maths. You must say WHY each step is true. That word 'because' is your best friend.",
+    intro: "A guess isn't enough in maths — every claim needs a reason someone else can check. This module builds the habit of writing WHY each step is true, not just what it is, using the word 'because' as the anchor.",
     steps: [
       { kind: "teach", heading: "The magic word: because", body: [
         "A solution that just lists numbers is weak. A solution that explains WHY is strong.",
         "Get into the habit of writing the word \"because\" or \"so\" on most lines.",
         "Example: \"The two angles are equal BECAUSE the triangle is isosceles.\" That because earns the mark." ] },
-      { kind: "example", problem: "Loopy says: every even number plus every even number is even. Explain why 8 + 6 is even, with a reason.",
+      { kind: "example", problem: "Explain why 8 + 6 is even, with a reason (not just the answer).",
         working: [
           "STATE: I want to explain why 8 + 6 is even.",
           "WORK: 8 is even because it is 2 × 4, and 6 is even because it is 2 × 3.",
           "WORK: So 8 + 6 = 2×4 + 2×3 = 2×(4+3) = 2×7, which is 2 times a whole number.",
           "CONCLUDE: Any number that is 2 times a whole number is even, so 8 + 6 = 14 is even." ],
         answer: "14, and it is even because it equals 2 × 7" },
+      { kind: "example", problem: "A triangle has one angle of 60° and another of 70°. Explain why the third angle must be 50°, with a reason.",
+        working: [
+          "STATE: A triangle has angles 60° and 70°. I want to explain why the third angle must be 50°.",
+          "WORK: The angles in any triangle always add up to 180° — this is a fixed geometric fact, not a guess.",
+          "WORK: So the third angle is 180° − 60° − 70° = 50°.",
+          "CONCLUDE: The third angle must be 50°, because the three angles of a triangle always sum to 180°." ],
+        answer: "50°, because the angles of a triangle sum to 180°" },
       { kind: "teach", heading: "Good reasons vs weak reasons", body: [
         "A weak reason just repeats the claim: \"It is even because it is even.\" That earns nothing.",
         "A good reason gives a CAUSE the reader can check: \"It is even because it equals 2 × 7.\"",
         "Always ask yourself: could a younger child follow my reason without trusting me? If not, add detail." ] },
-      { kind: "choose", problem: "Squarby claims the angles in a triangle add to 180°. In a solution, Squarby writes: \"angle A = 60°.\"",
+      { kind: "choose", problem: "A triangle has angles 70° and 50°, and a solution writes: \"angle A = 60°.\"",
         prompt: "Which version best JUSTIFIES that line?",
         options: [
           "angle A = 60°.",
@@ -7670,7 +7453,7 @@ export const JUNIOR_ACADEMY = [
           "angle A = 60°, obviously." ],
         correctIndex: 2,
         explain: "Measuring is not allowed and \"obviously\" is not a reason. Option 3 gives a checkable reason using the angle-sum fact." },
-      { kind: "write", problem: "Frostcal says 7 + 9 is even... but is it? Decide whether 7 + 9 is odd or even and EXPLAIN why, using reasons.",
+      { kind: "write", problem: "Decide whether 7 + 9 is odd or even and EXPLAIN why, using reasons.",
         prompt: "Write a short solution with a clear reason. Then check against the model.",
         model: [
           "STATE: I want to know whether 7 + 9 is odd or even, with a reason.",
@@ -7693,7 +7476,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "frostcal",
     rarity: "common",
     mins: 13,
-    intro: "I'm Frostcal. My calculations stay ice cold and certain — and nothing is more certain than whether a number is odd or even. Watch how that single fact cracks open whole problems.",
+    intro: "Every whole number is either odd or even, with no third option — a simple fact, but one certain enough to build a whole argument on. This module shows how that single certainty can crack open problems that look far harder than they are.",
     steps: [
       { kind: "teach", heading: "Odd, even, and why it matters", body: [
         "Every whole number is either odd or even — there's no third option. That sounds obvious, but it's a powerful fact to build an argument on.",
@@ -7707,11 +7490,19 @@ export const JUNIOR_ACADEMY = [
           "WORK: That final form is 2 × (a whole number) + 1, which is exactly the pattern for an odd number.",
           "CONCLUDE: No — the sum of three odd numbers is always odd, never even." ],
         answer: "No, it is always odd." },
+      { kind: "example", problem: "Can the product of two odd numbers ever be even? Explain.",
+        working: [
+          "STATE: Two odd numbers are multiplied. I want to know if the product can ever be even.",
+          "WORK: Write the two odd numbers as 2a+1 and 2b+1 for whole numbers a, b.",
+          "WORK: Multiplying: (2a+1)(2b+1) = 4ab + 2a + 2b + 1 = 2(2ab+a+b) + 1.",
+          "WORK: That final form is 2 × (a whole number) + 1, which is exactly the pattern for an odd number.",
+          "CONCLUDE: No — the product of two odd numbers is always odd, never even." ],
+        answer: "No, it is always odd." },
       { kind: "teach", heading: "Parity as an invariant", body: [
         "This kind of fact — a property that stays fixed no matter which actual numbers you choose — is called an invariant. Parity (odd/even-ness) is one of the simplest and most useful invariants in mathematics.",
         "If a problem asks 'is it possible to reach X', and you can show every move keeps some quantity's parity fixed, but X has the wrong parity, you've PROVED it's impossible — without checking a single case.",
         "Look for parity arguments whenever a problem involves sums, differences or repeated identical steps." ] },
-      { kind: "choose", problem: "Sparkfin says: 'I added two even numbers and got an odd answer.'",
+      { kind: "choose", problem: "A claim is made: 'I added two even numbers and got an odd answer.'",
         prompt: "Which response correctly settles this?",
         options: [
           "That's possible if the numbers are big enough.",
@@ -7719,7 +7510,7 @@ export const JUNIOR_ACADEMY = [
           "It depends which two even numbers.",
           "That's true only for numbers over 100." ],
         correctIndex: 1,
-        explain: "Writing both numbers as 2a and 2b shows their sum is always 2(a+b) — always even, regardless of size. Sparkfin must have made an arithmetic slip." },
+        explain: "Writing both numbers as 2a and 2b shows their sum is always 2(a+b) — always even, regardless of size. The claim must involve an arithmetic slip." },
       { kind: "write", problem: "Sixteen light switches are all OFF. Each move flips exactly one switch. After 25 moves, could all sixteen switches be back to OFF? Explain using parity.",
         prompt: "Think about the TOTAL NUMBER OF SWITCHES THAT ARE ON, and what one flip does to it. Write a full solution, then compare to the model.",
         model: [
@@ -7744,7 +7535,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "burrowl",
     rarity: "common",
     mins: 13,
-    intro: "Burrowl here. I dig through long division without blinking — but the fastest tricks don't need division at all. Digit sums reveal divisibility by 3 and 9 instantly. Let me show you.",
+    intro: "Checking divisibility usually means dividing — but the fastest tricks skip division entirely. Digit sums reveal divisibility by 3 and 9 instantly, turning a division question into a much smaller addition question.",
     steps: [
       { kind: "teach", heading: "The digit-sum trick", body: [
         "A number is divisible by 3 exactly when the SUM of its digits is divisible by 3. The same trick works for 9: divisible by 9 exactly when the digit sum is divisible by 9.",
@@ -7757,6 +7548,13 @@ export const JUNIOR_ACADEMY = [
           "WORK: 15 is divisible by 3 (15 = 3×5), so 4,821 is divisible by 3. But 15 is NOT divisible by 9 (9×1=9, 9×2=18), so 4,821 is not divisible by 9.",
           "CONCLUDE: 4,821 is divisible by 3 but not by 9." ],
         answer: "Divisible by 3, not by 9." },
+      { kind: "example", problem: "Is 6,714 divisible by 3? By 9?",
+        working: [
+          "STATE: I want to test 6,714 for divisibility by 3 and by 9, using its digit sum.",
+          "WORK: The digits are 6, 7, 1, 4. Their sum is 6+7+1+4 = 18.",
+          "WORK: 18 is divisible by 3 (18 = 3×6) AND divisible by 9 (18 = 9×2), so 6,714 is divisible by both.",
+          "CONCLUDE: 6,714 is divisible by both 3 and 9." ],
+        answer: "Divisible by both 3 and 9." },
       { kind: "teach", heading: "Other quick divisibility facts", body: [
         "Divisible by 2: the last digit is even (0,2,4,6,8). Divisible by 5: the last digit is 0 or 5. Divisible by 10: the last digit is 0 — these all depend only on the LAST digit.",
         "Divisible by 4: look at the last TWO digits as their own number (e.g. for 3,716, check whether 16 is divisible by 4 — it is, so 3,716 is too).",
@@ -7792,26 +7590,35 @@ export const JUNIOR_ACADEMY = [
     teacher: "loopy",
     rarity: "common",
     mins: 13,
-    intro: "I'm Loopy — I take the scenic route to every answer, and sometimes the scenic route IS the answer. When a problem describes a chain of steps ending in a known result, walk the chain backwards.",
+    intro: "When a problem describes a chain of steps ending in a known result, the most reliable route to the start is to walk the chain backwards — undoing each step in reverse order. This module builds that method up to a full, checked solution.",
     steps: [
       { kind: "teach", heading: "When to reverse the chain", body: [
         "An earlier module showed a quick undo. Some Olympiad problems hide a much LONGER chain of steps — but the method is identical: undo the LAST operation first, then work backwards to the start.",
         "The key discipline is to write out the forward chain FIRST (in order), so you know exactly what to undo and in what order.",
         "A backwards solution is just as rigorous as a forwards one, provided every step is properly undone and shown." ] },
-      { kind: "example", problem: "Zoomby thinks of a number. Zoomby adds 3, doubles the result, then subtracts 8, ending on 20. What was Zoomby's number?",
+      { kind: "example", problem: "A number has 3 added, is doubled, then has 8 subtracted, ending on 20. What was the original number?",
         working: [
           "STATE: A number has 3 added, is doubled, then has 8 subtracted, giving 20. I want the original number.",
           "WORK: The chain in order was: (add 3) → (double) → (subtract 8) = 20. To undo, reverse the order: undo subtract 8, then undo double, then undo add 3.",
           "WORK: Undo 'subtract 8': before that step the value was 20 + 8 = 28.",
           "WORK: Undo 'double': before that step the value was 28 ÷ 2 = 14.",
           "WORK: Undo 'add 3': before that step the value was 14 − 3 = 11.",
-          "CONCLUDE: Zoomby's number was 11. Check forwards: 11+3=14, 14×2=28, 28−8=20 ✓" ],
+          "CONCLUDE: The original number was 11. Check forwards: 11+3=14, 14×2=28, 28−8=20 ✓" ],
         answer: "11" },
+      { kind: "example", problem: "A number has 5 subtracted, is tripled, then has 6 added, ending on 21. What was the original number?",
+        working: [
+          "STATE: A number has 5 subtracted, is tripled, then has 6 added, giving 21. I want the original number.",
+          "WORK: The chain in order was: (subtract 5) → (triple) → (add 6) = 21. To undo, reverse the order: undo add 6, then undo triple, then undo subtract 5.",
+          "WORK: Undo 'add 6': before that step the value was 21 − 6 = 15.",
+          "WORK: Undo 'triple': before that step the value was 15 ÷ 3 = 5.",
+          "WORK: Undo 'subtract 5': before that step the value was 5 + 5 = 10.",
+          "CONCLUDE: The original number was 10. Check forwards: 10−5=5, 5×3=15, 15+6=21 ✓" ],
+        answer: "10" },
       { kind: "teach", heading: "Checking forwards is not optional", body: [
         "Notice the check at the end: running the ORIGINAL forward chain on your answer to confirm it lands on the given result.",
         "This catches the single most common backwards-working mistake: undoing steps in the wrong order.",
         "A backwards solution without a forward check is good; one WITH a forward check is airtight." ] },
-      { kind: "choose", problem: "Burrowl thinks of a number, subtracts 4, then triples the result, ending on 21. Which is the FIRST correct undo step?",
+      { kind: "choose", problem: "A number has 4 subtracted, then is tripled, ending on 21. Which is the FIRST correct undo step?",
         prompt: "Pick the first correct move to undo the chain.",
         options: [
           "Divide 21 by 3, since tripling was the LAST forward step.",
@@ -7820,7 +7627,7 @@ export const JUNIOR_ACADEMY = [
           "Add 4 to 21." ],
         correctIndex: 0,
         explain: "Undo the chain in REVERSE order — the last forward step (tripling) must be undone FIRST, by dividing." },
-      { kind: "write", problem: "Pebble thinks of a number, adds 6, halves the result, then subtracts 2, ending on 5. Find Pebble's number with a full backwards solution, including a forward check.",
+      { kind: "write", problem: "A number has 6 added, is halved, then has 2 subtracted, ending on 5. Find the original number with a full backwards solution, including a forward check.",
         prompt: "Write the forward chain, undo it step by step in reverse, conclude, then check forwards.",
         model: [
           "STATE: A number has 6 added, is halved, then has 2 subtracted, giving 5. I want the original number.",
@@ -7828,7 +7635,7 @@ export const JUNIOR_ACADEMY = [
           "WORK: Undo 'subtract 2': before that step the value was 5 + 2 = 7.",
           "WORK: Undo 'halve': before that step the value was 7 × 2 = 14.",
           "WORK: Undo 'add 6': before that step the value was 14 − 6 = 8.",
-          "CONCLUDE: Pebble's number was 8. Check forwards: 8+6=14, 14÷2=7, 7−2=5 ✓" ],
+          "CONCLUDE: The original number was 8. Check forwards: 8+6=14, 14÷2=7, 7−2=5 ✓" ],
         answer: "8",
         markScheme: [
           { pts: 1, desc: "Wrote out the forward chain of operations in order." },
@@ -7845,24 +7652,31 @@ export const JUNIOR_ACADEMY = [
     teacher: "multimoo",
     rarity: "rare",
     mins: 14,
-    intro: "Multimoo here! When a number is unknown, give it a letter. A letter lets you reason about a number you haven't found yet. Watch how it tidies a solution.",
+    intro: "When a number is unknown, giving it a letter lets you reason about it before you've found it. This module shows how that single move turns a word puzzle into an equation, and tidies a solution enormously.",
     steps: [
       { kind: "teach", heading: "A letter stands for the unknown", body: [
         "When you don't yet know a number, call it n (or x, or any letter). Then write down what the problem tells you ABOUT n.",
         "This turns a word puzzle into an equation you can solve, and it makes your reasoning crystal clear.",
         "Always start by saying what your letter means: \"Let n be the number of...\"." ] },
-      { kind: "example", problem: "Multimoo has some cows. If the herd trebled, there would be 24 more cows than now. How many cows are there?",
+      { kind: "example", problem: "A farmer has some cows. If the herd trebled, there would be 24 more cows than now. How many cows are there?",
         working: [
           "STATE: Let n be the number of cows now. Trebling gives 24 more than now.",
           "WORK: Three times the herd is 3n. This is 24 more than n, so 3n = n + 24.",
           "WORK: Subtracting n from both sides: 2n = 24, so n = 12.",
-          "CONCLUDE: So Multimoo has 12 cows." ],
+          "CONCLUDE: So there are 12 cows." ],
         answer: "12 cows" },
+      { kind: "example", problem: "A number of sheep is such that doubling the flock gives 18 more sheep than now. How many sheep are there?",
+        working: [
+          "STATE: Let n be the number of sheep now. Doubling the flock gives 18 more than now.",
+          "WORK: Twice the flock is 2n. This is 18 more than n, so 2n = n + 18.",
+          "WORK: Subtracting n from both sides: n = 18.",
+          "CONCLUDE: So there are 18 sheep." ],
+        answer: "18 sheep" },
       { kind: "teach", heading: "Define before you use", body: [
         "The single most common slip is using a letter without saying what it means.",
         "Every letter must be introduced: \"Let h be the height in cm.\" Now the reader knows exactly what h is.",
         "An undefined letter makes a whole solution hard to mark, even when the maths is right." ] },
-      { kind: "order", problem: "Owlgorithm thinks of a number. Five times the number, less 3, equals 32. Find it.",
+      { kind: "order", problem: "A number is thought of. Five times the number, less 3, equals 32. Find it.",
         prompt: "Order the WORK lines into a clean algebraic solution.",
         shuffled: [
           "Adding 3 to both sides gives 5n = 35.",
@@ -7870,13 +7684,13 @@ export const JUNIOR_ACADEMY = [
           "Dividing both sides by 5 gives n = 7." ],
         correct: [1, 0, 2],
         explain: "Define n and form the equation first, then undo the −3 (add 3), then undo the ×5 (divide by 5)." },
-      { kind: "write", problem: "Fractail has a number. If you double it and add 9 you get 25. Using a letter, find the number with a full written solution.",
+      { kind: "write", problem: "A number is doubled and 9 is added to give 25. Using a letter, find the number with a full written solution.",
         prompt: "Define your letter, form an equation, solve it line by line, then conclude. Check against the model.",
         model: [
-          "STATE: Let n be Fractail's number. Doubling and adding 9 gives 25, so 2n + 9 = 25.",
+          "STATE: Let n be the number. Doubling and adding 9 gives 25, so 2n + 9 = 25.",
           "WORK: Subtract 9 from both sides: 2n = 16.",
           "WORK: Divide both sides by 2: n = 8.",
-          "CONCLUDE: So Fractail's number is 8." ],
+          "CONCLUDE: So the number is 8." ],
         answer: "8",
         markScheme: [
           { pts: 1, desc: "Said what my letter n means." },
@@ -7893,24 +7707,31 @@ export const JUNIOR_ACADEMY = [
     teacher: "owlgorith",
     rarity: "rare",
     mins: 14,
-    intro: "Owlgorithm, at your service. Many Olympiad problems ask 'how many ways?' The secret is to list possibilities in a strict order so you never miss one or count one twice.",
+    intro: "Many Olympiad problems ask 'how many ways?' — and the secret to answering correctly is to list possibilities in a strict order, so nothing is ever missed or counted twice. This module builds that discipline from a small case up to a genuine counting shortcut.",
     steps: [
       { kind: "teach", heading: "List in order, never at random", body: [
         "When counting possibilities, the danger is missing some or repeating some.",
         "The cure is to work in a fixed order — smallest first, say — and write every case down.",
         "A solution that shows an ORGANISED list proves you found them all. Random guessing never does." ] },
-      { kind: "example", problem: "Owlgorithm writes two-digit numbers using only the digits 1, 2 and 3 (repeats allowed). How many are there? List them in order.",
+      { kind: "example", problem: "Two-digit numbers are written using only the digits 1, 2 and 3 (repeats allowed). How many are there? List them in order.",
         working: [
           "STATE: I want all two-digit numbers using digits from {1,2,3}, repeats allowed.",
           "WORK: Starting with 1: 11, 12, 13. Starting with 2: 21, 22, 23. Starting with 3: 31, 32, 33.",
           "WORK: That is 3 choices for the first digit and 3 for the second, an organised 3 × 3 grid.",
           "CONCLUDE: There are 9 such numbers, listed above in order." ],
         answer: "9" },
+      { kind: "example", problem: "A padlock code uses two digits chosen from {4, 5, 6, 7} (repeats allowed). How many different codes are there? List them in order.",
+        working: [
+          "STATE: I want all two-digit codes using digits from {4,5,6,7}, repeats allowed.",
+          "WORK: Starting with 4: 44, 45, 46, 47. Starting with 5: 54, 55, 56, 57. Starting with 6: 64, 65, 66, 67. Starting with 7: 74, 75, 76, 77.",
+          "WORK: That is 4 choices for the first digit and 4 for the second, an organised 4 × 4 grid.",
+          "CONCLUDE: There are 16 such codes, listed above in order." ],
+        answer: "16" },
       { kind: "teach", heading: "Counting without listing everything", body: [
         "Once you trust your order, you can often count by multiplying choices instead of writing all cases.",
         "Here: 3 ways to pick the first digit, and for EACH of those, 3 ways to pick the second. That is 3 × 3 = 9.",
         "But always be ready to show the ordered list as proof if asked." ] },
-      { kind: "choose", problem: "Probear wants the number of ways to pick a starter and a main from 4 starters and 5 mains.",
+      { kind: "choose", problem: "A meal deal offers a choice of a starter and a main, from 4 starters and 5 mains.",
         prompt: "Which reasoning is correctly systematic?",
         options: [
           "4 + 5 = 9 ways.",
@@ -7919,7 +7740,7 @@ export const JUNIOR_ACADEMY = [
           "5 − 4 = 1 way." ],
         correctIndex: 1,
         explain: "For each starter you may choose any main, so you multiply: 4 × 5 = 20. Adding would only count one course, not a pair." },
-      { kind: "write", problem: "Hexabug makes three-letter codes using only A, B (repeats allowed). How many codes are possible? Show an organised solution.",
+      { kind: "write", problem: "Three-letter codes are made using only A, B (repeats allowed). How many codes are possible? Show an organised solution.",
         prompt: "Either list in strict order or count by multiplying choices — but justify it. Check the model.",
         model: [
           "STATE: I want the number of three-letter codes using only A and B, repeats allowed.",
@@ -7942,7 +7763,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "cheetawat",
     rarity: "rare",
     mins: 14,
-    intro: "Cheetawatt, timing every dash. Here's a surprisingly fast trick with no running at all: if you have more pigeons than pigeonholes, at least one hole must hold two pigeons. Let me show you how powerful that is.",
+    intro: "If more items are placed into a fixed set of categories than there are categories, at least one category must hold two or more items — a simple observation that proves surprisingly powerful results without checking a single case. This module shows how to use it.",
     steps: [
       { kind: "teach", heading: "More pigeons than holes", body: [
         "The Pigeonhole Principle says: if you place more than N items into N categories, at least one category must contain 2 or more items.",
@@ -7955,6 +7776,13 @@ export const JUNIOR_ACADEMY = [
           "WORK: Pulling out a 3rd sock, it MUST be red or blue — either way, it matches one of the first two.",
           "CONCLUDE: 3 socks guarantees a matching pair; 2 socks does not (the unlucky case: one of each)." ],
         answer: "3 socks" },
+      { kind: "example", problem: "A box holds pencils in 4 colours only. How many pencils must you pull out (without looking) to be CERTAIN two share a colour?",
+        working: [
+          "STATE: There are 4 colours of pencil. I want the smallest number that GUARANTEES two of the same colour, however unlucky the draw.",
+          "WORK: Think of the 4 colours as 4 'holes'. If I pull out 4 pencils, the worst case is one of each colour — no match yet.",
+          "WORK: Pulling out a 5th pencil, it MUST match one of the 4 colours already drawn.",
+          "CONCLUDE: 5 pencils guarantees a matching pair; 4 pencils does not (the unlucky case: one of each colour)." ],
+        answer: "5 pencils" },
       { kind: "teach", heading: "Holes don't have to be obvious", body: [
         "The 'holes' are often something you have to invent — like the 2 colours above, or the 12 remainders when dividing by 12, or the 7 days of the week.",
         "Once you've named the holes, the rule is always the same: (number of pigeons) > (number of holes) forces a shared hole.",
@@ -7991,7 +7819,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "seqviper",
     rarity: "rare",
     mins: 14,
-    intro: "I am Seqviper. I follow every pattern to its logical end — and some patterns never change, no matter how a puzzle is shuffled. Finding that unchanging quantity is often the whole solution.",
+    intro: "Some quantities never change, no matter how a puzzle is shuffled or rearranged. Finding that unchanging quantity — an invariant — is often the entire solution, since it can prove something is impossible without ever trying to build it.",
     steps: [
       { kind: "teach", heading: "What is an invariant?", body: [
         "An invariant is a quantity or property that STAYS THE SAME (or changes in a totally predictable way) no matter which allowed move you make.",
@@ -8005,6 +7833,13 @@ export const JUNIOR_ACADEMY = [
           "WORK: The two removed corners are the SAME colour (say both black), so the remaining squares are 30 black and 32 white — not equal.",
           "CONCLUDE: Since a tiling needs 31 black and 31 white squares but only 30 black remain, no such tiling is possible." ],
         answer: "No, it's impossible." },
+      { kind: "example", problem: "Five numbers on a board are all equal to 1 (total sum 5). Each move, pick any two of the numbers and replace BOTH of them with their average. Could the total sum ever become 6?",
+        working: [
+          "STATE: Five numbers start at 1 each (sum 5). Each move replaces two chosen numbers a and b with (a+b)/2 each. I want to know if the sum can ever become 6.",
+          "WORK: Before the move, those two numbers contribute a + b to the total. After the move, they contribute (a+b)/2 + (a+b)/2 = a + b — exactly the same amount.",
+          "WORK: So every move leaves the total sum completely unchanged: it is an invariant.",
+          "CONCLUDE: The sum starts at 5 and can never change, so it can never become 6." ],
+        answer: "No, the sum always stays 5." },
       { kind: "teach", heading: "Invariants prove impossibility", body: [
         "This is the real power of an invariant: it can prove something is FLATLY impossible, without ever trying to build the arrangement.",
         "The key move was naming a quantity (here, black squares needed vs available) that every allowed action (placing a domino) is forced to respect.",
@@ -8035,14 +7870,71 @@ export const JUNIOR_ACADEMY = [
     ],
   },
 
+  /* ===================== MODULE 19: COLOURING ARGUMENTS ===================== */
+  {
+    id: "m19",
+    title: "Colouring arguments",
+    teacher: "seqviper",
+    rarity: "rare",
+    mins: 14,
+    intro: "Colouring a diagram or a set of objects in a deliberate pattern can reveal a constraint that is otherwise invisible. This module shows how a well-chosen colouring turns a geometric or counting puzzle into a simple, checkable counting argument.",
+    steps: [
+      { kind: "teach", heading: "Colour with a purpose", body: [
+        "A colouring argument assigns a colour (or label) to every object in a puzzle, following a fixed rule, so that every allowed move or piece is forced to respect the colours in some predictable way.",
+        "Once the colouring is chosen, count how many objects of each colour there are, and compare that with what any valid arrangement or sequence of moves would require.",
+        "The classic choice is a chessboard-style colouring — alternating two colours across a grid — because adjacent squares always end up different colours." ] },
+      { kind: "example", problem: "A grid of squares is coloured like a chessboard, alternating black and white. A robot starts on a black square, and each move slides it to an ADJACENT square (sharing an edge). What colour must the robot be on after 7 moves?",
+        working: [
+          "STATE: The robot starts on black. Each move goes to an adjacent square. I want its colour after 7 moves.",
+          "WORK: On a chessboard colouring, any two adjacent squares (sharing an edge) are always DIFFERENT colours.",
+          "WORK: So every single move flips the robot's colour: black to white, or white to black.",
+          "WORK: Starting on black, after 1 move it's white, after 2 moves black again, and so on — after an odd number of moves it is white, after an even number it is black.",
+          "CONCLUDE: 7 is odd, so after 7 moves the robot must be on a white square." ],
+        answer: "White" },
+      { kind: "teach", heading: "Colouring can prove impossibility", body: [
+        "Colouring is especially powerful for tiling puzzles: colour the board, then check whether a proposed tile (like a domino) is always forced to cover one square of each colour.",
+        "If a domino always covers one black and one white square, then any full tiling by dominoes must cover EQUAL numbers of black and white squares.",
+        "If the board being tiled does not have equal numbers of black and white squares, no such tiling can exist — proven without ever attempting to place a single tile." ] },
+      { kind: "example", problem: "A 4×4 board (16 squares) is coloured like a chessboard (8 black, 8 white). Two opposite corner squares are removed; on this colouring, opposite corners are always the SAME colour. Can the remaining 14 squares be tiled exactly by 7 dominoes, each covering two adjacent squares?",
+        working: [
+          "STATE: 14 squares remain after removing two same-coloured opposite corners from a 4×4 board. I want to know if 7 dominoes can tile them exactly.",
+          "WORK: Every domino covers two adjacent squares, and adjacent squares on a chessboard colouring are always different colours — so every domino covers exactly one black and one white square.",
+          "WORK: So a full tiling by 7 dominoes must cover exactly 7 black and 7 white squares.",
+          "WORK: The two removed corners are the same colour (say both black), leaving 8 − 2 = 6 black squares and 8 white squares — not equal.",
+          "CONCLUDE: Since a tiling needs 7 black and 7 white squares but only 6 black remain, no such tiling is possible." ],
+        answer: "No, it's impossible." },
+      { kind: "choose", problem: "A 6×6 board (36 squares) is coloured like a chessboard (18 black, 18 white). One black square is removed, leaving 35 squares. Which conclusion is correctly reasoned?",
+        prompt: "Pick the argument that correctly uses colouring.",
+        options: [
+          "35 is odd, so tiling by dominoes is impossible — no colouring needed.",
+          "Each domino covers one black and one white square, so a tiling needs equal black and white counts; with 17 black and 18 white remaining, they are already unequal, so tiling is impossible.",
+          "It doesn't matter which square is removed, tiling is always possible.",
+          "Since only 1 square was removed, it barely matters and tiling is still possible." ],
+        correctIndex: 1,
+        explain: "Even though the odd total (35) already rules out tiling by dominoes on its own, option 1 sidesteps the point of THIS technique — option 2 correctly uses the colouring argument: 17 black vs 18 white can never be split into equal domino pairs." },
+      { kind: "write", problem: "A 4×4 board (16 squares) is coloured like a chessboard (8 black, 8 white). One black corner square and one white corner square (which are NOT opposite each other, but adjacent along one edge) are removed, leaving 14 squares. Using colouring, decide whether the remaining board can be tiled exactly by 7 dominoes, and explain why this case is different from removing two same-coloured squares.",
+        prompt: "Count the black and white squares remaining, compare with what a tiling needs, and explain the contrast with the same-colour case. Write a full solution.",
+        model: [
+          "STATE: A 4×4 board has 8 black and 8 white squares under a chessboard colouring. One black and one white corner are removed, leaving 14 squares (7 black, 7 white). I want to know if 7 dominoes can tile them, using colouring.",
+          "WORK: Each domino covers one black and one white square (adjacent squares are always different colours), so a full tiling needs exactly 7 black and 7 white squares.",
+          "WORK: Removing one square of EACH colour leaves 7 black and 7 white — the numbers required for a tiling ARE equal here.",
+          "CONCLUDE: Unlike removing two same-coloured squares (which breaks the black-white balance and makes tiling impossible), removing one of each colour keeps the balance intact, so this colour-count argument alone does not rule out a tiling — a full tiling may well exist here, even though the argument could not rule it out in the same-colour case." ],
+        answer: "The colour-count argument does not rule out a tiling here (7 black, 7 white remain), unlike the same-colour removal case.",
+        markScheme: [
+          { pts: 1, desc: "Correctly counted the remaining black and white squares (7 each)." },
+          { pts: 1, desc: "Stated that a domino always covers one black and one white square." },
+          { pts: 2, desc: "Explained the contrast with the same-colour-removal case: equal counts here do not immediately rule out tiling." } ] },
+    ],
+  },
+
   /* ===================== MODULE 14: SYMMETRY & PAIRING TRICKS ===================== */
   {
     id: "m14",
-    title: "Pairing things up",
+    title: "Symmetry and pairing",
     teacher: "hexabug",
     rarity: "rare",
-    mins: 14,
-    intro: "Hexabug, wearing a flawless hexagon shell. Symmetry isn't just for shapes — pairing things up cleverly can make a nasty sum collapse into something tiny. Let me show you the trick.",
+    mins: 15,
+    intro: "Symmetry isn't only for shapes: pairing numbers, choices, or positions cleverly can make a nasty sum or count collapse into something tiny. This module builds the pairing trick for sums, then shows the same symmetric idea at work in counting.",
     steps: [
       { kind: "teach", heading: "Pairing up a sum", body: [
         "Some sums look long and painful until you notice the terms pair up nicely — often from the two ends inward.",
@@ -8059,7 +7951,18 @@ export const JUNIOR_ACADEMY = [
         "Pairing doesn't only help sums — it can also make things CANCEL. In (1−2)+(3−4)+(5−6)+...+(19−20), each bracket is −1, and there are 10 brackets.",
         "The trick is always the same: look for a symmetric structure (first with last, or consecutive pairs) where the pairing simplifies.",
         "State your pairing rule clearly, then just multiply pair-value by number-of-pairs." ] },
-      { kind: "choose", problem: "Angloraptor wants 2+4+6+...+40 (the even numbers up to 40). Which pairing correctly finds it?",
+      { kind: "teach", heading: "Symmetry in counting: choosing IS the same as leaving behind", body: [
+        "Symmetry shows up in counting too, not just in sums. Choosing which 2 of 5 friends go on an errand is EXACTLY the same decision as choosing which 3 stay behind — every choice of 2-to-go pairs up perfectly with one choice of 3-to-stay.",
+        "Because the two counts describe the same set of decisions viewed from opposite ends, they must always be equal: the number of ways to choose r items from n is the same as the number of ways to choose the remaining (n − r).",
+        "This symmetry is a free check: if you count 'choose 2 from 5' one way and 'choose 3 from 5' another way, both answers must match." ] },
+      { kind: "example", problem: "From 5 friends, how many ways can 2 be chosen to go to the shop? Use the symmetry with choosing who stays behind to check your answer.",
+        working: [
+          "STATE: I want the number of ways to choose 2 friends from 5 to go to the shop, and to check it using the symmetric choice of who stays.",
+          "WORK: List the pairs systematically, naming the alphabetically-earlier friend first: AB, AC, AD, AE, BC, BD, BE, CD, CE, DE — that is 10 pairs.",
+          "WORK: Choosing 2 to go is the same decision as choosing the other 3 to stay behind. Listing groups of 3 from 5 gives exactly 10 groups too (by the same symmetry).",
+          "CONCLUDE: There are 10 ways, and the matching count for 'choose 3' confirms it by symmetry." ],
+        answer: "10" },
+      { kind: "choose", problem: "A row of even numbers 2+4+6+...+40 is to be summed. Which pairing correctly finds it?",
         prompt: "Pick the correctly reasoned method.",
         options: [
           "There are 40 numbers, so multiply 40 by 2.",
@@ -8091,7 +7994,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "anglorap",
     rarity: "rare",
     mins: 15,
-    intro: "Angloraptor. I measure every angle before I pounce. Geometry problems often melt away once you 'chase' angles around a diagram using a small toolkit of facts. Let's hunt.",
+    intro: "Geometry problems often melt away once you 'chase' angles around a diagram, applying one fact at a time from a small toolkit. This module builds that toolkit and shows how to chase an angle in small, fully justified steps.",
     steps: [
       { kind: "teach", heading: "Your angle-chasing toolkit", body: [
         "Angles on a straight line add to 180°. Angles round a full point add to 360°. Angles in a triangle add to 180°. Vertically opposite angles (across an X) are equal.",
@@ -8104,6 +8007,12 @@ export const JUNIOR_ACADEMY = [
           "WORK: So the co-interior angle is 180° − 65° = 115°.",
           "CONCLUDE: The co-interior angle is 115°." ],
         answer: "115°" },
+      { kind: "example", problem: "Two straight lines cross, forming an X. One of the four angles is 35°. Find the angle directly opposite it.",
+        working: [
+          "STATE: Two straight lines cross, forming four angles. One is 35°. I want the angle vertically opposite it.",
+          "WORK: Angles directly opposite each other where two lines cross are called vertically opposite angles, and this fact says they are always equal.",
+          "CONCLUDE: The angle opposite the 35° angle is also 35°." ],
+        answer: "35°" },
       { kind: "teach", heading: "Chase in small, justified steps", body: [
         "Never jump straight to the final angle. Find the NEXT angle you can justify from a known fact, name that fact, then move on.",
         "A typical chase: 'angle B = angle A (vertically opposite), angle C = 180 − angle B (angles on a line), angle D = angle C (alternate angles), so the angle I want = angle D.'",
@@ -8139,7 +8048,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "squarby",
     rarity: "rare",
     mins: 15,
-    intro: "Squarby, living in a perfectly right-angled world. Areas hide some of the neatest Olympiad tricks — especially when one shape is a scaled-up copy of another. Let's measure it out.",
+    intro: "Areas hide some of the neatest Olympiad tricks, especially when one shape is a scaled-up copy of another. This module covers splitting an awkward area into known pieces, and the single most commonly mis-remembered fact about scaling: area does not scale the same way length does.",
     steps: [
       { kind: "teach", heading: "Area by splitting or surrounding", body: [
         "An awkward shape's area is often found by splitting it into rectangles/triangles you DO know how to measure, then adding the pieces.",
@@ -8152,6 +8061,13 @@ export const JUNIOR_ACADEMY = [
           "WORK: The missing corner's area is 3 × 4 = 12 square metres.",
           "CONCLUDE: The room's area is 48 − 12 = 36 square metres." ],
         answer: "36 m²" },
+      { kind: "example", problem: "Two similar rectangles have a length scale factor of 4 (every length on the larger rectangle is 4 times the matching length on the smaller). The smaller rectangle has area 6 cm². Find the area of the larger rectangle.",
+        working: [
+          "STATE: The length scale factor between the two similar rectangles is 4, and the smaller rectangle has area 6 cm². I want the larger rectangle's area.",
+          "WORK: For similar shapes, area scales by the SQUARE of the length scale factor, not the length factor itself: 4² = 16.",
+          "WORK: So the larger rectangle's area is 6 × 16 = 96 cm².",
+          "CONCLUDE: The larger rectangle has area 96 cm²." ],
+        answer: "96 cm²" },
       { kind: "teach", heading: "Similar shapes scale area by the SQUARE of the length scale", body: [
         "Two shapes are similar when one is an exact scaled-up (or down) copy of the other — same shape, different size.",
         "If every LENGTH scales by a factor k, then the AREA scales by k² (not just k!). Doubling every side (k=2) makes the area 4 times bigger (2²=4), not 2 times.",
@@ -8189,13 +8105,13 @@ export const JUNIOR_ACADEMY = [
     teacher: "geodrake",
     rarity: "epic",
     mins: 15,
-    intro: "I am Geodrake. Some problems look impossible until you push them to the LIMIT — the biggest or smallest case. The extremes often reveal the answer.",
+    intro: "Some problems look impossible to pin down until you push them to the LIMIT — the biggest or smallest allowed case. This module builds the habit of maximising or minimising one quantity by making every other quantity as extreme as the rules permit.",
     steps: [
       { kind: "teach", heading: "Push to the boundary", body: [
         "When a problem asks for the largest or smallest possible value, think about what is forced at the EXTREME.",
         "Make one quantity as big as the rules allow, and see what the others are forced to be.",
         "Writing \"to make X as large as possible, we make Y as small as possible\" is powerful Olympiad reasoning." ] },
-      { kind: "example", problem: "Geodrake has 3 different positive whole numbers that add to 12. What is the largest any one of them could be?",
+      { kind: "example", problem: "Three different positive whole numbers add to 12. What is the largest any one of them could be?",
         working: [
           "STATE: Three DIFFERENT positive whole numbers add to 12. I want the largest possible single value.",
           "WORK: To make one number as big as possible, make the other two as small as possible.",
@@ -8203,11 +8119,19 @@ export const JUNIOR_ACADEMY = [
           "WORK: So the largest number is 12 − 3 = 9, giving the set {1, 2, 9}.",
           "CONCLUDE: The largest any one number could be is 9." ],
         answer: "9" },
+      { kind: "example", problem: "Four different positive whole numbers add to 16. What is the largest any one of them could be?",
+        working: [
+          "STATE: Four DIFFERENT positive whole numbers add to 16. I want the largest possible single value.",
+          "WORK: To make one number as big as possible, make the other three as small as possible.",
+          "WORK: The three smallest different positive whole numbers are 1, 2 and 3, which add to 6.",
+          "WORK: So the largest number is 16 − 6 = 10, giving the set {1, 2, 3, 10}.",
+          "CONCLUDE: The largest any one number could be is 10." ],
+        answer: "10" },
       { kind: "teach", heading: "Always check your extreme is allowed", body: [
         "Pushing to the extreme is only valid if the result still obeys ALL the rules.",
         "Here the numbers must be DIFFERENT and POSITIVE, so the smallest two are 1 and 2, not 0 and 0.",
         "State the constraints you are respecting; that is what makes the argument airtight." ] },
-      { kind: "order", problem: "Primearch has 3 different positive whole numbers adding to 20. Find the largest possible single value.",
+      { kind: "order", problem: "Three different positive whole numbers add to 20. Find the largest possible single value.",
         prompt: "Order the reasoning.",
         shuffled: [
           "The smallest two different positive whole numbers are 1 and 2, adding to 3.",
@@ -8215,7 +8139,7 @@ export const JUNIOR_ACADEMY = [
           "So the largest is 20 − 3 = 17, from the set {1, 2, 17}." ],
         correct: [1, 0, 2],
         explain: "First state the strategy (minimise the others), then find the smallest allowed pair, then subtract." },
-      { kind: "write", problem: "Sphinxa has 4 different positive whole numbers that add to 30. What is the largest one possible? Write a full solution explaining the extreme.",
+      { kind: "write", problem: "Four different positive whole numbers add to 30. What is the largest one possible? Write a full solution explaining the extreme.",
         prompt: "Explain why you minimise the others, respect 'different and positive', then conclude. Check the model.",
         model: [
           "STATE: Four different positive whole numbers add to 30. I want the largest possible single value.",
@@ -8239,7 +8163,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "quantakit",
     rarity: "epic",
     mins: 16,
-    intro: "Quantakit, running eight experiments at once. An earlier module showed you the basics of systematic counting — now let's go further, choosing groups where ORDER doesn't matter.",
+    intro: "An earlier module built the basics of systematic counting. This module goes further, handling the case where a GROUP is chosen and order makes no difference — a distinction that changes how the counting must be done.",
     steps: [
       { kind: "teach", heading: "When order doesn't matter", body: [
         "Counting in order usually means multiplying choices (e.g. first digit × second digit). But sometimes you're just CHOOSING a group, where order makes no difference.",
@@ -8252,6 +8176,13 @@ export const JUNIOR_ACADEMY = [
           "WORK: That's 6 pairs. Notice AB and BA are the SAME pair, so we only listed each pair once.",
           "CONCLUDE: There are 6 different pairs." ],
         answer: "6" },
+      { kind: "example", problem: "From 5 different books, how many different PAIRS can be chosen to take on holiday?",
+        working: [
+          "STATE: I want the number of unordered pairs from 5 books.",
+          "WORK: List systematically, naming the alphabetically-earlier book first: AB, AC, AD, AE, BC, BD, BE, CD, CE, DE.",
+          "WORK: That's 10 pairs. Notice AB and BA are the SAME pair, so each was only listed once.",
+          "CONCLUDE: There are 10 different pairs." ],
+        answer: "10" },
       { kind: "teach", heading: "A shortcut: half the ordered count", body: [
         "If order DID matter, there would be 4 choices for the first friend and 3 for the second, giving 4×3=12 ordered pairs.",
         "But each unordered pair (like {A,B}) was counted TWICE in that 12 — once as AB, once as BA. So the true count of unordered pairs is 12 ÷ 2 = 6, matching the list.",
@@ -8288,7 +8219,7 @@ export const JUNIOR_ACADEMY = [
     teacher: "paradox",
     rarity: "epic",
     mins: 16,
-    intro: "I am Paradox. My own flavour text is false — which is itself a little contradiction. That trick, assuming something and watching it collapse, is one of the most powerful proof methods there is.",
+    intro: "To prove a statement is true, the cleanest path is sometimes to assume it is FALSE and show that assumption collapses into something impossible. That trick — assume the opposite, then watch it break — is one of the most powerful proof methods in mathematics.",
     steps: [
       { kind: "teach", heading: "Assume the opposite", body: [
         "To prove a statement is TRUE, sometimes the cleanest path is to assume it's FALSE, and show that assumption leads to something impossible.",
@@ -8302,11 +8233,18 @@ export const JUNIOR_ACADEMY = [
           "WORK: So N + 1 is a whole number bigger than N — but N was supposed to be the LARGEST. That's a contradiction.",
           "CONCLUDE: The assumption that a largest whole number exists must be false. So there is no largest whole number." ],
         answer: "There is no largest whole number (a proof, not a specific number)." },
+      { kind: "example", problem: "Prove that a whole number and the whole number one bigger than it cannot both be even.",
+        working: [
+          "STATE: I want to prove n and n+1 cannot both be even, for any whole number n.",
+          "WORK: Suppose, for contradiction, that n and n+1 are BOTH even.",
+          "WORK: If n is even, n = 2k for some whole number k. Then n+1 = 2k+1, which is ODD by definition — but the assumption says n+1 is even. That is a contradiction.",
+          "CONCLUDE: The assumption must be false, so n and n+1 can never both be even." ],
+        answer: "n and n+1 can never both be even (a proof, not a number)." },
       { kind: "teach", heading: "Spotting the contradiction", body: [
         "The whole method hinges on finding ONE clear contradiction — two things that flatly can't both be true.",
         "Common contradictions in Olympiad problems: a number that must be both odd and even; a count that must be both bigger and smaller than itself; two different values forced to be equal to the same unique thing.",
         "Always state your assumption explicitly ('Suppose, for contradiction, that...') so the reader knows exactly what you're about to disprove." ] },
-      { kind: "choose", problem: "Sphinxa wants to prove: 'There is no smallest positive fraction.' Which opening correctly sets up a contradiction proof?",
+      { kind: "choose", problem: "A claim is to be proved: 'There is no smallest positive fraction.' Which opening correctly sets up a contradiction proof?",
         prompt: "Pick the correct first move.",
         options: [
           "List a few small fractions like 1/2, 1/4, 1/8.",
@@ -8338,13 +8276,13 @@ export const JUNIOR_ACADEMY = [
     teacher: "sphinxa",
     rarity: "epic",
     mins: 16,
-    intro: "I am Sphinxa, keeper of riddles. You now have every tool: STATE-WORK-CONCLUDE, one step per line, justify with 'because', use a letter, be systematic, test extremes. Let's solve a real Olympiad-style problem properly.",
+    intro: "Every tool from earlier modules — STATE-WORK-CONCLUDE, justifying with 'because', using a letter, working systematically, testing extremes — combines in a real Olympiad-style problem. This module weaves them together into one complete, justified solution.",
     steps: [
       { kind: "teach", heading: "The full toolkit", body: [
         "A complete Olympiad solution weaves together everything you've learned.",
         "You will define any unknowns, reason one justified step at a time, perhaps work systematically or use an extreme, and finish with a clear conclusion.",
         "Length is not the goal — CLARITY is. A short solution where every line is justified beats a long rambling one." ] },
-      { kind: "example", problem: "Quantakit thinks of two different positive whole numbers. Their sum is 15 and their product is as large as possible. Find the two numbers and the product.",
+      { kind: "example", problem: "Two different positive whole numbers have a sum of 15 and a product that is as large as possible. Find the two numbers and the product.",
         working: [
           "STATE: Let the two different positive whole numbers be a and b with a + b = 15. I want the pair whose product ab is largest.",
           "WORK: For a fixed sum, the product is largest when the numbers are as CLOSE together as possible.",
@@ -8352,11 +8290,19 @@ export const JUNIOR_ACADEMY = [
           "WORK: Their product is 7 × 8 = 56. Any pair further apart, like 6 and 9, gives a smaller product (54).",
           "CONCLUDE: The numbers are 7 and 8, giving the largest product, 56." ],
         answer: "7 and 8, product 56" },
+      { kind: "example", problem: "Two different positive whole numbers have a sum of 13 and a product that is as large as possible. Find the two numbers and the product.",
+        working: [
+          "STATE: Let the two different positive whole numbers be a and b with a + b = 13. I want the pair whose product ab is largest.",
+          "WORK: For a fixed sum, the product is largest when the numbers are as CLOSE together as possible.",
+          "WORK: Since 13 is odd, the closest different whole numbers are 6 and 7 (they differ by 1).",
+          "WORK: Their product is 6 × 7 = 42. A wider pair, like 5 and 8, gives only 40.",
+          "CONCLUDE: The numbers are 6 and 7, giving the largest product, 42." ],
+        answer: "6 and 7, product 42" },
       { kind: "teach", heading: "Stating the key principle", body: [
         "Notice the line: \"for a fixed sum, the product is largest when the numbers are closest together.\"",
         "Naming the principle you are using is exactly what examiners reward. It shows you understand WHY, not just THAT.",
         "Then we backed it up by checking a nearby pair (6 and 9) gave less. A quick check strengthens any claim." ] },
-      { kind: "choose", problem: "Novabear must explain why 7 and 8 beat 6 and 9 for the largest product with sum 15.",
+      { kind: "choose", problem: "A solution must explain why 7 and 8 beat 6 and 9 for the largest product with sum 15.",
         prompt: "Which sentence is the strongest justification?",
         options: [
           "Because 7 and 8 are nicer numbers.",
@@ -8365,7 +8311,7 @@ export const JUNIOR_ACADEMY = [
           "Because 7 × 8 is even." ],
         correctIndex: 1,
         explain: "Option 2 names the general principle (closest numbers give the biggest product for a fixed sum) and applies it." },
-      { kind: "write", problem: "Novabear has two different positive whole numbers with sum 11 and the largest possible product. Find them and the product, with a full justified solution.",
+      { kind: "write", problem: "Two different positive whole numbers have sum 11 and the largest possible product. Find them and the product, with a full justified solution.",
         prompt: "Use the full toolkit: define, state the principle, apply it, check, conclude. Then compare to the model.",
         model: [
           "STATE: Let the two different positive whole numbers be a and b with a + b = 11. I want the largest product ab.",
@@ -8389,13 +8335,13 @@ export const JUNIOR_ACADEMY = [
     teacher: "infinitus",
     rarity: "legendary",
     mins: 16,
-    intro: "I am Infinitus. You have learned everything the others can teach. Now prove it. These final problems are true Olympiad standard. Write each solution in full — and Euclidon and I will show you how a master would.",
+    intro: "Every technique from earlier modules now comes together in problems written at true Olympiad standard. This module shows exactly how a master writes a complete, checked solution — and how real marks are awarded for it.",
     steps: [
       { kind: "teach", heading: "How marks are really awarded", body: [
         "In the real Junior Mathematical Olympiad, a fully correct answer with NO working can score just 1 mark out of 10.",
         "A complete, clearly justified solution scores all 10 — even the occasional one with a small arithmetic slip can score 8 or 9 if the reasoning is sound.",
         "So your written reasoning is worth far more than the final number. Write for a reader who doubts you and must be convinced." ] },
-      { kind: "example", problem: "Euclidon writes down a two-digit number. The sum of its digits is 12, and the number is 36 more than the number with its digits reversed. Find the number.",
+      { kind: "example", problem: "A two-digit number has digit sum 12, and the number is 36 more than the number with its digits reversed. Find the number.",
         working: [
           "STATE: Let the tens digit be t and the units digit be u. The number is 10t + u. I know t + u = 12, and the number is 36 more than its reverse.",
           "WORK: The reversed number is 10u + t. The condition gives 10t + u = (10u + t) + 36.",
@@ -8404,7 +8350,7 @@ export const JUNIOR_ACADEMY = [
           "CONCLUDE: The tens digit is 8 and the units digit is 4, so the number is 84. (Check: digits add to 12; 84 − 48 = 36.)" ],
         answer: "84" },
       { kind: "teach", heading: "The check at the end", body: [
-        "See how Euclidon ended with a CHECK: digits add to 12, and 84 − 48 = 36. Both conditions hold.",
+        "See how the example ended with a CHECK: digits add to 12, and 84 − 48 = 36. Both conditions hold.",
         "A final check catches mistakes and shows the examiner your answer truly fits. Always check when you can.",
         "This is the mark of a master: not just finding an answer, but proving it is right." ] },
       { kind: "write", problem: "MASTER PROBLEM 1. A two-digit number has digit sum 9, and it is 27 more than its reverse. Find the number, with a complete justified solution and a final check.",
@@ -8422,7 +8368,7 @@ export const JUNIOR_ACADEMY = [
           { pts: 2, desc: "Correctly derived the reverse-difference equation t − u = 3." },
           { pts: 1, desc: "Solved the pair of equations to get t = 6, u = 3." },
           { pts: 1, desc: "Concluded 63 AND checked both conditions." } ] },
-      { kind: "write", problem: "MASTER PROBLEM 2. Infinitus picks three different positive whole numbers. Their sum is 100 and the largest is as small as possible. Find the largest number, with a full justified solution.",
+      { kind: "write", problem: "MASTER PROBLEM 2. Three different positive whole numbers are chosen. Their sum is 100 and the largest is as small as possible. Find the largest number, with a full justified solution.",
         prompt: "Think about the extreme: to make the largest as SMALL as possible, the three should be as close together as possible. Write it all out, then compare.",
         model: [
           "STATE: Three different positive whole numbers add to 100. I want the largest of them to be as small as possible.",
@@ -8441,3 +8387,8 @@ export const JUNIOR_ACADEMY = [
     ],
   },
 ];
+
+// Phase 0: stamp primaryType onto every card and boss at module-load time (edge case §6/§7).
+// Regular cards: lowest index wins on tie (computePrimaryType uses indexOf = first occurrence).
+for (const c of JUNIOR_CARDS) { normaliseJoeyCardStats(c); }
+for (const b of JUNIOR_BOSSES) { normaliseJoeyCardStats(b); }

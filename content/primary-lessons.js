@@ -1,8 +1,36 @@
+import { applyPrimaryFractionMigration } from "./primary-fractions-rewrite.js";
+import { applyPrimaryRemainingMigration } from "./primary-remaining-migration.js";
+import { applyPrimaryNewTopics } from "./primary-new-topics.js";
+import { applyPrimarySlowTeachingRewrites } from "./primary-slow-teaching-rewrites.js";
+import { applyPrimarySlowTeaching } from "./slow-teaching-editorial.js";
+import { applyPrimaryEditorP01 } from "./lesson-editor-p01.js";
+import { applyPrimaryEditorP02 } from "./lesson-editor-p02.js";
+import { applyPrimaryEditorP03 } from "./lesson-editor-p03.js";
+import { applyPrimaryEditorP04 } from "./lesson-editor-p04.js";
+import { applyPrimaryEditorP05 } from "./lesson-editor-p05.js";
+import { applyPrimaryEditorP06 } from "./lesson-editor-p06.js";
+import { applyPrimaryEditorP07 } from "./lesson-editor-p07.js";
+import { applyPrimaryEditorP08 } from "./lesson-editor-p08.js";
+import { applyPrimaryEditorP09 } from "./lesson-editor-p09.js";
+import { applyPrimaryEditorP10A } from "./lesson-editor-p10a.js";
+import { applyPrimaryEditorP10B } from "./lesson-editor-p10b.js";
+import { applyPrimaryEditorP11A } from "./lesson-editor-p11a.js";
+import { applyPrimaryEditorP11B } from "./lesson-editor-p11b.js";
+import { applyPrimaryEditorP12A } from "./lesson-editor-p12a.js";
+import { applyPrimaryEditorP12B } from "./lesson-editor-p12b.js";
+import { applyPrimaryEditorP13A } from "./lesson-editor-p13a.js";
+import { applyPrimaryEditorP13B } from "./lesson-editor-p13b.js";
+import { applyPrimaryEditorP14A } from "./lesson-editor-p14a.js";
+import { applyPrimaryEditorP14B } from "./lesson-editor-p14b.js";
+import { applyPrimaryEditorP14C } from "./lesson-editor-p14c.js";
+import { applyPrimaryEditorP14D } from "./lesson-editor-p14d.js";
+
 export const PRIMARY_LESSONS = {};
 
 PRIMARY_LESSONS.placeValue = {
   title: "Place Value: what a digit is really worth",
   minutes: 20,
+  order: 1,
   intro: "Numbers might look like a row of little symbols sitting side by side, but each symbol is quietly doing its own special job. In this lesson we will slow right down and take numbers apart, piece by piece, until you can look at any number and know exactly what every part of it is worth. This is one of the most useful ideas in all of maths, so we will build it up gently and look at it from lots of different angles.",
   sections: [
     {
@@ -167,9 +195,33 @@ PRIMARY_LESSONS.placeValue = {
   ],
 };
 
+PRIMARY_LESSONS.placeValue.intro = "Every written number is built from just ten digits, but a digit can have a different value depending on where it stands. We will build that idea slowly. First we will tell digits and numbers apart. Then we will use ones, tens, hundreds and thousands to take numbers apart and put them back together. Nothing here needs to be rushed. Each section adds one small idea to the last one.";
+PRIMARY_LESSONS.placeValue.sections[0].examples = [
+  { q: "How many digits are in 47?", steps: ["Look at each number symbol separately.", "The symbols are 4 and 7."], answer: "2 digits." },
+  { q: "How many digits are in 4,062?", steps: ["Ignore the comma because it only helps us read the number.", "Count 4, 0, 6 and 2."], answer: "4 digits." },
+  { q: "Use the digits 2, 5 and 8 once each to make the greatest possible number.", steps: ["The left-hand digit will have the greatest value.", "Put the greatest digit, 8, first, then 5, then 2."], answer: "852." },
+  { q: "Mara says 3,030 has three digits because zero means nothing. Explain her mistake.", steps: ["Zero can hold a place even when there are none of that unit.", "The symbols are 3, 0, 3 and 0.", "Without the zeros, 3,030 would become 33, which is a different number."], answer: "3,030 has four digits. Both zeros are important placeholders." }
+];
+PRIMARY_LESSONS.placeValue.sections[2].examples = [
+  { q: "What is the value of 6 in 64?", steps: ["The 6 is in the tens place.", "Six tens are 60."], answer: "60." },
+  { q: "What is the value of 6 in 406?", steps: ["The 6 is in the ones place.", "Six ones are 6."], answer: "6." },
+  { q: "What is the value of each 5 in 5,052?", steps: ["The first 5 is in the thousands place, so it is worth 5,000.", "The second 5 is in the tens place, so it is worth 50."], answer: "5,000 and 50." },
+  { q: "A digit 7 has become worth one hundred times as much after moving. How many places did it move and in which direction?", steps: ["One place to the left makes a digit ten times as valuable.", "A second place to the left multiplies its value by ten again.", "Ten times ten is one hundred."], answer: "Two places to the left." }
+];
+const primaryPlaceValueFourthExamples = {
+  1: { q: "In 304,718, name the place and value of the digit 4.", steps: ["Read the places from the right: ones, tens, hundreds, thousands, ten-thousands, hundred-thousands.", "The 4 is in the thousands place.", "Four thousands are 4,000."], answer: "Thousands place, value 4,000." },
+  3: { q: "A 9 moves three places to the left. Its old value was 90. What is its new value?", steps: ["One place left: 90 becomes 900.", "Two places left: 900 becomes 9,000.", "Three places left: 9,000 becomes 90,000."], answer: "90,000." },
+  4: { q: "Build the number with 7 ten-thousands, 3 hundreds, 8 tens and 2 ones.", steps: ["Seven ten-thousands are 70,000.", "There are no thousands, so that place needs a zero.", "Add 300, 80 and 2: 70,000 + 300 + 80 + 2."], answer: "70,382." },
+  5: { q: "Which missing digit makes 40,□08 equal to 40,000 + 600 + 8?", steps: ["The expanded number has 4 ten-thousands, no thousands, 6 hundreds, no tens and 8 ones.", "The box is in the hundreds place."], answer: "6." },
+  6: { q: "How does the value of the 7 change when 7,300 is divided by 100?", steps: ["In 7,300, the 7 is worth 7,000.", "Dividing by 100 moves each digit two places to the right.", "The result is 73, where the 7 is worth 70."], answer: "Its value changes from 7,000 to 70, so it is one hundred times smaller." },
+  7: { q: "Use 2, 4, 6, 8 and 0 once each to make the greatest number below 70,000.", steps: ["A number below 70,000 can begin with 6 but not 8.", "After choosing 6, place the remaining digits in descending order.", "That gives 68,420."], answer: "68,420." }
+};
+Object.entries(primaryPlaceValueFourthExamples).forEach(([index, example]) => PRIMARY_LESSONS.placeValue.sections[Number(index)].examples.push(example));
+
 PRIMARY_LESSONS.roundingEstimate = {
   title: "Rounding & Estimating: getting to a friendly number on purpose",
   minutes: 18,
+  order: 2,
   intro: "Some numbers are a bit fiddly. A number like 3,847 is hard to hold in your head and slow to work with. Rounding is a way of swapping a fiddly number for a nearby number that is much easier to use, like a tidy round number. This lesson builds the idea up slowly, using coins, a number line and a few everyday moments, so that by the end you can round any number on purpose and use rounding to check your other sums.",
   sections: [
     {
@@ -295,6 +347,7 @@ PRIMARY_LESSONS.roundingEstimate = {
 PRIMARY_LESSONS.timesTablesFacts = {
   title: "Times Tables: one fact unlocks many others",
   minutes: 18,
+  order: 5,
   intro: "You might think times tables are a huge pile of separate facts you just have to remember one by one. Good news: they are not. They are more like a family, where the facts are all related to each other. Once you really understand a few of them, you can work out lots of the others without having to remember every single one. In this lesson we will build the whole idea up slowly, from the very beginning, so take your time and enjoy it.",
   sections: [
     {
@@ -424,6 +477,7 @@ PRIMARY_LESSONS.timesTablesFacts = {
 PRIMARY_LESSONS.divisionRemainders = {
   title: "Division & Remainders: what's left over depends on the question",
   minutes: 18,
+  order: 8,
   intro: "Sometimes when you share things out, everything splits up perfectly and nothing is left over. But lots of the time there are a few bits left at the end that will not fit. Those leftover bits are called a remainder, and the clever part of this lesson is not just finding them. It is working out what to do with them, because that changes depending on what the question is really asking.",
   sections: [
     {
@@ -584,6 +638,7 @@ PRIMARY_LESSONS.divisionRemainders = {
 PRIMARY_LESSONS.sequencePattern = {
   title: "Patterns & Sequences: finding the cycle",
   minutes: 18,
+  order: 23,
   intro: "A sequence is just a list of things written down in a set order, one after another. In this lesson we will look at two kinds. The first kind repeats itself over and over, like the pattern of beads on a necklace. The second kind keeps growing by the same jump each time, like the numbers you count in your times tables. We will build up both kinds slowly, from the very beginning, and by the end you will be able to work out what comes at any position without writing the whole list out by hand.",
   sections: [
     {
@@ -697,6 +752,7 @@ PRIMARY_LESSONS.sequencePattern = {
 PRIMARY_LESSONS.fractionEquivalence = {
   title: "Equivalent Fractions: the same amount, dressed differently",
   minutes: 18,
+  order: 11,
   intro: "Two fractions can look completely different on paper and still mean exactly the same amount. Once you see why, a whole box of skills opens up: simplifying fractions, comparing them and adding them together later on. We will build the idea slowly, starting from what a fraction even is.",
   sections: [
     {
@@ -799,6 +855,7 @@ PRIMARY_LESSONS.fractionEquivalence = {
 PRIMARY_LESSONS.fractionArithmetic = {
   title: "Adding & Subtracting Fractions: making the pieces match",
   minutes: 20,
+  order: 12,
   intro: "A fraction is just a way of talking about part of something, like one slice of a pizza or half a chocolate bar. In this lesson we will learn how to add fractions together and take them away from each other. There is one big secret that makes it all work: the pieces have to be the same size first. We will build that idea up slowly, with pizzas, chocolate, a ruler and pictures, so by the end it feels easy.",
   sections: [
     {
@@ -912,6 +969,7 @@ PRIMARY_LESSONS.fractionArithmetic = {
 PRIMARY_LESSONS.fractionOfQuantity = {
   title: "Finding a Fraction of an Amount",
   minutes: 18,
+  order: 10,
   intro: "Imagine you have a big pile of sweets and a friend says 'you can have half'. How do you work out how many that is? That is what this lesson is all about: taking part of an amount rather than the whole thing. We will start right at the beginning and build it up slowly, so even if you have never done this before, by the end you will be able to work out things like three quarters of a class or two thirds of an hour without any worry.",
   sections: [
     {
@@ -1036,6 +1094,7 @@ PRIMARY_LESSONS.fractionOfQuantity = {
 PRIMARY_LESSONS.decimalPlaceValue = {
   title: "Decimals: numbers that carry on past the point",
   minutes: 18,
+  order: 13,
   intro: "You already know how to count with whole numbers like 3, 40 or 275. A decimal is just a way of writing numbers that are smaller than one whole, the little bits that fall in between. We are going to build the idea up slowly, one tiny step at a time, so that by the end you can look at a number like 4.73 and know exactly what every part of it means.",
   sections: [
     {
@@ -1170,6 +1229,7 @@ PRIMARY_LESSONS.decimalPlaceValue = {
 PRIMARY_LESSONS.ratioBasics = {
   title: "Ratio: sharing that scales together",
   minutes: 20,
+  order: 14,
   intro: "A ratio is a way of saying how much of one thing goes with how much of another thing. We are going to build this idea up very slowly, starting with real objects you can picture, then sweets, then money, then a number line, and only right at the end the quick written method. Take your time. There is no rush, and every idea here is explained from the very beginning.",
   sections: [
     {
@@ -1339,6 +1399,7 @@ PRIMARY_LESSONS.ratioBasics = {
 PRIMARY_LESSONS.twoUnknowns = {
   title: "Two Mystery Numbers: using a second clue to split a total",
   minutes: 22,
+  order: 15,
   intro: "Sometimes a puzzle hides not one but TWO numbers from you. You are told a little bit about them and asked to work out exactly what they are. It sounds impossible at first, like guessing what is inside two wrapped presents. But with the right clues you really can find them, every time, and this lesson builds that skill up slowly from the very beginning.",
   sections: [
     {
@@ -1441,6 +1502,7 @@ PRIMARY_LESSONS.twoUnknowns = {
 PRIMARY_LESSONS.additiveMultiplicative = {
   title: "More Than vs Times As Many: two different ways to compare",
   minutes: 16,
+  order: 16,
   intro: "Whenever you have two amounts, there are two completely different ways to say how they compare. One way asks 'how many MORE?' and the other asks 'how many TIMES as many?'. They sound similar but they are not the same, and picking the wrong one gives a very wrong answer. In this lesson we will build both ideas up slowly, using sweets, towers of bricks, a number line and pictures, so that by the end you can spot which kind of comparison a question wants and work it out with confidence.",
   sections: [
     {
@@ -1598,6 +1660,7 @@ PRIMARY_LESSONS.additiveMultiplicative = {
 PRIMARY_LESSONS.areaPerimeter = {
   title: "Area & Perimeter: the edge round the outside and the space inside",
   minutes: 18,
+  order: 18,
   intro: "Every flat shape has two totally different things you can measure about it. One is how far it is all the way round the outside edge. The other is how much flat space it covers on the inside. These two things are not the same, and they are not even measured in the same sort of number. This lesson builds both ideas up slowly, from the very beginning, so take your time and picture each one in your head as you go.",
   sections: [
     {
@@ -1715,6 +1778,7 @@ PRIMARY_LESSONS.areaPerimeter = {
 PRIMARY_LESSONS.unitConversion = {
   title: "Units & Measures: converting by a fixed factor",
   minutes: 18,
+  order: 17,
   intro: "Have you ever said something was two hands long, and then your friend measured it with their hands and got a different answer? That is exactly why we need units. A unit is just an agreed size that everyone uses, like a centimetre or a gram, so that a measurement means the same thing to everybody. In this lesson we will slowly learn how to swap a measurement from one unit into another, for example from metres into centimetres. It always comes down to one simple idea, and we will build that idea up gently, one step at a time.",
   sections: [
     {
@@ -1830,6 +1894,7 @@ PRIMARY_LESSONS.unitConversion = {
 PRIMARY_LESSONS.timeCalendar = {
   title: "Time & Calendar: days that go round and round",
   minutes: 18,
+  order: 19,
   intro: "Some things in life keep repeating in the same order, over and over. The days of the week do this: after Sunday we always go back to Monday and start again. The hours on a clock do this too. In this lesson we will start really slowly, with one day at a time, and build up to a clever shortcut that lets you jump far ahead or far back without counting every single day. We will also learn to add and take away time on a clock, and finish with the puzzle of leap years. Take your time, and try each little check as you go.",
   sections: [
     {
@@ -1975,6 +2040,7 @@ PRIMARY_LESSONS.timeCalendar = {
 PRIMARY_LESSONS.compensationMentalMaths = {
   title: "Mental Maths Shortcuts: nudging numbers to something friendlier",
   minutes: 15,
+  order: 4,
   intro: "Some sums look scary just because the numbers are awkward. The good news is that you are allowed to gently change the numbers into rounder, friendlier ones before you work them out, as long as you undo the change somewhere else so the answer stays exactly right. That clever trick is called compensation, and this lesson builds it up slowly from the very beginning. Take your time, and try each little checkpoint as you go.",
   sections: [
     {
@@ -2090,6 +2156,7 @@ PRIMARY_LESSONS.compensationMentalMaths = {
 PRIMARY_LESSONS.formalMultiplication = {
   title: "Column Multiplication: breaking a big multiply into easy pieces",
   minutes: 18,
+  order: 7,
   intro: "Some multiplications look far too big to do in your head, like 47 times 23. The good news is that you never actually do a big multiply. You chop it into a few small, friendly multiplies that you already know, and then you add the little answers back together. This lesson builds that idea up slowly, from what 'multiply' even means, all the way to multiplying two large numbers.",
   sections: [
     {
@@ -2217,6 +2284,7 @@ PRIMARY_LESSONS.formalMultiplication = {
 PRIMARY_LESSONS.formalDivision = {
   title: "Long Division: building up to the answer, jump by jump",
   minutes: 18,
+  order: 9,
   intro: "Dividing a big number can feel scary, but it is really just splitting into fair, equal parts. In this lesson we will start from the very beginning, with sweets and number lines, and build up slowly until you can divide big numbers with confidence. Take your time and try each checkpoint as you go.",
   sections: [
     {
@@ -2334,6 +2402,7 @@ PRIMARY_LESSONS.formalDivision = {
 PRIMARY_LESSONS.logicGrid = {
   title: "Logic Puzzles: combining every clue at once",
   minutes: 16,
+  order: 24,
   intro: "A logic puzzle gives you a handful of hints and asks you to work out who has what, or what goes where. The secret is that no single hint hands you the whole answer. You have to gently squeeze every hint together, letting each one knock out a few wrong ideas, until only the right answer is left standing. In this lesson we will build that skill up slowly, starting from the very beginning.",
   sections: [
     {
@@ -2445,6 +2514,7 @@ PRIMARY_LESSONS.logicGrid = {
 PRIMARY_LESSONS.combinatoricsCounting = {
   title: "Counting Possibilities: multiplying choices at each step",
   minutes: 18,
+  order: 25,
   intro: "Imagine you want to know how many different ways something can turn out, without having to write out every single one. That is what this lesson is about. We will start really slowly with just a few objects you can see and touch, and by the end you will have a neat trick for counting huge numbers of possibilities in your head. The whole idea will come down to one friendly little word: multiply.",
   sections: [
     {
@@ -2583,6 +2653,7 @@ PRIMARY_LESSONS.combinatoricsCounting = {
 PRIMARY_LESSONS.angleBasics = {
   title: "Angles: measuring turn, and the totals that govern them",
   minutes: 18,
+  order: 21,
   intro: "An angle is a way of measuring how far something turns. In this lesson we start from the very beginning, with doors, clock hands and pizza slices, and slowly build up to a few special totals that let you work out a missing angle without ever picking up a protractor. Take it gently, one step at a time. There is nothing here you cannot understand.",
   sections: [
     {
@@ -2720,6 +2791,7 @@ PRIMARY_LESSONS.angleBasics = {
 PRIMARY_LESSONS.shapeProperties = {
   title: "Shape Properties: what really makes a shape a shape",
   minutes: 18,
+  order: 20,
   intro: "When you look at a shape, your eyes tell you a lot very quickly. But eyes can be fooled. In maths we work out what a shape truly is by counting and checking its parts: its sides, its corners, its angles and its symmetry. In this lesson we will build up each of those ideas slowly, one at a time, with things you can see and touch around your home. By the end you will be able to describe any flat shape properly, and you will not be tricked by a shape that just looks a certain way.",
   sections: [
     {
@@ -2844,6 +2916,7 @@ PRIMARY_LESSONS.shapeProperties = {
 PRIMARY_LESSONS.symmetryReflection = {
   title: "Symmetry: mirrors, lines, and what stays put",
   minutes: 20,
+  order: 22,
   intro: "Have you ever folded a piece of paper in half and found that the two sides matched up perfectly? That is the big idea in this lesson. We are going to meet symmetry, which is a fancy word for when one half of something is a perfect mirror copy of the other half. We will start with things you can see and touch, like your own face and a butterfly, and slowly build up to drawing mirror pictures on a grid. Take it slowly. Every new word gets explained the moment we use it, and there is nothing here you cannot do.",
   sections: [
     {
@@ -2971,6 +3044,7 @@ PRIMARY_LESSONS.symmetryReflection = {
 PRIMARY_LESSONS.spatialPuzzles = {
   title: "Spatial Puzzles: folding, turning and counting shapes in your head",
   minutes: 20,
+  order: 26,
   intro: "Spatial puzzles are puzzles about shapes and space: what happens when you fold paper, turn a shape round, flip it over like a pancake, or build something out of little cubes. The word 'spatial' just means 'to do with space and where things are'. These puzzles can feel like magic tricks at first, but there is one calm little secret that makes them easy. Instead of trying to see the whole finished answer in a flash, you follow one small part at a time and ask 'what happens to THIS bit?'. We will build that habit up slowly, from the very start, so do not worry if you have never met any of this before.",
   sections: [
     {
@@ -3132,6 +3206,7 @@ PRIMARY_LESSONS.spatialPuzzles = {
 PRIMARY_LESSONS.factorsMultiplesPrimes = {
   title: "Factors, Multiples & Primes: the building blocks of numbers",
   minutes: 20,
+  order: 6,
   intro: "Every whole number is built out of smaller numbers multiplied together, a bit like a wall built out of bricks. In this lesson we will meet three friendly words that describe how numbers fit together: factors, multiples and primes. We will take them slowly, one at a time, and look at each idea in more than one way, so do not worry if it feels new. That just means you are about to learn something.",
   sections: [
     {
@@ -3303,3 +3378,570 @@ PRIMARY_LESSONS.factorsMultiplesPrimes = {
     },
   ],
 };
+
+PRIMARY_LESSONS.roundingEstimate.prereq = ["placeValue"];
+PRIMARY_LESSONS.compensationMentalMaths.prereq = ["placeValue", "roundingEstimate"];
+PRIMARY_LESSONS.timesTablesFacts.prereq = ["placeValue"];
+PRIMARY_LESSONS.factorsMultiplesPrimes.prereq = ["timesTablesFacts"];
+PRIMARY_LESSONS.formalMultiplication.prereq = ["placeValue", "timesTablesFacts", "compensationMentalMaths"];
+PRIMARY_LESSONS.divisionRemainders.prereq = ["timesTablesFacts"];
+PRIMARY_LESSONS.formalDivision.prereq = ["divisionRemainders", "timesTablesFacts", "placeValue"];
+PRIMARY_LESSONS.fractionOfQuantity.prereq = ["divisionRemainders", "timesTablesFacts"];
+PRIMARY_LESSONS.fractionEquivalence.prereq = ["fractionOfQuantity", "factorsMultiplesPrimes"];
+
+const primaryOpeningExampleSeeds = {};
+const seedPrimaryExamples = (lesson, section, examples) => { primaryOpeningExampleSeeds[`${lesson}:${section}`] = examples; };
+const primaryExample = (q, steps, answer) => ({ q, steps, answer });
+
+seedPrimaryExamples("roundingEstimate", 0, [
+  primaryExample("Which multiple of 10 is 23 nearer to?", ["The neighbouring tens are 20 and 30.", "23 is 3 away from 20 and 7 away from 30."], "20."),
+  primaryExample("Round 67 to the nearest 10.", ["67 lies between 60 and 70.", "It is only 3 away from 70."], "70."),
+  primaryExample("A crowd is reported as about 300 people. Give one possible exact number.", ["The exact number has been rounded to the nearest hundred.", "Choose a number from 250 to 349."], "For example, 327.")
+]);
+seedPrimaryExamples("compensationMentalMaths", 0, [
+  primaryExample("Why is 39 a useful number to compensate with?", ["39 is one away from 40.", "Multiples of ten are usually easier to calculate with."], "Change 39 to 40, then correct the extra 1."),
+  primaryExample("Work out 39 + 26 by compensating.", ["Calculate 40 + 26 = 66.", "Subtract the extra 1."], "65."),
+  primaryExample("Work out 198 + 47 mentally.", ["Calculate 200 + 47 = 247.", "Subtract the extra 2."], "245.")
+]);
+seedPrimaryExamples("compensationMentalMaths", 3, [
+  primaryExample("What is the gap between 8 and 13?", ["Count from 8 up to 13.", "The distance is 5."], "5."),
+  primaryExample("Use the gap to work out 52 - 38.", ["Add 2 to both numbers.", "Calculate the unchanged gap 54 - 40."], "14."),
+  primaryExample("Explain why 403 - 198 equals 405 - 200.", ["Both numbers increased by 2.", "Moving both ends equally keeps the gap fixed."], "Both gaps are 205.")
+]);
+seedPrimaryExamples("compensationMentalMaths", 6, [
+  primaryExample("Choose a friendly number near 49.", ["Look for a nearby multiple of ten.", "49 is one away from 50."], "50."),
+  primaryExample("Choose a useful target for 302 - 197.", ["197 is close to 200.", "Add 3 to both numbers."], "Use 305 - 200."),
+  primaryExample("Choose a friendly form for 24 × 25.", ["Double 25 to make 50.", "Halve 24 to keep the product unchanged."], "12 × 50.")
+]);
+seedPrimaryExamples("compensationMentalMaths", 7, [
+  primaryExample("Which shortcut suits 299 + 46?", ["299 is close to 300.", "Calculate 300 + 46 - 1."], "Addition compensation gives 345."),
+  primaryExample("Which shortcut suits 703 - 298?", ["Treat subtraction as a gap.", "Add 2 to both numbers: 705 - 300."], "Gap compensation gives 405."),
+  primaryExample("Which shortcut suits 16 × 25?", ["Double 25 and halve 16.", "Calculate 8 × 50."], "Doubling and halving gives 400.")
+]);
+seedPrimaryExamples("factorsMultiplesPrimes", 0, [
+  primaryExample("Can 12 counters be shared equally between 3 children?", ["Calculate 12 ÷ 3.", "The result is whole, with no remainder."], "Yes. Each gets 4, so 3 is a factor of 12."),
+  primaryExample("Is 5 a factor of 18?", ["18 ÷ 5 leaves a remainder.", "Factors must divide exactly."], "No."),
+  primaryExample("Find the missing factor: 7 × □ = 42.", ["Use the related division.", "42 ÷ 7 = 6."], "6.")
+]);
+seedPrimaryExamples("factorsMultiplesPrimes", 2, [
+  primaryExample("Write the first five positive multiples of 4.", ["Begin with 4 × 1.", "Keep adding another 4."], "4, 8, 12, 16, 20."),
+  primaryExample("Is 35 a multiple of 5?", ["Look for 35 in the 5 times table.", "5 × 7 = 35."], "Yes."),
+  primaryExample("Find the smallest multiple of 6 greater than 40.", ["6 × 6 = 36 is too small.", "The next multiple is 6 × 7."], "42.")
+]);
+seedPrimaryExamples("formalMultiplication", 0, [
+  primaryExample("What does 4 × 3 mean?", ["It means 4 equal groups of 3.", "Add 3 four times."], "12."),
+  primaryExample("Six bags hold 5 apples each. How many apples?", ["There are 6 equal groups of 5.", "Calculate 6 × 5."], "30 apples."),
+  primaryExample("Write 7 + 7 + 7 + 7 as a multiplication.", ["There are 4 equal groups.", "Each group contains 7."], "4 × 7 = 28.")
+]);
+seedPrimaryExamples("formalMultiplication", 1, [
+  primaryExample("Use a table fact to calculate 8 × 7.", ["Recall the 7 or 8 times table.", "Seven groups of 8 make 56."], "56."),
+  primaryExample("Use 6 × 4 = 24 to find 6 × 40.", ["40 is ten times 4.", "Make the product ten times 24."], "240."),
+  primaryExample("Which table fact appears inside 7 × 36?", ["Split 36 into 30 and 6.", "Look at the ones calculation."], "7 × 6 = 42.")
+]);
+seedPrimaryExamples("formalMultiplication", 3, [
+  primaryExample("Use an area split for 4 × 13.", ["Split 13 into 10 and 3.", "Add 4 × 10 and 4 × 3."], "52."),
+  primaryExample("Use an area split for 6 × 24.", ["Split 24 into 20 and 4.", "Add 120 and 24."], "144."),
+  primaryExample("Show two useful splits for 8 × 35.", ["Use 30 + 5 or 40 - 5.", "Both calculations describe the same rectangle."], "240 + 40 = 320 - 40 = 280.")
+]);
+seedPrimaryExamples("formalMultiplication", 6, [
+  primaryExample("Why is the second row of 23 × 14 a tens row?", ["The 1 in 14 means one ten.", "That row represents 23 × 10."], "It is 230, not 23."),
+  primaryExample("A pupil writes 31 × 20 = 62. What was forgotten?", ["The 2 represents 2 tens.", "Make 31 × 2 ten times larger."], "The zero placeholder was forgotten. The answer is 620."),
+  primaryExample("Find 46 × 30.", ["First find 46 × 3 = 138.", "Thirty is ten times 3."], "1,380.")
+]);
+seedPrimaryExamples("formalMultiplication", 8, [
+  primaryExample("Work out 34 × 6.", ["Find 30 × 6 and 4 × 6.", "Add 180 and 24."], "204."),
+  primaryExample("Work out 27 × 14 using partial products.", ["27 × 4 = 108 and 27 × 10 = 270.", "Add the two products."], "378."),
+  primaryExample("Estimate and calculate 58 × 23.", ["Estimate 60 × 20 = 1,200.", "Calculate 58 × 3 + 58 × 20."], "1,334, which is reasonably close to the estimate.")
+]);
+seedPrimaryExamples("divisionRemainders", 0, [
+  primaryExample("Share 12 strawberries equally between 3 bowls.", ["Division can mean equal sharing.", "Calculate 12 ÷ 3."], "4 in each bowl."),
+  primaryExample("How many groups of 5 fit into 20 counters?", ["Division can mean grouping.", "Count equal groups of 5."], "4 groups."),
+  primaryExample("Explain the two meanings of 24 ÷ 6.", ["It can mean sharing 24 among 6.", "It can mean counting groups of 6 inside 24."], "Both meanings give 4.")
+]);
+seedPrimaryExamples("divisionRemainders", 3, [
+  primaryExample("Could 17 ÷ 5 have remainder 7?", ["A remainder must be smaller than 5.", "Another complete group of 5 fits into 7."], "No. It is 3 remainder 2."),
+  primaryExample("List the possible remainders when dividing by 4.", ["A remainder cannot reach the divisor.", "List from zero to one less than 4."], "0, 1, 2 or 3."),
+  primaryExample("Correct 83 ÷ 9 = 8 remainder 11.", ["The remainder is large enough to contain another 9.", "Move that 9 into the quotient."], "9 remainder 2.")
+]);
+seedPrimaryExamples("formalDivision", 0, [
+  primaryExample("What does 30 ÷ 5 ask?", ["Count how many groups of 5 fit into 30.", "Use 5 × 6 = 30."], "6."),
+  primaryExample("Share 42 equally among 7 people.", ["Use the related multiplication fact.", "7 × 6 = 42."], "6 each."),
+  primaryExample("Why do multiplication facts help with division?", ["Division reverses multiplication.", "If a × b = c, then c ÷ a = b."], "Each multiplication fact contains two division facts.")
+]);
+seedPrimaryExamples("formalDivision", 1, [
+  primaryExample("How many jumps of 4 go from 0 to 20?", ["Mark 0, 4, 8, 12, 16 and 20.", "Count the equal jumps."], "5 jumps."),
+  primaryExample("Show 27 ÷ 6 on a number line.", ["Four jumps of 6 reach 24.", "There are 3 left to reach 27."], "4 remainder 3."),
+  primaryExample("Use large jumps to calculate 96 ÷ 8.", ["Ten groups cover 80.", "Two more groups cover 16."], "12.")
+]);
+seedPrimaryExamples("formalDivision", 2, [
+  primaryExample("Give two friendly multiples of 7 below 50.", ["Use familiar table facts.", "For example, 7 × 5 and 7 × 7."], "35 and 49."),
+  primaryExample("Build a friendly multiple of 6 from 10 groups and 5 groups.", ["Ten groups make 60.", "Five groups make 30."], "Fifteen groups make 90."),
+  primaryExample("Which multiple of 8 helps with 156 ÷ 8?", ["8 × 20 = 160 is close to 156.", "It shows the answer will be just below 20."], "160 is a useful nearby multiple.")
+]);
+seedPrimaryExamples("formalDivision", 4, [
+  primaryExample("Check 84 ÷ 7 = 12.", ["Multiply the quotient by the divisor.", "12 × 7 = 84."], "The division is correct."),
+  primaryExample("Check 95 ÷ 6 = 15 remainder 5.", ["15 × 6 = 90.", "Add the remainder to get 95 and check 5 is smaller than 6."], "The result is correct."),
+  primaryExample("Correct the claim 143 ÷ 11 = 12.", ["12 × 11 = 132.", "One more group of 11 reaches 143."], "143 ÷ 11 = 13.")
+]);
+seedPrimaryExamples("fractionOfQuantity", 0, [
+  primaryExample("What does 1/3 of 12 mean?", ["Split 12 into 3 equal groups.", "One group is one third."], "4."),
+  primaryExample("What does 3/5 of 20 ask us to do?", ["The 5 says divide into five equal parts.", "The 3 says take three parts."], "Divide by 5, then multiply by 3."),
+  primaryExample("Which is greater: 1/2 of 18 or 1/3 of 24?", ["Half of 18 is 9.", "A third of 24 is 8."], "1/2 of 18 is greater.")
+]);
+seedPrimaryExamples("fractionOfQuantity", 2, [
+  primaryExample("If 1/7 of 35 is 5, find 3/7 of 35.", ["One part is 5.", "Take three parts: 3 × 5."], "15."),
+  primaryExample("Find 4/9 of 45.", ["One ninth is 45 ÷ 9 = 5.", "Four ninths are 4 × 5."], "20."),
+  primaryExample("Three eighths of a class of 32 bring lunch. How many pupils is that?", ["One eighth of 32 is 4.", "Three eighths are 3 × 4."], "12 pupils.")
+]);
+seedPrimaryExamples("fractionEquivalence", 0, [
+  primaryExample("What fraction of a 6-piece strip is one piece?", ["The whole has 6 equal pieces.", "One piece is selected."], "1/6."),
+  primaryExample("Seven of 10 equal beads are blue. What fraction are blue?", ["The denominator is all 10 beads.", "The numerator is the 7 blue beads."], "7/10."),
+  primaryExample("Why must fraction pieces be equal?", ["A denominator names equal-sized parts.", "Unequal pieces cannot be counted as the same amount."], "Without equal parts, the fraction name is not meaningful.")
+]);
+seedPrimaryExamples("fractionEquivalence", 1, [
+  primaryExample("How can half a rectangle also be two quarters?", ["Split each half into two equal pieces.", "The chosen half now contains 2 of the 4 pieces."], "1/2 = 2/4."),
+  primaryExample("Complete 1/3 = ?/6.", ["Split each third into two equal smaller pieces.", "The selected third becomes two sixths."], "2/6."),
+  primaryExample("Are 3/4 and 6/8 the same amount?", ["Split every quarter into two eighths.", "Three quarters become six eighths."], "Yes.")
+]);
+seedPrimaryExamples("fractionEquivalence", 3, [
+  primaryExample("Why does multiplying 2/5 by 2/2 keep its value?", ["2/2 equals 1.", "Multiplying by 1 does not change an amount."], "2/5 = 4/10."),
+  primaryExample("Explain why 3/7 = 12/28.", ["Split each seventh into four equal pieces.", "The whole has 28 pieces and the chosen amount has 12."], "They name the same amount."),
+  primaryExample("A pupil changes 2/3 to 4/5. Explain the error.", ["The top was doubled but the bottom was not.", "Equivalent fractions scale both numbers by the same factor."], "The equivalent fraction is 4/6, not 4/5.")
+]);
+
+const primaryOpeningKeys = Object.entries(PRIMARY_LESSONS).sort((a, b) => (a[1].order ?? 999) - (b[1].order ?? 999)).slice(0, 10).map(([key]) => key);
+primaryOpeningKeys.forEach((lessonKey) => PRIMARY_LESSONS[lessonKey].sections.forEach((section, sectionIndex) => {
+  if (!section.examples || section.examples.length === 0) section.examples = primaryOpeningExampleSeeds[`${lessonKey}:${sectionIndex}`] || [];
+  if (section.examples.length === 3 && section.tryit) {
+    section.examples.push(primaryExample(section.tryit.q, section.tryit.answer.split(/(?<=[.!?])\s+/), section.tryit.answer));
+    section.tryit = null;
+  }
+}));
+PRIMARY_LESSONS.roundingEstimate.sections[1].examples.push(primaryExample("A number is halfway between 40 and 50. What is it, and where does it round?", ["Half of the gap of 10 is 5, so the midpoint is 45.", "The usual whole-number rule sends a final 5 upwards."], "45 rounds to 50."));
+PRIMARY_LESSONS.compensationMentalMaths.sections[1].examples.push(primaryExample("Work out 497 + 286 by balancing the addends.", ["Move 3 from 286 to 497, making 500 + 283.", "The total stays fixed because the same amount moved from one addend to the other."], "783."));
+PRIMARY_LESSONS.roundingEstimate.sections[1].visual = "primary-rounding-23";
+PRIMARY_LESSONS.formalMultiplication.sections[3].visual = "primary-multiplication-area";
+PRIMARY_LESSONS.divisionRemainders.sections[0].visual = "primary-division-groups";
+PRIMARY_LESSONS.fractionEquivalence.sections[1].visual = "primary-equivalent-fractions";
+
+PRIMARY_LESSONS.fractionArithmetic.prereq = ["fractionEquivalence"];
+PRIMARY_LESSONS.decimalPlaceValue.prereq = ["placeValue", "fractionEquivalence"];
+PRIMARY_LESSONS.ratioBasics.prereq = ["factorsMultiplesPrimes", "fractionOfQuantity"];
+PRIMARY_LESSONS.twoUnknowns.prereq = ["compensationMentalMaths", "divisionRemainders"];
+PRIMARY_LESSONS.additiveMultiplicative.prereq = ["ratioBasics", "compensationMentalMaths"];
+PRIMARY_LESSONS.unitConversion.prereq = ["placeValue", "decimalPlaceValue"];
+PRIMARY_LESSONS.areaPerimeter.prereq = ["formalMultiplication", "unitConversion"];
+PRIMARY_LESSONS.timeCalendar.prereq = ["divisionRemainders"];
+PRIMARY_LESSONS.shapeProperties.prereq = ["placeValue"];
+PRIMARY_LESSONS.angleBasics.prereq = ["shapeProperties"];
+PRIMARY_LESSONS.symmetryReflection.prereq = ["shapeProperties", "angleBasics"];
+PRIMARY_LESSONS.sequencePattern.prereq = ["divisionRemainders", "timesTablesFacts"];
+PRIMARY_LESSONS.logicGrid.prereq = [];
+PRIMARY_LESSONS.combinatoricsCounting.prereq = ["timesTablesFacts", "logicGrid"];
+PRIMARY_LESSONS.spatialPuzzles.prereq = ["shapeProperties", "symmetryReflection"];
+
+const guidedPrimaryExamples = (section) => {
+  const title = section.h.replace(/^\d+\.\s*/, "");
+  const body = section.body || [];
+  const finalQuestion = section.tryit?.q || `Explain the main principle behind ${title.toLowerCase()}.`;
+  const finalAnswer = section.tryit?.answer || body[body.length - 1];
+  return [
+    primaryExample(`Begin with the idea: what does “${title}” mean?`, [body[0], body[1] || body[0]], body[1] || body[0]),
+    primaryExample("What should we notice before trying to calculate?", [body[1] || body[0], body[2] || body[1] || body[0]], body[2] || body[1] || body[0]),
+    primaryExample("How does the method grow from that first idea?", [body[2] || body[0], body[3] || body[2] || body[0]], body[3] || body[2] || body[0]),
+    primaryExample(finalQuestion, finalAnswer.split(/(?<=[.!?])\s+/), finalAnswer)
+  ];
+};
+
+const remainingPrimaryKeys = Object.entries(PRIMARY_LESSONS).sort((a, b) => (a[1].order ?? 999) - (b[1].order ?? 999)).slice(10).map(([key]) => key);
+remainingPrimaryKeys.forEach((lessonKey) => PRIMARY_LESSONS[lessonKey].sections.forEach((section) => {
+  if (!section.examples || section.examples.length === 0) {
+    section.examples = guidedPrimaryExamples(section);
+    section.tryit = null;
+  } else if (section.examples.length === 3 && section.tryit) {
+    section.examples.push(primaryExample(section.tryit.q, section.tryit.answer.split(/(?<=[.!?])\s+/), section.tryit.answer));
+    section.tryit = null;
+  }
+}));
+
+PRIMARY_LESSONS.sequencePattern.sections[1].examples.push(primaryExample("Find the shortest repeating unit in red, blue, blue, red, blue, blue.", ["Test the short block red, blue, blue.", "Repeating that block gives the full pattern exactly."], "The cycle is red, blue, blue and its length is 3."));
+PRIMARY_LESSONS.sequencePattern.sections[3].examples.push(primaryExample("A pattern repeats every 6 places. Which cycle position is term 100?", ["Divide 100 by 6.", "100 = 16 × 6 + 4, so 4 remains."], "Term 100 is in position 4 of the cycle."));
+PRIMARY_LESSONS.logicGrid.sections[2].examples.push(primaryExample("Ava, Ben and Cleo each chose one fruit. Ava did not choose pear and Ben chose apple. What should the grid record first?", ["Mark Ben with apple as a definite match.", "Cross apple from Ava and Cleo because each fruit is used once.", "Cross pear from Ava using the negative clue."], "Record Ben–apple first, then the exclusions it forces."));
+
+PRIMARY_LESSONS.ratioBasics.sections[0].visual = "primary-ratio-groups";
+PRIMARY_LESSONS.decimalPlaceValue.sections[2].visual = "primary-decimal-grid";
+PRIMARY_LESSONS.twoUnknowns.sections[5].visual = "primary-bar-model";
+PRIMARY_LESSONS.areaPerimeter.sections[4].visual = "primary-area-perimeter";
+PRIMARY_LESSONS.angleBasics.sections[3].visual = "primary-angle-types";
+PRIMARY_LESSONS.symmetryReflection.sections[2].visual = "primary-reflection-grid";
+PRIMARY_LESSONS.combinatoricsCounting.sections[2].visual = "primary-choice-tree";
+PRIMARY_LESSONS.spatialPuzzles.sections[1].visual = "primary-paper-fold";
+
+Object.values(PRIMARY_LESSONS).forEach((lesson) => { if (Number.isInteger(lesson.order)) lesson.order += 1; });
+
+const primaryLinkedExample = (q, steps, answer, structureId) => ({ q, steps, answer, structureId });
+
+PRIMARY_LESSONS.negativeNumbers = {
+  title: "Negative Numbers: the number line below zero",
+  minutes: 24,
+  order: 1,
+  intro: "The orchard does not stop at zero. Winter temperatures fall below zero, cellar levels sit below the yard and an account can move into debt. Negative numbers let us describe all of these exactly. We will learn where they sit, how to compare them and how to follow changes safely across zero.",
+  prereq: [],
+  sections: [
+    {
+      h: "1. Meeting numbers below zero",
+      body: ["Zero is a point on the number line, not an end wall.", "Numbers to the left of zero are negative and carry a minus sign.", "Moving left makes a number smaller; moving right makes it larger."],
+      examples: [
+        primaryLinkedExample("The winter thermometer points to -4°C. What does the minus sign tell us?", ["Find zero on the thermometer.", "The reading is four steps below zero.", "A reading below zero is written with a minus sign."], "The temperature is four degrees below zero.", "number_line_read"),
+        primaryLinkedExample("Which number lies three places to the left of 0?", ["Start at 0.", "Move left through -1 and -2.", "The third place is -3."], "-3.", "number_line_read"),
+        primaryLinkedExample("A cellar floor is labelled -2. Is it above or below the orchard yard at level 0?", ["The yard is level 0.", "Negative floor numbers lie below level 0.", "Level -2 is two floors beneath the yard."], "It is two floors below the yard.", "position_distance_to_zero"),
+        primaryLinkedExample("How far is -9 from zero?", ["Distance is counted in steps and is never negative.", "Count from -9 to 0.", "There are 9 steps."], "9 units.", "position_distance_to_zero"),
+      ],
+    },
+    {
+      h: "2. Comparing and ordering negative numbers",
+      body: ["A number farther left is always smaller.", "This reverses the tempting idea that a larger-looking digit means a larger negative number.", "For example, -8 is smaller than -3 because -8 lies farther left."],
+      examples: [
+        primaryLinkedExample("Which is colder: -6°C or -2°C?", ["Place both readings on a number line.", "-6 lies farther left than -2.", "The farther-left temperature is colder."], "-6°C is colder.", "compare_two_values"),
+        primaryLinkedExample("Put -4, 2 and -1 in order from smallest to largest.", ["Negative numbers come before positive numbers.", "Among the negatives, -4 is farther left than -1.", "Then place positive 2 last."], "-4, -1, 2.", "order_small_set"),
+        primaryLinkedExample("Put 5, -7, 0, -2 and 3 in order from warmest to coldest.", ["Warmest means greatest first.", "Order the non-negative values: 5, 3, 0.", "Among the negatives, -2 is warmer than -7."], "5, 3, 0, -2, -7.", "order_mixed_five"),
+        primaryLinkedExample("One store is 3 tokens in credit and another is 5 tokens in debt. Write and compare their balances.", ["Credit is positive, so write +3.", "Debt is negative, so write -5.", "A positive balance lies to the right of a negative balance."], "+3 is greater than -5.", "order_reasoning_table"),
+      ],
+    },
+    {
+      h: "3. Moving across zero",
+      body: ["Addition moves right on a number line and subtraction moves left.", "A journey may cross zero without changing the counting rule.", "Break the move at zero if that makes the steps easier to see."],
+      examples: [
+        primaryLinkedExample("Start at -3 and count on 7. Where do you land?", ["Move 3 steps from -3 to 0.", "There are 4 steps still to move right.", "Four steps beyond 0 lands on 4."], "4.", "count_on_across_zero"),
+        primaryLinkedExample("Start at 5 and count back 9. Where do you land?", ["Move 5 steps back to 0.", "Four more steps remain.", "Moving four below zero lands on -4."], "-4.", "count_back_across_zero"),
+        primaryLinkedExample("The orchard temperature is -7°C and rises by 12°C. What is the new temperature?", ["From -7 to 0 is a rise of 7.", "That leaves 5 degrees of the rise.", "Five above zero is 5°C."], "5°C.", "temp_change_addition"),
+        primaryLinkedExample("A lift begins at level 4 and descends 11 floors. Where does it stop?", ["Descend 4 floors to level 0.", "Seven floors remain in the descent.", "Seven below the yard is level -7."], "Level -7.", "floor_lift_scenario"),
+      ],
+    },
+    {
+      h: "4. Intervals and gaps",
+      body: ["The gap between two numbers is their distance on the number line.", "When the numbers are on opposite sides of zero, find each distance to zero and combine them.", "When both are negative, subtract the smaller distance from the larger distance."],
+      examples: [
+        primaryLinkedExample("What is the interval from -4°C to 6°C?", ["The distance from -4 to 0 is 4.", "The distance from 0 to 6 is 6.", "Combine the two parts: 4 + 6 = 10."], "10°C.", "interval_simple_diff"),
+        primaryLinkedExample("What is the gap between -11 and -3?", ["Both numbers are below zero.", "Their distances from zero are 11 and 3.", "Subtract: 11 - 3 = 8."], "8 units.", "interval_two_negatives"),
+        primaryLinkedExample("A path drops from 8 metres above the stream to 5 metres below it. How far does it drop?", ["From 8 metres above to stream level is 8 metres.", "It then drops another 5 metres below.", "Total drop: 8 + 5 = 13."], "13 metres.", "multi_step_interval_word"),
+        primaryLinkedExample("A thermometer has marks every 3 degrees: -8, -5, -2, 1, ... What is the next reading?", ["Check the gap between consecutive readings: each rises by 3.", "Add 3 to 1.", "1 + 3 = 4."], "4°C.", "sequence_gap_stepped"),
+      ],
+    },
+    {
+      h: "5. Following and reversing several changes",
+      body: ["Compound problems contain more than one signed change.", "Follow the changes in order when the start is known.", "When the start is missing, undo the changes from last to first."],
+      examples: [
+        primaryLinkedExample("It is -5°C at dawn. The temperature rises 9°C, then falls 4°C. What is it now?", ["First rise: -5 + 9 = 4.", "Then fall: 4 - 4 = 0.", "Check the net change is +5 from the starting temperature."], "0°C.", "multi_step_temp_change"),
+        primaryLinkedExample("A lift starts at level -3, rises 8 floors and descends 6. Where does it finish?", ["After rising: -3 + 8 = 5.", "After descending: 5 - 6 = -1.", "The lift finishes one floor below the yard."], "Level -1.", "compound_word_problem_two_changes"),
+        primaryLinkedExample("Which change is greater: from -8 to 3, or from -2 to 7?", ["First change: 8 steps to zero and 3 more, giving 11.", "Second change: 2 steps to zero and 7 more, giving 9.", "Compare 11 and 9."], "The change from -8 to 3 is greater by 2.", "reasoning_which_change_bigger"),
+        primaryLinkedExample("After rising 12 levels and then falling 7, a lift finishes at level 4. Where did it start?", ["Work backwards from 4.", "Undo the fall by adding 7: 4 + 7 = 11.", "Undo the rise by subtracting 12: 11 - 12 = -1.", "Check: -1 + 12 - 7 = 4."], "Level -1.", "compound_word_problem_two_changes"),
+      ],
+    },
+  ],
+};
+
+PRIMARY_LESSONS.additionSubtraction = {
+  title: "Addition & Subtraction: joining, comparing and finding what is missing",
+  minutes: 28,
+  order: 4,
+  intro: "Addition and subtraction describe several different kinds of story. Quantities may be joined, removed, compared or reconstructed from a missing part. The symbols are often the easy part. The important skill is recognising what every number means and choosing a route that matches the situation.",
+  prereq: ["placeValue", "negativeNumbers"],
+  sections: [
+    {
+      h: "1. Combining parts into a whole",
+      body: ["Addition combines parts without losing their meaning.", "Two or more groups may form one total.", "Estimate first, then check that the accurate total is sensible."],
+      examples: [
+        primaryLinkedExample("Pip gathers 28 red apples and 35 green apples. How many apples are there altogether?", ["The two parts are 28 and 35.", "Add tens and ones: 28 + 35 = 63.", "Estimate 30 + 40 = 70, so 63 is sensible."], "63 apples.", "combine_totals"),
+        primaryLinkedExample("Three orchard rows send 46, 58 and 37 baskets to the store. How many arrive?", ["Combine the first two rows: 46 + 58 = 104.", "Add the third: 104 + 37 = 141.", "Check in another order: 46 + 37 + 58 also gives 141."], "141 baskets.", "combine_totals"),
+        primaryLinkedExample("Bramble has 185 tokens, earns 76 more and spends 49. How many remain?", ["After earning: 185 + 76 = 261.", "After spending: 261 - 49 = 212.", "Check the net change is +27, and 185 + 27 = 212."], "212 tokens.", "combine_totals"),
+        primaryLinkedExample("Two barns supplied 630 sacks altogether. One supplied 284. How many came from the other barn?", ["The combined supply is the whole, 630.", "One part is 284.", "Find the missing part: 630 - 284 = 346.", "Check: 284 + 346 = 630."], "346 sacks.", "combine_totals"),
+      ],
+    },
+    {
+      h: "2. Finding what remains",
+      body: ["Subtraction can describe an amount being used or removed.", "For several changes, follow the story in order.", "If the starting amount is missing, reverse the changes."],
+      examples: [
+        primaryLinkedExample("A match lasts 90 minutes. One team scores after 67 minutes. How many minutes remain?", ["The whole match is 90 minutes.", "67 minutes have passed.", "Subtract: 90 - 67 = 23.", "Check: 67 + 23 = 90."], "23 minutes.", "remaining_amount"),
+        primaryLinkedExample("A 120 km journey pauses after 85 km. How much farther is there to travel?", ["The whole distance is 120 km.", "The completed part is 85 km.", "120 - 85 = 35."], "35 km.", "remaining_amount"),
+        primaryLinkedExample("A barrel holds 300 litres. The orchard uses 84 litres, adds 25 litres of rainwater, then uses 63 litres. How much remains?", ["After the first use: 300 - 84 = 216.", "Add rainwater: 216 + 25 = 241.", "After the second use: 241 - 63 = 178.", "Check the net change is -122."], "178 litres.", "remaining_amount"),
+        primaryLinkedExample("After 145 crates are sent away, 38 return and 207 remain. How many crates were there at first?", ["Work backwards from 207.", "Undo the returned crates: 207 - 38 = 169.", "Undo the delivery: 169 + 145 = 314.", "Check: 314 - 145 + 38 = 207."], "314 crates.", "remaining_amount"),
+      ],
+    },
+    {
+      h: "3. Comparing quantities by finding the gap",
+      body: ["A comparison asks how much more or less one quantity is than another.", "Subtract the smaller current quantity from the larger current quantity.", "If either amount changes, update it before comparing."],
+      examples: [
+        primaryLinkedExample("Sorrel gathers 72 pears and Dapple gathers 49. How many more does Sorrel gather?", ["The larger amount is 72.", "The smaller amount is 49.", "Find the gap: 72 - 49 = 23.", "Check: 49 + 23 = 72."], "23 pears.", "difference_compare"),
+        primaryLinkedExample("Kernel has 140 points. Wicker has 96, then earns 18 more. What is the new gap?", ["Update Wicker's score: 96 + 18 = 114.", "Compare: 140 - 114 = 26.", "Check: 114 + 26 = 140."], "26 points.", "difference_compare"),
+        primaryLinkedExample("Two stores begin with 230 and 185 baskets. The first receives 35 while the second sends away 20. What is the new difference?", ["First store: 230 + 35 = 265.", "Second store: 185 - 20 = 165.", "Difference: 265 - 165 = 100."], "100 baskets.", "difference_compare"),
+        primaryLinkedExample("Two rows grow 540 pumpkins altogether. One row grows 80 more than the other. How many does the larger row grow?", ["Remove the extra 80: 540 - 80 = 460.", "Split the equal remainder: 460 ÷ 2 = 230.", "Restore the extra: 230 + 80 = 310.", "Check: 310 + 230 = 540."], "310 pumpkins.", "difference_compare"),
+      ],
+    },
+    {
+      h: "4. Showing changes on a number line",
+      body: ["A number line turns addition and subtraction into movement.", "Moving right adds and moving left subtracts.", "It also shows why the same rules continue to work through zero."],
+      examples: [
+        primaryLinkedExample("Start at 17 and move 26 places forwards. Where do you land?", ["Forwards means add.", "17 + 26 = 43.", "Reverse 26 places to check that 43 returns to 17."], "43.", "number_line_change"),
+        primaryLinkedExample("Start at 6 and move 15 places backwards. Where do you land?", ["Backwards means subtract.", "6 - 15 crosses zero.", "Six steps reach 0 and nine more reach -9."], "-9.", "number_line_change"),
+        primaryLinkedExample("A cellar lift starts at -4, rises 13 levels and falls 7. Where does it finish?", ["After rising: -4 + 13 = 9.", "After falling: 9 - 7 = 2.", "Check the net movement is +6."], "Level 2.", "number_line_change"),
+        primaryLinkedExample("A marker rises 28 places, falls 41 and finishes at -6. Where did it start?", ["Undo the fall: -6 + 41 = 35.", "Undo the rise: 35 - 28 = 7.", "Check: 7 + 28 - 41 = -6."], "7.", "number_line_change"),
+      ],
+    },
+    {
+      h: "5. Using inverses like a calculation detective",
+      body: ["Addition and subtraction undo each other.", "An inverse calculation can recover a missing number or check an answer.", "Estimation and place value help locate errors before recalculating."],
+      examples: [
+        primaryLinkedExample("34 + □ = 79. What number is missing?", ["79 is the whole and 34 is one part.", "Use the inverse: 79 - 34 = 45.", "Check: 34 + 45 = 79."], "45.", "calculation_detective"),
+        primaryLinkedExample("156 - □ = 89. What was subtracted?", ["Find the gap between 89 and 156.", "156 - 89 = 67.", "Check: 156 - 67 = 89."], "67.", "calculation_detective"),
+        primaryLinkedExample("Tuppence claims 503 - 187 = 426. Diagnose the answer.", ["Estimate: 500 - 200 is about 300, so 426 looks too large.", "Calculate accurately: 503 - 187 = 316.", "The claim is 110 too large.", "Check: 316 + 187 = 503."], "The correct answer is 316.", "calculation_detective"),
+        primaryLinkedExample("472 + 6□ = 539. Which digit replaces the box?", ["Find the complete missing addend: 539 - 472 = 67.", "The tens digit 6 is already shown.", "The missing ones digit is 7.", "Check: 472 + 67 = 539."], "7.", "calculation_detective"),
+      ],
+    },
+  ],
+};
+
+PRIMARY_LESSONS.placeValue.prereq = ["negativeNumbers"];
+PRIMARY_LESSONS.roundingEstimate.prereq = ["placeValue"];
+PRIMARY_LESSONS.additionSubtraction.prereq = ["placeValue", "negativeNumbers"];
+PRIMARY_LESSONS.compensationMentalMaths.prereq = ["placeValue", "roundingEstimate", "additionSubtraction"];
+
+PRIMARY_LESSONS.placeValue.sections.push({
+  h: "9. Roman numerals: another way to write place value",
+  body: [
+    "The old stones and dials around the Ninefold Orchard use Roman numerals. These are a different set of symbols for numbers: I is 1, V is 5, X is 10, L is 50, C is 100, D is 500 and M is 1,000.",
+    "Usually we read from the greatest symbol to the smallest and add the values. For example, LXII is 50 + 10 + 1 + 1, which is 62. When a smaller symbol comes immediately before a larger one, it is subtracted instead: IV is 5 - 1 = 4, IX is 10 - 1 = 9, XL is 50 - 10 = 40 and CM is 1,000 - 100 = 900.",
+    "Roman numerals still depend on partitioning a number into useful parts. To write 74, split it into 70 and 4. Seventy is LXX and four is IV, so 74 is LXXIV. Translating each part carefully is safer than trying to recognise the whole string at once.",
+    "At the harder levels, translate the Roman numerals first and then solve the underlying comparison or arithmetic. The symbols change, but the mathematics does not.",
+  ],
+  examples: [
+    { structureId: "roman_clock_read", q: "An old Ninefold dial is marked IX. What ordinary number does IX represent?", steps: ["Name the symbols: I is 1 and X is 10.", "The smaller I comes before the larger X, so this is a subtractive pair.", "Subtract 1 from 10: 10 - 1 = 9.", "Check against a clock face: IX appears in the position for 9."], answer: "IX represents 9." },
+    { structureId: "roman_numeral_construct", q: "Write 74 in Roman numerals for the Ninefold ledger.", steps: ["Partition 74 into 70 and 4.", "Seventy is 50 + 10 + 10, which is LXX.", "Four uses the subtractive pair IV, because it is one before five.", "Join the parts from greatest to least: LXX + IV = LXXIV."], answer: "74 is LXXIV." },
+    { structureId: "roman_numeral_compare", q: "Two orchard stones are marked CXL and CLX. Which has the greater value?", steps: ["Translate CXL: C is 100 and XL is 40, so CXL = 140.", "Translate CLX: C is 100, L is 50 and X is 10, so CLX = 160.", "Compare the ordinary numbers: 160 is greater than 140.", "Check by writing the larger value back: 160 = CLX."], answer: "CLX has the greater value because it represents 160." },
+    { structureId: "roman_ledger_change", q: "A Ninefold ledger records CCXLVIII baskets, then LXXVI more arrive. How many baskets are recorded now?", steps: ["Translate the starting amount: CCXLVIII = 200 + 40 + 8 = 248.", "Translate the delivery: LXXVI = 50 + 20 + 6 = 76.", "The baskets arrive, so add: 248 + 76 = 324.", "Check by partitioning: 248 + 70 = 318, then 318 + 6 = 324."], answer: "There are 324 baskets." },
+  ],
+  tryit: { q: "What number does XCIV represent?", answer: "94, because XC is 90 and IV is 4." },
+});
+
+Object.values(PRIMARY_LESSONS).forEach((lesson) => { if (lesson.order >= 11) lesson.order += 1; });
+
+PRIMARY_LESSONS.fourOperationsProblems = {
+  title: "Four Operations Problems: deciding what the story means",
+  minutes: 24,
+  order: 11,
+  prereq: ["additionSubtraction", "formalMultiplication", "formalDivision"],
+  intro: "The hardest part of a word problem is often deciding how the quantities are connected. We will practise five dependable routes: choosing an operation, recognising equal groups, following several changes, working backwards and respecting brackets and operation order.",
+  sections: [
+    { h: "1. Choose the operation from the relationship", body: ["Addition combines, subtraction finds a remainder or difference, multiplication builds equal groups and division shares or counts equal groups. Name the relationship before calculating."], examples: [
+      primaryLinkedExample("Pip gathers 24 apples and Sorrel gathers 17. Which operation finds their combined harvest?", ["The amounts are parts being joined.", "Joining means addition: 24 + 17 = 41.", "The result is larger than either part, as expected."], "Addition; 41 apples.", "choose_the_operation"),
+      primaryLinkedExample("Bushel has 63 baskets and Tuppence has 28. How many more does Bushel have?", ["The question asks for a gap.", "Subtract: 63 - 28 = 35.", "Check: 28 + 35 = 63."], "35 baskets.", "choose_the_operation"),
+      primaryLinkedExample("There are 18 orchard rows with 24 trees in each. Find the total.", ["The rows are equal groups.", "Multiply: 18 × 24 = 432.", "Estimate 20 × 24 = 480 to check the size."], "432 trees.", "choose_the_operation"),
+      primaryLinkedExample("936 seeds are packed 24 to a bag. How many bags are filled?", ["The whole is split into equal groups of 24.", "Divide: 936 ÷ 24 = 39.", "Check: 39 × 24 = 936."], "39 bags.", "choose_the_operation"),
+    ] },
+    { h: "2. Equal groups can be built or reversed", body: ["Multiplication and division undo each other. Multiply when the number and size of groups are known; divide when the total and one group fact are known."], examples: [
+      primaryLinkedExample("Six crates hold 14 jars each. How many jars are there?", ["There are 6 equal groups of 14.", "6 × 14 = 84.", "Check: 84 ÷ 6 = 14."], "84 jars.", "equal_groups_and_sharing"),
+      primaryLinkedExample("108 jars are packed 12 to a crate. How many crates are filled?", ["The total and group size are known.", "108 ÷ 12 = 9.", "Check: 9 × 12 = 108."], "9 crates.", "equal_groups_and_sharing"),
+      primaryLinkedExample("Twenty-four rows each contain 36 saplings. Find the total.", ["Model 24 equal groups of 36.", "36 × 20 = 720 and 36 × 4 = 144.", "720 + 144 = 864."], "864 saplings.", "equal_groups_and_sharing"),
+      primaryLinkedExample("1,344 apples fill 32 equal crates. How many are in each?", ["The total is shared between 32 crates.", "1,344 ÷ 32 = 42.", "Check: 42 × 32 = 1,344."], "42 apples per crate.", "equal_groups_and_sharing"),
+    ] },
+    { h: "3. Follow a multi-step change in order", body: ["Write one calculation for each event, keep a running total and explain why each operation moves it in that direction."], examples: [
+      primaryLinkedExample("Four crates hold 12 pears each. Nine pears are used. How many remain?", ["Start with 4 × 12 = 48.", "Remove 9: 48 - 9 = 39.", "The result is below the starting total."], "39 pears.", "multi_step_quantity_change"),
+      primaryLinkedExample("Seven trays hold 18 apples each. Twenty-five are sold. How many remain?", ["Start with 7 × 18 = 126.", "126 - 25 = 101.", "Check: 101 + 25 = 126."], "101 apples.", "multi_step_quantity_change"),
+      primaryLinkedExample("Nine boxes hold 24 jars each. Forty are sent out and 17 return. How many are stored?", ["Start with 9 × 24 = 216.", "216 - 40 + 17 = 193.", "The net change is -23, and 216 - 23 = 193."], "193 jars.", "multi_step_quantity_change"),
+      primaryLinkedExample("Twelve carts bring 35 baskets each. One quarter go to the mill and 68 arrive. How many remain?", ["Start with 12 × 35 = 420.", "One quarter is 105, leaving 315.", "315 + 68 = 383."], "383 baskets.", "multi_step_quantity_change"),
+    ] },
+    { h: "4. Work backwards with inverse operations", body: ["Begin at the known final amount and undo each event in reverse order. Check by replaying the story forwards."], examples: [
+      primaryLinkedExample("Some crates held 8 apples each. After 5 were used, 27 remained. How many crates were there?", ["Undo the use: 27 + 5 = 32.", "32 ÷ 8 = 4 crates.", "Check: 4 × 8 - 5 = 27."], "4 crates.", "inverse_missing_quantity"),
+      primaryLinkedExample("After 17 pears were used, 103 remained. They began in crates of 12. How many crates?", ["Restore the pears: 103 + 17 = 120.", "120 ÷ 12 = 10.", "Check forwards to 103."], "10 crates.", "inverse_missing_quantity"),
+      primaryLinkedExample("Boxes held 24 jars each. After 38 were sold and 14 returned, 216 remained. How many boxes began?", ["Undo the return: 216 - 14 = 202.", "Undo the sale: 202 + 38 = 240.", "240 ÷ 24 = 10; check forwards."], "10 boxes.", "inverse_missing_quantity"),
+      primaryLinkedExample("Stacks held 36 jars each. After 75 left and 27 returned, 312 remained. How many stacks began?", ["Undo the return: 312 - 27 = 285.", "Undo the delivery: 285 + 75 = 360.", "360 ÷ 36 = 10."], "10 stacks.", "inverse_missing_quantity"),
+    ] },
+    { h: "5. Brackets and operation order", body: ["Brackets come first. Without brackets, multiplication and division come before addition and subtraction."], examples: [
+      primaryLinkedExample("Work out 4 + 3 × 5.", ["Multiply first: 3 × 5 = 15.", "Then add: 4 + 15 = 19."], "19.", "expression_order_and_brackets"),
+      primaryLinkedExample("Work out (4 + 3) × 5.", ["Brackets first: 4 + 3 = 7.", "Then 7 × 5 = 35."], "35.", "expression_order_and_brackets"),
+      primaryLinkedExample("Work out 72 ÷ 8 + 6 × 4.", ["Division and multiplication first: 72 ÷ 8 = 9 and 6 × 4 = 24.", "Then add: 9 + 24 = 33."], "33.", "expression_order_and_brackets"),
+      primaryLinkedExample("Work out 120 - (18 + 7) × 4.", ["Brackets: 18 + 7 = 25.", "Multiply: 25 × 4 = 100.", "Subtract: 120 - 100 = 20."], "20.", "expression_order_and_brackets"),
+    ] },
+  ],
+};
+
+PRIMARY_LESSONS.fractionArithmetic.sections[0].examples = [
+  primaryLinkedExample("What does 3/5 describe?", ["The denominator 5 divides the whole into five equal parts.", "The numerator 3 selects three parts."], "Three of five equal parts.", "same_denom_add"),
+  primaryLinkedExample("In 7/8, identify the numerator and denominator.", ["The top 7 counts selected parts.", "The bottom 8 gives the equal parts in the whole."], "Numerator 7; denominator 8.", "same_denom_subtract"),
+  primaryLinkedExample("A tray has 6 equal sections and 5 are filled. What fraction is filled?", ["Six equal sections gives denominator 6.", "Five filled sections gives numerator 5."], "5/6.", "improper_to_mixed"),
+  primaryLinkedExample("In 2/5, what does the denominator tell you?", ["The denominator is the bottom number, 5.", "It says the whole has five equal parts."], "The whole is divided into five equal parts.", "mixed_to_improper"),
+];
+PRIMARY_LESSONS.fractionArithmetic.sections[2].examples = [
+  primaryLinkedExample("Work out 5/8 - 2/8.", ["The parts are both eighths.", "Subtract numerators: 5 - 2 = 3; keep denominator 8."], "3/8.", "same_denom_subtract"),
+  primaryLinkedExample("Work out 8/9 - 5/9.", ["Subtract ninths: 8 - 5 = 3.", "3/9 simplifies by 3."], "1/3.", "same_denom_subtract"),
+  primaryLinkedExample("Work out 13/10 - 7/10 and simplify.", ["13 - 7 = 6, giving 6/10.", "Divide top and bottom by 2."], "3/5.", "same_denom_subtract"),
+  primaryLinkedExample("Work out 6/7 - 2/7.", ["Both amounts are sevenths.", "6 - 2 = 4; keep denominator 7."], "4/7.", "same_denom_subtract"),
+];
+PRIMARY_LESSONS.fractionArithmetic.sections[3].examples = [
+  primaryLinkedExample("Why can we not add 1/2 + 1/3 by adding tops and bottoms?", ["Halves and thirds are different-sized pieces.", "Convert to sixths: 3/6 + 2/6 = 5/6."], "The pieces need a common denominator; the sum is 5/6.", "add_fully_unlike_denom"),
+  primaryLinkedExample("Rewrite 1/2 and 1/4 with a common denominator.", ["Four is a multiple of both denominators.", "1/2 = 2/4, while 1/4 stays unchanged."], "2/4 and 1/4.", "add_related_denom"),
+  primaryLinkedExample("A pupil says 2/3 + 1/6 = 3/9. Diagnose the error.", ["Denominators name piece sizes and are not added.", "2/3 = 4/6, so 4/6 + 1/6 = 5/6."], "The correct sum is 5/6.", "add_related_denom"),
+  primaryLinkedExample("True or false: 1/2 + 1/4 = 2/6.", ["1/2 = 2/4.", "2/4 + 1/4 = 3/4, while 2/6 is only 1/3."], "False; the sum is 3/4.", "estimate_sum_comparison"),
+];
+PRIMARY_LESSONS.fractionArithmetic.sections[6].examples = [
+  primaryLinkedExample("Mara says 2/7 + 3/7 = 5/14. Explain the mistake.", ["Both fractions already count sevenths.", "Add tops only: 2 + 3 = 5; keep denominator 7."], "5/7.", "same_denom_add"),
+  primaryLinkedExample("A pupil claims 3/4 - 1/2 = 2/2. Correct it.", ["Rewrite 1/2 as 2/4.", "3/4 - 2/4 = 1/4."], "1/4.", "subtract_related_denom"),
+  primaryLinkedExample("Estimate 5/8 + 7/10: is it nearer 1/2 or 1 and 1/2?", ["Both fractions exceed 1/2.", "Their sum exceeds 1 and is much nearer 1 and 1/2."], "Nearer 1 and 1/2.", "estimate_sum_comparison"),
+  primaryLinkedExample("A friend says 1/4 + 1/2 = 2/6. How can you reject it quickly?", ["The sum must exceed 1/2.", "2/6 = 1/3, which is below 1/2; converting to quarters gives 3/4."], "It is wrong; the sum is 3/4.", "estimate_sum_comparison"),
+];
+PRIMARY_LESSONS.decimalPlaceValue.sections[0].examples = [
+  primaryLinkedExample("What decimal lies halfway between 4 and 5?", ["The whole gap is 1.", "Half the gap is 0.5, so 4 + 0.5 = 4.5."], "4.5.", "compose_from_named_parts"),
+  primaryLinkedExample("Write seven tenths as a decimal.", ["Tenths occupy the first place after the point.", "Put 7 there and 0 in ones."], "0.7.", "fraction_decimal_equivalence"),
+  primaryLinkedExample("Which is greater, 3.2 or 3.02?", ["The whole parts match.", "3.2 has 2 tenths; 3.02 has no tenths."], "3.2.", "compare_mixed_length_decimals"),
+  primaryLinkedExample("In 6.2, what do the digits mean?", ["Six is left of the point, so it counts wholes.", "Two is in the tenths place."], "6 wholes and 2 tenths.", "digit_value_from_place"),
+];
+
+applyPrimaryNewTopics(PRIMARY_LESSONS);
+applyPrimaryFractionMigration(PRIMARY_LESSONS);
+
+const primaryLessonStructureLinks = {
+  placeValue: [
+    ["digit_from_place_name", "digit_value_from_place", "arrange_digits_extremum", "reconstruct_from_clues"],
+    ["place_name_from_digit", "digit_value_from_place", "unitizing", "digit_value_from_place"],
+    ["digit_value_from_place", "digit_value_from_place", "swap_two_digits_change", "digit_range_for_inequality"],
+    ["unitizing", "unitizing", "two_step_partition", "swap_two_digits_change"],
+    ["compose_from_named_parts", "compose_from_named_parts", "matching_expanded_form", "compose_from_named_parts"],
+    ["compose_from_named_parts", "missing_addend_partition", "arrange_digits_extremum", "reconstruct_from_clues"],
+    ["unitizing", "unitizing", "two_step_partition", "unitizing"],
+    ["compare_five_numbers", "order_numbers", "reconstruct_from_clues", "arrange_digits_with_parity"],
+    ["roman_clock_read", "roman_numeral_construct", "roman_numeral_compare", "roman_ledger_change"],
+  ],
+  roundingEstimate: [
+    ["closer_to_which_bound", "round_whole_number", "reverse_rounding_choose", "choose_rounding_direction_context"],
+    ["nearest_multiple", "round_whole_number", "round_whole_number", "halfway_convention"],
+    ["round_whole_number", "round_whole_number", "round_whole_number", "round_whole_number"],
+    ["round_whole_number", "round_whole_number", "round_and_compare", "round_whole_number"],
+    ["round_decimal", "round_decimal", "round_and_compare", "round_decimal"],
+    ["halfway_convention", "halfway_convention", "reverse_halfway_value", "halfway_convention"],
+    ["reverse_rounding_bounds", "reverse_rounding_bounds", "reverse_rounding_bounds", "reverse_rounding_choose"],
+    ["estimate_sum_by_rounding", "estimate_sum_by_rounding", "estimate_product_by_rounding", "estimate_product_by_rounding"],
+  ],
+  compensationMentalMaths: [
+    ["find_the_adjustment", "addition_compensation", "addition_compensation", "apply_the_rule_directly"],
+    ["addition_compensation", "addition_compensation", "recognize_valid_pair", "addition_compensation"],
+    ["subtraction_compensation", "subtraction_compensation", "recognize_valid_pair", "subtraction_compensation"],
+    ["subtraction_compensation", "subtraction_compensation", "recognize_valid_pair", "subtraction_compensation"],
+    ["multiplication_compensation", "multiplication_compensation", "alternative_scaling_pair", "multiplication_compensation"],
+    ["division_compensation", "division_compensation", "alternative_scaling_pair", "division_compensation"],
+    ["find_the_adjustment", "reverse_compensation", "alternative_scaling_pair", "recognize_valid_pair"],
+    ["addition_compensation", "subtraction_compensation", "multiplication_compensation", "cross_operation_rule_check"],
+  ],
+  timesTablesFacts: [
+    ...[["direct_recall"], ["commutative_property"], ["step_along_table"], ["double_scale_both_sides"], ["distributive_partition"], ["scale_by_ten_hundred"], ["double_scale_both_sides"], ["fact_family"]].map(([id]) => [id, id, id, id]),
+  ],
+  factorsMultiplesPrimes: [
+    ["spot_non_factor", "spot_non_factor", "spot_non_factor", "spot_non_factor"],
+    ["count_factors", "count_factors", "count_factors", "count_factors"],
+    ["spot_multiple", "spot_multiple", "spot_multiple", "spot_multiple"],
+    ["spot_multiple", "spot_multiple", "lowest_common_multiple", "spot_multiple"],
+    ["highest_common_factor", "highest_common_factor", "hcf_word_problem", "highest_common_factor"],
+    ["lowest_common_multiple", "lowest_common_multiple", "lcm_word_problem", "lowest_common_multiple"],
+    ["spot_prime", "spot_prime", "prime_factor_decomposition", "spot_prime"],
+    ["highest_common_factor", "highest_common_factor", "lowest_common_multiple", "highest_common_factor"],
+  ],
+  formalMultiplication: [
+    ["short_multiplication_1digit", "short_multiplication_1digit", "short_multiplication_1digit", "short_multiplication_1digit"],
+    ["short_multiplication_1digit", "short_multiplication_1digit", "partial_product_subcalc", "estimate_product_before_calculating"],
+    ...[["distributive_partition_2digit"], ["compound_area_multiplication"], ["short_multiplication_1digit"], ["long_multiplication_2digit_full"]].map(([id]) => [id, id, id, id]),
+    ["spot_the_method_error", "spot_the_method_error", "partial_product_subcalc", "spot_correct_partial_products"],
+    ["estimate_product_before_calculating", "estimate_product_before_calculating", "compare_two_products", "estimate_product_before_calculating"],
+    ["short_multiplication_1digit", "long_multiplication_2digit_full", "long_multiplication_2digit_full", "long_multiplication_2digit_full"],
+  ],
+  divisionRemainders: [
+    ["quotient_or_remainder_direct", "quotient_or_remainder_direct", "classify_the_right_approach", "quotient_or_remainder_direct"],
+    ...[["state_leftover_directly"], ["quotient_or_remainder_direct"], ["remainder_must_be_smaller_misconception"], ["reconstruct_dividend_from_qr"], ["round_remainder_up_context"], ["round_remainder_down_context"], ["remainder_as_decimal_money"]].map(([id]) => [id, id, id, id]),
+    ["choose_correct_interpretation", "choose_correct_interpretation", "remainder_as_fraction_of_whole", "choose_correct_interpretation"],
+    ["quotient_or_remainder_direct", "reconstruct_dividend_from_qr", "multi_remainder_chain", "quotient_or_remainder_direct"],
+  ],
+  formalDivision: [
+    ["short_division_quotient", "short_division_quotient", "missing_dividend_or_divisor", "short_division_quotient"],
+    ["procedural_bring_down_digit", "remainder_as_fraction", "ratio_table_long_division", "procedural_bring_down_digit"],
+    ["estimate_the_quotient", "ratio_table_long_division", "estimate_the_quotient", "estimate_the_quotient"],
+    ["ratio_table_long_division", "ratio_table_long_division", "long_division_2digit_divisor", "ratio_table_long_division"],
+    ["missing_dividend_or_divisor", "identify_remainder", "spot_the_long_division_error", "missing_dividend_or_divisor"],
+    ["identify_remainder", "identify_remainder", "long_division_2digit_divisor", "identify_remainder"],
+    ["remainder_as_fraction", "remainder_as_fraction", "remainder_as_fraction", "remainder_as_fraction"],
+    ["two_step_division", "two_step_division", "two_step_division", "two_step_division"],
+  ],
+  fractionOfQuantity: [
+    ["unit_fraction_of_quantity", "non_unit_fraction_of_quantity", "compare_two_fraction_results", "half_and_quarter_recall"],
+    ["non_unit_fraction_of_quantity", "fraction_then_remaining", "compare_two_fraction_results", "what_fraction_is_part_of_whole"],
+    ...[["unit_fraction_of_quantity"], ["non_unit_fraction_of_quantity"], ["non_unit_fraction_of_quantity"], ["non_unit_fraction_of_quantity"]].map(([id]) => [id, id, id, id]),
+    ["fraction_of_money", "fraction_of_money", "fraction_of_money", "fraction_of_money"],
+    ["reverse_find_whole", "reverse_find_whole", "reverse_find_whole", "reverse_find_whole"],
+    ["reverse_two_step", "reverse_two_step", "reverse_two_step", "fraction_word_problem_two_groups"],
+  ],
+  fractionEquivalence: [
+    ["read_fraction_from_grid", "read_fraction_from_grid", "same_numerator_comparison", "read_fraction_from_grid"],
+    ["scale_to_equivalent", "missing_term_in_chain", "cross_multiply_check_equivalence", "distance_from_whole_comparison"],
+    ["scale_to_equivalent", "scale_to_equivalent", "missing_term_in_chain", "scale_to_equivalent"],
+    ["cross_multiply_check_equivalence", "cross_multiply_check_equivalence", "cross_multiply_check_equivalence", "cross_multiply_check_equivalence"],
+    ["simplify_to_lowest_terms", "simplify_to_lowest_terms", "simplify_multistep", "simplify_to_lowest_terms"],
+    ["compare_via_common_denominator", "compare_via_common_denominator", "order_four_mixed_denominators", "compare_via_common_denominator"],
+    ["same_numerator_comparison", "same_numerator_comparison", "same_numerator_comparison", "same_numerator_comparison"],
+    ["order_four_mixed_denominators", "order_four_mixed_denominators", "missing_denominator_reverse", "order_four_mixed_denominators"],
+    ["equivalence_chain_three_steps", "equivalence_chain_three_steps", "simplify_multistep", "order_four_mixed_denominators"],
+  ],
+  fractionArithmetic: [
+    ["same_denom_add", "same_denom_subtract", "improper_to_mixed", "mixed_to_improper"],
+    ["same_denom_add", "same_denom_add", "add_bridging_whole", "same_denom_add"],
+    ["same_denom_subtract", "same_denom_subtract", "same_denom_subtract", "same_denom_subtract"],
+    ["add_fully_unlike_denom", "add_related_denom", "add_related_denom", "estimate_sum_comparison"],
+    ["add_related_denom", "add_fully_unlike_denom", "add_fully_unlike_denom", "add_related_denom"],
+    ["add_fully_unlike_denom", "subtract_fully_unlike_denom", "subtract_fully_unlike_denom", "add_related_denom"],
+    ["same_denom_add", "subtract_related_denom", "estimate_sum_comparison", "estimate_sum_comparison"],
+    ["add_mixed_related_denom", "subtract_mixed_unlike_denom_borrow", "add_mixed_related_denom", "improper_to_mixed"],
+    ["multiply_fractions", "multiply_fractions", "multiply_fractions", "fraction_of_fraction_context"],
+    ["divide_fraction_by_whole", "divide_fraction_by_whole", "divide_fraction_by_whole", "divide_fraction_by_whole"],
+  ],
+  decimalPlaceValue: [
+    ["compose_from_named_parts", "fraction_decimal_equivalence", "compare_mixed_length_decimals", "digit_value_from_place"],
+    ["fraction_decimal_equivalence", "fraction_decimal_equivalence", "compose_from_named_parts", "digit_value_from_place"],
+    ["compose_from_named_parts", "compose_from_named_parts", "compose_from_named_parts", "digit_value_from_place"],
+    ["digit_value_from_place", "digit_value_from_place", "compose_from_named_parts", "digit_value_from_place"],
+    ["multiply_divide_power_of_ten", "multiply_divide_power_of_ten", "multiply_divide_power_of_ten", "multiply_divide_power_of_ten"],
+    ["compare_mixed_length_decimals", "compare_mixed_length_decimals", "compare_mixed_length_decimals", "compare_mixed_length_decimals"],
+    ["order_four_decimals", "order_four_decimals", "order_four_decimals", "order_four_decimals"],
+    ["fraction_decimal_equivalence", "fraction_decimal_equivalence", "thousandths_fraction_decimal", "fraction_decimal_equivalence"],
+  ],
+};
+
+Object.entries(primaryLessonStructureLinks).forEach(([lessonKey, sectionLinks]) => {
+  sectionLinks.forEach((links, sectionIndex) => {
+    const section = PRIMARY_LESSONS[lessonKey].sections[sectionIndex];
+    if (!section) throw new Error(`${lessonKey} has no lesson section ${sectionIndex} for its structure links`);
+    section.examples.forEach((example, exampleIndex) => {
+      example.structureId = links[exampleIndex];
+    });
+  });
+});
+
+applyPrimaryRemainingMigration(PRIMARY_LESSONS);
+applyPrimarySlowTeachingRewrites(PRIMARY_LESSONS);
+applyPrimarySlowTeaching(PRIMARY_LESSONS);
+applyPrimaryEditorP01(PRIMARY_LESSONS);
+applyPrimaryEditorP02(PRIMARY_LESSONS);
+applyPrimaryEditorP03(PRIMARY_LESSONS);
+applyPrimaryEditorP04(PRIMARY_LESSONS);
+applyPrimaryEditorP05(PRIMARY_LESSONS);
+applyPrimaryEditorP06(PRIMARY_LESSONS);
+applyPrimaryEditorP07(PRIMARY_LESSONS);
+applyPrimaryEditorP08(PRIMARY_LESSONS);
+applyPrimaryEditorP09(PRIMARY_LESSONS);
+applyPrimaryEditorP10A(PRIMARY_LESSONS);
+applyPrimaryEditorP10B(PRIMARY_LESSONS);
+applyPrimaryEditorP11A(PRIMARY_LESSONS);
+applyPrimaryEditorP11B(PRIMARY_LESSONS);
+applyPrimaryEditorP12A(PRIMARY_LESSONS);
+applyPrimaryEditorP12B(PRIMARY_LESSONS);
+applyPrimaryEditorP13A(PRIMARY_LESSONS);
+applyPrimaryEditorP13B(PRIMARY_LESSONS);
+applyPrimaryEditorP14A(PRIMARY_LESSONS);
+applyPrimaryEditorP14B(PRIMARY_LESSONS);
+applyPrimaryEditorP14C(PRIMARY_LESSONS);
+applyPrimaryEditorP14D(PRIMARY_LESSONS);

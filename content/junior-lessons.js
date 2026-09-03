@@ -1,4 +1,37 @@
 
+import { applyJuniorFractionProgression } from "./junior-fractions-rewrite.js";
+import { applyJuniorCurriculumOverlay } from "./junior-curriculum-overlay.js";
+import { applyJuniorCoherentCoreLessons } from "./junior-slow-teaching-rewrites.js";
+import { applyJuniorSlowTeaching } from "./slow-teaching-editorial.js";
+import { applyJuniorEditorJ01 } from "./lesson-editor-j01.js";
+import { applyJuniorEditorJ02 } from "./lesson-editor-j02.js";
+import { applyJuniorEditorJ03 } from "./lesson-editor-j03.js";
+import { applyJuniorEditorJ04A } from "./lesson-editor-j04a.js";
+import { applyJuniorEditorJ04B } from "./lesson-editor-j04b.js";
+import { applyJuniorEditorJ04C } from "./lesson-editor-j04c.js";
+import { applyJuniorEditorJ05A } from "./lesson-editor-j05a.js";
+import { applyJuniorEditorJ05B } from "./lesson-editor-j05b.js";
+import { applyJuniorEditorJ05C } from "./lesson-editor-j05c.js";
+import { applyJuniorEditorJ06A } from "./lesson-editor-j06a.js";
+import { applyJuniorEditorJ06B } from "./lesson-editor-j06b.js";
+import { applyJuniorEditorJ06C } from "./lesson-editor-j06c.js";
+import { applyJuniorEditorJ07A } from "./lesson-editor-j07a.js";
+import { applyJuniorEditorJ07B } from "./lesson-editor-j07b.js";
+import { applyJuniorEditorJ07C } from "./lesson-editor-j07c.js";
+import { applyJuniorEditorJ08A } from "./lesson-editor-j08a.js";
+import { applyJuniorEditorJ08B } from "./lesson-editor-j08b.js";
+import { applyJuniorEditorJ08C } from "./lesson-editor-j08c.js";
+import { applyJuniorEditorJ09A } from "./lesson-editor-j09a.js";
+import { applyJuniorEditorJ09B } from "./lesson-editor-j09b.js";
+import { applyJuniorEditorJ09C } from "./lesson-editor-j09c.js";
+import { applyJuniorEditorJ10A } from "./lesson-editor-j10a.js";
+import { applyJuniorEditorJ10B } from "./lesson-editor-j10b.js";
+import { applyJuniorEditorJ10C } from "./lesson-editor-j10c.js";
+import { applyJuniorEditorJ11A } from "./lesson-editor-j11a.js";
+import { applyJuniorEditorJ11B } from "./lesson-editor-j11b.js";
+import { applyJuniorEditorJ11C } from "./lesson-editor-j11c.js";
+import { applyJuniorEditorJ11D } from "./lesson-editor-j11d.js";
+
 // ============================================================
 //  GUIDED LESSONS (rich, first-principles, 10+ minute reads)
 //  Keyed by topic. Rendered by RichLesson in app.jsx. Topics without an
@@ -161,6 +194,44 @@ export const JUNIOR_LESSONS = {
     ],
   },
 };
+
+JUNIOR_LESSONS.fractionUnusual.intro = "A fraction is a number that describes equal parts. You may have met fractions before, but we will not assume that any rule is already obvious. We will begin by deciding what the whole is, then learn what the two numbers in a fraction tell us. Each new idea will grow from that foundation. Read one section at a time, work through the four examples in order and stop whenever you need to think.";
+JUNIOR_LESSONS.fractionUnusual.sections[0].image = "fractions-chocolate-five-eighths";
+JUNIOR_LESSONS.fractionUnusual.sections[0].body = [
+  "Start with one whole chocolate bar. Before we can describe a fraction of it, we must decide what counts as the whole. Here, the whole is the complete bar.",
+  "The bar is divided into 8 squares of equal size. Equal is essential. Because every square is the same size, each one represents the same amount: one eighth of the bar. If the pieces were unequal, counting them would not tell us fairly how much chocolate we had.",
+  "Suppose 5 of the 8 squares are highlighted. The 8 tells us how many equal pieces make the whole. It is written below the fraction line and is called the denominator. The 5 tells us how many of those equal pieces we are considering. It is written above the line and is called the numerator.",
+  "We write the highlighted amount as 5/8 and read it as ‘five eighths’. Whenever you meet a fraction, ask three questions: What is the whole? How many equal pieces make it? How many of those pieces are being counted?"
+];
+JUNIOR_LESSONS.fractionUnusual.sections[0].examples = [
+  { q: "A sandwich is cut into 4 equal pieces. One piece is eaten. What fraction is eaten?", steps: ["The whole is one complete sandwich.", "It was divided into 4 equal pieces, so the denominator is 4.", "One piece was eaten, so the numerator is 1."], answer: "1/4" },
+  { q: "In the fraction 7/10, what do the two numbers mean?", steps: ["The denominator is 10, so the whole has been divided into 10 equal parts.", "The numerator is 7, so 7 of those parts are being counted."], answer: "7 equal parts out of 10 are being counted." },
+  { q: "Six of eight equal counters are red. What fraction are not red?", steps: ["There are 8 counters altogether, so the denominator is 8.", "If 6 are red, then 8 - 6 = 2 are not red.", "The numerator for the counters that are not red is 2."], answer: "2/8, which will later simplify to 1/4." },
+  { q: "A cake is cut into three pieces, but one piece is much larger than the other two. Can each piece be called one third?", steps: ["The word ‘third’ means one of three equal parts.", "There are three pieces, but they are not equal in size.", "Counting pieces alone is not enough when their sizes differ."], answer: "No. Three unequal pieces are not thirds." }
+];
+
+const juniorFractionFourthExamples = {
+  1: { q: "A point is at 9/4 on a number line. Between which whole numbers does it lie?", steps: ["Four quarters make one whole.", "Eight quarters make two wholes.", "Nine quarters is one quarter more than eight quarters."], answer: "Between 2 and 3, at 2 and 1/4." },
+  2: { q: "Complete both gaps: 3/4 = ?/20 = 21/?", steps: ["From 4 to 20 is times 5, so 3 becomes 15.", "From 3 to 21 is times 7, so 4 must also become 28.", "Both changes multiply the numerator and denominator by the same number."], answer: "3/4 = 15/20 = 21/28." },
+  3: { q: "Simplify 84/126 fully.", steps: ["Both numbers divide by 6, giving 14/21.", "Both 14 and 21 divide by 7, giving 2/3.", "2 and 3 have no common factor greater than 1."], answer: "2/3" },
+  4: { q: "Order 5/6, 7/9 and 4/5 from smallest to largest.", steps: ["A common denominator for 6, 9 and 5 is 90.", "5/6 = 75/90, 7/9 = 70/90 and 4/5 = 72/90.", "Compare 70, 72 and 75."], answer: "7/9, 4/5, 5/6." },
+  5: { q: "Mina walks 2/3 km in the morning and 5/8 km later. How far does she walk altogether?", steps: ["A common denominator for 3 and 8 is 24.", "2/3 = 16/24 and 5/8 = 15/24.", "Add to get 31/24.", "Twenty-four twenty-fourths make one whole, leaving 7/24."], answer: "1 and 7/24 km." },
+  6: { q: "A tank is 3/5 full. Two thirds of the water is used. What fraction of the whole tank is used?", steps: ["We need two thirds of three fifths, so multiply 2/3 by 3/5.", "Cancel the common factor 3.", "Multiply what remains: 2/5."], answer: "2/5 of the tank." },
+  7: { q: "How many 3/8 m pieces can be cut from 3 m of ribbon?", steps: ["The question asks how many lots of 3/8 fit into 3.", "Write 3 as 3/1, then multiply by the reciprocal 8/3.", "3/1 × 8/3 = 8."], answer: "8 pieces." }
+};
+Object.entries(juniorFractionFourthExamples).forEach(([index, example]) => JUNIOR_LESSONS.fractionUnusual.sections[Number(index)].examples.push(example));
+JUNIOR_LESSONS.fractionUnusual.sections[8].examples = [
+  { q: "Write 5/4 as a mixed number.", steps: ["Four quarters make one whole.", "One quarter remains."], answer: "1 and 1/4." },
+  { q: "Write 11/3 as a mixed number.", steps: ["11 ÷ 3 is 3 remainder 2.", "The 3 is the number of wholes and the remainder becomes the numerator."], answer: "3 and 2/3." },
+  { q: "Write 2 and 3/5 as an improper fraction.", steps: ["Two wholes contain 2 × 5 = 10 fifths.", "Add the extra 3 fifths to get 13 fifths."], answer: "13/5." },
+  { q: "Work out 1 and 3/4 + 2 and 2/3.", steps: ["Convert to improper fractions: 1 and 3/4 = 7/4 and 2 and 2/3 = 8/3.", "Use denominator 12: 7/4 = 21/12 and 8/3 = 32/12.", "Add to get 53/12, then divide 53 by 12."], answer: "4 and 5/12." }
+];
+JUNIOR_LESSONS.fractionUnusual.sections[9].examples = [
+  { q: "Write 1/2 as a decimal and percentage.", steps: ["1 ÷ 2 = 0.5.", "Multiply the decimal by 100 to write it as a percentage."], answer: "0.5 and 50%." },
+  { q: "Write 3/5 as a decimal and percentage.", steps: ["Make hundredths: 3/5 = 60/100.", "Sixty hundredths is 0.60 and 60%."], answer: "0.6 and 60%." },
+  { q: "Write 0.375 as a fraction in simplest form.", steps: ["0.375 means 375/1000.", "Divide top and bottom by 125."], answer: "3/8." },
+  { q: "Order 7/10, 68% and 0.72 from smallest to largest.", steps: ["Convert each to a decimal: 7/10 = 0.70, 68% = 0.68 and 0.72 stays 0.72.", "Compare the hundredths: 68, 70 and 72."], answer: "68%, 7/10, 0.72." }
+];
 
 
 // ---- Batch 2: JMC-critical topics (full-depth guided lessons) ----
@@ -775,6 +846,9 @@ JUNIOR_LESSONS.allocation = {
     ] },
     { h: "4. The same trick with coins", body: [
       "The trick isn't just for counters, it works for any 'some of this, some of that' pile with two clues, including money.",
+      "Begin by pretending every coin has the smaller value. That gives the least possible total for the stated number of coins. The difference between this pretend total and the real total must be created by exchanging some small coins for large ones.",
+      "Each exchange adds the difference between the two coin values. Divide the money gap by that exchange difference to find how many large coins there are. The rest must be small coins.",
+      "Check both clues separately: count the coins, then calculate their combined value. A result that satisfies only one clue is not a solution to the puzzle.",
     ], tryit: { q: "A jar has 12 coins, a mix of 20p and 50p coins, worth 360p (3.60 pounds) altogether. How many of each?", answer: "8 coins of 20p and 4 coins of 50p. Assume all 12 are 20p: 12x20=240p, short of 360p by 120p. Each swap from 20p to 50p adds 30p, so 120 divided by 30 = 4 swaps. Check: 8x20+4x50=160+200=360p, and 8+4=12 coins." } },
     { h: "5. Backing it up with algebra", body: [
       "The swapping trick is quick, but algebra shows exactly why it works, and copes fine even when the numbers are too awkward to swap by eye.",
@@ -2970,7 +3044,7 @@ JUNIOR_LESSONS.truthLiars = {
     ], examples: [
       { q: "Find the assignment that survives all three clues from Xan, Yara and Zed above.", steps: ["Systematically test the remaining possibilities rather than guessing again.", "Try Xan liar, Yara truth-teller, Zed liar. Clue one: Xan (liar) says Yara is a liar, which must be false, so Yara should NOT be a liar; Yara is a truth-teller in this guess, so clue one holds.", "Clue two: Yara (truth-teller) says Zed is a liar, which must be true; Zed is a liar in this guess, so clue two holds.", "Clue three: Zed (liar) says Xan and Yara are both liars, which must be false; the real situation is Xan is a liar AND Yara is a truth-teller, so 'both are liars' is indeed false (only one of them is). Clue three holds too."], answer: "Xan is a liar, Yara is a truth-teller, and Zed is a liar. This is the only assignment that survives all three clues." },
       { q: "Petra says 'Quentin is a liar.' Quentin says 'Ronnie is a liar.' Ronnie says 'Petra and Quentin are both liars.' Find the unique assignment of types.", steps: ["Try Petra as a truth-teller. Then Quentin is a liar (clue one). Quentin (liar) says Ronnie is a liar, so Ronnie must be a truth-teller. Ronnie (truth-teller) says Petra and Quentin are both liars, which must be true. But Petra is a truth-teller — contradiction. This assignment fails.", "Try Petra as a liar. Then 'Quentin is a liar' is false, so Quentin is a truth-teller. Quentin (truth-teller) says Ronnie is a liar, so Ronnie is a liar.", "Check clue three: Ronnie (liar) says 'Petra and Quentin are both liars', which must be false. Petra IS a liar, but Quentin is a truth-teller, so 'both' is false. Clue three holds.", "All three clues pass. The assignment is Petra liar, Quentin truth-teller, Ronnie liar."], answer: "Petra is a liar, Quentin is a truth-teller and Ronnie is a liar" },
-      { q: "Four people: Sana says 'Exactly one of Teo, Uma and Viv is a truth-teller.' Teo says 'Sana is a liar.' Uma says 'Teo is a truth-teller.' Viv says 'I am the only truth-teller among all four of us.' Find the unique assignment.", steps: ["If Sana is a truth-teller, exactly one of {Teo, Uma, Viv} is a truth-teller. Testing each sub-case: if Teo is that one truth-teller, Teo says Sana is a liar — contradiction. If Uma is the one, Uma says Teo is a truth-teller — but Teo would be a liar — contradiction. If Viv is the one, Viv says she is the only truth-teller, but Sana is also a truth-teller — contradiction. So Sana must be a liar.", "Sana is a liar. Teo says Sana is a liar: if Teo is a truth-teller, this is correct, which is consistent. If Teo is a liar, his statement must be false, so Sana would be a truth-teller — contradiction. So Teo is a truth-teller.", "Uma says Teo is a truth-teller, which is true. If Uma is a liar, her statement must be false — contradiction. So Uma is a truth-teller.", "Viv says she is the only truth-teller among all four. Teo and Uma are both truth-tellers, so this is false. If Viv were a truth-teller, her statement would have to be true — contradiction. So Viv is a liar."], answer: "Sana is a liar, Teo is a truth-teller, Uma is a truth-teller and Viv is a liar. Check: Sana (liar) claims exactly one of {Teo,Uma,Viv} is TT — actually two are, so the claim is false ✓; Viv (liar) claims to be the only TT among four — false since Teo and Uma are both TT ✓" },
+      { q: "Four people: Sana says 'Exactly one of Teo, Uma and Viv is a truth-teller.' Teo says 'Sana is a liar.' Uma says 'Teo is a truth-teller.' Viv says 'I am the only truth-teller among all four of us.' Find the unique assignment.", steps: ["If Sana is a truth-teller, exactly one of {Teo, Uma, Viv} is a truth-teller. Test each possibility. If Teo is that one truth-teller, Teo says Sana is a liar, which is a contradiction. If Uma is the one, Uma says Teo is a truth-teller, but Teo would be a liar, which is a contradiction. If Viv is the one, Viv says she is the only truth-teller, but Sana is also a truth-teller, which is a contradiction. So Sana must be a liar.", "Sana is a liar. Teo says Sana is a liar. If Teo is a truth-teller, this is correct and consistent. If Teo is a liar, his statement must be false, so Sana would be a truth-teller. That is a contradiction. So Teo is a truth-teller.", "Uma says Teo is a truth-teller, which is true. If Uma were a liar, her statement would have to be false. That is a contradiction. So Uma is a truth-teller.", "Viv says she is the only truth-teller among all four. Teo and Uma are both truth-tellers, so Viv's statement is false. If Viv were a truth-teller, her statement would have to be true. That is a contradiction. So Viv is a liar."], answer: "Sana is a liar, Teo is a truth-teller, Uma is a truth-teller and Viv is a liar. Check Sana's statement: there are actually two truth-tellers among Teo, Uma and Viv, so Sana's statement is false. Check Viv's statement: Teo and Uma are both truth-tellers, so Viv's statement is also false." },
     ],
       tryit: { q: "Check the assignment Xan truth-teller, Yara truth-teller, Zed liar against all three clues, and state which clue fails first.", answer: "Clue one fails immediately: Xan (truth-teller) says Yara is a liar, which must be true, but we guessed Yara is a truth-teller. Contradiction on the very first clue, so this assignment is rejected without even reaching clues two and three." } },
     { h: "9. Building a table so nothing gets missed", body: [
@@ -3893,112 +3967,6 @@ JUNIOR_LESSONS.multiExpr = {
 
 // ---- Full-depth guided lesson: modular arithmetic (modular v2, replaces old short version) ----
 
-JUNIOR_LESSONS.calendar = {
-  title: "Calendar Puzzles",
-  minutes: 16,
-  intro: "A calendar is one of the most familiar cyclic patterns there is: weekdays loop every 7 days, whatever the date. This lesson builds the skill of counting forward or backward through weekdays and dates without a physical calendar in front of you, using exactly the same remainder idea from cyclic patterns, plus a few real, occasionally awkward facts about how many days actually sit in each month.",
-  sections: [
-    { h: "1. Weekdays repeat every 7 days", body: [
-      "If today is a Tuesday, then in exactly 7 days it will be Tuesday again, and in 14 days, and in 700 days, since every multiple of 7 brings you back round to the exact same weekday. Any gap of days that is NOT a multiple of 7 lands on a different weekday, found by counting forward that many places round the 7-day loop.",
-      "The whole method is: find the gap in days between the two dates, divide by 7, and step forward from the starting weekday by whatever the remainder is.",
-    ], examples: [
-      { q: "Today is a Wednesday. What day of the week is it in 10 days?", steps: ["Divide the gap by 7: 10 = 7 x 1 + 3, remainder 3.", "Step forward 3 places from Wednesday: Thursday (1), Friday (2), Saturday (3)."], answer: "Saturday" },
-      { q: "Today is a Friday. What day of the week is it in 100 days?", steps: ["Divide the gap by 7: 100 = 7 x 14 + 2, remainder 2.", "Step forward 2 places from Friday: Saturday (1), Sunday (2)."], answer: "Sunday" },
-      { q: "A committee meeting is held every 11 days. The first meeting is on a Monday. What day of the week is the 10th meeting?", steps: ["Between the 1st and 10th meetings there are 9 intervals of 11 days: 9 x 11 = 99 days.", "99 ÷ 7 = 14 remainder 1.", "Step forward 1 place from Monday: Tuesday."], answer: "Tuesday" },
-    ],
-      tryit: { q: "Today is a Monday. What day of the week is it in 23 days?", answer: "Wednesday. 23 divided by 7 is 3 remainder 2. Step forward 2 places from Monday: Tuesday (1), Wednesday (2)." } },
-    { h: "2. A remainder of 0 means the SAME weekday", body: [
-      "If the gap between two dates is an exact multiple of 7, the remainder is 0, and stepping forward 0 places means landing back on the exact same weekday you started from, not the day before or after it.",
-    ], tryit: { q: "Today is a Friday. What day of the week is it in 21 days?", answer: "Friday. 21 divided by 7 is exactly 3, remainder 0, so it is the same weekday, Friday." } },
-    { h: "3. Knowing how many days are actually in each month", body: [
-      "Calendar puzzles that span more than one month need the actual lengths of each month, which are not all the same. Thirty days have September, April, June and November; all the rest have thirty-one, except February alone, which has 28 days, or 29 in a leap year.",
-      "A leap year is any year that divides exactly by 4, except that a century year (ending in 00) is only a leap year if it also divides exactly by 400. So 2024 is a leap year (2024 divided by 4 is 506, a whole number), 2000 was a leap year (it divides by 400), but 1900 was NOT a leap year (it divides by 4 but not by 400).",
-    ], tryit: { q: "Is 2100 a leap year?", answer: "No. 2100 is a century year (ends in 00), so it must divide by 400 to count as a leap year. 2100 divided by 400 is 5.25, not a whole number, so 2100 is not a leap year." } },
-    { h: "4. Counting the gap across a month boundary", body: [
-      "When a question spans from one month into the next, count the remaining days in the first month, then add the days needed in the second month, rather than trying to subtract calendar dates directly, which invites off-by-one slips.",
-      "How many days from the 25th of April to the 3rd of May, inclusive of the starting date but not counting the 3rd of May itself as extra? April has 30 days, so from the 25th to the 30th of April is 30 - 25 = 5 days remaining in April, and then a further 3 days into May reaches the 3rd. Total gap: 5 + 3 = 8 days.",
-    ], examples: [
-      { q: "Today is Tuesday the 25th of April. What day of the week is the 3rd of May?", steps: ["Gap in days: 5 (rest of April) + 3 (into May) = 8 days.", "8 divided by 7 is 1 remainder 1.", "Step forward 1 place from Tuesday: Wednesday."], answer: "Wednesday" },
-      { q: "The 7th of November is a Saturday. What day of the week is the 2nd of December?", steps: ["Days remaining in November after the 7th: 30 - 7 = 23 days.", "Days into December to reach the 2nd: 2 days.", "Total gap: 23 + 2 = 25 days. 25 ÷ 7 = 3 remainder 4.", "Step forward 4 from Saturday: Sunday (1), Monday (2), Tuesday (3), Wednesday (4)."], answer: "Wednesday" },
-      { q: "The 15th of January in a non-leap year is a Wednesday. What day of the week is the 1st of April?", steps: ["Remaining January: 31 - 15 = 16 days. February (non-leap): 28 days. Days into April: 1 day.", "Total gap: 16 + 28 + 1 = 45 days. 45 ÷ 7 = 6 remainder 3.", "Step forward 3 from Wednesday: Thursday (1), Friday (2), Saturday (3)."], answer: "Saturday" },
-    ] },
-    { h: "5. The inclusive-exclusive counting trap", body: [
-      "One of the most common errors in calendar puzzles is miscounting whether both endpoints of a date range should be included. Counting the days from the 3rd to the 10th of a month: if you want the number of days that pass BETWEEN the two dates, it is 10 - 3 = 7 days. But if you want the number of days INCLUDING both the 3rd and the 10th as counted days, it is 10 - 3 + 1 = 8 days.",
-      "Always decide first, from the wording of the question, whether the starting date itself should be counted as one of the days, and be consistent about it for the whole calculation.",
-    ], tryit: { q: "How many days does a holiday last if it runs from the 5th to the 12th of a month, inclusive of both dates?", answer: "8 days. 12 - 5 + 1 = 8, since both the 5th and the 12th are being counted as part of the holiday." } },
-    { h: "6. Counting how many of a weekday occur in a month", body: [
-      "A different style of calendar puzzle asks how many times a particular weekday occurs within a given month. Since weekdays cycle every 7 days, any 28-day stretch contains exactly 4 of each weekday, and the leftover days at the end of a longer month decide whether a particular weekday sneaks in a 5th time.",
-      "A 31-day month has 28 days (4 full weeks) plus 3 extra days. Whichever weekday the month STARTS on, that same weekday, plus the next two weekdays after it, will each occur 5 times instead of 4; every other weekday in that month occurs only 4 times.",
-    ], examples: [
-      { q: "A 31-day month starts on a Friday. Which weekdays occur 5 times that month?", steps: ["The 3 extra days beyond the 4 full weeks fall on the same weekdays as the 1st, 2nd and 3rd of the month.", "The month starts on Friday, so those extra days are Friday, Saturday and Sunday.", "Every other weekday only reaches 4 occurrences."], answer: "Friday, Saturday and Sunday each occur 5 times; the rest occur 4 times" },
-      { q: "A 30-day month starts on a Wednesday. How many times does Sunday occur in this month?", steps: ["30 days = 4 full weeks (28 days) plus 2 extra days.", "The 2 extra days match the weekdays of the 1st and 2nd of the month: Wednesday and Thursday.", "Sunday is not one of those two extra days, so it only reaches 4 occurrences."], answer: "4 times" },
-      { q: "In a particular 31-day month, there are 5 Saturdays and 5 Sundays but exactly 4 Mondays. What day of the week is the 1st of that month?", steps: ["A 31-day month has 3 extra days (beyond 4 full weeks), matching the weekdays of the 1st, 2nd and 3rd.", "Saturday and Sunday must both be among those 3 extra days. The only set of 3 consecutive weekdays containing both Saturday and Sunday is Friday, Saturday, Sunday.", "So the extra days are Friday (1st), Saturday (2nd), Sunday (3rd), meaning the month starts on Friday.", "Check: Monday is the 4th weekday in the list, not in the extra 3, so Monday occurs only 4 times. ✓"], answer: "Friday" },
-    ],
-      tryit: { q: "A 30-day month starts on a Tuesday. Which weekdays occur 5 times?", answer: "Tuesday and Wednesday. A 30-day month has 28 days (4 full weeks) plus 2 extra days, which fall on the same weekdays as the 1st and 2nd of the month, Tuesday and Wednesday." } },
-    { h: "7. Turning a calendar puzzle into a remainder", body: [
-      "The pattern for almost every weekday question is the same: work out how many days apart the two dates are, divide by 7, and step forward by the remainder.",
-      "For long gaps across several months, add up the days in the months in between, remembering February and any leap day, then do the same remainder step at the very end, exactly as in section 4.",
-    ], examples: [
-      { q: "Today is Sunday the 10th of March (not a leap year). What day of the week is the 15th of April?", steps: ["Days remaining in March after the 10th: 31 - 10 = 21 days, reaching the 31st.", "Days into April to reach the 15th: 15 days.", "Total gap: 21 + 15 = 36 days.", "36 divided by 7 is 5 remainder 1.", "Step forward 1 place from Sunday: Monday."], answer: "Monday" },
-      { q: "The 28th of September is a Thursday. What day of the week is the 5th of November?", steps: ["Remaining September: 30 - 28 = 2 days. October: 31 days. Days into November: 5 days.", "Total gap: 2 + 31 + 5 = 38 days. 38 ÷ 7 = 5 remainder 3.", "Step forward 3 from Thursday: Friday (1), Saturday (2), Sunday (3)."], answer: "Sunday" },
-      { q: "The 20th of February in a leap year is a Monday. What day is the 1st of May that same year?", steps: ["Remaining February (leap year has 29 days): 29 - 20 = 9 days. March: 31 days. April: 30 days. Days into May: 1 day.", "Total gap: 9 + 31 + 30 + 1 = 71 days. 71 ÷ 7 = 10 remainder 1.", "Step forward 1 from Monday: Tuesday."], answer: "Tuesday" },
-    ] },
-    { h: "8. The same date, one year later", body: [
-      "A useful special case worth knowing by heart: an ordinary (non-leap) year is 365 days long, and 365 divided by 7 is 52 remainder 1. So the same calendar date one year later always falls exactly ONE weekday further round the cycle, as long as no 29th of February falls anywhere in between.",
-      "If a leap day DOES fall somewhere between the two matching dates, the gap becomes 366 days instead of 365, and 366 divided by 7 is 52 remainder 2, so the date shifts forward by TWO weekdays instead of one.",
-    ], examples: [
-      { q: "This year, the 11th of July falls on a Saturday, and no 29th of February falls before next year's 11th of July. What weekday is it next year?", steps: ["No leap day intervenes, so the shift is the usual 1 weekday.", "Step forward 1 place from Saturday: Sunday."], answer: "Sunday" },
-      { q: "The 5th of March is a Tuesday. The FOLLOWING year is a leap year. What day of the week is 5th March in that following year?", steps: ["The leap day (29th February) in the following year falls between the two 5th March dates, since 29th February comes before 5th March.", "So the gap is 366 days, not 365. 366 ÷ 7 = 52 remainder 2.", "Step forward 2 from Tuesday: Wednesday (1), Thursday (2)."], answer: "Thursday" },
-      { q: "The 14th of January in year Y is a Thursday, and year Y is a leap year. What day of the week is 14th January in year Y+2?", steps: ["Year Y to year Y+1: year Y is a leap year and 14 January comes BEFORE 29 February, so the leap day falls within this 365-day-looking span, making it 366 days. Shift = 2 weekdays. Thursday + 2 = Saturday.", "Year Y+1 to year Y+2: year Y+1 is not a leap year (the next leap year would be Y+4). No leap day in between. Shift = 1 weekday. Saturday + 1 = Sunday.", "So 14th January in year Y+2 is a Sunday."], answer: "Sunday" },
-    ],
-      tryit: { q: "If a leap day genuinely falls between this year's date and the same date next year, by how many weekdays does it shift instead of the usual one?", answer: "2 weekdays, since the gap becomes 366 days, and 366 divided by 7 is 52 remainder 2." } },
-    { h: "9. Finding the LAST occurrence of a weekday in the month", body: [
-      "A close cousin of the 'how many times' question from section 6 asks for the exact DATE of the last occurrence of a given weekday. The method: find the first occurrence (using the remainder idea from sections 1-2), then keep adding 7 until adding 7 again would push past the end of the month.",
-      "If a month has 30 days and the first Tuesday falls on the 3rd, the Tuesdays are 3, 10, 17, 24, and 31 would be next but the month only has 30 days, so the last Tuesday is the 24th.",
-    ], examples: [
-      { q: "A 31-day month starts on a Thursday. What is the date of the last Monday in the month?", steps: ["Thursday is day 1, so the first Monday is 5 days later: day 1 + 4 = day 5 (Thu→Fri→Sat→Sun→Mon).", "Add 7 repeatedly: 5, 12, 19, 26. Adding 7 again gives 33, which is past the 31-day month.", "The last Monday is day 26."], answer: "The 26th" },
-      { q: "A 30-day month starts on a Saturday. What is the date of the last Thursday?", steps: ["Saturday is day 1. Thursday is 5 days later: day 6 (Sat=1, Sun=2, Mon=3, Tue=4, Wed=5, Thu=6).", "Add 7 repeatedly: 6, 13, 20, 27. Next would be 34, past 30.", "Last Thursday = the 27th."], answer: "The 27th" },
-      { q: "A 31-day month starts on a Wednesday. Find the dates of the last Friday and the last Sunday of the month.", steps: ["Wednesday = day 1. Friday = day 3 (Wed=1, Thu=2, Fri=3). Fridays: 3, 10, 17, 24, 31. Next = 38 > 31, so last Friday = 31st.", "Sunday = day 5 (Wed=1, Thu=2, Fri=3, Sat=4, Sun=5). Sundays: 5, 12, 19, 26. Next = 33 > 31, so last Sunday = 26th."], answer: "Last Friday is the 31st; last Sunday is the 26th" },
-    ],
-      tryit: { q: "A 30-day month starts on a Sunday. What is the date of the last Saturday in the month?", answer: "The 28th. The first Saturday is day 7 (Sun is day 1, so 6 days later is Saturday). Adding 7: 7, 14, 21, 28. Adding 7 again (35) overshoots the 30-day month, so 28 is the last." } },
-    { h: "10. What weekday does the NEXT month start on?", body: [
-      "Since a month has either 28, 29, 30 or 31 days, and none of those is a multiple of 7, the weekday the next month starts on is always a few places round the cycle from the weekday THIS month started on — found exactly the same way as any other gap: take the current month's length, divide by 7, and step forward by the remainder.",
-      "A 31-day month has remainder 3 (31 = 7×4+3), so the next month starts 3 weekdays on. A 30-day month has remainder 2, so the next month starts 2 weekdays on. A 28-day February (remainder 0) hands the NEXT month the exact same starting weekday, and a 29-day February (remainder 1) shifts it on by 1.",
-    ], examples: [
-      { q: "A 31-day month starts on a Sunday. What day does the next month start on?", steps: ["31 ÷ 7 = 4 remainder 3.", "Step forward 3 places from Sunday: Monday, Tuesday, Wednesday."], answer: "Wednesday" },
-      { q: "A 30-day month starts on a Monday. What day does the following month start on?", steps: ["30 ÷ 7 = 4 remainder 2.", "Step forward 2 from Monday: Tuesday (1), Wednesday (2)."], answer: "Wednesday" },
-      { q: "January starts on a Friday in a non-leap year. What day does March start on?", steps: ["January has 31 days: 31 ÷ 7 = 4 remainder 3. Step 3 from Friday: Saturday (1), Sunday (2), Monday (3). February starts on Monday.", "February has 28 days (non-leap year): 28 ÷ 7 = 4 remainder 0. No shift. March starts on Monday too."], answer: "Monday" },
-    ],
-      tryit: { q: "A 28-day February starts on a Wednesday. What day does March start on?", answer: "Wednesday — the same day, since 28 is an exact multiple of 7 (remainder 0)." } },
-    { h: "11. Working backwards: deducing the start day from a weekday's dates", body: [
-      "The hardest calendar questions run the whole method in reverse: instead of being given the starting weekday and asked for a date, you're given a FACT about the dates of a particular weekday (their sum, say) and asked to deduce what day the month started on.",
-      "The method is systematic testing: for each of the 7 possible starting weekdays, work out where that target weekday's dates would fall, add them up, and check which starting weekday is the one that actually matches the given sum. A well-posed puzzle is built so that exactly one starting weekday works.",
-    ], examples: [
-      { q: "In a 30-day month, the dates of every Friday add up to 75. What day does the 1st fall on?", steps: ["Try each possible starting weekday for the 1st, and list what dates Friday would fall on, then add them.", "1st = Thursday: Fridays are 2, 9, 16, 23, 30, summing to 80.", "1st = Friday: Fridays are 1, 8, 15, 22, 29, summing to 75. ✓", "No other starting weekday gives a Friday sum of exactly 75, so this is the answer."], answer: "Friday" },
-      { q: "In a 31-day month, the dates of every Saturday sum to 66. What day does the 1st fall on?", steps: ["In a 31-day month the Saturdays either occur 4 or 5 times. Try starting weekdays that give 4 Saturdays first, since 66 is not a 5-Saturday sum.", "1st = Monday: Saturdays at 6, 13, 20, 27. Sum = 66. ✓", "Check the other 4-Saturday options: 1st = Tue → 5,12,19,26 sum 62; 1st = Wed → 4,11,18,25 sum 58; 1st = Thu → 3,10,17,24 sum 54. None equal 66.", "So the 1st must be Monday."], answer: "Monday" },
-      { q: "In a 31-day month, the dates of every Sunday sum to 80. What day of the week is the 10th of that month?", steps: ["A Sunday sum of 80 in a 31-day month: try 5-Sunday options. If 1st = Saturday: Sundays at 2,9,16,23,30. Sum = 80. ✓", "So the month starts on Saturday. The 10th is 9 days after the 1st. 9 ÷ 7 = 1 remainder 2.", "Step forward 2 from Saturday: Sunday (1), Monday (2)."], answer: "Monday" },
-    ] },
-  ],
-  recap: [
-    "Weekdays repeat every 7 days, so any gap that is a whole number of weeks lands on the exact same weekday.",
-    "Find the gap in days, divide by 7, and step forward from the starting weekday by the remainder.",
-    "31-day months: January, March, May, July, August, October, December; 30-day: April, June, September, November; February has 28, or 29 in a leap year.",
-    "A leap year divides by 4, except a century year must divide by 400.",
-    "A 31-day month gives 3 weekdays (matching its 1st, 2nd and 3rd) an extra, 5th occurrence; a 30-day month gives 2 weekdays that extra occurrence.",
-    "The LAST occurrence of a weekday is the first occurrence plus 7 repeatedly, stopping just before it would overshoot the month.",
-    "The next month's starting weekday is always the current month's length mod 7 steps on from this month's starting weekday.",
-    "To deduce a starting weekday from a fact about one weekday's dates, systematically test every one of the 7 possible starts until exactly one fits.",
-  ],
-  mistakes: [
-    "Counting the starting date itself as one of the gap days when the question only wants the days between two dates.",
-    "Forgetting a leap day when a puzzle's date range crosses the end of February.",
-    "Mixing up which months have 30 and which have 31 days.",
-    "Treating a remainder of 0 as a different weekday, instead of the exact same weekday as the start.",
-    "Forgetting that in a longer month, more than one weekday can occur 5 times, not just one.",
-    "Adding one extra multiple of 7 when hunting for the LAST occurrence of a weekday, overshooting past the end of the month.",
-    "Guessing a single starting weekday instead of systematically testing all 7 when working backwards from a stated fact.",
-  ],
-};
 
 // ---- Full-depth guided lesson: clocks and time arithmetic (clockArith v2, replaces old short version) ----
 
@@ -4465,3 +4433,36 @@ JUNIOR_LESSONS.coordGeom = {
     "Applying two chained transformations in the wrong order, or reflecting the original point instead of the already-translated one.",
   ],
 };
+
+applyJuniorFractionProgression(JUNIOR_LESSONS);
+applyJuniorCurriculumOverlay(JUNIOR_LESSONS);
+applyJuniorCoherentCoreLessons(JUNIOR_LESSONS);
+applyJuniorSlowTeaching(JUNIOR_LESSONS);
+applyJuniorEditorJ01(JUNIOR_LESSONS);
+applyJuniorEditorJ02(JUNIOR_LESSONS);
+applyJuniorEditorJ03(JUNIOR_LESSONS);
+applyJuniorEditorJ04A(JUNIOR_LESSONS);
+applyJuniorEditorJ04B(JUNIOR_LESSONS);
+applyJuniorEditorJ04C(JUNIOR_LESSONS);
+applyJuniorEditorJ05A(JUNIOR_LESSONS);
+applyJuniorEditorJ05B(JUNIOR_LESSONS);
+applyJuniorEditorJ05C(JUNIOR_LESSONS);
+applyJuniorEditorJ06A(JUNIOR_LESSONS);
+applyJuniorEditorJ06B(JUNIOR_LESSONS);
+applyJuniorEditorJ06C(JUNIOR_LESSONS);
+applyJuniorEditorJ07A(JUNIOR_LESSONS);
+applyJuniorEditorJ07B(JUNIOR_LESSONS);
+applyJuniorEditorJ07C(JUNIOR_LESSONS);
+applyJuniorEditorJ08A(JUNIOR_LESSONS);
+applyJuniorEditorJ08B(JUNIOR_LESSONS);
+applyJuniorEditorJ08C(JUNIOR_LESSONS);
+applyJuniorEditorJ09A(JUNIOR_LESSONS);
+applyJuniorEditorJ09B(JUNIOR_LESSONS);
+applyJuniorEditorJ09C(JUNIOR_LESSONS);
+applyJuniorEditorJ10A(JUNIOR_LESSONS);
+applyJuniorEditorJ10B(JUNIOR_LESSONS);
+applyJuniorEditorJ10C(JUNIOR_LESSONS);
+applyJuniorEditorJ11A(JUNIOR_LESSONS);
+applyJuniorEditorJ11B(JUNIOR_LESSONS);
+applyJuniorEditorJ11C(JUNIOR_LESSONS);
+applyJuniorEditorJ11D(JUNIOR_LESSONS);
