@@ -14,25 +14,25 @@ analyze.js
 analyze_out.json
 
 # Built APK (regenerate via scripts/build-android-apk.ps1 rather than tracking a binary)
-KangarooMathsQuest.apk
+WallabyMaths.apk
 
 # Bundled single-file build output (regenerate via `node scripts/rebuild.cjs` — this esbuild
 # bundle embeds all art as base64 and now exceeds GitHub's 100MB per-file push limit)
-KangarooMathsQuest.html
+WallabyMaths.html
 www/index.html
 
 # Raw generated art source images (regenerate via scripts/generate_*.cjs / embed_*.cjs;
-# the compressed versions actually used by the app are embedded as base64 in kq-art.js,
-# kq-ui-art.js and kq-title-art.js, which ARE tracked)
+# the compressed versions actually used by the app are embedded as base64 in wm-art.js,
+# wm-ui-art.js and wm-title-art.js, which ARE tracked)
 card_art/
 Joey Assets/
 UI elements/
 little_reckoning_cards/
 
 # Build-artifact archives (regenerate rather than tracking; same reasoning as the .apk rule above)
-KangarooMathsQuest apk.zip
-KangarooMathsQuest.zip
-KangarooMathsQuest-latest.html
+WallabyMaths apk.zip
+WallabyMaths.zip
+WallabyMaths-latest.html
 
 # Editor/session scratch files that shouldn't ever be committed
 scratchpad/
@@ -41,3 +41,15 @@ scratch_after.txt
 scripts/__pycache__/
 *.bak
 Users*scratchpad*.json
+
+# Cloudflare Worker secrets generated locally during setup — never committed
+cloudflare-worker/accounts/.admin_key.txt
+cloudflare-worker/accounts/.dev.vars
+cloudflare-worker/accounts/.wrangler/
+
+# Expeditions art production folders: source-sheets/ is raw/uncompressed source art (same
+# "regenerate rather than track" reasoning as card_art/ above), and qa/ is disposable preview
+# output — one qa/ file alone (a rendered HTML snapshot) was 132MB, over GitHub's 100MB
+# per-file push limit. runtime/ (what the app actually imports) and mockups/ stay tracked.
+assets/expeditions/**/qa/
+assets/expeditions/**/source-sheets/

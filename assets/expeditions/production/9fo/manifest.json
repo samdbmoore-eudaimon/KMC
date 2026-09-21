@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 1,
+  "moduleKey": "primary",
+  "world": "Ninefold Orchard",
+  "status": "wiring-candidate",
+  "root": "assets/expeditions/production/9fo/runtime",
+  "backgrounds": {
+    "po_orchard_gorge": "backgrounds/po-orchard-gorge-v1.webp"
+  },
+  "characters": {
+    "pip": {
+      "idleFront": "characters/po-pip-idle-front-v1.webp",
+      "idleBack": "characters/po-pip-idle-back-v1.webp",
+      "action": "characters/po-pip-action-v1.webp",
+      "carry": "characters/po-pip-carry-v1.webp",
+      "exhausted": "characters/po-pip-exhausted-v1.webp"
+    },
+    "nine": {
+      "idleFront": "characters/po-nine-idle-front-v1.webp",
+      "idleBack": "characters/po-nine-idle-back-v1.webp",
+      "action": "characters/po-nine-action-v1.webp",
+      "carry": "characters/po-nine-carry-v1.webp",
+      "exhausted": "characters/po-nine-exhausted-v1.webp"
+    },
+    "bramble": {
+      "idleFront": "characters/po-bramble-idle-front-v1.webp",
+      "idleBack": "characters/po-bramble-idle-back-v1.webp",
+      "action": "characters/po-bramble-action-v1.webp",
+      "carry": "characters/po-bramble-carry-v1.webp",
+      "exhausted": "characters/po-bramble-exhausted-v1.webp"
+    },
+    "sorrel": {"idleFront":"characters/po-sorrel-idle-front-v1.webp","idleBack":"characters/po-sorrel-idle-back-v1.webp","action":"characters/po-sorrel-action-v1.webp","carry":"characters/po-sorrel-carry-v1.png","exhausted":"characters/po-sorrel-exhausted-v1.webp"},
+    "russet": {"idleFront":"characters/po-russet-idle-front-v1.webp","idleBack":"characters/po-russet-idle-back-v1.webp","action":"characters/po-russet-action-v1.webp","carry":"characters/po-russet-carry-v1.png","exhausted":"characters/po-russet-exhausted-v1.webp"},
+    "halfpenny": {"idleFront":"characters/po-halfpenny-idle-front-v1.webp","idleBack":"characters/po-halfpenny-idle-back-v1.webp","action":"characters/po-halfpenny-action-v1.webp","carry":"characters/po-halfpenny-carry-v1.png","exhausted":"characters/po-halfpenny-exhausted-v1.webp"},
+    "wicker": {"idleFront":"characters/po-wicker-idle-front-v1.webp","idleBack":"characters/po-wicker-idle-back-v1.webp","action":"characters/po-wicker-action-v1.webp","exhausted":"characters/po-wicker-exhausted-v1.webp"},
+    "furrow": {"idleFront":"characters/po-furrow-idle-front-v1.webp","idleBack":"characters/po-furrow-idle-back-v1.webp","action":"characters/po-furrow-action-v1.webp","carry":"characters/po-furrow-carry-v1.png","exhausted":"characters/po-furrow-exhausted-v1.webp"},
+    "dapple": {"idleFront":"characters/po-dapple-idle-front-v1.webp","idleBack":"characters/po-dapple-idle-back-v1.webp","action":"characters/po-dapple-action-v1.webp","carry":"characters/po-dapple-carry-v1.png","exhausted":"characters/po-dapple-exhausted-v1.webp"},
+    "bushel": {"idleFront":"characters/po-bushel-idle-front-v1.webp","idleBack":"characters/po-bushel-idle-back-v1.webp","action":"characters/po-bushel-action-v1.webp","exhausted":"characters/po-bushel-exhausted-v1.webp"},
+    "tuppence": {"idleFront":"characters/po-tuppence-idle-front-v1.webp","idleBack":"characters/po-tuppence-idle-back-v1.webp","action":"characters/po-tuppence-action-v1.webp","exhausted":"characters/po-tuppence-exhausted-v1.webp"},
+    "windfall": {"idleFront":"characters/po-windfall-idle-front-v1.webp","idleBack":"characters/po-windfall-idle-back-v1.webp","action":"characters/po-windfall-action-v1.webp","exhausted":"characters/po-windfall-exhausted-v1.webp"},
+    "cornix": {"idleFront":"characters/po-cornix-idle-front-v1.webp","idleBack":"characters/po-cornix-idle-back-v1.webp","action":"characters/po-cornix-action-v1.webp","exhausted":"characters/po-cornix-exhausted-v1.webp"},
+    "thistlewick": {"idleFront":"characters/po-thistlewick-idle-front-v1.webp","idleBack":"characters/po-thistlewick-idle-back-v1.webp","action":"characters/po-thistlewick-action-v1.webp","exhausted":"characters/po-thistlewick-exhausted-v1.webp"},
+    "beeswax": {"idleFront":"characters/po-beeswax-idle-front-v1.webp","idleBack":"characters/po-beeswax-idle-back-v1.webp","action":"characters/po-beeswax-action-v1.webp","exhausted":"characters/po-beeswax-exhausted-v1.webp"},
+    "kernel": {"idleFront":"characters/po-kernel-idle-front-v1.webp","idleBack":"characters/po-kernel-idle-back-v1.webp","action":"characters/po-kernel-action-v1.webp","exhausted":"characters/po-kernel-exhausted-v1.webp"},
+    "millrace": {"idleFront":"characters/po-millrace-idle-front-v1.webp","idleBack":"characters/po-millrace-idle-back-v1.webp","action":"characters/po-millrace-action-v1.webp","exhausted":"characters/po-millrace-exhausted-v1.webp"},
+    "cobweb": {"idleFront":"characters/po-cobweb-idle-front-v1.webp","idleBack":"characters/po-cobweb-idle-back-v1.webp","action":"characters/po-cobweb-action-v1.webp","exhausted":"characters/po-cobweb-exhausted-v1.webp"},
+    "amberly": {"idleFront":"characters/po-amberly-idle-front-v1.webp","idleBack":"characters/po-amberly-idle-back-v1.webp","action":"characters/po-amberly-action-v1.webp","exhausted":"characters/po-amberly-exhausted-v1.webp"},
+    "barrow": {"idleFront":"characters/po-barrow-idle-front-v1.webp","idleBack":"characters/po-barrow-idle-back-v1.webp","action":"characters/po-barrow-action-v1.webp","exhausted":"characters/po-barrow-exhausted-v1.webp"},
+    "driftwood": {"idleFront":"characters/po-driftwood-idle-front-v1.webp","idleBack":"characters/po-driftwood-idle-back-v1.webp","action":"characters/po-driftwood-action-v1.webp","exhausted":"characters/po-driftwood-exhausted-v1.webp"},
+    "gable": {"idleFront":"characters/po-gable-idle-front-v1.webp","idleBack":"characters/po-gable-idle-back-v1.webp","action":"characters/po-gable-action-v1.webp","exhausted":"characters/po-gable-exhausted-v1.webp"},
+    "warden": {"idleFront":"characters/po-warden-idle-front-v1.webp","idleBack":"characters/po-warden-idle-back-v1.webp","action":"characters/po-warden-action-v1.webp","exhausted":"characters/po-warden-exhausted-v1.webp"},
+    "harvestmoon": {"idleFront":"characters/po-harvestmoon-idle-front-v1.webp","idleBack":"characters/po-harvestmoon-idle-back-v1.webp","action":"characters/po-harvestmoon-action-v1.webp","exhausted":"characters/po-harvestmoon-exhausted-v1.webp"},
+    "ninebark": {"idleFront":"characters/po-ninebark-idle-front-v1.webp","idleBack":"characters/po-ninebark-idle-back-v1.webp","action":"characters/po-ninebark-action-v1.webp","exhausted":"characters/po-ninebark-exhausted-v1.webp"},
+    "cascade": {"idleFront":"characters/po-cascade-idle-front-v1.webp","idleBack":"characters/po-cascade-idle-back-v1.webp","action":"characters/po-cascade-action-v1.webp","exhausted":"characters/po-cascade-exhausted-v1.webp"},
+    "longshadow": {"idleFront":"characters/po-longshadow-idle-front-v1.webp","idleBack":"characters/po-longshadow-idle-back-v1.webp","action":"characters/po-longshadow-action-v1.webp","exhausted":"characters/po-longshadow-exhausted-v1.webp"},
+    "gossamer": {"idleFront":"characters/po-gossamer-idle-front-v1.webp","idleBack":"characters/po-gossamer-idle-back-v1.webp","action":"characters/po-gossamer-action-v1.webp","exhausted":"characters/po-gossamer-exhausted-v1.webp"},
+    "ninefoldtree": {"idleFront":"characters/po-ninefoldtree-idle-front-v1.webp","idleBack":"characters/po-ninefoldtree-idle-back-v1.webp","action":"characters/po-ninefoldtree-action-v1.webp","exhausted":"characters/po-ninefoldtree-exhausted-v1.webp"},
+    "tenthscarecrow": {"idleFront":"characters/po-tenthscarecrow-idle-front-v1.webp","idleBack":"characters/po-tenthscarecrow-idle-back-v1.webp","action":"characters/po-tenthscarecrow-action-v1.webp","exhausted":"characters/po-tenthscarecrow-exhausted-v1.webp"}
+  },
+  "enemies": {
+    "hookmole": {
+      "idleFront": "enemies/po-hookmole-idle-front-v1.webp",
+      "idleBack": "enemies/po-hookmole-idle-back-v1.webp",
+      "action": "enemies/po-hookmole-action-v1.webp",
+      "exhausted": "enemies/po-hookmole-exhausted-v1.webp",
+      "warning": "enemies/po-hookmole-warning-v1.webp",
+      "jam": "enemies/po-hookmole-jam-v1.webp",
+      "steal": "enemies/po-hookmole-steal-v1.webp",
+      "blocked": "enemies/po-hookmole-blocked-v1.webp"
+    },
+    "rootling": {"idle":"enemies/po-rootling-idle-v1.webp","move":"enemies/po-rootling-move-v1.webp","telegraph":"enemies/po-rootling-telegraph-v1.webp","defeated":"enemies/po-rootling-defeated-v1.webp","status":"proposed"},
+    "flockling": {"idle":"enemies/po-flockling-idle-v1.webp","move":"enemies/po-flockling-move-v1.webp","telegraph":"enemies/po-flockling-telegraph-v1.webp","defeated":"enemies/po-flockling-defeated-v1.webp","status":"proposed"},
+    "ledgerleech": {"idle":"enemies/po-ledgerleech-idle-v1.webp","move":"enemies/po-ledgerleech-move-v1.webp","telegraph":"enemies/po-ledgerleech-telegraph-v1.webp","defeated":"enemies/po-ledgerleech-defeated-v1.webp","status":"proposed"},
+    "widdershins": {"idle":"enemies/po-widdershins-idle-v1.webp","move":"enemies/po-widdershins-move-v1.webp","telegraph":"enemies/po-widdershins-telegraph-v1.webp","defeated":"enemies/po-widdershins-defeated-v1.webp","status":"proposed"},
+    "thorncap": {"idle":"enemies/po-thorncap-idle-v1.webp","move":"enemies/po-thorncap-move-v1.webp","telegraph":"enemies/po-thorncap-telegraph-v1.webp","defeated":"enemies/po-thorncap-defeated-v1.webp","status":"proposed"},
+    "pebbleback": {"idle":"enemies/po-pebbleback-idle-v1.webp","move":"enemies/po-pebbleback-move-v1.webp","telegraph":"enemies/po-pebbleback-telegraph-v1.webp","defeated":"enemies/po-pebbleback-defeated-v1.webp","status":"proposed"},
+    "muddlenook": {"idle":"enemies/po-muddlenook-idle-v1.webp","move":"enemies/po-muddlenook-move-v1.webp","telegraph":"enemies/po-muddlenook-telegraph-v1.webp","defeated":"enemies/po-muddlenook-defeated-v1.webp","status":"proposed"},
+    "numbermoth": {"idle":"enemies/po-numbermoth-idle-v1.webp","move":"enemies/po-numbermoth-move-v1.webp","telegraph":"enemies/po-numbermoth-telegraph-v1.webp","defeated":"enemies/po-numbermoth-defeated-v1.webp","status":"proposed"}
+  },
+  "mechanisms": {
+    "operatorWheel": {
+      "neutral": "mechanisms/po-operator-neutral-v1.webp",
+      "selected": "mechanisms/po-operator-selected-v1.webp",
+      "rotating": "mechanisms/po-operator-rotate-v1.webp",
+      "locked": "mechanisms/po-operator-locked-v1.webp",
+      "jammed": "mechanisms/po-operator-jammed-v1.webp",
+      "complete": "mechanisms/po-operator-complete-v1.webp",
+      "liveOverlay": {
+        "centre": [0.5, 0.48],
+        "edgePlatesClockwiseFromTop": [
+          [0.5, 0.12],
+          [0.79, 0.31],
+          [0.79, 0.67],
+          [0.5, 0.84],
+          [0.21, 0.67],
+          [0.21, 0.31]
+        ]
+      }
+    }
+  },
+  "terrain": {
+    "hexGrass": "terrain/po-terrain-hex-grass-v3.webp",
+    "pond": "terrain/po-terrain-pond-v1.png",
+    "earthWall": "terrain/po-terrain-earth-wall-v1.png",
+    "grass": "terrain/po-terrain-grass-v1.webp",
+    "path": "terrain/po-terrain-path-v1.webp",
+    "flagstone": "terrain/po-terrain-flagstone-v1.webp",
+    "stream": "terrain/po-terrain-stream-v1.webp",
+    "timberBridge": "terrain/po-terrain-timber-bridge-v1.webp",
+    "stoneBridge": "terrain/po-terrain-stone-bridge-v1.webp",
+    "hedge": "terrain/po-terrain-hedge-v1.webp",
+    "roots": "terrain/po-terrain-roots-v1.webp",
+    "appleTree": "terrain/po-terrain-apple-tree-v1.webp",
+    "objectiveSocket": "terrain/po-terrain-objective-socket-v1.webp",
+    "start": "terrain/po-terrain-start-v1.webp",
+    "exit": "terrain/po-terrain-exit-v1.webp"
+  },
+  "props": {
+    "numberLoad": {
+      "neutral": "props/po-load-neutral-v1.webp",
+      "selected": "props/po-load-selected-v1.webp",
+      "carried": "props/po-load-carried-v1.webp",
+      "guarded": "props/po-load-guarded-v1.webp",
+      "split": "props/po-load-split-v1.webp",
+      "combined": "props/po-load-combined-v1.webp",
+      "heavy": "props/po-load-heavy-v1.webp",
+      "delivered": "props/po-load-delivered-v1.webp",
+      "liveOverlay": {
+        "plateCentre": [0.5, 0.58]
+      }
+    }
+  },
+  "objectives": {
+    "balance": {
+      "empty": "objectives/po-balance-empty-v1.webp",
+      "loaded": "objectives/po-balance-loaded-v1.webp",
+      "selected": "objectives/po-balance-selected-v1.webp",
+      "complete": "objectives/po-balance-complete-v1.webp",
+      "overloaded": "objectives/po-balance-overloaded-v1.webp",
+      "broken": "objectives/po-balance-broken-v1.webp",
+      "liveOverlay": {
+        "dialCentre": [0.5, 0.37]
+      }
+    },
+    "tallyArch": {
+      "dormant": "objectives/po-tally-dormant-v1.webp",
+      "active": "objectives/po-tally-active-v1.webp",
+      "complete": "objectives/po-tally-complete-v1.webp",
+      "blocked": "objectives/po-tally-blocked-v1.webp",
+      "liveOverlay": {
+        "medallionCentre": [0.5, 0.3]
+      }
+    },
+    "feederGate": {
+      "empty": "objectives/po-feeder-empty-v1.webp",
+      "loaded": "objectives/po-feeder-loaded-v1.webp"
+    },
+    "targetGate": {
+      "locked": "objectives/po-target-locked-v1.webp",
+      "open": "objectives/po-target-open-v1.webp",
+      "liveOverlay": {
+        "medallionCentre": [0.5, 0.25]
+      }
+    }
+  },
+  "effects": {
+    "shadow": "effects/po-fx-shadow-v1.webp",
+    "reachable": "effects/po-fx-reachable-v1.webp",
+    "selected": "effects/po-fx-selected-v1.webp",
+    "danger": "effects/po-fx-danger-v1.webp",
+    "guard": "effects/po-fx-guard-v1.webp",
+    "impact": "effects/po-fx-impact-v1.webp",
+    "rotate": "effects/po-fx-rotate-v1.webp",
+    "complete": "effects/po-fx-complete-v1.webp"
+  },
+  "ui": {
+    "buttonFrames": {
+      "available": "ui/po-button-available-v1.webp",
+      "focused": "ui/po-button-focused-v1.webp",
+      "selected": "ui/po-button-selected-v1.webp",
+      "pressed": "ui/po-button-pressed-v1.webp",
+      "confirm": "ui/po-button-confirm-v1.webp",
+      "danger": "ui/po-button-danger-v1.webp",
+      "spent": "ui/po-button-spent-v1.webp",
+      "disabled": "ui/po-button-disabled-v1.webp",
+      "liveOverlay": {
+        "iconCentre": [0.18, 0.5],
+        "labelSafeArea": [0.34, 0.18, 0.91, 0.82]
+      }
+    },
+    "actionIcons": {
+      "move": "ui/po-icon-move-v1.webp",
+      "interact": "ui/po-icon-interact-v1.webp",
+      "rotate": "ui/po-icon-rotate-v1.webp",
+      "guard": "ui/po-icon-guard-v1.webp",
+      "collect": "ui/po-icon-collect-v1.webp",
+      "strike": "ui/po-icon-strike-v1.webp",
+      "undo": "ui/po-icon-undo-v1.webp",
+      "endRound": "ui/po-icon-end-round-v1.webp"
+    },
+    "teamReadiness": {
+      "empty": "ui/po-readiness-empty-v1.webp",
+      "starter": "ui/po-readiness-starter-v1.webp",
+      "uncommon": "ui/po-readiness-uncommon-v1.webp",
+      "rare": "ui/po-readiness-rare-v1.webp",
+      "epic": "ui/po-readiness-epic-v1.webp",
+      "masterwork": "ui/po-readiness-masterwork-v1.webp",
+      "liveOverlay": {
+        "labelSafeArea": [0.04, 0.18, 0.34, 0.82]
+      }
+    }
+  },
+  "runtimeRules": {
+    "spriteCanvas": [384, 384],
+    "buttonCanvas": [512, 192],
+    "readinessCanvas": [640, 192],
+    "mirrorLeftFacingAtRuntime": true,
+    "valuesAndOperatorsAreLiveText": true,
+    "conceptSheetsAreNeverCroppedAtRuntime": true,
+    "approvedForPublicRelease": false
+  }
+}
