@@ -1,0 +1,29 @@
+{
+  "family": "bough",
+  "tier": 4,
+  "seed": 1,
+  "layoutId": "river",
+  "team": [
+    "barrow",
+    "cobweb",
+    "harvestmoon"
+  ],
+  "planFamily": "direct-guard",
+  "status": "unknown",
+  "reasonCode": "bough-crossing-invalid",
+  "violations": [
+    {
+      "crossing": "4,4",
+      "controlled": false,
+      "regionsTouched": 1,
+      "neighbours": [
+        "5,4:hedge",
+        "5,3:water",
+        "4,3:floor",
+        "3,4:floor",
+        "3,5:floor",
+        "4,5:water"
+      ]
+    }
+  ]
+}

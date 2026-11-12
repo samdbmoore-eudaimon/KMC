@@ -1,0 +1,1213 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-02T16:35:09.231Z",
+  "coordinateSpace": "Actual runtime pixels unless explicitly sourceCoordinates",
+  "assets": [
+    {
+      "id": "po-river-bend-gentle-surface-v2",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-bend-gentle-surface-v2.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-bend-gentle-surface-v2.webp",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "sourceSha256": "79921b754e9cab326d42fde048e8a92ff17a0f71e0b14922de1f55edeaf7e671",
+      "registeredSourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-bend-gentle-registered-512-v2.png",
+      "width": 384,
+      "height": 384,
+      "bytes": 39780,
+      "sha256": "6477cfb64ef95f6552a424ee1497ee6dd39f24fb5492b73c8f4a9d9c6594f619",
+      "alpha": true,
+      "visibleBounds": [
+        50,
+        29,
+        334,
+        355
+      ],
+      "centre": [
+        192,
+        192
+      ],
+      "side": 162,
+      "vertices": [
+        [
+          192,
+          30
+        ],
+        [
+          332.29611541307906,
+          111
+        ],
+        [
+          332.29611541307906,
+          273
+        ],
+        [
+          192,
+          354
+        ],
+        [
+          51.70388458692096,
+          273
+        ],
+        [
+          51.70388458692096,
+          111
+        ]
+      ],
+      "mouths": [
+        {
+          "edge": 3,
+          "edgeName": "west",
+          "centre": [
+            51.70388458692096,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        },
+        {
+          "edge": 1,
+          "edgeName": "south-east",
+          "centre": [
+            262.14805770653953,
+            313.5
+          ],
+          "width": 72,
+          "quietApproach": 24
+        }
+      ],
+      "connectionEdges": [
+        3,
+        1
+      ],
+      "rotationDegrees": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300
+      ],
+      "sourceCoordinates": {
+        "centre": [
+          628.0064205457464,
+          483.0818619582665
+        ],
+        "side": 434.7736757624398,
+        "mouths": [
+          {
+            "edge": 3,
+            "centre": [
+              251.48137243873492,
+              483.0818619582665
+            ],
+            "width": 193.23274478330657
+          },
+          {
+            "edge": 1,
+            "centre": [
+              816.2689445992522,
+              809.1621187800963
+            ],
+            "width": 193.23274478330657
+          }
+        ]
+      },
+      "registrationTransform": {
+        "uniformScale": 0.49681020733652315,
+        "translation": [
+          -56,
+          16
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "runtimeUniformScale": 0.75
+      },
+      "commonMouthCollar": "assets/expeditions/production/9fo/v2/river-art-batch/source/registered-common-mouth-collar-v2.png",
+      "preparation": "Whole source uniformly scaled/translated on untrimmed512 canvas; shared quiet mouth collars reuse painted samples under exact water masks; exact hex alpha mask then uniform384 reduction. No anisotropic surface warp or new illustration painted in code.",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          50,
+          29,
+          334,
+          355
+        ],
+        "transparentPixels": 77837,
+        "visiblePixels": 69619,
+        "components": [
+          69619
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v2-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v2-scales.png"
+      },
+      "textureCoverageBleed": 0.75,
+      "selected": false,
+      "colourSpace": "sRGB",
+      "visualReview": "Preserved raised prototype; superseded by v3 collar repair"
+    },
+    {
+      "id": "po-river-straight-surface-v2",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-surface-v2.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-straight-surface-v2.webp",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "sourceSha256": "7fca87e3822f6371ba7b3609cf89c35128e08f4567f78f3a6e1946192f6165b3",
+      "registeredSourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-registered-512-v2.png",
+      "width": 384,
+      "height": 384,
+      "bytes": 43654,
+      "sha256": "75483fbc2162663975bd2648197721643691ff81f1af52daeab3d3ef0ecc67cd",
+      "alpha": true,
+      "visibleBounds": [
+        50,
+        29,
+        334,
+        355
+      ],
+      "centre": [
+        192,
+        192
+      ],
+      "side": 162,
+      "vertices": [
+        [
+          192,
+          30
+        ],
+        [
+          332.29611541307906,
+          111
+        ],
+        [
+          332.29611541307906,
+          273
+        ],
+        [
+          192,
+          354
+        ],
+        [
+          51.70388458692096,
+          273
+        ],
+        [
+          51.70388458692096,
+          111
+        ]
+      ],
+      "mouths": [
+        {
+          "edge": 3,
+          "edgeName": "west",
+          "centre": [
+            51.70388458692096,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        },
+        {
+          "edge": 0,
+          "edgeName": "east",
+          "centre": [
+            332.29611541307906,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        }
+      ],
+      "connectionEdges": [
+        3,
+        0
+      ],
+      "rotationDegrees": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300
+      ],
+      "sourceCoordinates": {
+        "file": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-registered-512-v2.png",
+        "width": 512,
+        "height": 512,
+        "centre": [
+          256,
+          256
+        ],
+        "side": 216,
+        "mouths": [
+          {
+            "edge": 3,
+            "centre": [
+              68.93851278256128,
+              256
+            ],
+            "width": 96
+          },
+          {
+            "edge": 0,
+            "centre": [
+              443.06148721743875,
+              256
+            ],
+            "width": 96
+          }
+        ],
+        "rawSourceRole": "Original full-resolution adapted paint, pre-assembly; not a registered geometry file"
+      },
+      "registrationTransform": {
+        "uniformScale": 0.4082934609250399,
+        "translation": [
+          0,
+          0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "runtimeUniformScale": 0.75
+      },
+      "commonMouthCollar": "assets/expeditions/production/9fo/v2/river-art-batch/source/registered-common-mouth-collar-v2.png",
+      "preparation": "Existing-stream imagegen adaptation assembled as uniformly scaled/rotated painted water and bank layers under registered masks; no axis stretch. Quiet mouth collars reuse source painted pixels from this adaptation. Original wall pixels retained separately. Source layers and code masks preserved.",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          50,
+          29,
+          334,
+          355
+        ],
+        "transparentPixels": 77837,
+        "visiblePixels": 69619,
+        "components": [
+          69619
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v2-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v2-scales.png"
+      },
+      "registrationLayers": {
+        "rotation": -4.6,
+        "rotationCentre": [
+          256,
+          256
+        ],
+        "water": {
+          "uniformScale": 0.4082934609250399,
+          "imageOrigin": [
+            0,
+            0
+          ],
+          "postRotationTranslation": [
+            0,
+            0
+          ],
+          "clip": [
+            0,
+            208,
+            512,
+            96
+          ]
+        },
+        "upperBank": {
+          "uniformScale": 0.430622009569378,
+          "imageOrigin": [
+            -14,
+            -14
+          ],
+          "postRotationTranslation": [
+            0,
+            49
+          ],
+          "clip": [
+            0,
+            0,
+            512,
+            208
+          ]
+        },
+        "lowerBank": {
+          "uniformScale": 0.430622009569378,
+          "imageOrigin": [
+            -14,
+            -14
+          ],
+          "postRotationTranslation": [
+            0,
+            -29
+          ],
+          "clip": [
+            0,
+            304,
+            512,
+            208
+          ]
+        }
+      },
+      "textureCoverageBleed": 0.75,
+      "selected": false,
+      "colourSpace": "sRGB",
+      "visualReview": "Preserved raised prototype; superseded by v3 collar repair"
+    },
+    {
+      "id": "po-river-raised-front-walls-reuse-v1",
+      "version": 1,
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-raised-front-walls-reuse-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-raised-front-walls-reuse-v1.webp",
+      "originalSourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stream-v1.webp",
+      "width": 384,
+      "height": 160,
+      "bytes": 8628,
+      "sha256": "f10bd18af17b7502bb01348753f0fda79ab95b01a0b92da22ecfc59a6921fd27",
+      "alpha": true,
+      "visibleBounds": [
+        52,
+        16,
+        333,
+        133
+      ],
+      "topCentre": [
+        192,
+        -65
+      ],
+      "groundAnchor": [
+        192,
+        133
+      ],
+      "side": 162,
+      "depth": 36,
+      "rotationDegrees": [
+        0
+      ],
+      "allowedStates": [
+        "fixed world-facing earth sides"
+      ],
+      "sourceCoordinates": {
+        "width": 384,
+        "height": 160,
+        "topCentre": [
+          192,
+          -65
+        ],
+        "groundAnchor": [
+          192,
+          133
+        ]
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          52,
+          16,
+          333,
+          133
+        ],
+        "transparentPixels": 51009,
+        "visiblePixels": 10431,
+        "components": [
+          10431
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/walls-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/walls-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/walls-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/walls-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/walls-scales.png"
+      },
+      "placement": "Place file at world hex centre minus topCentre times uniform scale. Never inherit surface rotation. Mask or omit shared internal wall faces; preserve original warm-left/darker-right lighting.",
+      "selected": true,
+      "colourSpace": "sRGB",
+      "sourceSha256": "f93ed645dc4ecc035bd84f5bab40b64436512899dfea9f1fd2faf0fc89183240"
+    },
+    {
+      "id": "po-river-bend-gentle-surface-v1",
+      "version": 1,
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-bend-gentle-surface-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-bend-gentle-surface-v1.webp",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "sourceSha256": "ef181e74ab34a84625cd3a13d98d32c392e48cdd649fd0fcf82d656e7f4bc012",
+      "registeredSourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-bend-gentle-registered-512-v1.png",
+      "width": 384,
+      "height": 384,
+      "bytes": 44472,
+      "sha256": "b082a05b9b0ad8a2702bd3a24c6ce1c70f7ee46af15ca957d7c0149fa194f9d8",
+      "alpha": true,
+      "visibleBounds": [
+        51,
+        30,
+        333,
+        354
+      ],
+      "centre": [
+        192,
+        192
+      ],
+      "side": 162,
+      "vertices": [
+        [
+          192,
+          30
+        ],
+        [
+          332.29611541307906,
+          111
+        ],
+        [
+          332.29611541307906,
+          273
+        ],
+        [
+          192,
+          354
+        ],
+        [
+          51.70388458692096,
+          273
+        ],
+        [
+          51.70388458692096,
+          111
+        ]
+      ],
+      "mouths": [
+        {
+          "edge": 3,
+          "edgeName": "west",
+          "centre": [
+            51.70388458692096,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        },
+        {
+          "edge": 1,
+          "edgeName": "south-east",
+          "centre": [
+            262.14805770653953,
+            313.5
+          ],
+          "width": 72,
+          "quietApproach": 24
+        }
+      ],
+      "connectionEdges": [
+        3,
+        1
+      ],
+      "rotationDegrees": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300
+      ],
+      "sourceCoordinates": {
+        "centre": [
+          627,
+          529.03125
+        ],
+        "side": 529.03125,
+        "mouths": [
+          {
+            "edge": 3,
+            "centre": [
+              168.84549810416374,
+              529.03125
+            ],
+            "width": 235.125
+          },
+          {
+            "edge": 1,
+            "centre": [
+              856.0772509479182,
+              925.8046875
+            ],
+            "width": 235.125
+          }
+        ]
+      },
+      "registrationTransform": {
+        "uniformScale": 0.4082934609250399,
+        "translation": [
+          0,
+          40
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "runtimeUniformScale": 0.75
+      },
+      "preparation": "Whole source uniformly scaled and translated on an untrimmed512 registration canvas, exact hex alpha mask then uniform384 reduction. No anisotropic warp or programmatic painting.",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          51,
+          30,
+          333,
+          354
+        ],
+        "transparentPixels": 78654,
+        "visiblePixels": 68802,
+        "components": [
+          68802
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-scales.png"
+      },
+      "selected": false,
+      "colourSpace": "sRGB",
+      "visualReview": "Preserved prototype; final visual direction rejected by Sam"
+    },
+    {
+      "id": "po-river-straight-surface-v1",
+      "version": 1,
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-surface-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-straight-surface-v1.webp",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "sourceSha256": "da4c05cfe7f81de2a9a5c33587d270d0c2fcd48f4c7cf588f42904ef1c818730",
+      "registeredSourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-registered-512-v1.png",
+      "width": 384,
+      "height": 384,
+      "bytes": 44110,
+      "sha256": "957d711c59aaeb54fffd8521d37cb72d75da9aa25a385bc39536e971494aa5dd",
+      "alpha": true,
+      "visibleBounds": [
+        51,
+        30,
+        333,
+        354
+      ],
+      "centre": [
+        192,
+        192
+      ],
+      "side": 162,
+      "vertices": [
+        [
+          192,
+          30
+        ],
+        [
+          332.29611541307906,
+          111
+        ],
+        [
+          332.29611541307906,
+          273
+        ],
+        [
+          192,
+          354
+        ],
+        [
+          51.70388458692096,
+          273
+        ],
+        [
+          51.70388458692096,
+          111
+        ]
+      ],
+      "mouths": [
+        {
+          "edge": 3,
+          "edgeName": "west",
+          "centre": [
+            51.70388458692096,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        },
+        {
+          "edge": 0,
+          "edgeName": "east",
+          "centre": [
+            332.29611541307906,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        }
+      ],
+      "connectionEdges": [
+        3,
+        0
+      ],
+      "rotationDegrees": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300
+      ],
+      "sourceCoordinates": {
+        "centre": [
+          616.55,
+          622.82
+        ],
+        "side": 451.44,
+        "mouths": [
+          {
+            "edge": 3,
+            "centre": [
+              225.59149171555308,
+              622.82
+            ],
+            "width": 200.64
+          },
+          {
+            "edge": 0,
+            "centre": [
+              1007.508508284447,
+              622.82
+            ],
+            "width": 200.64
+          }
+        ]
+      },
+      "registrationTransform": {
+        "uniformScale": 0.4784688995215311,
+        "translation": [
+          -39,
+          -42
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "runtimeUniformScale": 0.75
+      },
+      "preparation": "Whole source uniformly scaled and translated on an untrimmed512 registration canvas, exact hex alpha mask then uniform384 reduction. No anisotropic warp or programmatic painting.",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          51,
+          30,
+          333,
+          354
+        ],
+        "transparentPixels": 78658,
+        "visiblePixels": 68798,
+        "components": [
+          68798
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-scales.png"
+      },
+      "selected": false,
+      "colourSpace": "sRGB",
+      "visualReview": "Preserved prototype; final visual direction rejected by Sam"
+    },
+    {
+      "id": "po-river-straight-surface-v3",
+      "version": 3,
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-surface-v2.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-straight-surface-v3.webp",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "sourceSha256": "7fca87e3822f6371ba7b3609cf89c35128e08f4567f78f3a6e1946192f6165b3",
+      "registeredSourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-registered-512-v3.png",
+      "width": 384,
+      "height": 384,
+      "bytes": 43466,
+      "sha256": "514182b438ddf538b2f12104404980a846b5a818693c6c52154b92c0d33be01f",
+      "alpha": true,
+      "visibleBounds": [
+        50,
+        29,
+        334,
+        355
+      ],
+      "centre": [
+        192,
+        192
+      ],
+      "side": 162,
+      "vertices": [
+        [
+          192,
+          30
+        ],
+        [
+          332.29611541307906,
+          111
+        ],
+        [
+          332.29611541307906,
+          273
+        ],
+        [
+          192,
+          354
+        ],
+        [
+          51.70388458692096,
+          273
+        ],
+        [
+          51.70388458692096,
+          111
+        ]
+      ],
+      "mouths": [
+        {
+          "edge": 3,
+          "edgeName": "west",
+          "centre": [
+            51.70388458692096,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        },
+        {
+          "edge": 0,
+          "edgeName": "east",
+          "centre": [
+            332.29611541307906,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        }
+      ],
+      "connectionEdges": [
+        3,
+        0
+      ],
+      "rotationDegrees": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300
+      ],
+      "sourceCoordinates": {
+        "file": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-registered-512-v3.png",
+        "width": 512,
+        "height": 512,
+        "centre": [
+          256,
+          256
+        ],
+        "side": 216,
+        "mouths": [
+          {
+            "edge": 3,
+            "centre": [
+              68.93851278256128,
+              256
+            ],
+            "width": 96
+          },
+          {
+            "edge": 0,
+            "centre": [
+              443.06148721743875,
+              256
+            ],
+            "width": 96
+          }
+        ],
+        "rawSourceRole": "Original full-resolution adapted paint, pre-assembly; not a registered geometry file"
+      },
+      "registrationTransform": {
+        "uniformScale": 0.4082934609250399,
+        "translation": [
+          0,
+          0
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "runtimeUniformScale": 0.75
+      },
+      "commonMouthCollar": "assets/expeditions/production/9fo/v2/river-art-batch/source/registered-common-mouth-collar-v3.png",
+      "preparation": "Existing-stream imagegen adaptation assembled as uniformly scaled/rotated painted water and bank layers under registered masks; no axis stretch. Quiet mouth collars reuse source painted pixels from this adaptation. Original wall pixels retained separately. Source layers and code masks preserved.",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          50,
+          29,
+          334,
+          355
+        ],
+        "transparentPixels": 77837,
+        "visiblePixels": 69619,
+        "components": [
+          69619
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v3-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v3-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v3-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v3-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/straight-v3-scales.png"
+      },
+      "registrationLayers": {
+        "rotation": -4.6,
+        "rotationCentre": [
+          256,
+          256
+        ],
+        "water": {
+          "uniformScale": 0.4082934609250399,
+          "imageOrigin": [
+            0,
+            0
+          ],
+          "postRotationTranslation": [
+            0,
+            0
+          ],
+          "clip": [
+            0,
+            208,
+            512,
+            96
+          ]
+        },
+        "upperBank": {
+          "uniformScale": 0.430622009569378,
+          "imageOrigin": [
+            -14,
+            -14
+          ],
+          "postRotationTranslation": [
+            0,
+            49
+          ],
+          "clip": [
+            0,
+            0,
+            512,
+            208
+          ]
+        },
+        "lowerBank": {
+          "uniformScale": 0.430622009569378,
+          "imageOrigin": [
+            -14,
+            -14
+          ],
+          "postRotationTranslation": [
+            0,
+            -29
+          ],
+          "clip": [
+            0,
+            304,
+            512,
+            208
+          ]
+        }
+      },
+      "textureCoverageBleed": 0.75,
+      "selected": true,
+      "colourSpace": "sRGB",
+      "collarProvenance": "assets/expeditions/production/9fo/v2/river-art-batch/source/mouth-collar-provenance-v3.json"
+    },
+    {
+      "id": "po-river-bend-gentle-surface-v3",
+      "version": 3,
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-bend-gentle-surface-v2.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-bend-gentle-surface-v3.webp",
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "sourceSha256": "79921b754e9cab326d42fde048e8a92ff17a0f71e0b14922de1f55edeaf7e671",
+      "registeredSourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-bend-gentle-registered-512-v3.png",
+      "width": 384,
+      "height": 384,
+      "bytes": 39374,
+      "sha256": "4cafa95fc65c0126a5e738abff817204acc741f4c11ba79400966e172141139e",
+      "alpha": true,
+      "visibleBounds": [
+        50,
+        29,
+        334,
+        355
+      ],
+      "centre": [
+        192,
+        192
+      ],
+      "side": 162,
+      "vertices": [
+        [
+          192,
+          30
+        ],
+        [
+          332.29611541307906,
+          111
+        ],
+        [
+          332.29611541307906,
+          273
+        ],
+        [
+          192,
+          354
+        ],
+        [
+          51.70388458692096,
+          273
+        ],
+        [
+          51.70388458692096,
+          111
+        ]
+      ],
+      "mouths": [
+        {
+          "edge": 3,
+          "edgeName": "west",
+          "centre": [
+            51.70388458692096,
+            192
+          ],
+          "width": 72,
+          "quietApproach": 24
+        },
+        {
+          "edge": 1,
+          "edgeName": "south-east",
+          "centre": [
+            262.14805770653953,
+            313.5
+          ],
+          "width": 72,
+          "quietApproach": 24
+        }
+      ],
+      "connectionEdges": [
+        3,
+        1
+      ],
+      "rotationDegrees": [
+        0,
+        60,
+        120,
+        180,
+        240,
+        300
+      ],
+      "sourceCoordinates": {
+        "centre": [
+          628.0064205457464,
+          483.0818619582665
+        ],
+        "side": 434.7736757624398,
+        "mouths": [
+          {
+            "edge": 3,
+            "centre": [
+              251.48137243873492,
+              483.0818619582665
+            ],
+            "width": 193.23274478330657
+          },
+          {
+            "edge": 1,
+            "centre": [
+              816.2689445992522,
+              809.1621187800963
+            ],
+            "width": 193.23274478330657
+          }
+        ]
+      },
+      "registrationTransform": {
+        "uniformScale": 0.49681020733652315,
+        "translation": [
+          -56,
+          16
+        ],
+        "canvas": [
+          512,
+          512
+        ],
+        "runtimeUniformScale": 0.75
+      },
+      "commonMouthCollar": "assets/expeditions/production/9fo/v2/river-art-batch/source/registered-common-mouth-collar-v3.png",
+      "preparation": "Whole source uniformly scaled/translated on untrimmed512 canvas; shared quiet mouth collars reuse painted samples under exact water masks; exact hex alpha mask then uniform384 reduction. No anisotropic surface warp or new illustration painted in code.",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          50,
+          29,
+          334,
+          355
+        ],
+        "transparentPixels": 77837,
+        "visiblePixels": 69619,
+        "components": [
+          69619
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v3-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v3-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v3-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v3-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bend-gentle-v3-scales.png"
+      },
+      "textureCoverageBleed": 0.75,
+      "selected": true,
+      "colourSpace": "sRGB",
+      "collarProvenance": "assets/expeditions/production/9fo/v2/river-art-batch/source/mouth-collar-provenance-v3.json"
+    },
+    {
+      "id": "po-river-timber-bridge-structure-v1",
+      "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-timber-bridge-structure-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-timber-bridge-structure-v1.webp",
+      "width": 384,
+      "height": 384,
+      "sourceWidth": 1254,
+      "sourceHeight": 1254,
+      "bytes": 35550,
+      "sha256": "b861c50e36be44b680b38cfa3cd5766ac840960dbebd9da69c468e7596046c9e",
+      "sourceSha256": "55e80584b4c16e302a68b4adfede64c987737e2d715adfde449b6feeffe16103",
+      "alpha": true,
+      "visibleBounds": [
+        30,
+        39,
+        373,
+        345
+      ],
+      "groundAnchor": [
+        192,
+        336
+      ],
+      "deckCentre": [
+        192,
+        216
+      ],
+      "sourceCoordinates": {
+        "groundAnchor": [
+          627,
+          1097.25
+        ],
+        "deckCentre": [
+          627,
+          705.375
+        ]
+      },
+      "rotationDegrees": [
+        0
+      ],
+      "placement": "Independent upright prop. Align deckCentre to bridge hex centre; full untrimmed uniform scaling. Never rotate with water. Does not author bridge connectivity or movement.",
+      "reviewStatus": "candidate",
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bridge-white.png",
+        "black": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bridge-black.png",
+        "green": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bridge-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bridge-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/river-art-batch/qa/bridge-scales.png"
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          30,
+          39,
+          373,
+          345
+        ],
+        "transparentPixels": 94734,
+        "visiblePixels": 52722,
+        "components": [
+          52722
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "selected": true,
+      "colourSpace": "sRGB"
+    }
+  ],
+  "topologyAudit": "assets/expeditions/production/9fo/v2/river-art-batch/qa/topology-audit.json",
+  "liveRendererAcceptance": "Pending owner integration and device screenshots",
+  "currentCandidateIds": [
+    "po-river-raised-front-walls-reuse-v1",
+    "po-river-straight-surface-v3",
+    "po-river-bend-gentle-surface-v3",
+    "po-river-timber-bridge-structure-v1"
+  ],
+  "currentCandidateBytes": 127018,
+  "styleReview": "Sam rejected v1 flat/crosshatched appearance. v2 restored raised painted style but review found rectangular collars. v3 uses imagegen water texture with irregular blending; staged for builder and scrum/Sam review, not live App acceptance.",
+  "qaEvidence": {
+    "comparison": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/original-versus-raised-joined.png",
+    "rotatedJoins": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/all-24-rotated-joins.png",
+    "consecutiveBends": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/certified-river-consecutive-bends.png",
+    "bridges": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/bridge-all-rotations.png",
+    "backgrounds": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/selected-four-backgrounds.png",
+    "scales": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/selected-48-96-192.png",
+    "movementColourStudy": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/movement-selection-cost-colour-study.png",
+    "localCompositionWidths": [
+      390,
+      768,
+      1280
+    ],
+    "actualRendererScreenshots": "Pending builder integration; these are local compositions and a colour study, not App captures",
+    "collarComparison": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/before-after-native-and-2x.png",
+    "geometryInvariants": "assets/expeditions/production/9fo/v2/river-art-batch/qa/collar-after/geometry-invariants.json"
+  }
+}

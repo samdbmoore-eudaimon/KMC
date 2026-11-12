@@ -1,0 +1,29 @@
+# C-10: selected artwork and renderer wiring
+
+## Daytime batch delivered, 2 October
+
+53 selected assets, 1,404,116 bytes: prior 49 plus neutral wheel and Wicker rear/action/exhausted repairs. Exact hash review gates precede imports; embedding enforces the 12 MiB limit. Manifest now preserves wheel overlay/state/source metadata and top-centre anchors. `EquationWheel.jsx` is independently reviewable with a rotating image/sectors group, separate fixed pointer and upright glyphs. It is not wired to MapViewport yet. All 15 art, wheel and UI checks pass. Wicker real-state resolver checks pass without fallback; Dapple action fallback remains explicit. Full evidence and integration limitations: `codex-art-daytime-20261002.md`. Live route acceptance is still pending. This supersedes the older counts below.
+
+2 October daytime claims before edits: existing embed script/runtime registry/renderer/manifest/art tests plus new `expeditions/v2/art/wheel-geometry.js`, `expeditions/v2/art/EquationWheel.jsx`, `scripts/dev/test-orchard-wheel.mjs` and isolated composition generator under ART-01. Reuse neutral wheel plus code-driven states, separate fixed pointer, upright glyphs. Select only reviewed Wicker pose candidates (up to three concrete gaps); preserve Dapple action fallback. Component-only QA, no App/engine/private gate/save/legacy/shared build changes or other-family integration.
+
+## Latest selection,2 October
+
+49 assets,1,266,492 bytes: all30 production heroes have an imported idle, plus17 additional first-slice poses and Hookmole idle/defeated. Eight asset source overrides preserve earlier files. Newly repaired idle candidates: Cobweb v3 restores pale fur/web shawl; Gossamer v3 restores complete pastel wings/antennae and removes checkerboard remnants; Millrace v2 removes opaque background remnants and restores its full water crest/tail; Kernel v2 restores cropped feet. Repaired v2 attempts with clipped framing are retained but not selected.
+
+`node scripts/dev/review-orchard-idle-art.cjs` produces30-hero white/black/green/cyan contact sheets, all visually inspected at192px. Native four-background and scales were inspected for Cobweb v3; all repaired sources retain full silhouettes. `art-preflight-review.json` ties permitted machine-diagnostic exceptions to exact SHA-256: deliberate droplets/sparkles and Cobweb's pale fur. Diagnostics are preserved. Embedding fails if reviewed bytes change. Renderer uses88/visible-silhouette-height, with uniform x/y scale, so transparent padding does not shrink repaired figures. Ground/state alignment remains live-review pending.
+
+`node scripts/dev/embed-orchard-v2-art.cjs` succeeded. Artwork checks5/5 and gated UI checks6/6 pass with the49-asset import. Tests verify every production roster hero has idle artwork, actual embedded hashes/bytes and preflight paths, the12MiB product art budget and real-state pose/fallback selection. This supersedes earlier26/8-asset selections below. All30 idle imports are candidates for private renderer QA, not final visual acceptance.
+
+## Current evidence,2 October
+
+26 assets,649,470 bytes. Includes four poses for the six certified-route heroes except withheld Dapple action, Hookmole idle/defeated and the existing living Ninefold Tree idle reused for the orchard objective. Direct four-background inspection of the tree confirms a clean isolated silhouette. Rear uses the hero's last real movement direction; holding uses action pose, no-AP/down uses exhausted. Held status takes precedence over no-AP so a working holder is not shown as resting. Missing Dapple action returns idle with a live Holding marker and `data-art-fallback`; integration issue retained in ART-01. No timer guesses or state mutation.
+
+The embedding gate rejects unreviewed detached components. Hookmole defeat has three intentional floating dizziness stars; its exact SHA-256 has a recorded reviewed-decoration exception. The first expanded embed rejected that asset until the stars were visually checked on cyan; no numerical or gameplay threshold changed. All other imported poses meet the20-pixel fragment diagnostic without exceptions. `node --test expeditions/v2/art/art.test.js scripts/dev/test-orchard-v2-art.cjs`:5 passed. `node --test expeditions/v2/ui/ui.test.js`:6 passed after renderer integration. The measured regular station plinth and distinct jobs are interim code geometry under C-05, not accepted ASSET-02/03 illustrations. Live native/min/max zoom screenshots and uniform state anchor alignment remain pending through Claude's real App route. This supersedes the earlier8-asset count below.
+
+Owner: Codex. Coordination revision1.2. State: IN_PROGRESS.
+
+Claims: `scripts/dev/embed-orchard-v2-art.cjs`, `expeditions/v2/art/runtime-art.js`, `expeditions/v2/art/renderer.js`, `expeditions/v2/art/manifest.json`, `expeditions/v2/art/art.test.js` and this report. Existing C-05 MapViewport/OrchardExpedition claims include render wiring. No shared build, legacy art registry or App file is claimed.
+
+First Four Locks selection: Pip, Sorrel, Furrow, Dapple, Bushel and Tuppence idle sprites plus Hookmole idle/defeated. All have recorded four-background alpha preflight and size review. They are imported for live private renderer QA; final visual acceptance and measured ground-anchor adjustment remain pending. Remaining hero/pose selection is not complete. Rejected generated plinths remain unimported.
+
+Embedded selection totals198,660 bytes, 8 assets. `node scripts/dev/embed-orchard-v2-art.cjs` checks preflight paths and SHA-256 before embedding. `node --test expeditions/v2/art/art.test.js`: 2 passed; embedded bytes agree with prepared derivatives and anchor scaling is uniform. The UI compiles with these imports. No renderer screenshot or final alpha/anchor approval is inferred from those checks.

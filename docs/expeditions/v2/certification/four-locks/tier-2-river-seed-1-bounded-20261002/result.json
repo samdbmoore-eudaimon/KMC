@@ -1,0 +1,332 @@
+{
+  "candidateStatus": "success",
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 3
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "cornix",
+        "kernel",
+        "beeswax"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 318,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "cornix",
+              "kernel",
+              "beeswax"
+            ],
+            "status": "success",
+            "commandCount": 32,
+            "rounds": 5
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "cornix",
+        "kernel",
+        "millrace"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 251,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "cornix",
+              "kernel",
+              "millrace"
+            ],
+            "status": "success",
+            "commandCount": 27,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "cornix",
+        "warden",
+        "beeswax"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 460,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "cornix",
+              "warden",
+              "beeswax"
+            ],
+            "status": "success",
+            "commandCount": 20,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-0ffb784b641580f8",
+    "evidence": {
+      "blueprintHash": "66795cb465b914d1",
+      "structuralFingerprint": "b2d11dd51ec441d4",
+      "puzzleFingerprint": "a959e31f17876572",
+      "traceHashes": [
+        "7692f1e45db05de3",
+        "f3e684181cbbb839",
+        "8412f5a56f206b96"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              6,
+              0,
+              5,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              6,
+              0,
+              0,
+              2
+            ],
+            "eligibleBelow": [
+              "wicker"
+            ]
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              0,
+              6,
+              4
+            ],
+            "eligibleBelow": []
+          }
+        ],
+        "exclusions": [
+          {
+            "id": "all-below-target-band",
+            "examined": 220,
+            "feasible": [],
+            "excluded": true
+          },
+          {
+            "id": "one-legendary-two-commons",
+            "examined": 132,
+            "feasible": [],
+            "excluded": true
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "cornix",
+          "kernel",
+          "beeswax"
+        ],
+        "finalHash": "7692f1e45db05de3",
+        "round": 5,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "kernel",
+          "holdId": "kernel@r5#51"
+        },
+        "hashes": [
+          "b2a677c2a52ec71b",
+          "93e7824de0a2f81a",
+          "13fe83f735fe1b4c",
+          "218d2fa9ba837686",
+          "eb58e8ac6cf86337",
+          "adb3af4a6916f829",
+          "9b891c5cfcc48377",
+          "83e361449dea1da9",
+          "84575a5378c07222",
+          "a8f9298f9a58f8b6",
+          "1142562cd62a21ad",
+          "58df08c41c9e0f65",
+          "86164374df5b5aad",
+          "0b6c3b0c09ef7d85",
+          "3949a6031fa1f522",
+          "16f0d4047f970101",
+          "48daca923e1e5959",
+          "f93e4238fcc9305f",
+          "cab71d3d60c41008",
+          "d738417c6b95c58d",
+          "21fe4cc93388c544",
+          "6506ab67a7d5078e",
+          "491cc0a9bf36e7e4",
+          "4ef6bbe592ee19a6",
+          "85233315703f4f92",
+          "06d4700abe7f5bf5",
+          "d8687edc50373b7d",
+          "b2f3331066127c5b",
+          "efbe759bfab6e044",
+          "e5bc3204121090eb",
+          "ee5b0f6e1cd4215f",
+          "7692f1e45db05de3"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "cornix",
+          "kernel",
+          "millrace"
+        ],
+        "finalHash": "f3e684181cbbb839",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "kernel",
+          "holdId": "kernel@r4#45"
+        },
+        "hashes": [
+          "5490bd7877c6799f",
+          "2cdcdb202e254e77",
+          "d7f026e8b9c74f69",
+          "686272cf61719db6",
+          "718222f1e82d1fec",
+          "eadaa38e4a324473",
+          "97e9f696d7fac757",
+          "9e1948093f73605e",
+          "a108d4adc55289e2",
+          "8648658ab73fce8d",
+          "cd377de68c68c539",
+          "efec521f4db5f45c",
+          "d68508b242004901",
+          "ba034e0a1b061b4d",
+          "393fd01effcaca2d",
+          "6450abe55e751e1a",
+          "ee46c1ba724eca5f",
+          "c79ea78624ab2927",
+          "2810ea2990af6efc",
+          "a091d204bb7ffe3f",
+          "7680d81072d81019",
+          "0345e3140aa7f029",
+          "01ffb3b10f5e4276",
+          "5385610df46169d6",
+          "06cbebad79b531e6",
+          "aa957e5de5b0aa04",
+          "f3e684181cbbb839"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "cornix",
+          "warden",
+          "beeswax"
+        ],
+        "finalHash": "8412f5a56f206b96",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "warden",
+          "holdId": "warden@r3#27"
+        },
+        "hashes": [
+          "0128f8842eb5fd11",
+          "d3135637642e4a28",
+          "416bb57bec3263d4",
+          "63e8fd0ae83cd399",
+          "1e61cd4452a88db7",
+          "2b476a5f26d71614",
+          "288f0f78e05e98d1",
+          "5daf520376a26bba",
+          "e04e3fbb2fd3e5ae",
+          "8ca0efb29ea0d10b",
+          "69fa8ca889be0001",
+          "d2b35f0bb3fe73de",
+          "8511b630230b61b3",
+          "ed98188ca4195e0d",
+          "3e8f2b3be2d6f50c",
+          "ccb2e88dab6ab1a2",
+          "845982f1eaa93b4a",
+          "9b1d920ee5ba7079",
+          "c8d25a6b9b24c232",
+          "8412f5a56f206b96"
+        ]
+      }
+    ]
+  }
+}

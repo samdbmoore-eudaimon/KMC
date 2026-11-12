@@ -1,0 +1,32 @@
+{
+  "family": "roost",
+  "tier": 3,
+  "seed": 1,
+  "layoutId": "hedges",
+  "team": [
+    "barrow",
+    "warden",
+    "amberly"
+  ],
+  "planFamily": "alcove-intercept",
+  "status": "unknown",
+  "metrics": {
+    "planner": "orchard-v2-tactical-planner/1",
+    "planFamily": "alcove-intercept",
+    "statesSpent": 30000,
+    "maxStates": 30000,
+    "perTeam": [
+      {
+        "teamIndex": 0,
+        "cardIds": [
+          "barrow",
+          "warden",
+          "amberly"
+        ],
+        "status": "unknown",
+        "reasonCode": "budget-exhausted"
+      }
+    ],
+    "beamWidth": 120
+  }
+}

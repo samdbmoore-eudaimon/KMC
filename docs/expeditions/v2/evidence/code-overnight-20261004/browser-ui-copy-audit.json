@@ -1,0 +1,343 @@
+{
+  "provenance": "Read-only production copy functions over actual browser-record reducer replays; no rendered-UI or certification claim",
+  "runs": [
+    {
+      "file": "bough-browser-win-record.json",
+      "commands": 32,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "bough-t1-alcove-browser-win-record.json",
+      "commands": 24,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "bough-t2-direct-browser-win-record.json",
+      "commands": 26,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "bough-t3-direct-browser-win-record.json",
+      "commands": 20,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "bough-t4-direct-browser-win-record.json",
+      "commands": 30,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "bough-t5-alcove-browser-win-record.json",
+      "commands": 25,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "bough-t5-direct-browser-win-record.json",
+      "commands": 22,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "four-t1-seed6-alcove-browser-win-record.json",
+      "commands": 25,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "four-t1-seed6-direct-browser-win-record.json",
+      "commands": 28,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "four-t2-seed6-direct-browser-win-record.json",
+      "commands": 21,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "four-t3-seed6-direct-browser-win-record.json",
+      "commands": 22,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "four-t4-seed2-direct-browser-win-record.json",
+      "commands": 33,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "four-t5-seed29-direct-browser-win-record.json",
+      "commands": 27,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "four-t5-seed29-existing-alternate-alcove-browser-win-record.json",
+      "commands": 23,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "ravine-t1-alcove-browser-win-record.json",
+      "commands": 32,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "ravine-t2-direct-browser-win-record.json",
+      "commands": 32,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "ravine-t3-direct-browser-win-record.json",
+      "commands": 31,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "ravine-t4-direct-browser-win-record.json",
+      "commands": 31,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "roost-browser-win-record.json",
+      "commands": 33,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "roost-t2-reference-alcove-browser-win-record.json",
+      "commands": 32,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "roost-t4-epic-alcove-browser-win-record.json",
+      "commands": 26,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "roost-t5-alcove-browser-win-record.json",
+      "commands": 25,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "unequal-browser-win-record.json",
+      "commands": 27,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "unequal-t1-seed3-alcove-browser-win-record.json",
+      "commands": 31,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "unequal-t2-seed3-direct-browser-win-record.json",
+      "commands": 26,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "unequal-t4-seed2-direct-browser-win-record.json",
+      "commands": 32,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "unequal-t5-seed2-alcove-browser-win-record.json",
+      "commands": 35,
+      "status": "won",
+      "findings": 0
+    },
+    {
+      "file": "unequal-t5-seed2-direct-browser-win-record.json",
+      "commands": 35,
+      "status": "won",
+      "findings": 0
+    }
+  ],
+  "findings": [],
+  "fourTier5AlternateStaticJobs": {
+    "number": {
+      "need": [
+        8,
+        0,
+        8,
+        0,
+        0
+      ],
+      "cards": [
+        {
+          "id": "warden",
+          "stats": [
+            8,
+            6,
+            8,
+            6,
+            6
+          ],
+          "shortfalls": []
+        },
+        {
+          "id": "longshadow",
+          "stats": [
+            6,
+            6,
+            7,
+            8,
+            7
+          ],
+          "shortfalls": [
+            {
+              "statIndex": 0,
+              "required": 8,
+              "actual": 6
+            },
+            {
+              "statIndex": 2,
+              "required": 8,
+              "actual": 7
+            }
+          ]
+        },
+        {
+          "id": "cascade",
+          "stats": [
+            8,
+            6,
+            6,
+            9,
+            5
+          ],
+          "shortfalls": [
+            {
+              "statIndex": 2,
+              "required": 8,
+              "actual": 6
+            }
+          ]
+        }
+      ]
+    },
+    "shape": {
+      "need": [
+        0,
+        6,
+        0,
+        0,
+        6
+      ],
+      "cards": [
+        {
+          "id": "warden",
+          "stats": [
+            8,
+            6,
+            8,
+            6,
+            6
+          ],
+          "shortfalls": []
+        },
+        {
+          "id": "longshadow",
+          "stats": [
+            6,
+            6,
+            7,
+            8,
+            7
+          ],
+          "shortfalls": []
+        },
+        {
+          "id": "cascade",
+          "stats": [
+            8,
+            6,
+            6,
+            9,
+            5
+          ],
+          "shortfalls": [
+            {
+              "statIndex": 4,
+              "required": 6,
+              "actual": 5
+            }
+          ]
+        }
+      ]
+    },
+    "sustain": {
+      "need": [
+        0,
+        0,
+        7,
+        8,
+        4
+      ],
+      "cards": [
+        {
+          "id": "warden",
+          "stats": [
+            8,
+            6,
+            8,
+            6,
+            6
+          ],
+          "shortfalls": [
+            {
+              "statIndex": 3,
+              "required": 8,
+              "actual": 6
+            }
+          ]
+        },
+        {
+          "id": "longshadow",
+          "stats": [
+            6,
+            6,
+            7,
+            8,
+            7
+          ],
+          "shortfalls": []
+        },
+        {
+          "id": "cascade",
+          "stats": [
+            8,
+            6,
+            6,
+            9,
+            5
+          ],
+          "shortfalls": [
+            {
+              "statIndex": 2,
+              "required": 7,
+              "actual": 6
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

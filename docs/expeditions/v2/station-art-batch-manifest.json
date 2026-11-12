@@ -1,0 +1,1786 @@
+{
+  "schemaVersion": 1,
+  "owner": "ART-STATIONS",
+  "status": "candidate; isolated review only",
+  "assets": [
+    {
+      "id": "four-locks-control-base-v1",
+      "version": 1,
+      "familyId": "four-locks",
+      "entityId": "control",
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/four-locks-control-idle-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/four-locks-control-base-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 30288,
+      "sha256": "a073b33d38a20f831111a7f5c2f97728b35260990b45ae17679b3f2cccd5af66",
+      "alpha": true,
+      "visibleBounds": [
+        32,
+        43,
+        352,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "labelSafeAreas": [
+        [
+          141,
+          111,
+          250,
+          155
+        ],
+        [
+          147,
+          208,
+          245,
+          225
+        ]
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          91
+        ],
+        "work": [
+          44,
+          234.75
+        ],
+        "puzzle": [
+          141,
+          111,
+          250,
+          155
+        ],
+        "activationSocket": [
+          76,
+          158
+        ],
+        "lever": [
+          325,
+          105
+        ]
+      },
+      "sourcePixels": {
+        "width": 1312,
+        "height": 1199,
+        "visibleBounds": [
+          21,
+          12,
+          1295,
+          1187
+        ],
+        "groundAnchor": [
+          658,
+          1155
+        ],
+        "labelSafeAreas": [
+          [
+            455,
+            283,
+            889,
+            458
+          ],
+          [
+            479,
+            669,
+            869,
+            737
+          ]
+        ],
+        "uniformScale": 0.25117739403453687,
+        "offset": [
+          26.725274725274726,
+          39.98587127158556
+        ],
+        "overlayAnchors": {
+          "status": [
+            1199,
+            203
+          ],
+          "work": [
+            69,
+            775
+          ],
+          "puzzle": [
+            455,
+            283,
+            889,
+            458
+          ],
+          "activationSocket": [
+            196,
+            470
+          ],
+          "lever": [
+            1188,
+            259
+          ]
+        }
+      },
+      "allowedStates": [
+        "inactive",
+        "active",
+        "corrupted",
+        "damaged"
+      ],
+      "stateLayers": [
+        "base",
+        "prepared/ready",
+        "working",
+        "damage/corrupted",
+        "live labels/selection"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/control-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/control-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/control-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/control-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/control-scales.png",
+        "states": "assets/expeditions/production/9fo/v2/station-art-batch/qa/control-states.png",
+        "safeAreas": "assets/expeditions/production/9fo/v2/station-art-batch/qa/control-safe-areas.png"
+      },
+      "reviewStatus": "candidate",
+      "diagnostics": {
+        "sourceOpaquePixels": 907438,
+        "sourceNeutralLightPixels": 130,
+        "sourceTransparentPixels": 665650
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          43,
+          352,
+          338
+        ],
+        "transparentPixels": 89758,
+        "visiblePixels": 57698,
+        "components": [
+          57698
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "sourceSha256": "9ad4baf2813e2d4a582d8deb0b4d1613cc556d372728e40ec9a3dc1a2041e28a",
+      "isolatedReview": {
+        "status": "passed four-background and 48/96/192 visual review",
+        "reviewedSha256": "a073b33d38a20f831111a7f5c2f97728b35260990b45ae17679b3f2cccd5af66",
+        "liveAcceptance": false,
+        "note": "Complete connected silhouette, zero detached pixels. All blank rectangles reviewed; numerical typography still needs actual UI review."
+      }
+    },
+    {
+      "id": "four-locks-number-bus-base-v1",
+      "version": 1,
+      "familyId": "four-locks",
+      "entityId": "number",
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/four-locks-number-bus-idle-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/four-locks-number-bus-base-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 38230,
+      "sha256": "b4ab22113ba3cd42f3400e527500fa73ff3d6f7ce9ea8100ea74ff4fc2d80737",
+      "alpha": true,
+      "visibleBounds": [
+        32,
+        52,
+        352,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "labelSafeAreas": [
+        [
+          112,
+          158,
+          214,
+          175
+        ]
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          100
+        ],
+        "work": [
+          44,
+          237.9
+        ],
+        "meter": [
+          112,
+          158,
+          214,
+          175
+        ],
+        "portCentres": [
+          [
+            108,
+            234
+          ],
+          [
+            174,
+            252
+          ],
+          [
+            244,
+            270
+          ]
+        ]
+      },
+      "sourcePixels": {
+        "width": 1312,
+        "height": 1199,
+        "visibleBounds": [
+          68,
+          43,
+          1292,
+          1137
+        ],
+        "groundAnchor": [
+          680,
+          1106
+        ],
+        "labelSafeAreas": [
+          [
+            374,
+            448,
+            764,
+            513
+          ]
+        ],
+        "uniformScale": 0.26143790849673204,
+        "offset": [
+          14.222222222222221,
+          40.75816993464052
+        ],
+        "overlayAnchors": {
+          "status": [
+            1200,
+            227
+          ],
+          "work": [
+            114,
+            754
+          ],
+          "meter": [
+            374,
+            448,
+            764,
+            513
+          ],
+          "portCentres": [
+            [
+              359,
+              739
+            ],
+            [
+              611,
+              808
+            ],
+            [
+              879,
+              877
+            ]
+          ]
+        }
+      },
+      "allowedStates": [
+        "idle",
+        "charged",
+        "held",
+        "damaged"
+      ],
+      "stateLayers": [
+        "base",
+        "prepared/ready",
+        "working",
+        "damage/corrupted",
+        "live labels/selection"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/number-bus-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/number-bus-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/number-bus-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/number-bus-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/number-bus-scales.png",
+        "states": "assets/expeditions/production/9fo/v2/station-art-batch/qa/number-states.png",
+        "safeAreas": "assets/expeditions/production/9fo/v2/station-art-batch/qa/number-safe-areas.png"
+      },
+      "reviewStatus": "candidate",
+      "diagnostics": {
+        "sourceOpaquePixels": 939441,
+        "sourceNeutralLightPixels": 877,
+        "sourceTransparentPixels": 633647
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          52,
+          352,
+          338
+        ],
+        "transparentPixels": 82830,
+        "visiblePixels": 64626,
+        "components": [
+          64626
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "sourceSha256": "64d7fe50a2bdeeb6a23c87e09c6aaef943440b22340d9e5a3c71e6443f70107e",
+      "isolatedReview": {
+        "status": "passed four-background and 48/96/192 visual review",
+        "reviewedSha256": "b4ab22113ba3cd42f3400e527500fa73ff3d6f7ce9ea8100ea74ff4fc2d80737",
+        "liveAcceptance": false,
+        "note": "Complete connected silhouette, zero detached pixels. All blank rectangles reviewed; numerical typography still needs actual UI review."
+      }
+    },
+    {
+      "id": "four-locks-bridge-brace-base-v1",
+      "version": 1,
+      "familyId": "four-locks",
+      "entityId": "shape",
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/four-locks-bridge-brace-idle-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/four-locks-bridge-brace-base-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 27446,
+      "sha256": "5122dd90c605488ad86e8083b78a06959c9c284c51783551ce55cccf994d644a",
+      "alpha": true,
+      "visibleBounds": [
+        32,
+        45,
+        352,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "labelSafeAreas": [
+        [
+          160,
+          241,
+          243,
+          256
+        ]
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          93
+        ],
+        "work": [
+          44,
+          235.45000000000002
+        ],
+        "meter": [
+          160,
+          241,
+          243,
+          256
+        ],
+        "clamp": [
+          314,
+          218
+        ]
+      },
+      "sourcePixels": {
+        "width": 1312,
+        "height": 1199,
+        "visibleBounds": [
+          27,
+          16,
+          1296,
+          1177
+        ],
+        "groundAnchor": [
+          662,
+          1146
+        ],
+        "labelSafeAreas": [
+          [
+            535,
+            793,
+            864,
+            853
+          ]
+        ],
+        "uniformScale": 0.25216706067769895,
+        "offset": [
+          25.19148936170213,
+          40.96532702915682
+        ],
+        "overlayAnchors": {
+          "status": [
+            1201,
+            206
+          ],
+          "work": [
+            75,
+            771
+          ],
+          "meter": [
+            535,
+            793,
+            864,
+            853
+          ],
+          "clamp": [
+            1145,
+            702
+          ]
+        }
+      },
+      "allowedStates": [
+        "idle",
+        "charged",
+        "held",
+        "damaged"
+      ],
+      "stateLayers": [
+        "base",
+        "prepared/ready",
+        "working",
+        "damage/corrupted",
+        "live labels/selection"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/bridge-brace-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/bridge-brace-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/bridge-brace-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/bridge-brace-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/bridge-brace-scales.png",
+        "states": "assets/expeditions/production/9fo/v2/station-art-batch/qa/shape-states.png",
+        "safeAreas": "assets/expeditions/production/9fo/v2/station-art-batch/qa/shape-safe-areas.png"
+      },
+      "reviewStatus": "candidate",
+      "diagnostics": {
+        "sourceOpaquePixels": 645166,
+        "sourceNeutralLightPixels": 653,
+        "sourceTransparentPixels": 927922
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          45,
+          352,
+          338
+        ],
+        "transparentPixels": 105906,
+        "visiblePixels": 41550,
+        "components": [
+          41550
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "sourceSha256": "e17ab315877b4b15edb25aa90219910b52a7e03afe48464d946066b1704a4319",
+      "isolatedReview": {
+        "status": "passed four-background and 48/96/192 visual review",
+        "reviewedSha256": "5122dd90c605488ad86e8083b78a06959c9c284c51783551ce55cccf994d644a",
+        "liveAcceptance": false,
+        "note": "Complete connected silhouette, zero detached pixels. All blank rectangles reviewed; numerical typography still needs actual UI review."
+      }
+    },
+    {
+      "id": "four-locks-tree-maintenance-base-v1",
+      "version": 1,
+      "familyId": "four-locks",
+      "entityId": "sustain",
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/four-locks-tree-maintenance-idle-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/four-locks-tree-maintenance-base-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 42322,
+      "sha256": "aa68a9ad7a8e89a2f51d3a89336ff3a9a7742ca0338e6fb2a1eb503bf1b67e21",
+      "alpha": true,
+      "visibleBounds": [
+        32,
+        30,
+        352,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "labelSafeAreas": [
+        [
+          64,
+          125,
+          160,
+          147
+        ],
+        [
+          169,
+          258,
+          215,
+          269
+        ]
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          78
+        ],
+        "work": [
+          44,
+          230.20000000000002
+        ],
+        "meter": [
+          64,
+          125,
+          160,
+          147
+        ]
+      },
+      "sourcePixels": {
+        "width": 1312,
+        "height": 1199,
+        "visibleBounds": [
+          68,
+          0,
+          1312,
+          1196
+        ],
+        "groundAnchor": [
+          690,
+          1166
+        ],
+        "labelSafeAreas": [
+          [
+            192,
+            369,
+            566,
+            455
+          ],
+          [
+            601,
+            886,
+            779,
+            929
+          ]
+        ],
+        "uniformScale": 0.2572347266881029,
+        "offset": [
+          14.508038585209004,
+          30
+        ],
+        "overlayAnchors": {
+          "status": [
+            1219,
+            187
+          ],
+          "work": [
+            115,
+            778
+          ],
+          "meter": [
+            192,
+            369,
+            566,
+            455
+          ]
+        }
+      },
+      "allowedStates": [
+        "idle",
+        "charged",
+        "held",
+        "damaged"
+      ],
+      "stateLayers": [
+        "base",
+        "prepared/ready",
+        "working",
+        "damage/corrupted",
+        "live labels/selection"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/tree-maintenance-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/tree-maintenance-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/tree-maintenance-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/tree-maintenance-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/tree-maintenance-scales.png",
+        "states": "assets/expeditions/production/9fo/v2/station-art-batch/qa/sustain-states.png",
+        "safeAreas": "assets/expeditions/production/9fo/v2/station-art-batch/qa/sustain-safe-areas.png"
+      },
+      "reviewStatus": "candidate",
+      "diagnostics": {
+        "sourceOpaquePixels": 912896,
+        "sourceNeutralLightPixels": 697,
+        "sourceTransparentPixels": 660192
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          30,
+          352,
+          338
+        ],
+        "transparentPixels": 86453,
+        "visiblePixels": 61003,
+        "components": [
+          61003
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "sourceSha256": "0826c018a5f4024c857b2d9e511d91473ad916c15ff336c499b78d37f7145f3f",
+      "isolatedReview": {
+        "status": "passed four-background and 48/96/192 visual review",
+        "reviewedSha256": "aa68a9ad7a8e89a2f51d3a89336ff3a9a7742ca0338e6fb2a1eb503bf1b67e21",
+        "liveAcceptance": false,
+        "note": "Complete connected silhouette, zero detached pixels. All blank rectangles reviewed; numerical typography still needs actual UI review."
+      }
+    },
+    {
+      "id": "four-locks-alcove-base-v1",
+      "version": 1,
+      "familyId": "four-locks",
+      "entityId": "alcove",
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/four-locks-alcove-idle-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/four-locks-alcove-base-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 37450,
+      "sha256": "385757032526780d71f9a1aef90a1e9af3f1a53f427816b9896740bb879ebd1f",
+      "alpha": true,
+      "visibleBounds": [
+        32,
+        42,
+        352,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "labelSafeAreas": [
+        [
+          170,
+          258,
+          250,
+          270
+        ]
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          90
+        ],
+        "work": [
+          44,
+          234.4
+        ],
+        "fixture": [
+          192,
+          220
+        ]
+      },
+      "sourcePixels": {
+        "width": 1312,
+        "height": 1199,
+        "visibleBounds": [
+          29,
+          15,
+          1289,
+          1180
+        ],
+        "groundAnchor": [
+          659,
+          1149
+        ],
+        "labelSafeAreas": [
+          [
+            572,
+            866,
+            887,
+            913
+          ]
+        ],
+        "uniformScale": 0.25396825396825395,
+        "offset": [
+          24.634920634920636,
+          38.19047619047619
+        ],
+        "overlayAnchors": {
+          "status": [
+            1195,
+            204
+          ],
+          "work": [
+            76,
+            773
+          ],
+          "fixture": [
+            659,
+            716
+          ]
+        }
+      },
+      "allowedStates": [
+        "unprepared",
+        "prepared",
+        "held"
+      ],
+      "stateLayers": [
+        "base",
+        "prepared/ready",
+        "working",
+        "damage/corrupted",
+        "live labels/selection"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/alcove-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/alcove-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/alcove-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/alcove-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/alcove-scales.png",
+        "states": "assets/expeditions/production/9fo/v2/station-art-batch/qa/alcove-states.png",
+        "safeAreas": "assets/expeditions/production/9fo/v2/station-art-batch/qa/alcove-safe-areas.png"
+      },
+      "reviewStatus": "candidate",
+      "diagnostics": {
+        "sourceOpaquePixels": 994056,
+        "sourceNeutralLightPixels": 89,
+        "sourceTransparentPixels": 579032
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          42,
+          352,
+          338
+        ],
+        "transparentPixels": 82950,
+        "visiblePixels": 64506,
+        "components": [
+          64506
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "sourceSha256": "a2a2c78ceeb2df9c9687372b175fb75e1a857ad64e3cb30b1ea87fcf499eadb0",
+      "isolatedReview": {
+        "status": "passed four-background and 48/96/192 visual review",
+        "reviewedSha256": "385757032526780d71f9a1aef90a1e9af3f1a53f427816b9896740bb879ebd1f",
+        "liveAcceptance": false,
+        "note": "Complete connected silhouette, zero detached pixels. All blank rectangles reviewed; numerical typography still needs actual UI review."
+      }
+    },
+    {
+      "id": "turning-ravine-wind-stabiliser-base-v1",
+      "version": 1,
+      "familyId": "turning-ravine",
+      "entityId": "sustain",
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/turning-ravine-wind-stabiliser-idle-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/turning-ravine-wind-stabiliser-base-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 30762,
+      "sha256": "e8499b96ff55bce334f5ed609d5ccfbc065ace4b4bde7a3ebc9e3e7761579fd2",
+      "alpha": true,
+      "visibleBounds": [
+        65,
+        18,
+        320,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "labelSafeAreas": [
+        [
+          154,
+          232,
+          187,
+          242
+        ]
+      ],
+      "overlayAnchors": {
+        "status": [
+          296,
+          66
+        ],
+        "work": [
+          77,
+          226
+        ],
+        "meter": [
+          154,
+          232,
+          187,
+          242
+        ]
+      },
+      "sourcePixels": {
+        "width": 1312,
+        "height": 1199,
+        "visibleBounds": [
+          217,
+          10,
+          1142,
+          1169
+        ],
+        "groundAnchor": [
+          677,
+          1140
+        ],
+        "labelSafeAreas": [
+          [
+            539,
+            785,
+            659,
+            821
+          ]
+        ],
+        "uniformScale": 0.27610008628127697,
+        "offset": [
+          5.0862812769629,
+          15.23899913718723
+        ],
+        "overlayAnchors": {
+          "status": [
+            1054,
+            184
+          ],
+          "work": [
+            260,
+            763
+          ],
+          "meter": [
+            539,
+            785,
+            659,
+            821
+          ]
+        }
+      },
+      "allowedStates": [
+        "idle",
+        "charged",
+        "held",
+        "damaged"
+      ],
+      "stateLayers": [
+        "base",
+        "prepared/ready",
+        "working",
+        "damage/corrupted",
+        "live labels/selection"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/wind-stabiliser-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/wind-stabiliser-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/wind-stabiliser-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/wind-stabiliser-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/wind-stabiliser-scales.png",
+        "states": "assets/expeditions/production/9fo/v2/station-art-batch/qa/turning-ravine-sustain-states.png",
+        "safeAreas": "assets/expeditions/production/9fo/v2/station-art-batch/qa/turning-ravine-sustain-safe-areas.png"
+      },
+      "reviewStatus": "candidate",
+      "diagnostics": {
+        "sourceOpaquePixels": 512579,
+        "sourceNeutralLightPixels": 596,
+        "sourceTransparentPixels": 1060509
+      },
+      "alphaAnalysis": {
+        "visibleBounds": [
+          65,
+          18,
+          320,
+          338
+        ],
+        "transparentPixels": 107834,
+        "visiblePixels": 39622,
+        "components": [
+          39622
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "sourceSha256": "08e40ef8478778d8225e0b1053cc0b681e4732cc7e3db0069c2c1392bc63dc3b",
+      "isolatedReview": {
+        "status": "passed four-background and 48/96/192 visual review",
+        "reviewedSha256": "e8499b96ff55bce334f5ed609d5ccfbc065ace4b4bde7a3ebc9e3e7761579fd2",
+        "liveAcceptance": false,
+        "note": "Complete connected silhouette, zero detached pixels. All blank rectangles reviewed; numerical typography still needs actual UI review."
+      }
+    },
+    {
+      "id": "hollow-bough-branch-socket-base-v1",
+      "version": 1,
+      "familyId": "hollow-bough",
+      "entityId": "socket",
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/hollow-bough-branch-socket-idle-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/hollow-bough-branch-socket-base-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 27596,
+      "sha256": "9b8e57e6cb0f7f21ccb048c34d964bb402e5a49dbc4ff417df997ed6e6766265",
+      "alpha": true,
+      "visibleBounds": [
+        32,
+        150,
+        352,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "labelSafeAreas": [],
+      "overlayAnchors": {
+        "status": [
+          328,
+          197
+        ],
+        "socketCentre": [
+          192,
+          201
+        ]
+      },
+      "sourcePixels": {
+        "width": 1312,
+        "height": 1199,
+        "visibleBounds": [
+          82,
+          251,
+          1251,
+          936
+        ],
+        "groundAnchor": [
+          667,
+          909
+        ],
+        "labelSafeAreas": [],
+        "uniformScale": 0.2737382378100941,
+        "offset": [
+          9.553464499572286,
+          81.29170230966638
+        ],
+        "overlayAnchors": {
+          "status": [
+            1163,
+            423
+          ],
+          "socketCentre": [
+            667,
+            437
+          ]
+        }
+      },
+      "allowedStates": [
+        "uncovered",
+        "covered",
+        "threatened",
+        "suppressed"
+      ],
+      "stateLayers": [
+        "base",
+        "prepared/ready",
+        "working",
+        "damage/corrupted",
+        "live labels/selection"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/branch-socket-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/branch-socket-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/branch-socket-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/branch-socket-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/branch-socket-scales.png",
+        "states": "assets/expeditions/production/9fo/v2/station-art-batch/qa/hollow-bough-socket-states.png",
+        "safeAreas": "assets/expeditions/production/9fo/v2/station-art-batch/qa/hollow-bough-socket-safe-areas.png"
+      },
+      "reviewStatus": "candidate",
+      "diagnostics": {
+        "sourceOpaquePixels": 563957,
+        "sourceNeutralLightPixels": 1536,
+        "sourceTransparentPixels": 1009131
+      },
+      "topCentre": [
+        192,
+        201
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          150,
+          352,
+          338
+        ],
+        "transparentPixels": 104859,
+        "visiblePixels": 42597,
+        "components": [
+          42596,
+          1
+        ],
+        "componentCount": 2,
+        "detachedPixels": 1,
+        "checkerboardHeuristicPass": true
+      },
+      "sourceSha256": "d948a3cd449862c7cf345abc3ba19d8ed684ebe1ffee0333749c3e7651db2cf7",
+      "isolatedReview": {
+        "status": "passed four-background and 48/96/192 visual review",
+        "reviewedSha256": "9b8e57e6cb0f7f21ccb048c34d964bb402e5a49dbc4ff417df997ed6e6766265",
+        "liveAcceptance": false,
+        "note": "One detached alpha pixel retained in diagnostics, visually imperceptible on all four backgrounds. No threshold changed or artwork pixel removed."
+      }
+    },
+    {
+      "id": "station-cue-ready-v1",
+      "version": 1,
+      "entityId": "shared-state-cue",
+      "state": "ready",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/station-cue-ready-v1.svg",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/station-cue-ready-v1.webp",
+      "width": 32,
+      "height": 32,
+      "bytes": 830,
+      "sha256": "667a17b43f1c37d6a2b93fd8d7791b09013bf658f58207c4b8e02944ca783d9c",
+      "alpha": true,
+      "visibleBounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "groundAnchor": [
+        16,
+        32
+      ],
+      "labelSafeAreas": [],
+      "overlayAnchors": {
+        "centre": [
+          16,
+          16
+        ]
+      },
+      "allowedStates": [
+        "ready"
+      ],
+      "stateLayers": [
+        "live geometry cue"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-ready-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-ready-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-ready-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-ready-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/state-cues.png"
+      },
+      "reviewStatus": "candidate",
+      "note": "Code-native state badge with cream contrast backing, not a painted replacement mechanism; keep upright, screen-space minimum 16px, preferably20px.",
+      "sourcePixels": {
+        "width": 32,
+        "height": 32,
+        "groundAnchor": [
+          16,
+          32
+        ],
+        "labelSafeAreas": [],
+        "visibleBounds": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "id": "station-cue-working-v1",
+      "version": 1,
+      "entityId": "shared-state-cue",
+      "state": "working",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/station-cue-working-v1.svg",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/station-cue-working-v1.webp",
+      "width": 32,
+      "height": 32,
+      "bytes": 872,
+      "sha256": "bd4e9ba4d834ceaf651b6a195c4145fa376de6a17229d8ecbabdf83e2a681659",
+      "alpha": true,
+      "visibleBounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "groundAnchor": [
+        16,
+        32
+      ],
+      "labelSafeAreas": [],
+      "overlayAnchors": {
+        "centre": [
+          16,
+          16
+        ]
+      },
+      "allowedStates": [
+        "working"
+      ],
+      "stateLayers": [
+        "live geometry cue"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-working-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-working-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-working-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-working-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/state-cues.png"
+      },
+      "reviewStatus": "candidate",
+      "note": "Code-native state badge with cream contrast backing, not a painted replacement mechanism; keep upright, screen-space minimum 16px, preferably20px.",
+      "sourcePixels": {
+        "width": 32,
+        "height": 32,
+        "groundAnchor": [
+          16,
+          32
+        ],
+        "labelSafeAreas": [],
+        "visibleBounds": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "id": "station-cue-damage-v1",
+      "version": 1,
+      "entityId": "shared-state-cue",
+      "state": "damage",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/station-cue-damage-v1.svg",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/station-cue-damage-v1.webp",
+      "width": 32,
+      "height": 32,
+      "bytes": 930,
+      "sha256": "08c84680331a920a87a51cba14fd5fd63ae3657832f86fe376b30da921d48129",
+      "alpha": true,
+      "visibleBounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "groundAnchor": [
+        16,
+        32
+      ],
+      "labelSafeAreas": [],
+      "overlayAnchors": {
+        "centre": [
+          16,
+          16
+        ]
+      },
+      "allowedStates": [
+        "damage"
+      ],
+      "stateLayers": [
+        "live geometry cue"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-damage-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-damage-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-damage-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-damage-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/state-cues.png"
+      },
+      "reviewStatus": "candidate",
+      "note": "Code-native state badge with cream contrast backing, not a painted replacement mechanism; keep upright, screen-space minimum 16px, preferably20px.",
+      "sourcePixels": {
+        "width": 32,
+        "height": 32,
+        "groundAnchor": [
+          16,
+          32
+        ],
+        "labelSafeAreas": [],
+        "visibleBounds": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "id": "station-cue-corrupted-v1",
+      "version": 1,
+      "entityId": "shared-state-cue",
+      "state": "corrupted",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/station-cue-corrupted-v1.svg",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/station-cue-corrupted-v1.webp",
+      "width": 32,
+      "height": 32,
+      "bytes": 964,
+      "sha256": "f7b6c7bbca121ecae41ab7be04fec086784ef360dbfcd89d2b494b27e5ceee86",
+      "alpha": true,
+      "visibleBounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "groundAnchor": [
+        16,
+        32
+      ],
+      "labelSafeAreas": [],
+      "overlayAnchors": {
+        "centre": [
+          16,
+          16
+        ]
+      },
+      "allowedStates": [
+        "corrupted"
+      ],
+      "stateLayers": [
+        "live geometry cue"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-corrupted-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-corrupted-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-corrupted-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-corrupted-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/state-cues.png"
+      },
+      "reviewStatus": "candidate",
+      "note": "Code-native state badge with cream contrast backing, not a painted replacement mechanism; keep upright, screen-space minimum 16px, preferably20px.",
+      "sourcePixels": {
+        "width": 32,
+        "height": 32,
+        "groundAnchor": [
+          16,
+          32
+        ],
+        "labelSafeAreas": [],
+        "visibleBounds": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "id": "station-cue-prepared-v1",
+      "version": 1,
+      "entityId": "shared-state-cue",
+      "state": "prepared",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/station-cue-prepared-v1.svg",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/station-cue-prepared-v1.webp",
+      "width": 32,
+      "height": 32,
+      "bytes": 916,
+      "sha256": "1c75540f34c4fca3bfe1510b6548a2987f32b3b90289d1ca51234d9487599f3c",
+      "alpha": true,
+      "visibleBounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "groundAnchor": [
+        16,
+        32
+      ],
+      "labelSafeAreas": [],
+      "overlayAnchors": {
+        "centre": [
+          16,
+          16
+        ]
+      },
+      "allowedStates": [
+        "prepared"
+      ],
+      "stateLayers": [
+        "live geometry cue"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-prepared-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-prepared-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-prepared-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-prepared-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/state-cues.png"
+      },
+      "reviewStatus": "candidate",
+      "note": "Code-native state badge with cream contrast backing, not a painted replacement mechanism; keep upright, screen-space minimum 16px, preferably20px.",
+      "sourcePixels": {
+        "width": 32,
+        "height": 32,
+        "groundAnchor": [
+          16,
+          32
+        ],
+        "labelSafeAreas": [],
+        "visibleBounds": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    },
+    {
+      "id": "station-cue-threatened-v1",
+      "version": 1,
+      "entityId": "shared-state-cue",
+      "state": "threatened",
+      "sourcePath": "assets/expeditions/production/9fo/v2/station-art-batch/source/station-cue-threatened-v1.svg",
+      "runtimePath": "assets/expeditions/production/9fo/v2/station-art-batch/runtime/station-cue-threatened-v1.webp",
+      "width": 32,
+      "height": 32,
+      "bytes": 1060,
+      "sha256": "7324d6ae599737f6910504c756f0a6068f42cb4818c57dcc82210f99e66682a3",
+      "alpha": true,
+      "visibleBounds": [
+        0,
+        0,
+        32,
+        32
+      ],
+      "groundAnchor": [
+        16,
+        32
+      ],
+      "labelSafeAreas": [],
+      "overlayAnchors": {
+        "centre": [
+          16,
+          16
+        ]
+      },
+      "allowedStates": [
+        "threatened"
+      ],
+      "stateLayers": [
+        "live geometry cue"
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-threatened-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-threatened-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-threatened-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/station-art-batch/qa/station-cue-threatened-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/station-art-batch/qa/state-cues.png"
+      },
+      "reviewStatus": "candidate",
+      "note": "Code-native state badge with cream contrast backing, not a painted replacement mechanism; keep upright, screen-space minimum 16px, preferably20px.",
+      "sourcePixels": {
+        "width": 32,
+        "height": 32,
+        "groundAnchor": [
+          16,
+          32
+        ],
+        "labelSafeAreas": [],
+        "visibleBounds": [
+          0,
+          0,
+          32,
+          32
+        ]
+      }
+    }
+  ],
+  "stateMappings": [
+    {
+      "id": "four-locks-control-inactive-v1",
+      "familyId": "four-locks",
+      "entityId": "control",
+      "state": "inactive",
+      "predicate": "!state.puzzleValid && !state.events.some(e=>e.type === \"puzzle-disrupted\")",
+      "baseId": "four-locks-control-base-v1",
+      "overlayId": null,
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-control-active-v1",
+      "familyId": "four-locks",
+      "entityId": "control",
+      "state": "active",
+      "predicate": "state.puzzleValid",
+      "baseId": "four-locks-control-base-v1",
+      "overlayId": "station-cue-ready-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-control-corrupted-v1",
+      "familyId": "four-locks",
+      "entityId": "control",
+      "state": "corrupted",
+      "predicate": "!state.puzzleValid && state.events.some(e=>e.type === \"puzzle-disrupted\")",
+      "baseId": "four-locks-control-base-v1",
+      "overlayId": "station-cue-corrupted-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-control-damaged-v1",
+      "familyId": "four-locks",
+      "entityId": "control",
+      "state": "damaged",
+      "predicate": "state.stationStates.control.integrity < blueprint.stations.find(s=>s.id === \"control\").maxIntegrity",
+      "baseId": "four-locks-control-base-v1",
+      "overlayId": "station-cue-damage-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-number-bus-idle-v1",
+      "familyId": "four-locks",
+      "entityId": "number",
+      "state": "idle",
+      "predicate": "state.stationStates.number.charge < blueprint.stations.find(s=>s.id === \"number\").capacity",
+      "baseId": "four-locks-number-bus-base-v1",
+      "overlayId": null,
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-number-bus-charged-v1",
+      "familyId": "four-locks",
+      "entityId": "number",
+      "state": "charged",
+      "predicate": "state.stationStates.number.charge >= blueprint.stations.find(s=>s.id === \"number\").capacity",
+      "baseId": "four-locks-number-bus-base-v1",
+      "overlayId": "station-cue-ready-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-number-bus-held-v1",
+      "familyId": "four-locks",
+      "entityId": "number",
+      "state": "held",
+      "predicate": "Boolean(state.holds.number)",
+      "baseId": "four-locks-number-bus-base-v1",
+      "overlayId": "station-cue-working-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-number-bus-damaged-v1",
+      "familyId": "four-locks",
+      "entityId": "number",
+      "state": "damaged",
+      "predicate": "state.stationStates.number.integrity < blueprint.stations.find(s=>s.id === \"number\").maxIntegrity",
+      "baseId": "four-locks-number-bus-base-v1",
+      "overlayId": "station-cue-damage-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-bridge-brace-idle-v1",
+      "familyId": "four-locks",
+      "entityId": "shape",
+      "state": "idle",
+      "predicate": "state.stationStates.shape.charge < blueprint.stations.find(s=>s.id === \"shape\").capacity",
+      "baseId": "four-locks-bridge-brace-base-v1",
+      "overlayId": null,
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-bridge-brace-charged-v1",
+      "familyId": "four-locks",
+      "entityId": "shape",
+      "state": "charged",
+      "predicate": "state.stationStates.shape.charge >= blueprint.stations.find(s=>s.id === \"shape\").capacity",
+      "baseId": "four-locks-bridge-brace-base-v1",
+      "overlayId": "station-cue-ready-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-bridge-brace-held-v1",
+      "familyId": "four-locks",
+      "entityId": "shape",
+      "state": "held",
+      "predicate": "Boolean(state.holds.shape)",
+      "baseId": "four-locks-bridge-brace-base-v1",
+      "overlayId": "station-cue-working-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-bridge-brace-damaged-v1",
+      "familyId": "four-locks",
+      "entityId": "shape",
+      "state": "damaged",
+      "predicate": "state.stationStates.shape.integrity < blueprint.stations.find(s=>s.id === \"shape\").maxIntegrity",
+      "baseId": "four-locks-bridge-brace-base-v1",
+      "overlayId": "station-cue-damage-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-tree-maintenance-idle-v1",
+      "familyId": "four-locks",
+      "entityId": "sustain",
+      "state": "idle",
+      "predicate": "state.stationStates.sustain.charge < blueprint.stations.find(s=>s.id === \"sustain\").capacity",
+      "baseId": "four-locks-tree-maintenance-base-v1",
+      "overlayId": null,
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-tree-maintenance-charged-v1",
+      "familyId": "four-locks",
+      "entityId": "sustain",
+      "state": "charged",
+      "predicate": "state.stationStates.sustain.charge >= blueprint.stations.find(s=>s.id === \"sustain\").capacity",
+      "baseId": "four-locks-tree-maintenance-base-v1",
+      "overlayId": "station-cue-ready-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-tree-maintenance-held-v1",
+      "familyId": "four-locks",
+      "entityId": "sustain",
+      "state": "held",
+      "predicate": "Boolean(state.holds.sustain)",
+      "baseId": "four-locks-tree-maintenance-base-v1",
+      "overlayId": "station-cue-working-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-tree-maintenance-damaged-v1",
+      "familyId": "four-locks",
+      "entityId": "sustain",
+      "state": "damaged",
+      "predicate": "state.stationStates.sustain.integrity < blueprint.stations.find(s=>s.id === \"sustain\").maxIntegrity",
+      "baseId": "four-locks-tree-maintenance-base-v1",
+      "overlayId": "station-cue-damage-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-alcove-unprepared-v1",
+      "familyId": "four-locks",
+      "entityId": "alcove",
+      "state": "unprepared",
+      "predicate": "!state.preparedAlcove",
+      "baseId": "four-locks-alcove-base-v1",
+      "overlayId": null,
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Prepared fitting persists when held. Damage belongs to linked shape; do not give alcove its own integrity/charge.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-alcove-prepared-v1",
+      "familyId": "four-locks",
+      "entityId": "alcove",
+      "state": "prepared",
+      "predicate": "state.preparedAlcove",
+      "baseId": "four-locks-alcove-base-v1",
+      "overlayId": "station-cue-prepared-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Prepared fitting persists when held. Damage belongs to linked shape; do not give alcove its own integrity/charge.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "four-locks-alcove-held-v1",
+      "familyId": "four-locks",
+      "entityId": "alcove",
+      "state": "held",
+      "predicate": "Boolean(state.holds.alcove)",
+      "baseId": "four-locks-alcove-base-v1",
+      "overlayId": "station-cue-working-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Prepared fitting persists when held. Damage belongs to linked shape; do not give alcove its own integrity/charge.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "turning-ravine-wind-stabiliser-idle-v1",
+      "familyId": "turning-ravine",
+      "entityId": "sustain",
+      "state": "idle",
+      "predicate": "state.stationStates.sustain.charge < blueprint.stations.find(s=>s.id === \"sustain\").capacity",
+      "baseId": "turning-ravine-wind-stabiliser-base-v1",
+      "overlayId": null,
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "turning-ravine-wind-stabiliser-charged-v1",
+      "familyId": "turning-ravine",
+      "entityId": "sustain",
+      "state": "charged",
+      "predicate": "state.stationStates.sustain.charge >= blueprint.stations.find(s=>s.id === \"sustain\").capacity",
+      "baseId": "turning-ravine-wind-stabiliser-base-v1",
+      "overlayId": "station-cue-ready-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "turning-ravine-wind-stabiliser-held-v1",
+      "familyId": "turning-ravine",
+      "entityId": "sustain",
+      "state": "held",
+      "predicate": "Boolean(state.holds.sustain)",
+      "baseId": "turning-ravine-wind-stabiliser-base-v1",
+      "overlayId": "station-cue-working-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "turning-ravine-wind-stabiliser-damaged-v1",
+      "familyId": "turning-ravine",
+      "entityId": "sustain",
+      "state": "damaged",
+      "predicate": "state.stationStates.sustain.integrity < blueprint.stations.find(s=>s.id === \"sustain\").maxIntegrity",
+      "baseId": "turning-ravine-wind-stabiliser-base-v1",
+      "overlayId": "station-cue-damage-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Charge/held/damage independent: retain ready and working under damage cue.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "hollow-bough-branch-socket-uncovered-v1",
+      "familyId": "hollow-bough",
+      "entityId": "socket",
+      "state": "uncovered",
+      "predicate": "!packingHooks.coverage(puzzle,state.puzzleActive.content).coveredCells.includes(socketHex)",
+      "baseId": "hollow-bough-branch-socket-base-v1",
+      "overlayId": null,
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Footprints and socket coverage remain code; do not move pieces or remove their identity after suppression.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "hollow-bough-branch-socket-covered-v1",
+      "familyId": "hollow-bough",
+      "entityId": "socket",
+      "state": "covered",
+      "predicate": "packingHooks.coverage(puzzle,state.puzzleActive.content).coveredCells.includes(socketHex) && !state.phaseEffects.suppressedShelterCells.includes(socketHex)",
+      "baseId": "hollow-bough-branch-socket-base-v1",
+      "overlayId": "station-cue-ready-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Footprints and socket coverage remain code; do not move pieces or remove their identity after suppression.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "hollow-bough-branch-socket-threatened-v1",
+      "familyId": "hollow-bough",
+      "entityId": "socket",
+      "state": "threatened",
+      "predicate": "forecastEnemyPhase(state).hazards.some(h=>h.mutation?.applied && h.mutation.cells?.includes(socketHex))",
+      "baseId": "hollow-bough-branch-socket-base-v1",
+      "overlayId": "station-cue-threatened-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Footprints and socket coverage remain code; do not move pieces or remove their identity after suppression.",
+      "reviewStatus": "candidate"
+    },
+    {
+      "id": "hollow-bough-branch-socket-suppressed-v1",
+      "familyId": "hollow-bough",
+      "entityId": "socket",
+      "state": "suppressed",
+      "predicate": "state.phaseEffects.suppressedShelterCells.includes(socketHex)",
+      "baseId": "hollow-bough-branch-socket-base-v1",
+      "overlayId": "station-cue-corrupted-v1",
+      "liveRequirements": "All digits, puzzle cells, values, labels, holder names, exact hex focus and target geometry in code",
+      "coexistence": "Footprints and socket coverage remain code; do not move pieces or remove their identity after suppression.",
+      "reviewStatus": "candidate"
+    }
+  ],
+  "reuseMappings": {
+    "turning-ravine": {
+      "control": "four-locks-control-base-v1",
+      "number": "equation-frame",
+      "shape": "four-locks-bridge-brace-base-v1",
+      "sustain": "turning-ravine-wind-stabiliser-base-v1",
+      "alcove": "four-locks-alcove-base-v1"
+    },
+    "unequal-crossing": {
+      "control": "four-locks-control-base-v1",
+      "number": "objective-unequal-crossing-scale-one-hex-v1",
+      "shape": "four-locks-bridge-brace-base-v1",
+      "sustain": "four-locks-tree-maintenance-base-v1",
+      "alcove": "four-locks-alcove-base-v1",
+      "loads": "numberLoad.neutral-v1"
+    },
+    "maybe-flock": {
+      "control": "four-locks-control-base-v1",
+      "number": "four-locks-number-bus-base-v1",
+      "shape": "objective-rooststorm-whistle-tower-v2",
+      "sustain": "objective-rooststorm-whistle-tower-v2 plus working tool cue",
+      "alcove": "four-locks-alcove-base-v1"
+    },
+    "hollow-bough": {
+      "control": "four-locks-control-base-v1",
+      "number": "four-locks-number-bus-base-v1",
+      "shape": "four-locks-bridge-brace-base-v1 with existing living branches",
+      "sustain": "four-locks-tree-maintenance-base-v1",
+      "alcove": "four-locks-alcove-base-v1",
+      "sockets": "hollow-bough-branch-socket-base-v1"
+    },
+    "shared": {
+      "orchard": "hero-ninefoldtree-idle",
+      "passages": "scene-kit bridge plus live open/closingPending/damage cues",
+      "shield": "po-fx-guard-v1",
+      "storm": "po-rooststorm-front-v2",
+      "beams": "po-rooststorm-beam-sweep-v2",
+      "numbers": "live code only"
+    }
+  },
+  "overlayPrecedence": [
+    "base",
+    "prepared or ready fitting badge",
+    "working badge",
+    "damage or corruption badge",
+    "live numerical values and focus"
+  ],
+  "totalRuntimeBytes": 239666,
+  "integration": "Builder adds entity-id resolver; preserve blueprint IDs/certificates. Metadata main coordinates runtime pixels; sourcePixels explicitly records original PNG coordinates. Uniform scaling only. No App or global import changes."
+}

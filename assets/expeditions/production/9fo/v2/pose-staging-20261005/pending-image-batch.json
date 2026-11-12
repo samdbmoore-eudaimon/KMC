@@ -1,0 +1,35 @@
+{
+  "reconciledAt": "2026-10-05T13:16:42.9955551Z",
+  "originalExecCell": "91",
+  "originalBatchStatus": "terminal: one success, five network failures",
+  "failureCause": "image generation failed: network error: error sending request",
+  "completed": {
+    "preservedSource": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/beeswax-action-v2.png",
+    "id": "beeswax-action-v2",
+    "generatedPath": "C:/Users/samdb/.codex/generated_images/01a10869-af91-7490-9f19-c99e0842fcc1/exec-5f6a63f1-eb2c-411a-bbfb-57a2aabbbbb0.png"
+  },
+  "failed": [
+    "cornix-action-v2",
+    "cornix-exhausted-v2",
+    "kernel-action-v2",
+    "kernel-exhausted-v2",
+    "beeswax-exhausted-v2"
+  ],
+  "resolvedByUnchangedSourceExport": [
+    "cornix-exhausted-v2",
+    "kernel-action-v2",
+    "kernel-exhausted-v2",
+    "beeswax-exhausted-v2"
+  ],
+  "soleRetry": {
+    "reason": "Original stump base ends in flat cropped border; source-only export cannot restore it",
+    "status": "terminal failure: image generation failed: network error: error sending request",
+    "id": "cornix-action-v2",
+    "attemptsAfterOriginalFailure": 1,
+    "execCell": "114"
+  },
+  "purchases": "none",
+  "productionMutation": "none",
+  "remainingAssetFailure": "cornix-action-v2 unresolved: initial request and sole bounded retry both failed, savedPath null",
+  "next": "No further resubmission. Resume only when built-in image tool is available or an intact approved source is supplied; Claude exact integration window and two withheld review decisions also pending."
+}

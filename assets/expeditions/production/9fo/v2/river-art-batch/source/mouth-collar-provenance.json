@@ -1,0 +1,21 @@
+{
+  "source": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-surface-v1.png",
+  "waterCrop": [
+    560,
+    580,
+    128,
+    64
+  ],
+  "grassCrop": [
+    560,
+    400,
+    128,
+    64
+  ],
+  "uniformSampleScale": 0.5,
+  "assembly": "Repeat existing painted samples under exact96px water mask; mirrored normal/tangent halves share identical edge pixels. Full opacity for final32px approach,16px inward feather. No new illustration painted in code.",
+  "width": 96,
+  "height": 216,
+  "waterWidth": 96,
+  "sha256": "362d72ecc451256619ad3225a9dd3e30d1ba97eb266a10975c18511a16476fd0"
+}

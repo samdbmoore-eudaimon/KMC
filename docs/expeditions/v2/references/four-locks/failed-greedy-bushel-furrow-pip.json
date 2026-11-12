@@ -1,0 +1,5352 @@
+{
+  "status": "lost",
+  "record": {
+    "schemaVersion": 2,
+    "initialRun": {
+      "runId": "four-locks-reference-bushel-furrow-pip",
+      "blueprint": {
+        "schemaVersion": 2,
+        "moduleKey": "primary",
+        "familyId": "four-locks",
+        "tier": 1,
+        "seed": 1,
+        "parameterSeed": 1,
+        "generatorVersion": 1,
+        "rulesVersion": 2,
+        "attempt": 0,
+        "layoutId": "river",
+        "tiles": [
+          {
+            "q": 2,
+            "r": 0,
+            "terrain": "roots"
+          },
+          {
+            "q": 3,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 0,
+            "terrain": "hedge"
+          },
+          {
+            "q": 5,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 0,
+            "terrain": "water"
+          },
+          {
+            "q": 7,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 1,
+            "terrain": "hedge"
+          },
+          {
+            "q": 4,
+            "r": 1,
+            "terrain": "hedge"
+          },
+          {
+            "q": 5,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 1,
+            "terrain": "water"
+          },
+          {
+            "q": 7,
+            "r": 1,
+            "terrain": "roots"
+          },
+          {
+            "q": 8,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 5,
+            "r": 2,
+            "terrain": "bridge"
+          },
+          {
+            "q": 6,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 10,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 3,
+            "terrain": "hedge"
+          },
+          {
+            "q": 5,
+            "r": 3,
+            "terrain": "water"
+          },
+          {
+            "q": 6,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 10,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": -2,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 4,
+            "terrain": "bridge",
+            "passageOutputId": "bridge"
+          },
+          {
+            "q": 5,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": -2,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 5,
+            "terrain": "water"
+          },
+          {
+            "q": 5,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": -3,
+            "r": 6,
+            "terrain": "hedge"
+          },
+          {
+            "q": -2,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 6,
+            "terrain": "bridge"
+          },
+          {
+            "q": 4,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 5,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 7,
+            "terrain": "roots"
+          },
+          {
+            "q": 2,
+            "r": 7,
+            "terrain": "roots"
+          },
+          {
+            "q": 3,
+            "r": 7,
+            "terrain": "water"
+          },
+          {
+            "q": 4,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 5,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": -2,
+            "r": 8,
+            "terrain": "roots"
+          },
+          {
+            "q": -1,
+            "r": 8,
+            "terrain": "hedge"
+          },
+          {
+            "q": 0,
+            "r": 8,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 8,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 8,
+            "terrain": "water"
+          },
+          {
+            "q": 3,
+            "r": 8,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 8,
+            "terrain": "floor"
+          },
+          {
+            "q": 5,
+            "r": 8,
+            "terrain": "floor"
+          }
+        ],
+        "stations": [
+          {
+            "id": "control",
+            "hex": "2,4",
+            "name": "Ledger control",
+            "artId": "mechanism-hive-ledger-board-v1",
+            "maxIntegrity": 12
+          },
+          {
+            "id": "number",
+            "hex": "6,4",
+            "name": "Ledger bus",
+            "artId": "mechanism-hive-ledger-board-v1",
+            "maxIntegrity": 12,
+            "capacity": 4
+          },
+          {
+            "id": "shape",
+            "hex": "9,1",
+            "name": "Bridge brace",
+            "artId": "mechanism-plinth",
+            "maxIntegrity": 12,
+            "capacity": 4
+          },
+          {
+            "id": "sustain",
+            "hex": "5,7",
+            "name": "Tree maintenance",
+            "artId": "terrain-apple-tree-v1",
+            "maxIntegrity": 12,
+            "capacity": 4
+          },
+          {
+            "id": "alcove",
+            "hex": "9,3",
+            "name": "Brace alcove",
+            "artId": "mechanism-hive-ledger-board-v1"
+          }
+        ],
+        "puzzle": {
+          "id": "four-locks-ledger",
+          "kind": "sudoku4",
+          "size": 4,
+          "controlId": "control",
+          "controlHex": "2,4",
+          "givens": [
+            {
+              "row": 2,
+              "col": 3,
+              "value": 1
+            },
+            {
+              "row": 0,
+              "col": 0,
+              "value": 1
+            },
+            {
+              "row": 1,
+              "col": 3,
+              "value": 3
+            },
+            {
+              "row": 0,
+              "col": 2,
+              "value": 4
+            },
+            {
+              "row": 3,
+              "col": 1,
+              "value": 1
+            },
+            {
+              "row": 1,
+              "col": 0,
+              "value": 4
+            }
+          ],
+          "cages": [
+            {
+              "cellIds": [
+                "r0c1",
+                "r1c1"
+              ],
+              "sum": 5,
+              "id": "cage-0"
+            },
+            {
+              "cellIds": [
+                "r1c3",
+                "r2c3"
+              ],
+              "sum": 4,
+              "id": "cage-1"
+            },
+            {
+              "cellIds": [
+                "r3c0",
+                "r3c1"
+              ],
+              "sum": 4,
+              "id": "cage-2"
+            }
+          ],
+          "draftSchemaVersion": 1,
+          "networkGroupId": "network",
+          "outputs": [
+            {
+              "id": "bridge",
+              "label": "Bridge",
+              "cost": 2,
+              "trigger": "on-commit",
+              "effect": {
+                "kind": "passage"
+              }
+            },
+            {
+              "id": "shelter",
+              "label": "Shelter",
+              "cost": 3,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "shelter",
+                "amount": 2,
+                "targetIds": [
+                  "number",
+                  "shape",
+                  "sustain"
+                ]
+              }
+            },
+            {
+              "id": "roots",
+              "label": "Roots",
+              "cost": 4,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "roots"
+              }
+            },
+            {
+              "id": "storm",
+              "label": "Storm",
+              "cost": 5,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "storm"
+              }
+            }
+          ],
+          "outputBudget": 7,
+          "defaultOutputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "solutionParameters": {
+            "grid": [
+              [
+                1,
+                3,
+                4,
+                2
+              ],
+              [
+                4,
+                2,
+                1,
+                3
+              ],
+              [
+                2,
+                4,
+                3,
+                1
+              ],
+              [
+                3,
+                1,
+                2,
+                4
+              ]
+            ]
+          },
+          "lockGroups": [
+            {
+              "id": "network",
+              "anchor": "2,4",
+              "memberIds": [
+                "r0c0",
+                "r0c1",
+                "r0c2",
+                "r0c3",
+                "r1c0",
+                "r1c1",
+                "r1c2",
+                "r1c3",
+                "r2c0",
+                "r2c1",
+                "r2c2",
+                "r2c3",
+                "r3c0",
+                "r3c1",
+                "r3c2",
+                "r3c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-0",
+              "anchor": "2,4",
+              "memberIds": [
+                "r0c0",
+                "r0c1",
+                "r0c2",
+                "r0c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-1",
+              "anchor": "2,4",
+              "memberIds": [
+                "r1c0",
+                "r1c1",
+                "r1c2",
+                "r1c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-2",
+              "anchor": "2,4",
+              "memberIds": [
+                "r2c0",
+                "r2c1",
+                "r2c2",
+                "r2c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-3",
+              "anchor": "2,4",
+              "memberIds": [
+                "r3c0",
+                "r3c1",
+                "r3c2",
+                "r3c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            }
+          ]
+        },
+        "outputs": [
+          {
+            "id": "bridge",
+            "label": "Bridge",
+            "cost": 2,
+            "trigger": "on-commit",
+            "effect": {
+              "kind": "passage"
+            }
+          },
+          {
+            "id": "shelter",
+            "label": "Shelter",
+            "cost": 3,
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "shelter",
+              "amount": 2,
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ]
+            }
+          },
+          {
+            "id": "roots",
+            "label": "Roots",
+            "cost": 4,
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "roots"
+            }
+          },
+          {
+            "id": "storm",
+            "label": "Storm",
+            "cost": 5,
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "storm"
+            }
+          }
+        ],
+        "enemies": [
+          {
+            "id": "jammer-1",
+            "ruleId": "jammer",
+            "artId": "hookmole",
+            "position": "9,2",
+            "wakePhase": 2
+          }
+        ],
+        "hazards": [
+          {
+            "id": "root-drain",
+            "sites": [
+              {
+                "id": "sustain-site",
+                "targetId": "sustain"
+              }
+            ],
+            "mutation": {
+              "kind": "none"
+            }
+          }
+        ],
+        "sites": [
+          {
+            "id": "controlled-passage",
+            "anchor": "4,4"
+          }
+        ],
+        "deployment": [
+          "1,3",
+          "0,4",
+          "0,5"
+        ],
+        "deadline": 5,
+        "orchard": {
+          "hex": "8,5",
+          "name": "Ninefold tree",
+          "artId": "terrain-apple-tree-v1"
+        },
+        "orchardMaxIntegrity": 20,
+        "certificateId": null,
+        "structuralFingerprint": "0f7dce051892f654",
+        "commission": {
+          "poweredCount": 2,
+          "selectableOutputIds": [
+            "bridge",
+            "shelter",
+            "roots",
+            "storm"
+          ]
+        }
+      },
+      "cardIds": [
+        "bushel",
+        "furrow",
+        "pip"
+      ],
+      "deploymentAssignment": {
+        "bushel": "1,3",
+        "furrow": "0,4",
+        "pip": "0,5"
+      },
+      "profiles": {
+        "bushel": {
+          "cardId": "bushel",
+          "name": "Bushel",
+          "rarity": "common",
+          "stats": [
+            5,
+            1,
+            2,
+            3,
+            2
+          ],
+          "discipline": "arithmetic",
+          "primaryStat": 0,
+          "role": "tank",
+          "roleName": "Guardian",
+          "maxHealth": 13,
+          "moveBudget": 4,
+          "armour": 0,
+          "initiative": 10,
+          "strikeRange": 1,
+          "strikeStat": 5,
+          "dashBudget": 6,
+          "interceptBudget": 2,
+          "hand": [
+            {
+              "key": "exact-blow",
+              "kind": "discipline"
+            },
+            {
+              "key": "shared-charge",
+              "kind": "discipline"
+            },
+            {
+              "key": "stand-together",
+              "kind": "role"
+            },
+            {
+              "key": "second-wind",
+              "kind": "second-wind"
+            }
+          ]
+        },
+        "furrow": {
+          "cardId": "furrow",
+          "name": "Furrow",
+          "rarity": "common",
+          "stats": [
+            1,
+            4,
+            2,
+            1,
+            5
+          ],
+          "discipline": "speed",
+          "primaryStat": 4,
+          "role": "tank",
+          "roleName": "Guardian",
+          "maxHealth": 11,
+          "moveBudget": 5,
+          "armour": 1,
+          "initiative": 7,
+          "strikeRange": 1,
+          "strikeStat": 5,
+          "dashBudget": 9,
+          "interceptBudget": 5,
+          "hand": [
+            {
+              "key": "dash",
+              "kind": "discipline"
+            },
+            {
+              "key": "intercept",
+              "kind": "discipline"
+            },
+            {
+              "key": "stand-together",
+              "kind": "role"
+            },
+            {
+              "key": "second-wind",
+              "kind": "second-wind"
+            }
+          ]
+        },
+        "pip": {
+          "cardId": "pip",
+          "name": "Pip",
+          "rarity": "common",
+          "stats": [
+            1,
+            1,
+            3,
+            6,
+            2
+          ],
+          "discipline": "science",
+          "primaryStat": 3,
+          "role": "healer",
+          "roleName": "Mender",
+          "maxHealth": 16,
+          "moveBudget": 4,
+          "armour": 0,
+          "initiative": 10,
+          "strikeRange": 1,
+          "strikeStat": 6,
+          "dashBudget": 6,
+          "interceptBudget": 2,
+          "hand": [
+            {
+              "key": "field-repair",
+              "kind": "discipline"
+            },
+            {
+              "key": "root-shelter",
+              "kind": "discipline"
+            },
+            {
+              "key": "mend-and-mend-again",
+              "kind": "role"
+            },
+            {
+              "key": "second-wind",
+              "kind": "second-wind"
+            }
+          ]
+        }
+      },
+      "initialStateHash": "3fbf1b3e81832c3b"
+    },
+    "commands": [
+      {
+        "type": "request-hint",
+        "heroId": null,
+        "expectedRevision": 0,
+        "payload": {
+          "puzzleId": "four-locks-ledger",
+          "stage": 3
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 1,
+        "payload": {
+          "destination": "2,4",
+          "path": null
+        }
+      },
+      {
+        "type": "operate",
+        "heroId": "bushel",
+        "expectedRevision": 2,
+        "payload": {
+          "draftRevision": 1,
+          "outputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "lockGroupId": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "furrow",
+        "expectedRevision": 3,
+        "payload": {
+          "destination": "5,1",
+          "path": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "furrow",
+        "expectedRevision": 4,
+        "payload": {
+          "destination": "9,1",
+          "path": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "pip",
+        "expectedRevision": 5,
+        "payload": {
+          "destination": "3,6",
+          "path": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "pip",
+        "expectedRevision": 6,
+        "payload": {
+          "destination": "5,7",
+          "path": null
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 7,
+        "payload": {
+          "forecastRevision": 7
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 8,
+        "payload": {
+          "destination": "6,4",
+          "path": null
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "bushel",
+        "expectedRevision": 9,
+        "payload": {
+          "targetId": "number"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 10,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 11,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 12,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 13,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 14,
+        "payload": {
+          "forecastRevision": 14
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 15,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 16,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 17,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 18,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "bushel",
+        "expectedRevision": 19,
+        "payload": {
+          "targetId": "number"
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 20,
+        "payload": {
+          "forecastRevision": 20
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 21,
+        "payload": {
+          "destination": "4,2",
+          "path": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 22,
+        "payload": {
+          "destination": "2,4",
+          "path": null
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "furrow",
+        "expectedRevision": 23,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "pip",
+        "expectedRevision": 24,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 25,
+        "payload": {
+          "forecastRevision": 25
+        }
+      },
+      {
+        "type": "operate",
+        "heroId": "bushel",
+        "expectedRevision": 26,
+        "payload": {
+          "draftRevision": 1,
+          "outputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "lockGroupId": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 27,
+        "payload": {
+          "destination": "6,4",
+          "path": null
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "furrow",
+        "expectedRevision": 28,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "pip",
+        "expectedRevision": 29,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 30,
+        "payload": {
+          "forecastRevision": 30
+        }
+      }
+    ],
+    "finalStateHash": "0610b689a134c2dc",
+    "status": "lost",
+    "round": 5,
+    "actionCount": 31
+  },
+  "hashes": [
+    "3fbf1b3e81832c3b",
+    "ff2fcb09fd4bc6dc",
+    "3de2d917798e628a",
+    "78c9435c91b10485",
+    "b01892aaf1593b43",
+    "1f170facf38c57f9",
+    "f595315a4846d7c7",
+    "42c554ab5f130c72",
+    "59512845cc5e9116",
+    "8331d739c0ca989a",
+    "ec46220b0dc1eb20",
+    "503c7b303f537243",
+    "43c849c9e09f3406",
+    "0a4f7b8ab8d4924d",
+    "c76e579f53a72ecc",
+    "ea91f486618acef1",
+    "5f45f0c378ef93c4",
+    "58a297d0b6fafdb3",
+    "dd08347937274812",
+    "5d00db0a8522b2c5",
+    "e435f2634a3bf1d8",
+    "048aa0ce3ce50c17",
+    "199d9302aa4ad4c3",
+    "b5e29856538b8817",
+    "970e500e97408b27",
+    "40b1f7dac049e989",
+    "20ebdc1cb3deb573",
+    "2dccf49dbe4673ea",
+    "2b3b090d08cae40a",
+    "115a856be77efbc8",
+    "4c79350b341570c2",
+    "0610b689a134c2dc"
+  ],
+  "events": [
+    {
+      "command": {
+        "type": "request-hint",
+        "heroId": null,
+        "expectedRevision": 0,
+        "payload": {
+          "puzzleId": "four-locks-ledger",
+          "stage": 3
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "request-hint",
+        "heroId": null,
+        "cost": {
+          "ap": 0,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "puzzle-draft",
+            "kind": "puzzle",
+            "field": "draftRevision",
+            "before": 0,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "hint",
+            "stage": 3
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 1,
+            "type": "hint-requested",
+            "round": 1,
+            "stage": 3
+          }
+        ],
+        "status": "playing",
+        "hint": {
+          "text": "Row 1, column 2 can only be 3 when its cage total is included.",
+          "params": {
+            "type": "cage-single",
+            "row": 0,
+            "col": 1,
+            "value": 3,
+            "text": "Row 1, column 2 can only be 3 when its cage total is included."
+          }
+        }
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 1,
+        "payload": {
+          "destination": "2,4",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "position",
+            "before": "1,3",
+            "after": "2,4"
+          },
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 4
+          },
+          {
+            "key": "cost",
+            "value": 2
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 2,
+            "type": "hero-moved",
+            "round": 1,
+            "heroId": "bushel",
+            "from": "1,3",
+            "to": "2,4",
+            "path": [
+              "2,3",
+              "2,4"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "2,3",
+          "2,4"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "operate",
+        "heroId": "bushel",
+        "expectedRevision": 2,
+        "payload": {
+          "draftRevision": 1,
+          "outputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "lockGroupId": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "operate",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          },
+          {
+            "id": "outputs",
+            "kind": "outputs",
+            "field": "active",
+            "before": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            },
+            "after": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            }
+          },
+          {
+            "id": "passages",
+            "kind": "passages",
+            "field": "state",
+            "before": {
+              "4,4": {
+                "open": false,
+                "closingPending": false
+              }
+            },
+            "after": {
+              "4,4": {
+                "open": true,
+                "closingPending": false
+              }
+            }
+          }
+        ],
+        "factors": [
+          {
+            "key": "commit",
+            "outputIds": [
+              "bridge",
+              "shelter"
+            ],
+            "valid": true
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 3,
+            "type": "puzzle-committed",
+            "round": 1,
+            "heroId": "bushel",
+            "outputIds": [
+              "bridge",
+              "shelter"
+            ],
+            "outputsBefore": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            },
+            "outputsAfter": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            },
+            "valid": true
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "furrow",
+        "expectedRevision": 3,
+        "payload": {
+          "destination": "5,1",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "position",
+            "before": "0,4",
+            "after": "5,1"
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 5
+          },
+          {
+            "key": "cost",
+            "value": 5
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 4,
+            "type": "hero-moved",
+            "round": 1,
+            "heroId": "furrow",
+            "from": "0,4",
+            "to": "5,1",
+            "path": [
+              "1,3",
+              "2,2",
+              "3,2",
+              "4,2",
+              "5,1"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "1,3",
+          "2,2",
+          "3,2",
+          "4,2",
+          "5,1"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "furrow",
+        "expectedRevision": 4,
+        "payload": {
+          "destination": "9,1",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "position",
+            "before": "5,1",
+            "after": "9,1"
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 5
+          },
+          {
+            "key": "cost",
+            "value": 5
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 5,
+            "type": "hero-moved",
+            "round": 1,
+            "heroId": "furrow",
+            "from": "5,1",
+            "to": "9,1",
+            "path": [
+              "5,2",
+              "6,2",
+              "7,2",
+              "8,1",
+              "9,1"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "5,2",
+          "6,2",
+          "7,2",
+          "8,1",
+          "9,1"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "pip",
+        "expectedRevision": 5,
+        "payload": {
+          "destination": "3,6",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "position",
+            "before": "0,5",
+            "after": "3,6"
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 4
+          },
+          {
+            "key": "cost",
+            "value": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 6,
+            "type": "hero-moved",
+            "round": 1,
+            "heroId": "pip",
+            "from": "0,5",
+            "to": "3,6",
+            "path": [
+              "1,5",
+              "2,5",
+              "3,5",
+              "3,6"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "1,5",
+          "2,5",
+          "3,5",
+          "3,6"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "pip",
+        "expectedRevision": 6,
+        "payload": {
+          "destination": "5,7",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "position",
+            "before": "3,6",
+            "after": "5,7"
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 4
+          },
+          {
+            "key": "cost",
+            "value": 3
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 7,
+            "type": "hero-moved",
+            "round": 1,
+            "heroId": "pip",
+            "from": "3,6",
+            "to": "5,7",
+            "path": [
+              "4,6",
+              "5,6",
+              "5,7"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "4,6",
+          "5,6",
+          "5,7"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 7,
+        "payload": {
+          "forecastRevision": 7
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "end-round",
+        "heroId": null,
+        "cost": {
+          "ap": 0,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "orchard",
+            "kind": "orchard",
+            "field": "integrity",
+            "before": 20,
+            "after": 17
+          },
+          {
+            "id": "round",
+            "kind": "round",
+            "field": "round",
+            "before": 1,
+            "after": 2
+          }
+        ],
+        "factors": [],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 8,
+            "type": "shelter-applied",
+            "round": 1,
+            "outputId": "shelter",
+            "targetIds": [
+              "number",
+              "shape",
+              "sustain"
+            ],
+            "amount": 2
+          },
+          {
+            "seq": 9,
+            "type": "enemy-idle",
+            "round": 1,
+            "enemyId": "jammer-1",
+            "reason": "dormant",
+            "wakePhase": 2,
+            "sector": null
+          },
+          {
+            "seq": 10,
+            "type": "orchard-damaged",
+            "round": 1,
+            "amount": 3,
+            "integrityBefore": 20,
+            "integrityAfter": 17,
+            "cause": {
+              "hazardId": "root-drain",
+              "siteId": "sustain-site"
+            }
+          },
+          {
+            "seq": 11,
+            "type": "round-started",
+            "round": 2
+          }
+        ],
+        "status": "playing",
+        "phase": {
+          "round": 1,
+          "phaseStart": [],
+          "intents": [
+            {
+              "enemyId": "jammer-1",
+              "ruleId": "jammer",
+              "artId": "hookmole",
+              "from": "9,2",
+              "path": [],
+              "targetId": null,
+              "verb": "dormant",
+              "power": 0,
+              "puzzleChange": null,
+              "hpChange": null,
+              "blockedBy": null,
+              "wakePhase": 2
+            }
+          ],
+          "hazards": [
+            {
+              "hazardId": "root-drain",
+              "power": 4,
+              "mutation": null,
+              "sites": [
+                {
+                  "siteId": "sustain-site",
+                  "blocked": false,
+                  "damage": 3
+                }
+              ]
+            }
+          ],
+          "outcome": {
+            "status": "playing",
+            "lossReason": null,
+            "wouldWin": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "shape"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "sustain"
+                }
+              }
+            ]
+          },
+          "phaseStartEvents": [
+            {
+              "seq": 8,
+              "type": "shelter-applied",
+              "round": 1,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            }
+          ],
+          "verdict": {
+            "won": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "shape"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "sustain"
+                }
+              }
+            ]
+          },
+          "events": [
+            {
+              "seq": 8,
+              "type": "shelter-applied",
+              "round": 1,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            },
+            {
+              "seq": 9,
+              "type": "enemy-idle",
+              "round": 1,
+              "enemyId": "jammer-1",
+              "reason": "dormant",
+              "wakePhase": 2,
+              "sector": null
+            },
+            {
+              "seq": 10,
+              "type": "orchard-damaged",
+              "round": 1,
+              "amount": 3,
+              "integrityBefore": 20,
+              "integrityAfter": 17,
+              "cause": {
+                "hazardId": "root-drain",
+                "siteId": "sustain-site"
+              }
+            },
+            {
+              "seq": 11,
+              "type": "round-started",
+              "round": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 8,
+        "payload": {
+          "destination": "6,4",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "position",
+            "before": "2,4",
+            "after": "6,4"
+          },
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 4
+          },
+          {
+            "key": "cost",
+            "value": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 12,
+            "type": "hero-moved",
+            "round": 2,
+            "heroId": "bushel",
+            "from": "2,4",
+            "to": "6,4",
+            "path": [
+              "3,4",
+              "4,4",
+              "5,4",
+              "6,4"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "3,4",
+          "4,4",
+          "5,4",
+          "6,4"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "bushel",
+        "expectedRevision": 9,
+        "payload": {
+          "targetId": "number"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          },
+          {
+            "id": "number",
+            "kind": "station",
+            "field": "charge",
+            "before": 0,
+            "after": 4
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 5,
+            "applied": 4,
+            "charge": [
+              0,
+              4
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 13,
+            "type": "station-charged",
+            "round": 2,
+            "heroId": "bushel",
+            "stationId": "number",
+            "amount": 4,
+            "charge": 4,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 10,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "shape",
+            "kind": "station",
+            "field": "charge",
+            "before": 0,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              0,
+              1
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 14,
+            "type": "station-charged",
+            "round": 2,
+            "heroId": "furrow",
+            "stationId": "shape",
+            "amount": 1,
+            "charge": 1,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 11,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          },
+          {
+            "id": "shape",
+            "kind": "station",
+            "field": "charge",
+            "before": 1,
+            "after": 2
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              1,
+              2
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 15,
+            "type": "station-charged",
+            "round": 2,
+            "heroId": "furrow",
+            "stationId": "shape",
+            "amount": 1,
+            "charge": 2,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 12,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "sustain",
+            "kind": "station",
+            "field": "charge",
+            "before": 0,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              0,
+              1
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 16,
+            "type": "station-charged",
+            "round": 2,
+            "heroId": "pip",
+            "stationId": "sustain",
+            "amount": 1,
+            "charge": 1,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 13,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          },
+          {
+            "id": "sustain",
+            "kind": "station",
+            "field": "charge",
+            "before": 1,
+            "after": 2
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              1,
+              2
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 17,
+            "type": "station-charged",
+            "round": 2,
+            "heroId": "pip",
+            "stationId": "sustain",
+            "amount": 1,
+            "charge": 2,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 14,
+        "payload": {
+          "forecastRevision": 14
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "end-round",
+        "heroId": null,
+        "cost": {
+          "ap": 0,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "jammer-1",
+            "kind": "enemy",
+            "field": "position",
+            "before": "9,2",
+            "after": "6,2"
+          },
+          {
+            "id": "orchard",
+            "kind": "orchard",
+            "field": "integrity",
+            "before": 17,
+            "after": 14
+          },
+          {
+            "id": "round",
+            "kind": "round",
+            "field": "round",
+            "before": 2,
+            "after": 3
+          }
+        ],
+        "factors": [],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 18,
+            "type": "shelter-applied",
+            "round": 2,
+            "outputId": "shelter",
+            "targetIds": [
+              "number",
+              "shape",
+              "sustain"
+            ],
+            "amount": 2
+          },
+          {
+            "seq": 19,
+            "type": "enemy-moved",
+            "round": 2,
+            "enemyId": "jammer-1",
+            "from": "9,2",
+            "to": "6,2",
+            "path": [
+              "8,2",
+              "7,2",
+              "6,2"
+            ]
+          },
+          {
+            "seq": 20,
+            "type": "enemy-out-of-range",
+            "round": 2,
+            "enemyId": "jammer-1",
+            "targetId": "control"
+          },
+          {
+            "seq": 21,
+            "type": "orchard-damaged",
+            "round": 2,
+            "amount": 3,
+            "integrityBefore": 17,
+            "integrityAfter": 14,
+            "cause": {
+              "hazardId": "root-drain",
+              "siteId": "sustain-site"
+            }
+          },
+          {
+            "seq": 22,
+            "type": "round-started",
+            "round": 3
+          }
+        ],
+        "status": "playing",
+        "phase": {
+          "round": 2,
+          "phaseStart": [],
+          "intents": [
+            {
+              "enemyId": "jammer-1",
+              "ruleId": "jammer",
+              "artId": "hookmole",
+              "from": "9,2",
+              "path": [
+                "8,2",
+                "7,2",
+                "6,2"
+              ],
+              "targetId": "control",
+              "verb": "disrupt",
+              "power": 4,
+              "puzzleChange": {
+                "memberId": "r0c1",
+                "groupIds": [
+                  "row-0",
+                  "network"
+                ],
+                "kind": "jam"
+              },
+              "hpChange": null,
+              "blockedBy": {
+                "code": "out-of-range",
+                "distance": 4,
+                "range": 1
+              },
+              "actualPath": [
+                "8,2",
+                "7,2",
+                "6,2"
+              ]
+            }
+          ],
+          "hazards": [
+            {
+              "hazardId": "root-drain",
+              "power": 4,
+              "mutation": null,
+              "sites": [
+                {
+                  "siteId": "sustain-site",
+                  "blocked": false,
+                  "damage": 3
+                }
+              ]
+            }
+          ],
+          "outcome": {
+            "status": "playing",
+            "lossReason": null,
+            "wouldWin": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "shape"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "sustain"
+                }
+              }
+            ]
+          },
+          "phaseStartEvents": [
+            {
+              "seq": 18,
+              "type": "shelter-applied",
+              "round": 2,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            }
+          ],
+          "verdict": {
+            "won": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "shape"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "sustain"
+                }
+              }
+            ]
+          },
+          "events": [
+            {
+              "seq": 18,
+              "type": "shelter-applied",
+              "round": 2,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            },
+            {
+              "seq": 19,
+              "type": "enemy-moved",
+              "round": 2,
+              "enemyId": "jammer-1",
+              "from": "9,2",
+              "to": "6,2",
+              "path": [
+                "8,2",
+                "7,2",
+                "6,2"
+              ]
+            },
+            {
+              "seq": 20,
+              "type": "enemy-out-of-range",
+              "round": 2,
+              "enemyId": "jammer-1",
+              "targetId": "control"
+            },
+            {
+              "seq": 21,
+              "type": "orchard-damaged",
+              "round": 2,
+              "amount": 3,
+              "integrityBefore": 17,
+              "integrityAfter": 14,
+              "cause": {
+                "hazardId": "root-drain",
+                "siteId": "sustain-site"
+              }
+            },
+            {
+              "seq": 22,
+              "type": "round-started",
+              "round": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 15,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "shape",
+            "kind": "station",
+            "field": "charge",
+            "before": 2,
+            "after": 3
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              2,
+              3
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 23,
+            "type": "station-charged",
+            "round": 3,
+            "heroId": "furrow",
+            "stationId": "shape",
+            "amount": 1,
+            "charge": 3,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "furrow",
+        "expectedRevision": 16,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          },
+          {
+            "id": "shape",
+            "kind": "station",
+            "field": "charge",
+            "before": 3,
+            "after": 4
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              3,
+              4
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 24,
+            "type": "station-charged",
+            "round": 3,
+            "heroId": "furrow",
+            "stationId": "shape",
+            "amount": 1,
+            "charge": 4,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 17,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "sustain",
+            "kind": "station",
+            "field": "charge",
+            "before": 2,
+            "after": 3
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              2,
+              3
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 25,
+            "type": "station-charged",
+            "round": 3,
+            "heroId": "pip",
+            "stationId": "sustain",
+            "amount": 1,
+            "charge": 3,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "calibrate",
+        "heroId": "pip",
+        "expectedRevision": 18,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "calibrate",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          },
+          {
+            "id": "sustain",
+            "kind": "station",
+            "field": "charge",
+            "before": 3,
+            "after": 4
+          }
+        ],
+        "factors": [
+          {
+            "key": "charge",
+            "stat": "Arithmetic",
+            "value": 1,
+            "applied": 1,
+            "charge": [
+              3,
+              4
+            ],
+            "capacity": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 26,
+            "type": "station-charged",
+            "round": 3,
+            "heroId": "pip",
+            "stationId": "sustain",
+            "amount": 1,
+            "charge": 4,
+            "capacity": 4
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "hold",
+        "heroId": "bushel",
+        "expectedRevision": 19,
+        "payload": {
+          "targetId": "number"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "hold",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "holding",
+            "before": null,
+            "after": "number"
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {},
+            "after": {
+              "number": {
+                "holdId": "bushel@r3#27",
+                "heroId": "bushel"
+              }
+            }
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {},
+              "lock": {},
+              "stabilise": {}
+            },
+            "after": {
+              "shield": {},
+              "lock": {
+                "network": 2
+              },
+              "stabilise": {}
+            }
+          }
+        ],
+        "factors": [
+          {
+            "key": "hold",
+            "job": "number",
+            "need": [
+              4,
+              0,
+              2,
+              0,
+              0
+            ],
+            "have": [
+              5,
+              1,
+              2,
+              3,
+              2
+            ]
+          },
+          {
+            "key": "hold-grant",
+            "kind": "lock",
+            "targetId": "network",
+            "amount": 2
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 27,
+            "type": "hold-started",
+            "round": 3,
+            "heroId": "bushel",
+            "stationId": "number",
+            "job": "number",
+            "holdId": "bushel@r3#27",
+            "granted": [
+              {
+                "kind": "lock",
+                "targetId": "network",
+                "amount": 2
+              }
+            ]
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 20,
+        "payload": {
+          "forecastRevision": 20
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "end-round",
+        "heroId": null,
+        "cost": {
+          "ap": 0,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 2
+          },
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "holding",
+            "before": "number",
+            "after": null
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "jammer-1",
+            "kind": "enemy",
+            "field": "position",
+            "before": "6,2",
+            "after": "3,3"
+          },
+          {
+            "id": "orchard",
+            "kind": "orchard",
+            "field": "integrity",
+            "before": 14,
+            "after": 11
+          },
+          {
+            "id": "outputs",
+            "kind": "outputs",
+            "field": "active",
+            "before": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            },
+            "after": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            }
+          },
+          {
+            "id": "passages",
+            "kind": "passages",
+            "field": "state",
+            "before": {
+              "4,4": {
+                "open": true,
+                "closingPending": false
+              }
+            },
+            "after": {
+              "4,4": {
+                "open": false,
+                "closingPending": false
+              }
+            }
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {
+              "number": {
+                "holdId": "bushel@r3#27",
+                "heroId": "bushel"
+              }
+            },
+            "after": {}
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {},
+              "lock": {
+                "network": 2
+              },
+              "stabilise": {}
+            },
+            "after": {
+              "shield": {},
+              "lock": {},
+              "stabilise": {}
+            }
+          },
+          {
+            "id": "round",
+            "kind": "round",
+            "field": "round",
+            "before": 3,
+            "after": 4
+          }
+        ],
+        "factors": [],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 28,
+            "type": "shelter-applied",
+            "round": 3,
+            "outputId": "shelter",
+            "targetIds": [
+              "number",
+              "shape",
+              "sustain"
+            ],
+            "amount": 2
+          },
+          {
+            "seq": 29,
+            "type": "enemy-moved",
+            "round": 3,
+            "enemyId": "jammer-1",
+            "from": "6,2",
+            "to": "3,3",
+            "path": [
+              "5,2",
+              "4,2",
+              "3,3"
+            ]
+          },
+          {
+            "seq": 30,
+            "type": "lock-broken",
+            "round": 3,
+            "enemyId": "jammer-1",
+            "groupIds": [
+              "row-0",
+              "network"
+            ],
+            "strength": 2,
+            "power": 4,
+            "removed": 1
+          },
+          {
+            "seq": 31,
+            "type": "puzzle-disrupted",
+            "round": 3,
+            "enemyId": "jammer-1",
+            "memberId": "r0c1",
+            "kind": "jam",
+            "outputsBefore": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            },
+            "outputsAfter": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            }
+          },
+          {
+            "seq": 32,
+            "type": "orchard-damaged",
+            "round": 3,
+            "amount": 3,
+            "integrityBefore": 14,
+            "integrityAfter": 11,
+            "cause": {
+              "hazardId": "root-drain",
+              "siteId": "sustain-site"
+            }
+          },
+          {
+            "seq": 33,
+            "type": "round-started",
+            "round": 4
+          }
+        ],
+        "status": "playing",
+        "phase": {
+          "round": 3,
+          "phaseStart": [],
+          "intents": [
+            {
+              "enemyId": "jammer-1",
+              "ruleId": "jammer",
+              "artId": "hookmole",
+              "from": "6,2",
+              "path": [
+                "5,2",
+                "4,2",
+                "3,3"
+              ],
+              "targetId": "control",
+              "verb": "disrupt",
+              "power": 4,
+              "puzzleChange": {
+                "memberId": "r0c1",
+                "groupIds": [
+                  "row-0",
+                  "network"
+                ],
+                "kind": "jam"
+              },
+              "hpChange": null,
+              "blockedBy": null,
+              "actualPath": [
+                "5,2",
+                "4,2",
+                "3,3"
+              ],
+              "puzzleChangeApplied": true
+            }
+          ],
+          "hazards": [
+            {
+              "hazardId": "root-drain",
+              "power": 4,
+              "mutation": null,
+              "sites": [
+                {
+                  "siteId": "sustain-site",
+                  "blocked": false,
+                  "damage": 3
+                }
+              ]
+            }
+          ],
+          "outcome": {
+            "status": "playing",
+            "lossReason": null,
+            "wouldWin": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "shape"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "sustain"
+                }
+              },
+              {
+                "code": "outputs-short",
+                "params": {
+                  "have": 0,
+                  "need": 2
+                }
+              },
+              {
+                "code": "sudoku-incomplete",
+                "params": {}
+              }
+            ]
+          },
+          "phaseStartEvents": [
+            {
+              "seq": 28,
+              "type": "shelter-applied",
+              "round": 3,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            }
+          ],
+          "verdict": {
+            "won": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "shape"
+                }
+              },
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "sustain"
+                }
+              },
+              {
+                "code": "outputs-short",
+                "params": {
+                  "have": 0,
+                  "need": 2
+                }
+              },
+              {
+                "code": "sudoku-incomplete",
+                "params": {}
+              }
+            ]
+          },
+          "events": [
+            {
+              "seq": 28,
+              "type": "shelter-applied",
+              "round": 3,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            },
+            {
+              "seq": 29,
+              "type": "enemy-moved",
+              "round": 3,
+              "enemyId": "jammer-1",
+              "from": "6,2",
+              "to": "3,3",
+              "path": [
+                "5,2",
+                "4,2",
+                "3,3"
+              ]
+            },
+            {
+              "seq": 30,
+              "type": "lock-broken",
+              "round": 3,
+              "enemyId": "jammer-1",
+              "groupIds": [
+                "row-0",
+                "network"
+              ],
+              "strength": 2,
+              "power": 4,
+              "removed": 1
+            },
+            {
+              "seq": 31,
+              "type": "puzzle-disrupted",
+              "round": 3,
+              "enemyId": "jammer-1",
+              "memberId": "r0c1",
+              "kind": "jam",
+              "outputsBefore": {
+                "bridge": true,
+                "shelter": true,
+                "roots": false,
+                "storm": false
+              },
+              "outputsAfter": {
+                "bridge": false,
+                "shelter": false,
+                "roots": false,
+                "storm": false
+              }
+            },
+            {
+              "seq": 32,
+              "type": "orchard-damaged",
+              "round": 3,
+              "amount": 3,
+              "integrityBefore": 14,
+              "integrityAfter": 11,
+              "cause": {
+                "hazardId": "root-drain",
+                "siteId": "sustain-site"
+              }
+            },
+            {
+              "seq": 33,
+              "type": "round-started",
+              "round": 4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 21,
+        "payload": {
+          "destination": "4,2",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "position",
+            "before": "6,4",
+            "after": "4,2"
+          },
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 4
+          },
+          {
+            "key": "cost",
+            "value": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 34,
+            "type": "hero-moved",
+            "round": 4,
+            "heroId": "bushel",
+            "from": "6,4",
+            "to": "4,2",
+            "path": [
+              "6,3",
+              "6,2",
+              "5,2",
+              "4,2"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "6,3",
+          "6,2",
+          "5,2",
+          "4,2"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 22,
+        "payload": {
+          "destination": "2,4",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "position",
+            "before": "4,2",
+            "after": "2,4"
+          },
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 4
+          },
+          {
+            "key": "cost",
+            "value": 3
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 35,
+            "type": "hero-moved",
+            "round": 4,
+            "heroId": "bushel",
+            "from": "4,2",
+            "to": "2,4",
+            "path": [
+              "3,2",
+              "2,3",
+              "2,4"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "3,2",
+          "2,3",
+          "2,4"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "hold",
+        "heroId": "furrow",
+        "expectedRevision": 23,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "hold",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "holding",
+            "before": null,
+            "after": "shape"
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {},
+            "after": {
+              "shape": {
+                "holdId": "furrow@r4#36",
+                "heroId": "furrow"
+              }
+            }
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {},
+              "lock": {},
+              "stabilise": {}
+            },
+            "after": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {}
+            }
+          }
+        ],
+        "factors": [
+          {
+            "key": "hold",
+            "job": "shape",
+            "need": [
+              0,
+              4,
+              0,
+              0,
+              2
+            ],
+            "have": [
+              1,
+              4,
+              2,
+              1,
+              5
+            ]
+          },
+          {
+            "key": "hold-grant",
+            "kind": "shield",
+            "targetId": "shape",
+            "amount": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 36,
+            "type": "hold-started",
+            "round": 4,
+            "heroId": "furrow",
+            "stationId": "shape",
+            "job": "shape",
+            "holdId": "furrow@r4#36",
+            "granted": [
+              {
+                "kind": "shield",
+                "targetId": "shape",
+                "amount": 4
+              }
+            ]
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "hold",
+        "heroId": "pip",
+        "expectedRevision": 24,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "hold",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "holding",
+            "before": null,
+            "after": "sustain"
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {
+              "shape": {
+                "holdId": "furrow@r4#36",
+                "heroId": "furrow"
+              }
+            },
+            "after": {
+              "shape": {
+                "holdId": "furrow@r4#36",
+                "heroId": "furrow"
+              },
+              "sustain": {
+                "holdId": "pip@r4#37",
+                "heroId": "pip"
+              }
+            }
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {}
+            },
+            "after": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {
+                "*hazard": 6
+              }
+            }
+          }
+        ],
+        "factors": [
+          {
+            "key": "hold",
+            "job": "sustain",
+            "need": [
+              0,
+              0,
+              0,
+              5,
+              2
+            ],
+            "have": [
+              1,
+              1,
+              3,
+              6,
+              2
+            ]
+          },
+          {
+            "key": "hold-grant",
+            "kind": "stabilise",
+            "targetId": "*hazard",
+            "amount": 6
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 37,
+            "type": "hold-started",
+            "round": 4,
+            "heroId": "pip",
+            "stationId": "sustain",
+            "job": "sustain",
+            "holdId": "pip@r4#37",
+            "granted": [
+              {
+                "kind": "stabilise",
+                "targetId": "*hazard",
+                "amount": 6
+              }
+            ]
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 25,
+        "payload": {
+          "forecastRevision": 25
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "end-round",
+        "heroId": null,
+        "cost": {
+          "ap": 0,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 0,
+            "after": 2
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 2
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "holding",
+            "before": "shape",
+            "after": null
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 2
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "holding",
+            "before": "sustain",
+            "after": null
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {
+              "shape": {
+                "holdId": "furrow@r4#36",
+                "heroId": "furrow"
+              },
+              "sustain": {
+                "holdId": "pip@r4#37",
+                "heroId": "pip"
+              }
+            },
+            "after": {}
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {
+                "*hazard": 6
+              }
+            },
+            "after": {
+              "shield": {},
+              "lock": {},
+              "stabilise": {}
+            }
+          },
+          {
+            "id": "round",
+            "kind": "round",
+            "field": "round",
+            "before": 4,
+            "after": 5
+          }
+        ],
+        "factors": [],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 38,
+            "type": "puzzle-disrupted",
+            "round": 4,
+            "enemyId": "jammer-1",
+            "memberId": "r0c3",
+            "kind": "jam",
+            "outputsBefore": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            },
+            "outputsAfter": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            }
+          },
+          {
+            "seq": 39,
+            "type": "hazard-blocked",
+            "round": 4,
+            "hazardId": "root-drain",
+            "siteId": "sustain-site",
+            "strength": 6,
+            "power": 4
+          },
+          {
+            "seq": 40,
+            "type": "round-started",
+            "round": 5
+          }
+        ],
+        "status": "playing",
+        "phase": {
+          "round": 4,
+          "phaseStart": [],
+          "intents": [
+            {
+              "enemyId": "jammer-1",
+              "ruleId": "jammer",
+              "artId": "hookmole",
+              "from": "3,3",
+              "path": [],
+              "targetId": "control",
+              "verb": "disrupt",
+              "power": 4,
+              "puzzleChange": {
+                "memberId": "r0c3",
+                "groupIds": [
+                  "row-0",
+                  "network"
+                ],
+                "kind": "jam"
+              },
+              "hpChange": null,
+              "blockedBy": null,
+              "actualPath": [],
+              "puzzleChangeApplied": true
+            }
+          ],
+          "hazards": [
+            {
+              "hazardId": "root-drain",
+              "power": 4,
+              "mutation": null,
+              "sites": [
+                {
+                  "siteId": "sustain-site",
+                  "blocked": true,
+                  "strength": 6
+                }
+              ]
+            }
+          ],
+          "outcome": {
+            "status": "playing",
+            "lossReason": null,
+            "wouldWin": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "outputs-short",
+                "params": {
+                  "have": 0,
+                  "need": 2
+                }
+              },
+              {
+                "code": "sudoku-incomplete",
+                "params": {}
+              }
+            ]
+          },
+          "phaseStartEvents": [],
+          "verdict": {
+            "won": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "outputs-short",
+                "params": {
+                  "have": 0,
+                  "need": 2
+                }
+              },
+              {
+                "code": "sudoku-incomplete",
+                "params": {}
+              }
+            ]
+          },
+          "events": [
+            {
+              "seq": 38,
+              "type": "puzzle-disrupted",
+              "round": 4,
+              "enemyId": "jammer-1",
+              "memberId": "r0c3",
+              "kind": "jam",
+              "outputsBefore": {
+                "bridge": false,
+                "shelter": false,
+                "roots": false,
+                "storm": false
+              },
+              "outputsAfter": {
+                "bridge": false,
+                "shelter": false,
+                "roots": false,
+                "storm": false
+              }
+            },
+            {
+              "seq": 39,
+              "type": "hazard-blocked",
+              "round": 4,
+              "hazardId": "root-drain",
+              "siteId": "sustain-site",
+              "strength": 6,
+              "power": 4
+            },
+            {
+              "seq": 40,
+              "type": "round-started",
+              "round": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "command": {
+        "type": "operate",
+        "heroId": "bushel",
+        "expectedRevision": 26,
+        "payload": {
+          "draftRevision": 1,
+          "outputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "lockGroupId": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "operate",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "outputs",
+            "kind": "outputs",
+            "field": "active",
+            "before": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            },
+            "after": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            }
+          },
+          {
+            "id": "passages",
+            "kind": "passages",
+            "field": "state",
+            "before": {
+              "4,4": {
+                "open": false,
+                "closingPending": false
+              }
+            },
+            "after": {
+              "4,4": {
+                "open": true,
+                "closingPending": false
+              }
+            }
+          }
+        ],
+        "factors": [
+          {
+            "key": "commit",
+            "outputIds": [
+              "bridge",
+              "shelter"
+            ],
+            "valid": true
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 41,
+            "type": "puzzle-committed",
+            "round": 5,
+            "heroId": "bushel",
+            "outputIds": [
+              "bridge",
+              "shelter"
+            ],
+            "outputsBefore": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            },
+            "outputsAfter": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            },
+            "valid": true
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "move",
+        "heroId": "bushel",
+        "expectedRevision": 27,
+        "payload": {
+          "destination": "6,4",
+          "path": null
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "move",
+        "heroId": "bushel",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "position",
+            "before": "2,4",
+            "after": "6,4"
+          },
+          {
+            "id": "bushel",
+            "kind": "hero",
+            "field": "ap",
+            "before": 1,
+            "after": 0
+          }
+        ],
+        "factors": [
+          {
+            "key": "budget",
+            "value": 4
+          },
+          {
+            "key": "cost",
+            "value": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 42,
+            "type": "hero-moved",
+            "round": 5,
+            "heroId": "bushel",
+            "from": "2,4",
+            "to": "6,4",
+            "path": [
+              "3,4",
+              "4,4",
+              "5,4",
+              "6,4"
+            ],
+            "cause": "move"
+          }
+        ],
+        "status": "playing",
+        "path": [
+          "3,4",
+          "4,4",
+          "5,4",
+          "6,4"
+        ]
+      }
+    },
+    {
+      "command": {
+        "type": "hold",
+        "heroId": "furrow",
+        "expectedRevision": 28,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "hold",
+        "heroId": "furrow",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "holding",
+            "before": null,
+            "after": "shape"
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {},
+            "after": {
+              "shape": {
+                "holdId": "furrow@r5#43",
+                "heroId": "furrow"
+              }
+            }
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {},
+              "lock": {},
+              "stabilise": {}
+            },
+            "after": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {}
+            }
+          }
+        ],
+        "factors": [
+          {
+            "key": "hold",
+            "job": "shape",
+            "need": [
+              0,
+              4,
+              0,
+              0,
+              2
+            ],
+            "have": [
+              1,
+              4,
+              2,
+              1,
+              5
+            ]
+          },
+          {
+            "key": "hold-grant",
+            "kind": "shield",
+            "targetId": "shape",
+            "amount": 4
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 43,
+            "type": "hold-started",
+            "round": 5,
+            "heroId": "furrow",
+            "stationId": "shape",
+            "job": "shape",
+            "holdId": "furrow@r5#43",
+            "granted": [
+              {
+                "kind": "shield",
+                "targetId": "shape",
+                "amount": 4
+              }
+            ]
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "hold",
+        "heroId": "pip",
+        "expectedRevision": 29,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "hold",
+        "heroId": "pip",
+        "cost": {
+          "ap": 1,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "ap",
+            "before": 2,
+            "after": 1
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "holding",
+            "before": null,
+            "after": "sustain"
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {
+              "shape": {
+                "holdId": "furrow@r5#43",
+                "heroId": "furrow"
+              }
+            },
+            "after": {
+              "shape": {
+                "holdId": "furrow@r5#43",
+                "heroId": "furrow"
+              },
+              "sustain": {
+                "holdId": "pip@r5#44",
+                "heroId": "pip"
+              }
+            }
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {}
+            },
+            "after": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {
+                "*hazard": 6
+              }
+            }
+          }
+        ],
+        "factors": [
+          {
+            "key": "hold",
+            "job": "sustain",
+            "need": [
+              0,
+              0,
+              0,
+              5,
+              2
+            ],
+            "have": [
+              1,
+              1,
+              3,
+              6,
+              2
+            ]
+          },
+          {
+            "key": "hold-grant",
+            "kind": "stabilise",
+            "targetId": "*hazard",
+            "amount": 6
+          }
+        ],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 44,
+            "type": "hold-started",
+            "round": 5,
+            "heroId": "pip",
+            "stationId": "sustain",
+            "job": "sustain",
+            "holdId": "pip@r5#44",
+            "granted": [
+              {
+                "kind": "stabilise",
+                "targetId": "*hazard",
+                "amount": 6
+              }
+            ]
+          }
+        ],
+        "status": "playing"
+      }
+    },
+    {
+      "command": {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 30,
+        "payload": {
+          "forecastRevision": 30
+        }
+      },
+      "result": {
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null,
+        "type": "end-round",
+        "heroId": null,
+        "cost": {
+          "ap": 0,
+          "card": null
+        },
+        "changedEntities": [
+          {
+            "id": "furrow",
+            "kind": "hero",
+            "field": "holding",
+            "before": "shape",
+            "after": null
+          },
+          {
+            "id": "pip",
+            "kind": "hero",
+            "field": "holding",
+            "before": "sustain",
+            "after": null
+          },
+          {
+            "id": "outputs",
+            "kind": "outputs",
+            "field": "active",
+            "before": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            },
+            "after": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            }
+          },
+          {
+            "id": "passages",
+            "kind": "passages",
+            "field": "state",
+            "before": {
+              "4,4": {
+                "open": true,
+                "closingPending": false
+              }
+            },
+            "after": {
+              "4,4": {
+                "open": false,
+                "closingPending": false
+              }
+            }
+          },
+          {
+            "id": "holds",
+            "kind": "holds",
+            "field": "holds",
+            "before": {
+              "shape": {
+                "holdId": "furrow@r5#43",
+                "heroId": "furrow"
+              },
+              "sustain": {
+                "holdId": "pip@r5#44",
+                "heroId": "pip"
+              }
+            },
+            "after": {}
+          },
+          {
+            "id": "protection",
+            "kind": "protection",
+            "field": "summary",
+            "before": {
+              "shield": {
+                "shape": 4
+              },
+              "lock": {},
+              "stabilise": {
+                "*hazard": 6
+              }
+            },
+            "after": {
+              "shield": {},
+              "lock": {},
+              "stabilise": {}
+            }
+          }
+        ],
+        "factors": [],
+        "warnings": [],
+        "outputsBefore": {
+          "bridge": true,
+          "shelter": true,
+          "roots": false,
+          "storm": false
+        },
+        "outputsAfter": {
+          "bridge": false,
+          "shelter": false,
+          "roots": false,
+          "storm": false
+        },
+        "forecastAfter": null,
+        "events": [
+          {
+            "seq": 45,
+            "type": "shelter-applied",
+            "round": 5,
+            "outputId": "shelter",
+            "targetIds": [
+              "number",
+              "shape",
+              "sustain"
+            ],
+            "amount": 2
+          },
+          {
+            "seq": 46,
+            "type": "puzzle-disrupted",
+            "round": 5,
+            "enemyId": "jammer-1",
+            "memberId": "r0c1",
+            "kind": "jam",
+            "outputsBefore": {
+              "bridge": true,
+              "shelter": true,
+              "roots": false,
+              "storm": false
+            },
+            "outputsAfter": {
+              "bridge": false,
+              "shelter": false,
+              "roots": false,
+              "storm": false
+            }
+          },
+          {
+            "seq": 47,
+            "type": "hazard-blocked",
+            "round": 5,
+            "hazardId": "root-drain",
+            "siteId": "sustain-site",
+            "strength": 6,
+            "power": 4
+          },
+          {
+            "seq": 48,
+            "type": "run-lost",
+            "round": 5,
+            "code": "deadline",
+            "params": {
+              "unmet": [
+                {
+                  "code": "job-not-held",
+                  "params": {
+                    "job": "number"
+                  }
+                },
+                {
+                  "code": "outputs-short",
+                  "params": {
+                    "have": 0,
+                    "need": 2
+                  }
+                },
+                {
+                  "code": "sudoku-incomplete",
+                  "params": {}
+                }
+              ]
+            }
+          }
+        ],
+        "status": "lost",
+        "phase": {
+          "round": 5,
+          "phaseStart": [],
+          "intents": [
+            {
+              "enemyId": "jammer-1",
+              "ruleId": "jammer",
+              "artId": "hookmole",
+              "from": "3,3",
+              "path": [],
+              "targetId": "control",
+              "verb": "disrupt",
+              "power": 4,
+              "puzzleChange": {
+                "memberId": "r0c1",
+                "groupIds": [
+                  "row-0",
+                  "network"
+                ],
+                "kind": "jam"
+              },
+              "hpChange": null,
+              "blockedBy": null,
+              "actualPath": [],
+              "puzzleChangeApplied": true
+            }
+          ],
+          "hazards": [
+            {
+              "hazardId": "root-drain",
+              "power": 4,
+              "mutation": null,
+              "sites": [
+                {
+                  "siteId": "sustain-site",
+                  "blocked": true,
+                  "strength": 6
+                }
+              ]
+            }
+          ],
+          "outcome": {
+            "status": "lost",
+            "lossReason": {
+              "code": "deadline",
+              "params": {
+                "unmet": [
+                  {
+                    "code": "job-not-held",
+                    "params": {
+                      "job": "number"
+                    }
+                  },
+                  {
+                    "code": "outputs-short",
+                    "params": {
+                      "have": 0,
+                      "need": 2
+                    }
+                  },
+                  {
+                    "code": "sudoku-incomplete",
+                    "params": {}
+                  }
+                ]
+              }
+            },
+            "wouldWin": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "outputs-short",
+                "params": {
+                  "have": 0,
+                  "need": 2
+                }
+              },
+              {
+                "code": "sudoku-incomplete",
+                "params": {}
+              }
+            ]
+          },
+          "phaseStartEvents": [
+            {
+              "seq": 45,
+              "type": "shelter-applied",
+              "round": 5,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            }
+          ],
+          "verdict": {
+            "won": false,
+            "unmet": [
+              {
+                "code": "job-not-held",
+                "params": {
+                  "job": "number"
+                }
+              },
+              {
+                "code": "outputs-short",
+                "params": {
+                  "have": 0,
+                  "need": 2
+                }
+              },
+              {
+                "code": "sudoku-incomplete",
+                "params": {}
+              }
+            ]
+          },
+          "events": [
+            {
+              "seq": 45,
+              "type": "shelter-applied",
+              "round": 5,
+              "outputId": "shelter",
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ],
+              "amount": 2
+            },
+            {
+              "seq": 46,
+              "type": "puzzle-disrupted",
+              "round": 5,
+              "enemyId": "jammer-1",
+              "memberId": "r0c1",
+              "kind": "jam",
+              "outputsBefore": {
+                "bridge": true,
+                "shelter": true,
+                "roots": false,
+                "storm": false
+              },
+              "outputsAfter": {
+                "bridge": false,
+                "shelter": false,
+                "roots": false,
+                "storm": false
+              }
+            },
+            {
+              "seq": 47,
+              "type": "hazard-blocked",
+              "round": 5,
+              "hazardId": "root-drain",
+              "siteId": "sustain-site",
+              "strength": 6,
+              "power": 4
+            },
+            {
+              "seq": 48,
+              "type": "run-lost",
+              "round": 5,
+              "code": "deadline",
+              "params": {
+                "unmet": [
+                  {
+                    "code": "job-not-held",
+                    "params": {
+                      "job": "number"
+                    }
+                  },
+                  {
+                    "code": "outputs-short",
+                    "params": {
+                      "have": 0,
+                      "need": 2
+                    }
+                  },
+                  {
+                    "code": "sudoku-incomplete",
+                    "params": {}
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

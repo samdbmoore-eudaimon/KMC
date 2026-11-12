@@ -53,3 +53,6 @@ cloudflare-worker/accounts/.wrangler/
 # per-file push limit. runtime/ (what the app actually imports) and mockups/ stay tracked.
 assets/expeditions/**/qa/
 assets/expeditions/**/source-sheets/
+
+# Build-time image re-encode cache (scripts/lib/image-optimise.cjs); safe to delete
+.cache/

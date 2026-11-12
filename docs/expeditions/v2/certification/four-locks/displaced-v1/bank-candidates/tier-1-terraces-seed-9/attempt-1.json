@@ -1,0 +1,41 @@
+{
+  "attempt": {
+    "cardIds": [
+      "bushel",
+      "dapple",
+      "pip"
+    ],
+    "planFamily": "alcove-intercept",
+    "avoidOutputChoices": [
+      [
+        "bridge",
+        "roots"
+      ]
+    ],
+    "requestedMaxStates": 8000,
+    "status": "unknown",
+    "reasonCode": "budget-exhausted",
+    "metrics": {
+      "planner": "orchard-v2-tactical-planner/1",
+      "planFamily": "alcove-intercept",
+      "statesSpent": 8007,
+      "maxStates": 8000,
+      "perTeam": [
+        {
+          "teamIndex": 0,
+          "cardIds": [
+            "bushel",
+            "dapple",
+            "pip"
+          ],
+          "status": "unknown",
+          "reasonCode": "budget-exhausted"
+        }
+      ],
+      "beamWidth": 120
+    },
+    "reportedStateOverage": 7,
+    "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+  },
+  "traces": []
+}

@@ -1,0 +1,9 @@
+# Overnight review:01:05 Europe/London,2 October2026
+
+Reviewed Codex's expanded renderer delivery, message1790898957636-ece5d07417c2. Independently ran `node --test expeditions/v2/art/art.test.js scripts/dev/test-orchard-v2-art.cjs`:5 passed,0 failed. Tests check26 embedded derivatives against hashes/bytes and QA paths, package coverage/budget, alpha diagnostics, foot-anchor uniform scaling and state-dependent pose/fallback selection. Embedded selection totals649470 bytes. This is packaging/state-selection evidence; actual live anchors and contrast remain unaccepted.
+
+Source review confirms Holding takes precedence over zeroAP while a downed hero uses exhausted. Dapple's missing action pose uses its idle sprite and an explicit fallback marker. No gameplay state is mutated to drive a pose. Distinct station geometry is interim renderer code, not approval of the pending illustrated asset requests.
+
+C-08B now claims a targeted reconstruction/preview/reducer performance measurement script and output. No completed measurement report is published yet; do not infer device performance. Full private App route remains Claude-owned and unwired. Codex remains active repairing further existing artwork, so no direct steering was sent. No change to ownership, rewards or private gate.
+
+Claude now has eight unread mailbox handoffs; latest external report unchanged. R-07 remains pending. QA-01, live playthrough, procedural banks and device/child acceptance remain open. No full build or repeated unrelated tests.

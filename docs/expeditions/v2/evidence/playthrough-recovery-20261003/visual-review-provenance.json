@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-10-03T08:51:45.358Z",
+  "files": {
+    "expeditions/v2/ui/MapViewport.jsx": "fc9cf82f87346957976bc164391e9122d75c7f715cb8c0b4f67ee799b5e46fdf",
+    "expeditions/v2/ui/RiverTerrain.jsx": "ca6e030e9e632c289d0a0bf0f5fa9f0fb8c89669c0d17acc0200c33f9697764d",
+    "expeditions/v2/ui/StationLabels.jsx": "fe89634ac9c055d52034d8b51609d27e15b31ca6f911287173c5647fd6a6a98b",
+    "scripts/dev/playthrough-visual-review.jsx": "8d1baa18219b56a7ddb42ad15045542ba3b64d182885aa095f37d41db5de42c3",
+    "scripts/dev/playthrough-visual.test.mjs": "e193c12d621d0f4bb1a2b0a909d38c6a6c9a0445a6894266d8864b20e8ea962f",
+    "docs/expeditions/v2/evidence/playthrough-recovery-20261003/sam-playthrough-state.json": "fa386b1399df3c1bad423b803d2cb84eb073ed61ac2b4eac6db42d71df71c9e9",
+    "docs/expeditions/v2/evidence/playthrough-recovery-20261003/sam-playthrough-trace.json": "68d2816cd67a15f18815af81cd7628e3960c6c10a6d43a9778d641b4c1d8a548",
+    "docs/expeditions/v2/evidence/playthrough-recovery-20261003/visual-review.html": "35b16b36e4364c591c5469dfd14ceae226ebf0fc8ac8135ad7609a972e55201f"
+  },
+  "matrixCaptures": 144,
+  "tests": {
+    "scopedArtRiver": 13,
+    "mapGeometryInteraction": 2
+  },
+  "browserChecks": {
+    "keyboardTransfer": true,
+    "escape": true,
+    "stationClick": true,
+    "explicitActionsCallback": 1
+  },
+  "limitations": [
+    "Map-only snapshot fixture, no shared App certification",
+    "Viewport emulation, no native touch hardware",
+    "Hover trajectory covered by jsdom pointer events, browser API lacks pointer hover"
+  ]
+}

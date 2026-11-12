@@ -1,0 +1,131 @@
+{
+  "packetId": "four-locks-displaced-v1",
+  "generatorVersion": 2,
+  "batchId": "21-24",
+  "sourceTopologyHash": "1be5539afb8409c7",
+  "candidateHash": "953007af0471fd4a",
+  "requestedLimits": {
+    "maxPlannerInvocations": 2,
+    "maxStatesPerInvocation": 8000
+  },
+  "attempts": [
+    {
+      "cardIds": [
+        "tuppence",
+        "wicker",
+        "pip"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 8009,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "wicker",
+              "pip"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 9,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    },
+    {
+      "cardIds": [
+        "bushel",
+        "dapple",
+        "pip"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 8003,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "dapple",
+              "pip"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 3,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    }
+  ],
+  "certification": {
+    "status": "unknown",
+    "errors": [
+      "two-distinct-target-teams-missing",
+      "different-target-output-plans-missing",
+      "physical-alcove-proof-missing"
+    ],
+    "checks": [],
+    "lowerBand": {
+      "method": "exact-printed-stat-enumeration",
+      "rows": [
+        {
+          "job": "number",
+          "requirement": [
+            4,
+            0,
+            2,
+            0,
+            0
+          ],
+          "eligibleBelow": []
+        },
+        {
+          "job": "shape",
+          "requirement": [
+            0,
+            4,
+            0,
+            0,
+            2
+          ],
+          "eligibleBelow": []
+        },
+        {
+          "job": "sustain",
+          "requirement": [
+            0,
+            0,
+            0,
+            5,
+            2
+          ],
+          "eligibleBelow": []
+        }
+      ]
+    }
+  }
+}

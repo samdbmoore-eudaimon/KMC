@@ -1,0 +1,29 @@
+{
+  "family": "four",
+  "tier": 5,
+  "seed": 6,
+  "layoutId": "river",
+  "team": [
+    "warden",
+    "gossamer",
+    "harvestmoon"
+  ],
+  "planFamily": "direct-guard",
+  "status": "unknown",
+  "reasonCode": "crossing-exit-blocked",
+  "violations": [
+    {
+      "crossing": "4,4",
+      "controlled": true,
+      "regionsTouched": 1,
+      "neighbours": [
+        "5,4:hedge",
+        "5,3:water",
+        "4,3:floor",
+        "3,4:floor",
+        "3,5:roots",
+        "4,5:water"
+      ]
+    }
+  ]
+}

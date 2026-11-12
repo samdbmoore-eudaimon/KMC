@@ -1,0 +1,205 @@
+{
+  "status": "private-browser-review-pending",
+  "selectedBytes": 873056,
+  "combinedSelectedBytes": 2277172,
+  "assets": {
+    "backdrop": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/backgrounds/po-squad-select-backdrop-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/backdrop.webp",
+      "width": 1400,
+      "height": 788,
+      "bytes": 222690,
+      "sha256": "6892cc6b606a524f1e0c0cada692be96c6093ba7b1bfbe496a57efa55aec1f5b",
+      "alpha": false,
+      "qaPaths": [],
+      "use": "scenery-or-responsive-ui"
+    },
+    "gorge": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/backgrounds/po-orchard-gorge-v1.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/gorge.webp",
+      "width": 1400,
+      "height": 788,
+      "bytes": 215178,
+      "sha256": "abfcebbfbd69c65d1d0e19c8ff950f2251100a4b9836683772c783dbdbff97ab",
+      "alpha": false,
+      "qaPaths": [],
+      "use": "scenery-or-responsive-ui"
+    },
+    "briefing": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-squad-briefing-panel-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/briefing.webp",
+      "width": 620,
+      "height": 751,
+      "bytes": 66440,
+      "sha256": "785bdc34dadd126f7fcd2a16f08188886229751bcd6ada37e91a36a4719bf803",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/briefing-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/briefing-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/briefing-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/briefing-cyan.png"
+      ],
+      "use": "scenery-or-responsive-ui"
+    },
+    "heroFrame": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-hero-card-frame-wide-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/heroFrame.webp",
+      "width": 440,
+      "height": 176,
+      "bytes": 20554,
+      "sha256": "05dfcadeb3104d6c6a638fdfcfa0521585b8363618d99b5ffee956d650f5f971",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/heroFrame-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/heroFrame-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/heroFrame-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/heroFrame-cyan.png"
+      ],
+      "use": "scenery-or-responsive-ui"
+    },
+    "button": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-available-v1.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/button.webp",
+      "width": 220,
+      "height": 123,
+      "bytes": 10858,
+      "sha256": "b724204a9900457b8ac7f15863f847b3b303be9ae06c61b1dbb33ab0f1a196fa",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/button-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/button-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/button-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/button-cyan.png"
+      ],
+      "use": "scenery-or-responsive-ui"
+    },
+    "embark": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-squad-embark-button-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/embark.webp",
+      "width": 400,
+      "height": 160,
+      "bytes": 16390,
+      "sha256": "5d1c32fa8f3c6afe6f7156f72c8f2de05c079c98e2b347c78e9c563acd8bc0f8",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/embark-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/embark-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/embark-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/embark-cyan.png"
+      ],
+      "use": "scenery-or-responsive-ui"
+    },
+    "corners": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-squad-card-selection-corners-v1.png",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/corners.webp",
+      "width": 220,
+      "height": 220,
+      "bytes": 18842,
+      "sha256": "5df82256b53f057900f2513ff4f0db773683f69c9aa3621c73456d677fd30289",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/corners-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/corners-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/corners-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/corners-cyan.png"
+      ],
+      "use": "scenery-or-responsive-ui"
+    },
+    "grass": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-hex-grass-v3.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/grass.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 42306,
+      "sha256": "b88f41328cfbf1e27b937ba55e06aac7d788aeb1fc8d262ae8259438efa4ea59",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/grass-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/grass-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/grass-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/grass-cyan.png"
+      ],
+      "use": "surface-material-on-code-hex"
+    },
+    "path": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-path-v1.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/path.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 51018,
+      "sha256": "4c437b65b4b6c23d752c2aa20d380c63997601990efcdc8e3ed62894ebdf0b66",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/path-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/path-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/path-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/path-cyan.png"
+      ],
+      "use": "surface-material-on-code-hex"
+    },
+    "roots": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-roots-v1.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/roots.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 51294,
+      "sha256": "788901ee742b36dc5ce74472756a44b8cff4349c435345b18e5a94fddbdf67d5",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/roots-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/roots-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/roots-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/roots-cyan.png"
+      ],
+      "use": "surface-material-on-code-hex"
+    },
+    "water": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stream-v1.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/water.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 52186,
+      "sha256": "cab7ff75167a0c501e7cdc4b2f9695b6f04ca6a300329582456b3cc70d403e0b",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/water-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/water-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/water-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/water-cyan.png"
+      ],
+      "use": "surface-material-on-code-hex"
+    },
+    "hedge": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-hedge-v1.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/hedge.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 56194,
+      "sha256": "9faf88974cf65580b3648352e87fa8e0092581ed4ccb1b28679156317a7488d8",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/hedge-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/hedge-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/hedge-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/hedge-cyan.png"
+      ],
+      "use": "surface-material-on-code-hex"
+    },
+    "bridge": {
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-timber-bridge-v1.webp",
+      "runtimePath": "assets/expeditions/production/9fo/v2/recovery/bridge.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 49106,
+      "sha256": "b14b731e5d9329acf04b1c7b2deb481719c5ea7c64c346176d7acde47af0e73b",
+      "alpha": true,
+      "qaPaths": [
+        "assets/expeditions/production/9fo/v2/recovery/qa/bridge-white.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/bridge-black.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/bridge-green.png",
+        "assets/expeditions/production/9fo/v2/recovery/qa/bridge-cyan.png"
+      ],
+      "use": "surface-material-on-code-hex"
+    }
+  }
+}

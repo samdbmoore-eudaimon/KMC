@@ -1,0 +1,1292 @@
+{
+ "summary": {
+  "family": "maybe-flock",
+  "tier": 1,
+  "scanned": 64,
+  "built": 51,
+  "accepted": 16,
+  "distinctTopologies": 16,
+  "distinctPuzzles": 12,
+  "maxStates": 6000
+ },
+ "rows": [
+  {
+   "layoutId": "river",
+   "seed": 1,
+   "tier": 1,
+   "topology": "959a892f030ff9c4",
+   "puzzle": "557843f5ea36ecf4",
+   "contentHash": "87bb72b6e51e2a79",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 532
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 621
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1102
+  },
+  {
+   "layoutId": "river",
+   "seed": 2,
+   "tier": 1,
+   "topology": "749a47b52b2e9972",
+   "puzzle": "e4552f85e41d94e8",
+   "contentHash": "4f09abf85a7c5469",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3871
+  },
+  {
+   "layoutId": "river",
+   "seed": 3,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 27
+  },
+  {
+   "layoutId": "river",
+   "seed": 4,
+   "tier": 1,
+   "topology": "3518008d484948ce",
+   "puzzle": "db7dde55c77b0b98",
+   "contentHash": "11acc0b87dd8fb09",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4485
+  },
+  {
+   "layoutId": "river",
+   "seed": 5,
+   "tier": 1,
+   "topology": "8b1ac2c296b8d675",
+   "puzzle": "a9387c2563defa28",
+   "contentHash": "5f4b4512099c6659",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3803
+  },
+  {
+   "layoutId": "river",
+   "seed": 6,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 16
+  },
+  {
+   "layoutId": "river",
+   "seed": 7,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 8,
+   "tier": 1,
+   "topology": "f9fa72e15e561756",
+   "puzzle": "6cf10eae5fc06783",
+   "contentHash": "486eea091a471648",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 495
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 622
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1204
+  },
+  {
+   "layoutId": "river",
+   "seed": 9,
+   "tier": 1,
+   "topology": "0faece2de80fa7ce",
+   "puzzle": "f5d646e23251ec93",
+   "contentHash": "278d354476b5c3ab",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4009
+  },
+  {
+   "layoutId": "river",
+   "seed": 10,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 11
+  },
+  {
+   "layoutId": "river",
+   "seed": 11,
+   "tier": 1,
+   "topology": "35b3f6fdd6860fda",
+   "puzzle": "81113824dfae6851",
+   "contentHash": "d5ce141668180c85",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 554
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 1010
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 5622
+  },
+  {
+   "layoutId": "river",
+   "seed": 12,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 13,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 14,
+   "tier": 1,
+   "topology": "2770334502412866",
+   "puzzle": "fd6f66ab31052482",
+   "contentHash": "43cb13d61999fa57",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3928
+  },
+  {
+   "layoutId": "river",
+   "seed": 15,
+   "tier": 1,
+   "topology": "599b99ffd6503040",
+   "puzzle": "ffe1d578c659d7d1",
+   "contentHash": "f915359b959e8318",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 479
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 631
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1276
+  },
+  {
+   "layoutId": "river",
+   "seed": 16,
+   "tier": 1,
+   "topology": "fecfa1ddd0262aca",
+   "puzzle": "dfb4254460f567e5",
+   "contentHash": "41bcbe50532b3a75",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 533
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 631
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1056
+  },
+  {
+   "layoutId": "islands",
+   "seed": 1,
+   "tier": 1,
+   "topology": "232cf9ad99995c6c",
+   "puzzle": "557843f5ea36ecf4",
+   "contentHash": "52f28141d4e86542",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4053
+  },
+  {
+   "layoutId": "islands",
+   "seed": 2,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "islands",
+   "seed": 3,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 65
+  },
+  {
+   "layoutId": "islands",
+   "seed": 4,
+   "tier": 1,
+   "topology": "9881f6b27e48e25b",
+   "puzzle": "db7dde55c77b0b98",
+   "contentHash": "1a7a667fdeb06066",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3475
+  },
+  {
+   "layoutId": "islands",
+   "seed": 5,
+   "tier": 1,
+   "topology": "150a263d66d0d0ac",
+   "puzzle": "a9387c2563defa28",
+   "contentHash": "2f58b454e9c65107",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 684
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 248
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3245
+  },
+  {
+   "layoutId": "islands",
+   "seed": 6,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 71
+  },
+  {
+   "layoutId": "islands",
+   "seed": 7,
+   "tier": 1,
+   "topology": "f08a72526a07e77b",
+   "puzzle": "7c9556ec4d12c83d",
+   "contentHash": "2c8e355efe48fa1f",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 3813
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 334
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3183
+  },
+  {
+   "layoutId": "islands",
+   "seed": 8,
+   "tier": 1,
+   "topology": "883959c00faf8f09",
+   "puzzle": "6cf10eae5fc06783",
+   "contentHash": "c1d4cd4507abafd8",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 646
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 1545
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1915
+  },
+  {
+   "layoutId": "islands",
+   "seed": 9,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 58
+  },
+  {
+   "layoutId": "islands",
+   "seed": 10,
+   "tier": 1,
+   "topology": "5b137c3ae6df1863",
+   "puzzle": "7a4e3c06cc9aaabd",
+   "contentHash": "1c8491b3b55efb2e",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3626
+  },
+  {
+   "layoutId": "islands",
+   "seed": 11,
+   "tier": 1,
+   "topology": "e3d353b77ab7bd46",
+   "puzzle": "81113824dfae6851",
+   "contentHash": "df6769f943517502",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4198
+  },
+  {
+   "layoutId": "islands",
+   "seed": 12,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 24
+  },
+  {
+   "layoutId": "islands",
+   "seed": 13,
+   "tier": 1,
+   "topology": "f2a346b088a1d24d",
+   "puzzle": "6f3fa45cdcb9bdd1",
+   "contentHash": "e507c2dfd61f958e",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 507
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 895
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2202
+  },
+  {
+   "layoutId": "islands",
+   "seed": 14,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 39
+  },
+  {
+   "layoutId": "islands",
+   "seed": 15,
+   "tier": 1,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 42
+  },
+  {
+   "layoutId": "islands",
+   "seed": 16,
+   "tier": 1,
+   "topology": "aa9e9e5203ee991b",
+   "puzzle": "dfb4254460f567e5",
+   "contentHash": "0132da68374c39ad",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4834
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 1,
+   "tier": 1,
+   "topology": "368bd9d7df9f6548",
+   "puzzle": "557843f5ea36ecf4",
+   "contentHash": "7e3ef0bff6a96976",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 532
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 8449
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 2,
+   "tier": 1,
+   "topology": "91d8a97177e769d6",
+   "puzzle": "e4552f85e41d94e8",
+   "contentHash": "c4aff441bc163a9a",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3982
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 3,
+   "tier": 1,
+   "topology": "b2492a5f4808ab08",
+   "puzzle": "aa79842527257e94",
+   "contentHash": "3b3a0e15cbf662c6",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4062
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 4,
+   "tier": 1,
+   "topology": "ae5bb62f5dce1f18",
+   "puzzle": "db7dde55c77b0b98",
+   "contentHash": "8d0e1ea49b7a919b",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4607
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 5,
+   "tier": 1,
+   "topology": "480267876e4f7984",
+   "puzzle": "a9387c2563defa28",
+   "contentHash": "3989eab93a1fd95a",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3825
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 6,
+   "tier": 1,
+   "topology": "3cfca2acc9cc6567",
+   "puzzle": "08b3da487a85f1c5",
+   "contentHash": "0629a6d8ca6cb605",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 1630
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 691
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1833
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 7,
+   "tier": 1,
+   "topology": "389552b321605a0c",
+   "puzzle": "7c9556ec4d12c83d",
+   "contentHash": "b5fd61c0c64c3867",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3935
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 8,
+   "tier": 1,
+   "topology": "e76112dd9d993a7e",
+   "puzzle": "6cf10eae5fc06783",
+   "contentHash": "03ef4217105a8288",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 622
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 7669
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 9,
+   "tier": 1,
+   "topology": "12599bbbc34cae78",
+   "puzzle": "f5d646e23251ec93",
+   "contentHash": "c4dd8a5a566c5a67",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3963
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 10,
+   "tier": 1,
+   "topology": "7c7e6dd04703e48f",
+   "puzzle": "7a4e3c06cc9aaabd",
+   "contentHash": "9974bf4ed3bab6c9",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 153
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 243
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 739
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 11,
+   "tier": 1,
+   "topology": "4fa462d96cec9516",
+   "puzzle": "81113824dfae6851",
+   "contentHash": "a65e4b9378eb419a",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 510
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 261
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 847
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 12,
+   "tier": 1,
+   "topology": "f0206e6e9f4d5fb5",
+   "puzzle": "b640c08c78141e61",
+   "contentHash": "bfe5b47133095de8",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 584
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 243
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 852
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 13,
+   "tier": 1,
+   "topology": "a626f6533b0e33bc",
+   "puzzle": "6f3fa45cdcb9bdd1",
+   "contentHash": "2aacab8a3400d653",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 545
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 227
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1024
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 14,
+   "tier": 1,
+   "topology": "7d10cccb05002510",
+   "puzzle": "fd6f66ab31052482",
+   "contentHash": "2234130ba21bbd10",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3899
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 15,
+   "tier": 1,
+   "topology": "aafcc5457d6a99c2",
+   "puzzle": "ffe1d578c659d7d1",
+   "contentHash": "eb2aab4a4ed29a2b",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3673
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 16,
+   "tier": 1,
+   "topology": "919d9c73a6d45488",
+   "puzzle": "dfb4254460f567e5",
+   "contentHash": "79a21b369928f4dd",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3753
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 1,
+   "tier": 1,
+   "topology": "8dd5a8e34375f604",
+   "puzzle": "557843f5ea36ecf4",
+   "contentHash": "00017473346819c0",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3868
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 2,
+   "tier": 1,
+   "topology": "9fd6877afe0409f5",
+   "puzzle": "e4552f85e41d94e8",
+   "contentHash": "b60ba09a8d8e7c25",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 1448
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 334
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1725
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 3,
+   "tier": 1,
+   "topology": "382505c12031256e",
+   "puzzle": "aa79842527257e94",
+   "contentHash": "c7c4975afe1aea79",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3686
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 4,
+   "tier": 1,
+   "topology": "24fb2300da0f14d3",
+   "puzzle": "db7dde55c77b0b98",
+   "contentHash": "678f403951246ab4",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3582
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 5,
+   "tier": 1,
+   "topology": "b8906c5f1c7aad20",
+   "puzzle": "a9387c2563defa28",
+   "contentHash": "f098e18cd7c11e75",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3480
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 6,
+   "tier": 1,
+   "topology": "a6b6e9da269e123d",
+   "puzzle": "08b3da487a85f1c5",
+   "contentHash": "0b672a2018114e9f",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4015
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 7,
+   "tier": 1,
+   "topology": "19bd7a4f9fc809f8",
+   "puzzle": "7c9556ec4d12c83d",
+   "contentHash": "65514a6782cf133c",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 492
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 7724
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 8,
+   "tier": 1,
+   "topology": "fcf08b1dc184b722",
+   "puzzle": "6cf10eae5fc06783",
+   "contentHash": "800d0294e7af076f",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 3176
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 179
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 4343
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 9,
+   "tier": 1,
+   "topology": "4d82e00712a2a624",
+   "puzzle": "f5d646e23251ec93",
+   "contentHash": "e03005141065c96d",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3723
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 10,
+   "tier": 1,
+   "topology": "28246801a49845ee",
+   "puzzle": "7a4e3c06cc9aaabd",
+   "contentHash": "476ee34fbba1c464",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 240
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 281
+   },
+   "secondTargetPlan": {
+    "team": "tuppence/wicker/sorrel",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 481
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 11,
+   "tier": 1,
+   "topology": "27fa3817036401a4",
+   "puzzle": "81113824dfae6851",
+   "contentHash": "5cc993b90a324554",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 583
+   },
+   "alcove": {
+    "team": "tuppence/dapple/sorrel",
+    "status": "success",
+    "states": 970
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 5444
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 12,
+   "tier": 1,
+   "topology": "85a7de95bd63a326",
+   "puzzle": "b640c08c78141e61",
+   "contentHash": "a4de1dfcb48025b7",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3668
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 13,
+   "tier": 1,
+   "topology": "2d960fb3425dffb4",
+   "puzzle": "6f3fa45cdcb9bdd1",
+   "contentHash": "bb9e98c14dd1d1a8",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3962
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 14,
+   "tier": 1,
+   "topology": "587355bd62adddb2",
+   "puzzle": "fd6f66ab31052482",
+   "contentHash": "f1d53abe0bbd7ad5",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "success",
+    "states": 488
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 7369
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 15,
+   "tier": 1,
+   "topology": "3384198b1c423a80",
+   "puzzle": "ffe1d578c659d7d1",
+   "contentHash": "a3f290f730596f9a",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3943
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 16,
+   "tier": 1,
+   "topology": "a31b4abd0ddf76e2",
+   "puzzle": "dfb4254460f567e5",
+   "contentHash": "89f0c9c4474b6051",
+   "direct": {
+    "team": "bushel/furrow/pip",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3762
+  }
+ ]
+}

@@ -3,6 +3,28 @@
 > Central entry point: `EXPEDITIONS_MASTER_BRIEF.md`. Read it before this handover. This file
 > then supplies the engineering backlog, active boundaries and decision history.
 
+## CURRENT: 4 October overnight implementation handoff
+
+Priority human instruction5October: "put it all in the main app". Enable all implemented family/tier candidates in the existing private eudaimon/Rooke mainApp Expeditions area for Sam's playtest, preserving original saves, versioned repair, normal rules/gates/legacy and the certifiedFourLocks path. This explicitly authorises truthful private development availability before bank certification. Never label uncertified banks certified or fabricate missing RavineT5. App/generation/runtime integration and final-build are Claude-owned; UI support from Codex as needed. Separate preview launcher superseded. Deliver actual rebuiltmainApp and honestavailability list promptly; continue fullbankcompletion afterwards.
+
+5 October correction from Sam: one representative real browser playtest per type is enough; existing evidence covers all five types. Stop exhaustive tier/team/viewport browser testing. Complete all25 tiers and their automated puzzle/rules/bank certification as before, with small targeted checks for concrete changes only. Missing browser-tier wins no longer block completion. Preserve genuine device/child limitations and historical evidence. This supersedes earlier requests for all-tier winning UI playthroughs.
+
+Sam confirms Claude's chat is named `Overnight handoff notes polling` and polls `EXPEDITIONS_9FO_OVERNIGHT_HANDOFF.md`, which points here. This section is the current instruction entry; the September review/history below remains evidence, not today's backlog or numerical baseline. Read the master brief and v2 implementation/generation specification, then [current exact task packet](docs/expeditions/v2/reports/scrum-overnight-handoff-20261004.md) and [scrum status](docs/expeditions/v2/reports/scrum-overnight-status-20261004.md).
+
+Required outcome: finish all five Ninefold Orchard families/all25tiers, all art/UX and real playtesting, preserving exact private access, legacy functions and current v2 stat/cost/enemy/deadline/reward rules. Do not stop at a reference generator or passing unit tests. Certify actual missions using the production reducer/planner with required target-team/alternate-route/diversity evidence and winning UI playthroughs. No weakened rules, erased old run, mutated historical certification or claims of unavailable child/device testing.
+
+Remaining coding allocation is66%Claude/34%Codex by effort. All artwork is Codex outside that split. Claude owns `expeditions/v2/generation/` (all family/tier/topology modules/tests), planner/bank construction/certification/diversity tooling and runtime selection, plus existing v2 core/schema/actions/phase/run/controller/persistence/private-route/App integration and corresponding tests. Codex coding owns `expeditions/v2/puzzles/` and `expeditions/v2/ui/`; Codex art owns `expeditions/v2/art/`, bitmap sources/selection/manifest/resolver/visual QA. Do not edit another worker's current claims. Full npm/build/smoke requires exclusive final-build claim and stable UI/art inputs.
+
+First ready task: claim new `generation/unequal-crossing.js` and related generator tests/report `docs/expeditions/v2/reports/claude-overnight-20261004.md`; implement the exact balance/load allocation and hidden-load comparison decision-tree packet using existing real hooks. Publish packet ABI/examples to Codex coding. Continue released Turning Ravine topology/higher-tier generation, unfinished Four Locks higher tiers, remaining nonogram/packing families, certified banks and core integration in dependency order. The previous builder's explicit handoff/release is recorded in `codex-turning-ravine-20261003.md`/mailbox; verify current status first. Unknown bounded searches remain unknown and unfinished families stay unavailable until certified/reviewed.
+
+Codex's priority art/UX work includes finished painted buttons/frames and the team frame: original character artwork in its round portrait aperture, adequate separate name/stat text box, long-name/responsive/state review. Supply ready mission packets to drive full UI/art QA; report integration defects to the UI/art owners rather than editing their files. New Codex art thread `01a10869-af91-7490-9f19-c99e0842fcc1`, coding thread `01a10869-c3c8-7272-9b7e-57e747ddc312`; this original scrum chat coordinates both. Mailbox supports actors codex/claude/scrum only, with worker-specific subject prefixes and claims.
+
+Each polling batch: read `node scripts/dev/orchard-agent-mailbox.cjs read claude` and `status`, acknowledge actionable notes after recording your decision, claim exact files, progress ready work and publish stable results/interfaces/failures to scrum and codex. Do not assume unacknowledged mailbox requests have run. Do not launch duplicate model sessions. Read changed owner reports before shared builds.
+
+After ALL Orchard work is finished and independently reviewed, if credits remain, Sam authorises a full Little Reckoning Expeditions build plan and then new games/challenges/art implementation. Publish the plan and task boundaries first; preserve LR legacy functionality and private access. This conditional new scope supersedes old blanket LR deferrals, but does not authorise abandoning Orchard, invented reward changes or public deployment.
+
+## Historical engineering handover follows
+
 ## Purpose of this document
 
 This is the implementation handover for Wallaby Maths Expeditions. It is written so another engineering agent can continue without reconstructing product intent from chat history.
@@ -3710,3 +3732,178 @@ the live app.
 every Ninefold Orchard map. Checked again just now — it already branches correctly on
 `enemy.id === "scruffcrow"` / `"crosswind"` (added as part of the presentation candidate), so
 Scruffcrow and Crosswind no longer render as Hookmole. That finding is closed.
+
+### Codex response: Cider Run review, packaging and next wiring work (2026-09-21)
+
+1. **Cider Run visual review:** Sam has reviewed the reshaped Cider Run directly. Do not wait
+   for a second Codex browser audit and do not treat visual review as a Claude blocker. No
+   specific acceptance or correction outcome has been recorded here, so keep the map marked
+   `visual review: awaiting recorded feedback`, rather than calling it finally accepted. If Sam
+   supplies a visual issue, Claude owns the wiring fix and Codex supplies or revises art only
+   if the issue is genuinely an asset-direction problem.
+
+2. **One asset-loading path:** retain the manifest pipeline as the production source of truth.
+   Do not let a hand-written scene-art import file become a parallel permanent asset registry.
+   Claude should extend or reconstruct the generator so the manifest has an explicit `scenes`
+   namespace keyed by scenario id, covering backdrop, props, effects and enemy-state assets.
+   `expedition-9fo-scene-art.js` may temporarily become a generated compatibility export, but
+   it must not remain a hand-maintained list after migration. Before retiring it, add a manifest
+   completeness test that proves every asset imported by a playable Ninefold scenario has one
+   manifest id, a declared role, expected states, dimensions/anchors where relevant and a
+   runtime byte-size record.
+
+   Claude also owns the packaging audit: measure the before/after self-contained bundle size,
+   identify the Expedition contribution by asset family and run a representative cold-start or
+   first-board-load measurement on the available local environment. The existing local
+   heap-limit failure is not a pass. Record the exact measurement method and either resolve it
+   or leave a reproducible, bounded issue. Do not generate new art to solve a packaging issue.
+
+3. **Next map wiring order:** after the manifest migration and its tests, wire **Nine Across
+   the Turning Bridge** first. Its Crosswind set is already sufficiently complete and it proves
+   the scene namespace can express backdrop, prop, directional effect and a multi-state enemy.
+   Run its board through the existing scenario/render/regression suite and record any missing
+   art state rather than inventing one. Then perform the Hedgejaw asset inventory. Hedgejaw's
+   SVG-only state is acceptable for a prototype if all required states exist and render cleanly;
+   otherwise Claude should wire the available states and create an explicit art request for the
+   missing ones. Codex will handle that request as art work later.
+
+4. **Broader delegation:** Claude may continue to own all presentation wiring, asset manifest
+   migration, scenario UI integration, accessibility labels, bundle/performance instrumentation
+   and regression work. Codex remains available for asset direction, generation and visual
+   acceptance only. This frees Claude to proceed without waiting on routine renderer decisions.
+
+### Claude: Cider Run/Examination Clock mechanic rebuilds, then a full art-wiring pass (2026-09-21/22)
+
+Sam's direct playtest of Cider Run ("just walk two spaces, pick something up, drop it off") led
+to two scenario-level rebuilds and a large art-wiring pass, all under the delegation above —
+noted here in one place since it touches files Codex also has an interest in.
+
+**1. Engine-level combat gap.** Every bespoke enemy behaviour (`flood-lane`, `peck-lane`,
+`corrupt-value`, `obscure-operator`, `steal-highest`, `grow-toward`, `wilt-root`) could
+manipulate objects but never actually strike a hero — only the engine's unnamed default
+hunt-and-strike branch could. Added `strikeAdjacentHero` (`expedition-engine.js`): an unguarded
+hero in a bespoke-behaviour enemy's reach is now struck instead of the usual object-erosion
+effect that round, same damage/guard rule the default branch already used. This is what makes
+Guard, hp and Defence-beating stats live on every map using one of those behaviours — previously
+dead weight everywhere except the handful of maps with no custom behaviour at all. Not wired
+into `gust`/`walk-hedge`/`reverse-next` — those three are deliberately non-combat by design.
+
+**2. The Cider Run rebuilt (`cider-run.js`).** `generateExactPairKernel` (`expedition-kernels.js`)
+gained a `pairCount` option — every layout now certifies *two* independent direct pairs, not
+one, so which pair to commit to is a genuine choice (Reach/exposure trade-off), not a single
+findable answer. Requiring both pairs to survive a flood tick proved unachievable in this map's
+4-round budget (measured: 20,000 attempts, zero acceptances) — the accepted shape is one
+guaranteed-safe pair (deliverable + flood-recoverable) plus one merely-deliverable faster pair.
+`deliverCertifiedPair` is now exported so tests/`scripts/simulate_cider_run.mjs` share one real
+simulator instead of hand-transcribed hex sequences. Harvest-gate overlay re-anchored to the
+SVG's real aspect ratio, sitting on the two hexes instead of floating above them. Briefing
+rewritten in plain language.
+
+**3. The Examination Clock rebuilt (`examination-clock.js`, Gifford).** Same root cause: 4
+mandatory tasks summing to exactly the deadline, no decision at all. Now 6 tasks exist,
+`requiredCount` stays 4 — genuinely different 4-of-6 combinations clear the deadline, with the
+two priciest tasks sitting off toward the Proctors so skipping them is a real, physically
+motivated call. `deliverTasks` exported the same way as Cider Run's `deliverCertifiedPair`.
+
+**4. The Unequal Crossing — tried, reverted, left alone.** The same "two valid pairs" fix is
+mathematically impossible here: with exactly 4 crates split 2-and-2, distinctness algebraically
+forces at most one grouping to ever sum to target (proven, and confirmed empirically over 5,000
+draws). Real choice here would need a crate-count/board change, a bigger call on the level-1
+tutorial map than a mechanic patch — deliberately not touched further.
+
+**5. Art-wiring pass, once Sam confirmed a fresh asset batch had landed.** Wired: real pose sets
+for Strawling, Maybe-Finch (x3), Hedgejaw, Crowbreaker (idle/telegraph only, no defeated art yet
+for the last one); First Whistle's founding-stone/branch-port/network-line/shield-vulnerability
+(shield state is *computed* live via the same `graphConnected` check `strikeEnemy` itself uses,
+never guessed independently); Orchard Lockdown's ledger corrupted/solved cell art; Hollow
+Bough's memorial + damage overlay; Rootfire Relay's root marker + a parity badge on the trunk
+root. Built `expedition-lr-scene-art.js` from scratch (~250 generated import lines) to bring in
+a previously-unused, already-complete Little Reckoning art pipeline (30 characters, terrain,
+effects, mechanisms, props, Fog-thumb's pose set) — both Junior scenarios now render fully
+illustrated instead of emoji/placeholder, borrowing primary's UI-frame chrome (hero frame,
+action-log plaque, buttons) since no Junior-specific chrome exists yet. Filled every remaining
+primary character's missing carry pose (21 characters). Wired the six pressure-lane icons and
+the squad-select backdrop/coverage-plaque into `ExpeditionScreen.jsx` (previously unwired even
+though `flags.pressureLanes` has named these six lanes in every scenario's own code all along),
+plus AP/heart badge icons into the in-game hero frame. Gifford still has zero art delivered —
+`gf_examination_clock`/`gf_sealed_archive` stay on the plain generic layout, nothing to wire.
+
+**Left deliberately unwired, not an oversight:** several delivered assets have no unambiguous
+single-object/single-hex target — `po-orchard-root-fall-marker`, `po-hive-ledger-board`,
+`po-moonfall-ring-stone`/`-ring-gap`, `po-orchard-lockdown-gate`/`-living-gate`,
+`po-rootfire-chain`/`-bridge-root-link`/`-source-fruit`, `po-overgrowth-forecast`/`-safe-path`,
+`po-turning-bridge-capacity`/`-wind-path`, `po-orchard-lockdown-group-outline`/`-pulse`. Also
+still open from the 2026-09-21 asks above: the manifest-pipeline migration (point 2) hasn't
+happened — `expedition-9fo-scene-art.js` kept growing by hand this pass instead, which is exactly
+the parallel-path risk Codex flagged; and the packaging/bundle-size audit hasn't been done either
+— worth flagging that `WallabyMaths.html` has grown to ~400MB across this session's additions.
+
+**Validation:** full `npm test` green (23/23) after every change in this entry, including a
+live in-app check via a local dev-only launch script (`scripts/dev/claude-launch.js` — not part
+of the shipped bundle) confirming the Cider Run gate art, pressure-lane icons, squad-select
+backdrop and in-game AP/heart badges all render correctly with no console errors.
+
+### Claude: full 9FO art-completion pass, using `EXPEDITIONS_9FO_ART_GAP_AUDIT.md` as ground truth (2026-09-22)
+
+Sam asked for every one of the "left deliberately unwired" items above to be resolved, pointing
+specifically at `EXPEDITIONS_9FO_ART_GAP_AUDIT.md` rather than leaving them to guesswork — the
+audit turned out to already document an explicit answer for most of them, including a
+21-September enemy-art reuse-pool decision that had been missed entirely in the previous pass.
+
+**1. Three-enemy reuse pool (Maps 8–10, per the audit's "21 September update").** Wired
+`overgrowth` (Hollow Bough) to reuse Strawling's pose set, `nearly` (Orchard Lockdown) to reuse
+Maybe-Finch's, and `first_root` (First Whistle) to reuse the full Hookmole set —
+`nfoEnemyArt`/`nfoLoadArt` in `ExpeditionBoard.jsx` now special-case these three ids onto their
+donor's art instead of falling through to emoji. This was the single biggest gap: three of ten
+maps' primary antagonists had no art path at all before this.
+
+**2. Per-map object/terrain dressing**, each keyed off the objective's own live engine state
+rather than a static asset id, so the art can never desync from what the engine actually thinks
+is true:
+   - **Orchard Lockdown** — gate/living-gate/group-outline per constraint, `nearly`'s pulse now
+     shown on its real target (computed via the engine's own nearest-unguarded-cell logic, not
+     the "highest value" the flavour text claims — see the code comment at that computation;
+     left as a mechanic-vs-flavour-text mismatch, out of scope for an art pass).
+   - **Murder at Moonfall** — ring-stone/ring-gap dressing via `hexNeighbours(crowbreaker.pos)`,
+     containment art on `result.complete`.
+   - **First Whistle** — founding-stone/shield-vulnerability (already wired last pass) confirmed
+     still correct now that First Root has real art sitting on it.
+   - **The Maybe-Flock Roost** — whistle-tower art on `objective.hexes`, storm-front centred on
+     the three Maybe-Finches' live average position.
+   - **The Hollow Bough Awakens** — livingBranches/rootBarrier variety rotation across the
+     board's clear tiles, forecast art shown only when `state.units.overgrowth?.intentRevealed`.
+   - **The Hedgejaw Maze** — colour-gate art per stone's `requiredFrom`, route-cue art on the
+     next required stone via `objective.sequence`/`counters.routeProgress`.
+   - **Nine Across the Turning Bridge** — capacity/wind-path art replicated from the engine's own
+     open/closed and total/max calculation, so it can't show a state the engine disagrees with.
+   - **Rootfire Relay** — bridge-link connector computed from live root-pair adjacency, pulse
+     shown on Strawling's real wilt-target (not a guessed one).
+   - Generic Junior (Little Reckoning) terrain got the same treatment: smudged-stones/fog-lantern
+     dressing plus a generic variant rotation, using the `LR_SCENE_ART` pipeline built last pass.
+
+**3. Real bug found and fixed, not previously known:** Maybe-Flock-Roost's three fixed-value
+wind vanes share `kind: "vane"` with Nine Across' rotating current-turner object, but — being
+fixed — never got an `orientation` field. `nfoLoadArt` and `NfoBoardObject` both tested
+`object.kind === "vane"` alone, so the Roost's vanes were being forced through Nine Across'
+OPEN/CLOSED rendering instead of showing their actual numeric value (5/3/1). Fixed both call
+sites to `object.kind === "vane" && "orientation" in object`, so a kind check alone is no longer
+enough to pick the wrong sibling object's presentation.
+
+**4. Live verification.** Rebuilt (`WallabyMaths.html`, 449551718 bytes) and ran the dev-backdoor
+workflow in the browser pane against three of the ten maps chosen for having the most complex
+new logic — Orchard Lockdown (per-constraint gate/group-outline dressing), Murder at Moonfall
+(`hexNeighbours`-derived ring dressing), and First Whistle (First Root's reused Hookmole art plus
+the live shield-vulnerability check). All three loaded with correct art, no placeholder/broken
+images, and zero console errors. Did not walk every one of the ten maps turn-by-turn in-browser;
+the shared code paths (`nfoEnemyArt`/`nfoTerrainArt`/`nfoLoadArt`) and the full reference-trace
+regression suite (all ten 9FO scenario tests, unchanged and still green) are the coverage for the
+other seven.
+
+**Still open, unchanged from last entry:** the manifest-pipeline migration
+(`expedition-9fo-scene-art.js` grew further by hand again this pass — still the parallel-registry
+risk Codex flagged, still not resolved), the bundle-size/packaging audit (`WallabyMaths.html` is
+now ~449MB, up from ~400MB noted last entry), Gifford has no art at all, and Unequal Crossing's
+"only one valid pairing is mathematically possible" limitation stands (see previous entry — not
+an art problem, needs a board/crate-count redesign if it's ever revisited).
+
+**Validation:** `npm test` — 23/23 green.

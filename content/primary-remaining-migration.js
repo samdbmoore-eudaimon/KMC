@@ -256,7 +256,8 @@ const REPAIRS = {
         "q": "Two numbers are in the ratio 6:7 and add up to 130. What is the smaller number?",
         "steps": [
           "130 ÷ 13 = 10 (the value of one part).",
-          "6 parts = 6 × 10 = 60; 7 parts = 7 × 10 = 70."
+          "6 parts = 6 × 10 = 60.",
+          "7 parts = 7 × 10 = 70."
         ],
         "answer": "60",
         "structureId": "sum_and_ratio_parts"
@@ -265,7 +266,8 @@ const REPAIRS = {
         "q": "Two numbers are in the ratio 4:5 and add up to 72. What is the smaller number?",
         "steps": [
           "72 ÷ 9 = 8 (the value of one part).",
-          "4 parts = 4 × 8 = 32; 5 parts = 5 × 8 = 40."
+          "4 parts = 4 × 8 = 32.",
+          "5 parts = 5 × 8 = 40."
         ],
         "answer": "32",
         "structureId": "sum_and_ratio_parts"
@@ -274,7 +276,8 @@ const REPAIRS = {
         "q": "Two numbers are in the ratio 3:8 and add up to 143. What is the larger number?",
         "steps": [
           "143 ÷ 11 = 13 (the value of one part).",
-          "3 parts = 3 × 13 = 39; 8 parts = 8 × 13 = 104."
+          "3 parts = 3 × 13 = 39.",
+          "8 parts = 8 × 13 = 104."
         ],
         "answer": "104",
         "structureId": "sum_and_ratio_parts"

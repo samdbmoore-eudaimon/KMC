@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "status": "private-renderer-review",
+  "selectedBytes": 96660,
+  "assets": {
+    "unequal-pan-v1": {
+      "id": "unequal-pan-v1",
+      "familyId": "unequal-crossing",
+      "entityId": "shape",
+      "state": "base",
+      "version": 1,
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-scale-one-hex-v1.png",
+      "sourceSha256": "737898d290afef7df7e9e17f561705976d2912d30d36181c42a9d1ddec557d9b",
+      "preparedInputPath": "assets/expeditions/production/9fo/v2/runtime/objectives/objective-unequal-crossing-scale-one-hex-v1-v1.webp",
+      "preparedInputSha256": "246916502fbdc9d6543751ec678c4a657444b048244031c0e5fe0c2294ac5f24",
+      "runtimePath": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/runtime/unequal-pan-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 27512,
+      "sha256": "ceb3fab7bf6dd2dd447b43a9de15856e99df22a44188cd2fb7c81ebe0406fcb9",
+      "alpha": true,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          27,
+          352,
+          338
+        ],
+        "transparentPixels": 72862,
+        "visiblePixels": 74594,
+        "components": [
+          74594
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "visibleBounds": [
+        32,
+        27,
+        352,
+        338
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          72
+        ],
+        "work": [
+          42,
+          250
+        ]
+      },
+      "labelSafeAreas": [
+        [
+          98,
+          102,
+          280,
+          190
+        ]
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-white.png",
+        "black": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-black.png",
+        "green": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-scales.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "whistle-tower-v1": {
+      "id": "whistle-tower-v1",
+      "familyId": "maybe-flock",
+      "version": 1,
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-rooststorm-whistle-tower-v2.png",
+      "sourceSha256": "793b72d3f0488abe52a3779e97e1d5823935568e6e40b5db64d4c3d781b851ec",
+      "preparedInputPath": "assets/expeditions/production/9fo/v2/runtime/objectives/objective-rooststorm-whistle-tower-v2-v1.webp",
+      "preparedInputSha256": "9ab41dc8be6982de1fb26dec83aa37d23ab09cf90e331aa9843f5773e3226f7b",
+      "runtimePath": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/runtime/whistle-tower-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 26154,
+      "sha256": "05ac2fefc27b2c259f3d3b1b2c010d3a1a62f56ac4767548be7ceefcd0f26ef5",
+      "alpha": true,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          116,
+          18,
+          269,
+          338
+        ],
+        "transparentPixels": 116976,
+        "visiblePixels": 30480,
+        "components": [
+          30475,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "componentCount": 6,
+        "detachedPixels": 5,
+        "checkerboardHeuristicPass": true
+      },
+      "visibleBounds": [
+        116,
+        18,
+        269,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          72
+        ],
+        "work": [
+          42,
+          250
+        ]
+      },
+      "labelSafeAreas": [
+        [
+          165,
+          85,
+          215,
+          168
+        ]
+      ],
+      "reviewStatus": "isolated-reviewed-live-pending",
+      "runtimeSelected": true,
+      "liveAcceptance": false,
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/whistle-tower-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/whistle-tower-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/whistle-tower-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/whistle-tower-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/whistle-tower-v1-scales.png",
+        "hexHeroComposition": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/whistle-tower-v1-hex-hero.png"
+      },
+      "intentionalDetachedComponents": false,
+      "entityId": "shape"
+    },
+    "living-branches-v1": {
+      "id": "living-branches-v1",
+      "familyId": "hollow-bough",
+      "version": 1,
+      "state": "base",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-hollow-bough-living-branches-v1.png",
+      "sourceSha256": "6200065fe7a939732f734b58512464fc3c25765cb9924864c2f793c165c24b1e",
+      "preparedInputPath": "assets/expeditions/production/9fo/v2/runtime/objectives/objective-hollow-bough-living-branches-v1-v1.webp",
+      "preparedInputSha256": "03ef7195a8610e27605198e9e9586d3982d5dc8e91b1b968221ea98b48234867",
+      "runtimePath": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/runtime/living-branches-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 42994,
+      "sha256": "ef7ac686592841810aea1c0aaa8aab9212ee24b7f0e88a4443a9bbd3f712433f",
+      "alpha": true,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          41,
+          18,
+          343,
+          338
+        ],
+        "transparentPixels": 109591,
+        "visiblePixels": 37865,
+        "components": [
+          18951,
+          18907,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "componentCount": 8,
+        "detachedPixels": 18914,
+        "checkerboardHeuristicPass": true
+      },
+      "visibleBounds": [
+        41,
+        18,
+        343,
+        338
+      ],
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          72
+        ],
+        "work": [
+          42,
+          250
+        ]
+      },
+      "labelSafeAreas": [
+        [
+          150,
+          88,
+          234,
+          235
+        ]
+      ],
+      "reviewStatus": "isolated-reviewed-live-pending",
+      "runtimeSelected": true,
+      "liveAcceptance": false,
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/living-branches-v1-white.png",
+        "black": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/living-branches-v1-black.png",
+        "green": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/living-branches-v1-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/living-branches-v1-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/living-branches-v1-scales.png",
+        "hexHeroComposition": "assets/expeditions/production/9fo/v2/future-prop-batch-20261004/qa/living-branches-v1-hex-hero.png"
+      },
+      "intentionalDetachedComponents": "Two separate growing boughs form the original paired identity. No component removed.",
+      "entityId": "shape"
+    }
+  },
+  "familyMappings": {
+    "unequal-crossing": {
+      "control": "four-locks-control-base-v1",
+      "number": "four-locks-number-bus-base-v1",
+      "shape": "unequal-pan-v1",
+      "sustain": "unequal-pan-v1",
+      "alcove": "four-locks-alcove-base-v1"
+    },
+    "maybe-flock": {
+      "control": "four-locks-control-base-v1",
+      "number": "four-locks-number-bus-base-v1",
+      "sustain": "four-locks-tree-maintenance-base-v1",
+      "alcove": "four-locks-alcove-base-v1",
+      "shape": "whistle-tower-v1"
+    },
+    "hollow-bough": {
+      "control": "four-locks-control-base-v1",
+      "number": "four-locks-number-bus-base-v1",
+      "sustain": "four-locks-tree-maintenance-base-v1",
+      "alcove": "four-locks-alcove-base-v1",
+      "shape": "living-branches-v1"
+    }
+  },
+  "note": "Art maps only actual generator station contracts; family availability and certificates unchanged. Unequal left=shape/right=sustain as explicit panStationIds. Printed values, patch, perches, nest groups and beam geometry remain live code."
+}

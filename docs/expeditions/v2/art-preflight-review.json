@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "status": "isolated-candidates-for-live-review",
+  "contactQa": [
+    "assets/expeditions/production/9fo/v2/qa/idle-white-contact.png",
+    "assets/expeditions/production/9fo/v2/qa/idle-black-contact.png",
+    "assets/expeditions/production/9fo/v2/qa/idle-green-contact.png",
+    "assets/expeditions/production/9fo/v2/qa/idle-cyan-contact.png"
+  ],
+  "limitations": [
+    "Live private App screenshots, occlusion and anchors remain pending. No final asset acceptance."
+  ],
+  "assets": {
+    "enemy-crosswind-idle": {
+      "sha256": "075712b7d5108794dacef16c4ae88634087974e1c4505da1f6491b56eb9637bb",
+      "intentionalDetachedComponents": true,
+      "reason": "Existing wind spirit with deliberate floating autumn leaves. Native white, black, orchard green and cyan plus48/96/192px sheets inspected4October2026: clean transparent edge, no matte or unrelated fragments. Preserve leaves; isolated renderer candidate, live registration pending."
+    },
+    "enemy-crosswind-defeated": {
+      "sha256": "9556abcfbc626b0c538e81e5459e67f146b1f9b1b155f170104fd7c72364902d",
+      "intentionalDetachedComponents": true,
+      "reason": "Existing collapsed wind spirit, two deliberately separate leaf particles. Native white, black, orchard green and cyan plus48/96/192px sheets inspected4October2026; no matte or unrelated fragments. Exact identity and alpha retained; live registration pending."
+    },
+    "enemy-hookmole-defeated": {
+      "sha256": "df7964a0d7c680a2614ebeb41fd0813a7e28ac13ee4dd686a32fa3563b330945",
+      "intentionalDetachedComponents": true,
+      "reason": "Three deliberate dizziness stars above the defeated Hookmole. Cyan native-size review confirms no unrelated fragments."
+    },
+    "hero-cascade-idle": {
+      "sha256": "25398454b91c21de8dfae635ca334b8eb210147edc755635226b0b7a81fd347c",
+      "intentionalDetachedComponents": true,
+      "reason": "Existing water spirit's clean floating droplets. All four background contact sheets and native cyan show intentional round water drops."
+    },
+    "hero-millrace-idle": {
+      "sha256": "75df3e8b01c4df3da62975b1d1d7a9438a5b9e62ea44b0d1c6077b13621ee936",
+      "intentionalDetachedComponents": true,
+      "reason": "Repaired full water crest and tail, with original intentional round droplets. Checkerboard remnants removed; four-background review is clean."
+    },
+    "hero-gossamer-idle": {
+      "sha256": "fc770384814cbaaf7d8bf61e44797086c6a247b52adda3cad6fa77e007b72899",
+      "intentionalDetachedComponents": true,
+      "reason": "Repaired intact pastel wings and full antennae with deliberate fairy sparkles. Four-background review shows no residual checkerboard or broken outlines."
+    },
+    "hero-cobweb-idle": {
+      "sha256": "b3d0985fbdd8d711a9e6f67b3b4c353bcdda97c27e8533c7719d5875e6c282a0",
+      "alphaHeuristicFalsePositive": true,
+      "reason": "Repaired opaque pale fur and white web design trigger the neutral-white-pixel heuristic. Native white/black/green/cyan and scale images show intact surfaces, clean transparency and no checkerboard."
+    },
+    "equation-frame": {
+      "sha256": "5bc971737f44da820bf42ddbd92b77416436f5886e02de316b4bebd18c16f15c",
+      "reason": "Blank-sector bitmap clean on all four backgrounds; corrected six slot-safe discs, fixed pointer and upright glyphs reviewed using actual component output for all states/rotations. Candidate for private integration only."
+    },
+    "hero-wicker-rear": {
+      "sha256": "1b99a0c96dc3e3c245f7e7ed576b10ce557f1fced79084e5aea088cf3299f252",
+      "reason": "Complete repaired silhouette with no detached fragments; original identity retained, all four backgrounds and48/96/192px sheets inspected. Ground anchor/live acceptance still pending."
+    },
+    "hero-wicker-exhausted": {
+      "sha256": "e3821a2074cf36a5cd1d9f16da42ab4fbb7b03e6daeae470eeaf5263f2d2f5c8",
+      "reason": "Complete repaired silhouette with no detached fragments; original identity retained, all four backgrounds and48/96/192px sheets inspected. Ground anchor/live acceptance still pending."
+    },
+    "hero-wicker-action": {
+      "sha256": "4d8f8241eff64b2169823d1e097b9418e712861803659707e625f14f6ea17272",
+      "reason": "Corrected full action silhouette, original unmarked face and fine white web with transparent holes. Inspected native384px white/black/green/cyan plus48/96/192px review; three diagnostic detached alpha pixels are invisible, no deletion performed. Isolated candidate only; live anchors pending."
+    },
+    "enemy-scruffcrow-idle": {
+      "sha256": "3e5f842d18bc81923a3b07fc82c98fc30f3817ae3b1a115513892bff5cbb2251",
+      "reason": "Built-in imagegen repairs cropped upper plume; same perched bird, claws, branch and transparent complete silhouette. Four-background/scale isolated review, live anchor review pending."
+    },
+    "enemy-scruffcrow-defeated": {
+      "sha256": "7d3b6e0b4b79e7d40d9b2fbc83c0322e233f515cb7ef5d27e5ad1bc9cc56ac25",
+      "intentionalDetachedComponents": true,
+      "reason": "Existing flee pose: branch, feather and leaves deliberately detach from airborne crow. Four-background/scale reviewed; no pixel cleanup or alpha relaxation."
+    },
+    "enemy-strawling-idle": {
+      "sha256": "aa08f8829a7988cdced1c4de04793b4edec78c1d2c89cef88acfaffe4b0883e2",
+      "reason": "Existing Strawling figure; separate leaves/straw on defeated pose are deliberate defeat decoration, not unrelated fragments. Four-background/scale reviewed; live state anchor check pending."
+    },
+    "enemy-strawling-defeated": {
+      "sha256": "3097508fa1821e5f6c98620edc3661b318eaa176221b6984cfc8402f73da224f",
+      "intentionalDetachedComponents": true,
+      "reason": "Existing Strawling figure; separate leaves/straw on defeated pose are deliberate defeat decoration, not unrelated fragments. Four-background/scale reviewed; live state anchor check pending."
+    },
+    "hero-amberly-action": {
+      "sha256": "120998ad06d2b92b5aa7db2b1eb048b936d3e8d9c09355fa1f6e62f7501a3858",
+      "reason": "Single built-in imagegen precise repair; full moth/scarf/wings/lantern/feet silhouette with margins. Unchanged alpha/component gates pass. Four-background/scale/actual held-state review required."
+    },
+    "hero-cobweb-action": {
+      "sha256": "ffb442c52c2b9d7295018ddd2dc9bb81e06ef647923da03d3d394d6d3b7b05d1",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-barrow-action": {
+      "sha256": "f04c2dcdf227fa25ae3c6db4452184c3d903ffa4f0f36c2f799d3ef20734fcdf",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-dapple-action": {
+      "sha256": "3a6ece36d41408946cbbc89b6cbece307099ae695eb17abb4588eafa5e3c83cd",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-barrow-exhausted": {
+      "sha256": "89c45f4b3c6616ffe54012efdecb7ecbb12d114fb0b1293785bbef38f257f4f9",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-amberly-exhausted": {
+      "sha256": "cd31a4f00c982d80da36e92000cb1f834b2b9025cb682ed32179270153f61f62",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-warden-exhausted": {
+      "sha256": "76e786c77d2b3a6e7495696c181d0e95c532a59311aabe60a75a00dcf91d12fc",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-gossamer-action": {
+      "sha256": "1a85180b7662006a289e894594d8c7bef587d8b29c43a5bf9cbb7742754c7a26",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-gossamer-exhausted": {
+      "sha256": "331fc2eab61da5099f4f06154154de06771dc973c60621cc472a83e9c31c9a47",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-harvestmoon-action": {
+      "sha256": "aa224190ab73e4107173117013726d690f7c2e7cbb70f88b5846a603f0410b1c",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-harvestmoon-exhausted": {
+      "sha256": "2afcce169e8719f1fa3f8238bcd2614cc3799572ef6591dcd99a7c6d210c052d",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-cornix-exhausted": {
+      "sha256": "515dfdd15d0e6676292bad942f61933a99381d40a5ff99a043f2edf5c2a49d58",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-kernel-action": {
+      "sha256": "c993523761698d8b2831e4cff89563d281377b1164556749376f988c85672155",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-kernel-exhausted": {
+      "sha256": "b863c9225960bd5ef81b9581f280432696404001dcca7c978064fcdda52830fe",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-beeswax-action": {
+      "sha256": "e46df6e666dc4c999ee29c71697e91e6c46fa1e7d5095f060f034ba157222313",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    },
+    "hero-beeswax-exhausted": {
+      "sha256": "22a676869a6d151977e6f4cb0093870921142433050cb73fa88bc77901c04968",
+      "reason": "Unchanged alpha/component/margin gates pass. Exact four-background/native/minimum/maximum ground contact inspected; actual recorded pose requirement verified. Authorised fifteen-pose import, live consumer review pending. Real browser saved-state prefix replay reviewed at phone390x844, tablet768x1024 and desktop1280x800, minimum overview and refocused native/maximum zoom. Original party portraits retained. Art-only acceptance; physical device and integrated App pending."
+    }
+  }
+}

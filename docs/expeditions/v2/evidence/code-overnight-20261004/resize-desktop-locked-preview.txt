@@ -1,0 +1,188 @@
+- text: "unequal-crossing T3 seed 2: generated private QA mission, zero-command start, real route/controller/reducer. Disposable QA progress; uncertified family stays unavailable in production."
+- button "Leave route"
+- button "New zero-command QA run"
+- banner:
+  - strong: Unequal Crossing · 3
+  - generic: Round 1/5
+  - generic: Orchard 24/24
+  - generic: "Amberly: 2 AP"
+  - button "Party":
+    - generic: Party
+  - button "Objectives":
+    - generic: Objectives
+  - button "How to play":
+    - generic: How to play
+  - button "First actions":
+    - generic: First actions
+  - button "Save & exit":
+    - generic: Save & exit
+- 'region "Battlefield: arrow keys pan, plus and minus zoom, Home shows overview"':
+  - img "Orchard battlefield":
+    - button "Reachable hex 2,0"
+    - button "Hex 3,0"
+    - button "Reachable hex 4,0"
+    - button "Reachable hex 5,0"
+    - button "Hex 6,0"
+    - button "Hex 7,0"
+    - button "Hex 8,0"
+    - button "Hex 9,0"
+    - button "Reachable hex 2,1"
+    - button "Reachable hex 3,1"
+    - button "Reachable hex 4,1"
+    - button "Hex 5,1"
+    - button "Hex 6,1"
+    - button "Hex 7,1"
+    - button "Hex 8,1"
+    - button "Hex 9,1"
+    - button "Hex -1,2"
+    - button "Reachable hex 0,2"
+    - button "Reachable hex 1,2"
+    - button "Reachable hex 2,2"
+    - button "Reachable hex 3,2"
+    - button "Reachable hex 4,2"
+    - button "Reachable hex 5,2"
+    - button "Hex 6,2"
+    - button "Hex 7,2"
+    - button "Hex 8,2"
+    - button "Hex 9,2"
+    - button "Hex 10,2"
+    - button "Reachable hex -1,3"
+    - button "Reachable hex 0,3"
+    - button "Hex 1,3"
+    - button "Reachable hex 2,3"
+    - button "Reachable hex 3,3"
+    - button "Reachable hex 4,3"
+    - button "Hex 5,3"
+    - button "Hex 6,3"
+    - button "Hex 7,3"
+    - button "Hex 8,3"
+    - button "Hex 9,3"
+    - button "Hex 10,3"
+    - button "Hex -2,4"
+    - button "Reachable hex -1,4"
+    - button "Hex 0,4"
+    - button "Reachable hex 1,4"
+    - button "Reachable hex 2,4"
+    - button "Reachable hex 3,4"
+    - button "Hex 4,4"
+    - button "Hex 5,4"
+    - button "Hex 6,4"
+    - button "Hex 7,4"
+    - button "Hex 8,4"
+    - button "Hex 9,4"
+    - button "Hex -2,5"
+    - button "Reachable hex -1,5"
+    - button "Hex 0,5"
+    - button "Reachable hex 1,5" [active]
+    - button "Reachable hex 2,5"
+    - button "Reachable hex 3,5"
+    - button "Hex 4,5"
+    - button "Hex 5,5"
+    - button "Hex 6,5"
+    - button "Hex 7,5"
+    - button "Hex 8,5"
+    - button "Hex 9,5"
+    - button "Reachable hex -3,6"
+    - button "Reachable hex -2,6"
+    - button "Reachable hex -1,6"
+    - button "Reachable hex 0,6"
+    - button "Reachable hex 1,6"
+    - button "Reachable hex 2,6"
+    - button "Reachable hex 3,6"
+    - button "Reachable hex 4,6"
+    - button "Hex 5,6"
+    - button "Hex 6,6"
+    - button "Hex 7,6"
+    - button "Hex 8,6"
+    - button "Reachable hex -1,7"
+    - button "Reachable hex 0,7"
+    - button "Reachable hex 1,7"
+    - button "Reachable hex 2,7"
+    - button "Hex 3,7"
+    - button "Hex 4,7"
+    - button "Hex 5,7"
+    - button "Hex 6,7"
+    - button "Reachable hex -2,8"
+    - button "Reachable hex -1,8"
+    - button "Reachable hex 0,8"
+    - button "Reachable hex 1,8"
+    - button "Hex 2,8"
+    - button "Hex 3,8"
+    - button "Hex 4,8"
+    - button "Hex 5,8"
+    - generic "Bridge lowered"
+    - generic: Barrow
+    - generic: 13 ♥ · 2 AP
+    - generic: Hookmole
+    - generic: 14 ♥
+    - 'generic "Bridge raised: activate the number lock to lower it"'
+    - generic "Passage closed": ×
+    - generic: Cobweb
+    - generic: 14 ♥ · 2 AP
+    - generic: Scruffcrow
+    - generic: 11 ♥
+    - generic: Ninefold tree
+    - generic: Amberly
+    - generic: 16 ♥ · 2 AP
+    - generic "Bridge lowered"
+    - generic: Strawling
+    - generic: 13 ♥
+    - img "Platform brace. Power 0/7. Integrity 16/16"
+    - img "Brace alcove. Not prepared"
+    - img "Scale lock. Power 0/7. Integrity 16/16"
+    - img "Scale control. Inactive. Integrity 16/16"
+    - img "Scale repair. Power 0/7. Integrity 16/16"
+    - generic "Chosen destination":
+      - generic: ✓
+    - 'generic "Shared pan totals at Scale control: committed L 0 · R 0, draft L 0 · R 0, target 17"':
+      - generic: L 0 · R 0 / 17
+      - generic: "Draft: L 0 · R 0"
+- group "Mission checklist":
+  - 'generic "Goal: 0/4 ready"'
+- button "Zoom in":
+  - generic: +
+- button "Zoom out":
+  - generic: −
+- button "Overview":
+  - generic: Overview
+- button "100%":
+  - generic: 100%
+- button "Camera locked" [pressed]:
+  - generic: ✓ Camera locked
+- button "Minimap":
+  - generic: Minimap
+- button "↗ Hookmole":
+  - generic: ↗ Hookmole
+- button "↗ Strawling":
+  - generic: ↗ Strawling
+- group "Battlefield objects and reachable targets":
+  - generic "Find on map"
+- status: Marked hex = your destination. Tap it again, or press Confirm, to travel. Tap another highlighted hex to change your mind.
+- contentinfo:
+  - generic "Your expedition team":
+    - button "Select Amberly" [pressed]:
+      - strong: ✓ Amberly
+      - generic: 16/16 ♥ · 2 AP
+    - button "Select Cobweb":
+      - strong: Cobweb
+      - generic: 14/14 ♥ · 2 AP
+    - button "Select Barrow":
+      - strong: Barrow
+      - generic: 13/13 ♥ · 2 AP
+  - region "Choose movement destination":
+    - strong: "Move: tap a highlighted hex"
+    - generic: 1 AP · choose any highlighted hex
+    - button "Cancel movement":
+      - generic: Cancel movement
+- strong: "Amberly: Move"
+- paragraph: Travel to a highlighted reachable hex. Roots shorten your reach.
+- paragraph: Travel to the marked hex along the shown path. Nothing changes until you confirm (tap the marked hex again, or press Confirm).
+- paragraph: 1 action
+- paragraph: "Amberly: 2 → 1 actions"
+- button "Confirm":
+  - strong: Confirm
+  - generic: Apply this action
+- button "Cancel":
+  - strong: Cancel
+  - generic: Return to board
+- generic "Disposable QA progress and reducer trace"

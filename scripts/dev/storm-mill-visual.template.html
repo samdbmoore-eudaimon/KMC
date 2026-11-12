@@ -1,0 +1,87 @@
+<div id="storm-mill-demo">
+  <div class="viz-controls">
+    <label class="form-label">Playthrough
+      <select class="form-select" data-plan aria-label="Choose a playthrough">
+        <option value="safe">Protect and heal · three rounds</option>
+        <option value="fast">Attack early · two rounds</option>
+      </select>
+    </label>
+    <button type="button" class="btn" data-back>Previous</button>
+    <button type="button" class="btn btn-primary" data-next>Next step</button>
+  </div>
+  <div class="viz-row"><span data-step></span><span class="text-small" data-count></span></div>
+  <svg data-board role="img" aria-label="Storm mill hex board, starting positions"></svg>
+  <div class="text-small">Co: Cornix · Ke: Kernel · Be: Beeswax · W: Warden · R: Rootling · numbers: health</div>
+  <div class="text-small" data-summary></div>
+  <div aria-live="polite" data-detail></div>
+  <style>
+    #storm-mill-demo{color:var(--foreground)}
+    #storm-mill-demo [data-board]{display:block;width:100%;overflow:visible}
+    #storm-mill-demo [data-board] text{fill:var(--foreground);font-size:var(--font-size-base);font-weight:400;text-anchor:middle;dominant-baseline:middle}
+    #storm-mill-demo .ground{fill:var(--muted);fill-opacity:.3;stroke:var(--border);stroke-width:1}
+    #storm-mill-demo .hedge{fill:var(--muted-foreground);fill-opacity:.3;stroke:var(--border);stroke-width:1}
+    #storm-mill-demo .track{fill:none;stroke:var(--muted-foreground);stroke-width:4;stroke-linecap:round}
+    #storm-mill-demo .live-track{stroke:var(--viz-series-1)}
+    #storm-mill-demo .hero{fill:var(--background);stroke:var(--viz-series-1);stroke-width:2}
+    #storm-mill-demo .enemy{fill:var(--background);stroke:var(--viz-series-2);stroke-width:2}
+    #storm-mill-demo .object{fill:var(--background);stroke:var(--border);stroke-width:1}
+    #storm-mill-demo [data-detail]{margin-top:8px}
+  </style>
+  <script>
+  (()=>{
+    const root=document.getElementById('storm-mill-demo');
+    const runs=__DEMO_DATA__;
+    const svg=root.querySelector('[data-board]'),select=root.querySelector('[data-plan]'),prev=root.querySelector('[data-back]'),next=root.querySelector('[data-next]');
+    let plan='safe',index=0;
+    const ns='http://www.w3.org/2000/svg';
+    function el(name,attrs={},text=''){const node=document.createElementNS(ns,name);Object.entries(attrs).forEach(([k,v])=>node.setAttribute(k,v));if(text)node.textContent=text;return node;}
+    function restore(saved){const p=saved?.modelContent?.plan,i=saved?.privateContent?.step;if(runs[p])plan=p;index=Math.max(0,Math.min(Number.isInteger(i)?i:0,runs[plan].length-1));}
+    restore(window.openai?.widgetState);
+    function save(){window.openai?.setWidgetState?.({modelContent:{scenario:'The Mill That Would Not Turn',plan},privateContent:{step:index}})?.catch(()=>{});}
+    function draw(){
+      const frames=runs[plan],frame=frames[index],s=frame.state;
+      select.value=plan;prev.disabled=index===0;next.disabled=index===frames.length-1;
+      root.querySelector('[data-step]').textContent=frame.label;
+      root.querySelector('[data-count]').textContent=`${index+1} / ${frames.length}`;
+      root.querySelector('[data-detail]').textContent=frame.detail;
+      root.querySelector('[data-summary]').textContent=`Sluice ${s.sluice?'open':'closed'} · Water route ${frame.live?'connected':'broken'} · Mill ${s.mill}/8`;
+      const width=Math.max(280,root.clientWidth||640),side=Math.min(42,(width-20)/(Math.sqrt(3)*7)),height=side*11+20;
+      svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.style.height=`${height}px`;
+      svg.replaceChildren(el('title',{},`${frame.label}. ${frame.detail}`));
+      svg.setAttribute('aria-label',`${frame.label}. ${frame.detail} Mill integrity ${s.mill} of 8.`);
+      const point=(q,r)=>[width/2+Math.sqrt(3)*side*(q+r/2),height/2+side*1.5*r];
+      const addText=(x,y,text)=>svg.appendChild(el('text',{x,y},text));
+      for(let q=-3;q<=3;q++)for(let r=-3;r<=3;r++){
+        if(Math.max(Math.abs(q),Math.abs(r),Math.abs(q+r))>3)continue;
+        const [x,y]=point(q,r),hedge=q===0&&(r===2||r===-2);
+        const points=Array.from({length:6},(_,i)=>{const a=(60*i-30)*Math.PI/180;return `${x+side*Math.cos(a)},${y+side*Math.sin(a)}`;}).join(' ');
+        const tile=el('polygon',{points,class:hedge?'hedge':'ground'});tile.appendChild(el('title',{},hedge?'Impassable hedge':`Hex ${q}, ${r}`));svg.appendChild(tile);
+        if(hedge)addText(x,y,'×');
+      }
+      const dirs=[[1,0],[0,1],[-1,1],[-1,0],[0,-1],[1,-1]];
+      const water={A:{p:[0,0],base:[0,3]},B:{p:[1,0],base:[0,2]},C:{p:[1,1],base:[0,2]}};
+      for(const [key,tile] of Object.entries(water)){
+        const [x,y]=point(...tile.p);
+        for(const base of tile.base){const d=dirs[(base+s.orientation[key])%6],p=point(tile.p[0]+d[0],tile.p[1]+d[1]);svg.appendChild(el('line',{x1:x,y1:y,x2:(x+p[0])/2,y2:(y+p[1])/2,class:`track${frame.live?' live-track':''}`}));}
+        addText(x,y-side*.64,key+(key==='C'&&!s.sluice?'🔒':''));
+      }
+      for(const [p,label] of [[[-1,0],'S'],[[2,-2],s.sluice?'Open':'Gate'],[[2,1],`M${s.mill}`]]){
+        const [x,y]=point(...p);svg.appendChild(el('rect',{x:x-side*.57,y:y-side*.33,width:side*1.14,height:side*.66,rx:3,class:'object'}));addText(x,y,label);
+      }
+      const names={cornix:'Co',kernel:'Ke',beeswax:'Be',warden:'W',rootling:'R'};
+      for(const [group,cls] of [[s.heroes,'hero'],[s.enemies,'enemy']])for(const [id,u] of Object.entries(group)){
+        if(u.hp<=0)continue;
+        const [x,y]=point(...u.pos),onGate=id==='beeswax'&&u.pos[0]===2&&u.pos[1]===-2;
+        if(onGate){svg.appendChild(el('circle',{cx:x,cy:y,r:side*.59,class:cls}));addText(x,y,`${names[id]}${u.hp}`);addText(x,y-side*.8,'Gate');}
+        else{svg.appendChild(el('circle',{cx:x,cy:y+side*.08,r:side*.55,class:cls}));addText(x,y+side*.08,`${names[id]}${u.hp}`);}
+      }
+    }
+    prev.addEventListener('click',()=>{index=Math.max(0,index-1);draw();save();});
+    next.addEventListener('click',()=>{index=Math.min(runs[plan].length-1,index+1);draw();save();});
+    select.addEventListener('change',()=>{plan=select.value;index=0;draw();save();});
+    window.addEventListener('openai:set_globals',event=>{if(event.detail?.globals?.widgetState){restore(event.detail.globals.widgetState);draw();}});
+    if(typeof ResizeObserver!=='undefined')new ResizeObserver(draw).observe(root);
+    draw();
+  })();
+  </script>
+</div>

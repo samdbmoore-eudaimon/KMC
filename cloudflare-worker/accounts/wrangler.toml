@@ -1,0 +1,31 @@
+name = "wallaby-accounts"
+main = "worker.js"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "wallaby-accounts"
+database_id = "010b0e1b-b679-4f73-87c9-62f071a09cbd"
+
+# Joey multiplayer (JOEY_MULTIPLAYER_SPEC.md §16/§22) — one Durable Object per
+# live match, class defined in joey-room.js and re-exported from worker.js so
+# wrangler can find it in the main script. NOT yet deployed: applying this
+# config (`npx wrangler deploy`) creates the DO namespace and runs migration
+# tag "joey-v1" against the real account. Do that only once schema.sql's
+# migration 8 has also been applied to the live D1 database.
+[[durable_objects.bindings]]
+name = "JOEY_MATCH_ROOM"
+class_name = "JoeyMatchRoom"
+
+[[migrations]]
+tag = "joey-v1"
+new_sqlite_classes = ["JoeyMatchRoom"]
+
+# Secrets (set with `npx wrangler secret put <NAME>` — never committed):
+#   ENTITLEMENT_PRIVATE_KEY  — Ed25519 private key, PKCS8 DER, base64 (see KEYS.md)
+#   ADMIN_KEY                — long random string; sent as X-Admin-Key on /admin/* routes
+#   RESEND_API_KEY           — optional; magic-link/lifecycle emails are skipped (and the
+#                              link is echoed back in the API response for local testing)
+#                              until this is set
+#   PADDLE_WEBHOOK_SECRET    — optional; /webhooks/paddle verifies signatures once set

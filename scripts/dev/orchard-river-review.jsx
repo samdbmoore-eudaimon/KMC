@@ -1,0 +1,18 @@
+import React,{useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import MapViewport from '../../expeditions/v2/ui/MapViewport.jsx';
+import {orchardArtFor} from '../../expeditions/v2/art/renderer.js';
+import snapshots from '../../docs/expeditions/v2/evidence/station-integration/reducer-snapshots.json';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+import {forecastEnemyPhase,listCommands} from '../../expeditions/v2/index.js';
+import {riverLayout} from '../../expeditions/v2/ui/river-layout.js';
+import manifest from '../../expeditions/v2/art/river-manifest.json';
+registerOrchardPuzzleHooks();
+function Review(){
+  const [mode,setMode]=useState('candidate'),[grid,setGrid]=useState(false),[focus,setFocus]=useState(null),[selected,setSelected]=useState(null),[index,setIndex]=useState(0),[moves,setMoves]=useState(false);
+  const state=snapshots[index].state,rows=riverLayout(state.blueprint.tiles);
+  const heroId=state.heroes.find(h=>h.ap>0&&!h.holding)?.id||state.heroes[0].id,dash=listCommands(state,heroId).find(c=>c.type==='dash'),reachable=moves&&dash?.available?dash.targets.filter(t=>t.legal!==false):[];
+  const show=hex=>{setSelected({hex,kind:'tile',id:hex});setFocus({hex,nonce:Date.now()});};
+  return <main><header><strong>River candidate live review</strong><p>Real reducer snapshots. Art candidates only: collar repair and shared App acceptance pending.</p><label>Art <select aria-label="Terrain art" value={mode} onChange={e=>setMode(e.target.value)}><option value="candidate">Candidate</option><option value="legacy">Previous terrain</option></select></label><label><input type="checkbox" checked={grid} onChange={e=>setGrid(e.target.checked)}/> Grid</label><label><input type="checkbox" checked={moves} onChange={e=>setMoves(e.target.checked)}/> Dash highlights</label><label>State <select aria-label="Review state" value={index} onChange={e=>setIndex(Number(e.target.value))}>{snapshots.map((s,i)=><option key={s.id} value={i}>{s.id}</option>)}</select></label><button onClick={()=>show(rows[Math.floor(rows.length/2)].hex)}>Show river</button><button onClick={()=>show(state.blueprint.tiles.find(t=>t.terrain==='bridge')?`${state.blueprint.tiles.find(t=>t.terrain==='bridge').q},${state.blueprint.tiles.find(t=>t.terrain==='bridge').r}`:rows[0].hex)}>Show bridge</button></header><MapViewport state={state} terrainArtMode={mode} showTerrainGrid={grid} artFor={orchardArtFor} forecast={forecastEnemyPhase(state)} selectedObject={selected} focusRequest={focus} reachable={reachable} movementMode={moves} onSelect={s=>show(s.hex)} onMoveTarget={show}/><details><summary>Candidate hashes and adjacency</summary><pre>{JSON.stringify({bytes:manifest.selectedBytes,hashes:Object.values(manifest.assets).map(a=>[a.id,a.sha256]),rows},null,2)}</pre></details><style>{`html,body,#root,main{height:100%;margin:0}main{display:flex;flex-direction:column;background:#203b2a;color:#fff2cf;font:13px system-ui}header{padding:8px}header p{margin:4px 0}button,select{padding:7px;margin:3px;background:#f5e5bb;border-radius:6px}.ov-map-wrap{position:relative;flex:1;min-height:250px;overflow:hidden}.ov-map{height:100%;touch-action:none}.ov-camera-controls{position:absolute;left:8px;top:8px;display:flex;flex-wrap:wrap;max-width:310px}.ov-checklist,.ov-board-list{display:none}.ov-offscreen{position:absolute;bottom:10px;left:8px}.ov-minimap{position:absolute;bottom:10px;right:10px;width:180px}.ov-minimap svg{width:100%}main>details{padding:6px;flex:none}main>details[open]{max-height:20vh;overflow:auto}pre{white-space:pre-wrap}`}</style></main>;
+}
+createRoot(document.getElementById('root')).render(<Review/>);

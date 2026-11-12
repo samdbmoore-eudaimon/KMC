@@ -1,0 +1,1218 @@
+[
+  {
+    "teamIndex": 0,
+    "cardIds": [
+      "warden",
+      "gossamer",
+      "harvestmoon"
+    ],
+    "planFamily": "direct-guard",
+    "assignment": {
+      "number": "warden",
+      "shape": "gossamer",
+      "sustain": "harvestmoon"
+    },
+    "outputChoice": [
+      "bridge",
+      "shelter"
+    ],
+    "committer": "warden",
+    "beamWidth": 3,
+    "initialRun": {
+      "runId": "plan:four-locks:4:29:0:direct-guard",
+      "blueprint": {
+        "schemaVersion": 2,
+        "moduleKey": "primary",
+        "familyId": "four-locks",
+        "tier": 4,
+        "seed": 29,
+        "parameterSeed": 29,
+        "generatorVersion": 1,
+        "rulesVersion": 2,
+        "attempt": 1,
+        "layoutId": "river",
+        "tiles": [
+          {
+            "q": 2,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 0,
+            "terrain": "roots"
+          },
+          {
+            "q": 4,
+            "r": 0,
+            "terrain": "hedge"
+          },
+          {
+            "q": 5,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 0,
+            "terrain": "water"
+          },
+          {
+            "q": 7,
+            "r": 0,
+            "terrain": "hedge"
+          },
+          {
+            "q": 8,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 0,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 1,
+            "terrain": "hedge"
+          },
+          {
+            "q": 3,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 1,
+            "terrain": "hedge"
+          },
+          {
+            "q": 5,
+            "r": 1,
+            "terrain": "roots"
+          },
+          {
+            "q": 6,
+            "r": 1,
+            "terrain": "water"
+          },
+          {
+            "q": 7,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 1,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 2,
+            "terrain": "hedge"
+          },
+          {
+            "q": 0,
+            "r": 2,
+            "terrain": "hedge"
+          },
+          {
+            "q": 1,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 5,
+            "r": 2,
+            "terrain": "bridge"
+          },
+          {
+            "q": 6,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": 10,
+            "r": 2,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 5,
+            "r": 3,
+            "terrain": "water"
+          },
+          {
+            "q": 6,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 3,
+            "terrain": "hedge"
+          },
+          {
+            "q": 8,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": 10,
+            "r": 3,
+            "terrain": "floor"
+          },
+          {
+            "q": -2,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 4,
+            "terrain": "bridge",
+            "passageOutputId": "bridge"
+          },
+          {
+            "q": 5,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 4,
+            "terrain": "floor"
+          },
+          {
+            "q": -2,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 5,
+            "terrain": "water"
+          },
+          {
+            "q": 5,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": 9,
+            "r": 5,
+            "terrain": "floor"
+          },
+          {
+            "q": -3,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": -2,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 0,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 6,
+            "terrain": "bridge"
+          },
+          {
+            "q": 4,
+            "r": 6,
+            "terrain": "roots"
+          },
+          {
+            "q": 5,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 7,
+            "r": 6,
+            "terrain": "floor"
+          },
+          {
+            "q": 8,
+            "r": 6,
+            "terrain": "roots"
+          },
+          {
+            "q": -1,
+            "r": 7,
+            "terrain": "hedge"
+          },
+          {
+            "q": 0,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 2,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 3,
+            "r": 7,
+            "terrain": "water"
+          },
+          {
+            "q": 4,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 5,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": 6,
+            "r": 7,
+            "terrain": "floor"
+          },
+          {
+            "q": -2,
+            "r": 8,
+            "terrain": "floor"
+          },
+          {
+            "q": -1,
+            "r": 8,
+            "terrain": "hedge"
+          },
+          {
+            "q": 0,
+            "r": 8,
+            "terrain": "floor"
+          },
+          {
+            "q": 1,
+            "r": 8,
+            "terrain": "hedge"
+          },
+          {
+            "q": 2,
+            "r": 8,
+            "terrain": "water"
+          },
+          {
+            "q": 3,
+            "r": 8,
+            "terrain": "floor"
+          },
+          {
+            "q": 4,
+            "r": 8,
+            "terrain": "roots"
+          },
+          {
+            "q": 5,
+            "r": 8,
+            "terrain": "roots"
+          }
+        ],
+        "stations": [
+          {
+            "id": "control",
+            "hex": "2,3",
+            "name": "Ledger control",
+            "artId": "mechanism-hive-ledger-board-v1",
+            "maxIntegrity": 18
+          },
+          {
+            "id": "number",
+            "hex": "5,4",
+            "name": "Ledger bus",
+            "artId": "mechanism-hive-ledger-board-v1",
+            "maxIntegrity": 18,
+            "capacity": 7
+          },
+          {
+            "id": "shape",
+            "hex": "8,1",
+            "name": "Bridge brace",
+            "artId": "mechanism-plinth",
+            "maxIntegrity": 18,
+            "capacity": 7
+          },
+          {
+            "id": "sustain",
+            "hex": "6,6",
+            "name": "Tree maintenance",
+            "artId": "terrain-apple-tree-v1",
+            "maxIntegrity": 18,
+            "capacity": 7
+          },
+          {
+            "id": "alcove",
+            "hex": "8,4",
+            "name": "Brace alcove",
+            "artId": "mechanism-hive-ledger-board-v1"
+          }
+        ],
+        "puzzle": {
+          "kind": "sudoku4",
+          "size": 4,
+          "givens": [
+            {
+              "row": 3,
+              "col": 0,
+              "value": 1
+            },
+            {
+              "row": 3,
+              "col": 2,
+              "value": 2
+            }
+          ],
+          "cages": [
+            {
+              "cellIds": [
+                "r0c0",
+                "r1c0",
+                "r2c0"
+              ],
+              "sum": 9,
+              "id": "cage-0"
+            },
+            {
+              "cellIds": [
+                "r0c1",
+                "r0c2",
+                "r1c1"
+              ],
+              "sum": 7,
+              "id": "cage-1"
+            },
+            {
+              "cellIds": [
+                "r1c2",
+                "r2c2",
+                "r2c3"
+              ],
+              "sum": 8,
+              "id": "cage-2"
+            },
+            {
+              "cellIds": [
+                "r2c0",
+                "r3c0"
+              ],
+              "sum": 3,
+              "id": "cage-3"
+            },
+            {
+              "cellIds": [
+                "r1c3",
+                "r2c2",
+                "r2c3"
+              ],
+              "sum": 7,
+              "id": "cage-4"
+            }
+          ],
+          "id": "four-locks-ledger",
+          "controlId": "control",
+          "controlHex": "2,3",
+          "draftSchemaVersion": 1,
+          "networkGroupId": "network",
+          "outputs": [
+            {
+              "id": "bridge",
+              "label": "Bridge",
+              "cost": 2,
+              "trigger": "on-commit",
+              "effect": {
+                "kind": "passage"
+              }
+            },
+            {
+              "id": "shelter",
+              "label": "Shelter",
+              "cost": 3,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "shelter",
+                "amount": 2,
+                "targetIds": [
+                  "number",
+                  "shape",
+                  "sustain"
+                ]
+              }
+            },
+            {
+              "id": "roots",
+              "label": "Roots",
+              "cost": 4,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "roots"
+              }
+            },
+            {
+              "id": "storm",
+              "label": "Storm",
+              "cost": 5,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "storm"
+              }
+            }
+          ],
+          "outputBudget": 8,
+          "defaultOutputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "solutionParameters": {
+            "grid": [
+              [
+                3,
+                2,
+                4,
+                1
+              ],
+              [
+                4,
+                1,
+                3,
+                2
+              ],
+              [
+                2,
+                3,
+                1,
+                4
+              ],
+              [
+                1,
+                4,
+                2,
+                3
+              ]
+            ]
+          },
+          "lockGroups": [
+            {
+              "id": "network",
+              "anchor": "2,3",
+              "memberIds": [
+                "r0c0",
+                "r0c1",
+                "r0c2",
+                "r0c3",
+                "r1c0",
+                "r1c1",
+                "r1c2",
+                "r1c3",
+                "r2c0",
+                "r2c1",
+                "r2c2",
+                "r2c3",
+                "r3c0",
+                "r3c1",
+                "r3c2",
+                "r3c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-0",
+              "anchor": "2,3",
+              "memberIds": [
+                "r0c0",
+                "r0c1",
+                "r0c2",
+                "r0c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-1",
+              "anchor": "2,3",
+              "memberIds": [
+                "r1c0",
+                "r1c1",
+                "r1c2",
+                "r1c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-2",
+              "anchor": "2,3",
+              "memberIds": [
+                "r2c0",
+                "r2c1",
+                "r2c2",
+                "r2c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            },
+            {
+              "id": "row-3",
+              "anchor": "2,3",
+              "memberIds": [
+                "r3c0",
+                "r3c1",
+                "r3c2",
+                "r3c3"
+              ],
+              "effectKinds": [
+                "jam"
+              ]
+            }
+          ]
+        },
+        "outputs": [
+          {
+            "id": "bridge",
+            "label": "Bridge",
+            "cost": 2,
+            "trigger": "on-commit",
+            "effect": {
+              "kind": "passage"
+            }
+          },
+          {
+            "id": "shelter",
+            "label": "Shelter",
+            "cost": 3,
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "shelter",
+              "amount": 2,
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ]
+            }
+          },
+          {
+            "id": "roots",
+            "label": "Roots",
+            "cost": 4,
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "roots"
+            }
+          },
+          {
+            "id": "storm",
+            "label": "Storm",
+            "cost": 5,
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "storm"
+            }
+          }
+        ],
+        "enemies": [
+          {
+            "id": "jammer-1",
+            "ruleId": "jammer",
+            "artId": "hookmole",
+            "position": "8,2",
+            "wakePhase": 1
+          },
+          {
+            "id": "hunter-1",
+            "ruleId": "hunter",
+            "artId": "scruffcrow",
+            "position": "6,5",
+            "wakePhase": 1
+          },
+          {
+            "id": "breaker-1",
+            "ruleId": "breaker",
+            "artId": "strawling",
+            "position": "7,5",
+            "wakePhase": 1
+          }
+        ],
+        "hazards": [
+          {
+            "id": "root-drain",
+            "sites": [
+              {
+                "id": "sustain-site",
+                "targetId": "sustain"
+              }
+            ],
+            "mutation": {
+              "kind": "none"
+            }
+          }
+        ],
+        "sites": [
+          {
+            "id": "controlled-passage",
+            "anchor": "4,4"
+          }
+        ],
+        "deployment": [
+          "1,3",
+          "0,4",
+          "0,5"
+        ],
+        "deadline": 5,
+        "orchard": {
+          "hex": "9,4",
+          "name": "Ninefold tree",
+          "artId": "terrain-apple-tree-v1"
+        },
+        "orchardMaxIntegrity": 26,
+        "certificateId": null,
+        "structuralFingerprint": "b187a86d81451394",
+        "commission": {
+          "poweredCount": 2,
+          "selectableOutputIds": [
+            "bridge",
+            "shelter",
+            "roots",
+            "storm"
+          ]
+        }
+      },
+      "cardIds": [
+        "warden",
+        "gossamer",
+        "harvestmoon"
+      ],
+      "deploymentAssignment": {
+        "warden": "1,3",
+        "gossamer": "0,4",
+        "harvestmoon": "0,5"
+      },
+      "profiles": {
+        "warden": {
+          "cardId": "warden",
+          "name": "Warden",
+          "rarity": "epic",
+          "stats": [
+            8,
+            6,
+            8,
+            6,
+            6
+          ],
+          "discipline": "arithmetic",
+          "primaryStat": 0,
+          "role": "melee",
+          "roleName": "Mover",
+          "maxHealth": 16,
+          "moveBudget": 6,
+          "armour": 1,
+          "initiative": 6,
+          "strikeRange": 1,
+          "strikeStat": 8,
+          "dashBudget": 10,
+          "interceptBudget": 6,
+          "hand": [
+            {
+              "key": "exact-blow",
+              "kind": "discipline"
+            },
+            {
+              "key": "shared-charge",
+              "kind": "discipline"
+            },
+            {
+              "key": "driving-blow",
+              "kind": "role"
+            },
+            {
+              "key": "second-wind",
+              "kind": "second-wind"
+            }
+          ]
+        },
+        "gossamer": {
+          "cardId": "gossamer",
+          "name": "Gossamer",
+          "rarity": "epic",
+          "stats": [
+            5,
+            9,
+            6,
+            6,
+            8
+          ],
+          "discipline": "geometry",
+          "primaryStat": 1,
+          "role": "tank",
+          "roleName": "Guardian",
+          "maxHealth": 16,
+          "moveBudget": 6,
+          "armour": 2,
+          "initiative": 4,
+          "strikeRange": 1,
+          "strikeStat": 9,
+          "dashBudget": 12,
+          "interceptBudget": 8,
+          "hand": [
+            {
+              "key": "true-shift",
+              "kind": "discipline"
+            },
+            {
+              "key": "wide-brace",
+              "kind": "discipline"
+            },
+            {
+              "key": "stand-together",
+              "kind": "role"
+            },
+            {
+              "key": "second-wind",
+              "kind": "second-wind"
+            }
+          ]
+        },
+        "harvestmoon": {
+          "cardId": "harvestmoon",
+          "name": "Harvestmoon",
+          "rarity": "epic",
+          "stats": [
+            6,
+            6,
+            8,
+            8,
+            6
+          ],
+          "discipline": "logic",
+          "primaryStat": 2,
+          "role": "wizard",
+          "roleName": "Reckoner",
+          "maxHealth": 18,
+          "moveBudget": 6,
+          "armour": 1,
+          "initiative": 6,
+          "strikeRange": 2,
+          "strikeStat": 8,
+          "dashBudget": 10,
+          "interceptBudget": 6,
+          "hand": [
+            {
+              "key": "counterturn",
+              "kind": "discipline"
+            },
+            {
+              "key": "linked-lock",
+              "kind": "discipline"
+            },
+            {
+              "key": "crosswire",
+              "kind": "role"
+            },
+            {
+              "key": "second-wind",
+              "kind": "second-wind"
+            }
+          ]
+        }
+      },
+      "initialStateHash": "1ba92ce10f9de536"
+    },
+    "commands": [
+      {
+        "type": "request-hint",
+        "heroId": null,
+        "expectedRevision": 0,
+        "payload": {
+          "puzzleId": "four-locks-ledger",
+          "stage": 3
+        }
+      },
+      {
+        "type": "operate",
+        "heroId": "warden",
+        "expectedRevision": 1,
+        "payload": {
+          "draftRevision": 1,
+          "outputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "lockGroupId": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "warden",
+        "expectedRevision": 2,
+        "payload": {
+          "destination": "5,4",
+          "path": null
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "gossamer",
+        "expectedRevision": 3,
+        "payload": {
+          "destination": "6,2",
+          "path": null
+        }
+      },
+      {
+        "type": "guard",
+        "heroId": "gossamer",
+        "expectedRevision": 4,
+        "payload": {
+          "targetId": "gossamer"
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "harvestmoon",
+        "expectedRevision": 5,
+        "payload": {
+          "destination": "4,6",
+          "path": null
+        }
+      },
+      {
+        "type": "strike",
+        "heroId": "harvestmoon",
+        "expectedRevision": 6,
+        "payload": {
+          "targetId": "hunter-1"
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 7,
+        "payload": {
+          "forecastRevision": 7
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "warden",
+        "expectedRevision": 8,
+        "payload": {
+          "targetId": "number"
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "gossamer",
+        "expectedRevision": 9,
+        "payload": {
+          "destination": "8,1",
+          "path": null
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "gossamer",
+        "expectedRevision": 10,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "move",
+        "heroId": "harvestmoon",
+        "expectedRevision": 11,
+        "payload": {
+          "destination": "6,6",
+          "path": null
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "harvestmoon",
+        "expectedRevision": 12,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 13,
+        "payload": {
+          "forecastRevision": 13
+        }
+      },
+      {
+        "type": "exact-blow",
+        "heroId": "warden",
+        "expectedRevision": 14,
+        "payload": {
+          "targetId": "breaker-1"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "gossamer",
+        "expectedRevision": 15,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "calibrate",
+        "heroId": "harvestmoon",
+        "expectedRevision": 16,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "warden",
+        "expectedRevision": 17,
+        "payload": {
+          "targetId": "number"
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "gossamer",
+        "expectedRevision": 18,
+        "payload": {
+          "targetId": "shape"
+        }
+      },
+      {
+        "type": "hold",
+        "heroId": "harvestmoon",
+        "expectedRevision": 19,
+        "payload": {
+          "targetId": "sustain"
+        }
+      },
+      {
+        "type": "end-round",
+        "heroId": null,
+        "expectedRevision": 20,
+        "payload": {
+          "forecastRevision": 20
+        }
+      }
+    ],
+    "perCommandHashes": [
+      "0f2c6c6fbc4ca414",
+      "63db550db396ca8a",
+      "7bb8caf81b3b9817",
+      "95206e0af7730c51",
+      "eb46699c134dcb8f",
+      "59e5002f07438880",
+      "6fee0958466e9311",
+      "80bf8fed249911da",
+      "ebd0b3fef085d631",
+      "14232ff7ae213330",
+      "185dd972cc876f85",
+      "4e4911861270abcd",
+      "b00ac94238507211",
+      "ab220a1ea6eb4a51",
+      "ac0b9769b634b7b2",
+      "fb1336937c5a5c94",
+      "080b87261235a681",
+      "77fc5f88da13a70f",
+      "48fd0342b2c491d9",
+      "13b43137f6d6035e",
+      "0537c720e4d82745"
+    ],
+    "finalStateHash": "0537c720e4d82745",
+    "rounds": 3,
+    "commandCount": 21
+  }
+]

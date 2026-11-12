@@ -1,0 +1,134 @@
+{
+  "status": "unknown",
+  "familyId": "turning-ravine",
+  "tier": 1,
+  "parameterSeed": 1,
+  "layoutId": "hedges",
+  "contentHash": "64f9c5ecff18e81f",
+  "mathematics": {
+    "fullSolutions": 1,
+    "exhaustive": true,
+    "solverNodes": 1648,
+    "initialChanged": 4,
+    "initialTrueTracks": 1,
+    "solvedValues": {
+      "A": 3,
+      "O": "×",
+      "B": 10,
+      "E": "=",
+      "C": 13,
+      "D": 4
+    },
+    "sharedNumbers": [
+      "B",
+      "C"
+    ]
+  },
+  "topology": {
+    "open": 82,
+    "closed": 81,
+    "connected": true,
+    "spacing": true,
+    "controlCost": 1,
+    "numberCost": 4,
+    "directCosts": [
+      5,
+      9,
+      7
+    ],
+    "alcoveCost": 9,
+    "exclusiveEdges": 17,
+    "valid": true
+  },
+  "results": [
+    {
+      "name": "common-direct",
+      "cardIds": [
+        "tuppence",
+        "furrow",
+        "sorrel"
+      ],
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 698,
+        "maxStates": 80000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "furrow",
+              "sorrel"
+            ],
+            "status": "success",
+            "commandCount": 31,
+            "rounds": 5
+          }
+        ],
+        "beamWidth": 40
+      }
+    },
+    {
+      "name": "common-alternate",
+      "cardIds": [
+        "bushel",
+        "wicker",
+        "pip"
+      ],
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 648,
+        "maxStates": 80000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "wicker",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 33,
+            "rounds": 5
+          }
+        ],
+        "beamWidth": 40
+      }
+    },
+    {
+      "name": "higher-band-alcove",
+      "cardIds": [
+        "bushel",
+        "dapple",
+        "pip"
+      ],
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 80000,
+        "maxStates": 80000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "dapple",
+              "pip"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 40
+      }
+    }
+  ],
+  "traceCount": 2,
+  "runtimeAvailable": false
+}

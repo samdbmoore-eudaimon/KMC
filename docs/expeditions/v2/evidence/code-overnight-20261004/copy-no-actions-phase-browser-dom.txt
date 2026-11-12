@@ -1,0 +1,226 @@
+- text: "unequal-crossing T1 seed 3: generated private QA mission, zero-command start, real route/controller/reducer. Disposable QA progress; uncertified family stays unavailable in production."
+- button "Leave route"
+- button "New zero-command QA run"
+- banner:
+  - strong: Unequal Crossing · 1
+  - generic: Round 3/5
+  - generic: Orchard 18/20
+  - generic: "Sorrel: 0 AP"
+  - button "Party":
+    - generic: Party
+  - button "Objectives":
+    - generic: Objectives
+  - button "How to play":
+    - generic: How to play
+  - button "First actions":
+    - generic: First actions
+  - button "Save & exit":
+    - generic: Save & exit
+- 'region "Battlefield: arrow keys pan, plus and minus zoom, Home shows overview"':
+  - img "Orchard battlefield":
+    - button "Hex 2,0"
+    - button "Hex 3,0"
+    - button "Hex 4,0"
+    - button "Hex 5,0"
+    - button "Hex 6,0"
+    - button "Hex 7,0"
+    - button "Hex 8,0"
+    - button "Hex 9,0"
+    - button "Hex 2,1"
+    - button "Hex 3,1"
+    - button "Hex 4,1"
+    - button "Hex 5,1"
+    - button "Hex 6,1"
+    - button "Hex 7,1"
+    - button "Hex 8,1"
+    - button "Hex 9,1"
+    - button "Hex -1,2"
+    - button "Hex 0,2"
+    - button "Hex 1,2"
+    - button "Hex 2,2"
+    - button "Hex 3,2"
+    - button "Hex 4,2"
+    - button "Hex 5,2"
+    - button "Hex 6,2"
+    - button "Hex 7,2"
+    - button "Hex 8,2"
+    - button "Hex 9,2"
+    - button "Hex 10,2"
+    - button "Hex -1,3"
+    - button "Hex 0,3"
+    - button "Hex 1,3"
+    - button "Hex 2,3"
+    - button "Hex 3,3"
+    - button "Hex 4,3"
+    - button "Hex 5,3"
+    - button "Hex 6,3"
+    - button "Hex 7,3"
+    - button "Hex 8,3"
+    - button "Hex 9,3"
+    - button "Hex 10,3"
+    - button "Hex -2,4"
+    - button "Hex -1,4"
+    - button "Hex 0,4"
+    - button "Hex 1,4"
+    - button "Hex 2,4"
+    - button "Hex 3,4"
+    - button "Hex 4,4"
+    - button "Hex 5,4"
+    - button "Hex 6,4"
+    - button "Hex 7,4"
+    - button "Hex 8,4"
+    - button "Hex 9,4"
+    - button "Hex -2,5"
+    - button "Hex -1,5"
+    - button "Hex 0,5"
+    - button "Hex 1,5"
+    - button "Hex 2,5"
+    - button "Hex 3,5"
+    - button "Hex 4,5"
+    - button "Hex 5,5"
+    - button "Hex 6,5"
+    - button "Hex 7,5"
+    - button "Hex 8,5"
+    - button "Hex 9,5"
+    - button "Hex -3,6"
+    - button "Hex -2,6"
+    - button "Hex -1,6"
+    - button "Hex 0,6"
+    - button "Hex 1,6"
+    - button "Hex 2,6"
+    - button "Hex 3,6"
+    - button "Hex 4,6"
+    - button "Hex 5,6"
+    - button "Hex 6,6"
+    - button "Hex 7,6"
+    - button "Hex 8,6"
+    - button "Hex -1,7"
+    - button "Hex 0,7"
+    - button "Hex 1,7"
+    - button "Hex 2,7"
+    - button "Hex 3,7"
+    - button "Hex 4,7"
+    - button "Hex 5,7"
+    - button "Hex 6,7"
+    - button "Hex -2,8"
+    - button "Hex -1,8"
+    - button "Hex 0,8"
+    - button "Hex 1,8"
+    - button "Hex 2,8"
+    - button "Hex 3,8"
+    - button "Hex 4,8"
+    - button "Hex 5,8"
+    - generic: Tuppence
+    - generic: 12 ♥ · 0 AP
+    - generic: No AP
+    - generic "Bridge lowered"
+    - generic: Hookmole
+    - generic: 10 ♥
+    - generic: Dapple
+    - generic: 12 ♥ · 0 AP
+    - generic: No AP
+    - 'generic "Bridge raised: activate the number lock to lower it"'
+    - generic "Passage closed": ×
+    - generic: Ninefold tree
+    - generic "Bridge lowered"
+    - generic: Sorrel
+    - generic: 15 ♥ · 0 AP
+    - generic: Holding
+    - generic: Actions 1 → 0
+    - img "Platform brace. Power 4/4 · ready. Integrity 12/12"
+    - img "Brace alcove. Not prepared"
+    - img "Scale control. Inactive. Integrity 12/12"
+    - img "Scale lock. Power 4/4 · ready. Integrity 12/12"
+    - 'img "Scale repair. Power 4/4 · ready. Held: Sorrel. Integrity 12/12"'
+    - 'generic "Right pan: committed 1, draft 13, target 13"':
+      - generic: "Right pan: 1 / 13"
+      - generic: "Draft: 13"
+    - 'generic "Shared pan totals at Scale lock: committed L 13 · R 1, draft L 13 · R 13, target 13"':
+      - generic: L 13 · R 1 / 13
+      - generic: "Draft: L 13 · R 13"
+- group "Mission checklist":
+  - 'generic "Goal: 1/4 ready"'
+- complementary "Next step":
+  - strong: "Next: Walk a hero to the Scale control"
+  - paragraph: Activate the balanced crossing at Scale control (2,3). You can solve its puzzle from anywhere for free, but switching it on needs a hero standing on or beside it. Dapple is 1 hex away.
+  - button "Show it on the map":
+    - generic: Show it on the map
+  - button "Hide guide":
+    - generic: Hide guide
+- button "Zoom in":
+  - generic: +
+- button "Zoom out":
+  - generic: −
+- button "Overview":
+  - generic: Overview
+- button "100%":
+  - generic: 100%
+- button "Lock camera":
+  - generic: Lock camera
+- button "Minimap":
+  - generic: Minimap
+- button "↗ Hookmole":
+  - generic: ↗ Hookmole
+- group "Battlefield objects and reachable targets":
+  - generic "Find on map"
+- status: "Sorrel holds Scale repair. Its operating protection lasts through this phase while the hero stays there. Sorrel actions: 1 → 0"
+- contentinfo:
+  - generic "Your expedition team":
+    - button "Select Dapple, no actions left":
+      - strong: Dapple
+      - generic: 12/12 ♥ · 0 AP
+    - button "Select Sorrel, no actions left" [pressed]:
+      - strong: ✓ Sorrel
+      - generic: 15/15 ♥ · 0 AP · Hold
+    - button "Select Tuppence, no actions left":
+      - strong: Tuppence
+      - generic: 12/12 ♥ · 0 AP
+  - button "Move" [disabled]:
+    - strong: Move
+    - generic: 1 action
+  - button "About Move":
+    - generic: "?"
+  - button "Puzzle":
+    - strong: Puzzle
+    - generic: Free draft
+  - button "Undo":
+    - strong: Undo
+    - generic: This round
+  - button "End round" [active]:
+    - strong: End round
+    - generic: Preview first
+  - 'generic "All actions: protection, repairs, alcove and recovery"'
+  - generic "Sorrel's four abilities":
+    - button "Field Repair" [disabled]:
+      - strong: Field Repair
+      - generic: 1 action · ready
+    - button "About Field Repair":
+      - generic: "?"
+    - button "Root Shelter" [disabled]:
+      - strong: Root Shelter
+      - generic: 1 action · ready
+    - button "About Root Shelter":
+      - generic: "?"
+    - button "Mend and Mend Again" [disabled]:
+      - strong: Mend and Mend Again
+      - generic: 1 action · ready
+    - button "About Mend and Mend Again":
+      - generic: "?"
+    - button "Second Wind" [disabled]:
+      - strong: Second Wind
+      - generic: 1 action · ready
+    - button "About Second Wind":
+      - generic: "?"
+- heading "Next enemy phase" [level=2]
+- list:
+  - button "Hookmole":
+    - generic: Hookmole
+  - text: ": Hookmole moves to 4,1 then disrupt Scale control; power 4; changes load-5; blocked: Move closer to the target first.."
+- paragraph: "scale drain: protection 4 required. The orchard is protected at this site."
+- paragraph: The expedition continues after this phase.
+- button "Confirm end round":
+  - generic: Confirm end round
+- button "Return":
+  - generic: Return
+- generic "Exact phase event log"
+- generic "Disposable QA progress and reducer trace"

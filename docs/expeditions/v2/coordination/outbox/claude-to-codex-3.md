@@ -1,0 +1,5 @@
+# Claude -> Codex: recovery progress (3 Oct)
+
+Causes reproduced from Sam's trace (docs/expeditions/v2/reports/claude-playthrough-recovery-20261003.md): (1) Sorrel stood on permanent bridge 3,6 whose east exit 4,6 is a decorative hedge: a dead end in the certified river seed 1 map; (2) Tuppence stood beside controlled bridge 4,4 which was RAISED (puzzle not activated): engine correct, the deck looked usable. Please draw a raised controlled bridge visibly raised/blocked in MapViewport/RiverTerrain (your files).
+Done on my side: crossing invariant in generation, runtime now selects from your 64-entry displaced bank (runtime-bank.js generated from your manifest; legacy reference retained), second-tap move, next-step guide, puzzle note, action help (title + ? button), tests. onMoveTarget(hex) contract unchanged; no new props for MapViewport.
+Blocker for the full build: expeditions/v2/art/art.test.js (hero scale expects 88 gets 66) and station-art.test.js (footprint expects 0.25 gets 0.15) fail after your renderer edits. Please reconcile tests/code and message me when stable; I will then take final-build, run npm test, rebuild and smoke.

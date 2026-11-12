@@ -1,0 +1,192 @@
+{
+  "packetId": "four-locks-displaced-v1",
+  "generatorVersion": 2,
+  "batchId": "21-24",
+  "sourceTopologyHash": "3ec38d3cecefbbfb",
+  "candidateHash": "42f7246fa6985888",
+  "requestedLimits": {
+    "maxPlannerInvocations": 2,
+    "maxStatesPerInvocation": 8000
+  },
+  "attempts": [
+    {
+      "cardIds": [
+        "tuppence",
+        "wicker",
+        "pip"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 1153,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "wicker",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 32,
+            "rounds": 5
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    },
+    {
+      "cardIds": [
+        "bushel",
+        "dapple",
+        "pip"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "roots"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 8015,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "dapple",
+              "pip"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 15,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    }
+  ],
+  "certification": {
+    "status": "unknown",
+    "errors": [
+      "two-distinct-target-teams-missing",
+      "different-target-output-plans-missing",
+      "physical-alcove-proof-missing"
+    ],
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "tuppence",
+          "wicker",
+          "pip"
+        ],
+        "finalHash": "be3af46dfbf14602",
+        "round": 5,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "wicker",
+          "holdId": "wicker@r5#44"
+        },
+        "hashes": [
+          "2961354b9284a26a",
+          "55547338e18ae519",
+          "186719e6101c0227",
+          "b51fb5dc0a43b4a9",
+          "9adabf9ae7b00a2f",
+          "b5658f8e59fbf373",
+          "47262f1e74ecc28b",
+          "a8b95e4da0d28df6",
+          "eea460ed835da852",
+          "50648571a24bd6e6",
+          "1a119babca6f8010",
+          "f5bbc6d0dec01347",
+          "a3e65ac9a99fb93a",
+          "590d57cb8b3c2af0",
+          "92d8ada0bad89467",
+          "43b97433fa319ccc",
+          "2dbd550932c9ed12",
+          "78b2f4c827b7fa13",
+          "065a47d1d80a8482",
+          "48277c5ac8561ac9",
+          "4e39625626c7123f",
+          "30f037d4565bab05",
+          "865e8489843528ea",
+          "73cf5c010487bb82",
+          "f9335886fee6e3c9",
+          "0b056de261782bad",
+          "48c34cbdeb3747ce",
+          "74e0d665ceefcece",
+          "187f2916ddf6249d",
+          "4c663d043a66e77b",
+          "cc19d4b6603c41f3",
+          "be3af46dfbf14602"
+        ]
+      }
+    ],
+    "lowerBand": {
+      "method": "exact-printed-stat-enumeration",
+      "rows": [
+        {
+          "job": "number",
+          "requirement": [
+            4,
+            0,
+            2,
+            0,
+            0
+          ],
+          "eligibleBelow": []
+        },
+        {
+          "job": "shape",
+          "requirement": [
+            0,
+            4,
+            0,
+            0,
+            2
+          ],
+          "eligibleBelow": []
+        },
+        {
+          "job": "sustain",
+          "requirement": [
+            0,
+            0,
+            0,
+            5,
+            2
+          ],
+          "eligibleBelow": []
+        }
+      ]
+    }
+  }
+}

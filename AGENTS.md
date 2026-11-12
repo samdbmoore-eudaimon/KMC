@@ -1,14 +1,17 @@
-# Kangaroo Maths Quest — AI Context File
+# Wallaby Maths — AI Context File
 
 Single-file HTML/React educational game for two children (9 & 10) preparing for the UK Junior Maths Challenge. Runs offline in any browser; also packaged as an Android APK via Capacitor. No server, no AI at runtime — all teaching is static, all marking is computed locally.
+
+For any Expeditions work, read `EXPEDITIONS_MASTER_BRIEF.md` first. It is the central
+entry point and records the current product, art, scenario and coordination decisions.
 
 ---
 
 ## Build & test
 
 ```bash
-node scripts/rebuild.cjs            # bundles → KangarooMathsQuest.html + www/index.html
-node --check kq-content.js          # syntax check content index
+node scripts/rebuild.cjs            # bundles → WallabyMaths.html + www/index.html
+node --check wm-content.js          # syntax check content index
 node scripts/gen_sanity_test_junior.cjs
 node scripts/gen_sanity_test_primary.cjs
 node scripts/gen_sanity_test_intermediate.cjs
@@ -30,7 +33,7 @@ esbuild bundles everything into a single self-contained HTML file. The source fi
 | `content/primary-lessons.js` | `PRIMARY_LESSONS` — 25 lesson objects | Editing Primary lessons |
 | `content/intermediate-story.js` | `INTERMEDIATE_STORY_TITLE`, `INTERMEDIATE_STORY`, `INTERMEDIATE_ADVENTURES` (Gifford, 14 adventures) | Editing Intermediate story or adventures |
 | `content/intermediate-lessons.js` | `INTERMEDIATE_LESSONS` — 28 lesson objects | Editing Intermediate lessons |
-| `kq-content.js` | Thin 28-line index — imports the above, re-exports `CONTENT_MODULES`, `STORY_TITLE`, `STORY`, `ADVENTURES`, `LESSONS`, `setContentModule` | Almost never — only if changing the module interface |
+| `wm-content.js` | Thin 28-line index — imports the above, re-exports `CONTENT_MODULES`, `STORY_TITLE`, `STORY`, `ADVENTURES`, `LESSONS`, `setContentModule` | Almost never — only if changing the module interface |
 
 ### Generators (question logic — open the one module you're changing)
 
@@ -45,16 +48,28 @@ esbuild bundles everything into a single self-contained HTML file. The source fi
 
 | File | What's inside | When to open |
 |---|---|---|
-| `KangarooMathsQuest.jsx` | `MODULES`, `activateModule`, `App`, all screen components (`Home`, `Practice`, `MockTest`, `CardsScreen`, `AdventureRun`, `Storybook`, `Olympiad`, `GrownUps`, `Profiles`, …), storage keys, `freshProgress` | Any UI or game-logic change |
+| `WallabyMaths.jsx` | `MODULES`, `activateModule`, `App`, all screen components (`Home`, `Practice`, `MockTest`, `CardsScreen`, `AdventureRun`, `Storybook`, `Olympiad`, `ProgressReport`, `Profiles`, `AccountPanel`, …), storage keys, `freshProgress` | Any UI or game-logic change |
+| `wm-entitlement.js` | Account/subscription client: magic-link sign-in, licence redemption, and `verifyCertificate`/`getCurrentEntitlement` (offline, Ed25519, no network call) | Editing account/paywall/gating logic |
+
+### Backend (parent accounts & subscriptions — see `cloudflare-worker/accounts/README.md`)
+
+Deployed separately from `kq-sync` (device progress sync, unchanged). `wallaby-accounts`
+Worker + D1 database: magic-link auth, signed 365-day offline entitlement certificates,
+licence-batch/gift redemption, an `/admin` panel, and a not-yet-connected Paddle webhook
+stub. Content gating is wired in: Junior/Intermediate are locked behind entitlement
+(module switch AND app resume, not just switch), and Primary has all six of the brief's
+freemium caps (level 1, first 5 lessons, chapter 1, first 2 adventures, 1 card pack, 1 Joey
+match) — all keyed off `primaryFreemiumCapped` in WallabyMaths.jsx. See the README's
+"Not yet done" for what's still open (Resend, Paddle, reminder emails, Android IAP).
 
 ### Art (frozen — never open unless changing art)
 
 | File | What's inside |
 |---|---|
-| `kq-art.js` | `BOSS_ART` (Junior boss portraits, base64 JPEGs), `CARD_ART` (32 card portraits) |
-| `kq-title-art.js` | `TITLE_ART` — Junior home screen illustration |
-| `kq-ui-art.js` | `UI_ART` — Junior UI chrome |
-| `kq-joey-art.js` | `JOEY_ART` — Joey battle screen assets (not yet integrated) |
+| `wm-art.js` | `BOSS_ART` (Junior boss portraits, base64 JPEGs), `CARD_ART` (32 card portraits) |
+| `wm-title-art.js` | `TITLE_ART` — Junior home screen illustration |
+| `wm-ui-art.js` | `UI_ART` — Junior UI chrome |
+| `wm-joey-art.js` | `JOEY_ART` — Joey battle screen assets (not yet integrated) |
 
 ### Reference docs (read before making changes to those areas)
 
@@ -68,17 +83,19 @@ esbuild bundles everything into a single self-contained HTML file. The source fi
 | `edge_case_rulings.md` | Joey edge-case rulings |
 | `GIFFORD_CARD_ART_FULL_RULESET.md` | Art direction rules for Intermediate card portraits |
 
+Note: "Kangaroo" in `INTERMEDIATE_DEEP_RESEARCH.md` and elsewhere in curriculum research/audit docs refers to the real UKMT Kangaroo competition (the actual exam these modules prepare pupils for) — that is a factual reference, not app branding, and must never be renamed.
+
 ---
 
 ## Three modules
 
 | Key | Name | Track | Content files | Generator file |
 |---|---|---|---|---|
-| `junior` | The Kangaroo Quest | Junior Maths Challenge (Y7–9) | `content/junior-*.js` | `generators/junior-generators.js` |
+| `junior` | Little Reckoning | Junior Maths Challenge (Y7–9) | `content/junior-*.js` | `generators/junior-generators.js` |
 | `primary` | Ninefold Orchard | Primary / KS2 | `content/primary-*.js` | `generators/primary-generators.js` |
 | `intermediate` | Gifford | Intermediate MC / KS4 | `content/intermediate-*.js` | `generators/intermediate-generators.js` |
 
-Switching module: `setContentModule(key)` (in `kq-content.js`) + `activateModule(key)` (in `KangarooMathsQuest.jsx`).
+Switching module: `setContentModule(key)` (in `wm-content.js`) + `activateModule(key)` (in `WallabyMaths.jsx`).
 
 ---
 
@@ -88,7 +105,7 @@ Answer questions → earn stars → 20 stars = 1 card pack → cards build **str
 
 - **10 levels** per module; boss n gates level n+1
 - **Boss gate:** `collectionStrength >= BOSSES[n].threshold` AND `progress.mocks[level]` is true
-- **Exam pass marks** scale per level (`EXAM_PASS_MARKS` map in `KangarooMathsQuest.jsx`)
+- **Exam pass marks** scale per level (`EXAM_PASS_MARKS` map in `WallabyMaths.jsx`)
 - **Pack odds** scale with level (`packWeights(lv)`) — median ~37 packs for the full collection
 
 ---
@@ -161,7 +178,7 @@ Helpers available in `generators/gen-shared.js`: `rand(a,b)`, `pick(arr)`, `shuf
 
 ## Progress / storage
 
-Storage keys: `kq_profiles_v3`, `kq_current_v3`, `kq_prof3_<id>`.
+Storage keys: `wm_profiles_v3`, `wm_current_v3`, `wm_prof3_<id>`. (Pre-rebrand `kq_*` keys are migrated forward once, automatically, on first load after the rebrand — see `migrateOldStorageKeys` in `WallabyMaths.jsx`.)
 
 `freshProgress()` shape: `{ unlockedLevel, bossesBeaten, stars, cards, mocks, testHistory, cardItems, adventures, ... }`.
 

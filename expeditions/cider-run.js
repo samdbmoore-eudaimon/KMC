@@ -37,6 +37,24 @@
 // pathHexes` names every press hex as an explicit data field for the renderer's terrain dressing
 // to consume, replacing ExpeditionBoard.jsx's old `q === -2/0/2` column inference (Codex: "the
 // renderer should consume [data] fields rather than infer columns").
+//
+// Mechanic rebuild (2026-09-21, Sam's playtest: "moving on a hex, picking up the number five,
+// picking up the number three, and putting it into eight is just boring gameplay... for a bright,
+// mathematically inclined ten-year-old"). The 2026-09-18 reshape only ever changed the board's
+// geometry — every layout still had exactly one valid pair, generateExactPairKernel's own
+// uniqueness guarantee, so there was never an actual DECISION: find the one answer, then walk
+// the one certified route to it. Two real fixes landed together:
+//   1. generateExactPairKernel now takes pairCount: 2 (expedition-kernels.js) — every layout has
+//      two independently certified, disjoint pairs (never sharing a press, since every value is
+//      distinct), so which pair to commit to is a genuine choice, weighed against Reach (near vs
+//      far) and which lane Scruffcrow threatens soonest, not just arithmetic.
+//   2. Scruffcrow's flood-lane behaviour now shares strikeAdjacentHero with every other lane
+//      enemy (expedition-engine.js): an unguarded hero standing in its lane is struck instead of
+//      the press flooding, so standing near it carelessly costs a heart, not just a number. This
+//      is what actually makes Guard, hp and a Defence-beating stat matter here — previously
+//      Scruffcrow could never touch a hero at all, only presses, so combat stats were dead
+//      weight on this map specifically. `flags.pressureLanes` now names Threat as well as
+//      Number/Change/Reach, reflecting that honestly rather than leaving it unclaimed.
 import { createExpeditionState, endPlayerPhase, evaluateObjective, hexDistance, interactObject, moveUnit, reachableHexes, resolveEnemyPhase } from "./expedition-engine.js";
 import { createExpeditionRandom } from "./expedition-random.js";
 import { generateExactPairKernel } from "./expedition-kernels.js";
@@ -105,18 +123,22 @@ export const CIDER_RUN_CONFIG = {
     target: 12,
   },
   flags: {
-    briefing: "Fill the press gate with two presses worth exactly the printed total, before the cider floods your plan.",
-    // §7's "definition of a completed scenario brief" — pressure lanes: Number (finding the
-    // one exact pair, or making one with Combine), Change (the flood is one-directional and
-    // permanent once it starts — nothing lowers a flooded press back down) and now Reach too
-    // (each lane's near/far presses sit at genuinely different travel costs from the gate).
-    pressureLanes: ["number", "change", "reach"],
+    // Plain language, not jargon: 2026-09-21 rewrite (Sam's playtest — "raises a lane's value"
+    // assumed the reader already knew what a lane was).
+    briefing: "Two different pairs of presses can fill the gate exactly — pick one and carry both presses across before Scruffcrow's rolling cider reaches that lane. Stand near Scruffcrow unguarded and it will strike you instead.",
+    // §7's "definition of a completed scenario brief" — pressure lanes: Number (two real pairs
+    // to weigh against each other, not one to simply find), Change (the flood is one-directional
+    // and permanent once it starts), Reach (each lane's near/far presses sit at genuinely
+    // different travel costs) and now Threat too (2026-09-21: Scruffcrow can strike an unguarded
+    // hero standing in its lane instead of flooding a press — strikeAdjacentHero,
+    // expedition-engine.js — so Guard and a hero's own hp are load-bearing here, not decorative).
+    pressureLanes: ["number", "change", "reach", "threat"],
     // Every press hex, for the renderer's terrain dressing (ExpeditionBoard.jsx's nfoTerrainArt)
     // to consume directly instead of inferring "path" tiles from hex-column arithmetic that
     // assumed the old, since-replaced layout.
     pathHexes: PRESS_HEXES.map((hex) => hex.pos),
-    heroChain: "Arithmetic combines two near-miss presses into the exact pair the gate needs, Speed delivers it before Scruffcrow's one-round delay ends.",
-    alternateChain: "Without a combiner: any two presses that already sum correctly can simply be carried and guarded until both are dropped, no exact identity required.",
+    heroChain: "Weigh the two certified pairs against each other and Speed carries the safer one clear before Scruffcrow ever gets close; Arithmetic can also combine two near-miss presses into a fresh exact pair if a better route opens up.",
+    alternateChain: "Without a combiner: just pick whichever of the two certified pairs is currently safest and carry it — the choice of pair matters more than any single hero's identity.",
   },
 };
 
@@ -125,8 +147,14 @@ export const CIDER_RUN_CONFIG = {
 // `roundBudget` more rounds from whatever `state` it's handed — used by both
 // isPhysicallyDeliverable (the fast, from-the-start case) and
 // isRecoverableAfterOneFloodTick (the delayed, after-a-flood-tick case) below, so the two
-// certifiers can never quietly drift out of sync on how a real party actually moves.
-function deliverPair(state, firstId, secondId, roundBudget) {
+// certifiers can never quietly drift out of sync on how a real party actually moves. Exported
+// as deliverCertifiedPair (returning the final state too, not just success) so tests and
+// scripts/simulate_cider_run.mjs can produce a real reference trace straight from whichever
+// pair generateCiderRunLayout actually certified, instead of a hand-transcribed hex sequence
+// that would silently go stale the next time the generator's output changes — the exact
+// "certifier and real gameplay must never drift apart" discipline this function already exists
+// for, extended to cover the test suite too.
+export function deliverCertifiedPair(state, firstId, secondId, roundBudget) {
   const gateHexes = CIDER_RUN_CONFIG.objective.hexes;
   function walkTo(unitId, targetHex) {
     for (let guard = 0; guard < 15; guard += 1) {
@@ -165,10 +193,13 @@ function deliverPair(state, firstId, secondId, roundBudget) {
   for (let round = 1; round <= roundBudget && state.status === "playing"; round += 1) {
     runCarrier(carriers[0], firstId, gateHexes[0]);
     runCarrier(carriers[1], secondId, gateHexes[1]);
-    if (evaluateObjective(state).complete) return true;
+    if (evaluateObjective(state).complete) return { success: true, state };
     state = resolveEnemyPhase(endPlayerPhase(state));
   }
-  return evaluateObjective(state).complete;
+  return { success: evaluateObjective(state).complete, state };
+}
+function deliverPair(state, firstId, secondId, roundBudget) {
+  return deliverCertifiedPair(state, firstId, secondId, roundBudget).success;
 }
 
 function freshCiderRunState(presses, target) {
@@ -192,19 +223,21 @@ function firstFloodRound(enemy, lane) {
 }
 
 // Physical feasibility certifier (Unequal Crossing's isPhysicallyDeliverable, same discipline):
-// the kernel's uniqueness guarantee is purely arithmetic — it knows nothing about hex
-// distances or when Scruffcrow's flood actually threatens the solution pair's own lanes. This
-// actually plays the solution pair out with the real loan squad and the real engine before
-// accepting a layout.
+// the kernel's arithmetic guarantee (each of the two candidate pairs sums exactly to target,
+// pairCount: 2) knows nothing about hex distances or when Scruffcrow's flood actually threatens
+// a given pair's own lanes. This actually plays one candidate pair out with the real loan squad
+// and the real engine before accepting it — called on both pairs (see the loop in
+// generateCiderRunLayout): one must pass this AND isRecoverableAfterOneFloodTick to be the
+// layout's guaranteed-safe fallback, the other only needs to pass this on its own to be a real,
+// executable — if not bulletproof — second route.
 //
 // The safe window is no longer a flat `delay` — it's computed per layout, from the first round
-// Scruffcrow's rotation reaches a lane either solution press sits on (that press could be
-// touched from that round's enemy phase onward). A layout is only certified if the fixed,
-// unmodified solution pair reaches the gate no later than that round's player phase. This is
-// deliberately strict about the one pair the kernel guarantees is unique, matching Unequal
-// Crossing's "no unannounced impossible state" discipline — a layout the naive certifier can't
-// clear this fast is rejected and a fresh one drawn, so a human playing at the certifier's own
-// pace never has the flood invalidate the printed target's only pairing out from under them.
+// Scruffcrow's rotation reaches a lane this pair's press sits on (that press could be touched
+// from that round's enemy phase onward). A pair is only certified if it reaches the gate no
+// later than that round's player phase, matching Unequal Crossing's "no unannounced impossible
+// state" discipline — a candidate pair the naive certifier can't clear this fast is rejected and
+// a fresh layout drawn, so a human playing at the certifier's own pace never has the flood
+// invalidate the layout's guaranteed-safe pairing out from under them.
 function isPhysicallyDeliverable(presses, solutionIds, target) {
   const state = freshCiderRunState(presses, target);
   const [firstId, secondId] = solutionIds;
@@ -214,26 +247,27 @@ function isPhysicallyDeliverable(presses, solutionIds, target) {
   return deliverPair(state, firstId, secondId, safeRounds);
 }
 
-// A layout can be certified deliverable at speed (isPhysicallyDeliverable) and still leave a
+// A pair can be certified deliverable at speed (isPhysicallyDeliverable) and still leave a
 // slower, normal-paced party with no way out at all — found 2026-09-18 while trying to prove
 // Codex's "a normal player can recognise the threatened lane and recover" for a test: the
 // original geometry-redesign reference layout had a solution press that was also its lane's
 // highest unguarded value, so one un-recovered flood tick against it left no direct pair AND no
 // single Combine that could still reach the target — a genuine "lost forever" dead run, the
 // same failure shape Sam flagged for Unequal Crossing's Hookmoles, just arrived at by a
-// different mechanic. This checks it structurally at generation time rather than trusting luck:
-// for each solution press that is currently its own lane's highest-unguarded value (the one a
-// flood would actually hit first, in the ordinary case where nobody has specifically
-// rearranged that lane), simulate one flood tick against it, then require BOTH that a fresh
-// direct pair exists among the resulting six values (arithmetic alone isn't enough — see
-// below) AND that a real party can still physically deliver it inside the rounds Scruffcrow's
-// flood left behind (deliverPair, the same simulator isPhysicallyDeliverable uses). A press on
-// the lane Scruffcrow's rotation visits last is rejected immediately: by the time it floods
-// there are zero rounds left at all, so no amount of physical feasibility could ever save it.
-// A Combine-based recovery is deliberately not credited here even when arithmetically possible
-// — proving it needs an Arithmetic hero specifically positioned and free that round, which this
-// generation-time certifier doesn't model, so crediting it would risk certifying a layout whose
-// only real escape needs a squad choice or a lucky position the game never guarantees.
+// different mechanic. This checks it structurally at generation time rather than trusting luck,
+// per candidate pair: for each of this pair's presses that is currently its own lane's
+// highest-unguarded value (the one a flood would actually hit first, in the ordinary case where
+// nobody has specifically rearranged that lane), simulate one flood tick against it, then
+// require BOTH that a fresh direct pair exists among the resulting six values (arithmetic alone
+// isn't enough — see below) AND that a real party can still physically deliver it inside the
+// rounds Scruffcrow's flood left behind (deliverPair, the same simulator isPhysicallyDeliverable
+// uses). A press on the lane Scruffcrow's rotation visits last is rejected immediately: by the
+// time it floods there are zero rounds left at all, so no amount of physical feasibility could
+// ever save it. A Combine-based recovery is deliberately not credited here even when
+// arithmetically possible — proving it needs an Arithmetic hero specifically positioned and free
+// that round, which this generation-time certifier doesn't model, so crediting it would risk
+// certifying a layout whose only real escape needs a squad choice or a lucky position the game
+// never guarantees.
 function isRecoverableAfterOneFloodTick(presses, solutionIds, target) {
   const highestOnLane = {};
   for (const press of presses) {
@@ -270,17 +304,42 @@ function isRecoverableAfterOneFloodTick(presses, solutionIds, target) {
   return true;
 }
 
+// Both certifiers combined for one candidate pair — see the two doc comments above for what
+// each half actually checks (speed vs. surviving one flood tick).
+function isPairCertified(presses, solutionIds, target) {
+  return isPhysicallyDeliverable(presses, solutionIds, target) && isRecoverableAfterOneFloodTick(presses, solutionIds, target);
+}
+
 export function generateCiderRunLayout(seed) {
   const rng = createExpeditionRandom(seed);
   for (let outer = 0; outer < 500; outer += 1) {
-    const candidate = generateExactPairKernel(rng, { count: 6, valueMin: 2, valueMax: 12, targetMin: 9, targetMax: 16, maxAttempts: 1 });
+    // pairCount: 2 (2026-09-21 rebuild) — the kernel's old pairCount: 1 default meant every
+    // layout had exactly one right answer: find it, then walk the one certified route. Real
+    // choice needed a second, independently viable pair on the board — see the header comment
+    // for why this was the actual fix, not another geometry pass. Every value stays distinct
+    // (generateExactPairKernel), so the two pairs can never share a press.
+    const candidate = generateExactPairKernel(rng, { count: 6, valueMin: 2, valueMax: 12, targetMin: 9, targetMax: 16, maxAttempts: 1, pairCount: 2 });
     if (!candidate) continue;
     const order = rng.shuffle(candidate.values);
     const presses = order.map((value, index) => ({ id: `press_${value}`, kind: "press", value, pos: PRESS_HEXES[index].pos, lane: PRESS_HEXES[index].lane }));
-    const solutionIds = candidate.solution.map((value) => `press_${value}`);
-    if (!isPhysicallyDeliverable(presses, solutionIds, candidate.target)) continue;
-    if (!isRecoverableAfterOneFloodTick(presses, solutionIds, candidate.target)) continue;
-    return { target: candidate.target, presses };
+    const solutionIdSets = candidate.solutions.map((pair) => pair.map((value) => `press_${value}`));
+    // Requiring BOTH pairs to independently survive a flood tick (isRecoverableAfterOneFloodTick)
+    // turned out to be unachievable inside this map's 4-round budget — measured directly:
+    // 20,000 outer attempts across three different seeds, zero acceptances. Instead, exactly one
+    // of the two pairs must be fully certified (the guaranteed-safe fallback a player can always
+    // recover onto), and the other only needs to be physically deliverable at speed — a real,
+    // executable second route, not a guaranteed-bulletproof one. Tried both ways round (either
+    // pair can end up the "safe" one) rather than always favouring whichever the kernel happened
+    // to list first, so the choice isn't quietly biased toward one slot.
+    for (const [safePairIds, fastPairIds] of [[solutionIdSets[0], solutionIdSets[1]], [solutionIdSets[1], solutionIdSets[0]]]) {
+      if (!isPairCertified(presses, safePairIds, candidate.target)) continue;
+      if (!isPhysicallyDeliverable(presses, fastPairIds, candidate.target)) continue;
+      // safePairIds/fastPairIds are exposed on the returned layout (not read by createCiderRun
+      // or anything player-visible) purely so tests/simulation scripts can write a deterministic
+      // trace without re-deriving which of the two pairs is the guaranteed-safe one — a player
+      // is meant to work that out by watching the board, not have it labelled for them.
+      return { target: candidate.target, presses, solutionIdSets, safePairIds, fastPairIds };
+    }
   }
   throw new Error(`Could not generate a physically solvable Cider Run layout from seed ${seed}`);
 }

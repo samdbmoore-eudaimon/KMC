@@ -31,11 +31,11 @@ INTERMEDIATE_LESSONS.numberTheoryDivisibility = {
         "Collect every prime used:\n180 =\n2 × 2 × 3 × 3 × 5 =\n2² × 3² × 5.",
       ], answer: "2² × 3² × 5" },
       { q: "Write 2520 as a product of primes.", steps: [
-        "Divide repeatedly by 2 until it no longer goes exactly: 2520 ÷ 2 = 1260, 1260 ÷ 2 = 630, 630 ÷ 2 = 315. Three factors of 2, and 315 is odd so 2 is exhausted.",
-        "Move to 3: 315 ÷ 3 = 105, and 105 ÷ 3 = 35. Two factors of 3, and 35 is not divisible by 3 (since 3 × 11 = 33 and 3 × 12 = 36).",
+        "Divide repeatedly by 2 until it no longer goes exactly:\n2520 ÷ 2 = 1260,\n1260 ÷ 2 = 630,\n630 ÷ 2 = 315. Three factors of 2, and 315 is odd so 2 is exhausted.",
+        "Move to 3:\n315 ÷ 3 = 105, and\n105 ÷ 3 = 35. Two factors of 3, and 35 is not divisible by 3 (since 3 × 11 = 33 and 3 × 12 = 36).",
         "Move to 5: 35 ÷ 5 = 7. One factor of 5, and 7 is itself prime so stop.",
         "Collect all prime factors: 2520 = 2 × 2 × 2 × 3 × 3 × 5 × 7 = 2³ × 3² × 5 × 7.",
-        "Check by multiplying back: 8 × 9 = 72, then 72 × 5 = 360, and 360 × 7 = 2520. ✓",
+        "Check by multiplying back:\n8 × 9 = 72, then\n72 × 5 = 360, and\n360 × 7 = 2520. ✓",
       ], answer: "2³ × 3² × 5 × 7" },
     ],
       tryit: { q: "Write 84 as a product of primes.", answer: "2² × 3 × 7. Dividing by 2 twice gives:\n84 =\n2 × 2 × 21 =\n4 × 21, and 21 = 3 × 7, neither of which can be split further since 3 and 7 are both prime." } },
@@ -72,7 +72,7 @@ INTERMEDIATE_LESSONS.numberTheoryDivisibility = {
         "Check: HCF × LCM = 72 × 2520 = 181440, and 360 × 504 = 181440. They match.",
       ], answer: "HCF = 72, LCM = 2520" },
     ],
-      tryit: { q: "Find the HCF and LCM of 20 and 30.", answer: "HCF = 10, LCM = 60. Since 20 = 2² × 5 and 30 = 2 × 3 × 5, the HCF uses the lower powers of the shared primes (2¹ × 5¹ = 10), while the LCM uses the higher powers of every prime that appears in either number (2² × 3 × 5 = 60); the 3 only appears in 30, so it doesn't count for the HCF but does count for the LCM." } },
+      tryit: { q: "Find the HCF and LCM of 20 and 30.", answer: "HCF = 10, LCM = 60. Since 20 = 2² × 5 and 30 = 2 × 3 × 5, the HCF uses the lower powers of the shared primes (2¹ × 5¹ = 10),\nwhile the LCM uses the higher powers of every prime that appears in either number (2² × 3 × 5 = 60);\nthe 3 only appears in 30, so it doesn't count for the HCF but does count for the LCM." } },
     { h: "3. Modular arithmetic (remainders)", body: [
       "'N mod m' means the remainder when N is divided by m. Here N and m are just two whole numbers: N is the number being divided, and m (called the modulus) is what it's divided by. Check this against a clock: it's 14:00, and the clock reads that as 2:00, not 14:00, because clocks reset every 12 hours.",
       "That's exactly 14 mod 12:\n14 =\n1 × 12 + 2, so\n14 mod 12 =\n2.",
@@ -95,7 +95,7 @@ INTERMEDIATE_LESSONS.numberTheoryDivisibility = {
         "Check directly: 2¹⁰ = 1024, and 1024 ÷ 5 = 204 remainder 4 (204 × 5 = 1020, 1024 − 1020 = 4). It matches.",
       ], answer: "4" },
       { q: "Find 3¹⁰⁰ mod 8.", steps: [
-        "Find the cycle of remainders for powers of 3 mod 8: 3¹ mod 8 = 3; 3² mod 8 = 9 mod 8 = 1; 3³ mod 8 = 3 × 1 = 3 (since 3² ≡ 1 brings the cycle back). The cycle (3, 1) has length 2.",
+        "Find the cycle of remainders for powers of 3 mod 8:\n3¹ mod 8 = 3;\n3² mod 8 = 9 mod 8 = 1;\n3³ mod 8 = 3 × 1 = 3 (since 3² ≡ 1 brings the cycle back). The cycle (3, 1) has length 2.",
         "To find 3¹⁰⁰ mod 8, divide the exponent 100 by the cycle length 2: 100 = 50 × 2, remainder 0.",
         "A remainder of 0 means the exponent falls at the end of a complete cycle, which is the same position as exponent 2. So 3¹⁰⁰ mod 8 = 3² mod 8 = 1.",
         "Check: 3² = 9 ≡ 1 (mod 8), so 3¹⁰⁰ = (3²)⁵⁰ ≡ 1⁵⁰ = 1 (mod 8). ✓",
@@ -143,7 +143,7 @@ INTERMEDIATE_LESSONS.algebraicManipulation = {
         "Multiply the Last terms: (-2) × (-2) = 4. Add all four: 9x² - 6x - 6x + 4 = 9x² - 12x + 4.",
       ], answer: "9x² - 12x + 4" },
     ],
-      tryit: { q: "Expand (3x-1)(x+5).", answer: "3x² + 14x - 5. First: 3x × x = 3x². Outer: 3x × 5 = 15x. Inner: −1 × x = −x. Last: −1 × 5 = −5. Adding: 3x² + 15x − x − 5 = 3x² + 14x − 5." } },
+      tryit: { q: "Expand (3x-1)(x+5).", answer: "3x² + 14x - 5.\nFirst: 3x × x = 3x².\nOuter: 3x × 5 = 15x.\nInner: −1 × x = −x.\nLast: −1 × 5 = −5.\nAdding: 3x² + 15x − x − 5 = 3x² + 14x − 5." } },
     { h: "2. Factorising a quadratic", body: [
       "Check what happens when you expand (x+3)(x+4) using the method from Section 1:\nFirst x², Outer 4x, Inner 3x, Last 12, giving\nx² + 7x + 12.",
       "Notice that the middle coefficient (7) is the SUM of 3 and 4, and the constant (12) is their PRODUCT.",
@@ -327,6 +327,7 @@ INTERMEDIATE_LESSONS.quadratics = {
     ],
       tryit: { q: "Find the turning point of y = x² + 10x + 7.", answer: "(-5, -18). Completing the square: half of 10 is 5, squared is 25, so:\nx²+10x+7 =\n(x+5)² - 25 + 7 =\n(x+5)² - 18, giving a minimum at x=-5, y=-18." } },
     { h: "2. Solving by factorising and the formula", body: [
+      "The diagram above shows what 'solving' a quadratic equation actually means as a picture: the graph of y=x²+bx+c is an upward-curving parabola, and its roots, the two points where that curve crosses the x-axis, are exactly the values of x that make x²+bx+c equal to 0. The rest of this section finds those roots without ever needing to draw the graph accurately, in two different ways: factorising, when it happens to work out neatly, and the quadratic formula, which always works and is built directly from Section 1's completing the square.",
       "If x²+bx+c factorises neatly - using the numbers-that-multiply-and-add method from the algebra lesson to find a pair of numbers p and q with p×q=c and p+q=b, so x²+bx+c=(x+p)(x+q) - that's the fastest way to solve x²+bx+c=0. Once it's written as (x+p)(x+q)=0, at least one bracket must equal zero, because the only way two numbers can multiply together to give exactly 0 is if one of them already IS 0. So x+p=0 or x+q=0, giving x=−p or x=−q.",
       "But not every quadratic factorises into nice whole numbers, which is where completing the square (Section 1) earns its keep. Take x²+6x+5 again: Section 1 rewrote it as (x+3)²−4.",
       "Setting the whole thing to 0:\n(x+3)²−4 =\n0, so\n(x+3)² = 4.",
@@ -405,7 +406,8 @@ INTERMEDIATE_LESSONS.percentageAndCompoundGrowth = {
   sections: [
     { h: "1. The multiplier method", body: [
       "Increase £80 by 15% the way you probably learned first: find 15% of £80, then add it on. 10% of £80 = £8, and 5% of £80 = £4, so\n15% of £80 =\n£8 + £4 =\n£12.\nAdding that on: £80 + £12 = £92.",
-      "Now look closely at what that calculation actually did. £80 + £12 is the same as £80 × 1 + £80 × 0.15 (since £12 is exactly 0.15 × £80). Factor out the £80:\n£80 × 1 + £80 × 0.15 =\n£80 × (1 + 0.15) =\n£80 × 1.15.\nThe two-step 'find it, then add it' process and the one-step 'multiply by 1.15' process give the exact same £92, because they are the exact same arithmetic, just written differently.",
+      "Now look closely at what that calculation actually did. £80 + £12 is the same as £80 × 1 + £80 × 0.15 (since £12 is exactly 0.15 × £80). Group those two terms together:\n£80 × 1 + £80 × 0.15 =\n£80 × (1 + 0.15) =\n£80 × 1.15.\nThat's why 'find 15%, then add it on' and 'multiply by 1.15' always land on the same £92, they're the same arithmetic written differently.",
+      "Working out the multiplier is still a genuine calculation of its own, turning 15% into 0.15 and adding 1 to get 1.15, so this is really a TWO-step method, not one: first work out the multiplier, then multiply the original amount by it. What changes is not the number of steps, it's that the second step becomes a single multiplication instead of a multiplication followed by an addition, and that second calculation still needs doing every time, including for compound growth over several years in Section 2, where the multiplier gets raised to a power before that final multiplication.",
       "That works for any starting amount and any percentage, not just 15% of £80. Let r stand for that percentage (just the plain number, like 15, not '15%'). Increasing by r% means:\nnew =\nold + (r/100) × old =\nold × (1 + r/100).\nThe number (1 + r/100) is called the multiplier, and it packages the whole 'find the percentage, then add' process into a single multiplication.",
       "Decreasing works the same way, with a subtraction instead of an addition. Decrease £80 by 15%: £80 - £12 = £68. Written as a multiplication, that's:\n£80 × 1 - £80 × 0.15 =\n£80 × (1 - 0.15) =\n£80 × 0.85,\nand £80 × 0.85 = £68 too. So decreasing by r% means multiplying by (1 - r/100).",
       "The common slip is mixing up which way the multiplier moves: an increase always gives a multiplier ABOVE 1, a decrease always gives one BELOW 1. If a calculation produces a multiplier like 0.85 for something that should be growing, that's a sign of a sign error, not a valid answer.",
@@ -587,13 +589,13 @@ INTERMEDIATE_LESSONS.surdicModularNumberTheory = {
       ], answer: "2", structureId: "modular_exponentiation_repeated_squaring", understand: "The exponent 20 is far too large to compute 3²⁰ directly, so the remainder cycle must be found and used instead.", check: "The cycle was generated correctly since 3⁷ mod 7 would give (1×3) mod 7 = 3, matching 3¹ mod 7 exactly, confirming the cycle genuinely restarts at length 6."},
       { q: "Find 7⁵⁰ mod 4.", steps: [
         "Reduce the base first: 7 ÷ 4 = 1 remainder 3, so 7 ≡ 3 (mod 4). Powers of 7 mod 4 behave exactly like powers of 3 mod 4.",
-        "Find the cycle of remainders for powers of 3 mod 4: 3¹ mod 4 = 3; 3² mod 4 = 9 mod 4 = 1; 3³ mod 4 = 3×1 = 3. The cycle (3, 1) has length 2.",
+        "Find the cycle of remainders for powers of 3 mod 4:\n3¹ mod 4 = 3;\n3² mod 4 = 9 mod 4 = 1;\n3³ mod 4 = 3×1 = 3. The cycle (3, 1) has length 2.",
         "Divide the exponent 50 by the cycle length 2: 50 = 25×2, remainder 0.",
         "A remainder of 0 places the exponent at the same position as exponent 2 (the last step in each cycle), so 7⁵⁰ mod 4 = 1.",
       ], answer: "1", structureId: "modular_exponentiation_repeated_squaring", understand: "The base, 7, can first be reduced modulo 4 to a smaller equivalent base, 3, before finding the cycle, since remainders only depend on the base's own remainder.", check: "7 ≡ -1 (mod 4), so 7⁵⁰ ≡ (-1)⁵⁰ = 1 (mod 4), matching, since an even power of -1 is always 1."},
       { q: "Find 5¹⁰⁰ mod 3 by spotting a short cycle.", steps: [
         "Reduce the base first: 5 mod 3 = 2, so powers of 5 mod 3 behave like powers of 2 mod 3.",
-        "Find the cycle of remainders for powers of 2 mod 3: 2¹ mod 3 = 2; 2² mod 3 = 4 mod 3 = 1; 2³ mod 3 = 2×1 = 2. The cycle (2, 1) has length 2.",
+        "Find the cycle of remainders for powers of 2 mod 3:\n2¹ mod 3 = 2;\n2² mod 3 = 4 mod 3 = 1;\n2³ mod 3 = 2×1 = 2. The cycle (2, 1) has length 2.",
         "Divide the exponent 100 by the cycle length 2: 100 = 50×2, remainder 0.",
         "A remainder of 0 places the exponent at the same position as exponent 2 (the last step in each cycle), so 5¹⁰⁰ mod 3 = 1.",
       ], answer: "1", structureId: "modular_exponentiation_repeated_squaring", understand: "Apply the same reduce-then-cycle method used throughout this section.", check: "5 ≡ -1 (mod 3), so 5¹⁰⁰ ≡ (-1)¹⁰⁰ = 1 (mod 3), matching, since an even power of -1 is always 1."},
@@ -1000,7 +1002,7 @@ INTERMEDIATE_LESSONS.sequencesAndSeries = {
         "Add the parts together: n² + 3n.",
       ], answer: "n² + 3n", structureId: "quadratic_second_difference", understand: "Apply the same second-difference method used throughout this section: check the second differences, halve them for the n² coefficient, then find the leftover.", check: "Check against n=1: 1+3=4, matching the first term of the original sequence."},
     ],
-      tryit: { q: "Find the nth term of 4, 10, 18, 28, 40, ...", answer: "n²+3n. First differences 6,8,10,12 aren't constant, but second differences are all 2, so the n² coefficient is 2÷2=1; subtracting n² from each term leaves 3,6,9,12, which is 3n, so nth term = n²+3n." , structureId: "quadratic_second_difference"} },
+      tryit: { q: "Find the nth term of 4, 10, 18, 28, 40, ...", answer: "n²+3n.\nFirst differences 6,8,10,12 aren't constant, but second differences are all 2,\nso the n² coefficient is 2÷2=1;\nsubtracting n² from each term leaves 3,6,9,12, which is 3n,\nso nth term = n²+3n." , structureId: "quadratic_second_difference"} },
     { h: "3. Geometric sequences", body: [
       "Look at 3, 6, 12, 24. Divide each term by the one before it: 6/3=2, 12/6=2, 24/12=2. The ratio is the same (2) every time - that constant multiplier is what makes this a geometric sequence.",
       "As in Section 1, give the things involved names. Call this constant multiplier r, for 'ratio' (here r=2), and reuse a for the first term (here a=3) and n for the position of a term in the list, exactly as before.",
@@ -1351,7 +1353,7 @@ INTERMEDIATE_LESSONS.advancedProbability = {
         check: "0.64 should be bigger than 0.5, since heads is more likely than tails on a single flip (P(heads)=0.6), making it fairly likely that at least one of the two flips lands tails.",
         structureId: "at_least_one_non_identical"},
     ],
-      tryit: { q: "A fair coin is flipped five times. Find P(at least one head).", answer: "P(no heads at all) means five tails: (1/2)⁵ = 1/32. So P(at least one head) = 1 - 1/32 = 31/32." , structureId: "at_least_one_identical"} },
+      tryit: { q: "A fair coin is flipped five times. Find P(at least one head).", answer: "P(no heads at all) means five tails: (1/2)⁵ = 1/32.\nSo P(at least one head) = 1 - 1/32 = 31/32." , structureId: "at_least_one_identical"} },
   ],
 };
 
@@ -1598,7 +1600,7 @@ INTERMEDIATE_LESSONS.invariantsAndParity = {
         check: "Check by direct addition: 2+4+6+8+10+12+14 = 56, matching the shortcut.",
         structureId: "sum_first_n_evens"},
     ],
-      tryit: { q: "Find 1 + 3 + 5 + ... + 39 using the shortcut for odd numbers.", answer: "The list runs up to the 20th odd number, since 2(20) - 1 = 39. Using the shortcut, sum of first n odd numbers = n²: 20² = 400." , structureId: "sum_first_n_odds"} },
+      tryit: { q: "Find 1 + 3 + 5 + ... + 39 using the shortcut for odd numbers.", answer: "The list runs up to the 20th odd number, since 2(20) - 1 = 39.\nUsing the shortcut, sum of first n odd numbers = n²: 20² = 400." , structureId: "sum_first_n_odds"} },
     { h: "3. Using parity to rule out impossible puzzles", body: [
       "Try a concrete puzzle first. 5 coins all start heads-up. Each move flips exactly 2 coins of your choosing (heads become tails, tails become heads). Could all 5 coins ever end up tails-up? Look at what one move does to the total number of heads: flipping 2 heads turns them both to tails, so heads decreases by 2; flipping 2 tails turns them both to heads, so heads increases by 2; flipping 1 head and 1 tail swaps their roles, so heads stays the same. Every move changes the heads-count by -2, 0 or +2 - always an even amount.",
       "That means the PARITY (odd or even) of the heads-count can never change, no matter how many moves are made or which coins are chosen. It starts at 5, which is odd, so it stays odd forever. All-tails means 0 heads, which is even. Since odd can never become even by adding even amounts, this puzzle is impossible - and no amount of trying different move sequences will ever find a way, because the invariant rules it out completely.",
@@ -2588,7 +2590,7 @@ INTERMEDIATE_LESSONS.coordinateGeometry = {
         check: "Check the sign: the line falls from y=7 down to y=-3 as x increases from -4 to 6, so a negative gradient makes sense.",
         structureId: "gradient_two_points"},
     ],
-      tryit: { q: "Find the gradient through (0, 5) and (2, 1).", answer: "−2, since change in y = 1 − 5 = −4, change in x = 2 − 0 = 2, and −4 ÷ 2 = −2." , structureId: "gradient_two_points"} },
+      tryit: { q: "Find the gradient through (0, 5) and (2, 1).", answer: "−2, since change in y = 1 − 5 = −4,\nchange in x = 2 − 0 = 2,\nand −4 ÷ 2 = −2." , structureId: "gradient_two_points"} },
     { h: "2. Midpoint of two points", body: [
       "The midpoint is the single point sitting exactly halfway between two other points - the same distance from each. You find it by averaging the two x-coordinates to get the midpoint's x, and separately averaging the two y-coordinates to get the midpoint's y:\nmidpoint =\n((x₁+x₂)/2, (y₁+y₂)/2).",
       "Check this makes sense on a simple case first: the midpoint of (2, 3) and (8, 7). Midpoint x = (2+8)/2 =\n10/2 =\n5. Midpoint y = (3+7)/2 =\n10/2 =\n5. So the midpoint is (5, 5) - exactly halfway between x=2 and x=8, and exactly halfway between y=3 and y=7.",
@@ -2628,7 +2630,7 @@ INTERMEDIATE_LESSONS.coordinateGeometry = {
         check: "Check midpoint: x = (-3+11)/2 = 4, y = (8+(-6))/2 = 1, matching the given midpoint M(4,1) exactly.",
         structureId: "midpoint_reverse"},
     ],
-      tryit: { q: "Find the midpoint of (7, −2) and (−1, 10).", answer: "(3, 4), since midpoint x = (7+(−1))/2 = 3 and midpoint y = (−2+10)/2 = 4." , structureId: "midpoint"} },
+      tryit: { q: "Find the midpoint of (7, −2) and (−1, 10).", answer: "(3, 4), since midpoint x = (7+(−1))/2 = 3\nand midpoint y = (−2+10)/2 = 4." , structureId: "midpoint"} },
     { h: "3. Equation of a line: y = mx + c", body: [
       "Every straight line (that isn't vertical) can be written in the form y = mx + c. Here m is the gradient (exactly the same idea as in section 1 - how steep the line is), and c is the y-intercept: the y-value where the line crosses the vertical axis, which is the point where x=0.",
       "If you already know the gradient m and just ONE point (x, y) that lies on the line, you can find c: substitute the gradient and the point's coordinates into y = mx + c, and the only unknown left is c, so solve for it.",
@@ -2668,7 +2670,7 @@ INTERMEDIATE_LESSONS.coordinateGeometry = {
         check: "Check with the ordinary gradient formula: change in x between any two points on this line is always 5-5=0, and dividing by 0 is undefined, confirming why the usual y=mx+c form cannot describe a vertical line.",
         structureId: "equation_from_gradient_point"},
     ],
-      tryit: { q: "A line has gradient 1/2 and passes through (4, 1). Find its equation.", answer: "y = 0.5x − 1, since 1 = 0.5(4) + c gives 1 = 2 + c, so c = −1." , structureId: "equation_from_gradient_point"} },
+      tryit: { q: "A line has gradient 1/2 and passes through (4, 1). Find its equation.", answer: "y = 0.5x − 1, since 1 = 0.5(4) + c gives\n1 = 2 + c, so\nc = −1." , structureId: "equation_from_gradient_point"} },
     { h: "4. Parallel and perpendicular lines", body: [
       "Parallel lines point in exactly the same direction and never meet, however far they're extended. Since the gradient measures direction, two lines are parallel exactly when they have the SAME gradient.",
       "Perpendicular lines meet at a right angle (90°). Their gradients are always negative reciprocals of each other. A reciprocal means 'flip the fraction upside down' (the reciprocal of 2/3 is 3/2, and the reciprocal of a whole number n is 1/n, since n is really n/1). 'Negative reciprocal' means flip it AND change its sign. The test that always works: multiply the two gradients together, and if the lines are perpendicular, the answer is always exactly −1.",
@@ -3180,7 +3182,7 @@ INTERMEDIATE_LESSONS.circleTheoremsAndTangents = {
         check: "Check using the other expression: PB = 5(7) - 12 = 35 - 12 = 23, matching PA exactly, confirming both tangents really are equal.",
         structureId: "tangent_length_from_point"},
     ],
-      tryit: { q: "A circle has centre O and radius 3cm. From external point B, a tangent touches the circle at T, with BT = 4cm. Find OB.", answer: "5cm, since angle OTB = 90° gives OB² = 3² + 4² = 9 + 16 = 25, so OB = √25 = 5." , structureId: "tangent_length_from_point"} },
+      tryit: { q: "A circle has centre O and radius 3cm. From external point B, a tangent touches the circle at T, with BT = 4cm. Find OB.", answer: "5cm, since angle OTB = 90° gives OB² = 3² + 4² =\n9 + 16 =\n25, so\nOB = √25 = 5." , structureId: "tangent_length_from_point"} },
     { h: "6. Sector area and arc length", body: [
       "A sector is the 'pie slice' of a circle cut out by two radii and the arc between them, named after the angle it makes at the centre. A full turn all the way round the centre is 360°, so a sector's angle is always some fraction of that full 360°, and that same fraction applies to everything else about the sector: its share of the circumference, and its share of the whole circle's area.",
       "The full circumference of a circle is 2πr (already met when finding a cylinder's curved surface area). An arc is simply the fraction of that full circumference matching the sector's own angle out of 360°. For a circle of radius 8cm with a 90° sector, the full circumference is 2 × 3.14 × 8 = 50.24cm, and since 90° is a quarter of 360°, the arc is a quarter of that: 50.24 ÷ 4 = 12.56cm.",
@@ -3283,7 +3285,7 @@ INTERMEDIATE_LESSONS.trigonometryAdvanced = {
         check: "Check the answer is smaller than the hypotenuse, as it must be: 8.00cm < 13cm confirms this.",
         structureId: "sohcahtoa_find_side"},
     ],
-      tryit: { q: "A right-angled triangle has an adjacent side of 12cm and an angle of 25° next to it. Find the hypotenuse.", answer: "≈13.2cm, since cos(25°) = adjacent ÷ hypotenuse, so hypotenuse = 12 ÷ cos(25°) = 12 ÷ 0.906 ≈ 13.2cm." , structureId: "sohcahtoa_find_side"} },
+      tryit: { q: "A right-angled triangle has an adjacent side of 12cm and an angle of 25° next to it. Find the hypotenuse.", answer: "≈13.2cm, since cos(25°) = adjacent ÷ hypotenuse, so\nhypotenuse = 12 ÷ cos(25°) =\n12 ÷ 0.906 ≈\n13.2cm." , structureId: "sohcahtoa_find_side"} },
     { h: "2. The sine rule: a/sin A = b/sin B = c/sin C", body: [
       "For any triangle (not just right-angled ones), label its three corners A, B and C. Then label each SIDE with the lowercase version of the letter at the corner OPPOSITE it: side a is opposite angle A, side b is opposite angle B, and side c is opposite angle C. This labelling convention is what makes the sine rule readable - without it, 'a' and 'A' would look unrelated instead of being a matching pair.",
       "The sine rule says the ratio (side) ÷ sin(its opposite angle) comes out the SAME no matter which of the three pairs you pick - a strikingly similar idea to the constant scale factor between similar shapes covered earlier: there, one constant ratio linked every pair of matching lengths; here, one constant ratio links every side to the sine of its opposite angle, within a single triangle.",
@@ -3541,7 +3543,7 @@ INTERMEDIATE_LESSONS.threeDGeometryAndNets = {
         check: "Check the cross-sectional area calculation separately: ½×7×4=14cm², a sensible area for a triangle with those dimensions, before multiplying by the length.",
         structureId: "prism_volume_cross_section"},
     ],
-      tryit: { q: "A prism has a cross-sectional area of 20cm² and length 7cm. Find its volume.", answer: "140cm³, since volume = cross-sectional area × length = 20 × 7 = 140cm³." , structureId: "prism_volume_cross_section"} },
+      tryit: { q: "A prism has a cross-sectional area of 20cm² and length 7cm. Find its volume.", answer: "140cm³, since volume = cross-sectional area × length =\n20 × 7 =\n140cm³." , structureId: "prism_volume_cross_section"} },
     { h: "3. Volume of a cylinder = πr²h", body: [
       "A cylinder is a prism whose cross-section is a circle, so the same rule applies: Volume = cross-sectional area × length. For a cylinder the 'length' runs up its axis and is usually called its height, h, and the cross-section is a circle of radius r (the distance from the centre of the circle out to its edge).",
       "The area of a circle is π×r², where π (pronounced 'pi') is a fixed number, roughly 3.14159..., equal to a circle's circumference divided by its diameter - it turns up whenever a circle's measurements are involved. For estimating by hand, π ≈ 3.14 is close enough.",
@@ -3583,7 +3585,7 @@ INTERMEDIATE_LESSONS.threeDGeometryAndNets = {
         check: "Check the radius really is half the diameter, not the diameter itself: using the diameter directly (10) instead of the radius (5) would make the calculated area four times too large, since squaring doubles the error.",
         structureId: "cylinder_volume"},
     ],
-      tryit: { q: "Find the volume of a cylinder with radius 4cm and height 9cm (use π ≈ 3.14).", answer: "≈452cm³. Cross-sectional area = π×4² ≈ 3.14×16 = 50.24cm², so volume ≈ 50.24×9 = 452.16, rounding to 452cm³." , structureId: "cylinder_volume"} },
+      tryit: { q: "Find the volume of a cylinder with radius 4cm and height 9cm (use π ≈ 3.14).", answer: "≈452cm³. Cross-sectional area = π×4² ≈ 3.14×16 = 50.24cm²,\nso volume ≈ 50.24×9 = 452.16, rounding to 452cm³." , structureId: "cylinder_volume"} },
     { h: "4. Matching a net to its solid", body: [
       "Checking a net has two parts. First, count: does it have the right NUMBER of faces, of the right SHAPES, for the solid? A cube needs exactly 6 squares. A triangular prism needs 2 triangles (the two ends) plus 3 rectangles (the sides). A square-based pyramid needs 1 square plus 4 triangles.",
       "Second, fold it mentally (or on paper): the right number of the right shapes isn't enough on its own - they also have to fold up edge-to-edge with no gaps and no overlaps. Two different arrangements of the same six squares can give one net that folds perfectly into a cube and another that leaves two squares landing on top of each other.",
@@ -3829,7 +3831,7 @@ INTERMEDIATE_LESSONS.multiStepGeometryProof = {
         check: "This example needed only one rule, unlike examples 2 and 3, since the given angle (BAC) was already a circumference angle standing on the target chord, with no isosceles step required first.",
         structureId: "three_step_angle_chase"},
     ],
-      tryit: { q: "Triangle PQR is isosceles with PQ = PR and angle QPR = 50°. QR is extended to a point S. Find angle PRS.", answer: "115°. Base angles: angle PQR = angle PRQ = (180−50)÷2 = 65°. Angle PRS and angle PRQ lie on the straight line QS, so angle PRS = 180 − 65 = 115°." , structureId: "isosceles_exterior_forward"} },
+      tryit: { q: "Triangle PQR is isosceles with PQ = PR and angle QPR = 50°. QR is extended to a point S. Find angle PRS.", answer: "115°. Base angles: angle PQR = angle PRQ = (180−50)÷2 = 65°.\nAngle PRS and angle PRQ lie on the straight line QS, so angle PRS = 180 − 65 = 115°." , structureId: "isosceles_exterior_forward"} },
     { h: "3. Label every angle as you find it", body: [
       "Write each newly-found angle directly onto (or next to) the diagram immediately, as soon as you find it. A chain of four or five steps is easy to lose track of otherwise, and a diagram with every known angle labelled lets you spot the next available step at a glance, rather than re-deriving something you already worked out.",
       "One more rule appears below: the angles inside any quadrilateral (a four-sided shape) always sum to 360° - the quadrilateral angle sum theorem. It follows from the triangle angle sum theorem, since any quadrilateral can be split into two triangles by one diagonal (exactly as in section 1's example), each contributing 180°.",
@@ -3872,7 +3874,7 @@ INTERMEDIATE_LESSONS.multiStepGeometryProof = {
         check: "Check using the exterior angle shortcut in reverse: the exterior angle should equal the sum of the two non-adjacent interior angles, A and B: 68+56=124°, matching the given exterior angle exactly.",
         structureId: "isosceles_exterior_reverse"},
     ],
-      tryit: { q: "Triangle DEF has angle D = 48° and angle E = 2 × angle D. Find angle F.", answer: "36°. Angle E = 2×48 = 96°. The triangle's angles sum to 180°, so angle F = 180 − 48 − 96 = 36°." , structureId: "triangle_angle_sum_basic"} },
+      tryit: { q: "Triangle DEF has angle D = 48° and angle E = 2 × angle D. Find angle F.", answer: "36°. Angle E = 2×48 = 96°.\nThe triangle's angles sum to 180°, so angle F = 180 − 48 − 96 = 36°." , structureId: "triangle_angle_sum_basic"} },
     { h: "4. Sanity-check the final answer", body: [
       "Angles in a triangle should sum to 180°, angles on a straight line to 180°, and angles round a point to 360° (or a quadrilateral's angles to 360°, as in section 3). If a completed chain of reasoning leads to a total that breaks one of these known facts, a step was mis-applied somewhere along the chain - go back and check each link.",
     ], examples: [
@@ -3963,7 +3965,7 @@ INTERMEDIATE_LESSONS.statisticsAdvanced = {
         check: "Check the box plot ordering makes sense: 18 ≤ 27 ≤ 39, so the quartiles and median are correctly ordered, and 39-18=21 confirms the arithmetic.",
         structureId: "boxplot_read_off"},
     ],
-      tryit: { q: "9 sorted values are: 2, 5, 6, 9, 11, 13, 15, 18, 20. Find Q1, Q3 and the interquartile range.", answer: "Q1 = 5.5, Q3 = 16.5, IQR = 11. The median (5th value) is 11. The lower half is 2, 5, 6, 9 (4 values, even), so Q1 is the mean of its two middle values: (5+6)÷2 = 5.5. The upper half is 13, 15, 18, 20, so Q3 = (15+18)÷2 = 16.5. IQR = 16.5 − 5.5 = 11." , structureId: "boxplot_construct_iqr"} },
+      tryit: { q: "9 sorted values are: 2, 5, 6, 9, 11, 13, 15, 18, 20. Find Q1, Q3 and the interquartile range.", answer: "Q1 = 5.5, Q3 = 16.5, IQR = 11.\nThe median (5th value) is 11.\nThe lower half is 2, 5, 6, 9 (4 values, even), so Q1 is the mean of its two middle values: (5+6)÷2 = 5.5.\nThe upper half is 13, 15, 18, 20, so Q3 = (15+18)÷2 = 16.5.\nIQR = 16.5 − 5.5 = 11." , structureId: "boxplot_construct_iqr"} },
     { h: "2. Cumulative frequency: running totals", body: [
       "CUMULATIVE FREQUENCY just means a RUNNING TOTAL: keep adding each new class's frequency onto the total of everything before it. For example, suppose 80 students' exam scores are grouped like this:\n0-20: frequency 10\n20-40: frequency 20\n40-60: frequency 30\n60-80: frequency 15\n80-100: frequency 5.\nRunning that total: after the first class, 10; after the second,\n10 + 20 =\n30; after the third,\n30 + 30 =\n60; after the fourth,\n60 + 15 =\n75; after the fifth,\n75 + 5 =\n80 - which correctly reaches the full total of 80 students by the end, as it always must.",
       "A cumulative frequency GRAPH plots these running totals against the upper boundary of each class, and is always increasing (or flat) - it can never go down, since a running total never shrinks.",
@@ -4045,7 +4047,7 @@ INTERMEDIATE_LESSONS.statisticsAdvanced = {
         check: "Check the division directly: 27÷6=4.5, a sensible non-integer frequency density.",
         structureId: "frequency_density_basic"},
     ],
-      tryit: { q: "A histogram bar has frequency density 5 over a class width of 8. Find the frequency it represents.", answer: "40, since frequency = frequency density × class width = 5 × 8 = 40." , structureId: "frequency_density_basic"} },
+      tryit: { q: "A histogram bar has frequency density 5 over a class width of 8. Find the frequency it represents.", answer: "40, since frequency = frequency density × class width =\n5 × 8 =\n40." , structureId: "frequency_density_basic"} },
     { h: "4. Reading frequency back out of a histogram bar", body: [
       "Rearranging the frequency density formula (frequency density = frequency ÷ class width) to make frequency the subject:\nfrequency =\nfrequency density × class width.\nThis is exactly how you recover an actual COUNT of data points from a histogram bar's height (its frequency density) and width (its class width) - the reverse direction of section 3.",
     ], examples: [
@@ -4085,7 +4087,7 @@ INTERMEDIATE_LESSONS.statisticsAdvanced = {
         check: "Check the two class widths were found correctly from their boundaries: 35-20=15 and 45-35=10, before multiplying by their respective densities.",
         structureId: "histogram_compare_frequencies"},
     ],
-      tryit: { q: "A histogram bar has frequency density 2.5 and class width 20. Find the frequency it represents.", answer: "50, since frequency = frequency density × class width = 2.5 × 20 = 50." , structureId: "frequency_density_basic"} },
+      tryit: { q: "A histogram bar has frequency density 2.5 and class width 20. Find the frequency it represents.", answer: "50, since frequency = frequency density × class width =\n2.5 × 20 =\n50." , structureId: "frequency_density_basic"} },
     { h: "5. Scatter graphs, correlation and sampling", body: [
       "A scatter graph plots two related quantities against each other, one point per pair of values, to show whether they seem connected. If a straight-line pattern is visible, a line of best fit can be drawn through the middle of the points, and its equation can then be used to estimate one quantity from the other, in exactly the same way any straight-line equation is used.",
       "The direction of the pattern is called correlation. If both quantities tend to increase together, that is positive correlation. If one tends to increase while the other decreases, that is negative correlation. If the points show no clear pattern at all, there is no correlation. Separately from direction, correlation also has a strength: points sitting very close to a clear line show strong correlation, while points still following the same general trend but scattered widely around it show weak correlation. Direction and strength are independent: a scatter graph can show strong positive correlation, weak positive correlation, strong negative correlation, and so on.",
@@ -4232,17 +4234,18 @@ INTERMEDIATE_LESSONS.surdsAndIndices = {
   minutes: 18,
   order: 3,
   prereq: ["algebraicManipulation"],
-  intro: "Some square roots are whole numbers. For example, √49 = 7. Others cannot be written as terminating or recurring decimals. These are irrational numbers. A calculator can give a decimal approximation to √2, but the symbol √2 records its exact value. In this lesson we will learn how to simplify and calculate with these exact forms. We will then connect roots to fractional indices and reciprocals to negative indices.",
+  intro: "A surd is what an exact irrational square root is called: something like √2, which can never be written as a whole number or as a decimal that terminates or repeats, however far it's carried out (a calculator gives 1.414213562..., but that is only ever a rounded approximation, never the real value). The symbol √2 is the only way to record the value exactly, and this lesson starts by teaching you to simplify surds like this into a smaller form, for example turning √72 into 6√2 by spotting the square factor, 36, hiding inside 72. From there it covers adding and multiplying surds, rationalising a denominator (clearing a surd out of the bottom of a fraction without changing its value), and finally connects roots to fractional indices and reciprocals to negative indices, showing that both follow directly from index laws you already know rather than being new rules to memorise.",
   sections: [
     {
       h: "1. Simplifying a surd",
       visual: "intermediate-surd-factorisation",
       body: [
-        "Calculate √4 and √9 first, since these give whole numbers: √4 = 2 because 2 × 2 = 4, and √9 = 3 because 3 × 3 = 9. Now try √2: on a calculator this gives something like 1.414213562..., a decimal that carries on forever without ever settling into a repeating pattern. No matter how many digits are written down, that decimal is only ever an approximation, never the exact value. A surd is a way of writing a value like this exactly, using the root symbol itself instead of an endless decimal: √2 keeps the value precise, while 1.414 is merely close to it.",
+        "The diagram above is the destination for this whole section: it splits √72 apart into a square factor, 36, and a leftover factor, 2, so that √36 (a whole number, 6) can step outside the root sign while √2 stays trapped inside, giving √72 = 6√2. Before that split makes sense, it helps to be clear about what a surd actually is, and why it's ever worth simplifying one at all.",
+        "Some square roots come out as whole numbers straight away: √4 = 2, since 2 × 2 = 4, and √9 = 3, since 3 × 3 = 9. Now try √2: on a calculator this gives something like 1.414213562..., a decimal that carries on forever without ever settling into a repeating pattern. No matter how many digits are written down, that decimal is only ever an approximation, never the exact value. A surd is a way of writing a value like this exactly, using the root symbol itself instead of an endless decimal: √2 keeps the value precise, while 1.414 is merely close to it. That exactness matters, but it doesn't mean a surd can't also be tidied up: many surds, even ones that stay irrational forever, hide a whole-number factor that can be pulled outside the root, leaving a smaller, simpler surd behind, exactly as the diagram above does when it pulls 6 out of √72 and leaves √2 behind. That tidying-up process is called simplifying a surd, and it's the skill the rest of this section builds.",
         "Some surds can be made simpler, even though they can never become whole numbers. Before trusting any rule for this, it is worth checking the rule with numbers small enough to work out directly. Is √4 × √9 the same as √(4 × 9)? Work out each side on its own: √4 × √9 = 2 × 3 = 6, and √(4 × 9) = √36 = 6. Both sides give 6. Try a second pair to make sure it was not a lucky coincidence: √9 × √16 = 3 × 4 = 12, and √(9 × 16) = √144 = 12. They match again.",
         "This pattern, √a × √b = √(a × b), is true for any two numbers a and b that are zero or positive (a and b are just placeholders here, standing for whichever two numbers are actually involved, so one short rule can describe every possible pair at once instead of writing a fresh check for every new pair). Here is why it must always be true, not just true for the pairs already tried: squaring undoes a square root exactly, so squaring the left side gives (√a × √b)² = (√a)² × (√b)² = a × b, and squaring the right side gives (√(a × b))² = a × b, by the very definition of a square root. Both sides square to give the same thing, a × b, and since a and b are not negative, only one non-negative number can square to give any particular result, so the two original, unsquared quantities must have been equal all along.",
         "Apply this rule to √12 properly: since 12 = 4 × 3, and 4 is itself a perfect square (2 × 2 = 4), √12 = √4 × √3 = 2√3. The 2 has moved outside the root because √4 is a whole number, 2. The 3 stays trapped inside the root because √3 is not a whole number, so it cannot be simplified any further. This whole process, spotting a square factor inside a root and pulling its square root outside, is called simplifying a surd.",
-        "The key skill is spotting the largest square factor straight away, since a smaller one still works but leaves more simplifying to do afterwards. For √72, both 4 and 36 are square factors (72 = 4 × 18 = 36 × 2), but starting with 36 finishes the job in one step: √72 = √36 × √2 = 6√2. Starting with 4 instead would give √72 = √4 × √18 = 2√18, and √18 would then need a second round of simplifying (√18 = √9 × √2 = 3√2, giving the same final answer, 2 × 3√2 = 6√2, just reached in two steps instead of one).",
+        "Look back at the diagram above for 72: choosing the square factor 36 rather than a smaller one like 4 is what let the whole simplification finish in a single step. The key skill is spotting the largest square factor straight away, since a smaller one still works but leaves more simplifying to do afterwards. Both 4 and 36 are square factors of 72 (72 = 4 × 18 = 36 × 2), but starting with 36, as the diagram does, finishes the job in one step. Starting with 4 instead would give √72 = √4 × √18 = 2√18, and √18 would then need a second round of simplifying (√18 = √9 × √2 = 3√2, giving the same final answer, 2 × 3√2 = 6√2, just reached in two steps instead of one).",
         "Surds can only be added or subtracted once their root parts match exactly, in exactly the same way that only like terms can be collected in algebra: 3x and 5x can be added because they are both multiples of x, but 3x and 5y cannot. In the same way, 2√3 and 5√3 can be added because they are both multiples of √3, giving 7√3, but 2√3 and 5√2 cannot be combined, because √3 and √2 are different, unrelated irrational numbers. This is exactly why simplifying every surd first matters: two surds that look different, such as √12 and √27, might turn out to share the same root part once simplified (√12 = 2√3 and √27 = 3√3), and only become combinable after that."
       ],
       examples: [
@@ -4536,7 +4539,7 @@ applyIntermediateLessonRewrites(INTERMEDIATE_LESSONS);
 // These four lessons are full-replacement rewrites (see intermediate-lessons-rewrite.js),
 // so their section-level visuals must be applied AFTER the rewrite call, or the rewrite's
 // object replacement silently discards them (as happened before this fix).
-INTERMEDIATE_LESSONS.algebraicManipulation.sections[0].visual = "intermediate-algebra-tiles";
+INTERMEDIATE_LESSONS.algebraicManipulation.sections[0].visual = "intermediate-expand-brackets-area";
 INTERMEDIATE_LESSONS.percentageAndCompoundGrowth.sections[1].visual = "intermediate-compound-growth";
 INTERMEDIATE_LESSONS.simultaneousEquations.sections[1].visual = "intermediate-line-intersection";
 INTERMEDIATE_LESSONS.quadratics.sections[1].visual = "intermediate-quadratic-roots";

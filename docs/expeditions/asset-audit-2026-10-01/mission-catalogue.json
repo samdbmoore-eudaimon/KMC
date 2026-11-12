@@ -1,0 +1,151 @@
+{
+  "status": "design-proposal-not-playable",
+  "missions": [
+    {
+      "id": "four-locks",
+      "title": "The Orchard of Four Locks",
+      "puzzle": "Sudoku with linked sums",
+      "deliveryWave": 1,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-hive-ledger-board-v1.png",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-hive-ledger-corruption-v1.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-orchard-lockdown-living-gate-v1.png",
+        "assets/expeditions/production/9fo/runtime/enemies/po-hookmole-idle-front-v1.webp"
+      ]
+    },
+    {
+      "id": "turning-ravine",
+      "title": "The Turning Ravine",
+      "puzzle": "Rotating numbers and operators in coupled equations",
+      "deliveryWave": 1,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/backgrounds/po-nine-across-wind-ravine-v1.png",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-current-turner-hex-v1.png",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-neutral-v1.webp",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-rotate-v1.webp",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-rooststorm-wind-dial-v2.png",
+        "assets/expeditions/production/9fo/runtime/enemies/po-crosswind-idle-v1.png"
+      ]
+    },
+    {
+      "id": "unequal-crossing",
+      "title": "The Unequal Crossing",
+      "puzzle": "Partition and limited weighing",
+      "deliveryWave": 1,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/objectives/po-balance-empty-v1.webp",
+        "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-scale-one-hex-v1.png",
+        "assets/expeditions/production/9fo/runtime/props/po-load-neutral-v1.webp",
+        "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-burrow-v1.png"
+      ]
+    },
+    {
+      "id": "cider-run",
+      "title": "The Cider Run",
+      "puzzle": "Flow conservation and operations",
+      "deliveryWave": 1,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/backgrounds/po-cider-run-press-lane-v1.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-cider-press-v1.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-cider-apple-basket-v1.png",
+        "assets/expeditions/production/9fo/runtime/effects/po-cider-flow-arrow-v2.png",
+        "assets/expeditions/production/9fo/runtime/enemies/po-scruffcrow-perch-v1.png"
+      ]
+    },
+    {
+      "id": "rootfire-relay",
+      "title": "Rootfire Relay",
+      "puzzle": "Parity and budgeted branching networks",
+      "deliveryWave": 1,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-rootfire-relay-node-v1.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-rootfire-source-fruit-v1.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-rootfire-bridge-root-link-v1.png",
+        "assets/expeditions/production/9fo/runtime/effects/po-rootfire-parity-v1.png",
+        "assets/expeditions/production/9fo/runtime/enemies/po-strawling-idle-v1.png"
+      ]
+    },
+    {
+      "id": "hedgejaw-maze",
+      "title": "Hedgejaw Maze",
+      "puzzle": "Constrained route optimisation",
+      "deliveryWave": 2,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/terrain/po-terrain-hedge-v1.webp",
+        "assets/expeditions/production/9fo/runtime/terrain/po-terrain-path-v1.webp",
+        "assets/expeditions/production/9fo/runtime/objectives/po-target-locked-v1.webp",
+        "assets/expeditions/production/9fo/runtime/enemies/po-hedgejaw-idle-v1.svg"
+      ]
+    },
+    {
+      "id": "moonfall",
+      "title": "Murder at Moonfall",
+      "puzzle": "Edge-count loops and enclosure",
+      "deliveryWave": 2,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/objectives/po-moonfall-ring-stone-v3.png",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-moonfall-ring-gap-v1.png",
+        "assets/expeditions/production/9fo/runtime/effects/po-moonfall-containment-v1.png",
+        "assets/expeditions/production/9fo/runtime/enemies/po-crow-swarm-idle-v1.png",
+        "assets/expeditions/production/9fo/runtime/enemies/po-crowbreaker-idle-v1.png"
+      ]
+    },
+    {
+      "id": "hollow-bough",
+      "title": "The Hollow Bough",
+      "puzzle": "Polyhex packing and forecast shelter",
+      "deliveryWave": 2,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/objectives/po-hollow-bough-living-branches-v1.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-hollow-bough-memorial-hex-v1.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-orchard-root-fall-marker-v1.png",
+        "assets/expeditions/production/9fo/runtime/effects/po-overgrowth-forecast-v1.png"
+      ]
+    },
+    {
+      "id": "maybe-flock",
+      "title": "Maybe-Flock Roost",
+      "puzzle": "Nonogram deduction and beam allocation",
+      "deliveryWave": 2,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/enemies/po-maybe-finch-idle-v2.png",
+        "assets/expeditions/production/9fo/runtime/objectives/po-rooststorm-whistle-tower-v2.png",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-rooststorm-wind-dial-v2.png",
+        "assets/expeditions/production/9fo/runtime/effects/po-rooststorm-front-v2.png"
+      ]
+    },
+    {
+      "id": "first-whistle",
+      "title": "The First Whistle",
+      "puzzle": "Periodic schedules and strike windows",
+      "deliveryWave": 2,
+      "tiers": 5,
+      "firstClearStarsProposed": 3,
+      "assets": [
+        "assets/expeditions/production/9fo/runtime/objectives/po-first-whistle-founding-stone-v1.png",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-first-whistle-branch-port-v1.png",
+        "assets/expeditions/production/9fo/runtime/mechanisms/po-first-whistle-signal-root-network-v1.png",
+        "assets/expeditions/production/9fo/runtime/effects/po-first-whistle-shield-v1.png",
+        "assets/expeditions/production/9fo/runtime/effects/po-first-whistle-strike-vulnerability-v1.png"
+      ]
+    }
+  ]
+}

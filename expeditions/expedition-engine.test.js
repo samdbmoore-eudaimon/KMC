@@ -700,7 +700,11 @@ test("constraintGrid parityCount and primeCount: an exact count within the group
 });
 
 test("ENM: corrupt-value erases the nearest unprotected ledger cell, but ignores a guarded one, a locked one, and any non-ledger value object", () => {
-  const units = [{ id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, move: 1, pos: "-1,1" }];
+  // Hero placed two hexes from the wasp (out of its range: 1), not adjacent — this test is
+  // about corrupt-value's own object-targeting rules, not the shared strikeAdjacentHero
+  // priority check (expedition-engine.js) that now runs first when a hero IS exposed; that
+  // check has its own coverage in cider-run.test.js/counting-orchard.test.js.
+  const units = [{ id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, move: 1, pos: "1,-1" }];
   const objects = [
     { id: "guarded_cell", pos: "1,0", ledgerCell: true, value: 5, guarded: true },
     { id: "ordinary_value", pos: "0,-1", value: 9 },

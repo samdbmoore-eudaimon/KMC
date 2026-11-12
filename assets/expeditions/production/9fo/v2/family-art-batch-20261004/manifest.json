@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "status": "private-renderer-review",
+  "selectedBytes": 27512,
+  "assets": {
+    "unequal-pan-v1": {
+      "id": "unequal-pan-v1",
+      "familyId": "unequal-crossing",
+      "entityId": "shape",
+      "state": "base",
+      "version": 1,
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-scale-one-hex-v1.png",
+      "sourceSha256": "737898d290afef7df7e9e17f561705976d2912d30d36181c42a9d1ddec557d9b",
+      "preparedInputPath": "assets/expeditions/production/9fo/v2/runtime/objectives/objective-unequal-crossing-scale-one-hex-v1-v1.webp",
+      "preparedInputSha256": "246916502fbdc9d6543751ec678c4a657444b048244031c0e5fe0c2294ac5f24",
+      "runtimePath": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/runtime/unequal-pan-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 27512,
+      "sha256": "ceb3fab7bf6dd2dd447b43a9de15856e99df22a44188cd2fb7c81ebe0406fcb9",
+      "alpha": true,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          32,
+          27,
+          352,
+          338
+        ],
+        "transparentPixels": 72862,
+        "visiblePixels": 74594,
+        "components": [
+          74594
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "groundAnchor": [
+        192,
+        330
+      ],
+      "visibleBounds": [
+        32,
+        27,
+        352,
+        338
+      ],
+      "overlayAnchors": {
+        "status": [
+          328,
+          72
+        ],
+        "work": [
+          42,
+          250
+        ]
+      },
+      "labelSafeAreas": [
+        [
+          98,
+          102,
+          280,
+          190
+        ]
+      ],
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-white.png",
+        "black": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-black.png",
+        "green": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/family-art-batch-20261004/qa/pan-scales.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    }
+  },
+  "familyMappings": {
+    "unequal-crossing": {
+      "control": "four-locks-control-base-v1",
+      "number": "four-locks-number-bus-base-v1",
+      "shape": "unequal-pan-v1",
+      "sustain": "four-locks-tree-maintenance-base-v1",
+      "alcove": "four-locks-alcove-base-v1"
+    }
+  },
+  "note": "Physical pan skin only. Exact totals, load assignments, hidden-value knowledge and pan comparison remain live code. No painted terrain defines hit geometry."
+}

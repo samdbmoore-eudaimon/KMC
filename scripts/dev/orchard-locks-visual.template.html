@@ -1,0 +1,96 @@
+<div id="orchard-locks-demo">
+  <div class="viz-controls">
+    <label class="form-label">Plan<select class="form-select" data-plan><option value="assault">Bridge and shelter</option><option value="control">Roots and storm</option></select></label>
+    <button type="button" class="btn" data-prev>Previous</button>
+    <button type="button" class="btn btn-primary" data-next>Next step</button>
+  </div>
+  <div class="viz-row"><span data-step></span><span class="text-small" data-count></span></div>
+  <div class="nav nav-pills" role="tablist" aria-label="Inspect the encounter">
+    <button type="button" id="locks-map-tab" class="nav-link active" role="tab" aria-controls="locks-map-panel" aria-selected="true">Battlefield</button>
+    <button type="button" id="locks-puzzle-tab" class="nav-link" role="tab" aria-controls="locks-puzzle-panel" aria-selected="false">Try the number puzzle</button>
+  </div>
+  <div id="locks-map-panel" role="tabpanel" aria-labelledby="locks-map-tab">
+    <svg data-board role="img" aria-label="Orchard battlefield with three crossings"></svg>
+    <div class="text-small">C Cornix · K Kernel · B Beeswax · W Captain · A Archer · S Sapper</div>
+    <div class="text-small">T Controls · O Orchard · ! Bell · × Hedge · ≈ River</div>
+    <div data-health class="text-small tabular-nums"></div>
+  </div>
+  <div id="locks-puzzle-panel" role="tabpanel" aria-labelledby="locks-puzzle-tab" hidden>
+    <div class="text-small">Each row, column and 2×2 box: 1–4 once each. Linked pairs must meet their totals.</div>
+    <div data-grid class="locks-grid"></div>
+    <div class="locks-clues text-small" data-clues></div>
+    <div class="text-small">Rows: 1 Shelter · 2 Bridge · 3 Roots · 4 Storm</div>
+    <div class="viz-controls"><button type="button" class="btn" data-check>Check entries</button><button type="button" class="btn" data-hint>Next deduction</button></div>
+    <div data-feedback aria-live="polite"></div>
+    <div class="text-small">Puzzle practice is independent of the scripted playthrough.</div>
+  </div>
+  <div class="viz-row tabular-nums"><span data-integrity></span><span data-powers></span></div>
+  <div data-detail aria-live="polite"></div>
+  <style>
+    #orchard-locks-demo{color:var(--foreground)}
+    #orchard-locks-demo [data-board]{display:block;width:100%}
+    #orchard-locks-demo [data-board] text{fill:var(--foreground);font-size:var(--font-size-base);text-anchor:middle;dominant-baseline:middle;font-weight:400}
+    #orchard-locks-demo .ground{fill:var(--muted);fill-opacity:.35;stroke:var(--border);stroke-width:1}
+    #orchard-locks-demo .river{fill:var(--viz-series-3);fill-opacity:.22;stroke:var(--border);stroke-width:1}
+    #orchard-locks-demo .hedge{fill:var(--muted-foreground);fill-opacity:.45;stroke:var(--border);stroke-width:1}
+    #orchard-locks-demo .zone{fill:var(--viz-series-4);fill-opacity:.12;stroke:var(--border);stroke-width:1}
+    #orchard-locks-demo .hero{fill:var(--background);stroke:var(--viz-series-1);stroke-width:2}
+    #orchard-locks-demo .enemy{fill:var(--background);stroke:var(--viz-series-2);stroke-width:2}
+    #orchard-locks-demo .object{fill:var(--background);stroke:var(--border);stroke-width:1}
+    #orchard-locks-demo .trail{fill:none;stroke:var(--viz-series-1);stroke-width:3;stroke-linecap:round;stroke-dasharray:4 4}
+    #orchard-locks-demo .locks-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:420px;margin:12px 0}
+    #orchard-locks-demo .locks-grid label:nth-child(4n+2){margin-right:8px}
+    #orchard-locks-demo .locks-grid label:nth-child(n+5):nth-child(-n+8){margin-bottom:8px}
+    #orchard-locks-demo .locks-clues{display:flex;gap:8px 20px;flex-wrap:wrap;margin-bottom:8px}
+    #orchard-locks-demo [data-detail]{margin-top:8px}
+  </style>
+  <script>
+  (()=>{
+    const root=document.getElementById('orchard-locks-demo'),data=__LOCKS_DATA__;
+    const get=s=>root.querySelector(s),svg=get('[data-board]'),ns='http://www.w3.org/2000/svg';
+    let plan='assault',step=0,hint=0,entries=Array(16).fill(0);entries[0]=1;entries[15]=4;
+    function restore(state){const m=state?.modelContent,p=state?.privateContent;if(data.runs[m?.plan])plan=m.plan;step=Math.max(0,Math.min(Number.isInteger(p?.step)?p.step:0,data.runs[plan].length-1));if(Array.isArray(p?.entries)&&p.entries.length===16)entries=p.entries.map(v=>Number.isInteger(v)&&v>=0&&v<=4?v:0);entries[0]=1;entries[15]=4;hint=Math.max(0,Math.min(p?.hint||0,10));}
+    restore(window.openai?.widgetState);
+    function save(){window.openai?.setWidgetState?.({modelContent:{scenario:'The Orchard of Four Locks',plan},privateContent:{step,entries,hint}})?.catch(()=>{});}
+    const make=(tag,attrs={},text='')=>{const n=document.createElementNS(ns,tag);for(const [k,v] of Object.entries(attrs))n.setAttribute(k,v);if(text)n.textContent=text;return n;};
+    function draw(){const frames=data.runs[plan],f=frames[step],s=f.state;
+      get('[data-plan]').value=plan;get('[data-prev]').disabled=step===0;get('[data-next]').disabled=step===frames.length-1;
+      get('[data-step]').textContent=f.label;get('[data-count]').textContent=`${step+1} / ${frames.length}`;
+      get('[data-detail]').textContent=f.detail;get('[data-integrity]').textContent=`Orchard ${s.orchard}/10`;
+      get('[data-powers]').textContent=`Powered: ${s.powers.length?s.powers.join(' + '):'none'}`;
+      get('[data-health]').textContent=`Cornix ${s.heroes.cornix.hp}/${s.heroes.cornix.max} · Kernel ${s.heroes.kernel.hp}/${s.heroes.kernel.max} · Beeswax ${s.heroes.beeswax.hp}/${s.heroes.beeswax.max} · Captain ${s.enemies.captain.hp}/24`;
+      const width=Math.max(280,root.clientWidth||700),side=(width-24)/(Math.sqrt(3)*14.5),height=side*12.5+52;
+      svg.setAttribute('viewBox',`0 0 ${width} ${height}`);svg.style.height=`${height}px`;
+      svg.replaceChildren(make('title',{},`${f.label}. ${f.detail}`));
+      const point=(q,r)=>[12+Math.sqrt(3)*side*(q+r/2+.5),28+side*(1+1.5*r)];
+      const text=(x,y,t)=>svg.appendChild(make('text',{x,y},t));
+      if(width>480){text(point(2,0)[0],12,'Western controls');text(point(5,0)[0]+side,12,'River crossings');text(point(9,0)[0]+side,12,'Eastern orchard');}
+      for(const h of data.board){const [x,y]=point(h.q,h.r),shut=h.kind==='bridge'&&!s.powers.includes('bridge'),zone=s.powers.includes('shelter')&&h.q>=6&&h.q<=9&&h.r>=2&&h.r<=4;
+        const polygon=Array.from({length:6},(_,i)=>{const a=(i*60-30)*Math.PI/180;return `${x+side*Math.cos(a)},${y+side*Math.sin(a)}`;}).join(' ');
+        const t=make('polygon',{points:polygon,class:h.kind==='water'||shut?'river':h.kind==='hedge'?'hedge':zone?'zone':'ground'});t.appendChild(make('title',{},`${h.q},${h.r}: ${shut?'closed bridge':h.kind}`));svg.appendChild(t);
+        if(h.kind==='hedge')text(x,y,'×');if(h.kind==='water')text(x,y,'≈');if(h.kind==='bridge')text(x,y,shut?'×':'=');
+      }
+      if(f.trail.length){svg.appendChild(make('polyline',{points:f.trail.map(p=>point(...p).join(',')).join(' '),class:'trail'}));}
+      for(const [p,label] of [[[3,3],'T'],[[9,3],'O'],[[9,4],'!']]){const [x,y]=point(...p);svg.appendChild(make('rect',{x:x-side*.6,y:y-side*.55,width:side*1.2,height:side*1.1,rx:2,class:'object'}));text(x,y,label);}
+      const names={cornix:'C',kernel:'K',beeswax:'B',captain:'W',archer:'A',sapper:'S'};
+      for(const [group,cls] of [[s.heroes,'hero'],[s.enemies,'enemy']])for(const [id,u] of Object.entries(group)){if(u.hp<=0)continue;const [x,y]=point(...u.pos),node=make('circle',{cx:x,cy:y,r:side*.62,class:cls});node.appendChild(make('title',{},`${id}: ${u.hp} health, at ${u.pos.join(',')}`));svg.appendChild(node);text(x,y,names[id]);}
+      svg.setAttribute('aria-label',`${f.label}. ${f.detail} ${get('[data-health]').textContent}`);
+    }
+    const cellName=i=>`${'ABCD'[i%4]}${Math.floor(i/4)+1}`;
+    function grid(){get('[data-grid]').replaceChildren();entries.forEach((v,i)=>{const label=document.createElement('label');label.className='form-label';label.append(document.createTextNode(cellName(i)));const select=document.createElement('select');select.className='form-select';select.setAttribute('aria-label',`${cellName(i)}${i===0||i===15?', given':''}`);select.disabled=i===0||i===15;for(let n=0;n<=4;n++){const o=document.createElement('option');o.value=String(n);o.textContent=n?String(n):'·';select.append(o);}select.value=String(v);select.addEventListener('change',()=>{entries[i]=Number(select.value);get('[data-feedback]').textContent='';save();});label.append(select);get('[data-grid]').append(label);});}
+    for(const cage of data.cages){const span=document.createElement('span');span.textContent=`${cage.cells.map(cellName).join(' + ')} = ${cage.sum}`;get('[data-clues]').append(span);}
+    function check(){const groups=[];for(let r=0;r<4;r++)groups.push({name:`Row ${r+1}`,ids:[0,1,2,3].map(c=>4*r+c)});for(let c=0;c<4;c++)groups.push({name:`Column ${'ABCD'[c]}`,ids:[0,1,2,3].map(r=>4*r+c)});for(let r=0;r<4;r+=2)for(let c=0;c<4;c+=2)groups.push({name:`Box at ${cellName(r*4+c)}`,ids:[r*4+c,r*4+c+1,(r+1)*4+c,(r+1)*4+c+1]});
+      for(const g of groups){const v=g.ids.map(i=>entries[i]).filter(Boolean);if(new Set(v).size<v.length)return `${g.name} repeats a number.`;}
+      for(const c of data.cages)if(c.cells.every(i=>entries[i])&&c.cells.reduce((n,i)=>n+entries[i],0)!==c.sum)return `${c.cells.map(cellName).join(' + ')} must total ${c.sum}.`;
+      return entries.every(Boolean)?'Solved. All four circuit rows are available.':`${entries.filter(v=>!v).length} cells remain. No completed rule conflicts yet.`;
+    }
+    const hints=['C1 + D1 = 6. With no repeats, those two cells must contain 2 and 4.','Row 1 already has 1, so B1 = 3. Then B1 + B2 = 5 gives B2 = 2.','The top-left box now forces A2 = 4. A2 + A3 = 6 gives A3 = 2.','Column A now forces A4 = 3.','The bottom-left box needs 1 and 4 in B3/B4. Row 4 already has 4, so B4 = 1 and B3 = 4.','Row 4 forces C4 = 2. D3 + C4 = 3 gives D3 = 1.','Row 3 forces C3 = 3. C2 + C3 = 4 gives C2 = 1.','Row 2 forces D2 = 3.','Column C forces C1 = 4. Row 1 then forces D1 = 2.'];
+    get('[data-check]').addEventListener('click',()=>{get('[data-feedback]').textContent=check();save();});
+    get('[data-hint]').addEventListener('click',()=>{get('[data-feedback]').textContent=hints[Math.min(hint,hints.length-1)];hint=Math.min(hint+1,hints.length);save();});
+    get('[data-prev]').addEventListener('click',()=>{step=Math.max(0,step-1);draw();save();});get('[data-next]').addEventListener('click',()=>{step=Math.min(data.runs[plan].length-1,step+1);draw();save();});get('[data-plan]').addEventListener('change',e=>{plan=e.target.value;step=0;draw();save();});
+    window.addEventListener('openai:set_globals',e=>{if(e.detail?.globals?.widgetState){restore(e.detail.globals.widgetState);grid();draw();}});
+    if(typeof ResizeObserver!=='undefined')new ResizeObserver(draw).observe(root);
+    grid();draw();
+  })();
+  </script>
+</div>

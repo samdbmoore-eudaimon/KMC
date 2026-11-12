@@ -1,0 +1,52 @@
+# Codex daytime artwork handoff: 2 October 2026
+
+Status: bounded art batch delivered for review. ART-01/ART-02/C-10 remain incomplete overall because live visual acceptance and some structures are pending. No final shared build was requested or run. No engine, App, save, reward, gate, legacy or certified bank changes in this batch.
+
+## Delivered
+
+- ASSET-01 existing blank neutral wheel reused. `expeditions/v2/art/EquationWheel.jsx` provides neutral, selected, locked and jammed states with code-drawn six-sector overlays. Image and sectors rotate together; live text and fixed pointer remain outside that rotation. Geometry uses selected runtime pixels: centre [256,256], visible diameter 384, sector radius 150, hub radius 52, label radius 108, safe label radius 24 and pointer [256,118]. Native source is 1254 square; prepared selected image is 512 square. Original artwork remains unchanged.
+- Wicker rear v2, action v3 and exhausted v3 selected after four-background, 48/96/192 and shared-ground-anchor review. These fill concrete gaps in the actual certified Four Locks teams, which use Tuppence, Wicker, Pip, Bushel and Dapple. Three pose gaps reviewed; five successful built-in imagegen outputs retained, including two withheld intermediate repairs. No Dapple regeneration or paid fallback.
+- All 30 hero idles remain selected. Coverage matrix `docs/expeditions/v2/art-coverage.md` records all heroes and the four prescribed enemies, selected poses and fallbacks against all 64 certified trace rosters. No mission certificate was modified or regenerated.
+- Selected imports: 53 assets, 1,404,116 bytes, an increase of 137,624 bytes over the previous 49 assets. Below the 12 MiB selected-art limit. Prepared candidates: 189, 5,972,676 bytes. Selected-source bytes: 87,940,048. Exact reviewed SHA-256 gates retained and explicit total-budget rejection added.
+
+## Changed files
+
+Source: `expeditions/v2/art/{EquationWheel.jsx,wheel-geometry.js,art.test.js,runtime-art.js,manifest.json}`; `scripts/dev/{prepare-orchard-v2-art.cjs,embed-orchard-v2-art.cjs,review-orchard-art-batch.cjs,test-orchard-wheel.mjs,test-orchard-v2-art.cjs}`.
+
+Metadata/reports: `docs/expeditions/v2/{art-delivery.json,art-selection.json,art-source-overrides.json,art-preflight-review.json,art-02-delivery.json,art-coverage.md,art-daytime-generation.json}` and ART-01/ART-02/C-10 owner reports. Preparation outputs and source/QA/runtime files stay under `assets/expeditions/production/9fo/v2/`. Existing dirty changes outside this batch were preserved.
+
+New retained Wicker sources: `source/po-wicker-exhausted-v2.png`, `source/po-wicker-exhausted-v3.png`, `source/po-wicker-idle-back-v2.png`, `source/po-wicker-action-v2.png`, `source/po-wicker-action-v3.png`. Exhausted v2 still touched the left edge and action v2 introduced a facial mark/web infill; both withheld. Final repairs preserve the original identity, full limb silhouette and transparent margins. Action has three detached alpha pixels retained after visual review, below the existing fragment diagnostic; thresholds and artwork pixels were not altered to pass checks.
+
+## Executable checks and outcomes
+
+Preparation ran for `equation-frame`, `hero-wicker-rear`, `hero-wicker-action` and `hero-wicker-exhausted`, followed by embed and isolated QA generation.
+
+`node scripts/dev/embed-orchard-v2-art.cjs`: 53 assets, 1,404,116 bytes, passed exact hash/preflight/budget gates.
+
+`node scripts/dev/review-orchard-art-batch.cjs`: rendered actual React wheel component, resolver anchor composition and trace-derived coverage matrix.
+
+`node scripts/validate_expedition_alpha.cjs` on the selected wheel and three Wicker derivatives: all four pass.
+
+`node --test --test-reporter=spec expeditions/v2/art/art.test.js scripts/dev/test-orchard-wheel.mjs scripts/dev/test-orchard-v2-art.cjs expeditions/v2/ui/ui.test.js`: 15 tests, 15 pass. Geometry checks cover positive/negative rotations; actual-component checks cover all four states and six rotations, separate upright glyph/pointer groups, metadata, two-digit typography and invalid inputs. Resolver checks verify the three Wicker poses select without fallback. Existing UI checks pass.
+
+Initial restricted execution could not read parent directories for esbuild JSX resolution; unchanged UI tests passed with approved read access. Isolated QA generation uses JSX transform rather than bundling. Font-cache warnings did not prevent rendered output; PNGs were inspected. No full rebuild or smoke was run without the shared final-build lock. Existing shared HTML files remain untouched, each 99,781,364 bytes; this is not a measured final bundle delta.
+
+## Visual evidence
+
+Root: `assets/expeditions/production/9fo/v2/qa/structures/daytime-20261002/`.
+
+- `wheel-isolated.html`: offline actual-component rendering, explicitly labelled isolated.
+- `wheel-four-backgrounds.png` and `wheel-{white,black,green,cyan}-states.png`: all four states on all acceptance backgrounds.
+- `wheel-six-rotations.png`: six rotations with upright live numeric faces and fixed pointer; operator faces also reviewed in generated composition.
+- `wheel-slot-geometry.png`: six safe label areas inside blank sectors.
+- `wheel-scales.png`: 48/96/192 sizes for each state.
+- `hero-wicker-rear-v2-review.png`, `hero-wicker-action-v3-review.png`, `hero-wicker-exhausted-v3-review.png`: four backgrounds and three sizes. Previous v1 sheets retained.
+- `wicker-anchor-composition.png`: actual production resolver and uniform scaling with shared ground crosshair.
+
+Native four-background Wicker sheets also remain in `v2/qa/characters/`. Reviewed bitmap SHA-256, alpha/bytes and anchors are recorded in prepared delivery, selection and preflight metadata. Generation record: `docs/expeditions/v2/art-daytime-generation.json`; built-in imagegen skill only.
+
+## Unresolved and ready dependencies
+
+EquationWheel is ready for scoped renderer integration, but is not bound to MapViewport. Actual App native/min/max zoom, pointer/glyph legibility, state alignment and mechanism placement still need visual acceptance. At 48px the live glyphs are tiny; selected-detail and zoom behaviour must establish readable use. Isolated screenshots do not certify the App route.
+
+Claude's reported real private OrchardV2Route integration is ready for future live QA. This batch did not modify that route or infer acceptance from its tests. Dapple action remains withheld with idle fallback, live Holding marker and `data-art-fallback`. ASSET-02 painted plinth attempts v1/v2/v3 remain withheld for geometry; exact regular StationGlyph interim remains. ASSET-03/04/05 wait for actual renderer gaps. No thresholds, costs or enemies were weakened. Batch stops here; overnight automation remains paused.

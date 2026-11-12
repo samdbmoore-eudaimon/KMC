@@ -1,0 +1,22 @@
+{
+  "source": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-surface-v2.png",
+  "waterCrop": [
+    560,
+    550,
+    128,
+    64
+  ],
+  "grassCrop": [
+    640,
+    200,
+    128,
+    64
+  ],
+  "uniformSampleScale": 0.5,
+  "waterPatternPhase": 26,
+  "assembly": "Repeat source painted samples under exact96px water mask; mirrored normal/tangent halves share identical edge pixels. Quiet water column at edge avoids a doubled bright reflection seam. Full opacity for final32px approach,16px inward feather. Tangent feather preserves surrounding rich banks. No new illustration painted in code.",
+  "width": 96,
+  "height": 216,
+  "waterWidth": 96,
+  "sha256": "355a5633f54a89ea6fa26010eb82186e3b176b481b737923659c91a906dbdd97"
+}

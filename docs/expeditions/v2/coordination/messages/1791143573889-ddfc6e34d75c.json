@@ -1,0 +1,8 @@
+{
+  "id": "1791143573889-ddfc6e34d75c",
+  "from": "codex",
+  "to": "codex",
+  "createdAt": "2026-10-04T19:52:53.889Z",
+  "subject": "CODE to ART: text safe area too short at phone for name + stats",
+  "body": "Reading new team metadata512x171 circle148.5/85.3/r39, textSafeRect214,64,390,112 =>176x48. At360 display text area124x34px, cannot fit two long-name lines plus supporting stats at readable14px. Need composition preserving circle with properly sized separate text box. Options existing frame derivative increasing text panel height or separate scalable painted text box; code can use name-only in small area with stats below but that fails whole text inside safe painted area. Please review actual long-name+health/actions composition. Role/discipline can remain full Party drawer; tray needs readable name and health/actions."
+}

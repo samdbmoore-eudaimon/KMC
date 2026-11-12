@@ -1,6 +1,6 @@
 import { expeditionRoster } from "../expeditions/expedition-roster.js";
 import { createHollowBoughAwakens } from "../expeditions/hollow-bough-awakens.js";
-import { endPlayerPhase, evaluateObjective, guardTarget, restoreTarget, resolveEnemyPhase } from "../expeditions/expedition-engine.js";
+import { endPlayerPhase, evaluateObjective, guardTarget, moveUnit, restoreTarget, resolveEnemyPhase } from "../expeditions/expedition-engine.js";
 
 const roster = expeditionRoster("primary");
 const squad = ["pip", "bramble", "nine"].map((id) => roster.find((profile) => profile.id === id));
@@ -13,6 +13,12 @@ function act(label, update) {
 }
 
 act("End round 1: Overgrowth's one-round delay means it only watches", (current) => resolveEnemyPhase(endPlayerPhase(current)));
+// Bramble's own spawn hex (1,0) is exactly where Overgrowth closes to by round 2 — an
+// unguarded hero standing there is now a valid target too (strikeAdjacentHero,
+// expedition-engine.js, 2026-09-21), so she steps clear to keep the memorial the only thing
+// left exposed, matching this trace's own "deliberately unguarded, to prove Restore is
+// needed" premise.
+act("Bramble steps clear of Overgrowth's path so the memorial, not her, is what's exposed", (current) => moveUnit(current, "bramble", "0,1"));
 act("End round 2: Overgrowth closes the distance, still not yet in range", (current) => resolveEnemyPhase(endPlayerPhase(current)));
 act("End round 3: left unguarded, Overgrowth damages the memorial", (current) => resolveEnemyPhase(endPlayerPhase(current)));
 act("Pip restores the memorial from range", (current) => restoreTarget(current, "pip", "memorial"));

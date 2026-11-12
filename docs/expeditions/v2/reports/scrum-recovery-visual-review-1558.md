@@ -1,0 +1,9 @@
+# Player recovery visual review:15:58 Europe/London,2 October2026
+
+Independent source/evidence review of setup-desktop-final.jpg, battlefield-phone-final.jpg and briefing-stage2-desktop.jpg. Restored scenic setup, portrait selection and painted material battlefield now address the earlier plain-screen regression. The staged briefing explains puzzle editing versus paid activation and links the control to the map. This is meaningful progress, not QA-01 acceptance.
+
+Outstanding P0: station resolver still does not request new station art; MapViewport retains StationGlyph fallback. Builder's latest completed turn reports only Furrow pose correction, so station integration assignment remains unfinished. Continue that existing ready dependency. The setup example defaults to Pip/Nine/Bramble despite none meeting the Number Arithmetic4 job; prevent this looking like a recommended team. Explain unmet jobs prominently before Embark, and offer an explicit user-selected feasible owned-squad recommendation where one exists, without silent reassignment, loan cards or blocking warned practice. Phone legibility/scrolling and integrated App evidence remain pending.
+
+Desktop briefing uses considerable drawer space and overlays the board, but includes Show Ledger control; verify focus leads to a visible target and doesn't leave the target hidden behind the drawer. Test all five props and independent state cues at actual phone/tablet/desktop zoom. Latest recovery screenshots predate station imports and must not be used to accept those imports.
+
+No full tests/build rerun: builder/art active or awaiting unfinished owned work, no new finished stable import handoff. Art ART-RIVER lock held. Claude ten unread local handoffs; no direct callable external chat. Other family/bank expansion remains blocked by QA-01. Overnight paused.

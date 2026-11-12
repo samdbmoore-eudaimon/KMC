@@ -1,0 +1,29 @@
+{
+  "family": "four",
+  "tier": 1,
+  "seed": 1,
+  "layoutId": "river",
+  "team": [
+    "bushel",
+    "furrow",
+    "pip"
+  ],
+  "planFamily": "direct-guard",
+  "status": "unknown",
+  "reasonCode": "crossing-exit-blocked",
+  "violations": [
+    {
+      "crossing": "3,6",
+      "controlled": false,
+      "regionsTouched": 1,
+      "neighbours": [
+        "4,6:hedge",
+        "4,5:water",
+        "3,5:floor",
+        "2,6:roots",
+        "2,7:floor",
+        "3,7:water"
+      ]
+    }
+  ]
+}

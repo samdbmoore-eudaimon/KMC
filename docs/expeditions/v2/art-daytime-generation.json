@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-02",
+  "mode": "built-in-imagegen",
+  "scope": "Three Wicker pose repairs; neutral wheel reused",
+  "preservedWithheldSources": ["po-wicker-exhausted-v2.png", "po-wicker-action-v2.png"],
+  "outputs": [
+    {
+      "source": "assets/expeditions/production/9fo/v2/source/po-wicker-exhausted-v3.png",
+      "reference": "assets/expeditions/production/9fo/v2/source/po-wicker-exhausted-v2.png",
+      "prompt": "Edit this exact exhausted Wicker orchard spider sprite. Only repair framing. Preserve the same face, closed sleepy eyes, seated pose, golden brown fur, green leaf vest, rope trim and painted identity. Zoom out substantially: character occupies at most 70 percent of canvas width and 75 percent of canvas height, centred, with broad empty transparent space visibly surrounding ALL limbs. Restore the tiny cut fur edge on the extreme left limb. Nothing may touch ANY canvas edge. Full furry feet and limb silhouette, no stray marks, no new pose, no props, no text. Genuine transparent background. This is a production cutout with deliberately large transparent margins."
+    },
+    {
+      "source": "assets/expeditions/production/9fo/v2/source/po-wicker-idle-back-v2.png",
+      "reference": "hero-wicker-rear-cyan.png: existing prepared four-background identity reference",
+      "prompt": "Identity-preserving repair of this exact Wicker rear game sprite, friendly golden-brown furry orchard spider wearing a green leaf vest with tan rope trim. Preserve the rear three-quarter pose, turned head, costume, limbs and painted storybook style. Remove cyan preview background to genuine transparency. Restore the cropped extreme left furry limb edge only. Full silhouette must occupy at most70% canvas width and75% height, centred with broad transparent space on ALL sides. Every limb tip entirely inside image. No new character, pose, props, text or numbers. One isolated rear sprite."
+    },
+    {
+      "source": "assets/expeditions/production/9fo/v2/source/po-wicker-action-v3.png",
+      "references": ["assets/expeditions/production/9fo/v2/source/po-wicker-action-v2.png", "hero-wicker-action-cyan.png: existing prepared identity reference"],
+      "prompt": "Target image1 is the repaired Wicker action sprite; image2 is the original identity reference only. Two precise corrections, preserve everything else: remove the newly added dark brown mark between the eyes and restore plain golden fur matching original image2; replace opaque white web infill with thin clean WHITE THREADS ONLY, with genuinely transparent EMPTY HOLES between threads, matching the simple small original web. No opaque sheet or lace filling. Preserve action pose, complete limb ends, green leaf vest, tan rope trim, friendly eyes, painted storybook style and broad transparent margin. Entire complete character and web inside canvas, nothing touches an edge. No added props/text, one isolated sprite with genuine alpha."
+    }
+  ],
+  "limitations": "Final selection is for private renderer QA. No Dapple action generation, paid fallback, new plinth generation or final live acceptance in this batch."
+}

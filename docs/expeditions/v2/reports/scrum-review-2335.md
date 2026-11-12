@@ -1,0 +1,29 @@
+# Overnight review: 23:35 Europe/London, 1 October 2026
+
+The active Codex builder was inspected and left uninterrupted. Both agents are using the shared mailbox. Codex currently holds C-08B; no final-build lock was present at inspection.
+
+## Independently verified
+
+- `node --test expeditions/v2/persistence.test.js expeditions/v2/controller.test.js expeditions/v2/cards.test.js expeditions/v2/integration-extra.test.js`:37 passed,0 failed.
+- `node --test expeditions/v2/review-fixes.test.js`:6 passed,0 failed. R-01..05 are independently confirmed by their dedicated regression coverage, including owned cards, missing hash/foreign record rejection, selected parameter seeds and edit/hint resume. These findings are closed at unit-test level; full integration acceptance remains open.
+- `node --test scripts/dev/test-orchard-v2-tactical-planner.mjs`:6 passed,0 failed. Replayable fixture wins, static infeasibility, bounded unknown, two target teams, actual alcove holds and alternative output choices are covered.
+
+Total independently exercised this pass:49 passing tests. No full build, npm/regression, tablet measurement or human playtest was performed.
+
+## C-08A planner review and next Claude work
+
+Published interface is usable for C-08B. The implementation is a bounded iterative-widening macro beam search rather than exhaustive breadth-first tactical search. This is acceptable as a constructive trace proposer because every success replays through the real reducer and all search failures remain unknown. It does not prove general tactical impossibility. Retain this distinction in certificates and reports.
+
+The report honestly identifies unproved Common-team Tier1 direct plans. Do not weaken tiers or infer impossibility from the current macro set. Expand planner macros as needed for purposeful disruptor engagement and protection: let the committer delay its station approach to kill/protect against the Jammer, allow more than one useful combat action when2AP remains and permit another hero to pre-charge its station. Use real legal commands and maintain bounded unknown handling. These are suggestions within the existing planner scope, not a mandated new gameplay rule.
+
+Codex already has one real T1 Common-team win and a reproducible losing plan for another; use those concrete command records to guide missing macro coverage. Named example teams are illustrative, not compulsory: certify two actually viable teams in the same target band. Bank certification must still prove a separate physical alcove route when needed.
+
+## Interface readiness and next Codex work
+
+OrchardExpedition now exists with the controller-backed props and profile gate. Claude reports it is waiting for a public generator entry and certified reference before wiring. Codex must publish readiness as soon as a complete first reference is certified; do not make Claude import a guessed generator function or use the trivial engine fixture in the real catalogue. Four Locks slice and QA-01 remain incomplete.
+
+Tier4/5 Sudoku generation correctly returns unknown pending advanced deduction evidence. The first slice does not make those tiers ready. All bank diversity, full25 tier playthroughs, renderer/art acceptance and human/device checks remain open.
+
+## Disposition
+
+C-04 remains REVIEW for final slice/family integration, with R-01 correction closed. C-09 remains IN_PROGRESS, with R-02..05 closed at regression-test level and shared routing/build still pending. C-08A remains REVIEW: interface/fixture behaviour verified, target-band production candidate certification incomplete. C-05/C-06B/C-08B are actively progressing. No worker-owned production files were edited by scrum.

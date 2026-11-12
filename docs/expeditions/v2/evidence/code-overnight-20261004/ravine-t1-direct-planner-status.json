@@ -1,0 +1,32 @@
+{
+  "family": "ravine",
+  "tier": 1,
+  "seed": 1,
+  "layoutId": "river",
+  "team": [
+    "bushel",
+    "furrow",
+    "pip"
+  ],
+  "planFamily": "direct-guard",
+  "status": "unknown",
+  "metrics": {
+    "planner": "orchard-v2-tactical-planner/1",
+    "planFamily": "direct-guard",
+    "statesSpent": 30000,
+    "maxStates": 30000,
+    "perTeam": [
+      {
+        "teamIndex": 0,
+        "cardIds": [
+          "bushel",
+          "furrow",
+          "pip"
+        ],
+        "status": "unknown",
+        "reasonCode": "budget-exhausted"
+      }
+    ],
+    "beamWidth": 120
+  }
+}

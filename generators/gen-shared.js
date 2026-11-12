@@ -1,6 +1,6 @@
 // generators/gen-shared.js — shared utilities, topic lists, name pools and
 // active-module live bindings, exported for all generator files and the main app.
-import { CONTENT_MODULES, LESSONS } from '../kq-content.js';
+import { CONTENT_MODULES, LESSONS } from '../wm-content.js';
 
 
 /* ============================================================
@@ -85,6 +85,14 @@ export function pickStructure(registry, d, { tries = 12 } = {}) {
 // Edge case §6: primaryType = index of highest stat; lowest index wins on tie.
 // Used at card-generation time (never re-derived during battle).
 export function computePrimaryType(s) { const m = Math.max(...s); return s.indexOf(m); }
+// Adventure items add +1 to a stat (cap 10) and BV follows the new total. primaryType is
+// deliberately NOT recomputed: every adventure boosts its hero's primary stat, so the type holds.
+export function applyAdventureItems(card, ownedItemIds, adventureItems) {
+  if (!card || !Array.isArray(adventureItems) || !ownedItemIds || !ownedItemIds.length) return card;
+  const s = [...card.s];
+  for (const it of adventureItems) if (ownedItemIds.includes(it.id)) s[it.stat] = Math.min(10, s[it.stat] + 1);
+  return { ...card, s, bv: s.reduce((sum, value) => sum + value, 0) };
+}
 export function normaliseJoeyCardStats(card) {
   const ranges = { common: [12, 15], uncommon: [18, 21], rare: [25, 28], epic: [33, 36], legendary: [44, 46] };
   const range = ranges[card.r];

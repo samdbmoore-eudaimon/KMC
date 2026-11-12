@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "ownerThread": "01a10869-af91-7490-9f19-c99e0842fcc1",
+  "status": "isolated-review",
+  "assets": [
+    {
+      "id": "enemy-scruffcrow-idle",
+      "sourcePath": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/source/scruffcrow-idle-v2.png",
+      "category": "enemies",
+      "entity": "scruffcrow",
+      "state": "idle",
+      "version": 2,
+      "runtimePath": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/runtime/enemy-scruffcrow-idle-v2.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 46594,
+      "sourceBytes": 1612084,
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "3e5f842d18bc81923a3b07fc82c98fc30f3817ae3b1a115513892bff5cbb2251",
+      "sourceSha256": "7216b540c2dff341699ef3e990dd4ce35ec28ca9203f972db79397f5acdd12a7",
+      "alpha": true,
+      "visibleBounds": [
+        30,
+        19,
+        352,
+        363
+      ],
+      "groundAnchor": [
+        191,
+        355
+      ],
+      "topCentre": [
+        192,
+        192
+      ],
+      "overlayAnchors": {},
+      "allowedStates": [
+        "idle"
+      ],
+      "reviewStatus": "candidate",
+      "anchorStatus": "isolated-reviewed-live-pending",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          30,
+          19,
+          352,
+          363
+        ],
+        "transparentPixels": 84519,
+        "visiblePixels": 62937,
+        "components": [
+          62935,
+          1,
+          1
+        ],
+        "componentCount": 3,
+        "detachedPixels": 2,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-idle-white.png",
+        "black": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-idle-black.png",
+        "green": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-idle-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-idle-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-idle-scales.png"
+      }
+    },
+    {
+      "id": "enemy-scruffcrow-defeated",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-scruffcrow-flee-v1.png",
+      "category": "enemies",
+      "entity": "scruffcrow",
+      "state": "defeated",
+      "version": 1,
+      "runtimePath": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/runtime/enemy-scruffcrow-defeated-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 56526,
+      "sourceBytes": 1944369,
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "7d3b6e0b4b79e7d40d9b2fbc83c0322e233f515cb7ef5d27e5ad1bc9cc56ac25",
+      "sourceSha256": "8fa900908257f2b829f8cf34f2afd44de29733ae67e7f3c44d97d50f938f954f",
+      "alpha": true,
+      "visibleBounds": [
+        4,
+        1,
+        383,
+        384
+      ],
+      "groundAnchor": [
+        193.5,
+        368.64
+      ],
+      "topCentre": [
+        192,
+        192
+      ],
+      "overlayAnchors": {},
+      "allowedStates": [
+        "defeated"
+      ],
+      "reviewStatus": "candidate",
+      "anchorStatus": "isolated-reviewed-live-pending",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          4,
+          1,
+          383,
+          384
+        ],
+        "transparentPixels": 81001,
+        "visiblePixels": 66455,
+        "components": [
+          52048,
+          10204,
+          1081,
+          830,
+          763,
+          470,
+          469,
+          203,
+          134,
+          107,
+          79,
+          32,
+          31,
+          2,
+          1,
+          1
+        ],
+        "componentCount": 16,
+        "detachedPixels": 14407,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-defeated-white.png",
+        "black": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-defeated-black.png",
+        "green": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-defeated-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-defeated-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-scruffcrow-defeated-scales.png"
+      }
+    },
+    {
+      "id": "enemy-strawling-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-strawling-idle-v1.png",
+      "category": "enemies",
+      "entity": "strawling",
+      "state": "idle",
+      "version": 1,
+      "runtimePath": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/runtime/enemy-strawling-idle-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 45702,
+      "sourceBytes": 1615095,
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "aa08f8829a7988cdced1c4de04793b4edec78c1d2c89cef88acfaffe4b0883e2",
+      "sourceSha256": "8c19014c1ae3e5958c7307fd2ab4d3c5624551a8370d43b0bf8b359c3809a0df",
+      "alpha": true,
+      "visibleBounds": [
+        40,
+        4,
+        351,
+        379
+      ],
+      "groundAnchor": [
+        195.5,
+        363.64
+      ],
+      "topCentre": [
+        192,
+        192
+      ],
+      "overlayAnchors": {},
+      "allowedStates": [
+        "idle"
+      ],
+      "reviewStatus": "candidate",
+      "anchorStatus": "isolated-reviewed-live-pending",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          40,
+          4,
+          351,
+          379
+        ],
+        "transparentPixels": 90167,
+        "visiblePixels": 57289,
+        "components": [
+          57288,
+          1
+        ],
+        "componentCount": 2,
+        "detachedPixels": 1,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-idle-white.png",
+        "black": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-idle-black.png",
+        "green": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-idle-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-idle-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-idle-scales.png"
+      }
+    },
+    {
+      "id": "enemy-strawling-defeated",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-strawling-defeated-v1.png",
+      "category": "enemies",
+      "entity": "strawling",
+      "state": "defeated",
+      "version": 1,
+      "runtimePath": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/runtime/enemy-strawling-defeated-v1.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 45700,
+      "sourceBytes": 1737723,
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "3097508fa1821e5f6c98620edc3661b318eaa176221b6984cfc8402f73da224f",
+      "sourceSha256": "f6d1c8bf4dd33b47b8e0b36c2f5bb0395f8b57a97b2cfe0becae80fee3eb9499",
+      "alpha": true,
+      "visibleBounds": [
+        13,
+        15,
+        373,
+        369
+      ],
+      "groundAnchor": [
+        193,
+        353.64
+      ],
+      "topCentre": [
+        192,
+        192
+      ],
+      "overlayAnchors": {},
+      "allowedStates": [
+        "defeated"
+      ],
+      "reviewStatus": "candidate",
+      "anchorStatus": "isolated-reviewed-live-pending",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          13,
+          15,
+          373,
+          369
+        ],
+        "transparentPixels": 81590,
+        "visiblePixels": 65866,
+        "components": [
+          64275,
+          824,
+          407,
+          360
+        ],
+        "componentCount": 4,
+        "detachedPixels": 1591,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-defeated-white.png",
+        "black": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-defeated-black.png",
+        "green": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-defeated-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-defeated-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/qa/enemy-strawling-defeated-scales.png"
+      }
+    }
+  ],
+  "selectedBytes": 194522,
+  "generated": {
+    "tool": "built-in image_gen",
+    "source": "assets/expeditions/production/9fo/v2/enemy-art-batch-20261004/source/scruffcrow-idle-v2.png",
+    "original": "assets/expeditions/production/9fo/runtime/enemies/po-scruffcrow-perch-v1.png",
+    "output": "C:/Users/samdb/.codex/generated_images/01a10869-af91-7490-9f19-c99e0842fcc1/exec-17597a13-bb10-41f3-b250-b758a7590297.png",
+    "prompt": "Precise object edit: complete cropped top plume only, retain identical right-facing charcoal/brown ragged Scruffcrow with amber eye, black beak and both claws on leafy branch; entire complete silhouette,8percent transparent margins, true alpha, no text/matte/checkerboard/newobjects."
+  }
+}

@@ -32,33 +32,57 @@ import russetCarry from "../assets/expeditions/production/9fo/runtime/characters
 import halfpennyCarry from "../assets/expeditions/production/9fo/runtime/characters/po-halfpenny-carry-v1.png";
 import furrowCarry from "../assets/expeditions/production/9fo/runtime/characters/po-furrow-carry-v1.png";
 import dappleCarry from "../assets/expeditions/production/9fo/runtime/characters/po-dapple-carry-v1.png";
+// 2026-09-22 batch: a carry pose for every remaining primary character that only had idleFront
+// before — completes the roster, no more falling back to idleFront while holding cargo.
+import wickerCarry from "../assets/expeditions/production/9fo/runtime/characters/po-wicker-carry-v1.png";
+import bushelCarry from "../assets/expeditions/production/9fo/runtime/characters/po-bushel-carry-v1.png";
+import tuppenceCarry from "../assets/expeditions/production/9fo/runtime/characters/po-tuppence-carry-v1.png";
+import windfallCarry from "../assets/expeditions/production/9fo/runtime/characters/po-windfall-carry-v1.png";
+import cornixCarry from "../assets/expeditions/production/9fo/runtime/characters/po-cornix-carry-v1.png";
+import thistlewickCarry from "../assets/expeditions/production/9fo/runtime/characters/po-thistlewick-carry-v1.png";
+import beeswaxCarry from "../assets/expeditions/production/9fo/runtime/characters/po-beeswax-carry-v1.png";
+import kernelCarry from "../assets/expeditions/production/9fo/runtime/characters/po-kernel-carry-v1.png";
+import millraceCarry from "../assets/expeditions/production/9fo/runtime/characters/po-millrace-carry-v1.png";
+import cobwebCarry from "../assets/expeditions/production/9fo/runtime/characters/po-cobweb-carry-v1.png";
+import amberlyCarry from "../assets/expeditions/production/9fo/runtime/characters/po-amberly-carry-v1.png";
+import barrowCarry from "../assets/expeditions/production/9fo/runtime/characters/po-barrow-carry-v1.png";
+import driftwoodCarry from "../assets/expeditions/production/9fo/runtime/characters/po-driftwood-carry-v1.png";
+import gableCarry from "../assets/expeditions/production/9fo/runtime/characters/po-gable-carry-v1.png";
+import wardenCarry from "../assets/expeditions/production/9fo/runtime/characters/po-warden-carry-v1.png";
+import harvestmoonCarry from "../assets/expeditions/production/9fo/runtime/characters/po-harvestmoon-carry-v1.png";
+import ninebarkCarry from "../assets/expeditions/production/9fo/runtime/characters/po-ninebark-carry-v1.png";
+import cascadeCarry from "../assets/expeditions/production/9fo/runtime/characters/po-cascade-carry-v1.png";
+import longshadowCarry from "../assets/expeditions/production/9fo/runtime/characters/po-longshadow-carry-v1.png";
+import gossamerCarry from "../assets/expeditions/production/9fo/runtime/characters/po-gossamer-carry-v1.png";
+import ninefoldtreeCarry from "../assets/expeditions/production/9fo/runtime/characters/po-ninefoldtree-carry-v1.png";
+import tenthscarecrowCarry from "../assets/expeditions/production/9fo/runtime/characters/po-tenthscarecrow-carry-v1.png";
 
 export const NINEFOLD_EXTRA_CHARACTERS = {
   sorrel: { idleFront: sorrelIdle, carry: sorrelCarry },
   russet: { idleFront: russetIdle, carry: russetCarry },
   halfpenny: { idleFront: halfpennyIdle, carry: halfpennyCarry },
-  wicker: { idleFront: wickerIdle },
+  wicker: { idleFront: wickerIdle, carry: wickerCarry },
   furrow: { idleFront: furrowIdle, carry: furrowCarry },
   dapple: { idleFront: dappleIdle, carry: dappleCarry },
-  bushel: { idleFront: bushelIdle },
-  tuppence: { idleFront: tuppenceIdle },
-  windfall: { idleFront: windfallIdle },
-  cornix: { idleFront: cornixIdle },
-  thistlewick: { idleFront: thistlewickIdle },
-  beeswax: { idleFront: beeswaxIdle },
-  kernel: { idleFront: kernelIdle },
-  millrace: { idleFront: millraceIdle },
-  cobweb: { idleFront: cobwebIdle },
-  amberly: { idleFront: amberlyIdle },
-  barrow: { idleFront: barrowIdle },
-  driftwood: { idleFront: driftwoodIdle },
-  gable: { idleFront: gableIdle },
-  warden: { idleFront: wardenIdle },
-  harvestmoon: { idleFront: harvestmoonIdle },
-  ninebark: { idleFront: ninebarkIdle },
-  cascade: { idleFront: cascadeIdle },
-  longshadow: { idleFront: longshadowIdle },
-  gossamer: { idleFront: gossamerIdle },
-  ninefoldtree: { idleFront: ninefoldtreeIdle },
-  tenthscarecrow: { idleFront: tenthscarecrowIdle },
+  bushel: { idleFront: bushelIdle, carry: bushelCarry },
+  tuppence: { idleFront: tuppenceIdle, carry: tuppenceCarry },
+  windfall: { idleFront: windfallIdle, carry: windfallCarry },
+  cornix: { idleFront: cornixIdle, carry: cornixCarry },
+  thistlewick: { idleFront: thistlewickIdle, carry: thistlewickCarry },
+  beeswax: { idleFront: beeswaxIdle, carry: beeswaxCarry },
+  kernel: { idleFront: kernelIdle, carry: kernelCarry },
+  millrace: { idleFront: millraceIdle, carry: millraceCarry },
+  cobweb: { idleFront: cobwebIdle, carry: cobwebCarry },
+  amberly: { idleFront: amberlyIdle, carry: amberlyCarry },
+  barrow: { idleFront: barrowIdle, carry: barrowCarry },
+  driftwood: { idleFront: driftwoodIdle, carry: driftwoodCarry },
+  gable: { idleFront: gableIdle, carry: gableCarry },
+  warden: { idleFront: wardenIdle, carry: wardenCarry },
+  harvestmoon: { idleFront: harvestmoonIdle, carry: harvestmoonCarry },
+  ninebark: { idleFront: ninebarkIdle, carry: ninebarkCarry },
+  cascade: { idleFront: cascadeIdle, carry: cascadeCarry },
+  longshadow: { idleFront: longshadowIdle, carry: longshadowCarry },
+  gossamer: { idleFront: gossamerIdle, carry: gossamerCarry },
+  ninefoldtree: { idleFront: ninefoldtreeIdle, carry: ninefoldtreeCarry },
+  tenthscarecrow: { idleFront: tenthscarecrowIdle, carry: tenthscarecrowCarry },
 };

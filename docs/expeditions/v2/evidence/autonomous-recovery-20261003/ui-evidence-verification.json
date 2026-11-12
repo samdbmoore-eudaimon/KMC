@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "rows": [
+    {
+      "prefix": "retained-ui",
+      "runId": "primary:four-locks:1#a0.r1",
+      "commands": 26,
+      "round": 4,
+      "finalHash": "842ccaa06a398651",
+      "blueprintHash": "a900267f8d2ea6c4",
+      "stars": 3,
+      "packs": 0,
+      "activeRun": null,
+      "archives": 1
+    },
+    {
+      "prefix": "fresh-ui",
+      "runId": "primary:four-locks:1#a0",
+      "commands": 25,
+      "round": 4,
+      "finalHash": "cd8639bffc367b92",
+      "blueprintHash": "c173f27b11ee929c",
+      "stars": 3,
+      "packs": 0,
+      "activeRun": null,
+      "archives": 0
+    },
+    {
+      "prefix": "fresh-ui-replay",
+      "runId": "primary:four-locks:1#a0.r1",
+      "commands": 25,
+      "round": 4,
+      "finalHash": "1bd5c462d8752b05",
+      "blueprintHash": "c173f27b11ee929c",
+      "stars": 3,
+      "packs": 0,
+      "activeRun": null,
+      "archives": 0
+    }
+  ],
+  "loss": {
+    "status": "lost",
+    "round": 5,
+    "commands": 5,
+    "starsUnchanged": true
+  },
+  "builds": [
+    {
+      "file": "WallabyMaths.html",
+      "bytes": 101543835,
+      "sha256": "41197d418d5ac8a9bb093fa0951734aed13d63a2454426c3a43d9ac1c4d5095c"
+    },
+    {
+      "file": "www/index.html",
+      "bytes": 101543835,
+      "sha256": "41197d418d5ac8a9bb093fa0951734aed13d63a2454426c3a43d9ac1c4d5095c"
+    }
+  ],
+  "fullApp": {
+    "fixture": "full-app-qa-fixture.json",
+    "won": true,
+    "savedAndResumed": true,
+    "completedSaveCleared": true,
+    "regularProfileBlocked": true
+  },
+  "regression": "All 25 steps passed; regression.log",
+  "focused": "8 tests passed; focused-final.log",
+  "limits": [
+    "Native Android/device, tablet performance and child comprehension unverified",
+    "Fresh and full-App screenshot capture timed out; DOM and independently replayed UI records retained. Earlier retained-run screenshots remain valid visual evidence."
+  ]
+}

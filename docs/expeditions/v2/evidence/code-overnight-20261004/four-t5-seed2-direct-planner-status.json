@@ -1,0 +1,32 @@
+{
+  "family": "four",
+  "tier": 5,
+  "seed": 2,
+  "layoutId": "hedges",
+  "team": [
+    "warden",
+    "gossamer",
+    "harvestmoon"
+  ],
+  "planFamily": "direct-guard",
+  "status": "unknown",
+  "metrics": {
+    "planner": "orchard-v2-tactical-planner/1",
+    "planFamily": "direct-guard",
+    "statesSpent": 30000,
+    "maxStates": 30000,
+    "perTeam": [
+      {
+        "teamIndex": 0,
+        "cardIds": [
+          "warden",
+          "gossamer",
+          "harvestmoon"
+        ],
+        "status": "unknown",
+        "reasonCode": "budget-exhausted"
+      }
+    ],
+    "beamWidth": 120
+  }
+}

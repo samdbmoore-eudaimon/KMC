@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { expeditionRoster } from "./expedition-roster.js";
-import { createExaminationClock, EXAMINATION_CLOCK_CONFIG } from "./examination-clock.js";
+import { createExaminationClock, deliverTasks, EXAMINATION_CLOCK_CONFIG } from "./examination-clock.js";
 import {
   createExpeditionState,
   endPlayerPhase,
@@ -27,31 +27,47 @@ test("The Examination Clock creates a playable state from four Gifford commons",
   assert.ok(estimateExpeditionMinutes(state) <= EXPEDITION_TIERS.intermediate.hardLimitMinutes);
 });
 
-test("REF-06: the loan squad completes The Examination Clock's schedule before the twelfth bell", () => {
+// Driven by deliverTasks (examination-clock.js) — the same greedy simulator
+// scripts/simulate_examination_clock.mjs uses — rather than a hand-transcribed hex sequence,
+// so this can't silently go stale the next time a task's position or value changes.
+test("REF-06: the loan squad completes The Examination Clock's schedule with the four cheapest, closest tasks", () => {
   const squad = loanSquad();
-  let state = createExaminationClock(squad);
-  state = moveUnit(state, "gf_tambrindle", "-2,0");
-  state = interactObject(state, "gf_tambrindle", "task_a");
-  state = moveUnit(state, "gf_ratchet", "-2,1");
-  state = interactObject(state, "gf_ratchet", "task_b");
-  state = moveUnit(state, "gf_higgins", "-2,2");
-  state = interactObject(state, "gf_higgins", "task_c");
-  state = moveUnit(state, "gf_marta", "-2,3");
-  state = interactObject(state, "gf_marta", "task_d");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  state = moveUnit(state, "gf_tambrindle", "1,0");
-  state = interactObject(state, "gf_tambrindle", "task_a", "2,0");
-  state = moveUnit(state, "gf_ratchet", "1,1");
-  state = interactObject(state, "gf_ratchet", "task_b", "2,1");
-  state = moveUnit(state, "gf_higgins", "1,2");
-  state = interactObject(state, "gf_higgins", "task_c", "1,2");
-  state = moveUnit(state, "gf_marta", "0,3");
-  state = interactObject(state, "gf_marta", "task_d", "0,3");
+  const state0 = createExaminationClock(squad);
+  const taskIds = ["task_a", "task_b", "task_c", "task_d"];
+  const { success, state } = deliverTasks(state0, taskIds, EXAMINATION_CLOCK_CONFIG.turnLimit);
+  assert.ok(success);
   assert.equal(state.status, "won");
   const objective = evaluateObjective(state);
   assert.equal(objective.complete, true);
   assert.ok(state.turn <= EXAMINATION_CLOCK_CONFIG.turnLimit);
-  assert.equal(state.counters.actions, 16);
+});
+
+// 2026-09-21 rebuild: proves this is a genuine choice, not the only route — a different
+// 4-of-6 combination (swapping task_d for the costlier, farther-off task_e) also clears the
+// deadline (1+2+3+5 = 11 <= 12), at the price of a real detour toward the Proctors.
+test("procedural choice: a different 4-of-6 combination also clears the deadline, at the cost of a real detour", () => {
+  const squad = loanSquad();
+  const state0 = createExaminationClock(squad);
+  const taskIds = ["task_a", "task_b", "task_c", "task_e"];
+  const total = taskIds.reduce((sum, id) => sum + state0.objects[id].value, 0);
+  assert.equal(total, 11);
+  const { success, state } = deliverTasks(state0, taskIds, EXAMINATION_CLOCK_CONFIG.turnLimit);
+  assert.ok(success, "the alternate combination is genuinely deliverable, not just arithmetically valid");
+  assert.equal(state.status, "won");
+  assert.equal(evaluateObjective(state).complete, true);
+});
+
+// A combination that overshoots the deadline never completes, however many of the required
+// four it delivers — proves not every 4-of-6 grouping is a real option, the whole point of
+// making this a choice rather than "grab any four."
+test("procedural choice: a combination that overshoots the deadline never completes", () => {
+  const squad = loanSquad();
+  const state0 = createExaminationClock(squad);
+  const taskIds = ["task_d", "task_e", "task_f", "task_c"]; // 4 + 5 + 6 + 3 = 18, well over 12
+  const total = taskIds.reduce((sum, id) => sum + state0.objects[id].value, 0);
+  assert.equal(total, 18);
+  const { state } = deliverTasks(state0, taskIds, EXAMINATION_CLOCK_CONFIG.turnLimit);
+  assert.equal(evaluateObjective(state).complete, false);
 });
 
 test("delivering only three of the four tasks leaves the schedule incomplete", () => {
@@ -100,21 +116,21 @@ test("§9: a below-battle-value squad may still embark, with the shortfall named
 });
 
 // EXPEDITIONS_CARD_COMBAT_CONTRACT.md §9: "why one powerful card cannot satisfy every
-// late-map job alone." Each of the four tasks needs a Collect (at the task hex) and a Drop
-// (at its paired station hex, always a different hex — verified below) — interactObject
-// spends one action for each regardless of distance, so a solo hero needs at least one
-// further Move between every task's own collect and drop. That is 4 x (collect + move +
-// drop) = 12 actions at minimum, before counting any travel between the four separate
-// tasks at all. A solo hero's entire budget across this map's five rounds is
+// late-map job alone." Only `requiredCount` tasks actually need delivering (4 of the 6, since
+// the 2026-09-21 rebuild — see examination-clock.js's header), not every task on the board.
+// Each needs a Collect (at the task hex) and a Drop (at a station hex, never the same hex —
+// verified below) — interactObject spends one action for each regardless of distance, so a
+// solo hero needs at least one further Move between every task's own collect and drop. That is
+// requiredCount x (collect + move + drop) = 12 actions at minimum, before counting any travel
+// between separate tasks at all. A solo hero's entire budget across this map's five rounds is
 // turnLimit x 2 AP = 10 actions — already short of the 12-action floor.
 test("§9: one hero cannot complete The Examination Clock alone — even the best case exceeds the solo budget", () => {
-  const stationForTask = { task_a: "2,0", task_b: "2,1", task_c: "1,2", task_d: "0,3" };
   for (const task of EXAMINATION_CLOCK_CONFIG.objects) {
-    assert.notEqual(task.pos, stationForTask[task.id], `${task.id} must not already sit on its own station hex, or delivering it would need no move at all`);
+    assert.ok(!EXAMINATION_CLOCK_CONFIG.objective.destinationHexes.includes(task.pos), `${task.id} must not already start on a station hex, or delivering it would need no move at all`);
   }
-  const bestCaseSoloActions = EXAMINATION_CLOCK_CONFIG.objects.length * 3; // collect + at least one move + drop, per task
+  const bestCaseSoloActions = EXAMINATION_CLOCK_CONFIG.objective.requiredCount * 3; // collect + at least one move + drop, per required task
   const soloBudget = EXAMINATION_CLOCK_CONFIG.turnLimit * 2;
-  assert.ok(bestCaseSoloActions > soloBudget, `${bestCaseSoloActions} minimum actions exceeds the solo budget of ${soloBudget}, even ignoring travel between the four separate tasks`);
+  assert.ok(bestCaseSoloActions > soloBudget, `${bestCaseSoloActions} minimum actions exceeds the solo budget of ${soloBudget}, even ignoring travel between separate tasks`);
 });
 
 test("ENM: a Proctor threatens the squad once its watch delay has expired", () => {

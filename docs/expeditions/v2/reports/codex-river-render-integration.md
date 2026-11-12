@@ -1,0 +1,35 @@
+# River candidate renderer integration
+
+Status: v3 candidate integration ready for visual review. Art owner retains ART-RIVER and all batch files. Builder C-05/C-10 released at review handoff.
+
+Exact file claims: `expeditions/v2/art/river-art.js`, `river-manifest.json`; `expeditions/v2/ui/river-layout.js`, `river-layout.test.js`, `RiverTerrain.jsx`, `MapViewport.jsx`; `scripts/dev/embed-orchard-river-art.cjs`, `orchard-river-review.jsx`, `build-orchard-river-review.cjs`; `docs/expeditions/v2/evidence/river-integration/`; isolated controller preview HTML rebuilt from current source. No art batch sources, production reducer, topology, certificates, private gate or shared App edits.
+
+Consumes the four current manifest candidate IDs, initially 127612 bytes. The complete v3 candidate manifest was then published and consumed at127018 bytes. Exact import hashes are retained in river-manifest.json and evidence-checks.json. No visual acceptance is asserted.
+
+## Result
+
+Initially selected the frozen `qa/collar-before/manifest.json` while the active manifest was being regenerated. Preserved all27 v2 captures, indices and selected manifest in evidence/river-integration/v2-baseline, then consumed the complete v3 manifest and repeated all27 captures. Exact source/runtime hashes, alpha/component checks, QA paths and individual 70KiB limits are checked by `embed-orchard-river-art.cjs`. Combined existing hero/scene/station plus river raw bytes:2584438, below12MiB. No v1 flat prototypes selected.
+
+Water and controlled bridges participate in actual clockwise neighbour lookup. Surface rotation is uniform around the registered centre. A spare endpoint mouth must point outside the actual board. Unsupported interior endpoints, tight turns and branches retain explicit failure metadata and existing fallback material. All531 water-bearing observations in77 saved packets resolve; this is rendering coverage, not mission certification.
+
+Original painted wall layers remain at world rotation0 and use registered fixed depth. Shared interior faces are omitted; exposed south-east/south-west faces use the supplied painted pixels. Surfaces use the full registered square and one shared field clip, avoiding the old diamond crop and per-tile clipping. Timber decks stay upright, independently sorted with props and figures by world depth. Controlled passage closed/open/pending glyphs, selection and mint movement outlines remain above decks. Logical polygons, pointer/keyboard targeting and hit calculations remain unchanged.
+
+MapViewport has private QA options `terrainArtMode` and `showTerrainGrid`; normal private runtime uses the candidate art and existing grid setting. Explicit candidate status is visible in the comparison page and candidate IDs appear on rendered surface DOM nodes. No accepted flag changed.
+
+## Checks and evidence
+
+- `node scripts/dev/embed-orchard-river-art.cjs`: four exact-hash v3 assets,127018 bytes; run with docs/expeditions/v2/river-art-batch-manifest.json.
+- `node scripts/dev/build-orchard-river-review.cjs`: isolated comparison HTML10360619 bytes. `node scripts/dev/build-orchard-recovery-preview.cjs`: isolated controller HTML9839895 bytes. Shared full build not run.
+- `node --test expeditions/v2/ui/river-layout.test.js expeditions/v2/art/art.test.js expeditions/v2/art/station-art.test.js scripts/dev/station-ui.test.mjs expeditions/v2/ui/ui.test.js scripts/dev/test-orchard-recovery.mjs expeditions/v2/route-ui.test.js`:29 passed,0 failed. Existing production-reducer winning traces, previews, Dash costs, route persistence and private gate checks remain passing. A subsequently added exact v3 source/runtime/embedded hash and geometry gate passes with all five river tests:30 distinct checks across the two invocations. Initial sandbox dependency-read failures were resolved by the scoped approved dependency read; no test threshold changed.
+- `evidence/river-integration/layout-audit.json`:77 saved packets,531 observations,0 unsupported.
+- `browser-capture-index.json`:18 old/new gridless comparisons at390×844,768×1024 and1280×900, each at actual camera0.45/1/2.
+- `overlay-capture-index.json`:9 active-passage selection and production-legal Dash screenshots at the same sizes/zooms. Each shows57 actual legal targets for an available hero; three upright decks and nine joined river tiles are present. No cost labels or invented movement-budget UI.
+- `evidence-checks.json`: all27 JPEG dimensions, measured camera scales, zero unsupported candidate counts and image hashes verified. No device-name-only assertions.
+
+Visual inspection: joined water openings connect without land wedges, decks remain upright and exposed walls retain painted depth. The v3 collar texture is less rectangular than the retained v2 baseline. Repeated rock/reflection patterns and tonal transitions can still be inspected at maximum zoom; seamlessness is not asserted and scrum/Sam visual review remains open. Revised asset IDs are included in each capture index, preventing the baseline from being mistaken for v3 evidence.
+
+## Next dependencies
+
+Art owner published complete v3 currentCandidateIds, hashes and repaired collar QA; builder import gates and live comparisons are complete against those exact hashes. Ready dependency: scrum review the v3 phone/tablet/desktop images against preserved v2-baseline and the old terrain captures. Scrum/Sam visual acceptance and QA-01 remain pending. Claude owns shared App/account/save/reward acceptance and the final-build lock. No other-family expansion, certification changes or borrowed core edits.
+
+Actual controller phone check: controller-phone-dash-v3.jpg is390×844, reloaded the current production-controller fixture with v3 art, opened Furrow's Dash and verified board highlights and the1AP destination flow without coordinate lists. This is a live UI inspection, not a new winning trace or shared App acceptance. Final viewer viewport override reset; temporary comparison tab closed, controller tab retained for continuation.

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "ownerThread": "01a10869-af91-7490-9f19-c99e0842fcc1",
+  "status": "isolated-candidate",
+  "assets": [
+    {
+      "id": "hero-amberly-action",
+      "sourcePath": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/source/amberly-action-v2.png",
+      "category": "characters",
+      "entity": "amberly",
+      "state": "action",
+      "version": 2,
+      "runtimePath": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/runtime/hero-amberly-action-v2.webp",
+      "width": 384,
+      "height": 384,
+      "bytes": 45296,
+      "sourceBytes": 1495503,
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "120998ad06d2b92b5aa7db2b1eb048b936d3e8d9c09355fa1f6e62f7501a3858",
+      "sourceSha256": "d9536383da390c822c429273c9f4f07bb987771f7ba10251f9ee8efafde5591d",
+      "alpha": true,
+      "visibleBounds": [
+        38,
+        28,
+        348,
+        366
+      ],
+      "groundAnchor": [
+        206,
+        366
+      ],
+      "topCentre": [
+        192,
+        28
+      ],
+      "overlayAnchors": {},
+      "allowedStates": [
+        "action"
+      ],
+      "reviewStatus": "candidate",
+      "anchorStatus": "isolated-reviewed-live-pending",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          38,
+          28,
+          348,
+          366
+        ],
+        "transparentPixels": 81781,
+        "visiblePixels": 65675,
+        "components": [
+          65675
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/qa/amberly-action-white.png",
+        "black": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/qa/amberly-action-black.png",
+        "green": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/qa/amberly-action-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/qa/amberly-action-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/qa/amberly-action-scales.png"
+      }
+    }
+  ],
+  "selectedBytes": 45296,
+  "generated": {
+    "tool": "built-in image_gen",
+    "original": "assets/expeditions/production/9fo/runtime/characters/po-amberly-action-v1.webp",
+    "sourcePath": "assets/expeditions/production/9fo/v2/hero-action-batch-20261005/source/amberly-action-v2.png",
+    "output": "C:/Users/samdb/.codex/generated_images/01a10869-af91-7490-9f19-c99e0842fcc1/exec-7e576208-d654-47bf-b70c-efcfa6855af3.png",
+    "purpose": "Remove unrelated top pose fragments and restore complete feet only; preserve lantern working identity with transparent margins."
+  }
+}

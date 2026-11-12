@@ -1,0 +1,1336 @@
+
+> test
+> node scripts/run_regression.mjs
+
+
+[1m▶ unit tests (node:test)[0m
+(node:45076) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/card-audit.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ audit assumption: the real Primary (Ninefold Orchard) collection is 30 cards, 12/5/5/6/2 by rarity (31.8867ms)
+✔ audit assumption: the real Junior (Little Reckoning) collection is 30 cards, 12/5/5/6/2 by rarity (2.9722ms)
+✔ audit assumption: the real Intermediate (Gifford) collection is 30 cards, 9/5/5/9/2 by rarity — deliberately fewer commons and more epics than the other two modules (0.5337ms)
+✔ §2 finding: every possible three-card Primary squad meets Level 1 and Level 2's readiness recommendation, including the weakest possible all-Common squad (18.6284ms)
+✔ §2 finding: no all-Common Primary squad ever meets a Level 3+ recommendation (a real cliff at the rarity floor, not a gradual slope) (5.8248ms)
+✔ §2 finding: every Primary level from 3 to 10 is achievable by at least one real three-card squad — no stated recommendation is actually impossible (53.7299ms)
+✔ §2 finding: Levels 9 and 10's all-Epic-or-Legendary recommendation is met by exactly the squads drawable from the collection's 8 Epic-or-better cards (6 Epic + 2 Legendary) (6.1918ms)
+(node:43364) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/cider-run.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Cider Run creates a playable state from three Ninefold Orchard commons (465.9068ms)
+✔ procedural generation: different seeds produce genuinely different, independently verified layouts (1720.1294ms)
+✔ procedural generation: no layout can be flooded into an unrecoverable dead run (2252.4532ms)
+✔ procedural generation: the same seed always reproduces the exact same layout (GEN-01) (67.8958ms)
+✔ REF: the loan squad fills the press gate with the guaranteed-safe pair, fast enough to beat Scruffcrow's flood (226.2433ms)
+✔ high-tier squad: an all-Epic squad completes the identical guaranteed-safe pair (233.5286ms)
+✔ Combine: an Arithmetic hero can merge two presses into a fresh value, the map's own 'Arithmetic changes a press value' alternate route (224.2507ms)
+✔ guarding a press protects it from Scruffcrow's flood, which falls to the next-highest unguarded press on that lane instead (112.4466ms)
+✔ ENM: Scruffcrow advances through the three lanes in a fixed, repeating order and floods each lane's highest unguarded press by exactly one, only once its delay has passed (115.1321ms)
+✔ ENM: an unguarded hero in Scruffcrow's reach is struck instead of the press flooding; Guard blocks the strike; with nobody exposed, the flood proceeds as before (0.7776ms)
+✔ §2/low band: even the weakest possible squad (three of the lowest-BV Commons) meets level 2's readiness recommendation (0.3212ms)
+(node:47680) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/counting-orchard.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Counting Orchard creates a playable state from three Ninefold Orchard commons (26.7699ms)
+✔ REF-11: the loan squad fills the harvest gate with the two direct baskets (4 + 8 = 12) within the round budget (6.1599ms)
+✔ high-tier squad (target/high band): an all-Epic squad completes the identical reference trace (3.4659ms)
+✔ Combine path: an Arithmetic hero can merge 3 + 4 into a fresh valid 7, matching the route doc's own worked example (6.1992ms)
+✔ guarding a basket protects it from the Scruffcrow's peck, which falls to the next-highest basket on that lane instead (1.3299ms)
+✔ ENM: the Scruffcrow advances through the three lanes in a fixed, repeating order and pecks each lane's highest unguarded basket by exactly one (4.3934ms)
+✔ procedural envelope: the same six baskets support a target of 10, 11 or 12, each with at least two direct pairs, per the route doc's stated envelope (0.4727ms)
+✔ procedural envelope: a target-10 variant of this scenario is genuinely playable end-to-end (2 + 8 = 10) (2.319ms)
+✔ no-unannounced-impossible-state: after one full round of complete inaction, a valid 12-pair still exists among the six baskets (1.9583ms)
+✔ §2/low band: even the weakest possible squad (three of the lowest-BV Commons) meets level 2's readiness recommendation (1.8254ms)
+✔ ENM: an unguarded hero in Scruffcrow's reach is struck instead of the basket being pecked; Guard blocks the strike (1.6829ms)
+(node:1632) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/examination-clock.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Examination Clock creates a playable state from four Gifford commons (29.7951ms)
+✔ REF-06: the loan squad completes The Examination Clock's schedule with the four cheapest, closest tasks (30.4509ms)
+✔ procedural choice: a different 4-of-6 combination also clears the deadline, at the cost of a real detour (14.1411ms)
+✔ procedural choice: a combination that overshoots the deadline never completes (12.2975ms)
+✔ delivering only three of the four tasks leaves the schedule incomplete (4.7717ms)
+✔ delivering a task that pushes the total processing time over the deadline fails the ceiling check (1.8956ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.9391ms)
+✔ §9: one hero cannot complete The Examination Clock alone — even the best case exceeds the solo budget (0.1907ms)
+✔ ENM: a Proctor threatens the squad once its watch delay has expired (0.6045ms)
+(node:31700) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-actions.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Combine: positive, illegal-target and idempotency (6.5919ms)
+✔ Split: positive and illegal-target (1.9119ms)
+✔ Exact Count: positive (matched and unmatched) and illegal-target (1.1716ms)
+✔ True Shift: positive, illegal-target and boundary (distance limit) (1.9093ms)
+✔ Shape Field: positive and boundary (span limit) (0.8815ms)
+✔ Measure: positive (ignores one obstacle at exact distance two) and illegal-target (1.7913ms)
+✔ Predict: positive and illegal-target (0.8829ms)
+✔ Put in Order: positive for units and for adjacent objects, illegal-target otherwise (1.1587ms)
+✔ Deduce: positive for both modes, illegal-target and idempotency (2.8475ms)
+✔ Stabilise: positive and illegal-target (1.4453ms)
+✔ Transform: positive, illegal-target and stabilised/locked boundaries (1.619ms)
+✔ Chain Reaction: positive, boundary (max chain length) and illegal-target (disconnected) (1.6582ms)
+✔ Relay: positive and illegal-target (0.892ms)
+✔ Dash: requires a just-completed Interact, then grants a free move (8.4085ms)
+✔ Interrupt: arms a reactive move that fires during the enemy phase (25.7394ms)
+✔ ACT-04: place (drop) requires the drop hex to be adjacent, not just empty (1.3373ms)
+✔ Guardian (guard): positive and illegal-target (0.6695ms)
+✔ Mender (restore): positive for a hurt ally, illegal-target for an object with nothing to repair (0.7103ms)
+✔ Reckoner (reframe): positive and illegal-target for a plain object (0.8871ms)
+✔ Reckoner (reframe): refuses a jammed rotation hex, directing the player to Force Rotate instead (0.6206ms)
+✔ Force Rotate: Geometry plus support meeting the jam difficulty rotates the tile (0.586ms)
+✔ Force Rotate: an adjacent ally adds support, same as attemptCheck (0.3465ms)
+✔ Force Rotate: falling short of the difficulty is a recorded failure that leaves orientation unchanged (0.4103ms)
+✔ Force Rotate: illegal-target — not adjacent, not jammed, and jammed with no jamDifficulty all throw (1.4827ms)
+✔ Strike (networkGate): a shielded enemy takes 0 impact regardless of power, until the named network is connected (1.0924ms)
+✔ Strike (networkGate): a route marker rotated into alignment connects the gate, exactly like the 'connect' family reads it (1.4646ms)
+✔ Mover (shove): positive after a close action, illegal-target without one (0.9222ms)
+✔ Scout (mark): positive, and a marked enemy grants the next striker one support (0.7738ms)
+✔ Precise: the first exact-match strike each round banks a support for the next strike (0.969ms)
+✔ Sure-footed: ignores only the first difficult hex entered each round (HEX-06) (4.8594ms)
+✔ Foresight: previews one additional consequence — what the board looks like if the round ended now (1.5459ms)
+✔ Adaptable: once per expedition, a strike may use the second-highest statistic instead (1.1598ms)
+✔ Quick: gains one free opening step on the round's first move, and wins tied initiative (1.9826ms)
+✔ applyExpeditionCommand dispatches every command type and returns structured events (2.1822ms)
+✔ applyExpeditionCommand emits OBJECTIVE_UPDATED only when the objective's state actually changes (0.7557ms)
+(node:29476) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-commander.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ ROS-09: every Commander from the roster has a registry entry, so none is silently unhandled (12.5439ms)
+✔ ROS-09: an unimplemented Commander power is not selectable and refuses to apply with a specific reason (2.6878ms)
+✔ A Commander never appears in, or overlaps with, the deployable field roster (28.2217ms)
+✔ First Crow: after deployment, moves one hero one open hex (1.5916ms)
+✔ Old Roughweather / The Almost: corrects an object's value by one (1.8923ms)
+✔ Scratch / Whistle's Price: stabilises an object through the first enemy phase (0.9966ms)
+✔ The Maybe-Flock: reveals every enemy's first intention (1.7229ms)
+✔ Strawless: places a lasting obstacle on an open hex (1.5017ms)
+✔ Hollow Bough: reserves a hex that blocks entry only until the round ends (2.85ms)
+✔ The Countless: freezes an enemy group for a round by extending its watch (0.7034ms)
+✔ Senior Examiner Vera Kross: delays a revealed intention by one initiative step (0.7897ms)
+✔ Strawless's counterpart: remembering and restoring a changed tile reverses a placed obstacle (1.2609ms)
+✔ Rotating a route marker before the first round changes which neighbours it connects (0.9196ms)
+✔ Revealing edge costs marks the node in state.flags without altering the graph itself (4.431ms)
+✔ The Ninefold Tree: turns a near miss into an exact result (reuses the one-point nudge) (0.5125ms)
+✔ Walking Smudge's counter: ignoring the first obscured value reuses stabilise (1.0336ms)
+✔ Cancelling a revealed enemy reaction reuses extendEnemyWatch: the enemy sits out the round (0.5896ms)
+✔ The Tenth Scarecrow: repeats a completed interaction (collect then drop) without spending an action point (1.5507ms)
+(node:43924) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-engine.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Expeditions access requires the exact eudaimon and Rooke developer profile (3.759ms)
+✔ all collectible characters receive complete expedition profiles (24.8536ms)
+✔ all boss cards receive a commander power (1.4096ms)
+✔ scenario catalogue has ten distinct scenarios per module (1.2979ms)
+✔ hex geometry returns exact distance and straight lines (1.0099ms)
+✔ balance solver finds the two valid seven-weight groups (1.1458ms)
+✔ Unequal Crossing creates a playable state from Pip, Bramble and Nine (29.1911ms)
+✔ moving spends one action point without mutating the previous state (18.458ms)
+✔ balance objective requires equal non-zero totals and the exit — both loads for a side now share one scale hex (0.6396ms)
+✔ balance objective: weigh-bridge state reports underweight and overloaded platforms (0.547ms)
+✔ balance objective: two platforms equal but over target must not be reported as complete (UI reconciliation contract acceptance test 3) (0.3313ms)
+✔ procedural generation: different seeds produce genuinely different, independently verified layouts (701.3427ms)
+✔ procedural generation: the same seed always reproduces the exact same layout (GEN-01) (152.7008ms)
+✔ procedural generation: every generated layout has a unique equal split, and it really is reachable within the round limit (134.9672ms)
+✔ scale redesign: a load can be placed on the west scale from any of its six adjacent hexes (1.1658ms)
+✔ scale redesign: a hero two hexes away cannot place on the scale (0.7976ms)
+✔ scale redesign: neither scale hex can ever be entered by movement (9.2694ms)
+✔ scale redesign: a scale hex accepts exactly two loads, never a third, while an ordinary hex still accepts only one (1.2188ms)
+✔ scale redesign: removing one of two loads from a scale is deterministic (targets the named object, never the other one) (0.255ms)
+✔ enemy thief ignores guarded loads (0.4306ms)
+✔ the loan squad can complete Unequal Crossing within four rounds, placing loads on the scales from adjacent hexes (12.3083ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.3471ms)
+✔ §9: one hero cannot complete Unequal Crossing alone — the core actions alone exhaust the solo budget, for any generated layout (88.7552ms)
+✔ all tier timing estimates stay under their hard limits (0.5577ms)
+✔ explainExpeditionOutcome: a won state explains what was achieved (8.0226ms)
+✔ explainExpeditionOutcome: distinguishes a turn-limit loss from a party wipe (0.256ms)
+✔ expeditionTimingReport reports rounds, actions and the pre-play estimate together (6.8268ms)
+✔ computeExpeditionMarks: withholds every mark before a win and after a loss (0.2375ms)
+✔ computeExpeditionMarks: awards all four generic marks on the verified Unequal Crossing reference trace (8.8361ms)
+✔ computeExpeditionMarks: turn and movement marks are withheld once a run falls short of par (8.3103ms)
+✔ computeExpeditionMarks: a struck-down hero withholds no_exhaustion even once healed back up (0.2923ms)
+✔ rankExpeditionMarks: gold requires every achievable mark, silver at least half, bronze otherwise (0.1098ms)
+✔ rankExpeditionMarks: a scenario with no turn or movement par has a two-mark ceiling, not an unreachable four-mark one (0.0528ms)
+✔ rankExpeditionMarks: an odd achievable total (three) rounds the silver threshold up, not down (0.0579ms)
+✔ rankExpeditionMarks: on the verified Unequal Crossing reference trace, a clean run ranks gold (9.345ms)
+✔ routeMarkerConnections: a straight-through marker connects opposite neighbours, and rotates with it (0.2123ms)
+✔ edgesFromNode: returns every edge touching a node with its weight, defaulting to 1 (0.1506ms)
+✔ restoreTileTerrain: reverses a recorded terrain change and refuses an unrecorded one (0.2724ms)
+✔ connect objective: a route marker's rotation decides whether two nodes are connected (0.2743ms)
+✔ rotationHexTracks: a plain edge-pair track resolves identically to a route marker's paths (0.273ms)
+✔ rotationHexTracks: an object without a tracks field falls back to paths (a route marker is a rotation hex with no tracks) (0.0935ms)
+✔ rotationHexTracks: a track descriptor keeps its operator, flow and signature through rotation (0.1046ms)
+✔ applyTrackOperation: applies the four arithmetic ops (the same op-string vocabulary as Reframe/chain) plus inverse (0.1664ms)
+✔ travelThroughRotationHex: an operator wheel transforms a travelling value, and rotating it swaps which operation applies (0.1529ms)
+✔ travelThroughRotationHex: a current turner's flow direction only admits a value from the correct side (0.0876ms)
+✔ travelThroughRotationHex: returns null when no track admits the entry hex at all (a jammed or misrotated tile blocks travel) (0.0559ms)
+✔ tracksAligned: a signal prism's ports match only on an equal signature, including both unset (0.0604ms)
+✔ flowerGroup: a centre hex plus its six neighbours, seven cells (0.0614ms)
+✔ hexRay: a straight axial line extending outward, not including the origin (0.0932ms)
+✔ hexRing: radius 0 is just the centre; every cell at radius N is exactly N steps away (0.2214ms)
+✔ ringSector: a contiguous arc, wrapping past the end of the ring (0.0914ms)
+✔ ringOppositePairs: pairs each cell with the one directly across the ring, and refuses an odd ring (0.1212ms)
+✔ constraintGrid useEachOnce: requires the exact value set, not merely distinct values (0.4046ms)
+✔ constraintGrid parityCount and primeCount: an exact count within the group, not every cell (0.1943ms)
+✔ ENM: corrupt-value erases the nearest unprotected ledger cell, but ignores a guarded one, a locked one, and any non-ledger value object (0.2252ms)
+✔ ENM: a value-locked ledger cell (Deduce) is also immune to corrupt-value, and an out-of-range Wasp moves closer without entering the cell's hex (0.3364ms)
+✔ attemptCheck: a statistic meeting the difficulty succeeds and records every component (0.2863ms)
+✔ attemptCheck: falling short of the difficulty is a recorded failure, not a thrown error (0.1096ms)
+✔ attemptCheck: an adjacent ally adds one support, same as combat (0.1146ms)
+✔ attemptCheck: a declared bonus is added and named in the same breakdown (0.1005ms)
+✔ attemptCheck: refuses a non-adjacent target, an unknown statistic and a missing difficulty (0.2514ms)
+✔ VISIBLE_CHECK command: dispatches through applyExpeditionCommand with a full structured event (0.2694ms)
+✔ validateVisibleCheckDeclaration: accepts a well-formed declaration and names every defect in a malformed one (0.1531ms)
+(node:24728) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-generation.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ determinism: generation and the engine never call Math.random (GEN-01 depends on this holding) (3.5274ms)
+✔ createExpeditionRandom: the same seed always produces the same sequence (GEN-01) (2.9643ms)
+✔ createExpeditionRandom: different seeds vary the sequence (GEN-02), and a string seed is accepted (0.6736ms)
+✔ createExpeditionRandom: int, pick and shuffle stay in bounds and preserve the set (0.6266ms)
+✔ deriveExpeditionSeed is deterministic and sensitive to every part except profile identity (0.3217ms)
+✔ Equal partition kernel: accepted configs are unique, in bounds, and reproducible from seed (GEN-01, GEN-04, GEN-06) (1.0828ms)
+✔ Equal partition kernel: different seeds vary the generated values (GEN-02) (0.8766ms)
+✔ Equal partition kernel: impossible bounds are rejected immediately, not hung on (GEN-08, GEN-12) (0.2664ms)
+✔ Operator restoration kernel: accepted configs have exactly one restoration and are reproducible (0.8055ms)
+✔ Scheduling kernel: accepted configs fit the deadline and are reproducible (0.8854ms)
+✔ Scheduling kernel: a deadline no random draw can meet is rejected, not falsely accepted (GEN-08) (0.5457ms)
+✔ Recent-seed repetition control caps at five and treats a repeat as seen (GEN-11) (0.4345ms)
+(node:35364) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-readiness.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ RDY-01: missions 1 and 2 treat a legal early Uncommon-heavy squad as meeting the recommendation (4.0687ms)
+✔ RDY-02: missions 3 and 4 recommend their Uncommon count without recommending Rare cards (0.6488ms)
+✔ RDY-03: missions 5 and 6 recommend at least two Rare-or-better cards (0.4946ms)
+✔ RDY-04: missions 7 and 8 recommend at least one Epic and recommend against Common cards (0.5837ms)
+✔ RDY-05: missions 9 and 10 flag a shortfall for a squad containing any Common, Uncommon or Rare card (0.5864ms)
+✔ RDY-06: Legendary cards satisfy an Epic-or-better recommendation (0.2904ms)
+✔ RDY-07: a Commander does not satisfy a field-card rarity recommendation (1.615ms)
+✔ RDY-08: average battle value is calculated across deployed field cards only (0.414ms)
+✔ RDY-09: every readiness shortfall returns a specific child-readable reason (0.3982ms)
+✔ readiness never blocks: a squad far below recommendation on every mission still gets a normal result back (0.5767ms)
+✔ readiness supports named capability requirements such as Geometry 7+ (0.3196ms)
+✔ readiness band lookup matches the five-notch meter (0.1964ms)
+✔ schema validation reports precise scenario and field errors for broken content (1.591ms)
+✔ all authored Expedition content validates cleanly (0.6994ms)
+✔ missions 9 and 10 are flagged if their all-cards-Epic guidance is ever weakened (0.3972ms)
+(node:21784) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/first-whistle.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The First Whistle creates a playable state, First Root shielded until the network is live (26.6579ms)
+✔ REF: both branches turn true, opening the network; the party defeats First Root by round 2 (8.9769ms)
+✔ high-tier squad: an all-Epic squad (Gossamer standing in for Russet's Geometry role) completes the identical trace shape (5.8915ms)
+✔ Reckoner (reframe): any hero with the wizard role, not a Geometry specialist, turns the ordinary branch (0.7373ms)
+✔ Force Rotate: the jammed far branch refuses an ordinary Reframe, and needs a real Geometry discipline check (5.5307ms)
+✔ guarding First Root does not block a strike once the network is live — Guard protects a target from being struck, not the other way round (1.3723ms)
+✔ ENM: First Root uses the engine's default hunt-and-strike behaviour once active — no new combat mechanism was needed for that half (1.7892ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.9316ms)
+(node:42108) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/fog-lanterns.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Lanterns in the Forgetting Fog creates a playable state from three Little Reckoning commons (26.7238ms)
+✔ the three route markers start rotated away from the lantern chain (1.042ms)
+✔ REF-09: three heroes, one per marker, join all four lanterns in the same round (2.5945ms)
+✔ joining only two of the three route markers leaves the network broken (1.1361ms)
+✔ a route marker left one step off orientation still fails to connect its lanterns (0.6818ms)
+✔ ENM: the Foglings do not act during their two-round watch (3.1105ms)
+✔ ENM: a Fogling threatens the squad once its watch delay has expired (1.079ms)
+✔ §9: a below-battle-value, no-Uncommon squad may still embark, with the shortfall named in the readiness result (0.9433ms)
+✔ §9: one hero cannot join all four lanterns alone — she has no second round to reach the other markers (1.3442ms)
+(node:45080) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/hedgejaw-maze.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Hedgejaw Maze creates a playable state from a squad including a Geometry specialist (31.4409ms)
+✔ REF: the loan squad (including Russet, a Geometry specialist) visits all three stones in order, clearing the hedge once it closes stone_9's gate (12.4337ms)
+✔ high-tier squad: an all-Epic squad (Gossamer standing in for Russet's Geometry role) completes the identical trace shape (7.1486ms)
+✔ ENM: the Hedgejaw always closes the current sequence target's own gate — fully deterministic, never a hidden choice (2.2339ms)
+✔ ENM: the Hedgejaw never attacks a hero directly — closing a gate is its entire behaviour (0.6554ms)
+✔ Logic's Predict and Scout's Mark both work on the Hedgejaw unchanged — no new mechanism needed for the rest of the brief's stat hook (1.7229ms)
+✔ guarding the target stone does not stop the hedge from closing its gate — Geometry's Shift is the map's only named counter, per the brief (1.5032ms)
+✔ §9: a below-battle-value, no-Uncommon squad may still embark, with the shortfall named in the readiness result (0.7904ms)
+(node:23064) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/hollow-bough-awakens.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Hollow Bough Awakens creates a playable state from three Ninefold Orchard commons (28.1694ms)
+✔ protect objective: an object target fails once damaged, not just once destroyed — the new clause this map needed (0.6344ms)
+✔ REF: Overgrowth damages the unguarded memorial once it arrives; Restore undoes it, then Guard holds the final round (7.4724ms)
+✔ high-tier squad: an all-Epic squad completes the identical trace shape (3.8996ms)
+✔ Logic's Predict works on Overgrowth unchanged — no new mechanism needed for that half of the brief's stat hook (2.2752ms)
+✔ ENM: a guarded memorial blocks Overgrowth's strike entirely, recorded as a distinct outcome from a successful one (8.7939ms)
+✔ ENM: an unguarded hero adjacent to Overgrowth is struck instead of the memorial; Guard blocks it; out of reach, the memorial takes the hit as before (4.3186ms)
+✔ §9: a below-battle-value, no-Epic squad may still embark, with the shortfall named in the readiness result (0.7397ms)
+(node:38976) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/maybe-flock-roost.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ capture objective: complete once at least the required count of hexes hold a living player (3.7674ms)
+✔ capture objective: count defaults to every listed hex when not given (0.4137ms)
+✔ capture objective: sumHexes/sumTarget adds a directional-sum requirement on top of holding every post (0.8148ms)
+✔ The Maybe-Flock Roost creates a playable state from three Ninefold Orchard commons (26.0614ms)
+✔ REF-10: the loan squad holds all three whistle posts within the round budget (8.9241ms)
+✔ holding only two of the three whistle posts leaves the roost unclaimed (4.1483ms)
+✔ ENM: the Maybe-Finches do not act during their two-round watch (2.0932ms)
+✔ ENM: a Maybe-Finch threatens the squad once its watch delay has expired (0.8388ms)
+✔ §9: a below-battle-value, no-Rare squad may still embark, with the shortfall named in the readiness result (0.8702ms)
+✔ §9: one hero cannot hold three whistle posts alone — proved structurally, not by trying a sequence (3.5021ms)
+(node:41660) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/murder-at-moonfall.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Murder at Moonfall creates a playable state from three Ninefold Orchard commons (33.5955ms)
+✔ containment objective: three hedge-walled sides plus the three heroes on the remaining open hexes closes the ring (1.0197ms)
+✔ REF: the three heroes each claim a separate open hex, closing the ring around the Crowbreaker (3.63ms)
+✔ high-tier squad: an all-Epic squad completes the identical reference trace (2.1875ms)
+✔ §9: one hero cannot close the ring alone — proved structurally, not by trying a sequence (0.6556ms)
+✔ guarding a hero does not help close the ring — containment reads live player positions, not a guard flag (2.357ms)
+✔ ENM: the Crowbreaker uses the engine's default hunt-and-strike behaviour — no special mechanism was invented for it (1.8091ms)
+✔ §9: a below-battle-value, no-Epic squad may still embark, with the shortfall named in the readiness result (0.8258ms)
+(node:35912) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/nine-across-bridge.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Nine Across the Turning Bridge creates a playable state from three Ninefold Orchard commons (29.1151ms)
+✔ REF-12: the loan squad delivers all three loads to the far orchard within the round budget (9.9786ms)
+✔ ENM: Crosswind turns the nearest open, unprotected vane one step, and does nothing once both are already closed (1.4084ms)
+✔ ENM: a guarded or Stabilised vane is immune to Crosswind's gust (0.9708ms)
+✔ Reckoner: any hero with the wizard role, not just a Geometry specialist, can turn a vane back open (1.3415ms)
+✔ Science: Stabilise (available to Pip or Bramble, both Science discipline) holds a vane against the next gust (3.3208ms)
+✔ Crosswind's gust cannot damage or push a hero under any circumstance — proved structurally, not by trying one route (5.2971ms)
+✔ guarding a carrier is unaffected by the rebuild — Crosswind was never able to target a hero directly (4.1697ms)
+✔ capacity check: a closed vane's section has an effective cap of zero, an open one keeps its printed max — the openWhenOrientation gate itself (0.6326ms)
+✔ capacity check: the real map's own loads (2 + 3 + 4 = 9) can never exceed a section's raw cap of nine, however they are arranged (0.8071ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.8709ms)
+✔ high-tier squad: an all-Epic squad completes the identical reference trace (9.0605ms)
+(node:47728) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/orchard-lockdown.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Orchard Lockdown creates a playable state, with gate A deliberately short and gates B/C already correct (30.0375ms)
+✔ REF: Arithmetic's Combine folds the spare cell into gate A, opening all three gates at once (3.6679ms)
+✔ high-tier squad: an all-Epic squad (Warden standing in for Bushel's Arithmetic role) completes the identical one-action trace (1.1586ms)
+✔ no double-counting: combining spare_a into a2 removes spare_a from play, and it was never part of the sum constraint to begin with (0.7883ms)
+✔ ENM: Nearly corrupts the nearest unguarded, unlocked ledger cell, taking real time to close the distance (5.1665ms)
+✔ guarding gate C's nearest cell protects it from Nearly, who falls to the next-nearest unguarded ledger cell instead (3.5496ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.6049ms)
+(node:16948) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/rootfire-relay.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Rootfire Relay creates a playable state from a squad including a Geometry specialist (29.1731ms)
+✔ REF: Geometry bridges the gap, Science's Chain Reaction relays the rise through both roots at once, reaching ten with the trunk still even (4.3079ms)
+✔ high-tier squad: an all-Epic squad (Gossamer/Cascade standing in for Russet/Bramble's Geometry and Science roles) completes the identical two-action trace (1.5258ms)
+✔ Combine: an Arithmetic hero can merge two adjacent roots into a fresh value, the map's own alternate route (1.44ms)
+✔ guarding a root protects it from Strawling's wilt, which falls to the next-highest unguarded root instead (5.3121ms)
+✔ ENM: Strawling wilts the single highest-value unguarded root anywhere on the relay, only once its delay has passed (3.552ms)
+✔ ENM: an unguarded hero adjacent to Strawling is struck instead of a root wilting; Guard blocks it; out of reach, the root wilts as before (1.9621ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.9236ms)
+(node:38172) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/sealed-archive.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Sealed Archive creates a playable state from four Gifford commons (31.1024ms)
+✔ REF-08: three heroes ferry the feeder stones home while Adavoss combines, all within the round budget (26.1081ms)
+✔ raising only two of the three vault stones leaves the archive sealed (0.9828ms)
+✔ the inequality constraint fails once the second vault is no longer lower than the third (0.6272ms)
+✔ ENM: the Archive Warden and Cipher Moth do not act during their two-round watch (1.6618ms)
+✔ ENM: a Cipher Moth threatens the squad once its watch delay has expired (0.9178ms)
+✔ §9: a below-battle-value, no-Uncommon squad may still embark, with the shortfall named in the readiness result (0.729ms)
+✔ §9: Adavoss cannot raise all three vaults alone — she runs out of rounds with two vaults still unraised (9.6735ms)
+(node:36428) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/smudged-stones.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Smudged Stones creates a playable state from Addy, Zoomby and Hunchik (36.4339ms)
+✔ REF-05: the loan squad can complete The Smudged Stones within its round budget (10.0606ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.616ms)
+✔ §9: one hero cannot restore all three operators alone — she runs out of rounds even playing optimally (3.8342ms)
+✔ restoring only two of the three operators leaves the chain incomplete (1.8227ms)
+✔ ENM: Walking Smudge obscures the nearest unprotected operator, but ignores a guarded or locked one (1.1652ms)
+✔ ENM: a Smudge that starts out of range moves closer without ever stepping onto the operator's hex (0.8046ms)
+✔ ENM: a value-locked operator (Deduce) is also immune to being obscured (0.5471ms)
+(node:26616) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/widdershins-path.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ The Widdershins Path creates a playable state from three Ninefold Orchard commons (27.0789ms)
+✔ REF-13: the loan squad visits all four stones in order and reaches the centre within the round budget (8.3062ms)
+✔ visiting a stone out of turn, or from the wrong side, throws rather than silently doing nothing (2.3076ms)
+✔ approaching a stone from the wrong hex fails even when it would otherwise be its turn (2.5643ms)
+✔ Logic's Put in Order repairs a reversed stone, restoring its normal entry — the shorter route the design doc describes (2.4201ms)
+✔ guarding a stone protects it from being reversed (3.881ms)
+✔ ENM: the Widdershins creature never attacks a hero — reversing the next stone is its entire behaviour (1.1291ms)
+✔ no-unannounced-impossible-state: the Widdershins creature only ever reverses the single stone the party genuinely needs next, always a deterministic function of visible data (2.4104ms)
+✔ §9: a below-battle-value squad may still embark, with the shortfall named in the readiness result (0.9716ms)
+✔ high-tier squad: an all-Epic squad completes the identical reference trace (4.2189ms)
+(node:11564) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/joey-multiplayer.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+test: deck validation
+test: match creation
+test: redacted views
+test: mulligan and idempotency
+test: mulligan timeout
+test: turn and revision rejection
+test: turn timeout and consecutive play
+test: second-player interactive ability
+test: solo AI ability defaults
+test: late action
+test: concession
+Joey multiplayer engine tests passed
+✔ joey-multiplayer.test.js (239.3392ms)
+(node:12052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/generators/gen-shared.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ rollCardOnce never returns a tier below its own minLevel at a low level (2.1759ms)
+✔ rollCardOnce's tier choice tracks the roll against packWeights' cumulative bands (0.5091ms)
+✔ rollCard rerolls up to 4 times to avoid a duplicate, and stops once it finds a fresh card (0.7016ms)
+✔ rollCard gives up after 4 rerolls and can still return an owned duplicate if every candidate is owned (0.4927ms)
+✔ rollCard's forceRarity ignores level gating and always returns a card from that exact tier (0.2523ms)
+✔ rollCard's forceRarity also rerolls away from an owned duplicate (0.2269ms)
+✔ rollCard clamps an out-of-range level before delegating to rollCardOnce (0.223ms)
+(node:19892) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-access.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Expedition access-gate regression passed (ACC-01 to ACC-06)
+✔ ACC-01: an ordinary named profile does not see the Expeditions tile (3.6797ms)
+✔ ACC-02: eudaimon with a non-Rooke avatar does not see the tile (0.3873ms)
+✔ ACC-03: the Rooke avatar with a different profile name does not see the tile (0.663ms)
+✔ ACC-04: exact eudaimon plus Rooke sees the tile, independent of the active module (3.5064ms)
+✔ ACC-05: an ordinary profile forced onto screen="expeditions" is returned to a safe home view (3.0687ms)
+✔ ACC-06: Expeditions is absent from the welcome tour, the Get Started guide and the progress report (7.4806ms)
+(node:45248) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/wm-content.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ junior: boss thresholds strictly increase and span every level (2.2898ms)
+✔ junior: bossForLevel clamps to [1, MAX_LEVEL] (0.2833ms)
+✔ junior: examPassMarkFor matches the level's own EXAM_PASS_MARKS entry (0.2222ms)
+✔ junior: examClearedFor reads the best (not most recent) mock in history (0.3062ms)
+✔ junior: availableShinyClaims is qualifying passes minus shiny trophies already claimed (0.3136ms)
+✔ junior: starsFor scales in bands of 3 levels (1.5204ms)
+✔ junior: streakStarGain pays double on the 2nd of a streak, nothing for a lone correct (0.3639ms)
+✔ junior: cardClass looks up CLASSES via CARD_CLASS, null for an unknown id (0.3382ms)
+✔ junior: isUpgraded is true only once every adventure item is owned (0.3282ms)
+✔ junior: collectionStrength sums owned cards' rarity strength, upgraded cards count as their next tier (0.5312ms)
+✔ primary: boss thresholds strictly increase and span every level (0.2053ms)
+✔ primary: bossForLevel clamps to [1, MAX_LEVEL] (0.1417ms)
+✔ primary: examPassMarkFor matches the level's own EXAM_PASS_MARKS entry (0.1287ms)
+✔ primary: examClearedFor reads the best (not most recent) mock in history (0.1527ms)
+✔ primary: availableShinyClaims is qualifying passes minus shiny trophies already claimed (0.1194ms)
+✔ primary: starsFor scales in bands of 3 levels (0.2393ms)
+✔ primary: streakStarGain pays double on the 2nd of a streak, nothing for a lone correct (0.1075ms)
+✔ primary: cardClass looks up CLASSES via CARD_CLASS, null for an unknown id (0.1219ms)
+✔ primary: isUpgraded is true only once every adventure item is owned (0.1226ms)
+✔ primary: collectionStrength sums owned cards' rarity strength, upgraded cards count as their next tier (0.2201ms)
+✔ intermediate: boss thresholds strictly increase and span every level (0.0689ms)
+✔ intermediate: bossForLevel clamps to [1, MAX_LEVEL] (0.0676ms)
+✔ intermediate: examPassMarkFor matches the level's own EXAM_PASS_MARKS entry (0.0726ms)
+✔ intermediate: examClearedFor reads the best (not most recent) mock in history (0.1306ms)
+✔ intermediate: availableShinyClaims is qualifying passes minus shiny trophies already claimed (0.0971ms)
+✔ intermediate: starsFor scales in bands of 3 levels (0.0945ms)
+✔ intermediate: streakStarGain pays double on the 2nd of a streak, nothing for a lone correct (0.0672ms)
+✔ intermediate: cardClass looks up CLASSES via CARD_CLASS, null for an unknown id (0.0685ms)
+✔ intermediate: isUpgraded is true only once every adventure item is owned (0.0946ms)
+✔ intermediate: collectionStrength sums owned cards' rarity strength, upgraded cards count as their next tier (0.129ms)
+✔ olympiadMarksTotal sums the mark scheme plus one (0.153ms)
+✔ every adventure boosts its hero's primary stat, and full upgrades never overtake it (2.386ms)
+(node:26972) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/cloudflare-worker/accounts/joey-deck.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ a deck can legally borrow a few cards from another module (2.9826ms)
+✔ borrowing more than the per-other-module cap is refused (1.7573ms)
+✔ a captured boss card resolves the same way a character card does (0.4961ms)
+✔ a deck spec naming more copies than owned is refused (0.1734ms)
+✔ a genuinely unknown card id is refused (0.1822ms)
+✔ owned adventure items upgrade a multiplayer deck card's stats and BV, keeping its type (0.5717ms)
+(node:40416) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/cloudflare-worker/accounts/worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ a family's two profiles see each other ready, and go challenging once a challenge exists (62.7224ms)
+✔ school seats in the same school see each other; a different school never does (7.7583ms)
+✔ a group (school admin) account is not an eligible Joey player (3.8942ms)
+✔ a profile without a valid deck in that slot cannot go ready (3.7928ms)
+✔ a client cannot challenge a profile outside its own derived group by id alone (7.6233ms)
+✔ challenge accept creates a match, clears presence, and blocks a second live match for either side (21.9893ms)
+✔ accept is idempotent (11.9383ms)
+✔ decline reverts both to ready with no match, and only the challenged profile may decline (9.2231ms)
+✔ cancel reverts both to ready, and only the challenger may cancel (6.5953ms)
+✔ an expired challenge cannot be accepted and both profiles revert to ready (6.1064ms)
+✔ ready refresh cleans up an expired challenge that would otherwise block the player (5.2871ms)
+✔ a profile cannot accept, decline or cancel a challenge on another profile's behalf (4.7016ms)
+✔ gameplay actions round-trip through the HTTP match routes with per-player redaction and revision checks (19.3745ms)
+✔ conceding awards the opponent the match and frees both active-match slots (10.142ms)
+✔ a profile cannot address a match it isn't part of (6.6591ms)
+(node:26396) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/cloudflare-worker/accounts/joey-room.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ a mulligan submitted just before its 30s deadline is accepted (101.3749ms)
+✔ the alarm auto-confirms an unconfirmed mulligan at its deadline and starts gameplay once both are settled (17.8235ms)
+✔ an action at or after the turn deadline is rejected with deadline_expired, and reconnecting after it shows the timeout result (23.2226ms)
+✔ client clock does not matter — an action carrying the current revision right up to the deadline still applies (18.1955ms)
+✔ a match with no player activity for 10 minutes is closed as abandoned, with no winner, and D1 is updated (15.3191ms)
+✔ a real action counts as activity and postpones abandonment (11.6049ms)
+✔ concede finalizes the match in D1 exactly once even if called again (14.0035ms)
+✔ a WebSocket action message applies through the same pipeline and only reaches the sender's own socket (7.9971ms)
+(node:30788) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/wm-progress-actions.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ a correct, credit-eligible answer awards XP, a topic-stat correct/total bump, and a star (4.4436ms)
+✔ a wrong answer still records total but resets the streak and earns minimal XP, no stars (0.3176ms)
+✔ peeking at the solution (creditEligible=false) still records correctness but forfeits streak/tier/stars (0.2485ms)
+✔ a topic tiers up every 10 credit-eligible correct answers, capped at maxLevel (0.1575ms)
+✔ session streak bonus XP grows with streak length and caps at +20, plus a difficulty-4 bonus (0.3161ms)
+✔ starValue overrides the default 1/2-star-per-difficulty rule (e.g. Olympiad questions worth 3) (0.1387ms)
+✔ stars bank into a pack once they reach PACK_COST, carrying the remainder (0.1304ms)
+✔ badges: firstHop always, tenStreak/twentyStreak/century/fiveHundred/yearNine/tier5/giffEntry at their thresholds, never duplicated (0.3016ms)
+✔ applyBossDefeat grants the trophy card, a challenge token, +50 xp, and unlocks the next level (0.2717ms)
+✔ applyBossDefeat is a no-op (idempotent) if that boss was already beaten — no re-granting a token (0.2291ms)
+✔ applyBossDefeat caps unlockedLevel at maxLevel and awards muddleKing/giffComplete only for the final boss (0.1536ms)
+✔ applyBossDefeat caps challengeTokens at 10 (0.3103ms)
+✔ applyBossDefeat never lowers unlockedLevel if it was already ahead of n+1 (0.1642ms)
+✔ applyMockResult scores the paper, banks streak-rule stars, and records a testHistory entry (0.6705ms)
+✔ applyMockResult below pass mark: no boss-gate unlock, no shiny claim (0.9985ms)
+✔ applyMockResult at exactly the pass mark unlocks the boss gate (mocks[towerLevel]) (0.1333ms)
+✔ applyMockResult never un-passes a boss gate once true, even on a weaker later attempt (0.1038ms)
+✔ applyMockResult at SHINY_MOCK_MARK (21) correct banks a shiny claim, one strong pass = one claim (0.1517ms)
+✔ applyMockResult badges: tester always, goldPaper only at score >= 20 (0.1716ms)
+✔ applyMockResult always awards 40 xp for finishing a paper (0.1165ms)
+✔ PRG-03: a first clear grants three stars, once (0.2786ms)
+✔ PRG-04: a replay of an already-completed scenario grants exactly one star (0.128ms)
+✔ PRG-05: crossing the twenty-star boundary creates the correct pack remainder (0.0906ms)
+✔ PRG-05: a replay crossing the twenty-star boundary also creates the correct pack remainder (0.0893ms)
+✔ PRG-06, PRG-07: best turns and best actions only ever improve (0.1243ms)
+✔ personalBestComparison: a strictly better value improves, matching the same Math.min rule bestTurns/bestActions use (0.2275ms)
+✔ personalBestComparison: an equal value matches the best without claiming improvement (0.103ms)
+✔ personalBestComparison: a worse value changes neither the best nor the improved/matched flags (0.1045ms)
+✔ personalBestComparison: no previous best (first time this metric is recorded) counts as an improvement (0.1626ms)
+✔ personalBestComparison: no candidate value (turnsUsed/actionsUsed not supplied) is a no-op (0.176ms)
+✔ PRG-08: recent seeds cap at five and never duplicate (0.2845ms)
+✔ PRG-09: the module-set Reveal token grants exactly once, when the final scenario first clears (0.1388ms)
+✔ PRG-10: expedition progress is isolated per module by the normal shared/per-module split (0.1003ms)
+✔ PRG-11: a failed or abandoned run is a no-op (0.0916ms)
+(node:34292) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/wm-progress.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ freshNotepad has NOTEPAD_PAGES blank pages (4.3259ms)
+✔ freshProgress has no modules and only shared fields at the top level (0.4697ms)
+✔ flattenProgress/unflattenProgress round-trip a shared field and a per-module field (0.5357ms)
+✔ flattenProgress falls back to a fresh bucket for a module never played (0.2145ms)
+✔ migrateProgress on a pre-Phase-0 flat save nests every non-shared field under modules.junior (1.2532ms)
+✔ migrateProgress on an already-split save passes shared fields through untouched (0.3645ms)
+✔ migrateProgress with no saved progress at all returns freshProgress() (0.4344ms)
+✔ migrateJoeyDecksToPerModule re-homes top-level joeyDecks under the active module hint (0.2372ms)
+✔ migrateJoeyDecksToPerModule defaults to junior when there is no matching module hint (2.4903ms)
+✔ migrateJoeyDecksToPerModule never clobbers a module that already has its own decks (0.4881ms)
+✔ migrateJoeyDecksToPerModule is a no-op when there's nothing to migrate (0.3314ms)
+✔ migrateJuniorCurriculumProgress folds an old topic's stats into its renamed successor (0.4962ms)
+✔ migrateJuniorCurriculumProgress is idempotent once flagged (0.3095ms)
+✔ migrateJuniorCurriculumProgress is a no-op for a save with no junior module at all (0.3832ms)
+✔ migrateBossCardIds renames the old module-agnostic boss key to the namespaced junior one (0.4642ms)
+✔ migrateBossCardIds is a no-op once already namespaced (0.1432ms)
+✔ migrateChallengeTokens tops up a short balance but never reduces an existing one (0.35ms)
+✔ migrateChallengeTokens caps earned tokens at 10 bosses' worth (0.1499ms)
+✔ packWeights returns weights that sum to 100 at every level band, gated by minLevel elsewhere (0.3179ms)
+✔ packWeights only ever grows the number of live tiers as level rises (0.2501ms)
+✔ applyDailyStreak is a no-op if already recorded today (2.0106ms)
+✔ applyDailyStreak continues the streak from yesterday and awards weekStreak at day 3 (0.3239ms)
+✔ applyDailyStreak resets to 1 after a missed day, and never awards weekStreak twice (0.3308ms)
+✔ PRG-01: freshModuleProgress and freshExpeditionProgress start at version 2 with no scenarios (0.2251ms)
+✔ PRG-02, PRG-12: migrateExpeditionProgress lifts the prototype shape to version 2, keeping best turns, and is idempotent (0.4329ms)
+✔ migrateExpeditionProgress handles a missing or empty bucket (0.1901ms)
+✔ migrateAllExpeditionProgress walks every module bucket and leaves other fields untouched (0.395ms)
+✔ expeditionScenarioRecord and expeditionCompletedCount read either shape safely (0.5199ms)
+(node:33224) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/generators/intermediate-generators.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ the trading registry matches every regular card set (2.0017ms)
+✔ card ids resolve to exactly one module (0.4825ms)
+✔ only an unreserved, non-upgraded duplicate can be traded (0.2103ms)
+✔ a server trade and a separate local card gain merge without restoring the traded copy (0.3591ms)
+(node:30324) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/cloudflare-worker/accounts/worker.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ creates a listing for a tradeable duplicate and rejects a non-duplicate (41.5308ms)
+✔ rejects a card from the wrong module and an upgraded card (6.2917ms)
+✔ caps active listings at TRADE_LIMITS.activeListings (7.014ms)
+✔ a pending offer reserves the bidder's duplicate against a second listing (5.9791ms)
+✔ accepting an offer swaps cards on both profiles and bumps revision (6.0832ms)
+✔ rejecting an offer leaves the listing open and the offer rejected (4.8535ms)
+✔ withdrawing an offer only works for the bidder, not the owner (5.2628ms)
+✔ a non-seat account is refused every trade route (4.2813ms)
+✔ listings from a different school never appear on the board (4.5972ms)
+✔ an expired listing stops appearing and is marked expired on the next board fetch (4.6421ms)
+ℹ tests 436
+ℹ suites 0
+ℹ pass 436
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6073.1302
+
+[1m▶ Orchard v2 engine, puzzles and persistence (node:test)[0m
+(node:25236) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/art/art.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ embedded slice artwork matches reviewed offline derivatives and preflight evidence (230.493ms)
+✔ hero poses follow real holding, action points and movement events with a recorded fallback (0.7771ms)
+✔ sprites bind foot anchors with uniform scaling and enemy states retain identity (1.9705ms)
+✔ certified Wicker teams use repaired state poses and preserve the Dapple action fallback (0.4192ms)
+(node:45864) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/art/station-art.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ selected station import gate preserves exact batch hashes, bytes, metadata and budget (27.4313ms)
+✔ family/entity station lookup preserves certified blueprints and the separate objective tree (72.1428ms)
+✔ ready, held and damage stack without inventing control or alcove stores (5.2875ms)
+✔ owned squad suggestions assign three distinct eligible cards, respect tier and alcove speed, and decline impossible collections (32.0923ms)
+(node:25664) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/cards.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ every one of the 30 roster heroes gets exactly two discipline cards, one role card and Second Wind (27.0567ms)
+✔ Exact Blow adds +2 power; Marked Shot places a mark first, reaches one further and consumes it on damage (11.1522ms)
+✔ Shared Charge splits up to Arithmetic across two stations in sight and obeys capacity (6.7976ms)
+✔ Calibrate moves min(Arithmetic, missing); a full store is refused (2.3867ms)
+✔ True Shift moves an enemy or ally to an adjacent empty hex and shields the ally only (5.6807ms)
+✔ True Shift on a holder cancels the hold and its protection (2.7323ms)
+✔ Wide Brace shields up to two targets at Geometry; Stand Together shields self and a friend (4.7755ms)
+✔ Field Repair distributes up to 2xScience; Mend restores Science and shields half; Repair refuses full health (3.6113ms)
+✔ Root Shelter stabilises up to two targets; Linked Lock locks up to two groups; Stabilise and Lock take the stat (11.4284ms)
+✔ Intercept moves up to Speed then marks; Dash uses 4+Speed (33.8063ms)
+✔ Driving Blow pushes only after positive damage and only to a legal adjacent hex (24.9351ms)
+✔ Crosswire commits from two hexes with sight and locks the chosen group; Operate needs adjacency (3.3087ms)
+✔ operate rejects a selection that differs from the saved draft (1.5098ms)
+✔ Hedges block sight, roots cost two, controlled bridge is impassable until powered (13.9283ms)
+(node:36636) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/combat.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ spec worked example: Geometry 7 + support 1 - armour 3 = 5; a mark makes it 7 (78.0699ms)
+✔ zero-damage strike is legal with a warning, spends AP and does not consume a mark (5.0852ms)
+✔ held allies give no adjacent support; Hold failure lists every shortfall (7.6777ms)
+✔ a station already held rejects Hold and names its holder (1.745ms)
+✔ moving cancels a hold and removes exactly that hold's protection; casts survive (5.638ms)
+✔ shield grants never form a second pool (1.9141ms)
+✔ forecast is a dry run of the real phase: same intents, hp changes and outcome (9.5644ms)
+✔ Hunter targets the lowest current HP; a forecast changes when HP changes (2.835ms)
+✔ occupied bridge: a player Commit that would close it is refused; enemy corruption sets the interlock (10.2579ms)
+✔ an adequate lock blocks a disruption; a weaker one is consumed and the change happens (7.1766ms)
+✔ Counterturn cancels the next disruption when Logic reaches its power (2.4227ms)
+✔ Undo restores AP, hand, hp, position and draft within a round, never across End Round (3.4267ms)
+✔ weighing knowledge is irreversible: Undo keeps the log, repeats and swaps are free, allowance is enforced (5.5422ms)
+✔ deadline: round five without a snapshot win loses; hero defeat loses immediately (3.6598ms)
+✔ alcove route: needs preparation, Geometry-2 and Speed 6 (2.471ms)
+✔ preview p95 stays within the 16 ms budget on a 92 tile map (115.6776ms)
+✔ listCommands reports availability with reasons for every hand card and basic command (12.0169ms)
+✔ compare-loads rejects unknown load ids without spending allowance; a throwing hook becomes a structured rejection (2.3553ms)
+(node:42788) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/controller.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ controller: begin, play every command through dispatch, win is saved, claimed once and awarded 3 stars (240.9116ms)
+✔ controller: rejected commands change nothing and do not save (2.9632ms)
+✔ controller: a closed game resumes mid-round exactly where it stopped (10.0912ms)
+✔ controller: losing is recorded once and never rewards (11.5833ms)
+(node:25180) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/engine.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ hex helpers: distance, ring size and symmetric sight lines (4.0238ms)
+✔ printed profile formulas use only printed card stats (39.5005ms)
+✔ fixture blueprint validates and created run has the specified shape (10.4205ms)
+✔ invalid and stale commands cost nothing and never mutate (3.2529ms)
+✔ AP, hand exhaustion, Refocus (2 AP once, not Second Wind) and Second Wind (36.5457ms)
+✔ a full legal winning trace replays to the same hash and reports Rooke-free engine status (82.3292ms)
+(node:13456) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/advanced-sudoku.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ T5 has exhaustive uniqueness, a real pair and independently verified causal cage chains (2366.4676ms)
+✔ one-assumption contradiction has a locally replayable failure and hard budgets (171.7743ms)
+✔ seeded T4 targets, canonical solutions and advanced reasons match the independent oracle (537.9615ms)
+✔ every recorded constraint change preserves exhaustive uniqueness (69.9333ms)
+✔ advanced generation reports bounded unknown and rejects unbounded or invalid requests (6.0466ms)
+(node:9140) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/bank.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ topology normalises all twelve D6 transforms, translation, ordering and decorative IDs (59.0259ms)
+✔ topology retains material terrain, cost, anchor, passage and hazard roles (27.844ms)
+✔ Sudoku normalises digit, row, column, band, stack, transpose and constraint renamings (508.6809ms)
+✔ Sudoku retains givens, cage shape/shared incidence and protection dependency structure (64.4728ms)
+✔ equivalent evidence copies cannot satisfy entry, topology or puzzle-pattern diversity (1157.9498ms)
+(node:12520) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/displaced-four-locks.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ full packet reconstruction is deterministic, versioned and retains all production pressure (692.7534ms)
+✔ invalid source placement and changed reconstruction parameters reject without clearing barriers (78.853ms)
+✔ saved bounded planner evidence independently certifies both real target-band physical routes (607.1667ms)
+✔ real preview and reducer agree on every saved command and reject invalid movement immutably (1401.4247ms)
+(node:15996) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/displaced-topology.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ strict displacement boundaries preserve permanent/control passages and reject collisions (32.8339ms)
+✔ saved sample has actual moved passages and independently checked weighted reachability (52.4043ms)
+✔ seed determinism, forbidden footprint and bounded unknown preserve strict reservations (76.451ms)
+✔ old mathematical reconstruction remains pinned (44.0717ms)
+(node:25404) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/four-locks.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ Four Locks teaching fixture preserves exact givens and published cage totals (15.0398ms)
+✔ ready puzzle tiers have exhaustive uniqueness and a forced human completion chain (86.1843ms)
+✔ candidate schemas preserve production pressure and explicitly lack certification (209.4424ms)
+✔ advanced candidates remain uncertified and bounded failures are honest (510.0171ms)
+✔ T1–3 seeded outputs retain their pinned pre-advanced-generation hashes (27.6651ms)
+(node:34900) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/native-sudoku.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ offline native acceptance gate independently proves labelled existing T4/T5 fixtures (133.4265ms)
+✔ native packet enforces attempt/solver bounds and labels optional fallback honestly (97.6833ms)
+✔ published sixteen-request native comparison credits no unknown or fallback pattern (3.518ms)
+✔ separate packet leaves pinned default generations and certified candidate hashes intact (1685.8404ms)
+(node:21168) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/runtime-generation.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ legacy reference regenerates exact content with distinct requested and parameter seeds (111.0247ms)
+✔ both certified plans still execute when runtime records a different requested seed (184.8139ms)
+✔ runtime selects certified bank entries with no unusable crossing, honours recent entries and reports repeats (308.7597ms)
+✔ every certified runtime entry and the fallback reconstruct exactly and keep both bridge approaches usable (4188.5006ms)
+✔ the legacy reference is the known dead-end map and new candidates reject such topologies (102.8635ms)
+✔ unproved tiers, families and invalid requests cannot produce runtime blueprints (1.1031ms)
+✔ every runtime bank entry still has real production-reducer winning traces on the regenerated map (5628.3697ms)
+(node:44840) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/generation/topology.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ measured footprint has exactly 92 axial cells (1.8871ms)
+✔ all four grammars reproduce valid varied layouts without changing water cuts (2530.1438ms)
+✔ structural fingerprint canonicalises D6 and translation (26.9487ms)
+✔ packing reserves all 19 clearing cells on each family-specific grammar (99.4211ms)
+✔ invalid requests and bounded unknown are not certified success (0.3683ms)
+(node:38020) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/integration-extra.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ rotation: real edits reject fixed/illegal wheels; worked solution + Operate powers a bridge and shelter (73.6247ms)
+✔ rotation: a Rewinder turns the highest-degree wheel; a wheel lock moves the rewind to the next ranked wheel (45.7496ms)
+✔ balance: allocation edits, Operate opens the crossing, a Jammer returns the heaviest assigned load, lock groups guard it (8.3544ms)
+✔ balance: hidden-value weighing is irreversible, repeats are free, contradictory inference is refused, long save/resume replays (33.3304ms)
+✔ nonogram: unknown is not empty; beams suppress their sector and an uncovered nest damages the orchard (33.9452ms)
+✔ nonogram: the lowest filled cell is the corruption target and a row lock shifts it (17.6994ms)
+✔ packing: invalid placements are rejected with reasons, a worked packing covers sockets and shields covered stations (81.5852ms)
+✔ packing: shelter suppression blocks commissioning for that phase, protection prevents it, and it expires (53.9356ms)
+(node:6796) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/integration.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ the Four Locks blueprint built on the engine validates and uses Codex's real Sudoku hooks end to end (74.5419ms)
+✔ a full Tier 2 run wins through the real reducer with Codex's Sudoku hooks and replays identically (42.4806ms)
+✔ a Hookmole jam clears the lowest non-given cell of the committed grid and the lock groups block it (25.2508ms)
+(node:20464) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/persistence.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ a verified first clear grants 3 stars once, converts packs, unlocks the next tier and preserves legacy progress (122.6845ms)
+✔ duplicate callbacks, replays of the same run and any later win of the same tier add no stars (120.064ms)
+✔ a forged or edited record is refused: replay is the only proof (60.1116ms)
+✔ an unlocked-tier win cannot be claimed out of order (2.5804ms)
+✔ interrupted game: save after each confirmed action, resume by replay incl. hand, draft, holds and Undo (18.7257ms)
+✔ save data from a changed blueprint or rules version is reported, never silently loaded (3.9881ms)
+✔ different profiles never share runs, awards or attempt counters (2.2956ms)
+✔ retry restores the same blueprint; New map advances the persisted attempt counter and seed (10.1974ms)
+✔ recent parameter seeds are capped at eight and passed to the generator (42.8308ms)
+✔ family status lists locked, unlocked and awarded tiers (27.2011ms)
+✔ reducer is atomic and pure: input progress is never mutated (56.8139ms)
+(node:25464) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/phase.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ storm: -2 orchard and 4 flat damage within 2 of Number at phase start; Commit refused when it would kill (62.7597ms)
+✔ storm that empties the orchard loses before enemies act (2.2864ms)
+✔ roots: the Breaker cannot move but still strikes from range 1; without roots it walks and strikes (10.8753ms)
+✔ Breaker targets the largest charge fraction; ties go Shape, Sustain, Number (5.5655ms)
+✔ shelter shields stations before the enemies act; shield is consumed point for point (2.2722ms)
+✔ strike window lowers enemy armour by 2 (minimum 0) for strikes and forecasts, without storing it (5.3501ms)
+✔ repair stream restores the orchard after hazards, never resurrects, and caps at maximum (18.683ms)
+✔ balance reserve benefit: snapshot at phase start, shield when reserve >= 5 else +2 after hazards (2.3308ms)
+✔ environment hazard: Stabilise on the Sustain site or a Sustain Hold blocks orchard damage; Lock does not (3.6217ms)
+✔ tier five hazard has two sites and each can hit; ordinary Stabilise protects only its own site (2.2445ms)
+✔ environment hazard mutation follows the same lock rule as an enemy change and is forecast (3.0846ms)
+✔ a dormant enemy only announces its wake phase and still occupies its hex (3.1398ms)
+✔ reset-draft discards uncommitted edits (the End Round Discard choice) and draftDiffersFromActive tracks it (1.5724ms)
+(node:24000) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/phase2.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ a powered beam suppresses its sector's enemy and covers its nest; an uncovered non-empty sector damages the orchard (51.8637ms)
+✔ Stabilise on a nest group or a Sustain Hold prevents its nest damage; empty sectors never contribute (8.4106ms)
+✔ shelter suppression invalidates commissioning for the phase, then expires; protection prevents it (5.1183ms)
+✔ Rewinder turns a ranked unprotected member from range 3 with sight, or strikes the nearest hero when all are protected (6.78ms)
+✔ inactive enemies still occupy their tile, and an enemy never walks through or onto a figure (3.1377ms)
+(node:2436) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/puzzles/puzzles.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ production Sudoku matches independent exhaustive reference (27.5768ms)
+✔ zero, one and multiple solutions have honest bounded solver status (2.5527ms)
+✔ malformed Sudoku cages fail before search and do not masquerade as bounded unknown (13.4679ms)
+✔ edits protect givens and domains without mutating source (0.7844ms)
+✔ complete commit enforces cages, all-different, two outputs and budget (3.5407ms)
+✔ canonical jam clears first non-given, environment leaves Four Locks intact (3.2126ms)
+✔ every proposed hint value agrees with exhaustive remaining solutions (17.3352ms)
+✔ naked-pair and cage-intersection hints remove only independently impossible candidates (12.7106ms)
+✔ bounded advanced search fixtures have unique complete chains with both required techniques (30.954ms)
+✔ production rotation unique shared-wheel solution matches independent equations (26.5073ms)
+✔ partial rotation commits only true selected outputs and preserves fixed tokens (3.4553ms)
+✔ rotation hints prove a forced face and give executable steps in either direction (7.7339ms)
+✔ rotation rejects malformed token roles and solves ordinary IDs that match object prototype names (13.69ms)
+✔ production balance exhaustive allocation identities match independent oracle (12.8659ms)
+✔ production weighing tree proves every candidate rather than guessing truth (8.3789ms)
+✔ balance rejects malformed load values, reserve totals and unknown pair members before enumeration (1.0182ms)
+✔ production nonogram matches exhaustive oracle and only fills forced cells (40.5884ms)
+✔ nonogram rejects malformed clues and locked givens before search (5.7992ms)
+✔ production packing has multiple valid arrangements and explicit suppression checks (44.4153ms)
+✔ packing rejects malformed polyhexes and unsafe cells before transform enumeration (0.8137ms)
+✔ packing hints extend existing placements without moving them or spoiling free access (75.4638ms)
+✔ all five production hooks register through the frozen Claude registry (0.5742ms)
+(node:44804) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/recovery-acceptance.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+✔ movement: first tap previews only, second tap on the same hex commits exactly once, a different hex replaces the preview (18343.2465ms)
+✔ movement: keyboard-style Confirm works, and changing hero drops a stale preview (335.9604ms)
+✔ bridges: the runtime never offers a map with an unusable crossing (1751.4243ms)
+✔ puzzle: the draft is free from anywhere, activation is explained and honestly unavailable away from the control (173.3248ms)
+✔ action help: every action explains purpose, cost, target and reason without executing; touch help uses a separate button (158.9545ms)
+✔ enemy phase and loss: ending every round shows what the enemy turn did and the exact loss reason (360.4424ms)
+✔ eligible-profile App path: owned collection, save before the first move, resume after remount, legacy fields intact, gate holds (243.5118ms)
+(node:35064) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/recovery-reward.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ bank entry 0: a certified winning trace played through the controller awards 3 stars once and unlocks tier 2 (364.1343ms)
+✔ bank entry 17: a certified winning trace played through the controller awards 3 stars once and unlocks tier 2 (284.4328ms)
+✔ bank entry 40: a certified winning trace played through the controller awards 3 stars once and unlocks tier 2 (163.7634ms)
+✔ bank entry 63: a certified winning trace played through the controller awards 3 stars once and unlocks tier 2 (144.2354ms)
+✔ setup advice explains each hero's likely job from printed stats only and what practice means (1.4912ms)
+(node:16236) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/recovery.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ case 1 reproduced: Sorrel on the lower permanent bridge (3,6) has no way to the far bank because 4,6 is a hedge (28.7721ms)
+✔ case 2 reproduced: Tuppence beside the controlled bridge (4,4) cannot cross it because the puzzle has not been activated (9.3847ms)
+✔ next step names one action and a board place, and distinguishes free drafting from paid activation (5.7909ms)
+✔ every action has purpose, cost, target and an honest reason when unavailable (27.7732ms)
+(node:33624) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/review-fixes.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ R-01 Mend works on full-health targets for its shield, orchard excepted; Repair still refuses (53.4752ms)
+✔ R-02 begin rejects unowned, zero, missing and invalid squads (5.0872ms)
+✔ R-03 rewards need the final hash and this profile's own saved run, owned cards and printed profiles (160.5303ms)
+✔ R-03 the legitimate save-then-claim, resumed win and duplicate paths still award exactly once (103.6824ms)
+✔ R-04 recent maps store the selected parameter seed, not the requested seed (6.6535ms)
+✔ R-05 every accepted command is saved; edits and hints survive close and reload (6.3983ms)
+✔ hint hooks receive the comparison context (engine 1.3) (3.0389ms)
+(node:48060) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/route-ui.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Warning: `ReactDOMTestUtils.act` is deprecated in favor of `React.act`. Import `act` from `react` instead of `react-dom/test-utils`. See https://react.dev/warnings/react-dom-test-utils for more info.
+✔ real route: private gate, owned-squad begin, a real dispatch, save and resume after remount, exit (18306.0047ms)
+(node:25544) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/route.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ the route renders the injected v2 UI only for the exact private profile in Ninefold Orchard (1137.6584ms)
+(node:2348) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/save-recovery.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ known defective saved map repairs only two hedges, retires old certification and preserves all retained actions and gameplay state (46.5313ms)
+✔ resume migration archives the exact original save once and leaves collection, rewards and legacy progress intact (42.5321ms)
+✔ invalid original log is retained and never silently migrated (3.2376ms)
+✔ saved-map winning continuation extends all original actions through unchanged rules and awards exactly once (137.565ms)
+(node:31780) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/ui/river-layout.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ all rotations register real straight and gentle neighbours without changing tiles (5.641ms)
+✔ outlets must point outside the board and unsupported junctions stay explicit (0.8596ms)
+✔ painted front walls omit shared faces (0.2864ms)
+✔ saved slice packets all have supported two-mouth river geometry (365.5711ms)
+✔ selected river imports match source/runtime hashes and registered candidate geometry (21.3248ms)
+(node:47052) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/v2/ui/ui.test.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ pointy hex spacing and shared edges match tactical axial coordinates (2.2711ms)
+✔ zoom keeps the pointed world position fixed and hit polygons follow camera (1.2655ms)
+✔ camera clamps the world and centres boards smaller than the viewport (1.817ms)
+✔ direct UI mount denies absent, wrong-name and wrong-avatar profiles before controller access (935.4519ms)
+✔ private gate forwards the frozen controller props only for the existing unlock profile (0.7028ms)
+✔ feedback shows exact losses, protection and printed operating shortfalls (1.7179ms)
+ℹ tests 191
+ℹ suites 0
+ℹ pass 191
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 25532.7704
+
+[1m▶ junior generator sanity[0m
+(node:13356) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/generators/gen-shared.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Testing 33 JUNIOR generators (160 runs per difficulty)...
+
+TOTAL: 285912 checks, 0 fails
+ALL GREEN
+
+[1m▶ primary generator sanity[0m
+Testing 30 PRIMARY generators (400 runs per difficulty)...
+
+TOTAL: 605177 checks, 0 fails
+ALL GREEN
+
+[1m▶ intermediate generator sanity[0m
+Testing 29 INTERMEDIATE generators (400 runs per difficulty)...
+
+TOTAL: 582673 checks, 0 fails
+ALL GREEN
+
+[1m▶ adventure scene-graph validation[0m
+
+=== content/junior-story.js (JUNIOR_ADVENTURES) ===
+addy: OK (51 scenes, 3 components, 3 items)
+cubble: OK (51 scenes, 3 components, 3 items)
+countra: OK (51 scenes, 3 components, 3 items)
+zoomby: OK (51 scenes, 3 components, 3 items)
+pebble: OK (51 scenes, 3 components, 3 items)
+squarby: OK (51 scenes, 3 components, 3 items)
+frostcal: OK (51 scenes, 3 components, 3 items)
+loopy: OK (51 scenes, 3 components, 3 items)
+tritip: OK (51 scenes, 3 components, 3 items)
+sparkfin: OK (51 scenes, 3 components, 3 items)
+hunchik: OK (51 scenes, 3 components, 3 items)
+burrowl: OK (51 scenes, 3 components, 3 items)
+multimoo: OK (84 scenes, 3 components, 3 items)
+owlgorith: OK (84 scenes, 3 components, 3 items)
+flaskfox: OK (84 scenes, 3 components, 3 items)
+fractail: OK (84 scenes, 3 components, 3 items)
+voltbird: OK (84 scenes, 3 components, 3 items)
+
+Total heroes checked: 17
+Total errors: 0
+
+=== content/primary-story.js (PRIMARY_ADVENTURES) ===
+pip: OK (32 scenes, 3 components, 3 items)
+nine: OK (32 scenes, 3 components, 3 items)
+bramble: OK (32 scenes, 3 components, 3 items)
+sorrel: OK (32 scenes, 3 components, 3 items)
+russet: OK (32 scenes, 3 components, 3 items)
+halfpenny: OK (32 scenes, 3 components, 3 items)
+wicker: OK (32 scenes, 3 components, 3 items)
+furrow: OK (32 scenes, 3 components, 3 items)
+dapple: OK (32 scenes, 3 components, 3 items)
+bushel: OK (32 scenes, 3 components, 3 items)
+tuppence: OK (32 scenes, 3 components, 3 items)
+windfall: OK (32 scenes, 3 components, 3 items)
+cornix: OK (32 scenes, 3 components, 3 items)
+thistlewick: OK (32 scenes, 3 components, 3 items)
+beeswax: OK (32 scenes, 3 components, 3 items)
+kernel: OK (32 scenes, 3 components, 3 items)
+millrace: OK (32 scenes, 3 components, 3 items)
+
+Total heroes checked: 17
+Total errors: 0
+
+=== content/intermediate-story.js (INTERMEDIATE_ADVENTURES) ===
+gf_tambrindle: OK (31 scenes, 3 components, 3 items)
+gf_nettle: OK (32 scenes, 3 components, 3 items)
+gf_higgins: OK (30 scenes, 3 components, 3 items)
+gf_marta: OK (33 scenes, 3 components, 3 items)
+gf_jory: OK (32 scenes, 3 components, 3 items)
+gf_ratchet: OK (31 scenes, 3 components, 3 items)
+gf_colworth: OK (35 scenes, 3 components, 3 items)
+gf_pip: OK (32 scenes, 3 components, 3 items)
+gf_adavoss: OK (30 scenes, 3 components, 3 items)
+gf_fenn: OK (33 scenes, 3 components, 3 items)
+gf_delphine: OK (31 scenes, 3 components, 3 items)
+gf_growl: OK (30 scenes, 3 components, 3 items)
+gf_pemberton: OK (38 scenes, 3 components, 3 items)
+gf_maude: OK (30 scenes, 3 components, 3 items)
+gf_rooke: OK (28 scenes, 3 components, 3 items)
+gf_corvain: OK (28 scenes, 3 components, 3 items)
+gf_marrow: OK (23 scenes, 3 components, 3 items)
+
+Total heroes checked: 17
+Total errors: 0
+
+[1m▶ expedition system validation[0m
+(node:17484) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-data.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Expedition validation passed
+  content schema: all 30 scenario blueprints valid (schema v1)
+  90 field-character profiles
+  30 boss commander powers (17 implemented, 13 pending later content stages)
+  30 authored scenario briefs
+  12 objective engines
+  38 enemy behaviours
+  Unequal Crossing estimated duration: 4.5 minutes
+  primary: roles {"tank":6,"healer":6,"wizard":6,"melee":6,"ranged":6}; disciplines {"arithmetic":6,"geometry":6,"logic":6,"science":6,"speed":6}
+  junior: roles {"tank":6,"healer":6,"wizard":6,"melee":6,"ranged":6}; disciplines {"arithmetic":6,"geometry":6,"logic":6,"science":6,"speed":6}
+  intermediate: roles {"tank":6,"healer":6,"wizard":6,"melee":6,"ranged":6}; disciplines {"arithmetic":6,"geometry":6,"logic":6,"science":6,"speed":6}
+
+[1m▶ Unequal Crossing reference playthrough[0m
+(node:34224) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Generated layout: target 20, crates 7@-1,1, 13@1,0, 12@1,-2, 8@0,1.
+Unequal Crossing sample pass: won in round 4 with 18 player actions.
+Final balance: 20 : 20; exit reached: true.
+Both scales are one impassable hex each, loaded from any adjacent hex — no hero ever stood on either.
+This layout (values, positions and target) is generated fresh from a seed every real embark — see unequal-crossing.js's generateUnequalCrossingLayout.
+01. Bramble collects the 7-load (she starts right beside it)
+02. Bramble places the 7-load on the west scale
+03. Nine sets off for the 13-load
+04. Nine collects the 13-load
+05. Pip sets off for the 12-load
+06. Pip closes on the 12-load
+07. End round 1: the Hookmoles study the loads
+08. Nine carries the 13-load towards the west scale
+09. Nine places the 13-load on the west scale: 7 + 13 = 20
+10. Pip collects the 12-load
+11. Pip carries it towards the east scale
+12. Bramble sets off for the 8-load
+13. Bramble collects the 8-load
+14. End round 2: the Hookmoles begin their approach, too late to catch anything unguarded
+15. Pip places the 12-load on the east scale
+16. Bramble carries the 8-load towards the east scale
+17. Bramble places the 8-load on the east scale: 12 + 8 = 20
+18. Pip sets off for the tally arch
+19. Nine closes in behind
+20. End round 3: both scales balanced, one hero away from the arch
+21. Bramble reaches the tally arch
+
+[1m▶ The Cider Run reference playthrough[0m
+(node:10104) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Cider Run sample pass: won in round 2 with 5 player actions.
+Press gate filled: 14/14 (the guaranteed-safe pair — layout also offers a second, faster-but-unproven pair: press_8 + press_6).
+Guaranteed-safe pair: press_2 + press_12 = 14.
+-- Round 1 --
+   nine collects press_2
+   nine places press_2 at 1,-1
+   bushel moves 0,0 -> 1,0 (1 hex)
+   bushel collects press_12
+   Scruffcrow: watch
+-- Round 2 --
+   bushel places press_12 at 1,0
+
+[1m▶ Nine Across the Bridge reference playthrough[0m
+(node:29672) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Nine Across the Turning Bridge sample pass: won in round 3 with 12 player actions.
+Delivered: 3/3. Wind vanes: near open, far closed.
+Neither bridge section's raw cap of nine can ever actually be broken by these three loads (2 + 3 + 4 = 9) — see the scenario file's header note. The wind vanes gate that cap to zero when closed; the synthetic case in nine-across-bridge.test.js proves the gate itself works.
+01. Pip collects the 2-load (she starts right on top of it)
+02. Pip carries it onto the near bridge section
+03. Nine collects the 4-load and reaches the far bridge section in one stride
+04. Nine carries it onto the far bridge section
+05. Bramble collects the 3-load
+06. Bramble carries it onto the near bridge section
+07. End round 1: both wind vanes still read open — Crosswind's one-round delay means it only watches
+08. Pip closes on the far orchard
+09. Pip reaches her drop point, out of actions for the round
+10. Nine, already beside the far orchard, delivers the 4-load
+11. Bramble closes on the far orchard
+12. Bramble delivers the 3-load
+13. End round 2: Crosswind turns the far wind vane closed — tied on distance with the near vane, broken alphabetically — but nothing is left to deliver through it
+14. Pip, already on the far orchard, delivers the 2-load: all three loads have crossed
+
+[1m▶ The Hedgejaw Maze reference playthrough[0m
+(node:36292) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Hedgejaw Maze sample pass: won in round 3 with 8 player actions.
+Stones visited: 3/3.
+The Hedgejaw always closes the current target's own gate — fully predictable, never a hidden choice (see hedgejaw-maze.test.js's ENM cases).
+01. Nine reaches stone_3's only approach
+02. Nine visits stone_3 (the lowest value first)
+03. End round 1: the Hedgejaw's one-round delay means it only watches
+04. Nine reaches stone_5's only approach
+05. Nine visits stone_5
+06. End round 2: the Hedgejaw grows the hedge across stone_9's approach, now the current target
+07. Russet closes on the hedge
+08. Russet's True Shift moves the hedge clear
+09. Pip reaches the now-open approach
+10. Pip visits stone_9: all three stones visited in order
+
+[1m▶ The Rootfire Relay reference playthrough[0m
+(node:45508) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Rootfire Relay sample pass: won in round 1 with 2 player actions.
+Both constraints satisfied: 2/2 constraints (sum 10, trunk 2).
+A deliberately snappy two-action solve — Strawling's wilt is real and tested (rootfire-relay.test.js's ENM cases), just never has a chance to fire before this trace already wins.
+01. Russet's True Shift moves root_d adjacent to root_c, closing the gap into one connected chain of five
+02. Bramble's Chain Reaction relays the rise through root_c and root_d at once
+
+[1m▶ Murder at Moonfall reference playthrough[0m
+(node:23688) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Murder at Moonfall sample pass: won in round 1 with 3 player actions.
+Ring closed: 6/6 sides — three hedge walls plus the three heroes.
+The Crowbreaker's one-round delay means it never even gets to act before this trace already wins.
+01. Pip closes on the western open hex
+02. Bramble closes on the southern open hex
+03. Nine closes on the last open hex: the ring is complete
+
+[1m▶ The Hollow Bough Awakens reference playthrough[0m
+(node:37180) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Hollow Bough Awakens sample pass: won in round 5 with 3 player actions.
+Memorial: undamaged — Overgrowth's one successful strike was undone by Restore before the whistle.
+01. End round 1: Overgrowth's one-round delay means it only watches
+02. Bramble steps clear of Overgrowth's path so the memorial, not her, is what's exposed
+03. End round 2: Overgrowth closes the distance, still not yet in range
+04. End round 3: left unguarded, Overgrowth damages the memorial
+05. Pip restores the memorial from range
+06. Bramble takes up the guard
+07. End round 4: the fourth whistle sounds with the memorial guarded and undamaged
+
+[1m▶ The Orchard Lockdown reference playthrough[0m
+(node:2484) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Orchard Lockdown sample pass: won in round 1 with 1 player actions.
+Gates open: 3/3 constraints — gate A now reads 2 + 7 = 9.
+Nearly never even gets past its one-round delay before this trace already wins — the corruption behaviour is real and independently tested (orchard-lockdown.test.js's ENM cases), just not needed here.
+01. Bushel's Combine folds the unofficial spare cell into gate A's short total
+
+[1m▶ The First Whistle reference playthrough[0m
+(node:15780) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The First Whistle sample pass: won in round 2 with 9 player actions.
+First Root defeated: 1 defeated. The network opened in round 1 — both branches turned true before it ever acted.
+01. Bramble reframes the near branch true
+02. Russet's Force Rotate turns the jammed far branch true, opening the network
+03. Russet, already adjacent, lands the first strike on First Root
+04. Bramble closes on First Root
+05. Nine closes on First Root
+06. Nine reaches First Root's side
+07. End round 1: First Root's one-round delay means it only watches
+08. Russet strikes again
+09. Bramble strikes
+10. Nine strikes: First Root falls
+
+[1m▶ The Smudged Stones reference playthrough[0m
+(node:45336) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Smudged Stones sample pass: won in round 2 with 6 player actions.
+Chain result: 3 + 5 + 7 + 9 = 24 (1/1 constraints).
+01. Addy restores the first operator to +
+02. Hunchik moves beside the second operator
+03. Hunchik restores the second operator to +
+04. Zoomby moves towards the third operator
+05. End round 1: the Smudges still study the stones
+06. Zoomby reaches the third operator
+07. Zoomby restores the third operator to +
+
+[1m▶ The Examination Clock reference playthrough[0m
+(node:39172) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Examination Clock sample pass: won in round 2 with 16 player actions.
+Total processing time: 1 + 2 + 3 + 4 = 10, at or under the deadline (10 maximum 12 · 4/4 processed).
+Two other combinations also clear the deadline (task_a+task_b+task_c+task_e = 11, task_a+task_b+task_d+task_e = 12) — a real choice, not the only route, see examination-clock.test.js.
+-- Round 1 --
+   gf_tambrindle moves -3,0 -> -2,0 (1 hex)
+   gf_tambrindle collects task_a
+   gf_ratchet moves -3,1 -> -2,1 (1 hex)
+   gf_ratchet collects task_b
+   gf_higgins moves -3,2 -> -2,2 (1 hex)
+   gf_higgins collects task_c
+   gf_marta moves -3,3 -> -2,3 (1 hex)
+   gf_marta collects task_d
+   proctor_a: watch
+   proctor_b: watch
+-- Round 2 --
+   gf_tambrindle moves -2,0 -> 1,0 (3 hexes)
+   gf_tambrindle places task_a at 2,0
+   gf_ratchet moves -2,1 -> 1,1 (3 hexes)
+   gf_ratchet places task_b at 2,1
+   gf_higgins moves -2,2 -> 1,2 (3 hexes)
+   gf_higgins places task_c at 1,2
+   gf_marta moves -2,3 -> 0,3 (2 hexes)
+   gf_marta places task_d at 0,3
+
+[1m▶ The Sealed Archive reference playthrough[0m
+(node:36132) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Sealed Archive sample pass: won in round 5 with 25 player actions.
+Vaults: A+B = 8 + 12 = 20; C = 14 (even); B < C (12 < 14).
+Tam Brindle, Higgins and Marta each ferry one feeder stone home; Adavoss, the only one who can Combine, never fetches anything herself.
+01. Tam Brindle collects feeder_a (she starts right on top of it)
+02. Tam Brindle carries it towards vault_a
+03. Higgins sets off for feeder_b
+04. Higgins closes on feeder_b
+05. Marta sets off for feeder_c
+06. Marta closes on feeder_c
+07. Adavoss moves towards vault_a to be ready for the first delivery
+08. Adavoss reaches vault_a's side
+09. End round 1: the Archive Warden and Cipher Moth still study the reading room
+10. Tam Brindle drops feeder_a beside vault_a
+11. Higgins collects feeder_b
+12. Higgins carries it towards vault_b
+13. Marta collects feeder_c
+14. Marta carries it towards vault_c
+15. Adavoss combines vault_a with feeder_a: 3 + 5 = 8
+16. Adavoss sets off for vault_b
+17. End round 2: the Archive Warden and Cipher Moth begin their approach
+18. Higgins reaches vault_b's side
+19. Higgins drops feeder_b beside vault_b
+20. Marta reaches vault_c's side
+21. Marta drops feeder_c beside vault_c
+22. Adavoss closes on vault_b
+23. Adavoss reaches vault_b's side
+24. End round 3: the Archive Warden and Cipher Moth close in, still out of range
+25. Adavoss combines vault_b with feeder_b: 4 + 8 = 12
+26. Adavoss sets off for vault_c
+27. End round 4: the Archive Warden and Cipher Moth are still out of range
+28. Adavoss reaches vault_c's side
+29. Adavoss combines vault_c with feeder_c: 9 + 5 = 14
+
+[1m▶ Lanterns in the Forgetting Fog reference playthrough[0m
+(node:48256) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+Lanterns in the Forgetting Fog sample pass: won in round 1 with 3 player actions.
+Network: lantern 1 -- 2 -- 3 -- 4, all three route markers correctly joined (4 active nodes).
+All three heroes acted in parallel, one marker each — the round limit of 1 means no single hero could visit more than one marker alone.
+01. Addy reframes the first route marker (already adjacent) to join lanterns one and two
+02. Zoomby reframes the second route marker (already adjacent) to join lanterns two and three
+03. Hunchik reframes the third route marker (already adjacent) to join lanterns three and four
+
+[1m▶ The Maybe-Flock Roost reference playthrough[0m
+(node:33168) [MODULE_TYPELESS_PACKAGE_JSON] Warning: Module type of file:///C:/Users/samdb/UKMT%20App/expeditions/expedition-roster.js is not specified and it doesn't parse as CommonJS.
+Reparsing as ES module because module syntax was detected. This incurs a performance overhead.
+To eliminate this warning, add "type": "module" to \\?\C:\Users\samdb\UKMT App\package.json.
+(Use `node --trace-warnings ...` to show where the warning was created)
+The Maybe-Flock Roost sample pass: won in round 2 with 7 player actions.
+Posts held: 3/3 held · 9/9 directional sum.
+01. Pip sets out for the eastern post
+02. Pip continues towards the eastern post
+03. Bramble moves towards the southern post
+04. Bramble reaches the southern post
+05. Nine flies towards the last post
+06. Nine reaches the last post
+07. End round 1: the Maybe-Finches still study the roost
+08. Pip reaches the eastern post: all three whistle posts held at once
+
+[1m▶ Expedition briefing render[0m
+Expedition briefing render passed (primary, junior, intermediate)
+Expedition board render passed (all nine catalogued scenarios)
+
+[1m▶ rebuild WallabyMaths.html[0m
+Optimised 709 image files + 476 inline images: 360.5MB -> 68.1MB
+Synced www/index.html for Capacitor
+Rebuilt C:\Users\samdb\UKMT App\WallabyMaths.html — 101543816 bytes
+
+[1m▶ bundle smoke test[0m
+Stubbed embedded art: 101543816 bytes -> 8670096 bytes
+Root populated: true
+Runtime errors: none
+SMOKE TEST PASSED
+
+[1m▶ Joey Challenge Hall polling[0m
+Joey Challenge Hall polling regression passed
+
+[1m=== Regression summary ===[0m
+✔ unit tests (node:test)
+✔ Orchard v2 engine, puzzles and persistence (node:test)
+✔ junior generator sanity
+✔ primary generator sanity
+✔ intermediate generator sanity
+✔ adventure scene-graph validation
+✔ expedition system validation
+✔ Unequal Crossing reference playthrough
+✔ The Cider Run reference playthrough
+✔ Nine Across the Bridge reference playthrough
+✔ The Hedgejaw Maze reference playthrough
+✔ The Rootfire Relay reference playthrough
+✔ Murder at Moonfall reference playthrough
+✔ The Hollow Bough Awakens reference playthrough
+✔ The Orchard Lockdown reference playthrough
+✔ The First Whistle reference playthrough
+✔ The Smudged Stones reference playthrough
+✔ The Examination Clock reference playthrough
+✔ The Sealed Archive reference playthrough
+✔ Lanterns in the Forgetting Fog reference playthrough
+✔ The Maybe-Flock Roost reference playthrough
+✔ Expedition briefing render
+✔ rebuild WallabyMaths.html
+✔ bundle smoke test
+✔ Joey Challenge Hall polling
+
+All 25 steps passed.
+npm notice
+npm notice New major version of npm available! 11.16.0 -> 12.2.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.0
+npm notice To update run: npm install -g npm@12.2.0
+npm notice

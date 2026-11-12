@@ -8,6 +8,7 @@ import {
   estimateExpeditionMinutes,
   evaluateObjective,
   guardTarget,
+  moveUnit,
   resolveEnemyPhase,
   useDisciplineAction,
 } from "./expedition-engine.js";
@@ -89,6 +90,12 @@ test("ENM: Strawling wilts the single highest-value unguarded root anywhere on t
   let state = createRootfireRelay(squadOf(["russet", "bramble", "nine"]));
   state = resolveEnemyPhase(endPlayerPhase(state)); // round 1: delay
   assert.equal(state.objects.root_b.value, 2, "still within the one-round delay");
+  // Russet's own spawn hex (2,-2) turns out to be adjacent to Strawling's fixed position
+  // (3,-3) — an unguarded hero standing there is now a valid target too (strikeAdjacentHero,
+  // expedition-engine.js, 2026-09-21), which would otherwise redirect round 2's action onto
+  // her instead of the root this test is about. Move clear so the wilt-target selection this
+  // test actually checks isn't pre-empted.
+  state = moveUnit(state, "russet", "1,-1");
   state = resolveEnemyPhase(endPlayerPhase(state)); // round 2: wilts the highest (root_b or root_d, tied at 2 — broken alphabetically)
   const wilted = state.history.filter((h) => h.unitId === "strawling").at(-1);
   assert.equal(wilted.action, "wilt");
@@ -96,14 +103,33 @@ test("ENM: Strawling wilts the single highest-value unguarded root anywhere on t
   assert.equal(state.objects.root_b.value, 1);
 });
 
-test("ENM: Strawling never attacks a hero directly — wilting a root is its entire behaviour", () => {
+// Rewritten 2026-09-21 (Sam's playtest of The Cider Run: Guard "doesn't do anything" —
+// EXPEDITIONS_CLAUDE_HANDOVER.md). Strawling now shares strikeAdjacentHero with every other
+// lane/erosion-style enemy: an unguarded hero within its reach is struck instead of wilting a
+// root that round. The old contract this test named ("never attacks a hero") was exactly the
+// gap that made Guard/hp/stats inert wherever this behaviour was used — this asserts the
+// replacement contract instead of the removed one.
+test("ENM: an unguarded hero adjacent to Strawling is struck instead of a root wilting; Guard blocks it; out of reach, the root wilts as before", () => {
   const board = ROOTFIRE_RELAY_CONFIG.board;
-  const units = [{ id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, hp: 3, maxHp: 3, move: 1, pos: "3,-3" }];
   const enemy = { id: "strawling", name: "Strawling", side: "enemy", hp: 2, defence: 4, move: 1, range: 1, damage: 1, pos: "3,-3", delay: 0, behaviour: "wilt-root" };
-  const state = createExpeditionState({ id: "strawling-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units, enemies: [enemy], objects: [{ id: "root", kind: "root", value: 5, pos: "3,-2", movable: false }], objective: { family: "eliminate" } });
-  const resolved = resolveEnemyPhase(endPlayerPhase(state));
-  assert.equal(resolved.units.hero.hp, 3, "adjacent or not, Strawling only ever wilts a root, never strikes a hero");
-  assert.equal(resolved.objects.root.value, 4);
+  const root = { id: "root", kind: "root", value: 5, pos: "3,-2", movable: false };
+  const objective = { family: "eliminate" };
+
+  const exposed = { id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, hp: 3, maxHp: 3, move: 1, pos: "3,-3" };
+  const exposedState = createExpeditionState({ id: "strawling-strike-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units: [exposed], enemies: [{ ...enemy }], objects: [{ ...root }], objective });
+  const exposedResolved = resolveEnemyPhase(endPlayerPhase(exposedState));
+  assert.equal(exposedResolved.units.hero.hp, 2, "an unguarded hero standing in range is struck instead of the wilt");
+  assert.equal(exposedResolved.objects.root.value, 5, "the strike replaces the wilt this round");
+
+  const guardedState = createExpeditionState({ id: "strawling-strike-guarded-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units: [{ ...exposed, guarded: true }], enemies: [{ ...enemy }], objects: [{ ...root }], objective });
+  const guardedResolved = resolveEnemyPhase(endPlayerPhase(guardedState));
+  assert.equal(guardedResolved.units.hero.hp, 3, "Guard blocks the strike entirely");
+  assert.equal(guardedResolved.objects.root.value, 5);
+
+  const farState = createExpeditionState({ id: "strawling-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units: [{ ...exposed, pos: "0,0" }], enemies: [{ ...enemy }], objects: [{ ...root }], objective });
+  const farResolved = resolveEnemyPhase(endPlayerPhase(farState));
+  assert.equal(farResolved.units.hero.hp, 3, "out of range — nobody is struck");
+  assert.equal(farResolved.objects.root.value, 4, "with nobody exposed, the wilt proceeds exactly as before");
 });
 
 test("§9: a below-battle-value squad may still embark, with the shortfall named in the readiness result", () => {

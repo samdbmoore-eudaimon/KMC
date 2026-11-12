@@ -1,0 +1,1693 @@
+{
+  "createdAt": "2026-10-05T13:23:06.682Z",
+  "ownerThread": "01a10869-af91-7490-9f19-c99e0842fcc1",
+  "status": "staged-only; visual review required; Claude window required before any promotion",
+  "stagedBytes": 650624,
+  "passingBytes": 561794,
+  "frozenUnchanged": true,
+  "assets": [
+    {
+      "id": "hero-cobweb-action",
+      "version": 3,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/cobweb-action-v3.png",
+      "sourceSha256": "f2eb2574391e9b4d4f71b1a23ecfe5af457dce68371f7a293bdb672b5e60867e",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/cobweb-action-v3.webp",
+      "sha256": "ffb442c52c2b9d7295018ddd2dc9bb81e06ef647923da03d3d394d6d3b7b05d1",
+      "bytes": 48840,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        16,
+        89,
+        376,
+        353
+      ],
+      "groundAnchor": [
+        179,
+        353
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          16,
+          89,
+          376,
+          353
+        ],
+        "transparentPixels": 98656,
+        "visiblePixels": 48800,
+        "components": [
+          48798,
+          1,
+          1
+        ],
+        "componentCount": 3,
+        "detachedPixels": 2,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-action-v3-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-action-v3-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-action-v3-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-action-v3-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-action-v3-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-action-v3-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Unequal Crossing T3 browser win command23 Shape hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/unequal-browser-win-record.json",
+          "sourceSha256": "abd4aab6f56244fda2dd5b5d04749aa9f0914184efa9b7030eea9a0716fdf8ac",
+          "sourceScope": "actual browser record",
+          "family": "unequal-crossing",
+          "tier": 3,
+          "firstCommand": 23,
+          "holding": "shape",
+          "position": "8,1",
+          "ap": 0,
+          "hp": 14
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t3-direct-browser-win-record.json",
+          "sourceSha256": "905037124818db5de51b0b98604accf3d647da0ef804f9e5edbefcd29930e6c1",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 3,
+          "firstCommand": 18,
+          "holding": "shape",
+          "position": "1,4",
+          "ap": 0,
+          "hp": 14
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t4-direct-browser-win-record.json",
+          "sourceSha256": "1f71b32bbf19c1b2ecba34297305c65aa37356893b8ad435d0fa592a20b7e3cd",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 4,
+          "firstCommand": 17,
+          "holding": "shape",
+          "position": "0,4",
+          "ap": 1,
+          "hp": 14
+        }
+      ]
+    },
+    {
+      "id": "hero-barrow-action",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/barrow-action-v2.png",
+      "sourceSha256": "bbf1142f2b15edfd7ab499c9e91716da6113ca5d7a66330827001f9edb1ba100",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/barrow-action-v2.webp",
+      "sha256": "f04c2dcdf227fa25ae3c6db4452184c3d903ffa4f0f36c2f799d3ef20734fcdf",
+      "bytes": 35590,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        52,
+        45,
+        344,
+        349
+      ],
+      "groundAnchor": [
+        148,
+        349
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          52,
+          45,
+          344,
+          349
+        ],
+        "transparentPixels": 89756,
+        "visiblePixels": 57700,
+        "components": [
+          57700
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-action-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-action-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-action-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-action-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-action-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-action-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Unequal Crossing T3 browser win command18 Number hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/unequal-browser-win-record.json",
+          "sourceSha256": "abd4aab6f56244fda2dd5b5d04749aa9f0914184efa9b7030eea9a0716fdf8ac",
+          "sourceScope": "actual browser record",
+          "family": "unequal-crossing",
+          "tier": 3,
+          "firstCommand": 18,
+          "holding": "number",
+          "position": "7,4",
+          "ap": 0,
+          "hp": 8
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t3-direct-browser-win-record.json",
+          "sourceSha256": "905037124818db5de51b0b98604accf3d647da0ef804f9e5edbefcd29930e6c1",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 3,
+          "firstCommand": 17,
+          "holding": "number",
+          "position": "7,2",
+          "ap": 0,
+          "hp": 8
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t4-direct-browser-win-record.json",
+          "sourceSha256": "1f71b32bbf19c1b2ecba34297305c65aa37356893b8ad435d0fa592a20b7e3cd",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 4,
+          "firstCommand": 23,
+          "holding": "number",
+          "position": "7,2",
+          "ap": 0,
+          "hp": 1
+        }
+      ]
+    },
+    {
+      "id": "hero-dapple-action",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/dapple-action-v2.png",
+      "sourceSha256": "65647314473bb1c2ac1826b1ad6ba7daf3aba165eadb1250efc1f5f997f0d91a",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/dapple-action-v2.webp",
+      "sha256": "3a6ece36d41408946cbbc89b6cbece307099ae695eb17abb4588eafa5e3c83cd",
+      "bytes": 40712,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        39,
+        28,
+        351,
+        354
+      ],
+      "groundAnchor": [
+        138,
+        354
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          39,
+          28,
+          351,
+          354
+        ],
+        "transparentPixels": 97548,
+        "visiblePixels": 49908,
+        "components": [
+          49908
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/dapple-action-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/dapple-action-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/dapple-action-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/dapple-action-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/dapple-action-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/dapple-action-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Maybe-Flock Roost T1 browser win command31 Alcove hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/roost-browser-win-record.json",
+          "sourceSha256": "e12561d1f6164b571c80d9b36316eed8c05dbe95ad8869a1123c9f91bde5ac5a",
+          "sourceScope": "actual browser record",
+          "family": "maybe-flock",
+          "tier": 1,
+          "firstCommand": 31,
+          "holding": "alcove",
+          "position": "10,2",
+          "ap": 0,
+          "hp": 12
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t1-alcove-browser-win-record.json",
+          "sourceSha256": "d1652b9020f1ebe059285aaa6e2e2cd0ca9c0947e9e0b80a9bc550895750293c",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 1,
+          "firstCommand": 22,
+          "holding": "alcove",
+          "position": "8,3",
+          "ap": 1,
+          "hp": 12
+        }
+      ]
+    },
+    {
+      "id": "hero-cobweb-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/cobweb-exhausted-v2.png",
+      "sourceSha256": "a9515bcba8f971f714f73a77dca2be8ad0bf6f1f46d240d45feb3d4b6885694b",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/cobweb-exhausted-v2.webp",
+      "sha256": "53fce7235d44e2dc5e198ed8699a782802418149f73cea77975803870c97b17a",
+      "bytes": 49278,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        22,
+        33,
+        369,
+        356
+      ],
+      "groundAnchor": [
+        178,
+        356
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          22,
+          33,
+          369,
+          356
+        ],
+        "transparentPixels": 76913,
+        "visiblePixels": 70543,
+        "components": [
+          70543
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": false
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cobweb-exhausted-v2-review.png"
+      },
+      "gateStatus": "withheld",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Unequal Crossing T3 browser win command3 AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/unequal-browser-win-record.json",
+          "sourceSha256": "abd4aab6f56244fda2dd5b5d04749aa9f0914184efa9b7030eea9a0716fdf8ac",
+          "sourceScope": "actual browser record",
+          "family": "unequal-crossing",
+          "tier": 3,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "2,5",
+          "ap": 0,
+          "hp": 14
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/art-live-20261004/art-unequal-working-record-20261005.json",
+          "sourceSha256": "cc25f8be0ac29c4eed9066184fa6be071f2a562d871600ae0c7c1e554a27e67a",
+          "sourceScope": "actual browser record",
+          "family": "unequal-crossing",
+          "tier": 3,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "2,5",
+          "ap": 0,
+          "hp": 14
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t3-direct-browser-win-record.json",
+          "sourceSha256": "905037124818db5de51b0b98604accf3d647da0ef804f9e5edbefcd29930e6c1",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 3,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "3,2",
+          "ap": 0,
+          "hp": 14
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t4-direct-browser-win-record.json",
+          "sourceSha256": "1f71b32bbf19c1b2ecba34297305c65aa37356893b8ad435d0fa592a20b7e3cd",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 4,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "0,4",
+          "ap": 0,
+          "hp": 14
+        }
+      ]
+    },
+    {
+      "id": "hero-barrow-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/barrow-exhausted-v2.png",
+      "sourceSha256": "b4ed807a3622403c9f1696e310cf3e8a8511436f38a6209b66a1e4f4bad7d8a0",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/barrow-exhausted-v2.webp",
+      "sha256": "89c45f4b3c6616ffe54012efdecb7ecbb12d114fb0b1293785bbef38f257f4f9",
+      "bytes": 48510,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        11,
+        14,
+        379,
+        365
+      ],
+      "groundAnchor": [
+        168,
+        365
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          11,
+          14,
+          379,
+          365
+        ],
+        "transparentPixels": 63291,
+        "visiblePixels": 84165,
+        "components": [
+          84165
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/barrow-exhausted-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Unequal Crossing T3 browser win command5 AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/unequal-browser-win-record.json",
+          "sourceSha256": "abd4aab6f56244fda2dd5b5d04749aa9f0914184efa9b7030eea9a0716fdf8ac",
+          "sourceScope": "actual browser record",
+          "family": "unequal-crossing",
+          "tier": 3,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "5,4",
+          "ap": 0,
+          "hp": 13
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/art-live-20261004/art-unequal-working-record-20261005.json",
+          "sourceSha256": "cc25f8be0ac29c4eed9066184fa6be071f2a562d871600ae0c7c1e554a27e67a",
+          "sourceScope": "actual browser record",
+          "family": "unequal-crossing",
+          "tier": 3,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "5,4",
+          "ap": 0,
+          "hp": 13
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t3-direct-browser-win-record.json",
+          "sourceSha256": "905037124818db5de51b0b98604accf3d647da0ef804f9e5edbefcd29930e6c1",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 3,
+          "firstCommand": 10,
+          "holding": null,
+          "position": "7,2",
+          "ap": 0,
+          "hp": 13
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t4-direct-browser-win-record.json",
+          "sourceSha256": "1f71b32bbf19c1b2ecba34297305c65aa37356893b8ad435d0fa592a20b7e3cd",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 4,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "4,2",
+          "ap": 0,
+          "hp": 13
+        }
+      ]
+    },
+    {
+      "id": "hero-amberly-exhausted",
+      "version": 3,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/amberly-exhausted-v3.png",
+      "sourceSha256": "3a8aed6a26dce1c54a50fa1f642fa0e8a26b191d40309a3ad1a91d15a31b1833",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/amberly-exhausted-v3.webp",
+      "sha256": "cd31a4f00c982d80da36e92000cb1f834b2b9025cb682ed32179270153f61f62",
+      "bytes": 49430,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        11,
+        26,
+        369,
+        364
+      ],
+      "groundAnchor": [
+        174,
+        364
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          11,
+          26,
+          369,
+          364
+        ],
+        "transparentPixels": 72057,
+        "visiblePixels": 75399,
+        "components": [
+          75399
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/amberly-exhausted-v3-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/amberly-exhausted-v3-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/amberly-exhausted-v3-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/amberly-exhausted-v3-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/amberly-exhausted-v3-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/amberly-exhausted-v3-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Unequal Crossing T3 browser win command13 AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/unequal-browser-win-record.json",
+          "sourceSha256": "abd4aab6f56244fda2dd5b5d04749aa9f0914184efa9b7030eea9a0716fdf8ac",
+          "sourceScope": "actual browser record",
+          "family": "unequal-crossing",
+          "tier": 3,
+          "firstCommand": 13,
+          "holding": null,
+          "position": "6,7",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t3-direct-browser-win-record.json",
+          "sourceSha256": "905037124818db5de51b0b98604accf3d647da0ef804f9e5edbefcd29930e6c1",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 3,
+          "firstCommand": 12,
+          "holding": null,
+          "position": "5,7",
+          "ap": 0,
+          "hp": 16
+        }
+      ]
+    },
+    {
+      "id": "hero-warden-action",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/warden-action-v2.png",
+      "sourceSha256": "e82dd8b913f634341fbe650ced16416c318b473e8cbe7f77637f22c801ef8e7c",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/warden-action-v2.webp",
+      "sha256": "fc9b536d68a4330427e1728042a4740323ef976faf12374fdcce3efb5896c55b",
+      "bytes": 39552,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        58,
+        66,
+        345,
+        342
+      ],
+      "groundAnchor": [
+        123,
+        342
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          58,
+          66,
+          345,
+          342
+        ],
+        "transparentPixels": 99191,
+        "visiblePixels": 48265,
+        "components": [
+          44944,
+          3321
+        ],
+        "componentCount": 2,
+        "detachedPixels": 3321,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-action-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-action-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-action-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-action-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-action-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-action-v2-review.png"
+      },
+      "gateStatus": "withheld",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T5 direct browser win command19 Number hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-reference-plan.json",
+          "sourceSha256": "dc07dcda80b75b9cbab6a380c6541740505036dcb1e64b3afa3b05b223ba32f6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 19,
+          "holding": "number",
+          "position": "6,3",
+          "ap": 0,
+          "hp": 9
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-reference-plan.json",
+          "sourceSha256": "826b4d09fd17d588f3b8f571dbc2882f0102c81f0bfc2552769a3382039dd7b6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 18,
+          "holding": "number",
+          "position": "6,2",
+          "ap": 1,
+          "hp": 9
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-browser-win-record.json",
+          "sourceSha256": "b51bad8e4a8b8be5c30bcb3f506d821c13233ae0e8c85184dada45329934b718",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 18,
+          "holding": "number",
+          "position": "6,2",
+          "ap": 1,
+          "hp": 9
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-browser-win-record.json",
+          "sourceSha256": "158bfb5a2f647b09ba9f4d3d1c352cf3928752c4cdbcfbffdb8a0895fee2e4db",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 19,
+          "holding": "number",
+          "position": "6,3",
+          "ap": 0,
+          "hp": 9
+        }
+      ]
+    },
+    {
+      "id": "hero-warden-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/warden-exhausted-v2.png",
+      "sourceSha256": "345be169b5f28e40055a6e2f27bd0c4876d16571793d2442dce0a323f144fd53",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/warden-exhausted-v2.webp",
+      "sha256": "76e786c77d2b3a6e7495696c181d0e95c532a59311aabe60a75a00dcf91d12fc",
+      "bytes": 38054,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        72,
+        64,
+        350,
+        352
+      ],
+      "groundAnchor": [
+        197,
+        352
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          72,
+          64,
+          350,
+          352
+        ],
+        "transparentPixels": 92760,
+        "visiblePixels": 54696,
+        "components": [
+          54696
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/warden-exhausted-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T5 direct browser win command3 AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-reference-plan.json",
+          "sourceSha256": "dc07dcda80b75b9cbab6a380c6541740505036dcb1e64b3afa3b05b223ba32f6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "3,2",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-reference-plan.json",
+          "sourceSha256": "826b4d09fd17d588f3b8f571dbc2882f0102c81f0bfc2552769a3382039dd7b6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "6,2",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-browser-win-record.json",
+          "sourceSha256": "b51bad8e4a8b8be5c30bcb3f506d821c13233ae0e8c85184dada45329934b718",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "6,2",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-browser-win-record.json",
+          "sourceSha256": "158bfb5a2f647b09ba9f4d3d1c352cf3928752c4cdbcfbffdb8a0895fee2e4db",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "3,2",
+          "ap": 0,
+          "hp": 16
+        }
+      ]
+    },
+    {
+      "id": "hero-gossamer-action",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/gossamer-action-v2.png",
+      "sourceSha256": "cfdcf938f5f8f6e528d669fed2abc598eb4c2bee8447aae2fade5068a798d050",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/gossamer-action-v2.webp",
+      "sha256": "1a85180b7662006a289e894594d8c7bef587d8b29c43a5bf9cbb7742754c7a26",
+      "bytes": 43526,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        44,
+        34,
+        349,
+        346
+      ],
+      "groundAnchor": [
+        162,
+        346
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          44,
+          34,
+          349,
+          346
+        ],
+        "transparentPixels": 96331,
+        "visiblePixels": 51125,
+        "components": [
+          51124,
+          1
+        ],
+        "componentCount": 2,
+        "detachedPixels": 1,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-action-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-action-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-action-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-action-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-action-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-action-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T5 direct browser win command20 Shape hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-reference-plan.json",
+          "sourceSha256": "dc07dcda80b75b9cbab6a380c6541740505036dcb1e64b3afa3b05b223ba32f6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 20,
+          "holding": "shape",
+          "position": "1,4",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-reference-plan.json",
+          "sourceSha256": "826b4d09fd17d588f3b8f571dbc2882f0102c81f0bfc2552769a3382039dd7b6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 23,
+          "holding": "alcove",
+          "position": "10,2",
+          "ap": 1,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-browser-win-record.json",
+          "sourceSha256": "b51bad8e4a8b8be5c30bcb3f506d821c13233ae0e8c85184dada45329934b718",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 23,
+          "holding": "alcove",
+          "position": "10,2",
+          "ap": 1,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-browser-win-record.json",
+          "sourceSha256": "158bfb5a2f647b09ba9f4d3d1c352cf3928752c4cdbcfbffdb8a0895fee2e4db",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 20,
+          "holding": "shape",
+          "position": "1,4",
+          "ap": 0,
+          "hp": 16
+        }
+      ]
+    },
+    {
+      "id": "hero-gossamer-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/gossamer-exhausted-v2.png",
+      "sourceSha256": "eccc24d39e37c53245bc341e6224540fe3c1c10eb22a9b2d3943ab28f607ab51",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/gossamer-exhausted-v2.webp",
+      "sha256": "331fc2eab61da5099f4f06154154de06771dc973c60621cc472a83e9c31c9a47",
+      "bytes": 44084,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        52,
+        20,
+        344,
+        355
+      ],
+      "groundAnchor": [
+        251,
+        355
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          52,
+          20,
+          344,
+          355
+        ],
+        "transparentPixels": 85561,
+        "visiblePixels": 61895,
+        "components": [
+          61894,
+          1
+        ],
+        "componentCount": 2,
+        "detachedPixels": 1,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/gossamer-exhausted-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T5 direct browser win command5 AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-reference-plan.json",
+          "sourceSha256": "dc07dcda80b75b9cbab6a380c6541740505036dcb1e64b3afa3b05b223ba32f6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "0,4",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-reference-plan.json",
+          "sourceSha256": "826b4d09fd17d588f3b8f571dbc2882f0102c81f0bfc2552769a3382039dd7b6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 7,
+          "holding": null,
+          "position": "7,2",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-browser-win-record.json",
+          "sourceSha256": "b51bad8e4a8b8be5c30bcb3f506d821c13233ae0e8c85184dada45329934b718",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 7,
+          "holding": null,
+          "position": "7,2",
+          "ap": 0,
+          "hp": 16
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-browser-win-record.json",
+          "sourceSha256": "158bfb5a2f647b09ba9f4d3d1c352cf3928752c4cdbcfbffdb8a0895fee2e4db",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "0,4",
+          "ap": 0,
+          "hp": 16
+        }
+      ]
+    },
+    {
+      "id": "hero-harvestmoon-action",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/harvestmoon-action-v2.png",
+      "sourceSha256": "bb410e0d85c484c91b70c872f7f47efe90b37bdbaee9bfab2f21967da12eb353",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/harvestmoon-action-v2.webp",
+      "sha256": "aa224190ab73e4107173117013726d690f7c2e7cbb70f88b5846a603f0410b1c",
+      "bytes": 42346,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        34,
+        27,
+        357,
+        362
+      ],
+      "groundAnchor": [
+        194,
+        362
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          34,
+          27,
+          357,
+          362
+        ],
+        "transparentPixels": 79752,
+        "visiblePixels": 67704,
+        "components": [
+          67704
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-action-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-action-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-action-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-action-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-action-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-action-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T5 direct browser win command21 Sustain hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-reference-plan.json",
+          "sourceSha256": "dc07dcda80b75b9cbab6a380c6541740505036dcb1e64b3afa3b05b223ba32f6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 21,
+          "holding": "sustain",
+          "position": "4,8",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-reference-plan.json",
+          "sourceSha256": "826b4d09fd17d588f3b8f571dbc2882f0102c81f0bfc2552769a3382039dd7b6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 19,
+          "holding": "sustain",
+          "position": "4,7",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t4-direct-browser-win-record.json",
+          "sourceSha256": "1f71b32bbf19c1b2ecba34297305c65aa37356893b8ad435d0fa592a20b7e3cd",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 4,
+          "firstCommand": 24,
+          "holding": "sustain",
+          "position": "5,5",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-browser-win-record.json",
+          "sourceSha256": "b51bad8e4a8b8be5c30bcb3f506d821c13233ae0e8c85184dada45329934b718",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 19,
+          "holding": "sustain",
+          "position": "4,7",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-browser-win-record.json",
+          "sourceSha256": "158bfb5a2f647b09ba9f4d3d1c352cf3928752c4cdbcfbffdb8a0895fee2e4db",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 21,
+          "holding": "sustain",
+          "position": "4,8",
+          "ap": 0,
+          "hp": 18
+        }
+      ]
+    },
+    {
+      "id": "hero-harvestmoon-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/harvestmoon-exhausted-v2.png",
+      "sourceSha256": "1b5a3a21dd4c1048404746263edbc677110adde6791e325424eaf1d0a90c08cd",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/harvestmoon-exhausted-v2.webp",
+      "sha256": "2afcce169e8719f1fa3f8238bcd2614cc3799572ef6591dcd99a7c6d210c052d",
+      "bytes": 29964,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        67,
+        48,
+        328,
+        343
+      ],
+      "groundAnchor": [
+        219,
+        343
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          67,
+          48,
+          328,
+          343
+        ],
+        "transparentPixels": 101253,
+        "visiblePixels": 46203,
+        "components": [
+          46203
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/harvestmoon-exhausted-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T5 direct browser win command7 AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-reference-plan.json",
+          "sourceSha256": "dc07dcda80b75b9cbab6a380c6541740505036dcb1e64b3afa3b05b223ba32f6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 7,
+          "holding": null,
+          "position": "4,6",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-reference-plan.json",
+          "sourceSha256": "826b4d09fd17d588f3b8f571dbc2882f0102c81f0bfc2552769a3382039dd7b6",
+          "sourceScope": "reducer reference plan, not browser evidence",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "4,2",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t4-direct-browser-win-record.json",
+          "sourceSha256": "1f71b32bbf19c1b2ecba34297305c65aa37356893b8ad435d0fa592a20b7e3cd",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 4,
+          "firstCommand": 7,
+          "holding": null,
+          "position": "5,5",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-alcove-browser-win-record.json",
+          "sourceSha256": "b51bad8e4a8b8be5c30bcb3f506d821c13233ae0e8c85184dada45329934b718",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "4,2",
+          "ap": 0,
+          "hp": 18
+        },
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t5-direct-browser-win-record.json",
+          "sourceSha256": "158bfb5a2f647b09ba9f4d3d1c352cf3928752c4cdbcfbffdb8a0895fee2e4db",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 5,
+          "firstCommand": 7,
+          "holding": null,
+          "position": "4,6",
+          "ap": 0,
+          "hp": 18
+        }
+      ]
+    },
+    {
+      "id": "hero-cornix-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/cornix-exhausted-v2.png",
+      "sourceSha256": "0a1b901a5b4bef3d758866fb0ecd4bdf008601f8a01aa23bc4cf188addc50824",
+      "sourceDimensions": [
+        384,
+        384
+      ],
+      "preparation": {
+        "mode": "unchanged-source-export",
+        "original": "assets/expeditions/production/9fo/source-sheets/po-card-characters-03-v1-alpha.png",
+        "originalSha256": "596c9e425de7c08caa3284e255153295fb0d3682ed2171a0262ec6b5abbfdf31",
+        "crop": {
+          "left": 313,
+          "top": 940,
+          "width": 313,
+          "height": 313
+        },
+        "treatment": "Faithful atlas extraction and uniform fit export only; original paint and alpha preserved, no recolouring, masking, alpha cleanup or compositing"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/cornix-exhausted-v2.webp",
+      "sha256": "515dfdd15d0e6676292bad942f61933a99381d40a5ff99a043f2edf5c2a49d58",
+      "bytes": 27256,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        23,
+        2,
+        379,
+        338
+      ],
+      "groundAnchor": [
+        257,
+        338
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          23,
+          2,
+          379,
+          338
+        ],
+        "transparentPixels": 73344,
+        "visiblePixels": 74112,
+        "components": [
+          74112
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cornix-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cornix-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cornix-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cornix-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cornix-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/cornix-exhausted-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T2 actual browser win AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t2-direct-browser-win-record.json",
+          "sourceSha256": "c6ae9bdeb4cacb85d1c6b22b832fbf65654ff7e8800fad723264736a2b04bc6e",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 2,
+          "firstCommand": 5,
+          "holding": null,
+          "position": "5,4",
+          "ap": 0,
+          "hp": 13
+        }
+      ]
+    },
+    {
+      "id": "hero-kernel-action",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/kernel-action-v2.png",
+      "sourceSha256": "663357bc5b93d989591a7bbea8a3696ca6792caecf04b43e83d2f07009af8227",
+      "sourceDimensions": [
+        384,
+        384
+      ],
+      "preparation": {
+        "mode": "unchanged-source-export",
+        "original": "assets/expeditions/production/9fo/source-sheets/po-card-characters-04-v1-alpha.png",
+        "originalSha256": "8e4caba030affa6a3097d158bb90d0ae7e27e1d5f54634b07e096eb305e80457",
+        "crop": {
+          "left": 0,
+          "top": 660,
+          "width": 313,
+          "height": 298
+        },
+        "treatment": "Faithful atlas extraction and uniform fit export only; original paint and alpha preserved, no recolouring, masking, alpha cleanup or compositing"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/kernel-action-v2.webp",
+      "sha256": "c993523761698d8b2831e4cff89563d281377b1164556749376f988c85672155",
+      "bytes": 26286,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        59,
+        18,
+        335,
+        361
+      ],
+      "groundAnchor": [
+        134,
+        361
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          59,
+          18,
+          335,
+          361
+        ],
+        "transparentPixels": 87647,
+        "visiblePixels": 59809,
+        "components": [
+          59809
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-action-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-action-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-action-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-action-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-action-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-action-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T2 actual browser win hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t2-direct-browser-win-record.json",
+          "sourceSha256": "c6ae9bdeb4cacb85d1c6b22b832fbf65654ff7e8800fad723264736a2b04bc6e",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 2,
+          "firstCommand": 24,
+          "holding": "shape",
+          "position": "1,4",
+          "ap": 0,
+          "hp": 13
+        }
+      ]
+    },
+    {
+      "id": "hero-kernel-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/kernel-exhausted-v2.png",
+      "sourceSha256": "4cdd4431212d216c93986beb9dc680a75736946859c501afa9eda9b286ef0dbe",
+      "sourceDimensions": [
+        384,
+        384
+      ],
+      "preparation": {
+        "mode": "unchanged-source-export",
+        "original": "assets/expeditions/production/9fo/source-sheets/po-card-characters-04-v1-alpha.png",
+        "originalSha256": "8e4caba030affa6a3097d158bb90d0ae7e27e1d5f54634b07e096eb305e80457",
+        "crop": {
+          "left": 0,
+          "top": 960,
+          "width": 313,
+          "height": 294
+        },
+        "treatment": "Faithful atlas extraction and uniform fit export only; original paint and alpha preserved, no recolouring, masking, alpha cleanup or compositing"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/kernel-exhausted-v2.webp",
+      "sha256": "b863c9225960bd5ef81b9581f280432696404001dcca7c978064fcdda52830fe",
+      "bytes": 23248,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        71,
+        11,
+        330,
+        332
+      ],
+      "groundAnchor": [
+        215,
+        332
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          71,
+          11,
+          330,
+          332
+        ],
+        "transparentPixels": 92260,
+        "visiblePixels": 55196,
+        "components": [
+          55196
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/kernel-exhausted-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T2 actual browser win AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t2-direct-browser-win-record.json",
+          "sourceSha256": "c6ae9bdeb4cacb85d1c6b22b832fbf65654ff7e8800fad723264736a2b04bc6e",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 2,
+          "firstCommand": 3,
+          "holding": null,
+          "position": "3,2",
+          "ap": 0,
+          "hp": 13
+        }
+      ]
+    },
+    {
+      "id": "hero-beeswax-action",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/beeswax-action-v2.png",
+      "sourceSha256": "c73b960192d58864b6ed75d98322591a7bd1e39dd62425b990bcd42eba698ebc",
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "preparation": {
+        "mode": "built-in-imagegen-existing-identity-repair"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/beeswax-action-v2.webp",
+      "sha256": "e46df6e666dc4c999ee29c71697e91e6c46fa1e7d5095f060f034ba157222313",
+      "bytes": 42886,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        52,
+        44,
+        367,
+        361
+      ],
+      "groundAnchor": [
+        171,
+        361
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          52,
+          44,
+          367,
+          361
+        ],
+        "transparentPixels": 90668,
+        "visiblePixels": 56788,
+        "components": [
+          56788
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-action-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-action-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-action-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-action-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-action-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-action-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T2 actual browser win hold",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t2-direct-browser-win-record.json",
+          "sourceSha256": "c6ae9bdeb4cacb85d1c6b22b832fbf65654ff7e8800fad723264736a2b04bc6e",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 2,
+          "firstCommand": 25,
+          "holding": "sustain",
+          "position": "5,8",
+          "ap": 1,
+          "hp": 16
+        }
+      ]
+    },
+    {
+      "id": "hero-beeswax-exhausted",
+      "version": 2,
+      "sourcePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/source/beeswax-exhausted-v2.png",
+      "sourceSha256": "ef53f1758db44e16490086602696b64a3a50eb2fb2514f103630594f17f1ec00",
+      "sourceDimensions": [
+        384,
+        384
+      ],
+      "preparation": {
+        "mode": "unchanged-source-export",
+        "original": "assets/expeditions/production/9fo/source-sheets/po-card-characters-03-v1-alpha.png",
+        "originalSha256": "596c9e425de7c08caa3284e255153295fb0d3682ed2171a0262ec6b5abbfdf31",
+        "crop": {
+          "left": 940,
+          "top": 940,
+          "width": 313,
+          "height": 313
+        },
+        "treatment": "Faithful atlas extraction and uniform fit export only; original paint and alpha preserved, no recolouring, masking, alpha cleanup or compositing"
+      },
+      "runtimePath": "assets/expeditions/production/9fo/v2/pose-staging-20261005/runtime/beeswax-exhausted-v2.webp",
+      "sha256": "22a676869a6d151977e6f4cb0093870921142433050cb73fa88bc77901c04968",
+      "bytes": 21062,
+      "width": 384,
+      "height": 384,
+      "visibleBounds": [
+        45,
+        28,
+        354,
+        325
+      ],
+      "groundAnchor": [
+        190,
+        325
+      ],
+      "groundOffset": [
+        0,
+        8
+      ],
+      "renderedHeight": 66,
+      "alphaAnalysis": {
+        "visibleBounds": [
+          45,
+          28,
+          354,
+          325
+        ],
+        "transparentPixels": 94825,
+        "visiblePixels": 52631,
+        "components": [
+          52631
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-exhausted-v2-white.png",
+        "black": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-exhausted-v2-black.png",
+        "green": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-exhausted-v2-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-exhausted-v2-cyan.png",
+        "groundScale": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-exhausted-v2-ground-min-native-max.png",
+        "contact": "assets/expeditions/production/9fo/v2/pose-staging-20261005/qa/beeswax-exhausted-v2-review.png"
+      },
+      "gateStatus": "alpha-and-margins-pass",
+      "status": "staged-only-not-imported",
+      "requirement": "Actual Hollow Bough T2 actual browser win AP0",
+      "evidence": [
+        {
+          "file": "docs/expeditions/v2/evidence/code-overnight-20261004/bough-t2-direct-browser-win-record.json",
+          "sourceSha256": "c6ae9bdeb4cacb85d1c6b22b832fbf65654ff7e8800fad723264736a2b04bc6e",
+          "sourceScope": "actual browser record",
+          "family": "hollow-bough",
+          "tier": 2,
+          "firstCommand": 13,
+          "holding": null,
+          "position": "5,8",
+          "ap": 0,
+          "hp": 16
+        }
+      ]
+    }
+  ]
+}

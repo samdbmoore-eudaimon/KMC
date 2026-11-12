@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+import {generateFourLocksCandidate} from '../../expeditions/v2/generation/four-locks.js';
+import {blueprintHash,replayRun} from '../../expeditions/v2/index.js';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+registerOrchardPuzzleHooks();
+const source=new URL('../../docs/expeditions/v2/certification/four-locks/tier-5-river-seed-29-bounded-20261002/traces.json',import.meta.url),trace=JSON.parse(fs.readFileSync(source))[1];
+const current=generateFourLocksCandidate({tier:5,seed:29,layoutId:'river'});
+if(current.status!=='success'||blueprintHash(current.blueprint)!==blueprintHash(trace.initialRun.blueprint))throw Error('Existing trace blueprint differs from current candidate');
+const replay=replayRun({initialRun:trace.initialRun,commands:trace.commands,finalStateHash:trace.finalStateHash},{recordHashes:true});
+if(!replay.ok||replay.state.status!=='won')throw Error('Existing reference does not replay to won');
+fs.writeFileSync(new URL('../../docs/expeditions/v2/evidence/code-overnight-20261004/four-t5-seed29-existing-alternate-alcove-reference-plan.json',import.meta.url),JSON.stringify({...trace,qaReferenceSource:source.pathname,qaCurrentBlueprintMatched:true},null,2));
+console.log(JSON.stringify({cardIds:trace.cardIds,planFamily:trace.planFamily,commands:trace.commands.length,currentBlueprintMatched:true,replay:true}));

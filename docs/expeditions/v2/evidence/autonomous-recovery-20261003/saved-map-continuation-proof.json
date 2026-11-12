@@ -1,0 +1,25 @@
+{
+  "version": "orchard-legacy-bridge-exits/1",
+  "runId": "primary:four-locks:1#a0.r1",
+  "sourceBlueprintHash": "4ca99a048c1f76c1",
+  "repairedBlueprintHash": "a900267f8d2ea6c4",
+  "sourceRecordHash": "152cde6939953de6",
+  "retainedStateHash": "6601c1ad779b3490",
+  "retainedCommands": 4,
+  "retiredCertificateId": "orchard-v2-7bb0c308bb8ec44f",
+  "changes": [
+    {
+      "hex": "4,6",
+      "from": "hedge",
+      "to": "floor"
+    },
+    {
+      "hex": "4,2",
+      "from": "hedge",
+      "to": "floor"
+    }
+  ],
+  "status": "success",
+  "statesSpent": 145,
+  "winningCommands": 26
+}

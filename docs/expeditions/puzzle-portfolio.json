@@ -1,0 +1,262 @@
+{
+  "status": "design-proposal-not-implemented",
+  "coreTypes": [
+    {
+      "id": "po-sudoku",
+      "moduleKey": "primary",
+      "title": "Sudoku with linked sum cages",
+      "validator": "all-different-and-sums",
+      "lessonKeys": [
+        "logicGrid",
+        "twoUnknowns"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "po-equation-rotation",
+      "moduleKey": "primary",
+      "title": "Coupled number/operator rotation",
+      "validator": "finite-wheel-expression-network",
+      "lessonKeys": [
+        "fourOperationsProblems",
+        "timesTablesFacts"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "po-balance",
+      "moduleKey": "primary",
+      "title": "Balance partition and limited weighing",
+      "validator": "partition-and-comparison-tree",
+      "lessonKeys": [
+        "additionSubtraction",
+        "twoUnknowns"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "po-nonogram",
+      "moduleKey": "primary",
+      "title": "Nonogram run-length deduction",
+      "validator": "binary-run-length-lines",
+      "lessonKeys": [
+        "logicGrid",
+        "combinatoricsCounting"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "po-polyhex",
+      "moduleKey": "primary",
+      "title": "Polyhex packing",
+      "validator": "geometric-exact-cover",
+      "lessonKeys": [
+        "spatialPuzzles",
+        "shapeProperties"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "lr-ratio",
+      "moduleKey": "junior",
+      "title": "Chained ratio allocation",
+      "validator": "rational-proportional-conservation",
+      "lessonKeys": [
+        "ratioChain",
+        "fractionUnusual"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "lr-bounds",
+      "moduleKey": "junior",
+      "title": "Interval-bound selection",
+      "validator": "robust-interval-feasibility",
+      "lessonKeys": [
+        "estimation",
+        "allocation"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "lr-transform",
+      "moduleKey": "junior",
+      "title": "Coordinate transformation composition",
+      "validator": "labelled-vertex-transform-composition",
+      "lessonKeys": [
+        "coordGeom",
+        "transformations"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "lr-remainder",
+      "moduleKey": "junior",
+      "title": "Remainder and divisibility locks",
+      "validator": "integer-residue-intersection",
+      "lessonKeys": [
+        "modular",
+        "numberProperties"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "lr-truth",
+      "moduleKey": "junior",
+      "title": "Truth-statement logic grid",
+      "validator": "boolean-statement-models",
+      "lessonKeys": [
+        "truthLiars",
+        "gridLogic"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "gf-identity",
+      "moduleKey": "intermediate",
+      "title": "Algebraic identity assembly",
+      "validator": "universal-symbolic-equivalence",
+      "lessonKeys": [
+        "algebraicManipulation",
+        "algebraicProof"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "gf-integer",
+      "moduleKey": "intermediate",
+      "title": "Integer-only resource equations",
+      "validator": "bounded-integer-lattice",
+      "lessonKeys": [
+        "diophantineEquations",
+        "simultaneousEquations"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "gf-schedule",
+      "moduleKey": "intermediate",
+      "title": "Precedence and station scheduling",
+      "validator": "precedence-and-resource-intervals",
+      "lessonKeys": [
+        "optimisationAndExtremal"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "gf-network",
+      "moduleKey": "intermediate",
+      "title": "Degree-limited spanning network",
+      "validator": "spanning-degree-cost-graph",
+      "lessonKeys": [
+        "optimisationAndExtremal",
+        "combinatoricsAndCounting"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    },
+    {
+      "id": "gf-probability",
+      "moduleKey": "intermediate",
+      "title": "Conditional probability filtering",
+      "validator": "conditional-exact-sample-space",
+      "lessonKeys": [
+        "advancedProbability",
+        "combinatoricsAndCounting"
+      ],
+      "status": "proposed-core-type",
+      "tierCountProposed": 5
+    }
+  ],
+  "reserveTypes": [
+    {
+      "moduleKey": "primary",
+      "title": "Flow conservation",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "primary",
+      "title": "Parity-state network",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "primary",
+      "title": "Constrained ordered route",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "primary",
+      "title": "Edge-count enclosure loop",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "primary",
+      "title": "Periodic pulse alignment",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "junior",
+      "title": "Column-carry digit substitution",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "junior",
+      "title": "Area/perimeter construction",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "junior",
+      "title": "3D net folding",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "junior",
+      "title": "Piecewise mixed-rate journey",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "junior",
+      "title": "Adjacency-constrained seating",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "intermediate",
+      "title": "Adversarial minimax",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "intermediate",
+      "title": "Invariant reachability",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "intermediate",
+      "title": "Function composition and iteration",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "intermediate",
+      "title": "Circle proof chain",
+      "status": "reserve-not-certified-distinct"
+    },
+    {
+      "moduleKey": "intermediate",
+      "title": "Distribution reconstruction",
+      "status": "reserve-not-certified-distinct"
+    }
+  ],
+  "notes": "Distinctness is a product review judgement. Unique validator labels and checked teaching examples do not certify complete puzzle generators or tactical missions."
+}

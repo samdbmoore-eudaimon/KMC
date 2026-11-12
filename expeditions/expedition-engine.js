@@ -766,6 +766,38 @@ function resolveInterrupts(state, enemy) {
   unit.pos = destination;
 }
 
+// Shared by every "erosion" enemy behaviour below (steal-highest, obscure-operator,
+// corrupt-value, peck-lane, flood-lane, grow-toward, wilt-root): before touching its usual
+// object target, the enemy checks whether an unguarded hero is standing within its own
+// range. If one is, it strikes that hero instead this round — the exact same
+// damage/guard-consumption rule the generic hunt-and-strike branch at the bottom of
+// resolveEnemy already applies to every other enemy — rather than the object erosion this
+// round would otherwise cause. This is what makes Guard, hp and a Defence-beating stat
+// actually matter on every map using one of these behaviours: previously none of them could
+// ever touch a hero at all, so standing next to the thing they were about to damage carried
+// no risk (2026-09-21, Sam's playtest of The Cider Run: Guard "doesn't do anything"). Not
+// wired into gust, walk-hedge or reverse-next — those three are documented as deliberately
+// never attacking a hero (pure logic/sequencing pressure), and changing that would undo a
+// design choice, not fix a gap. Returns whether it struck or was blocked, so the caller
+// knows to skip its own object-effect this round.
+function strikeAdjacentHero(state, enemy) {
+  const targets = Object.values(state.units).filter((unit) => unit.side === "player" && unit.hp > 0 && hexDistance(enemy.pos, unit.pos) <= (enemy.range || 1));
+  targets.sort((a, b) => hexDistance(enemy.pos, a.pos) - hexDistance(enemy.pos, b.pos) || a.id.localeCompare(b.id));
+  const target = targets[0];
+  if (!target) return false;
+  if (target.guarded) {
+    target.guarded = false;
+    state.history.push({ turn: state.turn, phase: "enemy", unitId: enemy.id, action: "blocked", targetId: target.id });
+    return true;
+  }
+  const exhausts = target.hp - (enemy.damage || 1) <= 0;
+  target.hp = Math.max(0, target.hp - (enemy.damage || 1));
+  if (exhausts) state.counters.unitsExhausted += 1;
+  state.counters.damageTaken += enemy.damage || 1;
+  state.history.push({ turn: state.turn, phase: "enemy", unitId: enemy.id, action: "strike", targetId: target.id });
+  return true;
+}
+
 function resolveEnemy(state, enemy) {
   if (enemy.delay && state.turn <= enemy.delay) {
     state.history.push({ turn: state.turn, phase: "enemy", unitId: enemy.id, action: "watch" });
@@ -784,6 +816,7 @@ function resolveEnemy(state, enemy) {
       state.history.push({ turn: state.turn, phase: "enemy", unitId: enemy.id, action: "hoard", objectId: enemy.carrying });
       return;
     }
+    if (strikeAdjacentHero(state, enemy)) return;
     const targets = Object.values(state.objects).filter((object) => object.pos && !object.removed && !object.guarded && (!object.stabilisedUntil || object.stabilisedUntil <= state.turn));
     targets.sort((a, b) => b.value - a.value || hexDistance(enemy.pos, a.pos) - hexDistance(enemy.pos, b.pos));
     const blocked = Object.values(state.units).filter((unit) => unit.hp > 0 && unit.id !== enemy.id).map((unit) => unit.pos);
@@ -809,6 +842,7 @@ function resolveEnemy(state, enemy) {
     // Walking Smudge (The Smudged Stones): obscure the nearest visible, unprotected
     // operator by resetting its op back to unset. Guard, Stabilise or Deduce's value-lock
     // (valueLocked) all protect an operator once the player has set it correctly.
+    if (strikeAdjacentHero(state, enemy)) return;
     const targets = Object.values(state.objects).filter((object) => object.pos && object.op != null && !object.guarded && !object.valueLocked && (!object.stabilisedUntil || object.stabilisedUntil <= state.turn));
     targets.sort((a, b) => hexDistance(enemy.pos, a.pos) - hexDistance(enemy.pos, b.pos));
     const target = targets[0];
@@ -834,6 +868,7 @@ function resolveEnemy(state, enemy) {
     // ordinary carried/placed value object (a crate, a load) that just happens to have a
     // `value` field. Deduce's value-lock (valueLocked) or Guard both protect a cell exactly as
     // they already protect an operator.
+    if (strikeAdjacentHero(state, enemy)) return;
     const targets = Object.values(state.objects).filter((object) => object.pos && object.ledgerCell && object.value != null && !object.guarded && !object.valueLocked && (!object.stabilisedUntil || object.stabilisedUntil <= state.turn));
     targets.sort((a, b) => hexDistance(enemy.pos, a.pos) - hexDistance(enemy.pos, b.pos));
     const target = targets[0];
@@ -860,6 +895,7 @@ function resolveEnemy(state, enemy) {
     const laneSequence = enemy.laneSequence || [1];
     const lane = laneSequence[(state.turn - 1) % laneSequence.length];
     if (enemy.laneMarkers?.[lane]) enemy.pos = enemy.laneMarkers[lane];
+    if (strikeAdjacentHero(state, enemy)) return;
     const targets = Object.values(state.objects).filter((object) => object.pos && !object.removed && !object.guarded && object.lane === lane && (!object.stabilisedUntil || object.stabilisedUntil <= state.turn));
     targets.sort((a, b) => b.value - a.value || a.id.localeCompare(b.id));
     const target = targets[0];
@@ -881,6 +917,7 @@ function resolveEnemy(state, enemy) {
     const laneSequence = enemy.laneSequence || [1];
     const lane = laneSequence[(state.turn - 1) % laneSequence.length];
     if (enemy.laneMarkers?.[lane]) enemy.pos = enemy.laneMarkers[lane];
+    if (strikeAdjacentHero(state, enemy)) return;
     const targets = Object.values(state.objects).filter((object) => object.pos && !object.removed && !object.guarded && object.lane === lane && (!object.stabilisedUntil || object.stabilisedUntil <= state.turn));
     targets.sort((a, b) => b.value - a.value || a.id.localeCompare(b.id));
     const target = targets[0];
@@ -898,6 +935,7 @@ function resolveEnemy(state, enemy) {
     // guarded or already damaged. Modelled on obscure-operator/steal-highest's exact
     // adjacency-then-strike, stop-one-hex-short pathing, generalised to a `damaged` flag
     // instead of resetting a value, since a plain object has no hp of its own to reduce.
+    if (strikeAdjacentHero(state, enemy)) return;
     const target = state.objects[enemy.targetObjectId];
     if (!target?.pos) { state.history.push({ turn: state.turn, phase: "enemy", unitId: enemy.id, action: "watch" }); return; }
     if (hexDistance(enemy.pos, target.pos) <= 1) {
@@ -923,6 +961,7 @@ function resolveEnemy(state, enemy) {
     // since this map's roots form one connected relay rather than separate lanes. Guard,
     // Stabilise and a root simply not being placed all protect it, same as every other
     // value-wilting/-raising enemy in this project.
+    if (strikeAdjacentHero(state, enemy)) return;
     const targets = Object.values(state.objects).filter((object) => object.kind === "root" && object.pos && !object.guarded && (!object.stabilisedUntil || object.stabilisedUntil <= state.turn));
     targets.sort((a, b) => b.value - a.value || a.id.localeCompare(b.id));
     const target = targets[0];
@@ -1167,7 +1206,7 @@ export function evaluateObjective(state) {
   return { complete: false, progress: "Objective evaluator not configured" };
 }
 
-function graphConnected(active, edges, start, end) {
+export function graphConnected(active, edges, start, end) {
   if (!active.has(start) || !active.has(end)) return false;
   const queue = [start];
   const seen = new Set(queue);
@@ -1301,7 +1340,7 @@ function isPrime(n) {
   return true;
 }
 
-function constraintSatisfied(state, constraint) {
+export function constraintSatisfied(state, constraint) {
   if (constraint.kind === "chain") {
     // Logic's Reframe sets each operator-object's `op` field (see useDisciplineAction and
     // reframeTarget); this walks valueIds/operatorIds left to right — exactly the route a

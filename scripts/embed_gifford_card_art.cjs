@@ -10,7 +10,7 @@ const path = require("path");
 const sharp = require("sharp");
 
 const ART_DIR = path.join(__dirname, "..", "card_art", "gifford_cards");
-const KQ_ART = path.join(__dirname, "..", "kq-art.js");
+const KQ_ART = path.join(__dirname, "..", "wm-art.js");
 
 const FILE_TO_ID = {
   "Rooke": "gf_rooke",
@@ -65,9 +65,13 @@ async function main() {
   if (matched !== 30) { console.error(`Expected 30 matched collectible cards, got ${matched}. Aborting without writing.`); process.exit(1); }
   console.log(`\nTotal: ${(totalIn / 1024 / 1024).toFixed(1)}MB -> ${(totalOut / 1024 / 1024).toFixed(1)}MB`);
 
-  const appendix = "\n\n// Intermediate (Gifford) card art — resized to 512x512 JPEG from originals in card_art/gifford_cards/\n" + lines.join("\n") + "\n";
-  fs.appendFileSync(KQ_ART, appendix);
-  console.log("Appended", lines.length, "CARD_ART entries to kq-art.js");
+  const MARKER = "// Intermediate (Gifford) card art — resized to 512x512 JPEG from originals in card_art/gifford_cards/";
+  let existing = fs.readFileSync(KQ_ART, "utf8");
+  const markerIdx = existing.indexOf(MARKER);
+  if (markerIdx !== -1) existing = existing.slice(0, markerIdx).replace(/\n+$/, "\n");
+  const appendix = "\n\n" + MARKER + "\n" + lines.join("\n") + "\n";
+  fs.writeFileSync(KQ_ART, existing + appendix);
+  console.log((markerIdx !== -1 ? "Replaced" : "Appended"), lines.length, "CARD_ART entries in wm-art.js");
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

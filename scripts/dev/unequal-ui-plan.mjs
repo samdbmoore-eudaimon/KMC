@@ -1,0 +1,11 @@
+import fs from 'node:fs';
+import {generateUnequalCrossingCandidate} from '../../expeditions/v2/generation/unequal-crossing.js';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+import {planOrchardBlueprint} from './orchard-v2-tactical-planner.mjs';
+registerOrchardPuzzleHooks();
+const blueprint=generateUnequalCrossingCandidate({tier:3,seed:2}).blueprint;
+const plan=planOrchardBlueprint({blueprint,teamChoices:[{cardIds:['barrow','cobweb','amberly']}],planFamily:'direct-guard',maxStates:20000});
+if(plan.status!=='success')throw Error(JSON.stringify(plan.metrics));
+const trace=plan.traces[0];
+fs.writeFileSync(new URL('../../docs/expeditions/v2/evidence/code-overnight-20261004/unequal-reference-plan.json',import.meta.url),JSON.stringify(trace,null,2));
+console.log(JSON.stringify(trace.commands.map(command=>({type:command.type,heroId:command.heroId,payload:command.payload})),null,2));

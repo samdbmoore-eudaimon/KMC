@@ -1,0 +1,242 @@
+{
+  "candidateStatus": "success",
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 3
+  },
+  "teamSelection": {
+    "directTeam": [
+      "warden",
+      "gossamer",
+      "harvestmoon"
+    ],
+    "secondTeam": [
+      "ninebark",
+      "warden",
+      "longshadow"
+    ],
+    "secondPlanFamily": "alcove-intercept",
+    "alcoveTeam": [
+      "barrow",
+      "harvestmoon",
+      "longshadow"
+    ]
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "warden",
+        "gossamer",
+        "harvestmoon"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 111,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "warden",
+              "gossamer",
+              "harvestmoon"
+            ],
+            "status": "success",
+            "commandCount": 21,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "ninebark",
+        "warden",
+        "longshadow"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 8006,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "ninebark",
+              "warden",
+              "longshadow"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 6,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "barrow",
+        "harvestmoon",
+        "longshadow"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 8019,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "barrow",
+              "harvestmoon",
+              "longshadow"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 19,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "unknown",
+    "errors": [
+      "two-distinct-target-teams-missing",
+      "different-target-output-plans-missing",
+      "physical-alcove-proof-missing"
+    ],
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "warden",
+          "gossamer",
+          "harvestmoon"
+        ],
+        "finalHash": "0537c720e4d82745",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "gossamer",
+          "holdId": "gossamer@r3#34"
+        },
+        "hashes": [
+          "0f2c6c6fbc4ca414",
+          "63db550db396ca8a",
+          "7bb8caf81b3b9817",
+          "95206e0af7730c51",
+          "eb46699c134dcb8f",
+          "59e5002f07438880",
+          "6fee0958466e9311",
+          "80bf8fed249911da",
+          "ebd0b3fef085d631",
+          "14232ff7ae213330",
+          "185dd972cc876f85",
+          "4e4911861270abcd",
+          "b00ac94238507211",
+          "ab220a1ea6eb4a51",
+          "ac0b9769b634b7b2",
+          "fb1336937c5a5c94",
+          "080b87261235a681",
+          "77fc5f88da13a70f",
+          "48fd0342b2c491d9",
+          "13b43137f6d6035e",
+          "0537c720e4d82745"
+        ]
+      }
+    ],
+    "lowerBand": {
+      "method": "exact-printed-stat-enumeration",
+      "rows": [
+        {
+          "job": "number",
+          "requirement": [
+            7,
+            0,
+            7,
+            0,
+            0
+          ],
+          "eligibleBelow": [
+            "barrow"
+          ]
+        },
+        {
+          "job": "shape",
+          "requirement": [
+            0,
+            8,
+            0,
+            0,
+            4
+          ],
+          "eligibleBelow": [
+            "cobweb"
+          ]
+        },
+        {
+          "job": "sustain",
+          "requirement": [
+            0,
+            0,
+            6,
+            7,
+            4
+          ],
+          "eligibleBelow": []
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "all-below-target-band",
+          "examined": 1540,
+          "feasible": [],
+          "excluded": true
+        },
+        {
+          "id": "one-legendary-two-commons",
+          "examined": 132,
+          "feasible": [],
+          "excluded": true
+        }
+      ]
+    }
+  }
+}

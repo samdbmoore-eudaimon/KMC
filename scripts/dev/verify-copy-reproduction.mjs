@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import {replayRun,forecastEnemyPhase} from '../../expeditions/v2/index.js';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+import {nextStep} from '../../expeditions/v2/ui/next-step.js';
+import {intentText} from '../../expeditions/v2/ui/feedback.js';
+registerOrchardPuzzleHooks();
+const root=new URL('../../docs/expeditions/v2/evidence/code-overnight-20261004/',import.meta.url),record=JSON.parse(fs.readFileSync(new URL('copy-no-actions-browser-record.json',root))),replay=replayRun(record);
+if(!replay.ok||replay.state.revision!==19||replay.state.status!=='playing'||replay.state.heroes.some(hero=>hero.ap!==0))throw Error('Copy reproduction differs from actual legal browser state');
+const guide=nextStep(replay.state),forecast=forecastEnemyPhase(replay.state),intent=forecast.intents.find(item=>item.puzzleChange&&!item.puzzleChange.applied&&item.blockedBy);
+if(guide.action!=='move'||!intent)throw Error('Expected guidance and phase copy reproduction unavailable');
+const evidence={provenance:'Actual browser controls from zero; independently replayed partial run, not a win',commands:record.commands.length,revision:19,round:replay.state.round,allHeroActionsZero:true,guide,intent,intentCopy:intentText(intent,replay.state),phasePreviewCommitted:false,productionEdited:false};
+fs.writeFileSync(new URL('copy-no-actions-browser-verification.json',root),JSON.stringify(evidence,null,2));
+console.log(JSON.stringify(evidence));

@@ -1,0 +1,16 @@
+import React,{useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import MapViewport from '../../expeditions/v2/ui/MapViewport.jsx';
+import {orchardArtFor} from '../../expeditions/v2/art/renderer.js';
+import {stationPresentation} from '../../expeditions/v2/ui/station-state.js';
+import snapshots from '../../docs/expeditions/v2/evidence/station-integration/reducer-snapshots.json';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+import {forecastEnemyPhase} from '../../expeditions/v2/index.js';
+registerOrchardPuzzleHooks();
+function Review(){
+  const [index,setIndex]=useState(0),[focus,setFocus]=useState(null),[selected,setSelected]=useState(null);
+  const snapshot=snapshots[index],state=snapshot.state;
+  const show=id=>{const s=state.blueprint.stations.find(st=>st.id===id);setSelected({...s,kind:'station'});setFocus({...s,nonce:Date.now()});};
+  return <main><header><strong>Station renderer QA: production reducer snapshots</strong><p>Visual fixture only. No save writes, rewards or certification. Each displayed state comes from the retained legal command record. Shared App acceptance pending.</p><label>State <select aria-label="Review state" value={index} onChange={e=>{setIndex(Number(e.target.value));setFocus(null);setSelected(null);}}>{snapshots.map((s,i)=><option key={s.id} value={i}>{s.id}</option>)}</select></label><span>{snapshot.label}</span><nav>{state.blueprint.stations.map(s=><button key={s.id} onClick={()=>show(s.id)}>Show {s.name}</button>)}</nav></header><MapViewport key={snapshot.id} state={state} artFor={orchardArtFor} forecast={forecastEnemyPhase(state)} selectedObject={selected} focusRequest={focus} onSelect={s=>{setSelected(s);setFocus({...s,nonce:Date.now()});}} onMoveTarget={()=>{}}/><details><summary>Exact displayed statuses and replay provenance</summary>{state.blueprint.stations.map(s=><p key={s.id}>{stationPresentation(state,s.id).label}</p>)}<pre>{JSON.stringify({id:snapshot.id,commands:snapshot.record.commands.length,blueprintHash:snapshot.record.initialRun.blueprintHash,finalStateHash:snapshot.record.finalStateHash},null,2)}</pre></details><style>{`html,body,#root,main{height:100%;margin:0}main{display:flex;flex-direction:column;background:#203b2a;color:#fff2cf;font:14px system-ui}header{padding:8px;flex:none}header p{margin:4px 0;font-size:12px}header span{font-size:12px;margin-left:12px}button,select{padding:7px;border:1px solid #a88d5b;border-radius:6px;background:#f5e5bb;color:#253b2b;margin:3px}nav{display:flex;flex-wrap:wrap}.ov-map-wrap{position:relative;flex:1;min-height:350px;overflow:hidden}.ov-map{height:100%;touch-action:none}.ov-camera-controls{position:absolute;left:8px;top:8px;display:flex;flex-wrap:wrap;max-width:300px}.ov-checklist,.ov-board-list{display:none}.ov-offscreen{position:absolute;bottom:10px;left:8px}.ov-minimap{position:absolute;bottom:10px;right:10px;width:180px}.ov-minimap svg{width:100%}main>details{flex:none;padding:6px}main>details[open]{max-height:20vh;overflow:auto}main>details p{margin:4px}@media(max-width:500px){header{font-size:12px}header p{font-size:10px}header span{display:block;margin:4px 0}nav button{padding:5px;font-size:11px}}`}</style></main>;
+}
+createRoot(document.getElementById('root')).render(<Review/>);

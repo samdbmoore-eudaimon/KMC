@@ -1,0 +1,244 @@
+{
+  "candidateStatus": "success",
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 3
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "warden",
+        "gossamer",
+        "harvestmoon"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 7008,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "warden",
+              "gossamer",
+              "harvestmoon"
+            ],
+            "status": "success",
+            "commandCount": 27,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "ninebark",
+        "warden",
+        "longshadow"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 5930,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "ninebark",
+              "warden",
+              "longshadow"
+            ],
+            "status": "success",
+            "commandCount": 23,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-b839fe5ed87db2b9",
+    "evidence": {
+      "blueprintHash": "a1fe59b162e8baf0",
+      "structuralFingerprint": "f0b6b5f50ea81950",
+      "puzzleFingerprint": "392051e1ffbbb156",
+      "traceHashes": [
+        "f6ecc0be84b2cbf5",
+        "473c38bcef7cf285"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              8,
+              0,
+              8,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              8,
+              0,
+              0,
+              7
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              7,
+              8,
+              4
+            ],
+            "eligibleBelow": []
+          }
+        ],
+        "exclusions": [
+          {
+            "id": "all-below-target-band",
+            "examined": 1540,
+            "feasible": [],
+            "excluded": true
+          },
+          {
+            "id": "one-legendary-two-commons",
+            "examined": 132,
+            "feasible": [],
+            "excluded": true
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "warden",
+          "gossamer",
+          "harvestmoon"
+        ],
+        "finalHash": "f6ecc0be84b2cbf5",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "gossamer",
+          "holdId": "gossamer@r4#50"
+        },
+        "hashes": [
+          "30bcbc851b6f7742",
+          "903c9cc27135bb21",
+          "198fbb1dddc7604e",
+          "da417ae5c218e102",
+          "984e64437e55fd2c",
+          "9f0df8e92e30a5fa",
+          "64c261c7a9b512cc",
+          "7d5068cfd1879a80",
+          "b95d0acca2f7b87f",
+          "a405cbd8b3d1b181",
+          "d4fadaedf3de5578",
+          "e15925ed06eacdc0",
+          "afae8a3f436f9b26",
+          "2ca8a9b65dabe699",
+          "5b672b354c021ac2",
+          "aed4010bb04d74a0",
+          "9469fb3a3d16faab",
+          "3b9d9ffef8cfdcc3",
+          "c13f67cdbc0af0aa",
+          "7a6d495f6da47740",
+          "534363c2cf16eefb",
+          "e71e20da96a00703",
+          "4af97af4eeb36ab5",
+          "25bc0043d1cbf362",
+          "52a527a976191538",
+          "4e0081684d574c43",
+          "f6ecc0be84b2cbf5"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "ninebark",
+          "warden",
+          "longshadow"
+        ],
+        "finalHash": "473c38bcef7cf285",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "warden",
+          "holdId": "warden@r3#36"
+        },
+        "hashes": [
+          "521ff3944a3c9c7b",
+          "e8fe8a874341edf4",
+          "cd94142398bbaab8",
+          "c8cbf1a9cf308a6e",
+          "8afb0c20a8a96073",
+          "2de16a886f7863f7",
+          "1091e3488c6785af",
+          "a76c60201e4baf6b",
+          "96aabcf713b0fe24",
+          "fe27d96011872f1b",
+          "e08aa71642ffcf1d",
+          "f6381d95b236886c",
+          "ef96a6ad6da36af4",
+          "f93485b613f49c57",
+          "5ddbfc01997d5a36",
+          "0c4c6b144697a6f9",
+          "4a5ed007a11f9fd8",
+          "82b04ce2aba060b3",
+          "631fae6f2b34da52",
+          "b0c52cfbee8b6fe4",
+          "e22f8b7bb92aad4c",
+          "7198f4bbff0f8562",
+          "473c38bcef7cf285"
+        ]
+      }
+    ]
+  }
+}

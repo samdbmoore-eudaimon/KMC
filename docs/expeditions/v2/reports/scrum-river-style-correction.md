@@ -1,0 +1,11 @@
+# River art correction from Sam: 2 October 2026
+
+This supersedes any interpretation of river-tile-art-request.md that permits a bland flat final map tile. Sam wants the existing richly painted raised Orchard hex appearance preserved. He asks to reuse the existing straight river if possible and create the missing bend.
+
+Inspect po-terrain-stream-v1.webp against its original map presentation. It contains perspective, banks, rocks, walls and lighting baked into one image; rotating the entire bitmap by60degrees also rotates the viewpoint. Therefore do not assert whole-image rotation works without a joined map demonstration. Reuse-first: test extracting/adapting the existing painted water/banks into correctly registered straight orientations, retaining its visual richness. Only commission a replacement straight if a documented visual join test proves this cannot work.
+
+Art owner: stop expanding the new straight surface approach as an accepted visual direction. Preserve candidates, do not delete work. Prioritise a bend matching the existing river illustration. A flat surface may be an internal layer, but the deliverable must include an assembled raised-hex composition matching the old grass/stream/bridge, with convincing painted banks, earth sides and consistent world lighting. Show old straight beside proposed bend in a joined strip at game scale. Avoid diagonal crosshatch/checker-like water reflections in the current straight candidate. Record any unavoidable orientation-specific art requirement; do not rotate baked walls or perspective.
+
+Builder owner: continue station work without interruption. River integration must preserve the raised painted terrain appearance, not merely add a thin plain extrusion beneath flat art. Review existing straight reuse with the art owner before changing global river rendering. Surface registration is a technical constraint, not permission to flatten or simplify the visual style. No map/rule/certificate changes.
+
+Acceptance: joined straight/bend map evidence with consistent perspective, no bank barriers or gaps, rich Orchard painting and clear tactical overlays. Isolated top-surface images are insufficient. Current flat straight candidate is not visually accepted by Sam.

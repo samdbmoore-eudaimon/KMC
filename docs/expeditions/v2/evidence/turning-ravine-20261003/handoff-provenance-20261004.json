@@ -1,0 +1,420 @@
+{
+  "schemaVersion": 1,
+  "originatingThreadId": "01a100e6-b8f7-7a73-97c8-afa8455b7120",
+  "status": "legacy-bounded-batch-handoff",
+  "createdAt": "2026-10-04T19:41:18.362Z",
+  "sources": [
+    {
+      "path": "expeditions/v2/generation/turning-ravine.js",
+      "bytes": 10093,
+      "sha256": "2adcfe2a79610cafc7679872d3ed3941308848bc645b6d7e4d6cb6bd72f12630"
+    },
+    {
+      "path": "expeditions/v2/generation/turning-ravine.test.js",
+      "bytes": 6709,
+      "sha256": "2bac3c88547d2c26e8a2cfa9a2ce8f628a790583a004dd24177271dc870d4cda"
+    },
+    {
+      "path": "expeditions/v2/generation/topology.js",
+      "bytes": 9784,
+      "sha256": "6796bb11322599c0d73b71626db349beb977e5c215ed20046c29633bda5b8556"
+    },
+    {
+      "path": "expeditions/v2/puzzles/rotation.js",
+      "bytes": 11482,
+      "sha256": "bb6f19f500b7c4ec77196074d2b7c9867d12ffa9a484c68ca82869b67d8f0f8d"
+    },
+    {
+      "path": "expeditions/v2/ui/RotationBoard.jsx",
+      "bytes": 5518,
+      "sha256": "536be640c64ed523c8cd381c75444d69286a26da716d06c183b9d2db2036c8bb"
+    },
+    {
+      "path": "expeditions/v2/ui/MapViewport.jsx",
+      "bytes": 23061,
+      "sha256": "bc0bb6341801088f4ce18d672a1894073bcbef3dcfb10fbd16aa5d577c79e2ca"
+    },
+    {
+      "path": "expeditions/v2/ui/OrchardExpedition.jsx",
+      "bytes": 28901,
+      "sha256": "24546e43b78b64599d28dd7e6bc831f91bc5ff7118f330375036c8f6b65d479a"
+    },
+    {
+      "path": "expeditions/v2/ui/PuzzlePanel.jsx",
+      "bytes": 6834,
+      "sha256": "b79377385eb4a90ea5f3d05e7830f727517031a6e993f9a997f333190881b87d"
+    },
+    {
+      "path": "expeditions/v2/ui/PuzzleNote.jsx",
+      "bytes": 1033,
+      "sha256": "07f3ffa47901895485b86839a0dfb759a23d27f39a6fff84d124a3bedac171c5"
+    },
+    {
+      "path": "expeditions/v2/ui/Briefing.jsx",
+      "bytes": 3145,
+      "sha256": "f2e44ab4051018146bee79ee9f0c35091a01035bf1ed3b5a1388066f2ba33210"
+    },
+    {
+      "path": "expeditions/v2/ui/action-guide.js",
+      "bytes": 6481,
+      "sha256": "7269bc68a48a9e6ba80bff8673bfcd9d8adf782436207fc15d993adb6cfd4037"
+    },
+    {
+      "path": "expeditions/v2/ui/next-step.js",
+      "bytes": 3622,
+      "sha256": "88f2ec4101303844da23f769fe91c103cf5eb1919725f6fb73ee785072b323ad"
+    },
+    {
+      "path": "expeditions/v2/ui/station-state.js",
+      "bytes": 2344,
+      "sha256": "950a2988fa0c0d803c491a7f9bbf5d835e8f64ba2d814adca9e00159b2148b63"
+    },
+    {
+      "path": "expeditions/v2/ui/feedback.js",
+      "bytes": 13474,
+      "sha256": "240aa753815b368f5a45762bbb7067bff84e5eaca5f8f56e5de0688a01f487fe"
+    },
+    {
+      "path": "expeditions/v2/art/EquationWheel.jsx",
+      "bytes": 2275,
+      "sha256": "f935de80c1ee5249b18528ff48365951f8eae3c0572096b691fbb317a8a242ac"
+    },
+    {
+      "path": "expeditions/v2/art/runtime-art.js",
+      "bytes": 1965612,
+      "sha256": "6a3e95719fe2a5ad0a01a7462234242d607a5322c21771aeff172df8c7906140"
+    },
+    {
+      "path": "expeditions/v2/art/manifest.json",
+      "bytes": 73867,
+      "sha256": "bc8eb1882ecc159de434a82e7084b40a5889c04b277c79a52708bf3b10c4399f"
+    },
+    {
+      "path": "expeditions/v2/art/art.test.js",
+      "bytes": 4668,
+      "sha256": "a38880cc98401ea893cdcd9058c75ca07906bb967f00785f31c40f7093d37586"
+    },
+    {
+      "path": "docs/expeditions/v2/art-preflight-review.json",
+      "bytes": 4515,
+      "sha256": "d075248362fb9cedc087a2df64ae89ca51920e27415b2cd95673c4d035f5fe96"
+    },
+    {
+      "path": "docs/expeditions/v2/reports/codex-turning-ravine-20261003.md",
+      "bytes": 13588,
+      "sha256": "85b51a7a113863f78464a1a482cac401923ab58808f39231c9d6d2f3f91e9971"
+    },
+    {
+      "path": "scripts/dev/certify-turning-ravine-reference.mjs",
+      "bytes": 2197,
+      "sha256": "e61bfef20bc42aaf4e8fde4151ce2ef8b0ce0910fcf0fd9e30d76bc614699660"
+    },
+    {
+      "path": "scripts/dev/test-turning-ravine-ui.mjs",
+      "bytes": 5572,
+      "sha256": "09c7b5ff63d2df04ec47d9e0c70ca23a7e0b95a305d9bb206b654ef88c32f0c5"
+    },
+    {
+      "path": "scripts/dev/turning-ravine-preview.jsx",
+      "bytes": 3061,
+      "sha256": "b0bcaf591769a696720d2a87401359a1e6132daba35da49156f8f5b250af386b"
+    },
+    {
+      "path": "scripts/dev/build-turning-ravine-preview.cjs",
+      "bytes": 1431,
+      "sha256": "312bc573f0b75a2c36dc42b393eba7eae46bc84a0bde5e3561646670440e18ee"
+    },
+    {
+      "path": "scripts/dev/verify-turning-ravine-evidence.mjs",
+      "bytes": 2264,
+      "sha256": "d00fd6e6b0f17f4391625677e1b455f194e0444a4e0ce89b6138d60831375b24"
+    },
+    {
+      "path": "scripts/dev/embed-orchard-v2-art.cjs",
+      "bytes": 2921,
+      "sha256": "13a88deda7e8902739964046a9bd76af7f55bf9d8e6014ef20208224e37bb95b"
+    },
+    {
+      "path": "scripts/dev/snapshot-turning-ravine-handoff.mjs",
+      "bytes": 1899,
+      "sha256": "e3c9f89fdf706b59b058b9fd816f9711c5d8484351eaf8d687aa7799c8eec991"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/attempt-bushel-dapple-pip.json",
+      "bytes": 2734,
+      "sha256": "0b413857758c400f5d00301707e30b12ae04b4f0ed1b99b4ee902a8a76452c80"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/common-alternate-winning-trace.json",
+      "bytes": 27962,
+      "sha256": "2d24c6aabd295fdbd9455ddf9a16c27c3b04e2a52c777dcba9019670f06b7dbd"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/common-direct-winning-trace.json",
+      "bytes": 27433,
+      "sha256": "c231f0f9c8bf2e444caf5f8c97a4681a7f211113981fd284b4ee5ac84aca7937"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-board-maximum-20261004.png",
+      "bytes": 203982,
+      "sha256": "d4fd263d460ba3238e89d8c5ba6b627faa06c893c795fc35c9e960eb18b283af"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-desktop-maximum-20261004.png",
+      "bytes": 216701,
+      "sha256": "55f283dfb17d7059adf1b94ec8c9aa861d948b41a107c3a0ad102bab97fb1b99"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-desktop-native-20261004.png",
+      "bytes": 216904,
+      "sha256": "380d3bddd652ff3aa38a7a87a5c494f9cf32008df4bfaa4a52c2b1d425c74350"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-desktop-overview-20261004.png",
+      "bytes": 185363,
+      "sha256": "df22b36a87359c13bbeb59f7b3de991c9bdcd608d9624522d642c75fd91259d2"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-focused-maximum-20261004.png",
+      "bytes": 178061,
+      "sha256": "b324c0143d8040467dc1f7df339e86b22f9f9b8a9576ebbbde82c61049fcd3a7"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-import-live-20261004.png",
+      "bytes": 216633,
+      "sha256": "4933a7be8dfe96654516c7ca995ce46e10bea542109bedc773c6e48ff79aefd2"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-phone-maximum-20261004.png",
+      "bytes": 87030,
+      "sha256": "3e692493eb8299d611e0ff3182219a2af24ba661cfac04eac304e4c616aa2b5a"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-phone-native-20261004.png",
+      "bytes": 96208,
+      "sha256": "006e53f42d3d687e6ef2ac06d93b05ed2555938ff1155404811d357637e66661"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-phone-overview-20261004.png",
+      "bytes": 94309,
+      "sha256": "1b52d31a928b4e1372121a042ad846f9f042d009f3787b62f776c6b28430f1af"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-responsive-captures-20261004.json",
+      "bytes": 695,
+      "sha256": "5945be0ea0ca3e7304d1422444afb1d3a142adb1c0e755e76a2fa72952d7240e"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-tablet-maximum-20261004.png",
+      "bytes": 185509,
+      "sha256": "e9fb4dbc9ac025f8f75aca3335b42396ae6bacba6e3a1532bb1cd5db397b7b38"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-tablet-native-20261004.png",
+      "bytes": 198019,
+      "sha256": "101b2083740b39ac78d19ab95ef4f3289148c707a64a3e3b0042acb612b6d5aa"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/crosswind-tablet-overview-20261004.png",
+      "bytes": 181607,
+      "sha256": "540ec6d6f812cc7a0fcd8c775d50501a62095c8afc95185ab095bf5650a7f478"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/desktop-maximum-20261004.png",
+      "bytes": 198238,
+      "sha256": "39dc3a5ab1b7c77f165e07273128815c4f7bae309a9b9d9598101acac7bffd60"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/desktop-maximum-dom-20261004.txt",
+      "bytes": 8821,
+      "sha256": "ed2b97e1246f69ba1da7734051f7d5e630f0363c3d4978de824c4efea3fb37f4"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/desktop-native-20261004.png",
+      "bytes": 197740,
+      "sha256": "9f426dedaafb69ad3734b34d1ff665882d15353884aff2ded4e2acf6894bc81a"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/desktop-native-dom-20261004.txt",
+      "bytes": 8796,
+      "sha256": "588a2cd10ac1aed57efdfcd56f2a55a3c64df6af1c76248b388bced86ff51659"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/desktop-overview-20261004.png",
+      "bytes": 166261,
+      "sha256": "22a38a6c97826d18510ca196d7c1eaf96c986dc9ce416d7417c4e70e5887a710"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/desktop-overview-dom-20261004.txt",
+      "bytes": 8703,
+      "sha256": "f33ae37bdbe2119a6e2630515b52d9b89fa494544453724ad14db8614c363b16"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/final-art-feedback-tests-20261004.log",
+      "bytes": 1986,
+      "sha256": "17f4bfb32e66f0f23cc54a8804e1039bb9c165170dec025dc7496798072dc3b0"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/final-crosswind-rebuild-20261004.log",
+      "bytes": 174,
+      "sha256": "73b921bf7d4c03f507e9106dc4bb2416fe310c20d4cb5486756447160a34ce82"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/final-crosswind-smoke-20261004.log",
+      "bytes": 119,
+      "sha256": "bca1e0ad9485cebd83635863ed1f1e1a337a10e55ac48951eadcd1e37774cb0e"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/full-regression-20261004.log",
+      "bytes": 119519,
+      "sha256": "630ce9edbe367db1eab8a089ad9d0c7683f712bd5f9141a36f23676b5964ad19"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/full-regression.log",
+      "bytes": 99125,
+      "sha256": "eeb0a1be073f28f3bc3aed59025287f52c3a3a9a89d85c9827b32db69b31e0bb"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/higher-band-alcove-winning-trace.json",
+      "bytes": 28193,
+      "sha256": "5087ad28a6ccd6492442207897d9a24a9846e2adb619d6ee6c97c6f019ddaa0f"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/independent-evidence-verification.json",
+      "bytes": 4852,
+      "sha256": "fff1679c4aec8cf457f49f9e38319bbb75facd13f39cbbb8661deb549f176fe3"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/phone-maximum-20261004.png",
+      "bytes": 82494,
+      "sha256": "8dc950f0b86cd06250b0e09c29e2ab1fc4ddc4014b17f317bcdd22141f1c68d7"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/phone-maximum-dom-20261004.txt",
+      "bytes": 8268,
+      "sha256": "6697582b8934aa6cd3b74d5494ab2863573949e357973e05157e6567862d7d70"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/phone-native-20261004.png",
+      "bytes": 91548,
+      "sha256": "5f9645c234ddd8997323b0a62b3db1c2b4da0527b6e4f02a0509cb5512ba5827"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/phone-native-dom-20261004.txt",
+      "bytes": 8268,
+      "sha256": "73c4fe553925df24e9ccbc3c6f1cc88787700bb3cc8a651115183a75317c0614"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/phone-overview-20261004.png",
+      "bytes": 89483,
+      "sha256": "d6248b19e6112aeb0c77dc9dfd24ecc85461870f4de55e6336b7cfd119f9a7f7"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/phone-overview-dom-20261004.txt",
+      "bytes": 8150,
+      "sha256": "d0b15e54140c835d1c2191edc7950ac636dda95604d851e1c5113542d0698c2c"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/reference-preview.html",
+      "bytes": 9967304,
+      "sha256": "413e8451cc2b0b755b10b35c4322ad4b5936e457c446ebf7f1fa53f2ac34d0b0"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/responsive-capture-results-20261004.json",
+      "bytes": 695,
+      "sha256": "5945be0ea0ca3e7304d1422444afb1d3a142adb1c0e755e76a2fa72952d7240e"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/scoped-tests.log",
+      "bytes": 38492,
+      "sha256": "4d86c19826a4c47ac1d78209f2573097fda65fe8f1361913b977de67ff8aa5eb"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/t1-reference-candidate.json",
+      "bytes": 16878,
+      "sha256": "810a2e69c09b70568b50b238074e59b1d60ec2dd1d643b6ae2f5c892fc617b07"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/t1-reference-proof.json",
+      "bytes": 2723,
+      "sha256": "0c188dd4b79c959c905f064e9b8dda207ee7b3f616311a51796166614ec500a8"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/tablet-maximum-20261004.png",
+      "bytes": 184755,
+      "sha256": "a8e470ecf7f5a1598de5db58c1eb96af6931c5a8b3f953d75df43596ba4b6db8"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/tablet-maximum-dom-20261004.txt",
+      "bytes": 8821,
+      "sha256": "ed2b97e1246f69ba1da7734051f7d5e630f0363c3d4978de824c4efea3fb37f4"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/tablet-native-20261004.png",
+      "bytes": 196680,
+      "sha256": "8e58d586c1224e9481ba62d5b2363eec66dce7273351ed3ef1f9219c736a6e1b"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/tablet-native-dom-20261004.txt",
+      "bytes": 8796,
+      "sha256": "588a2cd10ac1aed57efdfcd56f2a55a3c64df6af1c76248b388bced86ff51659"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/tablet-overview-20261004.png",
+      "bytes": 180020,
+      "sha256": "7f69fc340af271c2e94d5856b522cd30f473359a1b16038e2ec57af03ef4c6ba"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/tablet-overview-dom-20261004.txt",
+      "bytes": 8703,
+      "sha256": "f33ae37bdbe2119a6e2630515b52d9b89fa494544453724ad14db8614c363b16"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/ui-shared-wheel-dom.txt",
+      "bytes": 8735,
+      "sha256": "b5332c442b99fcf888ef35910d8cca79721f3ad215309b638a289ace34df88c1"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/ui-shared-wheel-trace.json",
+      "bytes": 21497,
+      "sha256": "d77f8283835de5561d8b0a2da2fe4fbb4553b9074aaaa3a0a16b55eff31925af"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/ui-win-dom.txt",
+      "bytes": 681,
+      "sha256": "161e49ec2eedfabf1cf107b5a552019eb66ecfa03efa21d407f6d0f1ca48f468"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/ui-win-progress.json",
+      "bytes": 39094,
+      "sha256": "f78605b9197acf6b6c8c04c739159b7c5703b5be3817686bf9d873020b601384"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/ui-winning-trace.json",
+      "bytes": 26652,
+      "sha256": "b9488530d015969c18e835cd4421dd27cb7e8a96de8cddbd945a319da6c35d69"
+    },
+    {
+      "path": "docs/expeditions/v2/evidence/turning-ravine-20261003/visual-retry-20261004.png",
+      "bytes": 214088,
+      "sha256": "e0a801b64a447f5a5258bc55293d0577687c5abae77037531ec1130c616cba3f"
+    }
+  ],
+  "sharedBuild": [
+    {
+      "path": "WallabyMaths.html",
+      "bytes": 101642984,
+      "sha256": "286e57bc2cd51b5c53635714092959f9c731aff7372288002638bc57eed75707"
+    },
+    {
+      "path": "www/index.html",
+      "bytes": 101642984,
+      "sha256": "286e57bc2cd51b5c53635714092959f9c731aff7372288002638bc57eed75707"
+    }
+  ],
+  "runtimeAvailable": false,
+  "physicalDeviceAccepted": false,
+  "comprehensionAccepted": false
+}

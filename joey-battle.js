@@ -56,17 +56,17 @@ const W = {
 
 // ===== INTERNAL HELPERS =====
 
-function shuffle(arr) {
+function shuffle(arr, random = Math.random) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+    const j = Math.floor(random() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
 }
 
-function pick(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
+function pick(arr, random = Math.random) {
+  return arr[Math.floor(random() * arr.length)];
 }
 
 function cloneState(s) {
@@ -79,7 +79,7 @@ function countControlled(aLanes, bLanes, activeLanes = [0, 1, 2, 3, 4]) {
   return n;
 }
 
-function generateLaneSchedule() {
+function generateLaneSchedule(random = Math.random) {
   const combinations = [];
   for (let a = 0; a < 3; a++) for (let b = a + 1; b < 4; b++) for (let c = b + 1; c < 5; c++) {
     combinations.push([a, b, c]);
@@ -91,7 +91,7 @@ function generateLaneSchedule() {
     rounds.forEach(round => round.forEach(type => counts[type]++));
     if (counts.every(n => n >= 1 && n <= 2)) legal.push(rounds);
   }
-  return pick(legal).map(round => shuffle(round));
+  return pick(legal, random).map(round => shuffle(round, random));
 }
 
 function isActiveLane(state, lane) {
@@ -247,24 +247,25 @@ export function buildPlayerDeck(deckSpec, allCards, moduleSet = 'junior') {
 
 // ===== BATTLE INITIALISATION =====
 
-export function initBattle(playerDeckCards, aiDeckCards) {
+export function initBattle(playerDeckCards, aiDeckCards, options = {}) {
+  const random = options.random || Math.random;
   const playerBonuses = computeTypeBonuses(playerDeckCards);
   const aiBonuses = computeTypeBonuses(aiDeckCards);
 
   const player = makeSide(playerDeckCards, playerBonuses);
   const ai = makeSide(aiDeckCards, aiBonuses);
 
-  const pShuffled = shuffle(playerDeckCards);
+  const pShuffled = shuffle(playerDeckCards, random);
   player.hand = pShuffled.slice(0, OPENING_HAND);
   player.reserveDeck = pShuffled.slice(OPENING_HAND);
 
-  const aShuffled = shuffle(aiDeckCards);
+  const aShuffled = shuffle(aiDeckCards, random);
   ai.hand = aShuffled.slice(0, OPENING_HAND);
   ai.reserveDeck = aShuffled.slice(OPENING_HAND);
 
-  const firstToMove = Math.random() < 0.5 ? 'player' : 'ai';
+  const firstToMove = random() < 0.5 ? 'player' : 'ai';
 
-  const laneSchedule = generateLaneSchedule();
+  const laneSchedule = generateLaneSchedule(random);
   const state = {
     roundNumber: 1,
     playerRoundsWon: 0,
@@ -290,14 +291,15 @@ export function initBattle(playerDeckCards, aiDeckCards) {
 
 // ===== MULLIGAN =====
 
-export function mulligan(state, handIdx) {
-  if (state.player.reserveDeck.length === 0) return state;
+export function mulligan(state, handIdx, who = 'player') {
+  if (!['player', 'ai'].includes(who) || state[who].reserveDeck.length === 0) return state;
   const s = cloneState(state);
-  const removed = s.player.hand.splice(handIdx, 1)[0];
-  const drawn = s.player.reserveDeck.shift();
-  s.player.hand.push(drawn);
-  s.player.reserveDeck.push(removed);
-  s.player.reserveDeck = shuffle(s.player.reserveDeck);
+  const removed = s[who].hand.splice(handIdx, 1)[0];
+  if (!removed) return state;
+  const drawn = s[who].reserveDeck.shift();
+  s[who].hand.push(drawn);
+  s[who].reserveDeck.push(removed);
+  s[who].reserveDeck = shuffle(s[who].reserveDeck);
   return s;
 }
 
@@ -320,26 +322,28 @@ function applyRoundStart(state) {
   }
   s.boardCards = [];
   s.pendingAbility = null;
-  s.logicRevealedCardId = null;
-
-  // Logic Affinity: reveal one random opponent card for the player (§22)
-  if (s.player.typeBonuses.affinity.includes(TYPE.LOGIC) && s.ai.hand.length > 0) {
-    s.logicRevealedCardId = pick(s.ai.hand).id;
+  s.logicRevealedCardIds = { player: null, ai: null };
+  for (const who of ['player', 'ai']) {
+    const oppWho = other(who);
+    if (s[who].typeBonuses.affinity.includes(TYPE.LOGIC) && s[oppWho].hand.length > 0) {
+      s.logicRevealedCardIds[who] = pick(s[oppWho].hand).id;
+    }
   }
+  s.logicRevealedCardId = s.logicRevealedCardIds.player;
 
   return s;
 }
 
 // ===== PLAY CARD =====
-// options: { useScienceAffinity: bool, useScienceMastery: bool }
-// For player plays: interactive abilities set pendingAbility.
-// For AI plays: all choices are resolved automatically (no pendingAbility set).
+// options: { useScienceAffinity: bool, useScienceMastery: bool, interactive?: bool }
+// interactive defaults to true for the player and false for the AI, preserving solo behaviour.
 export function playCard(state, who, handIdx, laneIdx, options = {}) {
   if (state.pendingAbility) return state;
   if (!isActiveLane(state, laneIdx) || state[who].hasPassed || state.currentTurn !== who) return state;
   const s = cloneState(state);
   const side = s[who];
   const opp = s[other(who)];
+  const interactive = options.interactive ?? who === 'player';
 
   const card = side.hand[handIdx];
   if (!card) return state;
@@ -388,7 +392,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
 
   if (card.set) side.setCardsThisRound[card.set]++;
 
-  // Resolve all triggers. For the player, the first interactive one becomes pendingAbility;
+  // Resolve all triggers. For an interactive side, the first choice becomes pendingAbility;
   // subsequent interactive triggers are auto-resolved using AI logic (v1 simplification).
 
   // ── Arithmetic Affinity: printed stat causes exact tie (§20)
@@ -398,7 +402,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
     if (lanesWithPrinted === opp.laneScores[laneIdx]) {
       triggered.push('arithmeticAffinity');
       side.oncePerRound.arithmeticAffinity = true;
-      if (who === 'player' && side.reserveDeck.length > 0) {
+      if (interactive && side.reserveDeck.length > 0) {
         s.pendingAbility = {
           type: 'arithmeticAffinity', who,
           reserveTop: side.reserveDeck[0],
@@ -422,7 +426,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
 
   // ── Set bonuses (§25-28)
   // Only ONE interactive pendingAbility can be active per play, so if Arithmetic Affinity already
-  // claimed it above, every "if (who === 'player')" branch below falls through to its own
+  // claimed it above, later interactive branches fall through to their own
   // auto-resolve ("else") branch instead — matching this file's documented v1 simplification
   // ("subsequent interactive triggers are auto-resolved") rather than silently skipping the
   // bonus outright, which is what the old `!s.pendingAbility` guard on this whole block did.
@@ -434,7 +438,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
       if (card.set === 'ninefold_orchard') {
         const occupied = [...new Set(s.boardCards.filter(b => b.owner === who).map(b => b.currentLane))];
         if (occupied.length > 0) {
-          if (who === 'player' && !s.pendingAbility) {
+          if (interactive && !s.pendingAbility) {
             s.pendingAbility = { type: 'ninefoldOrchard2', who, availableLanes: occupied };
           } else {
             // AI: up to 2 lanes, prefer ones that flip/secure
@@ -451,7 +455,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
       } else if (card.set === 'little_reckoning') {
         const eligible = s.boardCards.filter(b => b.owner === who && b.card && b.card.bv <= 16);
         if (eligible.length > 0) {
-          if (who === 'player' && !s.pendingAbility) {
+          if (interactive && !s.pendingAbility) {
             s.pendingAbility = {
               type: 'littleReckoning2', who,
               eligibleCards: eligible.map(b => ({ cardId: b.cardId, lane: b.currentLane })),
@@ -469,7 +473,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
       } else if (card.set === 'gifford') {
         const ownedOnBoard = s.boardCards.filter(b => b.owner === who && b.card && b.cardId !== card.id);
         if (ownedOnBoard.length > 0) {
-          if (who === 'player' && !s.pendingAbility) {
+          if (interactive && !s.pendingAbility) {
             s.pendingAbility = {
               type: 'gifford2', who,
               playedCards: ownedOnBoard.map(b => ({ cardId: b.cardId, currentLane: b.currentLane })),
@@ -503,7 +507,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
       if (card.set === 'ninefold_orchard') {
         const ownedOnBoard = s.boardCards.filter(b => b.owner === who && b.card);
         if (ownedOnBoard.length > 0) {
-          if (who === 'player' && !s.pendingAbility) {
+          if (interactive && !s.pendingAbility) {
             s.pendingAbility = {
               type: 'ninefoldOrchard3', who,
               playedCards: ownedOnBoard.map(b => ({ cardId: b.cardId, currentLane: b.currentLane })),
@@ -524,7 +528,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
       } else if (card.set === 'little_reckoning') {
         const eligible = s.boardCards.filter(b => b.owner === who && b.card && b.card.bv <= 16);
         if (eligible.length > 0) {
-          if (who === 'player' && !s.pendingAbility) {
+          if (interactive && !s.pendingAbility) {
             s.pendingAbility = {
               type: 'reckoning', who,
               eligibleCards: eligible.map(b => ({ cardId: b.cardId, lane: b.currentLane })),
@@ -546,7 +550,7 @@ export function playCard(state, who, handIdx, laneIdx, options = {}) {
       } else if (card.set === 'gifford') {
         const oppOnBoard = s.boardCards.filter(b => b.owner === other(who) && b.card);
         const ownedOnBoard = s.boardCards.filter(b => b.owner === who && b.card && b.cardId !== card.id);
-        if (who === 'player' && !s.pendingAbility) {
+        if (interactive && !s.pendingAbility) {
           s.pendingAbility = {
             type: 'giffordOverride', who,
             oppCards: oppOnBoard.map(b => ({

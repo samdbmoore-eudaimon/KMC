@@ -188,7 +188,7 @@ PRIMARY_LESSONS.placeValue = {
           answer: "50,284 is bigger.",
         },
         { q: "Put these three numbers in order from smallest to largest: 83,047, 83,407 and 83,470.", steps: ["Compare from the left. All three have 8 in the ten-thousands and 3 in the thousands.", "Move to hundreds: 0, 4 and 4. The 0 is smallest, so 83,047 is the smallest number.", "Now compare 83,407 and 83,470: hundreds both 4, so move to tens: 0 vs 7. Seven is bigger, so 83,470 is the largest."], answer: "Smallest to largest: 83,047, then 83,407, then 83,470." },
-        { q: "I am thinking of a 5-digit number. It is between 62,000 and 63,000. Its hundreds digit is 7. Its tens digit is one more than its ones digit. Its ones digit is 4. What is the number?", steps: ["Between 62,000 and 63,000 means the number starts 62,___.", "Hundreds digit is 7, so 62,7__.", "Ones digit is 4. Tens digit is one more than ones: 4 + 1 = 5. The number is 62,754."], answer: "62,754. Check: 62,000 < 62,754 < 63,000. Hundreds = 7. Tens = 5, ones = 4, and 5 = 4 + 1." },
+        { q: "I am thinking of a 5-digit number. It is between 62,000 and 63,000. Its hundreds digit is 7. Its tens digit is one more than its ones digit. Its ones digit is 4. What is the number?", steps: ["Between 62,000 and 63,000 means the number starts 62,___.", "Hundreds digit is 7, so 62,7__.", "Ones digit is 4. Tens digit is one more than ones: 4 + 1 = 5. The number is 62,754."], answer: "62,754.\nCheck: 62,000 < 62,754 < 63,000.\nHundreds = 7.\nTens = 5, ones = 4, and 5 = 4 + 1." },
       ],
       tryit: { q: "Which is bigger, 4,318 or 4,306, and which spot decides it?", answer: "4,318 is bigger. The thousands and hundreds match, but at the tens spot 1 beats 0, so that spot decides it." },
     },
@@ -363,7 +363,7 @@ PRIMARY_LESSONS.timesTablesFacts = {
         { q: "What does 4 x 7 mean, and what is the answer?", steps: ["4 x 7 means '4 groups of 7'.", "Imagine 4 weeks of days. Each week is 7 days.", "Count in 7s: 7, 14, 21, 28.", "So 4 x 7 = 28."], answer: "4 x 7 = 28 (four groups of seven)" },
         { q: "You have 6 shelves with 9 books on each shelf. Write the multiplication and find the total number of books.", steps: ["6 shelves × 9 books per shelf means 6 groups of 9.", "Count in 9s: 9, 18, 27, 36, 45, 54.", "So 6 × 9 = 54."], answer: "6 × 9 = 54. There are 54 books altogether." },
       ],
-      tryit: { q: "Say what 4 x 3 means in words, then work out the answer.", answer: "It means '4 groups of 3'. Count 3, 6, 9, 12. So 4 x 3 = 12." },
+      tryit: { q: "Say what 4 x 3 means in words, then work out the answer.", answer: "It means '4 groups of 3'.\nCount 3, 6, 9, 12.\nSo 4 x 3 = 12." },
     },
     {
       h: "2. The order does not change the answer",
@@ -394,7 +394,7 @@ PRIMARY_LESSONS.timesTablesFacts = {
         { q: "You know 8 x 9 = 72 but have forgotten 9 x 9. Use the staircase idea to find it.", steps: ["9 x 9 is one step further along the 9 times table than 8 x 9.", "One step means adding one more group of 9.", "72 + 9 = 81."], answer: "9 x 9 = 81" },
         { q: "You know 7 x 8 = 56. Use two staircase steps to find 7 x 10.", steps: ["7 x 9 is one step up from 7 x 8: 56 + 7 = 63.", "7 x 10 is one step up from 7 x 9: 63 + 7 = 70.", "Check: 7 x 10 = 70."], answer: "7 x 10 = 70" },
       ],
-      tryit: { q: "If 7 x 8 = 56, what is 8 x 8, using the 'add one more group' trick?", answer: "Add one more group of 8: 56 + 8 = 64. So 8 x 8 = 64." },
+      tryit: { q: "If 7 x 8 = 56, what is 8 x 8, using the 'add one more group' trick?", answer: "Add one more group of 8:\n56 + 8 = 64.\nSo 8 x 8 = 64." },
     },
     {
       h: "4. Doubling to jump between tables",
@@ -409,7 +409,7 @@ PRIMARY_LESSONS.timesTablesFacts = {
         { q: "You know 4 x 7 = 28. Use doubling to work out 8 x 7.", steps: ["8 groups of 7 is double 4 groups of 7, because 8 is double 4.", "Double 28.", "28 + 28 = 56.", "So 8 x 7 = 56."], answer: "8 x 7 = 56" },
         { q: "You know 3 x 9 = 27. Use doubling twice to find 12 x 9.", steps: ["6 x 9 is double 3 x 9: double 27 = 54.", "12 x 9 is double 6 x 9: double 54 = 108.", "Check: 10 x 9 + 2 x 9 = 90 + 18 = 108."], answer: "12 x 9 = 108" },
       ],
-      tryit: { q: "You know 4 x 8 = 32. Use doubling to find 8 x 8.", answer: "Double it: 32 + 32 = 64. So 8 x 8 = 64." },
+      tryit: { q: "You know 4 x 8 = 32. Use doubling to find 8 x 8.", answer: "Double it:\n32 + 32 = 64.\nSo 8 x 8 = 64." },
     },
     {
       h: "5. Splitting a big multiplication into easy parts",
@@ -424,7 +424,7 @@ PRIMARY_LESSONS.timesTablesFacts = {
         { q: "Work out 17 x 6 by splitting.", steps: ["Split 17 into 10 and 7.", "10 x 6 = 60.", "7 x 6 = 42.", "Add the parts: 60 + 42 = 102."], answer: "17 x 6 = 102" },
         { q: "Work out 13 x 14 by splitting the 14 into 10 and 4.", steps: ["13 x 14 = 13 x 10 + 13 x 4.", "13 x 10 = 130.", "13 x 4 = 52.", "Add: 130 + 52 = 182."], answer: "13 x 14 = 182" },
       ],
-      tryit: { q: "Use splitting to work out 14 x 5.", answer: "Split 14 into 10 and 4. (10 x 5) + (4 x 5) = 50 + 20 = 70. So 14 x 5 = 70." },
+      tryit: { q: "Use splitting to work out 14 x 5.", answer: "Split 14 into 10 and 4.\n(10 x 5) + (4 x 5) =\n50 + 20 =\n70.\nSo 14 x 5 = 70." },
     },
     {
       h: "6. Growing a fact ten times bigger",
@@ -445,7 +445,7 @@ PRIMARY_LESSONS.timesTablesFacts = {
       h: "7. Growing a fact a hundred times bigger",
       body: [
         "What if BOTH numbers get ten times bigger at the same time? Then the answer does not grow ten times, it grows a hundred times. That surprises a lot of people, so let us go slowly.",
-        "Start with 8 x 9 = 72. First make the 8 into 80. As we saw, that makes the answer ten times bigger, so 80 x 9 = 720. Now make the 9 into 90 as well. That makes the answer ten times bigger AGAIN, so 720 becomes 7200. So 80 x 90 = 7200. You grew it by ten, and then by ten again, and ten times ten is a hundred.",
+        "Start with 8 x 9 = 72.\nFirst make the 8 into 80. As we saw, that makes the answer ten times bigger, so 80 x 9 = 720.\nNow make the 9 into 90 as well. That makes the answer ten times bigger AGAIN, so 720 becomes 7200.\nSo 80 x 90 = 7200. You grew it by ten, and then by ten again, and ten times ten is a hundred.",
         "Think of it like blowing up a photo on a screen. If you make the picture ten times wider and also ten times taller, it does not just get ten times bigger overall, it gets a hundred times bigger, because it grew in two directions at once. Multiplication behaves the same way, one number is like the width and the other is like the height.",
         "A quick way to keep track is to count the zeros. 80 has one zero and 90 has one zero, that is two zeros in total. So take your small answer, 72, and put two zeros on the end to get 7200. Just be careful, this counting-zeros shortcut is a helper, not the reason it works. The real reason is that each number growing ten times makes the answer grow ten times, and the two growings multiply together into a hundred.",
       ],
@@ -533,7 +533,7 @@ PRIMARY_LESSONS.divisionRemainders = {
         "So if you ever finish a division and your remainder is the same size as the divisor, or bigger, that is a warning light. It means another whole group still fits and you stopped too early. Go back and give out one more group.",
         "For example, if you thought 13 ÷ 3 was 3 remainder 4, the remainder 4 is bigger than the divisor 3, so it is wrong. One more group of 3 fits inside that 4, leaving 1. The right answer is 4 remainder 1.",
       ],
-      tryit: { q: "A friend says 20 ÷ 6 = 2 remainder 8. Without doing the whole sum, how can you tell they made a mistake?", answer: "The remainder 8 is bigger than the divisor 6, which is not allowed. Another group of 6 still fits. The correct answer is 20 ÷ 6 = 3 remainder 2." },
+      tryit: { q: "A friend says 20 ÷ 6 = 2 remainder 8. Without doing the whole sum, how can you tell they made a mistake?", answer: "The remainder 8 is bigger than the divisor 6, which is not allowed.\nAnother group of 6 still fits.\nThe correct answer is 20 ÷ 6 = 3 remainder 2." },
     },
     {
       h: "5. Always check your work by building it back up",
@@ -549,7 +549,7 @@ PRIMARY_LESSONS.divisionRemainders = {
         { q: "Work out 51 ÷ 8, then check your answer.", steps: ["How many 8s fit into 51? 8 x 6 = 48, and 8 x 7 = 56 which is too big, so 6 whole groups fit.", "51 take away 48 leaves 3, so 51 ÷ 8 = 6 remainder 3.", "The remainder 3 is smaller than the divisor 8.", "Check: 8 x 6 = 48, then 48 + 3 = 51. It matches."], answer: "6 remainder 3" },
         { q: "Work out 143 ÷ 9, then check your answer.", steps: ["How many 9s fit into 143? 9 x 15 = 135, and 9 x 16 = 144 which is too big, so 15 whole groups fit.", "143 take away 135 leaves 8, so 143 ÷ 9 = 15 remainder 8.", "The remainder 8 is smaller than the divisor 9.", "Check: 9 x 15 = 135, then 135 + 8 = 143. It matches."], answer: "15 remainder 8" },
       ],
-      tryit: { q: "Check whether 25 ÷ 4 = 6 remainder 1 is correct.", answer: "Yes. 4 x 6 = 24, then 24 + 1 = 25, which is the starting number, and the remainder 1 is smaller than the divisor 4. Correct." },
+      tryit: { q: "Check whether 25 ÷ 4 = 6 remainder 1 is correct.", answer: "Yes.\n4 x 6 = 24,\nthen 24 + 1 = 25, which is the starting number, and the remainder 1 is smaller than the divisor 4.\nCorrect." },
     },
     {
       h: "6. Leftover 1: sometimes you round UP",
@@ -630,7 +630,7 @@ PRIMARY_LESSONS.divisionRemainders = {
         { q: "Work out 236 ÷ 8, then check your answer by building back up.", steps: ["Find the biggest number of 8s inside 236. 8 x 29 = 232, and 8 x 30 = 240 which is too big.", "236 take away 232 leaves 4, so 236 ÷ 8 = 29 remainder 4.", "Remainder 4 is smaller than divisor 8.", "Check: 8 x 29 = 232, then 232 + 4 = 236. It matches."], answer: "29 remainder 4" },
         { q: "Work out 353 ÷ 11, then check your answer.", steps: ["Find the biggest number of 11s inside 353. 11 x 32 = 352, and 11 x 33 = 363 which is too big.", "353 take away 352 leaves 1, so 353 ÷ 11 = 32 remainder 1.", "Remainder 1 is smaller than divisor 11.", "Check: 11 x 32 = 352, then 352 + 1 = 353. It matches."], answer: "32 remainder 1" },
       ],
-      tryit: { q: "Work out 100 ÷ 8, then check it.", answer: "12 remainder 4. 8 x 12 = 96, and 100 - 96 = 4, and 4 is smaller than 8. Check: 96 + 4 = 100. Correct." },
+      tryit: { q: "Work out 100 ÷ 8, then check it.", answer: "12 remainder 4.\n8 x 12 = 96,\nand 100 - 96 = 4, and 4 is smaller than 8.\nCheck: 96 + 4 = 100.\nCorrect." },
     },
   ],
 };
@@ -780,8 +780,8 @@ PRIMARY_LESSONS.fractionEquivalence = {
       h: "3. Making equivalent fractions with multiplying",
       body: [
         "It would be very slow to draw a pizza every time we wanted an equivalent fraction. Happily there is a quick rule. To make an equivalent fraction, multiply the numerator (top) and the denominator (bottom) by the same number.",
-        "Watch it work on 1/2. Multiply top and bottom by 2. The top 1 becomes 1 x 2 = 2, and the bottom 2 becomes 2 x 2 = 4. So 1/2 = 2/4, which is exactly what the pizza told us earlier.",
-        "Do it again, this time times 3, starting from 1/2. Top: 1 x 3 = 3. Bottom: 2 x 3 = 6. So 1/2 = 3/6. And once more times 5: top 1 x 5 = 5, bottom 2 x 5 = 10, so 1/2 = 5/10. You can make as many equivalent fractions from one fraction as you like.",
+        "Watch it work on 1/2. Multiply top and bottom by 2.\nThe top 1 becomes 1 x 2 = 2, and the bottom 2 becomes 2 x 2 = 4.\nSo 1/2 = 2/4, which is exactly what the pizza told us earlier.",
+        "Do it again, this time times 3, starting from 1/2. Top: 1 x 3 = 3. Bottom: 2 x 3 = 6. So 1/2 = 3/6.\nAnd once more times 5: top 1 x 5 = 5, bottom 2 x 5 = 10, so 1/2 = 5/10.\nYou can make as many equivalent fractions from one fraction as you like.",
         "Here is the golden rule to never forget. Whatever you do to the top, you must do the very same thing to the bottom. Both numbers get multiplied by the same amount, every single time.",
       ],
       examples: [
@@ -815,7 +815,7 @@ PRIMARY_LESSONS.fractionEquivalence = {
         { q: "Simplify 18/24 as far as it will go.", steps: ["Find a number that divides exactly into both 18 and 24. Both can be divided by 6.", "Top: 18 ÷ 6 = 3. Bottom: 24 ÷ 6 = 4.", "Check 3/4: the only number that divides into both 3 and 4 is 1, so it cannot shrink further."], answer: "18/24 = 3/4" },
         { q: "Simplify 60/84 as far as it will go.", steps: ["Find a number that divides into both 60 and 84. Both can be divided by 4: 15/21.", "15 and 21 can both be divided by 3: 5/7.", "5 and 7 share no common factor other than 1, so 5/7 cannot shrink further."], answer: "60/84 = 5/7" },
       ],
-      tryit: { q: "Simplify 10/15 as far as it will go.", answer: "2/3. Both 10 and 15 divide by 5: 10 divided by 5 = 2 and 15 divided by 5 = 3. Nothing but 1 divides into both 2 and 3, so you are done." },
+      tryit: { q: "Simplify 10/15 as far as it will go.", answer: "2/3.\nBoth 10 and 15 divide by 5: 10 divided by 5 = 2 and 15 divided by 5 = 3.\nNothing but 1 divides into both 2 and 3, so you are done." },
     },
     {
       h: "6. Comparing fractions by giving them matching pieces",
@@ -823,7 +823,7 @@ PRIMARY_LESSONS.fractionEquivalence = {
         "Equivalent fractions have a brilliant use: comparing. Suppose someone asks which is bigger, 2/3 or 3/5. It is tricky, because thirds and fifths are different sized pieces, so you cannot just glance and know.",
         "Think of it like comparing a bag of large marbles with a bag of small marbles. Counting the marbles alone is not a fair contest until the marbles are the same size. We need the pieces to match before we can judge.",
         "The fix is to rewrite both fractions so they share the same denominator. A shared denominator is a number that both of the bottom numbers divide into. For 3 and 5 an easy one is 15, because 3 x 5 = 15.",
-        "Change 2/3 into fifteenths by multiplying top and bottom by 5: that gives 2 x 5 = 10 over 3 x 5 = 15, so 2/3 = 10/15. Change 3/5 into fifteenths by multiplying top and bottom by 3: that gives 3 x 3 = 9 over 5 x 3 = 15, so 3/5 = 9/15.",
+        "Change 2/3 into fifteenths by multiplying top and bottom by 5: that gives 2 x 5 = 10 over 3 x 5 = 15, so 2/3 = 10/15.\nChange 3/5 into fifteenths by multiplying top and bottom by 3: that gives 3 x 3 = 9 over 5 x 3 = 15, so 3/5 = 9/15.",
         "Now the pieces are the same size, so we simply compare the top numbers. 10 is more than 9, so 10/15 beats 9/15, which means 2/3 is bigger than 3/5.",
       ],
       examples: [
@@ -831,7 +831,7 @@ PRIMARY_LESSONS.fractionEquivalence = {
         { q: "Which is bigger, 2/3 or 3/5?", steps: ["Find a common denominator: 3 x 5 = 15 works.", "Change 2/3: multiply top and bottom by 5, giving 10/15.", "Change 3/5: multiply top and bottom by 3, giving 9/15.", "Compare the tops: 10 against 9."], answer: "2/3 is bigger, because 10/15 beats 9/15." },
         { q: "Which is the largest of 5/6, 7/9 and 3/4?", steps: ["Find a common denominator for 6, 9 and 4. The LCM of 6 and 9 is 18. The LCM of 18 and 4 is 36.", "5/6 = 30/36 (multiply by 6). 7/9 = 28/36 (multiply by 4). 3/4 = 27/36 (multiply by 9).", "Compare the tops: 30, 28 and 27."], answer: "5/6 is the largest (30/36 beats 28/36 and 27/36)." },
       ],
-      tryit: { q: "Which is bigger, 1/2 or 3/5? Turn both into tenths to compare.", answer: "3/5. As tenths, 1/2 = 5/10 and 3/5 = 6/10. Since 6 beats 5, 3/5 is the bigger fraction." },
+      tryit: { q: "Which is bigger, 1/2 or 3/5? Turn both into tenths to compare.", answer: "3/5.\nAs tenths, 1/2 = 5/10 and 3/5 = 6/10.\nSince 6 beats 5, 3/5 is the bigger fraction." },
     },
     {
       h: "7. Two quick shortcuts, and the traps to dodge",
@@ -934,7 +934,7 @@ PRIMARY_LESSONS.fractionArithmetic = {
         { q: "Work out 2/5 - 1/3.", steps: ["Find a common denominator: 5 x 3 = 15.", "Rewrite 2/5: multiply top and bottom by 3, giving 6/15.", "Rewrite 1/3: multiply top and bottom by 5, giving 5/15.", "Subtract the tops: 6 - 5 = 1. Keep the bottom as 15."], answer: "1/15" },
         { q: "Work out 7/8 - 3/5. Give your answer in its simplest form.", steps: ["Find a common denominator: 8 x 5 = 40.", "Rewrite 7/8: multiply top and bottom by 5, giving 35/40.", "Rewrite 3/5: multiply top and bottom by 8, giving 24/40.", "Subtract: 35 - 24 = 11. Answer is 11/40. (11 is prime and does not divide 40, so it is already simplified.)"], answer: "11/40" },
       ],
-      tryit: { q: "Work out 1/3 + 1/6.", answer: "1/2. Use sixths: 1/3 = 2/6 and 1/6 stays as 1/6. Add the tops: 2 + 1 = 3, giving 3/6. Since 3/6 is 3 out of 6, that is exactly half, so 1/2 is a tidy way to write it." },
+      tryit: { q: "Work out 1/3 + 1/6.", answer: "1/2.\nUse sixths: 1/3 = 2/6 and 1/6 stays as 1/6.\nAdd the tops: 2 + 1 = 3, giving 3/6.\nSince 3/6 is 3 out of 6, that is exactly half, so 1/2 is a tidy way to write it." },
     },
     {
       h: "7. The classic mistake to avoid",
@@ -1023,7 +1023,7 @@ PRIMARY_LESSONS.fractionOfQuantity = {
         { q: "What is 3/5 of 35?", steps: ["Step one: divide by the bottom number. 35 divided by 5 = 7 (that is one fifth).", "Step two: multiply by the top number. 7 times 3 = 21."], answer: "21" },
         { q: "What is 7/8 of 64?", steps: ["Step one: divide by the bottom number. 64 divided by 8 = 8 (that is one eighth).", "Step two: multiply by the top number. 8 times 7 = 56."], answer: "56" },
       ],
-      tryit: { q: "What is 2/5 of 30?", answer: "12. Divide: 30 divided by 5 = 6. Multiply: 6 times 2 = 12." },
+      tryit: { q: "What is 2/5 of 30?", answer: "12.\nDivide: 30 divided by 5 = 6.\nMultiply: 6 times 2 = 12." },
     },
     {
       h: "5. Practising with bigger numbers",
@@ -1038,7 +1038,7 @@ PRIMARY_LESSONS.fractionOfQuantity = {
         { q: "What is 4/9 of 63?", steps: ["Step one: 63 divided by 9 = 7 (that is one ninth).", "Step two: 7 times 4 = 28."], answer: "28" },
         { q: "What is 7/12 of 144?", steps: ["Step one: 144 divided by 12 = 12 (that is one twelfth).", "Step two: 12 times 7 = 84."], answer: "84" },
       ],
-      tryit: { q: "What is 3/8 of 40?", answer: "15. Divide: 40 divided by 8 = 5. Multiply: 5 times 3 = 15." },
+      tryit: { q: "What is 3/8 of 40?", answer: "15.\nDivide: 40 divided by 8 = 5.\nMultiply: 5 times 3 = 15." },
     },
     {
       h: "6. Fractions of money, time and length",
@@ -1273,7 +1273,7 @@ PRIMARY_LESSONS.ratioBasics = {
         { q: "Tiles are laid in a pattern with 3 blue tiles for every 2 white tiles (ratio 3:2). If you lay out 5 identical groups, how many blue and how many white tiles are there in total?", steps: ["One group has 3 blue and 2 white tiles.", "Blue: 5 groups × 3 = 15 blue tiles.", "White: 5 groups × 2 = 10 white tiles."], answer: "15 blue tiles and 10 white tiles (25 tiles in total)." },
         { q: "A sticker pack always has 4 star stickers and 3 moon stickers (ratio 4:3). Someone buys 6 packs. How many star stickers and how many moon stickers are there? What fraction of all the stickers are stars?", steps: ["Stars: 6 groups × 4 = 24 star stickers.", "Moons: 6 groups × 3 = 18 moon stickers.", "Total stickers: 24 + 18 = 42.", "Fraction that are stars: 24 out of 42 = 24/42. Simplify by dividing both by 6: 4/7."], answer: "24 star stickers, 18 moon stickers, and 4/7 of all stickers are stars." },
       ],
-      tryit: { q: "A fruit drink is mixed as juice to water in the ratio 2:3. If you make 3 identical groups, how many splashes of juice and how many splashes of water is that?", answer: "6 splashes of juice and 9 splashes of water. Juice: 3 groups of 2 is 6. Water: 3 groups of 3 is 9." },
+      tryit: { q: "A fruit drink is mixed as juice to water in the ratio 2:3. If you make 3 identical groups, how many splashes of juice and how many splashes of water is that?", answer: "6 splashes of juice and 9 splashes of water.\nJuice: 3 groups of 2 is 6.\nWater: 3 groups of 3 is 9." },
     },
     {
       h: "4. Spotting a ratio that has just grown bigger",
@@ -1343,7 +1343,7 @@ PRIMARY_LESSONS.ratioBasics = {
         { q: "A fruit drink is mixed as juice to water in the ratio 3:5. If you pour in 15 ml of juice, how much water do you need?", steps: ["The juice side is 3 parts. One part = 15 ÷ 3 = 5 ml.", "The water side is 5 parts. Water needed = 5 × 5 ml = 25 ml."], answer: "25 ml of water." },
         { q: "In a class the ratio of boys to girls is 4:5. There are 20 boys. How many girls are there, and what is the total class size?", steps: ["The boys' side is 4 parts and the real value is 20. One part = 20 ÷ 4 = 5.", "Girls' side is 5 parts. Girls = 5 × 5 = 25.", "Total class = 20 boys + 25 girls = 45."], answer: "25 girls, 45 pupils in total." },
       ],
-      tryit: { q: "Paint is mixed blue to yellow in the ratio 3:4. You pour in 12 spoons of blue. Using the same steps, how many spoons of yellow do you need? (Hint: find one part first.)", answer: "16 spoons. One part is 12 divided by 3, which is 4. Yellow is 4 parts, and 4 times 4 is 16." },
+      tryit: { q: "Paint is mixed blue to yellow in the ratio 3:4. You pour in 12 spoons of blue. Using the same steps, how many spoons of yellow do you need? (Hint: find one part first.)", answer: "16 spoons.\nOne part is 12 divided by 3, which is 4.\nYellow is 4 parts, and 4 times 4 is 16." },
     },
     {
       h: "7. Sharing a whole amount in a given ratio",
@@ -1368,7 +1368,7 @@ PRIMARY_LESSONS.ratioBasics = {
         { q: "Share 48 sweets among three people in the ratio 1:2:3.", steps: ["Add the parts: 1 + 2 + 3 = 6 parts.", "One part = 48 ÷ 6 = 8 sweets.", "First person: 1 × 8 = 8. Second: 2 × 8 = 16. Third: 3 × 8 = 24.", "Check: 8 + 16 + 24 = 48. ✓"], answer: "8 sweets, 16 sweets and 24 sweets." },
         { q: "Share 63 marbles among three friends in the ratio 2:3:4. Find each person's share and confirm your answer adds up.", steps: ["Add the parts: 2 + 3 + 4 = 9 parts.", "One part = 63 ÷ 9 = 7 marbles.", "First friend: 2 × 7 = 14. Second: 3 × 7 = 21. Third: 4 × 7 = 28.", "Check: 14 + 21 + 28 = 63. ✓"], answer: "14 marbles, 21 marbles and 28 marbles." },
       ],
-      tryit: { q: "Share 24 marbles between two friends in the ratio 1:3. (Remember: add the parts, find one part, then multiply.)", answer: "6 marbles and 18 marbles. The parts add to 1 plus 3, which is 4. One part is 24 divided by 4, which is 6. So the shares are 1 times 6 (which is 6) and 3 times 6 (which is 18). Check: 6 plus 18 is 24." },
+      tryit: { q: "Share 24 marbles between two friends in the ratio 1:3. (Remember: add the parts, find one part, then multiply.)", answer: "6 marbles and 18 marbles.\nThe parts add to 1 plus 3, which is 4.\nOne part is 24 divided by 4, which is 6.\nSo the shares are 1 times 6 (which is 6) and 3 times 6 (which is 18).\nCheck: 6 plus 18 is 24." },
     },
     {
       h: "8. The big trap: multiply, never add",
@@ -1437,7 +1437,7 @@ PRIMARY_LESSONS.twoUnknowns = {
         { q: "Two numbers have a total of 18 and a difference of 6. Find both numbers.", steps: ["Snap off the difference: 18 - 6 = 12.", "Halve what is left: 12 ÷ 2 = 6 (the smaller number).", "Add the difference back: 6 + 6 = 12 (the larger number).", "Check: 6 + 12 = 18 and 12 - 6 = 6. Both clues fit."], answer: "6 and 12." },
         { q: "Two numbers have a total of 100 and a difference of 26. Find both numbers.", steps: ["Snap off the difference: 100 - 26 = 74.", "Halve: 74 ÷ 2 = 37 (the smaller number).", "Add the difference: 37 + 26 = 63 (the larger number).", "Check: 37 + 63 = 100 and 63 - 37 = 26. Both clues fit."], answer: "37 and 63." },
       ],
-      tryit: { q: "Two numbers have a total of 20 and a difference of 6. Find both numbers by snapping off the difference first.", answer: "20 take away 6 = 14, then halved = 7 (the smaller). Add 6 back: 7 + 6 = 13 (the bigger). Check: 7 + 13 = 20 and 13 take away 7 = 6." },
+      tryit: { q: "Two numbers have a total of 20 and a difference of 6. Find both numbers by snapping off the difference first.", answer: "20 take away 6 = 14, then halved = 7 (the smaller).\nAdd 6 back: 7 + 6 = 13 (the bigger).\nCheck: 7 + 13 = 20 and 13 take away 7 = 6." },
     },
     {
       h: "4. A quicker way to do sum and difference",
@@ -1445,14 +1445,14 @@ PRIMARY_LESSONS.twoUnknowns = {
         "Once the tower picture makes sense, there is a neat shortcut for these total-and-difference puzzles that gives the BIGGER number first. You do not have to use it, but it is quick once you trust it.",
         "The shortcut is: add the total and the difference together, then halve the answer. That gives you the bigger number straight away. To get the smaller number, just take the bigger number away from the total.",
         "Why does it work? Adding the difference onto the total is like giving the shorter tower enough spare cubes to match the taller one, so now you have two copies of the bigger number. Halving that pile gives you one copy, which is the bigger number itself. It is the same idea as before, just travelling towards the answer from the other direction.",
-        "Let us redo an earlier one to see they agree. Total 10, difference 2. Add them: 10 + 2 = 12. Halve it: 12 halved = 6 (the bigger number). Smaller number: 10 take away 6 = 4. Same answer as the tower method, 6 and 4. It is good to know both ways, because seeing a puzzle from two directions helps it stick.",
+        "Let us redo an earlier one to see they agree. Total 10, difference 2.\nAdd them: 10 + 2 = 12.\nHalve it: 12 halved = 6 (the bigger number).\nSmaller number: 10 take away 6 = 4.\nSame answer as the tower method, 6 and 4. It is good to know both ways, because seeing a puzzle from two directions helps it stick.",
       ],
       examples: [
         { q: "Two numbers add to 50 and differ by 12. Find both numbers using the shortcut.", steps: ["Add the total and the difference: 50 + 12 = 62.", "Halve it to get the BIGGER number: 62 halved = 31.", "Take that away from the total for the smaller number: 50 take away 31 = 19.", "Check: 31 + 19 = 50 and 31 take away 19 = 12. Both clues fit."], answer: "31 and 19" },
         { q: "Two numbers add to 80 and differ by 24. Use the shortcut to find both.", steps: ["Add total and difference: 80 + 24 = 104.", "Halve for the bigger: 104 ÷ 2 = 52.", "Smaller: 80 - 52 = 28.", "Check: 52 + 28 = 80 and 52 - 28 = 24. ✓"], answer: "52 and 28." },
         { q: "Two numbers add to 150 and differ by 38. Use the shortcut. Show your check.", steps: ["Add: 150 + 38 = 188.", "Halve for the bigger: 188 ÷ 2 = 94.", "Smaller: 150 - 94 = 56.", "Check: 94 + 56 = 150 and 94 - 56 = 38. ✓"], answer: "94 and 56." },
       ],
-      tryit: { q: "Two numbers add to 30 and differ by 8. Use the shortcut: add them, halve, then subtract from the total.", answer: "30 + 8 = 38, halved = 19 (bigger). 30 take away 19 = 11 (smaller). Check: 19 + 11 = 30 and 19 take away 11 = 8." },
+      tryit: { q: "Two numbers add to 30 and differ by 8. Use the shortcut: add them, halve, then subtract from the total.", answer: "30 + 8 = 38, halved = 19 (bigger).\n30 take away 19 = 11 (smaller).\nCheck: 19 + 11 = 30 and 19 take away 11 = 8." },
     },
     {
       h: "5. A different second clue: how many times bigger?",
@@ -1468,7 +1468,7 @@ PRIMARY_LESSONS.twoUnknowns = {
         { q: "Two numbers total 56. One is 6 times the other. Find both.", steps: ["Small = 1 part, big = 6 parts. Total parts: 1 + 6 = 7.", "One part = 56 ÷ 7 = 8. Small number = 8.", "Big number = 6 × 8 = 48.", "Check: 8 + 48 = 56 and 48 = 6 × 8. ✓"], answer: "8 and 48." },
         { q: "Two numbers total 63. One is 8 times the other. Find both numbers.", steps: ["Small = 1 part, big = 8 parts. Total parts: 1 + 8 = 9.", "One part = 63 ÷ 9 = 7. Small number = 7.", "Big number = 8 × 7 = 56.", "Check: 7 + 56 = 63 and 56 = 8 × 7. ✓"], answer: "7 and 56." },
       ],
-      tryit: { q: "Two numbers total 24. One is 3 times the other. Use parts to find both numbers.", answer: "Small = 1 part, big = 3 parts, so 4 parts = 24. One part = 24 shared into 4 = 6 (the smaller). Bigger = 3 times 6 = 18. Check: 6 + 18 = 24 and 18 is 3 times 6." },
+      tryit: { q: "Two numbers total 24. One is 3 times the other. Use parts to find both numbers.", answer: "Small = 1 part, big = 3 parts, so 4 parts = 24.\nOne part = 24 shared into 4 = 6 (the smaller).\nBigger = 3 times 6 = 18.\nCheck: 6 + 18 = 24 and 18 is 3 times 6." },
     },
     {
       h: "6. Drawing a bar model to see the puzzle",
@@ -1513,7 +1513,7 @@ PRIMARY_LESSONS.additiveMultiplicative = {
         "One way is to say your friend has 9 extra sweets, because if you lined them up your friend's line would stick out by 9. Another way is to say your friend has 4 whole helpings of what you have, because 3 sweets fits into 12 sweets four times over. Both sentences are true about the very same pair of numbers.",
         "The first way (the 9 extra) is called an additive comparison. The word additive comes from adding and taking away, and it is all about the gap between the two amounts. The second way (4 whole helpings) is called a multiplicative comparison. That word comes from multiplying, and it is all about how many times one amount fits into the other. Do not worry about remembering those long words yet. We will meet each idea properly, one at a time.",
       ],
-      tryit: { q: "You have 2 stickers and your friend has 10. Can you think of one sentence that says how much MORE your friend has, and a different sentence that says how many TIMES as many they have?", answer: "Your friend has 8 more stickers (that is the gap). Your friend also has 5 times as many, because 2 fits into 10 five times. Both sentences are correct." },
+      tryit: { q: "You have 2 stickers and your friend has 10. Can you think of one sentence that says how much MORE your friend has, and a different sentence that says how many TIMES as many they have?", answer: "Your friend has 8 more stickers (that is the gap).\nYour friend also has 5 times as many, because 2 fits into 10 five times.\nBoth sentences are correct." },
     },
     {
       h: "2. The 'how many more' comparison (the gap)",
@@ -1571,7 +1571,7 @@ PRIMARY_LESSONS.additiveMultiplicative = {
         "Look how different those two true answers sound. One says '27 more' and the other says 'a bit more than 4 times as many'. Neither one is wrong. They are simply the answers to two different questions about the same pair of numbers.",
         "The lesson to carry away is this: before you reach for a subtraction or a division, stop and ask yourself which question is really being asked. Is it about the gap, or about the helpings?",
       ],
-      tryit: { q: "You have 4 marbles and your friend has 12. Work out BOTH comparisons: how many more does your friend have, and how many times as many?", answer: "How many more: 12 - 4 = 8, so 8 more. How many times as many: 12 divided by 4 = 3, so 3 times as many. Same two numbers, two different true answers." },
+      tryit: { q: "You have 4 marbles and your friend has 12. Work out BOTH comparisons: how many more does your friend have, and how many times as many?", answer: "How many more: 12 - 4 = 8, so 8 more.\nHow many times as many: 12 divided by 4 = 3, so 3 times as many.\nSame two numbers, two different true answers." },
     },
     {
       h: "5. How to tell which comparison a question wants",
@@ -1652,7 +1652,7 @@ PRIMARY_LESSONS.additiveMultiplicative = {
         { q: "A farm has 6 cows and 42 chickens. Work out both comparisons: how many more chickens than cows, and how many times as many chickens as cows?", steps: ["Gap: 42 - 6 = 36 more chickens.", "Helpings: 42 ÷ 6 = 7 times as many chickens."], answer: "36 more chickens; 7 times as many chickens." },
         { q: "A bookshop has 15 cookery books and 90 children's books. It also has 9 science books and 72 history books. For which pair is the 'how many times as many' answer larger? Show your working.", steps: ["Cookery vs children's: 90 ÷ 15 = 6 times as many children's books.", "Science vs history: 72 ÷ 9 = 8 times as many history books.", "Compare: 8 > 6, so the science-and-history pair gives the larger 'times as many' answer."], answer: "The science and history pair: 72 ÷ 9 = 8 times as many." },
       ],
-      tryit: { q: "A bakery made 10 loaves on a quiet day and 40 loaves on a busy day. Answer both: how many more loaves on the busy day, and how many times as many?", answer: "How many more: 40 - 10 = 30 more loaves. How many times as many: 40 divided by 10 = 4 times as many. Well done for doing both." },
+      tryit: { q: "A bakery made 10 loaves on a quiet day and 40 loaves on a busy day. Answer both: how many more loaves on the busy day, and how many times as many?", answer: "How many more: 40 - 10 = 30 more loaves.\nHow many times as many: 40 divided by 10 = 4 times as many.\nWell done for doing both." },
     },
   ],
 };
@@ -1679,7 +1679,7 @@ PRIMARY_LESSONS.areaPerimeter = {
       body: [
         "The safest way to find any perimeter is to walk round the shape in your head and add up each side as you pass it. Let's do a square. A square is a rectangle where all four sides are exactly the same length.",
         "Picture a square tile with each side 5cm long. (cm is short for centimetre, a small unit of length. Your little fingernail is roughly 1cm across.) Now walk round it like the ant: 5cm along the top, then 5cm down the right, then 5cm along the bottom, then 5cm up the left. Add them up: 5 + 5 + 5 + 5 = 20cm. The perimeter is 20cm.",
-        "Now a rectangle that is not a square, say 8cm long and 3cm wide. Walk round it: the top is 8cm, the right side is 3cm, the bottom is 8cm, the left side is 3cm. Add them all: 8 + 3 + 8 + 3 = 22cm.",
+        "Now a rectangle that is not a square, say 8cm long and 3cm wide.\nWalk round it: the top is 8cm, the right side is 3cm, the bottom is 8cm, the left side is 3cm.\nAdd them all: 8 + 3 + 8 + 3 = 22cm.",
         "Notice something helpful. A rectangle has two long sides that match and two short sides that match. So instead of adding four numbers you can add one long and one short, then double it. For the 8 by 3 rectangle: 8 + 3 = 11, then 11 + 11 = 22cm. Same answer, a little quicker.",
         "Written as a rule, the perimeter of a rectangle is 2 x (length + width). The little cross x here means multiply, which is a fast way of adding the same amount more than once. So 2 x 11 just means 11 + 11.",
       ],
@@ -1734,14 +1734,14 @@ PRIMARY_LESSONS.areaPerimeter = {
       body: [
         "Here comes a surprise that catches out even grown-ups. It feels like a shape with a big edge should have lots of space inside, and a shape with a small edge should have little space inside. That is not true. Perimeter and area are not tied together.",
         "Let's see it with two shapes. First, a very long thin rectangle, 1cm wide and 20cm long, like a strip of ribbon. Its perimeter is 1 + 20 + 1 + 20 = 42cm, which is a big edge. But its area is only 1 x 20 = 20cm², because it is so thin that hardly any squares fit inside.",
-        "Now a chunky square, 10cm by 10cm. Its perimeter is 10 + 10 + 10 + 10 = 40cm, which is actually a bit SMALLER than the ribbon's 42cm. But its area is 10 x 10 = 100cm², which is five times bigger than the ribbon's 20cm².",
+        "Now a chunky square, 10cm by 10cm. Its perimeter is 10 + 10 + 10 + 10 = 40cm, which is actually a bit SMALLER than the ribbon's 42cm.\nBut its area is 10 x 10 = 100cm², which is five times bigger than the ribbon's 20cm².",
         "So the square has a smaller edge yet far more space inside. The lesson is simple: knowing the perimeter does not tell you the area, and knowing the area does not tell you the perimeter. You have to work each one out on its own.",
         "Here is a way to feel why. Imagine the same fence bent into two different shapes. Stretched into a long skinny rectangle it traps almost nothing inside. Squashed into a fat square it traps loads of space. Same fence, same perimeter, very different area.",
       ],
       note: "Bigger perimeter does NOT mean bigger area. Never guess one from the other, always work each out separately.",
       examples: [
         { q: "Rectangle A is 2cm by 9cm. Rectangle B is 5cm by 6cm. Which has the bigger perimeter, and which has the bigger area?", steps: ["Perimeter of A: 2 + 9 + 2 + 9 = 22cm.", "Perimeter of B: 5 + 6 + 5 + 6 = 22cm. So the perimeters are equal, both 22cm.", "Area of A: 2 x 9 = 18cm².", "Area of B: 5 x 6 = 30cm².", "Same perimeter, but B covers much more space inside."], answer: "Perimeters are equal (22cm each), but B has the bigger area (30cm² against 18cm²)." },
-        { q: "Rectangle C is 3cm by 8cm and Rectangle D is 4cm by 6cm. Which has the bigger area, and which has the bigger perimeter?", steps: ["Area of C: 3 × 8 = 24cm². Area of D: 4 × 6 = 24cm². Equal areas.", "Perimeter of C: 2 × (3+8) = 2 × 11 = 22cm. Perimeter of D: 2 × (4+6) = 2 × 10 = 20cm."], answer: "Equal areas (24cm² each), but D has the smaller perimeter (20cm vs 22cm)." },
+        { q: "Rectangle C is 3cm by 8cm and Rectangle D is 4cm by 6cm. Which has the bigger area, and which has the bigger perimeter?", steps: ["Area of C: 3 × 8 = 24cm².\nArea of D: 4 × 6 = 24cm².\nEqual areas.", "Perimeter of C: 2 × (3+8) = 2 × 11 = 22cm.\nPerimeter of D: 2 × (4+6) = 2 × 10 = 20cm."], answer: "Equal areas (24cm² each), but D has the smaller perimeter (20cm vs 22cm)." },
         { q: "Find a rectangle with area exactly 36cm² that has the smallest possible perimeter. Try a few options and compare.", steps: ["Try 1 × 36: perimeter = 2(1+36) = 74cm.", "Try 2 × 18: perimeter = 2(2+18) = 40cm.", "Try 3 × 12: perimeter = 2(3+12) = 30cm.", "Try 4 × 9: perimeter = 2(4+9) = 26cm.", "Try 6 × 6: perimeter = 2(6+6) = 24cm. This is the smallest because the square is the most compact shape."], answer: "A 6cm × 6cm square gives area 36cm² with the smallest perimeter of 24cm." },
       ],
       tryit: { q: "True or false: if one rectangle has a longer perimeter than another, it must also have a bigger area.", answer: "False. A long thin shape can have a big perimeter but a small area, so you cannot tell one from the other." },
@@ -1751,16 +1751,16 @@ PRIMARY_LESSONS.areaPerimeter = {
       body: [
         "Sometimes a shape is not a plain rectangle but looks like the letter L, as if someone took a rectangle and cut a smaller rectangle out of one corner. These are called compound shapes, which just means shapes built from more than one rectangle joined together.",
         "The trick with area is to break the L back into simple rectangles. Work out the area of the big rectangle it started as, then take away the area of the little rectangular piece that was cut out. Take away, not add, because that corner is now empty space, not covered space.",
-        "Picture a 10cm by 8cm rectangle. Its area is 10 x 8 = 80cm². Now cut a small 3cm by 2cm rectangle out of one corner. The cut-out piece has area 3 x 2 = 6cm². So the space still covered is 80 take away 6, which is 80 - 6 = 74cm². That is the area of the L-shape.",
+        "Picture a 10cm by 8cm rectangle. Its area is 10 x 8 = 80cm².\nNow cut a small 3cm by 2cm rectangle out of one corner. The cut-out piece has area 3 x 2 = 6cm².\nSo the space still covered is 80 take away 6, which is 80 - 6 = 74cm². That is the area of the L-shape.",
         "The perimeter of an L-shape is best found the safe way: walk right round the outside edge, listing every straight side as you pass it, and add them all up. Do not try to guess it, because L-shapes have more than four sides and it is easy to miss one.",
       ],
       note: "For an L-shape's area, split it into rectangles: find the big area, then TAKE AWAY the cut-out piece. For its perimeter, walk right round and add every side.",
       examples: [
         { q: "An L-shape is made from a 6cm by 4cm rectangle with a 2cm by 2cm square cut out of one corner. What is its area?", steps: ["Area of the whole rectangle before cutting: 6 x 4 = 24cm².", "Area of the square cut out of the corner: 2 x 2 = 4cm².", "The corner is now empty, so take it away: 24 - 4 = 20cm².", "So the L-shape covers 20cm²."], answer: "20cm²" },
-        { q: "An L-shape is made from an 8cm by 5cm rectangle with a 3cm by 2cm rectangle cut from one corner. Find its area and perimeter.", steps: ["Area: whole rectangle = 8 × 5 = 40cm². Cut-out = 3 × 2 = 6cm². Area of L = 40 - 6 = 34cm².", "Perimeter: walk round the outside, starting at bottom-left. The six sides are 8, 5, 3, 2, 5, 3. Total = 8+5+3+2+5+3 = 26cm.", "Alternatively, notice 26 = 2×(8+5) = 26cm — cutting a corner leaves the perimeter unchanged."], answer: "Area = 34cm². Perimeter = 26cm." },
+        { q: "An L-shape is made from an 8cm by 5cm rectangle with a 3cm by 2cm rectangle cut from one corner. Find its area and perimeter.", steps: ["Area: whole rectangle = 8 × 5 = 40cm².\nCut-out = 3 × 2 = 6cm².\nArea of L = 40 - 6 = 34cm².", "Perimeter: walk round the outside, starting at bottom-left. The six sides are 8, 5, 3, 2, 5, 3. Total = 8+5+3+2+5+3 = 26cm.", "Alternatively, notice 26 = 2×(8+5) = 26cm — cutting a corner leaves the perimeter unchanged."], answer: "Area = 34cm². Perimeter = 26cm." },
         { q: "A 9cm × 6cm rectangle has a 4cm × 3cm corner cut out to form an L-shape. Find its area. Then explain, without measuring, why the perimeter must be 2 × (9+6) = 30cm.", steps: ["Area = (9 × 6) - (4 × 3) = 54 - 12 = 42cm².", "For the perimeter: cutting a rectangular corner replaces one straight edge with two new edges of the same lengths (the cut's width and height). The total path round the outside stays the same as for the original rectangle.", "So perimeter = 2 × (9+6) = 30cm without measuring each of the six sides individually."], answer: "Area = 42cm². Perimeter = 30cm, because removing a rectangular corner does not change the total perimeter." },
       ],
-      tryit: { q: "A 5cm by 5cm square has a 1cm by 1cm corner cut out. What area is left?", answer: "24cm², because the whole square is 5 x 5 = 25cm² and the cut-out is 1 x 1 = 1cm², so 25 - 1 = 24cm²." },
+      tryit: { q: "A 5cm by 5cm square has a 1cm by 1cm corner cut out. What area is left?", answer: "24cm², because the whole square is 5 x 5 = 25cm²\nand the cut-out is 1 x 1 = 1cm²,\nso 25 - 1 = 24cm²." },
     },
     {
       h: "8. Putting it all together",
@@ -1770,7 +1770,7 @@ PRIMARY_LESSONS.areaPerimeter = {
         "The two are not linked, so a big edge does not promise a big inside, and you always work out each one for itself. And for an L-shape, split it into rectangles for the area (adding or taking away pieces), and walk right round the outside for the perimeter.",
         "If you only remember one thing, remember this pair of pictures: perimeter is the fence, area is the field. Whenever a question gives you a shape, first decide which of the two it is asking for, and everything else follows from there.",
       ],
-      tryit: { q: "A rectangle is 9cm long and 4cm wide. Work out BOTH its perimeter and its area, with the right units for each.", answer: "Perimeter = 9 + 4 + 9 + 4 = 26cm. Area = 9 x 4 = 36cm². Notice the perimeter is in cm and the area is in cm²." },
+      tryit: { q: "A rectangle is 9cm long and 4cm wide. Work out BOTH its perimeter and its area, with the right units for each.", answer: "Perimeter =\n9 + 4 + 9 + 4 =\n26cm.\nArea =\n9 x 4 =\n36cm².\nNotice the perimeter is in cm and the area is in cm²." },
     },
   ],
 };
@@ -1817,7 +1817,7 @@ PRIMARY_LESSONS.unitConversion = {
       h: "4. Going from a big unit to a small unit: multiply",
       body: [
         "Now for the first real conversion. When you swap a big unit for a small unit, you MULTIPLY by the factor. Why multiply? Because you are breaking each big step into lots of little steps, so the number gets bigger, and multiplying makes numbers bigger.",
-        "Let us do 3 metres into centimetres. Metre is the big unit, centimetre is the small unit, so we multiply. The factor is 100 (because 1m = 100cm). So 3 × 100 = 300. Three metres is 300 centimetres. Picture it: each metre becomes 100 centimetres, and we have 3 of them, so 100 + 100 + 100 = 300.",
+        "Let us do 3 metres into centimetres. Metre is the big unit, centimetre is the small unit, so we multiply. The factor is 100 (because 1m = 100cm).\nSo 3 × 100 = 300. Three metres is 300 centimetres.\nPicture it: each metre becomes 100 centimetres, and we have 3 of them, so 100 + 100 + 100 = 300.",
         "A neat trick for multiplying by 10, 100 or 1000: the digits do not change, they just slide to the left and you fill the gap with zeros. Multiply by 10, add one zero. Multiply by 100, add two zeros. Multiply by 1000, add three zeros. So 7 × 1000 = 7000, easy as that.",
         "One gentle warning. When there is a decimal point, the zeros trick needs care. For 3.5km into metres we multiply by 1000, and 3.5 × 1000 = 3500. The point moves three places to the right, it does not just gain three zeros on the end.",
       ],
@@ -1886,7 +1886,7 @@ PRIMARY_LESSONS.unitConversion = {
         { q: "A jug holds 2.3 litres of juice. You add 750ml more. What is the total in millilitres?", steps: ["Convert to ml first: 2.3 litres × 1000 = 2300ml.", "Add: 2300 + 750 = 3050ml."], answer: "3050ml" },
         { q: "A lorry can carry 3 tonnes. It has already been loaded with 1800kg. How many more kilograms can it carry? (1 tonne = 1000kg.)", steps: ["Convert 3 tonnes to kg: 3 × 1000 = 3000kg.", "Already loaded: 1800kg.", "Remaining capacity: 3000 - 1800 = 1200kg."], answer: "1200kg more." },
       ],
-      tryit: { q: "You have a 2m plank and saw off 40cm. How long is the plank now, in centimetres?", answer: "160cm. Change 2m into 200cm (multiply by 100), then take away 40: 200 minus 40 = 160cm." },
+      tryit: { q: "You have a 2m plank and saw off 40cm. How long is the plank now, in centimetres?", answer: "160cm.\nChange 2m into 200cm (multiply by 100),\nthen take away 40: 200 minus 40 = 160cm." },
     },
   ],
 };
@@ -2186,7 +2186,7 @@ PRIMARY_LESSONS.formalMultiplication = {
         "The secret to the whole trick is understanding what a number like 23 is really made of. The digit on the right is the ones, and the digit to its left is the tens. So 23 is not really '2 and 3'. It is 2 tens and 3 ones, which is 20 and 3. This is called place value, because the place a digit sits in tells you what it is worth.",
         "Think of it like money. The number 23 is like having two 10p coins and three 1p coins. Two tens is 20p, plus three ones is 3p, giving 23p in total. The '2' is really worth 20 because of where it sits.",
         "Now the clever part. Because 23 is really 20 + 3, we can chop any multiply that uses 23 into two smaller multiplies, do each one on its own, then add the two answers. Breaking a number into its place-value pieces like this is called splitting.",
-        "Let us try it on 23 × 6, which means '23 groups of 6'. Split the 23 into 20 and 3. Now do the two easy multiplies: 20 × 6 = 120, and 3 × 6 = 18. Finally add the two little answers together: 120 + 18 = 138. So 23 × 6 = 138, and we never had to do anything harder than our times tables.",
+        "Let us try it on 23 × 6, which means '23 groups of 6'. Split the 23 into 20 and 3.\nNow do the two easy multiplies: 20 × 6 = 120, and 3 × 6 = 18.\nFinally add the two little answers together: 120 + 18 = 138.\nSo 23 × 6 = 138, and we never had to do anything harder than our times tables.",
       ],
       note: "The two little answers you get from splitting have a name: they are called partial products. 'Partial' means 'a part of', so each one is part of the final answer, waiting to be added on.",
       examples: [
@@ -2201,18 +2201,18 @@ PRIMARY_LESSONS.formalMultiplication = {
       body: [
         "Splitting can feel like magic the first time, so here is a picture that shows why it always works. Remember the array from Section 1, the block of dots? We can use a rectangle in exactly the same way.",
         "Picture 23 × 6 as a rectangle that is 23 boxes wide and 6 boxes tall. The total number of little boxes inside is the answer we want. Now draw one line down the rectangle to chop it into two smaller rectangles: one that is 20 wide and one that is 3 wide. Both are still 6 tall.",
-        "The left rectangle holds 20 × 6 = 120 boxes. The right rectangle holds 3 × 6 = 18 boxes. Slide them back together and you have all the boxes, so the whole rectangle is 120 + 18 = 138. The picture and the splitting give the same answer, because they are the same idea.",
+        "The left rectangle holds 20 × 6 = 120 boxes.\nThe right rectangle holds 3 × 6 = 18 boxes.\nSlide them back together and you have all the boxes, so the whole rectangle is 120 + 18 = 138.\nThe picture and the splitting give the same answer, because they are the same idea.",
         "This rectangle picture is worth remembering, because in a moment we are going to split BOTH sides of the rectangle, and it will make that step much easier to trust.",
       ],
       note: "If you ever forget why splitting works, quietly draw a rectangle and chop it up. A shape that you can see cannot lie to you.",
-      tryit: { q: "Imagine a rectangle 45 wide and 8 tall. Split the 45 into 40 and 5. What are the two partial products, and what is the total?", answer: "40 × 8 = 320 and 5 × 8 = 40. Total: 320 + 40 = 360." },
+      tryit: { q: "Imagine a rectangle 45 wide and 8 tall. Split the 45 into 40 and 5. What are the two partial products, and what is the total?", answer: "40 × 8 = 320\nand 5 × 8 = 40.\nTotal: 320 + 40 = 360." },
     },
     {
       h: "5. More practice with a one-digit multiplier",
       body: [
         "Before we make things bigger, let us get really comfortable splitting when we are multiplying by a single digit. The steps are always the same three, every single time.",
         "Step one: split the big number into its tens and ones. Step two: multiply each piece by the single digit, using your times tables. Step three: add the partial products together. That is the whole recipe.",
-        "Watch it work on 53 × 6. Split 53 into 50 and 3. Then 50 × 6 = 300, and 3 × 6 = 18. Add them: 300 + 18 = 318. Done.",
+        "Watch it work on 53 × 6. Split 53 into 50 and 3.\nThen 50 × 6 = 300, and 3 × 6 = 18.\nAdd them: 300 + 18 = 318. Done.",
         "A quick tip for the tens piece. To do 50 × 6, first do the easy fact 5 × 6 = 30, then pop a zero on the end to make 300. Multiplying by a 'tens' number is just a times-table fact wearing an extra zero.",
       ],
       note: "50 × 6 is just 5 × 6 with a nought stuck on the end. 5 × 6 = 30, so 50 × 6 = 300. That little zero trick saves a lot of thinking.",
@@ -2229,7 +2229,7 @@ PRIMARY_LESSONS.formalMultiplication = {
         "Now for the big step, and it is smaller than it looks. What if BOTH numbers are large, like 47 × 23? The trick is the same as before, only now we split the number we are multiplying BY.",
         "The number you are multiplying by has a name: it is called the multiplier. In 47 × 23, the 23 is the multiplier, because we want '47 groups of 23'. We split that 23 into 20 and 3, just as we split numbers before.",
         "Now we multiply the whole 47 by each piece of the multiplier. First 47 × 20, then 47 × 3. Then, you guessed it, we add the two partial products together.",
-        "Let us do it. 47 × 20 = 940 (think 47 × 2 = 94, then add a zero). And 47 × 3 = 141. Add the partial products: 940 + 141 = 1081. So 47 × 23 = 1081. Two ordinary multiplies and one addition, and the scary-looking sum is finished.",
+        "Let us do it. 47 × 20 = 940 (think 47 × 2 = 94, then add a zero).\nAnd 47 × 3 = 141.\nAdd the partial products: 940 + 141 = 1081.\nSo 47 × 23 = 1081. Two ordinary multiplies and one addition, and the scary-looking sum is finished.",
         "Remember the rectangle from Section 4? This is that same rectangle, but now chopped into pieces along both directions. Every partial product is just one piece of the rectangle, and adding them all up fills the whole shape.",
       ],
       examples: [
@@ -2272,11 +2272,11 @@ PRIMARY_LESSONS.formalMultiplication = {
       body: [
         "You now know everything you need, so let us gather it into one clear recipe you can follow for any multiply, however big it looks.",
         "First, estimate. Round both numbers and work out a rough answer to expect. Second, split the multiplier into its tens and ones, giving the tens their full value with the zero. Third, multiply the big number by each piece to get your partial products. Fourth, add the partial products together. Fifth, check your answer against the estimate from step one.",
-        "Let us run the full recipe on 63 × 29. Estimate: 60 × 30 = 1800. Split the multiplier 29 into 20 and 9. Partial products: 63 × 20 = 1260, and 63 × 9 = 567. Add them: 1260 + 567 = 1827. Check: 1827 is very close to 1800, so we are confident it is right.",
+        "Let us run the full recipe on 63 × 29.\nEstimate: 60 × 30 = 1800.\nSplit the multiplier 29 into 20 and 9.\nPartial products: 63 × 20 = 1260, and 63 × 9 = 567.\nAdd them: 1260 + 567 = 1827.\nCheck: 1827 is very close to 1800, so we are confident it is right.",
         "That is column multiplication. There was never a big scary multiply hiding in there. It was only ever a few times-table facts, given their proper place values, and added up carefully. Any multiplication in the world, no matter how huge, comes apart into exactly these small friendly pieces.",
       ],
       note: "The five steps in order: Estimate, Split, Multiply, Add, Check. Do them in that order every time and big multiplications stop being scary.",
-      tryit: { q: "Use the full recipe on 52 × 34: estimate first, then split, multiply, add, and check.", answer: "Estimate: 50 × 30 = 1500. Split 34 into 30 and 4. Partial products: 52 × 30 = 1560 and 52 × 4 = 208. Add: 1560 + 208 = 1768. Check: 1768 is close to 1500, so it is sensible." },
+      tryit: { q: "Use the full recipe on 52 × 34: estimate first, then split, multiply, add, and check.", answer: "Estimate: 50 × 30 = 1500.\nSplit 34 into 30 and 4.\nPartial products: 52 × 30 = 1560 and 52 × 4 = 208.\nAdd: 1560 + 208 = 1768.\nCheck: 1768 is close to 1500, so it is sensible." },
     },
   ],
 };
@@ -2335,7 +2335,7 @@ PRIMARY_LESSONS.formalDivision = {
         { q: "Divide 195 by 5 using friendly jumps.", steps: ["Big jump: 5 × 30 = 150. Left over: 195 − 150 = 45.", "Small jump: 5 × 9 = 45 exactly.", "Add the jumps: 30 + 9 = 39."], answer: "39" },
         { q: "Divide 336 by 7 using friendly jumps.", steps: ["Big jump: 7 × 40 = 280. Left over: 336 − 280 = 56.", "Small jump: 7 × 8 = 56 exactly.", "Add the jumps: 40 + 8 = 48."], answer: "48" },
       ],
-      tryit: { q: "Divide 96 by 4 by building up jumps.", answer: "24. (4 × 20 = 80, leaving 16; then 4 × 4 = 16; so 20 + 4 = 24.)" },
+      tryit: { q: "Divide 96 by 4 by building up jumps.", answer: "24.\n(4 × 20 = 80, leaving 16;\nthen 4 × 4 = 16;\nso 20 + 4 = 24.)" },
     },
     {
       h: "5. Checking your answer by multiplying back",
@@ -2352,7 +2352,7 @@ PRIMARY_LESSONS.formalDivision = {
       body: [
         "Sometimes the friendly jumps do not land exactly on your target. Whatever is left over at the very end, once no more whole divisors will fit, is called the REMAINDER.",
         "Picture sharing 13 sweets between 4 children. Each child gets 3 sweets (that uses up 12), and there is 1 sweet left over that cannot be split fairly. That leftover 1 is the remainder. We write it as 13 ÷ 4 = 3 remainder 1.",
-        "Let us try a bigger one. Divide 175 by 8. Big jump: 8 × 20 = 160, leaving 175 − 160 = 15. Smaller jump: 8 × 1 = 8, leaving 15 − 8 = 7. Now 7 is smaller than 8, so not even one more 8 will fit. We stop.",
+        "Let us try a bigger one. Divide 175 by 8.\nBig jump: 8 × 20 = 160, leaving 175 − 160 = 15.\nSmaller jump: 8 × 1 = 8, leaving 15 − 8 = 7.\nNow 7 is smaller than 8, so not even one more 8 will fit. We stop.",
         "Add the jumps: 20 + 1 = 21, and 7 is left over. So 175 ÷ 8 = 21 remainder 7.",
         "There is one golden rule for remainders: the remainder must always be SMALLER than the divisor. If it is the same size or bigger, then another whole jump still fits, which means you have stopped too soon.",
       ],
@@ -2465,7 +2465,7 @@ PRIMARY_LESSONS.logicGrid = {
         "So treat 'not' as a friend, not a nuisance. Every 'not' you are given is a free cross, and crosses win puzzles just as surely as ticks do.",
       ],
       note: "Two choices left, and a clue says 'not' to one of them? Then the other one is definitely true. A 'not' can quietly become a 'yes'.",
-      tryit: { q: "Three runners X, Y and Z finish first, second and third. Clue 1: Z does not finish first. Clue 2: X does not finish third. Clue 3: Y finishes second. Work out the full finishing order.", answer: "Y is second (Clue 3). That leaves first and third for X and Z. Clue 2 says X is not third, so X is first, which leaves Z third. Order: X first, Y second, Z third. (Check Clue 1: Z is not first, correct.)" },
+      tryit: { q: "Three runners X, Y and Z finish first, second and third. Clue 1: Z does not finish first. Clue 2: X does not finish third. Clue 3: Y finishes second. Work out the full finishing order.", answer: "Y is second (Clue 3).\nThat leaves first and third for X and Z.\nClue 2 says X is not third, so X is first, which leaves Z third.\nOrder: X first, Y second, Z third. (Check Clue 1: Z is not first, correct.)" },
     },
     {
       h: "6. One clue often unlocks the next",
@@ -2506,7 +2506,7 @@ PRIMARY_LESSONS.logicGrid = {
         { q: "A, B and C each eat a different meal: soup, salad or sandwich. Clue 1: A does not eat soup. Clue 2: B eats salad. Clue 3: C does not eat sandwich. Who eats what? Check every clue at the end.", steps: ["Clue 2: B=salad. Cross soup and sandwich for B.", "C: not sandwich (Clue 3). Salad is gone. Only soup is left. C=soup.", "A: salad and soup are taken. A=sandwich.", "Check: Clue 1 (A not soup) → A=sandwich ✓. Clue 2 (B=salad) ✓. Clue 3 (C not sandwich) → C=soup ✓. All happy."], answer: "A: sandwich, B: salad, C: soup." },
         { q: "Four teams (P, Q, R, S) each get a different colour vest: red, blue, green, yellow. Clue 1: P is not red and not blue. Clue 2: Q is not green. Clue 3: R is not yellow and not blue. Clue 4: S is green. Solve using the full six-step method and check all clues.", steps: ["Clue 4 (positive): S=green. Cross green for P, Q, R.", "Clue 1: P ≠ red, ≠ blue, ≠ green (gone). Only yellow is left. P=yellow. Cross yellow for Q, R, S.", "Clue 3: R ≠ yellow (gone), ≠ blue. R's remaining colours: red. R=red. Cross red for Q.", "Q: green (gone), yellow (gone), red (gone). Q=blue.", "Check: Clue 1 (P not red, not blue) → P=yellow ✓. Clue 2 (Q not green) → Q=blue ✓. Clue 3 (R not yellow, not blue) → R=red ✓. Clue 4 (S=green) ✓. All happy."], answer: "P: yellow, Q: blue, R: red, S: green." },
       ],
-      tryit: { q: "Two children, Kit and Lou, sit on two chairs, one red and one green. Clue: Kit does not sit on the green chair. Where does each child sit?", answer: "Kit is not on the green chair, so Kit must be on the red chair. That leaves the green chair for Lou. Kit: red chair, Lou: green chair." },
+      tryit: { q: "Two children, Kit and Lou, sit on two chairs, one red and one green. Clue: Kit does not sit on the green chair. Where does each child sit?", answer: "Kit is not on the green chair, so Kit must be on the red chair.\nThat leaves the green chair for Lou.\nKit: red chair, Lou: green chair." },
     },
   ],
 };
@@ -2740,7 +2740,7 @@ PRIMARY_LESSONS.angleBasics = {
         { q: "Five angles meet at a point: 80°, 65°, 90°, 72° and one unknown. Find the unknown.", steps: ["All five add to 360°.", "Sum of known: 80 + 65 + 90 + 72 = 307.", "Unknown = 360 - 307 = 53°.", "Check: 307 + 53 = 360. ✓"], answer: "53°" },
         { q: "Four angles meet at a point: x, 2x, 3x and 4x. Find x, then state all four angles.", steps: ["They add to 360°: x + 2x + 3x + 4x = 10x = 360.", "x = 360 ÷ 10 = 36°.", "The four angles are 36°, 72°, 108° and 144°.", "Check: 36 + 72 + 108 + 144 = 360. ✓"], answer: "x = 36°. Angles are 36°, 72°, 108° and 144°." },
       ],
-      tryit: { q: "Three angles meet at a point and go all the way round: 120°, 150° and one more. What is the missing angle?", answer: "90°, because 120 + 150 = 270, and 360 - 270 = 90. Check: 120 + 150 + 90 = 360." },
+      tryit: { q: "Three angles meet at a point and go all the way round: 120°, 150° and one more. What is the missing angle?", answer: "90°, because 120 + 150 = 270,\nand 360 - 270 = 90.\nCheck: 120 + 150 + 90 = 360." },
     },
     {
       h: "8. Angles inside a triangle add up to 180°",
@@ -2756,7 +2756,7 @@ PRIMARY_LESSONS.angleBasics = {
         { q: "An isosceles triangle has two equal angles and a third angle of 40°. Find the two equal angles.", steps: ["All three angles add up to 180°.", "The two equal angles together make 180 - 40 = 140°.", "Each equal angle = 140 ÷ 2 = 70°.", "Check: 70 + 70 + 40 = 180. ✓"], answer: "70° each." },
         { q: "In a triangle, one angle is twice the size of a second angle, and the third angle is 30°. Find all three angles.", steps: ["Let the smaller of the first two angles be x°, so the other is 2x°.", "All three add to 180: x + 2x + 30 = 180.", "3x = 150, so x = 50°.", "The three angles are 50°, 100° and 30°.", "Check: 50 + 100 + 30 = 180. ✓"], answer: "30°, 50° and 100°." },
       ],
-      tryit: { q: "A triangle has angles of 40° and 95°. What is the third angle?", answer: "45°, because 40 + 95 = 135, and 180 - 135 = 45. Check: 40 + 95 + 45 = 180." },
+      tryit: { q: "A triangle has angles of 40° and 95°. What is the third angle?", answer: "45°, because 40 + 95 = 135,\nand 180 - 135 = 45.\nCheck: 40 + 95 + 45 = 180." },
     },
     {
       h: "9. Vertically opposite angles are equal",

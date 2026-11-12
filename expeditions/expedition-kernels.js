@@ -126,8 +126,16 @@ export function generateSchedulingKernel(rng, options = {}) {
  * this fix.
  * @returns {{values: number[], target: number, solution: [number, number], attempts: number}|null}
  */
+// pairCount (default 1, Unequal-Crossing-style "exactly one right answer") lets a caller ask
+// for more than one valid direct pair instead — The Cider Run's rebuild (2026-09-21) uses
+// pairCount: 2 so a layout offers a genuine choice between two provably-safe pairs rather
+// than a single certified route to execute, real decision-making instead of "find the one
+// answer, then walk it." Since every value is distinct, two pairs that both sum to the
+// target can never share a value (a+b=target and a+c=target forces b=c, impossible with
+// distinct values) — so any pairCount>1 result is automatically a set of disjoint pairs,
+// no separate check needed.
 export function generateExactPairKernel(rng, options = {}) {
-  const { count = 6, valueMin = 2, valueMax = 12, targetMin = 9, targetMax = 16, maxAttempts = 500 } = options;
+  const { count = 6, valueMin = 2, valueMax = 12, targetMin = 9, targetMax = 16, maxAttempts = 500, pairCount = 1 } = options;
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     const values = distinctInts(rng, count, valueMin, valueMax);
     if (!values) return null;
@@ -139,8 +147,8 @@ export function generateExactPairKernel(rng, options = {}) {
         if (values[i] + values[j] === target) pairs.push([values[i], values[j]]);
       }
     }
-    if (pairs.length !== 1) continue; // no valid pair (0) or an ambiguous choice (2+) — reject, try again
-    return { values, target, solution: pairs[0], attempts: attempt };
+    if (pairs.length !== pairCount) continue; // too few (ambiguity risk with 0) or too many (a further, uncertified pair) — reject, try again
+    return { values, target, solution: pairs[0], solutions: pairs, attempts: attempt };
   }
   return null;
 }

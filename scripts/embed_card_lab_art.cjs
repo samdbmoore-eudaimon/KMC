@@ -5,7 +5,7 @@ const sharp = require("sharp");
 
 const ROOT = path.join(__dirname, "..");
 const ASSETS = path.join(ROOT, "assets", "card-lab");
-const OUT = path.join(ROOT, "kq-card-lab-art.js");
+const OUT = path.join(ROOT, "wm-card-lab-art.js");
 
 async function data(file, width, height, quality, alpha) {
   const image = sharp(path.join(ASSETS, file)).resize(width, height, { fit: "cover" });

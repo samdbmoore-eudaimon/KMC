@@ -1,0 +1,320 @@
+{
+  "candidateStatus": "success",
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 3
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "barrow",
+        "cobweb",
+        "amberly"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 599,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "barrow",
+              "cobweb",
+              "amberly"
+            ],
+            "status": "success",
+            "commandCount": 20,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "barrow",
+        "driftwood",
+        "gable"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 321,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "barrow",
+              "driftwood",
+              "gable"
+            ],
+            "status": "success",
+            "commandCount": 28,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "barrow",
+        "warden",
+        "amberly"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 452,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "barrow",
+              "warden",
+              "amberly"
+            ],
+            "status": "success",
+            "commandCount": 21,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-892dcb83a818e5e4",
+    "evidence": {
+      "blueprintHash": "995655c31b3853d2",
+      "structuralFingerprint": "52da8f55a9ea69c8",
+      "puzzleFingerprint": "41d99dd7c2bfbc46",
+      "traceHashes": [
+        "bc375192b656b3e9",
+        "7738e12c0d24183d",
+        "d463e0d3bf7846e4"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              7,
+              0,
+              7,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              7,
+              0,
+              0,
+              4
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              6,
+              6,
+              4
+            ],
+            "eligibleBelow": []
+          }
+        ],
+        "exclusions": [
+          {
+            "id": "all-below-target-band",
+            "examined": 680,
+            "feasible": [],
+            "excluded": true
+          },
+          {
+            "id": "one-legendary-two-commons",
+            "examined": 132,
+            "feasible": [],
+            "excluded": true
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "barrow",
+          "cobweb",
+          "amberly"
+        ],
+        "finalHash": "bc375192b656b3e9",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "cobweb",
+          "holdId": "cobweb@r3#32"
+        },
+        "hashes": [
+          "d643c195a347e216",
+          "c797c819fdd5bce8",
+          "01b02f63f4c4a8da",
+          "e9099efaacd7442b",
+          "e77624e3e1bb6446",
+          "dff86e62a1c6efef",
+          "d3ef8a796e9571d2",
+          "44c9eb5ad6594635",
+          "befa5a858577a6ca",
+          "7893529484d9fd6f",
+          "a1a0e3c904c6ba42",
+          "f4c68fc664202275",
+          "6ea001f2ad82e54f",
+          "46b6d1eafd7758a3",
+          "8378e95912c80c6c",
+          "6b12da34766188a7",
+          "86860fa67c3cdcd5",
+          "c394eca545c3d21a",
+          "34e1911e1d4fdb9f",
+          "bc375192b656b3e9"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "barrow",
+          "driftwood",
+          "gable"
+        ],
+        "finalHash": "7738e12c0d24183d",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "driftwood",
+          "holdId": "driftwood@r4#47"
+        },
+        "hashes": [
+          "4c89efa190369c74",
+          "413f9a69d30ca32e",
+          "026c3925389b4f9e",
+          "3e497240bb1a55d5",
+          "1435fe6bd97c2b2e",
+          "40e9960cba688cc1",
+          "029abb6390bd8b2e",
+          "d87c95aa480a7f2f",
+          "29b40561e9c14b36",
+          "b068634e693226b5",
+          "b0a5463bfb087d80",
+          "d0749a4f77ce0914",
+          "7bbe691ce06b060f",
+          "f8007b219a148452",
+          "c07391d4eb10f4d7",
+          "617329c9d730987c",
+          "91d5e9c6ebb9532d",
+          "d43b8ebe5783e503",
+          "188ecf1058a4efbd",
+          "e69e92926dfd2457",
+          "0c27a5954c0d11de",
+          "89239c723a135c27",
+          "0575629c2db7a413",
+          "d4a3f0e108887dba",
+          "4f0db7f7625cca58",
+          "053d608b551a24e4",
+          "ce9f69647cff8339",
+          "7738e12c0d24183d"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "barrow",
+          "warden",
+          "amberly"
+        ],
+        "finalHash": "d463e0d3bf7846e4",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "warden",
+          "holdId": "warden@r3#32"
+        },
+        "hashes": [
+          "2272a0bc994c0c27",
+          "ba1ad2b66866c4c3",
+          "150a4acd2679e308",
+          "fe0fa6acc7a21919",
+          "e1c22db19121c698",
+          "f8d0c884731dc67d",
+          "333425af35c04a44",
+          "fe6b3bde2f03e5e9",
+          "98b16d8f0a5751a0",
+          "1963c86eae2dafe9",
+          "e00d06f339f0a92c",
+          "f1bf80bcf46d0163",
+          "7b472bd577ac74f4",
+          "b6521185551638cc",
+          "9afc9110384bed87",
+          "b7d96b15037d5db6",
+          "2124e456cf8c05f5",
+          "2007b8402d060e23",
+          "fa94a903d7f722dc",
+          "64cd7ae6e6cc562f",
+          "d463e0d3bf7846e4"
+        ]
+      }
+    ]
+  }
+}

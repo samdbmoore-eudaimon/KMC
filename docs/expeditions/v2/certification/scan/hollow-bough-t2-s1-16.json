@@ -1,0 +1,1392 @@
+{
+ "summary": {
+  "family": "hollow-bough",
+  "tier": 2,
+  "scanned": 64,
+  "built": 53,
+  "accepted": 40,
+  "distinctTopologies": 40,
+  "distinctPuzzles": 2,
+  "maxStates": 6000
+ },
+ "rows": [
+  {
+   "layoutId": "river",
+   "seed": 1,
+   "tier": 2,
+   "topology": "76073eff870f1aa4",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "17e53574fce6c635",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 567
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 1230
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2033
+  },
+  {
+   "layoutId": "river",
+   "seed": 2,
+   "tier": 2,
+   "topology": "559fa6aca91e3587",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "a28c60a24ac285e1",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 4744
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 2142
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5357
+  },
+  {
+   "layoutId": "river",
+   "seed": 3,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 4,
+   "tier": 2,
+   "topology": "797f180a0d3ea6b1",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "a368032860302409",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 642
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 644
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1186
+  },
+  {
+   "layoutId": "river",
+   "seed": 5,
+   "tier": 2,
+   "topology": "653bd6c33d290df4",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "9cde228e92c14c71",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 648
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 536
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1367
+  },
+  {
+   "layoutId": "river",
+   "seed": 6,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 7,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 8,
+   "tier": 2,
+   "topology": "3999f6635965a43c",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "7e291b95e1c0ee7c",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 663
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 791
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1451
+  },
+  {
+   "layoutId": "river",
+   "seed": 9,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 10,
+   "tier": 2,
+   "topology": "1422883e5d2f0cb5",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "0d53a2ae185a73c7",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 291
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 228
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 540
+  },
+  {
+   "layoutId": "river",
+   "seed": 11,
+   "tier": 2,
+   "topology": "180ad42697209b75",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "0baad46bce03b156",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 617
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 625
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1232
+  },
+  {
+   "layoutId": "river",
+   "seed": 12,
+   "tier": 2,
+   "topology": "763629bc065bf027",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "f4f89056eb0d8499",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 291
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 231
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 621
+  },
+  {
+   "layoutId": "river",
+   "seed": 13,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 14,
+   "tier": 2,
+   "topology": "d4afb03646fdf0ad",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "1dfb4714778aa329",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 5878
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 755
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 4505
+  },
+  {
+   "layoutId": "river",
+   "seed": 15,
+   "tier": 2,
+   "topology": "1b3a2fc1f6902c1a",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "38dc94aa65a05feb",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 626
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 503
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 918
+  },
+  {
+   "layoutId": "river",
+   "seed": 16,
+   "tier": 2,
+   "topology": "158c694161cdcd7a",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "7b5823125abee659",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 1032
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 825
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1781
+  },
+  {
+   "layoutId": "islands",
+   "seed": 1,
+   "tier": 2,
+   "topology": "2339c918f4982b75",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "b2355680bf8f3905",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3226
+  },
+  {
+   "layoutId": "islands",
+   "seed": 2,
+   "tier": 2,
+   "topology": "5784cd70bb47d2ed",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "b1f5ce879fcd638e",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 4859
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 588
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3679
+  },
+  {
+   "layoutId": "islands",
+   "seed": 3,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 11
+  },
+  {
+   "layoutId": "islands",
+   "seed": 4,
+   "tier": 2,
+   "topology": "f22d4eae8e841757",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "eb13fa1a7f5e1c0d",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 647
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 799
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1191
+  },
+  {
+   "layoutId": "islands",
+   "seed": 5,
+   "tier": 2,
+   "topology": "f73ddfcaaf08da57",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "25ff121308a9afd2",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 140
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 350
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 498
+  },
+  {
+   "layoutId": "islands",
+   "seed": 6,
+   "tier": 2,
+   "topology": "bcfbc55a0f7491b3",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "c9907e1bc48c8178",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2806
+  },
+  {
+   "layoutId": "islands",
+   "seed": 7,
+   "tier": 2,
+   "topology": "9bd7b55a59809cfb",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "e5f0bf234cd73c44",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 5661
+  },
+  {
+   "layoutId": "islands",
+   "seed": 8,
+   "tier": 2,
+   "topology": "398701c872556cad",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "b2e3317f4ef810fc",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 599
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 216
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3009
+  },
+  {
+   "layoutId": "islands",
+   "seed": 9,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 12
+  },
+  {
+   "layoutId": "islands",
+   "seed": 10,
+   "tier": 2,
+   "topology": "6b5d033eabfc9a17",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "ac17c6013a061ece",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 291
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 1229
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 980
+  },
+  {
+   "layoutId": "islands",
+   "seed": 11,
+   "tier": 2,
+   "topology": "b3066df2b0b98ef7",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "98b1478e0cc0e00d",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 487
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 987
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1124
+  },
+  {
+   "layoutId": "islands",
+   "seed": 12,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "islands",
+   "seed": 13,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "islands",
+   "seed": 14,
+   "tier": 2,
+   "topology": "76f342d8728d7d21",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "7da89acb2156f378",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2433
+  },
+  {
+   "layoutId": "islands",
+   "seed": 15,
+   "tier": 2,
+   "topology": "818089733c601e16",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "157866a92614ad2e",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 399
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 835
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 696
+  },
+  {
+   "layoutId": "islands",
+   "seed": 16,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 12
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 1,
+   "tier": 2,
+   "topology": "a989fa407aea4f3b",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "1282bfd9fae5427c",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 848
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 1086
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1789
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 2,
+   "tier": 2,
+   "topology": "472b534d069f931a",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "feead7a760b222c2",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 300
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 299
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 972
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 3,
+   "tier": 2,
+   "topology": "45bf7d0958b06e1a",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "2944de0ab4aa5591",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 2990
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 370
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2410
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 4,
+   "tier": 2,
+   "topology": "4d1c32936bfa119c",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "84fdf8be9f5eaf15",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 632
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 610
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1185
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 5,
+   "tier": 2,
+   "topology": "089522aed322bbd9",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "09590a0ea83db783",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3367
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 6,
+   "tier": 2,
+   "topology": "c651ab82b5e051d9",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "4aa225c0201efce3",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 718
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 1070
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1416
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 7,
+   "tier": 2,
+   "topology": "209bfd41c539fb92",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "79911b06c83122a5",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 291
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 228
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1351
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 8,
+   "tier": 2,
+   "topology": "bb3221fe235f420d",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "9f1ce76b6667e4f8",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 839
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 764
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 934
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 9,
+   "tier": 2,
+   "topology": "63d3d89b13ab21f8",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "6071903010537233",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 265
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 560
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 651
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 10,
+   "tier": 2,
+   "topology": "51307ebedb1474e1",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "a4a8a558b1ac0dcb",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 291
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 310
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 617
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 11,
+   "tier": 2,
+   "topology": "ee2dcac9dddb147e",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "217c16cc9485e02f",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3207
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 12,
+   "tier": 2,
+   "topology": "a362c96fea486830",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "65752c8f30b59aca",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 291
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 237
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 615
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 13,
+   "tier": 2,
+   "topology": "18a2ed21bd191d82",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "11808309e74f0ed8",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 369
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 347
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 630
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 14,
+   "tier": 2,
+   "topology": "6df0b24018289e77",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "5915d3b9c10cda36",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2744
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 15,
+   "tier": 2,
+   "topology": "d102786faf032654",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "67c243b5ef8df2ca",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 907
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 498
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 886
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 16,
+   "tier": 2,
+   "topology": "1a2aa79b552afcc0",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "212e65a2bf467f7b",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 817
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 1038
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1868
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 1,
+   "tier": 2,
+   "topology": "0243b80adddcb8ad",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "0aeeced826d08829",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3281
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 2,
+   "tier": 2,
+   "topology": "e9b7ef418743231e",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "12c451838e922b6a",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 720
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 3710
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3340
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 3,
+   "tier": 2,
+   "topology": "614e2ad0b9e5f00f",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "8c478000f9bd1235",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 599
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 649
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1473
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 4,
+   "tier": 2,
+   "topology": "1c2ce46da51a98e2",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "0677b6dc519be6f7",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 589
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 980
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1341
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 5,
+   "tier": 2,
+   "topology": "c748488bf9a2aad0",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "ac6d7ebf379f91ca",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3355
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 6,
+   "tier": 2,
+   "topology": "a3b713f2a8529fb9",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "5fa95ab5861af96e",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 621
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 655
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1170
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 7,
+   "tier": 2,
+   "topology": "6b7778552970fd2e",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "124e3a2913b8b7aa",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 1015
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 234
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2049
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 8,
+   "tier": 2,
+   "topology": "3a6dea3688cd2409",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "e182ba235e57d198",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 140
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 234
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 713
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 9,
+   "tier": 2,
+   "topology": "1d00a00190fe059a",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "5fe4399e3a179ed9",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4652
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 10,
+   "tier": 2,
+   "topology": "e9529008c8f30f0f",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "ceab01a0bd3cf66b",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 291
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 325
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4204
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 11,
+   "tier": 2,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 23
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 12,
+   "tier": 2,
+   "topology": "b5b639ae24f51c71",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "3b7e0f2c9c3e8467",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4247
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 13,
+   "tier": 2,
+   "topology": "3561a23585b083e2",
+   "puzzle": "c1d75b3515e2e08c",
+   "contentHash": "cd3c45f3ba213458",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 1817
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 292
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2059
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 14,
+   "tier": 2,
+   "topology": "6bc5187856c9273f",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "2a7e7fb9ad2ea306",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 800
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 1235
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1549
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 15,
+   "tier": 2,
+   "topology": "a3f6c0fe92f905ad",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "96dd9f5fa6df2c68",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 137
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 340
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 824
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 16,
+   "tier": 2,
+   "topology": "98f950c25f2fcdc1",
+   "puzzle": "f80817f28e2175b1",
+   "contentHash": "cdd63ef20aa235a9",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 1146
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 121
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2407
+  }
+ ]
+}

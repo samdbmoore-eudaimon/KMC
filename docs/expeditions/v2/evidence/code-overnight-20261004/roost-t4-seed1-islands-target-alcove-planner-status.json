@@ -1,0 +1,29 @@
+{
+  "family": "roost",
+  "tier": 4,
+  "seed": 1,
+  "layoutId": "islands",
+  "team": [
+    "barrow",
+    "warden",
+    "harvestmoon"
+  ],
+  "planFamily": "alcove-intercept",
+  "status": "unknown",
+  "reasonCode": "flock-crossing-invalid",
+  "violations": [
+    {
+      "crossing": "1,6",
+      "controlled": false,
+      "regionsTouched": 1,
+      "neighbours": [
+        "2,6:hedge",
+        "2,5:water",
+        "1,5:floor",
+        "0,6:floor",
+        "0,7:floor",
+        "1,7:water"
+      ]
+    }
+  ]
+}

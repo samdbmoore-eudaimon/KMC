@@ -1,0 +1,240 @@
+{
+  "packetId": "four-locks-displaced-v1",
+  "generatorVersion": 2,
+  "batchId": "17-20",
+  "sourceTopologyHash": "c26ada6c341b10dd",
+  "candidateHash": "ca97c5dd6c953d0a",
+  "requestedLimits": {
+    "maxPlannerInvocations": 2,
+    "maxStatesPerInvocation": 8000
+  },
+  "attempts": [
+    {
+      "cardIds": [
+        "tuppence",
+        "wicker",
+        "pip"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 163,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "wicker",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 27,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    },
+    {
+      "cardIds": [
+        "bushel",
+        "dapple",
+        "pip"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "roots"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 955,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "dapple",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 26,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-8309ba5137799e74",
+    "evidence": {
+      "blueprintHash": "164e3bf8792e91af",
+      "puzzleFingerprint": "595b5e8768f12f9a",
+      "traceHashes": [
+        "242b2776cdbc5e45",
+        "3eea3bc8e5019c1f"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              4,
+              0,
+              2,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              4,
+              0,
+              0,
+              2
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              0,
+              5,
+              2
+            ],
+            "eligibleBelow": []
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "tuppence",
+          "wicker",
+          "pip"
+        ],
+        "finalHash": "242b2776cdbc5e45",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "wicker",
+          "holdId": "wicker@r4#37"
+        },
+        "hashes": [
+          "e1d80ef8dff2d69d",
+          "efa32b5c7a7a5219",
+          "76b0a9a42a1c795d",
+          "98cbfbfe29b78c67",
+          "bf2bf12842e18231",
+          "b3978ff8c179a915",
+          "fcaaed1c5200b539",
+          "f6c679918d296cf8",
+          "1f34e66fb3b40450",
+          "6c345181beea2556",
+          "dba56d84a6ed144b",
+          "a692f00b24e85f4c",
+          "652397325b08e3e1",
+          "6e12101d0a45df7e",
+          "3d9b73b652921009",
+          "78e5ee9d67c3286a",
+          "0f368034a394456d",
+          "27e7b8832749265a",
+          "78abd706ecbceebb",
+          "758106bb4232f34a",
+          "dffcdce2f0e9276b",
+          "66be86568e82b23f",
+          "ecc156afee4a47ce",
+          "640f0940972370ad",
+          "6fca9ad25185a737",
+          "d996f5ae202d1279",
+          "242b2776cdbc5e45"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "bushel",
+          "dapple",
+          "pip"
+        ],
+        "finalHash": "3eea3bc8e5019c1f",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "dapple",
+          "holdId": "dapple@r4#38"
+        },
+        "hashes": [
+          "8280ab0aba693aff",
+          "aa4c9403443c449e",
+          "87fde7f99fd9db78",
+          "74ca56ddb283f1e4",
+          "425b611936b605c0",
+          "42a698379fbc499c",
+          "584e74151af9875a",
+          "3fb3d935a4503380",
+          "38f4dba355cb6072",
+          "6b9508b40f65c361",
+          "31780cacc192f165",
+          "5ef03348b287bc67",
+          "17c5477fe2964c02",
+          "4c2b8dd32c95769e",
+          "2926687b609c0fde",
+          "89579a344831a36d",
+          "4fa28f653ca32764",
+          "c23bf84c593a8af1",
+          "a50e261e8965d533",
+          "837207a10c7c0206",
+          "6df859cd1550eca6",
+          "bfbf5eb2b7289131",
+          "b32f3a001700c8db",
+          "1b525805bc0ccb2a",
+          "a016a84048af2cc9",
+          "3eea3bc8e5019c1f"
+        ]
+      }
+    ]
+  }
+}

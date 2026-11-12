@@ -16,7 +16,7 @@ export const PRIMARY_STORY = [
 ];
 // Primary (Ninefold Orchard) hero adventures: choose-your-path upgrade quests.
 // One per common/uncommon hero card, matching JUNIOR_ADVENTURES' scene-type contract exactly
-// (story/choice/dice/skillcheck/puzzle/combat/forge/end). See AdventureRun in KangarooMathsQuest.jsx.
+// (story/choice/dice/skillcheck/puzzle/combat/forge/end). See AdventureRun in WallabyMaths.jsx.
 export const PRIMARY_ADVENTURES = {
   pip: {
   id: "pip",
@@ -24,7 +24,7 @@ export const PRIMARY_ADVENTURES = {
   tagline: "Pip the apple-pip sprite sets right a weighing that has quietly stopped adding up.",
   items: [
     { id: "pip_item1", name: "Pip's Whetted Tally-Stick", stat: 0, how: "found", desc: "+1 Arithmetic. Won with a sharp Arithmetic check early in the adventure." },
-    { id: "pip_item2", name: "The Fair-Share Token", stat: 2, how: "quest", desc: "+1 Logic. Awarded for completing the adventure." },
+    { id: "pip_item2", name: "The Fair-Share Token", stat: 3, how: "quest", desc: "+1 Science. Awarded for completing the adventure." },
     { id: "pip_item3", name: "The Featherfast Balance", stat: 4, how: "forged", desc: "+1 Speed. Forged from three components hidden along the way." },
   ],
   components: { brass_pea: "A True Brass Weight-Pea", level_reed: "A Level-Bubble Reed", swift_pivot: "A Greased Pivot-Pin" },
@@ -424,7 +424,7 @@ export const PRIMARY_ADVENTURES = {
   tagline: "A shy fawn who reads the spots on her own back learns to read the orchard's hidden mistake before it spreads.",
   items: [
     { id: "dapple_item1", name: "The Quiet Tally-Stone", stat: 2, how: "found", desc: "+1 Logic. Won with a sharp Logic check early in the adventure." },
-    { id: "dapple_item2", name: "Dapple's Counting Ribbon", stat: 1, how: "quest", desc: "+1 Geometry. Awarded for completing the adventure." },
+    { id: "dapple_item2", name: "Dapple's Counting Ribbon", stat: 4, how: "quest", desc: "+1 Speed. Awarded for completing the adventure." },
     { id: "dapple_item3", name: "The Truesome Lantern", stat: 3, how: "forged", desc: "+1 Science. Forged from three components hidden along the way." },
   ],
   components: { wick_of_patience: "Wick of Patience", oil_of_noticing: "Oil of Noticing", glass_of_stillness: "Glass of Stillness" },
@@ -724,7 +724,7 @@ export const PRIMARY_ADVENTURES = {
   tagline: "A hive has miscounted itself, and a bee who counts before breakfast cannot let that stand.",
   items: [
     { id: "beeswax_item1", name: "The Tally-Comb", stat: 0, how: "found", desc: "+1 Arithmetic. Won with a sharp Arithmetic check early in the adventure." },
-    { id: "beeswax_item2", name: "The Settled Crown", stat: 3, how: "quest", desc: "+1 Science. Awarded for completing the adventure." },
+    { id: "beeswax_item2", name: "The Settled Crown", stat: 4, how: "quest", desc: "+1 Speed. Awarded for completing the adventure." },
     { id: "beeswax_item3", name: "The Hexagon Lantern", stat: 1, how: "forged", desc: "+1 Geometry. Forged from three components hidden along the way." },
   ],
   components: { pane_of_wax: "Pane of Honest Wax", warm_wick: "Warm Beeswax Wick", six_sided_frame: "Six-Sided Frame" },

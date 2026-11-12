@@ -1,0 +1,172 @@
+{
+  "specVersion": "1.0",
+  "status": "design-baseline-not-implemented",
+  "rulesVersion": 2,
+  "generatorVersion": 1,
+  "moduleKey": "primary",
+  "families": [
+    "four-locks",
+    "turning-ravine",
+    "unequal-crossing",
+    "maybe-flock",
+    "hollow-bough"
+  ],
+  "tiers": 5,
+  "deadline": 5,
+  "squadSize": 3,
+  "apPerRound": 2,
+  "firstTierClearStars": 3,
+  "replayStars": 0,
+  "newModuleSetReward": 0,
+  "chargeCapacity": [
+    4,
+    6,
+    7,
+    7,
+    8
+  ],
+  "commissioning": [
+    [
+      [
+        4,
+        0,
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        4,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        5,
+        2
+      ]
+    ],
+    [
+      [
+        6,
+        0,
+        5,
+        0,
+        0
+      ],
+      [
+        0,
+        6,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        6,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        0,
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        7,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        6,
+        6,
+        4
+      ]
+    ],
+    [
+      [
+        7,
+        0,
+        7,
+        0,
+        0
+      ],
+      [
+        0,
+        8,
+        0,
+        0,
+        4
+      ],
+      [
+        0,
+        0,
+        6,
+        7,
+        4
+      ]
+    ],
+    [
+      [
+        8,
+        0,
+        8,
+        0,
+        0
+      ],
+      [
+        0,
+        8,
+        0,
+        0,
+        7
+      ],
+      [
+        0,
+        0,
+        7,
+        8,
+        4
+      ]
+    ]
+  ],
+  "shapeAlcove": {
+    "geometryBonus": 2,
+    "speedRequired": 6,
+    "prepareAP": 1
+  },
+  "bankMinimumPerFamilyTier": 64,
+  "sudokuOutputBudget": [
+    7,
+    7,
+    7,
+    8,
+    8
+  ],
+  "operatorFaces": [
+    "=",
+    "+",
+    "−",
+    "×",
+    "÷",
+    null
+  ],
+  "topology": {
+    "columns": 12,
+    "rows": 9,
+    "cutCornerSide": 2
+  },
+  "scope": "Parameters reflect the v1.0 documents. Development must still implement and certify the real engine, generator bank and UI."
+}

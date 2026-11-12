@@ -4,7 +4,7 @@ const path = require("path");
 const esbuild = require("esbuild");
 
 const ROOT = "C:/Users/samdb/UKMT App";
-const JSX = path.join(ROOT, "KangarooMathsQuest.jsx");
+const JSX = path.join(ROOT, "WallabyMaths.jsx");
 
 const src = fs.readFileSync(JSX, "utf-8");
 const patched = src + "\nexport { INTERMEDIATE_G, INTERMEDIATE_STRUCTURES };\n";
@@ -15,7 +15,7 @@ let mod;
 try {
   const result = esbuild.buildSync({
     entryPoints: [tmpPath], bundle: true, write: false, format: "cjs", platform: "node",
-    loader: { ".png": "dataurl", ".webp": "dataurl", ".jpg": "dataurl", ".jpeg": "dataurl" },
+    loader: { ".png": "dataurl", ".webp": "dataurl", ".jpg": "dataurl", ".jpeg": "dataurl", ".svg": "dataurl" },
     external: ["react", "react-dom", "react-dom/client", "lucide-react", "tone"],
     define: { "process.env.NODE_ENV": '"production"' }, logLevel: "silent",
   });

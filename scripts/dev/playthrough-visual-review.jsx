@@ -1,0 +1,14 @@
+import React,{useState} from 'react';
+import {createRoot} from 'react-dom/client';
+import MapViewport from '../../expeditions/v2/ui/MapViewport.jsx';
+import {orchardArtFor} from '../../expeditions/v2/art/renderer.js';
+import retained from '../../docs/expeditions/v2/evidence/station-integration/reducer-snapshots.json';
+import sam from '../../docs/expeditions/v2/evidence/playthrough-recovery-20261003/sam-playthrough-state.json';
+const snapshots=[{id:'sam-retained',label:'Sam retained run, unchanged state',state:sam},...retained];
+function Review(){
+  const [index,setIndex]=useState(0),[focus,setFocus]=useState(null),[selected,setSelected]=useState(null),[actions,setActions]=useState(0);
+  const snapshot=snapshots[index],state=snapshot.state;
+  const show=id=>{const station=state.blueprint.stations.find(s=>s.id===id);setFocus({...station,nonce:Date.now()});};
+  return <main><header><strong>Playthrough visual recovery: retained reducer snapshots</strong><p>Read-only map fixture. No saves, rewards or commands. Shared App acceptance pending.</p><label>State <select aria-label="Review state" value={index} onChange={e=>{setIndex(Number(e.target.value));setFocus(null);setSelected(null);}}>{snapshots.map((s,i)=><option key={s.id} value={i}>{s.id}</option>)}</select></label><span>{snapshot.label}</span><nav>{state.blueprint.stations.map(s=><button key={s.id} onClick={()=>show(s.id)}>Show {s.name}</button>)}<button onClick={()=>setFocus({id:'bridge',hex:'4,4',nonce:Date.now()})}>Show controlled bridge</button></nav></header><MapViewport key={snapshot.id} state={state} artFor={orchardArtFor} selectedObject={selected} focusRequest={focus} onSelect={s=>{setSelected(s);setActions(n=>n+1);}} onMoveTarget={()=>setActions(n=>n+1)}/><footer data-review-actions={actions}>Selection callbacks: {actions}. Snapshot {snapshot.id}, revision {state.revision}. Hero AP: {state.heroes.map(h=>`${h.id} ${h.ap}`).join('; ')}.</footer><style>{`html,body,#root,main{height:100%;margin:0}main{display:flex;flex-direction:column;background:#203b2a;color:#fff2cf;font:14px system-ui}header{padding:8px;flex:none}header p{margin:4px 0;font-size:12px}header span{font-size:12px;margin-left:12px}button,select{padding:7px;border:1px solid #a88d5b;border-radius:6px;background:#f5e5bb;color:#253b2b;margin:3px}nav{display:flex;flex-wrap:wrap}.ov-map-wrap{position:relative;flex:1;min-height:300px;overflow:hidden}.ov-map{height:100%;touch-action:none}.ov-camera-controls{position:absolute;left:8px;top:8px;display:flex;flex-wrap:wrap;max-width:300px}.ov-checklist,.ov-board-list{display:none}.ov-offscreen{position:absolute;bottom:10px;left:8px}footer{padding:6px;font-size:11px}@media(max-width:500px){header{font-size:12px}header p{font-size:10px}header span{display:block;margin:4px 0}nav button{padding:5px;font-size:11px}}`}</style></main>;
+}
+createRoot(document.getElementById('root')).render(<Review/>);

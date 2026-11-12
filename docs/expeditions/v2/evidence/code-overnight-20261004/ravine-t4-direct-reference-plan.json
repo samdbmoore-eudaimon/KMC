@@ -1,0 +1,1534 @@
+{
+  "teamIndex": 0,
+  "cardIds": [
+    "barrow",
+    "cobweb",
+    "harvestmoon"
+  ],
+  "planFamily": "direct-guard",
+  "assignment": {
+    "number": "barrow",
+    "shape": "cobweb",
+    "sustain": "harvestmoon"
+  },
+  "outputChoice": [
+    "eq1",
+    "eq2",
+    "eq3"
+  ],
+  "committer": "cobweb",
+  "beamWidth": 3,
+  "initialRun": {
+    "runId": "plan:turning-ravine:4:2:0:direct-guard",
+    "blueprint": {
+      "schemaVersion": 2,
+      "moduleKey": "primary",
+      "familyId": "turning-ravine",
+      "tier": 4,
+      "seed": 2,
+      "parameterSeed": 2,
+      "generatorVersion": 1,
+      "rulesVersion": 2,
+      "layoutId": "hedges",
+      "attempt": 38,
+      "tiles": [
+        {
+          "q": 2,
+          "r": 0,
+          "terrain": "floor"
+        },
+        {
+          "q": 3,
+          "r": 0,
+          "terrain": "roots"
+        },
+        {
+          "q": 4,
+          "r": 0,
+          "terrain": "hedge"
+        },
+        {
+          "q": 5,
+          "r": 0,
+          "terrain": "hedge"
+        },
+        {
+          "q": 6,
+          "r": 0,
+          "terrain": "floor"
+        },
+        {
+          "q": 7,
+          "r": 0,
+          "terrain": "floor"
+        },
+        {
+          "q": 8,
+          "r": 0,
+          "terrain": "floor"
+        },
+        {
+          "q": 9,
+          "r": 0,
+          "terrain": "floor"
+        },
+        {
+          "q": 2,
+          "r": 1,
+          "terrain": "hedge"
+        },
+        {
+          "q": 3,
+          "r": 1,
+          "terrain": "floor"
+        },
+        {
+          "q": 4,
+          "r": 1,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 1,
+          "terrain": "floor"
+        },
+        {
+          "q": 6,
+          "r": 1,
+          "terrain": "floor"
+        },
+        {
+          "q": 7,
+          "r": 1,
+          "terrain": "floor"
+        },
+        {
+          "q": 8,
+          "r": 1,
+          "terrain": "floor"
+        },
+        {
+          "q": 9,
+          "r": 1,
+          "terrain": "floor"
+        },
+        {
+          "q": -1,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 0,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 1,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 2,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 3,
+          "r": 2,
+          "terrain": "hedge"
+        },
+        {
+          "q": 4,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 6,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 7,
+          "r": 2,
+          "terrain": "hedge"
+        },
+        {
+          "q": 8,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": 9,
+          "r": 2,
+          "terrain": "hedge"
+        },
+        {
+          "q": 10,
+          "r": 2,
+          "terrain": "floor"
+        },
+        {
+          "q": -1,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 0,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 1,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 2,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 3,
+          "r": 3,
+          "terrain": "gate",
+          "passageOutputId": "eq1"
+        },
+        {
+          "q": 4,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 6,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 7,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 8,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 9,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": 10,
+          "r": 3,
+          "terrain": "floor"
+        },
+        {
+          "q": -2,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": -1,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 0,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 1,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 2,
+          "r": 4,
+          "terrain": "hedge"
+        },
+        {
+          "q": 3,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 4,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 6,
+          "r": 4,
+          "terrain": "hedge"
+        },
+        {
+          "q": 7,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 8,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": 9,
+          "r": 4,
+          "terrain": "floor"
+        },
+        {
+          "q": -2,
+          "r": 5,
+          "terrain": "roots"
+        },
+        {
+          "q": -1,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 0,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 1,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 2,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 3,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 4,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 6,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 7,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 8,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": 9,
+          "r": 5,
+          "terrain": "floor"
+        },
+        {
+          "q": -3,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": -2,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": -1,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": 0,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": 1,
+          "r": 6,
+          "terrain": "hedge"
+        },
+        {
+          "q": 2,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": 3,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": 4,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 6,
+          "terrain": "hedge"
+        },
+        {
+          "q": 6,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": 7,
+          "r": 6,
+          "terrain": "hedge"
+        },
+        {
+          "q": 8,
+          "r": 6,
+          "terrain": "floor"
+        },
+        {
+          "q": -1,
+          "r": 7,
+          "terrain": "roots"
+        },
+        {
+          "q": 0,
+          "r": 7,
+          "terrain": "roots"
+        },
+        {
+          "q": 1,
+          "r": 7,
+          "terrain": "floor"
+        },
+        {
+          "q": 2,
+          "r": 7,
+          "terrain": "floor"
+        },
+        {
+          "q": 3,
+          "r": 7,
+          "terrain": "floor"
+        },
+        {
+          "q": 4,
+          "r": 7,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 7,
+          "terrain": "floor"
+        },
+        {
+          "q": 6,
+          "r": 7,
+          "terrain": "floor"
+        },
+        {
+          "q": -2,
+          "r": 8,
+          "terrain": "floor"
+        },
+        {
+          "q": -1,
+          "r": 8,
+          "terrain": "roots"
+        },
+        {
+          "q": 0,
+          "r": 8,
+          "terrain": "floor"
+        },
+        {
+          "q": 1,
+          "r": 8,
+          "terrain": "floor"
+        },
+        {
+          "q": 2,
+          "r": 8,
+          "terrain": "roots"
+        },
+        {
+          "q": 3,
+          "r": 8,
+          "terrain": "floor"
+        },
+        {
+          "q": 4,
+          "r": 8,
+          "terrain": "floor"
+        },
+        {
+          "q": 5,
+          "r": 8,
+          "terrain": "floor"
+        }
+      ],
+      "deployment": [
+        "1,3",
+        "0,4",
+        "0,5"
+      ],
+      "puzzle": {
+        "id": "ravine-network",
+        "kind": "equation-wheels",
+        "controlId": "control",
+        "controlHex": "2,3",
+        "draftSchemaVersion": 1,
+        "networkGroupId": "network",
+        "tokens": [
+          {
+            "id": "A",
+            "hex": "4,2",
+            "kind": "number",
+            "faces": [
+              1,
+              19,
+              21,
+              9,
+              11,
+              7
+            ],
+            "orientation": 5,
+            "given": false
+          },
+          {
+            "id": "O",
+            "hex": "5,2",
+            "kind": "operator",
+            "faces": [
+              "=",
+              "+",
+              "−",
+              "×",
+              "÷",
+              null
+            ],
+            "orientation": 4,
+            "given": false
+          },
+          {
+            "id": "B",
+            "hex": "6,2",
+            "kind": "number",
+            "faces": [
+              14,
+              4,
+              3,
+              1,
+              12,
+              19
+            ],
+            "orientation": 2,
+            "given": false
+          },
+          {
+            "id": "P",
+            "hex": "6,3",
+            "kind": "operator",
+            "faces": [
+              "=",
+              "+",
+              "−",
+              "×",
+              "÷",
+              null
+            ],
+            "orientation": 1,
+            "given": false
+          },
+          {
+            "id": "C",
+            "hex": "5,4",
+            "kind": "number",
+            "faces": [
+              13,
+              15,
+              2,
+              21,
+              0,
+              17
+            ],
+            "orientation": 1,
+            "given": false
+          },
+          {
+            "id": "E",
+            "hex": "5,5",
+            "kind": "operator",
+            "faces": [
+              "=",
+              "+",
+              "−",
+              "×",
+              "÷",
+              null
+            ],
+            "orientation": 4,
+            "given": false
+          },
+          {
+            "id": "target-1",
+            "hex": "6,5",
+            "kind": "number",
+            "value": 29,
+            "given": true
+          },
+          {
+            "id": "plus",
+            "hex": "5,3",
+            "kind": "operator",
+            "value": "+",
+            "given": true
+          },
+          {
+            "id": "equals-2",
+            "hex": "4,5",
+            "kind": "operator",
+            "value": "=",
+            "given": true
+          },
+          {
+            "id": "target-2",
+            "hex": "3,6",
+            "kind": "number",
+            "value": 18,
+            "given": true
+          },
+          {
+            "id": "divide",
+            "hex": "4,4",
+            "kind": "operator",
+            "value": "÷",
+            "given": true
+          },
+          {
+            "id": "D",
+            "hex": "3,5",
+            "kind": "number",
+            "faces": [
+              16,
+              15,
+              14,
+              0,
+              2,
+              3
+            ],
+            "orientation": 2,
+            "given": false
+          },
+          {
+            "id": "target-3",
+            "hex": "4,6",
+            "kind": "number",
+            "value": 5,
+            "given": true
+          },
+          {
+            "id": "Q",
+            "hex": "2,6",
+            "kind": "operator",
+            "faces": [
+              "=",
+              "+",
+              "−",
+              "×",
+              "÷",
+              null
+            ],
+            "orientation": 0,
+            "given": false
+          },
+          {
+            "id": "F",
+            "hex": "2,5",
+            "kind": "number",
+            "faces": [
+              6,
+              21,
+              12,
+              2,
+              1,
+              11
+            ],
+            "orientation": 2,
+            "given": false
+          },
+          {
+            "id": "equals-4",
+            "hex": "3,4",
+            "kind": "operator",
+            "value": "=",
+            "given": true
+          },
+          {
+            "id": "target-4",
+            "hex": "4,3",
+            "kind": "number",
+            "value": 1,
+            "given": true
+          }
+        ],
+        "tracks": [
+          {
+            "id": "eq1",
+            "tokenIds": [
+              "A",
+              "O",
+              "B",
+              "P",
+              "C",
+              "E",
+              "target-1"
+            ]
+          },
+          {
+            "id": "eq2",
+            "tokenIds": [
+              "B",
+              "plus",
+              "C",
+              "equals-2",
+              "target-2"
+            ]
+          },
+          {
+            "id": "eq3",
+            "tokenIds": [
+              "C",
+              "divide",
+              "D",
+              "equals-2",
+              "target-3"
+            ]
+          },
+          {
+            "id": "eq4",
+            "tokenIds": [
+              "D",
+              "Q",
+              "F",
+              "equals-4",
+              "target-4"
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "eq1",
+            "label": "Equation 1: bridge",
+            "trigger": "on-commit",
+            "effect": {
+              "kind": "passage"
+            }
+          },
+          {
+            "id": "eq2",
+            "label": "Equation 2: shelter",
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "shelter",
+              "amount": 2,
+              "targetIds": [
+                "number",
+                "shape",
+                "sustain"
+              ]
+            }
+          },
+          {
+            "id": "eq3",
+            "label": "Equation 3: roots",
+            "trigger": "phase-start",
+            "effect": {
+              "kind": "roots"
+            }
+          },
+          {
+            "id": "eq4",
+            "label": "Equation 4: repair stream",
+            "trigger": "post-hazard",
+            "effect": {
+              "kind": "repair-stream",
+              "amount": 2
+            }
+          }
+        ],
+        "maxActiveOutputs": 3,
+        "minimumTrueTracksForCommission": 3,
+        "defaultOutputIds": [
+          "eq1",
+          "eq2",
+          "eq3"
+        ],
+        "solutionParameters": {
+          "orientations": {
+            "A": 2,
+            "O": 5,
+            "B": 4,
+            "P": 5,
+            "C": 5,
+            "E": 0,
+            "D": 1,
+            "Q": 4,
+            "F": 3
+          }
+        },
+        "lockGroups": [
+          {
+            "id": "network",
+            "anchor": "2,3",
+            "memberIds": [
+              "A",
+              "O",
+              "B",
+              "P",
+              "C",
+              "E",
+              "D",
+              "Q",
+              "F"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-A",
+            "anchor": "2,3",
+            "memberIds": [
+              "A"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-O",
+            "anchor": "2,3",
+            "memberIds": [
+              "O"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-B",
+            "anchor": "2,3",
+            "memberIds": [
+              "B"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-P",
+            "anchor": "2,3",
+            "memberIds": [
+              "P"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-C",
+            "anchor": "2,3",
+            "memberIds": [
+              "C"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-E",
+            "anchor": "2,3",
+            "memberIds": [
+              "E"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-D",
+            "anchor": "2,3",
+            "memberIds": [
+              "D"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-Q",
+            "anchor": "2,3",
+            "memberIds": [
+              "Q"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          },
+          {
+            "id": "wheel-F",
+            "anchor": "2,3",
+            "memberIds": [
+              "F"
+            ],
+            "effectKinds": [
+              "rewind",
+              "environment"
+            ]
+          }
+        ]
+      },
+      "outputs": [
+        {
+          "id": "eq1",
+          "label": "Equation 1: bridge",
+          "trigger": "on-commit",
+          "effect": {
+            "kind": "passage"
+          }
+        },
+        {
+          "id": "eq2",
+          "label": "Equation 2: shelter",
+          "trigger": "phase-start",
+          "effect": {
+            "kind": "shelter",
+            "amount": 2,
+            "targetIds": [
+              "number",
+              "shape",
+              "sustain"
+            ]
+          }
+        },
+        {
+          "id": "eq3",
+          "label": "Equation 3: roots",
+          "trigger": "phase-start",
+          "effect": {
+            "kind": "roots"
+          }
+        },
+        {
+          "id": "eq4",
+          "label": "Equation 4: repair stream",
+          "trigger": "post-hazard",
+          "effect": {
+            "kind": "repair-stream",
+            "amount": 2
+          }
+        }
+      ],
+      "stations": [
+        {
+          "id": "control",
+          "name": "Ravine control",
+          "hex": "2,3",
+          "artId": "mechanism-hive-ledger-board-v1",
+          "maxIntegrity": 18
+        },
+        {
+          "id": "number",
+          "name": "Calibration wheel",
+          "hex": "7,3",
+          "artId": "mechanism-hive-ledger-board-v1",
+          "maxIntegrity": 18,
+          "capacity": 7
+        },
+        {
+          "id": "shape",
+          "name": "Turning joint",
+          "hex": "9,0",
+          "artId": "mechanism-plinth",
+          "maxIntegrity": 18,
+          "capacity": 7
+        },
+        {
+          "id": "sustain",
+          "name": "Wind stabiliser",
+          "hex": "4,8",
+          "artId": "terrain-apple-tree-v1",
+          "maxIntegrity": 18,
+          "capacity": 7
+        },
+        {
+          "id": "alcove",
+          "name": "Brace alcove",
+          "hex": "9,4",
+          "artId": "mechanism-hive-ledger-board-v1"
+        }
+      ],
+      "enemies": [
+        {
+          "id": "rewinder-1",
+          "ruleId": "rewinder",
+          "artId": "crosswind",
+          "position": "8,3",
+          "wakePhase": 2
+        }
+      ],
+      "hazards": [
+        {
+          "id": "ravine-wind",
+          "sites": [
+            {
+              "id": "wind-site",
+              "targetId": "sustain"
+            }
+          ],
+          "mutation": {
+            "kind": "puzzle"
+          }
+        }
+      ],
+      "sites": [
+        {
+          "id": "controlled-passage",
+          "anchor": "3,3"
+        }
+      ],
+      "deadline": 5,
+      "orchard": {
+        "hex": "9,5",
+        "name": "Ninefold tree",
+        "artId": "terrain-apple-tree-v1"
+      },
+      "orchardMaxIntegrity": 26,
+      "certificateId": null,
+      "structuralFingerprint": "5738f78ae92d0a6b",
+      "constructionPacket": {
+        "id": "ravine-tracks-v1",
+        "version": 1,
+        "reservedHexes": [
+          "4,2",
+          "5,2",
+          "6,2",
+          "6,3",
+          "5,4",
+          "5,5",
+          "6,5",
+          "5,3",
+          "4,5",
+          "3,6",
+          "4,4",
+          "3,5",
+          "4,6",
+          "2,6",
+          "2,5",
+          "3,4",
+          "4,3"
+        ],
+        "placementNodes": 162163
+      },
+      "commission": {
+        "poweredCount": 3,
+        "selectableOutputIds": [
+          "eq1",
+          "eq2",
+          "eq3",
+          "eq4"
+        ]
+      }
+    },
+    "cardIds": [
+      "barrow",
+      "cobweb",
+      "harvestmoon"
+    ],
+    "deploymentAssignment": {
+      "barrow": "1,3",
+      "cobweb": "0,4",
+      "harvestmoon": "0,5"
+    },
+    "profiles": {
+      "barrow": {
+        "cardId": "barrow",
+        "name": "Barrow",
+        "rarity": "rare",
+        "stats": [
+          7,
+          4,
+          8,
+          3,
+          3
+        ],
+        "discipline": "logic",
+        "primaryStat": 2,
+        "role": "melee",
+        "roleName": "Mover",
+        "maxHealth": 13,
+        "moveBudget": 5,
+        "armour": 1,
+        "initiative": 9,
+        "strikeRange": 1,
+        "strikeStat": 8,
+        "dashBudget": 7,
+        "interceptBudget": 3,
+        "hand": [
+          {
+            "key": "counterturn",
+            "kind": "discipline"
+          },
+          {
+            "key": "linked-lock",
+            "kind": "discipline"
+          },
+          {
+            "key": "driving-blow",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      },
+      "cobweb": {
+        "cardId": "cobweb",
+        "name": "Cobweb",
+        "rarity": "rare",
+        "stats": [
+          5,
+          8,
+          4,
+          4,
+          4
+        ],
+        "discipline": "geometry",
+        "primaryStat": 1,
+        "role": "ranged",
+        "roleName": "Scout",
+        "maxHealth": 14,
+        "moveBudget": 5,
+        "armour": 2,
+        "initiative": 8,
+        "strikeRange": 3,
+        "strikeStat": 8,
+        "dashBudget": 8,
+        "interceptBudget": 4,
+        "hand": [
+          {
+            "key": "true-shift",
+            "kind": "discipline"
+          },
+          {
+            "key": "wide-brace",
+            "kind": "discipline"
+          },
+          {
+            "key": "marked-shot",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      },
+      "harvestmoon": {
+        "cardId": "harvestmoon",
+        "name": "Harvestmoon",
+        "rarity": "epic",
+        "stats": [
+          6,
+          6,
+          8,
+          8,
+          6
+        ],
+        "discipline": "logic",
+        "primaryStat": 2,
+        "role": "wizard",
+        "roleName": "Reckoner",
+        "maxHealth": 18,
+        "moveBudget": 6,
+        "armour": 1,
+        "initiative": 6,
+        "strikeRange": 2,
+        "strikeStat": 8,
+        "dashBudget": 10,
+        "interceptBudget": 6,
+        "hand": [
+          {
+            "key": "counterturn",
+            "kind": "discipline"
+          },
+          {
+            "key": "linked-lock",
+            "kind": "discipline"
+          },
+          {
+            "key": "crosswire",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      }
+    },
+    "initialStateHash": "d5b99718c8b3880b"
+  },
+  "commands": [
+    {
+      "type": "move",
+      "heroId": "cobweb",
+      "expectedRevision": 0,
+      "payload": {
+        "destination": "1,4",
+        "path": null
+      }
+    },
+    {
+      "type": "request-hint",
+      "heroId": null,
+      "expectedRevision": 1,
+      "payload": {
+        "puzzleId": "ravine-network",
+        "stage": 3
+      }
+    },
+    {
+      "type": "operate",
+      "heroId": "cobweb",
+      "expectedRevision": 2,
+      "payload": {
+        "draftRevision": 1,
+        "outputIds": [
+          "eq1",
+          "eq2",
+          "eq3"
+        ],
+        "lockGroupId": null
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "barrow",
+      "expectedRevision": 3,
+      "payload": {
+        "destination": "6,3",
+        "path": null
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "barrow",
+      "expectedRevision": 4,
+      "payload": {
+        "targetId": "number"
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "harvestmoon",
+      "expectedRevision": 5,
+      "payload": {
+        "destination": "4,7",
+        "path": null
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "harvestmoon",
+      "expectedRevision": 6,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 7,
+      "payload": {
+        "forecastRevision": 7
+      }
+    },
+    {
+      "type": "operate",
+      "heroId": "cobweb",
+      "expectedRevision": 8,
+      "payload": {
+        "draftRevision": 1,
+        "outputIds": [
+          "eq1",
+          "eq2",
+          "eq3"
+        ],
+        "lockGroupId": null
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "cobweb",
+      "expectedRevision": 9,
+      "payload": {
+        "destination": "6,1",
+        "path": null
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "barrow",
+      "expectedRevision": 10,
+      "payload": {
+        "destination": "9,0",
+        "path": null
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "barrow",
+      "expectedRevision": 11,
+      "payload": {
+        "targetId": "shape"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "harvestmoon",
+      "expectedRevision": 12,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "harvestmoon",
+      "expectedRevision": 13,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 14,
+      "payload": {
+        "forecastRevision": 14
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "cobweb",
+      "expectedRevision": 15,
+      "payload": {
+        "destination": "2,3",
+        "path": null
+      }
+    },
+    {
+      "type": "operate",
+      "heroId": "cobweb",
+      "expectedRevision": 16,
+      "payload": {
+        "draftRevision": 1,
+        "outputIds": [
+          "eq1",
+          "eq2",
+          "eq3"
+        ],
+        "lockGroupId": null
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "barrow",
+      "expectedRevision": 17,
+      "payload": {
+        "destination": "8,2",
+        "path": null
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "barrow",
+      "expectedRevision": 18,
+      "payload": {
+        "targetId": "number"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "harvestmoon",
+      "expectedRevision": 19,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 20,
+      "payload": {
+        "forecastRevision": 20
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "cobweb",
+      "expectedRevision": 21,
+      "payload": {
+        "destination": "7,0",
+        "path": null
+      }
+    },
+    {
+      "type": "strike",
+      "heroId": "barrow",
+      "expectedRevision": 22,
+      "payload": {
+        "targetId": "rewinder-1"
+      }
+    },
+    {
+      "type": "strike",
+      "heroId": "barrow",
+      "expectedRevision": 23,
+      "payload": {
+        "targetId": "rewinder-1"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "harvestmoon",
+      "expectedRevision": 24,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 25,
+      "payload": {
+        "forecastRevision": 25
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "cobweb",
+      "expectedRevision": 26,
+      "payload": {
+        "destination": "9,0",
+        "path": null
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "barrow",
+      "expectedRevision": 27,
+      "payload": {
+        "targetId": "number"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "cobweb",
+      "expectedRevision": 28,
+      "payload": {
+        "targetId": "shape"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "harvestmoon",
+      "expectedRevision": 29,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 30,
+      "payload": {
+        "forecastRevision": 30
+      }
+    }
+  ],
+  "perCommandHashes": [
+    "6ccc252f67723898",
+    "c58b87baab8baa2d",
+    "c53304831d0114b0",
+    "b9547db0bb13fb43",
+    "a734f72b1429d4d0",
+    "5a70218b3036d0d4",
+    "a7990cd3bef57cec",
+    "88d59d08aa41005d",
+    "cac156f5b9c7fca0",
+    "172ba3ad14040b5c",
+    "ceb03fd93e189030",
+    "f0687c9ef42582cf",
+    "1237c6c5767ef694",
+    "3c8114eca189a42b",
+    "6c3e0b46e1f2145b",
+    "e92179fcac6a1435",
+    "91e4e7c11ed043ec",
+    "9d944136a189e21b",
+    "461162d7a54722ee",
+    "747a943129b9f81a",
+    "4ccbb503544b47e8",
+    "6e2d504be76457d8",
+    "e7efbf53b5a1105a",
+    "f337f0a97a01c1ca",
+    "4b7dd228f3e6e755",
+    "e9190c1ddde152de",
+    "5b358bce4574392d",
+    "33a6261455baee13",
+    "91fe7f7d4e8a0a6a",
+    "a23f65f4d8e855cd",
+    "e569c9f1a77c37b2"
+  ],
+  "finalStateHash": "e569c9f1a77c37b2",
+  "rounds": 5,
+  "commandCount": 31
+}

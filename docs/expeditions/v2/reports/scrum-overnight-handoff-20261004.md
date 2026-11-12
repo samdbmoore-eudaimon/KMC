@@ -1,0 +1,55 @@
+# Overnight handoff notes polling
+
+Sam's 4 October instruction replaces the prior daytime single-builder allocation. This original chat is overnight scrum. Separate new Codex art and coding chats use the existing UKMT App checkout. `Overnight handoff notes polling` is the name of Claude's chat, as Sam explicitly corrected, not the schedule name. Sam says that chat is ready on a twenty-minute schedule; publish notes here and through the existing local mailbox for it. Do not launch a duplicate Claude process or pretend mailbox delivery awakens it. Read this file, master brief, delivery board and latest owner reports each polling batch.
+
+## Explicit completion target and priority UX correction
+
+Sam's latest instruction: finish the full Ninefold Orchard Expeditions experience, all five families and all25tiers, all artwork, all UX and real playtesting. Reference-only or generator-only batches are intermediate deliveries, not the finish line. Keep progressing through ready assigned work without stopping at the next packet. Full certification must meet the agreed bank/diversity/stronger-card requirements and use the real reducer; real UI winning runs, save/resume/reward/private-gate/legacy/shared offline build checks remain necessary. Do not claim unavailable child/device tests or substitute jsdom for actual browser playthroughs.
+
+Priority: proper painted buttons and frames, no generic UI substitutes at final acceptance. The team-member frame is currently wrong: original character artwork belongs in the round portrait part, while names and supporting text belong in a separate properly sized text box. Art owns selection/preparation/geometry metadata of approved existing frame/button/portrait assets and any genuinely missing bitmap replacements. Coding owns component composition, portrait clipping/cropping, responsive text layout, accessibility and interactions. Review long names, selected/disabled/spent states and phone/tablet/desktop at actual sizes. Do not use a battlefield sprite or a small thumbnail laid over the text area as a portrait substitute. Retain original character identity and artwork; locate the existing original card/character portrait source.
+
+After Ninefold Orchard is fully finished and independently reviewed, if credits remain, Sam authorises a full Little Reckoning Expeditions build plan and then implementation: new games/challenges, art and UX appropriate to that module. Read existing LR content and prior Expeditions briefs first, retain legacy functionality and exact private gate. Do not begin LR by abandoning unfinished Orchard; publish plan/task boundaries before changes, reuse existing assets where suitable and certify new missions through the production reducer. This is explicit new scope after the completion/credit gate; no LR reward/progression guess or public deployment is authorised by it.
+
+New workers: art `01a10869-af91-7490-9f19-c99e0842fcc1`; coding `01a10869-c3c8-7272-9b7e-57e747ddc312`. Both use the existing local checkout. This scrum thread remains `01a0f955-b5c7-72f0-852c-34a13fc6c5d2`.
+
+Mailbox supports only codex, claude and scrum actors. Both Codex workers use actor codex with distinct claim IDs (`ART-NIGHT-20261004`, `CODE-NIGHT-20261004`) and subject prefixes ART or CODE; include originating thread ID in reports/messages. Read relevant messages without acknowledging another worker's task. Legacy handoff is sent to codex/claude/scrum, not nonexistent codex-art or codex-code actors. Report files and thread IDs disambiguate ownership; claim actor codex alone is not permission to edit another Codex chat's files.
+
+## Remaining coding allocation
+
+Target 66% Claude /34% Codex coding by remaining estimated effort, with all artwork outside that split and owned by Codex art. This is a task allocation target, not a guarantee of equal billed credits. Transfer whole file boundaries; no concurrent edits. Completed evidence and historical certificates remain unchanged.
+
+| Owner | Remaining coding weight | Exact principal boundary |
+| --- | --- | --- |
+| Claude | 20 | Existing v2 engine/schema/actions/phase/combat/controller/run/persistence/private route/App integration and associated integration tests; all shared App outputs and final build |
+| Claude | 25 | `expeditions/v2/generation/` family/tier/topology modules and generation tests, all four remaining family packets and remaining Four Locks tiers |
+| Claude | 21 | Tactical planner, bank construction/certification/diversity tooling, runtime-bank selection and associated non-visual proofs/reports |
+| Codex coding | 24 | `expeditions/v2/ui/` React player interfaces, guidance, actions, map/puzzle controls and component tests; consume published engine/generator ABI |
+| Codex coding | 10 | `expeditions/v2/puzzles/` validators, exact solvers, human hints and their independent mathematical tests |
+| Codex art | Outside coding split | Bitmap inventory/selection/optimisation/new generation, `expeditions/v2/art/`, selected art manifests/imports/resolver, isolated art review and rendering QA |
+
+Files in the active legacy builder's Turning Ravine claim remain exclusively its own until a stable handoff/release. Its thread is `01a100e6-b8f7-7a73-97c8-afa8455b7120`; currently active, holding TURNING-RAVINE-20261003 and final-build. It must finish its current source/validation/evidence batch, publish exact handoff and release claims, then stop taking new implementation. New workers must not take its files prematurely. New art batches/independent puzzle panels may proceed in explicitly non-overlapping files meanwhile. Do not steal a claim based on elapsed time.
+
+Codex coding owns MapViewport and UI SVG controls; Codex art supplies the existing resolver/placement contract and assets. Art may propose UI placement defects, but coding applies edits to UI files. Art owns EquationWheel and renderer modules only after legacy builder releases those files. Generated runtime-art/manifest writes and shared bundling must be coordinated as stable inputs, never simultaneous.
+
+## Claude's first ready batches
+
+1. Read mailbox and this allocation, acknowledge before claiming. While legacy builder finalises Turning Ravine, independently work on a new Unequal Crossing generator/test packet in new `generation/unequal-crossing.js` and related files. Use real existing balance hooks, exact six-load allocation and comparison decision-tree rules. Do not edit shared topology/index/active files yet. Claim exact files in `claude-overnight-20261004.md`. Then take the released Turning Ravine generation and remaining topology/tier work.
+2. Publish family packets/interface contracts early to Codex coding. Validate missions through the actual production reducer and reusable planner: two target-band teams plus real alternate alcove route as specified. Unknown search exhaustion stays unknown. Preserve thresholds, costs, enemies, outputs and deadlines.
+3. Progress all remaining generation tiers/banks and engine/save/hazard/commissioning integration in dependency order. Banks require mathematical, tactical and diversity certification; no static-roster substitute or invented runtime availability.
+4. Own the final-build lock for full regressions, smoke and both shared HTML outputs after stable Codex UI/art inputs. Review existing-save provenance, idempotence, rewards, private gate and legacy regression after cross-family changes.
+
+## Codex coding first ready batches
+
+Read existing active claim before editing. Independent new balance/nonogram/packing player panels and their tests, or pure owned puzzle/hint verification, may proceed immediately. No edits to active OrchardExpedition/MapViewport/PuzzlePanel/rotation/topology/feedback files before legacy handoff. Consume existing ABI and Claude's generated packets; publish precise interface gaps. Once released, own linked battlefield wheel controls and family-aware UI. Keep remote free draft versus paid adjacent activation explicit; retain first-tap preview/second-tap or Confirm, on-demand help and meaningful next steps. Replay/UI evidence must use production controls/reducer, not injected winning state.
+
+## Codex art first ready batches
+
+Read art audit/request/selected metadata and latest actual Turning Ravine screenshots. Resolve Crosswind placeholder and generic station glyph gaps by first finding approved existing assets, then selecting/preparing them in a new exclusive batch path. Do not blindly recreate a large catalogue. Use imagegen skill only for genuinely missing bitmap art; glyphs, tracks and hex geometry remain code. Keep forward-facing Furrow, one-hex props, grounded heroes, six-sector overlays, existing river straight/bend assets and rotation conventions. Coordinate selected manifest/resolver integration only after active claim release. Publish exact asset hashes/bytes/anchors, four-background/native/min/max review and actionable renderer gaps. No engine/generator/UI writes.
+
+## Scrum execution and acceptance
+
+Supervise this chat every twenty minutes overnight, using changed notes/mailbox and compact snapshots of both new workers and the legacy handoff until released. Resume interrupted/idle workers only for concrete ready authorised tasks, never duplicate active work. Track meaningful accepted evidence and dependencies in scrum-overnight-status-20261004.md. Stay quiet on unchanged/non-actionable state; notify Sam for meaningful completion/failure or an actual required decision.
+
+Four Locks P0 private development gate passed 3 October with independent review; Sam/child/device acceptance remains open. Turning Ravine has a independently replayed32-command round-five UI win, but its final build/visual report is unfinished. Screenshot service is working again as of the current legacy builder turn. No family is enabled merely because a draft validates. Preserve exact eudaimon/Rooke gate, stars/replay awards, original saves and versioned repair provenance. No public deployment, new scope, destructive cleanup, paid model/service purchase or false device/child claims.
+
+The former daytime schedule must be paused to avoid duplicate scrum runs; reuse the existing overnight scrum automation on this chat. Continue ready work until authorised backlog is complete or Sam changes direction; then pause supervision and publish final evidence and genuine limitations.

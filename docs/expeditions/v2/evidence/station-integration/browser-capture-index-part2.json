@@ -1,0 +1,1628 @@
+[
+  {
+    "path": "tablet-corrupted-min.jpg",
+    "device": "tablet",
+    "scenario": "corrupted",
+    "zoom": "min",
+    "transform": "translate(204.73274141662122 322) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "tablet-corrupted-native.jpg",
+    "device": "tablet",
+    "scenario": "corrupted",
+    "zoom": "native",
+    "transform": "translate(74.64101615137756 201) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "tablet-corrupted-max.jpg",
+    "device": "tablet",
+    "scenario": "corrupted",
+    "zoom": "max",
+    "transform": "translate(-100.97422611928562 -179) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-number-min.jpg",
+    "device": "tablet",
+    "scenario": "damage-number",
+    "zoom": "min",
+    "transform": "translate(204.73274141662122 322) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "ready damage",
+        "id": "control",
+        "label": "Ledger control. Active. Damaged · Integrity 10/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "number",
+        "label": "Ledger bus. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-number-native.jpg",
+    "device": "tablet",
+    "scenario": "damage-number",
+    "zoom": "native",
+    "transform": "translate(-103.38438763306101 201) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "ready damage",
+        "id": "control",
+        "label": "Ledger control. Active. Damaged · Integrity 10/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "number",
+        "label": "Ledger bus. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-number-max.jpg",
+    "device": "tablet",
+    "scenario": "damage-number",
+    "zoom": "max",
+    "transform": "translate(-724.5125168440813 -59) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "ready damage",
+        "id": "control",
+        "label": "Ledger control. Active. Damaged · Integrity 10/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "number",
+        "label": "Ledger bus. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-shape-min.jpg",
+    "device": "tablet",
+    "scenario": "damage-shape",
+    "zoom": "min",
+    "transform": "translate(204.73274141662122 322) scale(0.45)",
+    "states": [
+      {
+        "cues": "ready working damage",
+        "id": "shape",
+        "label": "Bridge brace. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 9/16"
+      },
+      {
+        "cues": "prepared damage",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Bridge damaged"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-shape-native.jpg",
+    "device": "tablet",
+    "scenario": "damage-shape",
+    "zoom": "native",
+    "transform": "translate(-103.38438763306101 201) scale(1)",
+    "states": [
+      {
+        "cues": "ready working damage",
+        "id": "shape",
+        "label": "Bridge brace. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 9/16"
+      },
+      {
+        "cues": "prepared damage",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Bridge damaged"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-shape-max.jpg",
+    "device": "tablet",
+    "scenario": "damage-shape",
+    "zoom": "max",
+    "transform": "translate(-932.3586137523466 240) scale(2)",
+    "states": [
+      {
+        "cues": "ready working damage",
+        "id": "shape",
+        "label": "Bridge brace. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 9/16"
+      },
+      {
+        "cues": "prepared damage",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Bridge damaged"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-sustain-min.jpg",
+    "device": "tablet",
+    "scenario": "damage-sustain",
+    "zoom": "min",
+    "transform": "translate(204.73274141662122 322) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-sustain-native.jpg",
+    "device": "tablet",
+    "scenario": "damage-sustain",
+    "zoom": "native",
+    "transform": "translate(-103.38438763306101 201) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      }
+    ]
+  },
+  {
+    "path": "tablet-damage-sustain-max.jpg",
+    "device": "tablet",
+    "scenario": "damage-sustain",
+    "zoom": "max",
+    "transform": "translate(-793.7945491468365 -278) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-initial-min.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "min",
+    "transform": "translate(15.732741416621224 212) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "control",
+        "label": "Ledger control. Inactive. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-initial-native.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "native",
+    "transform": "translate(-47.48711305964281 62) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "control",
+        "label": "Ledger control. Inactive. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-initial-max.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "max",
+    "transform": "translate(-289.9742261192856 -289) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "control",
+        "label": "Ledger control. Inactive. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-active-min.jpg",
+    "device": "phone",
+    "scenario": "active",
+    "zoom": "min",
+    "transform": "translate(15.732741416621224 212) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "ready",
+        "id": "control",
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-active-native.jpg",
+    "device": "phone",
+    "scenario": "active",
+    "zoom": "native",
+    "transform": "translate(-47.48711305964281 62) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "ready",
+        "id": "control",
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-active-max.jpg",
+    "device": "phone",
+    "scenario": "active",
+    "zoom": "max",
+    "transform": "translate(-289.9742261192856 -289) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "ready",
+        "id": "control",
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-three-held-min.jpg",
+    "device": "phone",
+    "scenario": "three-held",
+    "zoom": "min",
+    "transform": "translate(15.732741416621224 212) scale(0.45)",
+    "states": [
+      {
+        "cues": "ready working",
+        "id": "shape",
+        "label": "Bridge brace. Power 4/4 · ready. Held: Furrow. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "ready working",
+        "id": "number",
+        "label": "Ledger bus. Power 4/4 · ready. Held: Tuppence. Integrity 12/12"
+      },
+      {
+        "cues": "ready",
+        "id": "control",
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "cues": "ready working",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 4/4 · ready. Held: Sorrel. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-three-held-native.jpg",
+    "device": "phone",
+    "scenario": "three-held",
+    "zoom": "native",
+    "transform": "translate(-47.48711305964281 62) scale(1)",
+    "states": [
+      {
+        "cues": "ready working",
+        "id": "shape",
+        "label": "Bridge brace. Power 4/4 · ready. Held: Furrow. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "ready working",
+        "id": "number",
+        "label": "Ledger bus. Power 4/4 · ready. Held: Tuppence. Integrity 12/12"
+      },
+      {
+        "cues": "ready",
+        "id": "control",
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "cues": "ready working",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 4/4 · ready. Held: Sorrel. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-three-held-max.jpg",
+    "device": "phone",
+    "scenario": "three-held",
+    "zoom": "max",
+    "transform": "translate(-289.9742261192856 -289) scale(2)",
+    "states": [
+      {
+        "cues": "ready working",
+        "id": "shape",
+        "label": "Bridge brace. Power 4/4 · ready. Held: Furrow. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "ready working",
+        "id": "number",
+        "label": "Ledger bus. Power 4/4 · ready. Held: Tuppence. Integrity 12/12"
+      },
+      {
+        "cues": "ready",
+        "id": "control",
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "cues": "ready working",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 4/4 · ready. Held: Sorrel. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-corrupted-min.jpg",
+    "device": "phone",
+    "scenario": "corrupted",
+    "zoom": "min",
+    "transform": "translate(15.732741416621224 212) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-corrupted-native.jpg",
+    "device": "phone",
+    "scenario": "corrupted",
+    "zoom": "native",
+    "transform": "translate(-47.48711305964281 62) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-corrupted-max.jpg",
+    "device": "phone",
+    "scenario": "corrupted",
+    "zoom": "max",
+    "transform": "translate(-289.9742261192856 -289) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "alcove",
+        "label": "Brace alcove. Not prepared"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 12/12"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-number-min.jpg",
+    "device": "phone",
+    "scenario": "damage-number",
+    "zoom": "min",
+    "transform": "translate(-2.122974434877449 204) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "ready damage",
+        "id": "control",
+        "label": "Ledger control. Active. Damaged · Integrity 10/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "number",
+        "label": "Ledger bus. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-number-native.jpg",
+    "device": "phone",
+    "scenario": "damage-number",
+    "zoom": "native",
+    "transform": "translate(-359.2562584220407 63) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "ready damage",
+        "id": "control",
+        "label": "Ledger control. Active. Damaged · Integrity 10/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "number",
+        "label": "Ledger bus. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-number-max.jpg",
+    "device": "phone",
+    "scenario": "damage-number",
+    "zoom": "max",
+    "transform": "translate(-913.5125168440813 -177) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "ready damage",
+        "id": "control",
+        "label": "Ledger control. Active. Damaged · Integrity 10/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "number",
+        "label": "Ledger bus. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-shape-min.jpg",
+    "device": "phone",
+    "scenario": "damage-shape",
+    "zoom": "min",
+    "transform": "translate(-2.122974434877449 204) scale(0.45)",
+    "states": [
+      {
+        "cues": "ready working damage",
+        "id": "shape",
+        "label": "Bridge brace. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 9/16"
+      },
+      {
+        "cues": "prepared damage",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Bridge damaged"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-shape-native.jpg",
+    "device": "phone",
+    "scenario": "damage-shape",
+    "zoom": "native",
+    "transform": "translate(-463.1793068761733 120) scale(1)",
+    "states": [
+      {
+        "cues": "ready working damage",
+        "id": "shape",
+        "label": "Bridge brace. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 9/16"
+      },
+      {
+        "cues": "prepared damage",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Bridge damaged"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-shape-max.jpg",
+    "device": "phone",
+    "scenario": "damage-shape",
+    "zoom": "max",
+    "transform": "translate(-1121.3586137523466 183) scale(2)",
+    "states": [
+      {
+        "cues": "ready working damage",
+        "id": "shape",
+        "label": "Bridge brace. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 9/16"
+      },
+      {
+        "cues": "prepared damage",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Bridge damaged"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-sustain-min.jpg",
+    "device": "phone",
+    "scenario": "damage-sustain",
+    "zoom": "min",
+    "transform": "translate(-2.122974434877449 204) scale(0.45)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-sustain-native.jpg",
+    "device": "phone",
+    "scenario": "damage-sustain",
+    "zoom": "native",
+    "transform": "translate(-393.89727457341826 46) scale(1)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-damage-sustain-max.jpg",
+    "device": "phone",
+    "scenario": "damage-sustain",
+    "zoom": "max",
+    "transform": "translate(-982.7945491468365 -514) scale(2)",
+    "states": [
+      {
+        "cues": "",
+        "id": "shape",
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "prepared working",
+        "id": "alcove",
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      },
+      {
+        "cues": "corrupted",
+        "id": "control",
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "cues": "",
+        "id": "number",
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "cues": "ready working damage",
+        "id": "sustain",
+        "label": "Tree maintenance. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      }
+    ]
+  },
+  {
+    "path": "phone-initial-ledger-control-min.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Ledger control",
+    "transform": "translate(33.5884572681199 212) scale(0.45)"
+  },
+  {
+    "path": "phone-initial-ledger-bus-min.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Ledger bus",
+    "transform": "translate(-2.122974434877449 212) scale(0.45)"
+  },
+  {
+    "path": "phone-initial-bridge-brace-min.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Bridge brace",
+    "transform": "translate(-2.122974434877449 212) scale(0.45)"
+  },
+  {
+    "path": "phone-initial-tree-maintenance-min.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Tree maintenance",
+    "transform": "translate(-2.122974434877449 212) scale(0.45)"
+  },
+  {
+    "path": "phone-initial-brace-alcove-min.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(-2.122974434877449 212) scale(0.45)"
+  },
+  {
+    "path": "phone-initial-ledger-control-native.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Ledger control",
+    "transform": "translate(-47.48711305964281 62) scale(1)"
+  },
+  {
+    "path": "phone-initial-ledger-bus-native.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Ledger bus",
+    "transform": "translate(-359.2562584220407 71) scale(1)"
+  },
+  {
+    "path": "phone-initial-bridge-brace-native.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Bridge brace",
+    "transform": "translate(-393.89727457341826 120) scale(1)"
+  },
+  {
+    "path": "phone-initial-tree-maintenance-native.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Tree maintenance",
+    "transform": "translate(-393.89727457341826 62) scale(1)"
+  },
+  {
+    "path": "phone-initial-brace-alcove-native.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(-481.384387633061 120) scale(1)"
+  },
+  {
+    "path": "phone-initial-ledger-control-max.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Ledger control",
+    "transform": "translate(-289.9742261192856 -289) scale(2)"
+  },
+  {
+    "path": "phone-initial-ledger-bus-max.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Ledger bus",
+    "transform": "translate(-913.5125168440813 -169) scale(2)"
+  },
+  {
+    "path": "phone-initial-bridge-brace-max.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Bridge brace",
+    "transform": "translate(-982.7945491468365 191) scale(2)"
+  },
+  {
+    "path": "phone-initial-tree-maintenance-max.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Tree maintenance",
+    "transform": "translate(-982.7945491468365 -498) scale(2)"
+  },
+  {
+    "path": "phone-initial-brace-alcove-max.jpg",
+    "device": "phone",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-1329.204710660612 71) scale(2)"
+  },
+  {
+    "path": "phone-damage-shape-brace-alcove-min.jpg",
+    "device": "phone",
+    "scenario": "damage-shape",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(-2.122974434877449 204) scale(0.45)"
+  },
+  {
+    "path": "phone-damage-shape-brace-alcove-native.jpg",
+    "device": "phone",
+    "scenario": "damage-shape",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(-481.384387633061 120) scale(1)"
+  },
+  {
+    "path": "phone-damage-shape-brace-alcove-max.jpg",
+    "device": "phone",
+    "scenario": "damage-shape",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-1259.9226783578567 -57) scale(2)"
+  },
+  {
+    "path": "phone-damage-sustain-brace-alcove-min.jpg",
+    "device": "phone",
+    "scenario": "damage-sustain",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(-2.122974434877449 204) scale(0.45)"
+  },
+  {
+    "path": "phone-damage-sustain-brace-alcove-native.jpg",
+    "device": "phone",
+    "scenario": "damage-sustain",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(-481.384387633061 120) scale(1)"
+  },
+  {
+    "path": "phone-damage-sustain-brace-alcove-max.jpg",
+    "device": "phone",
+    "scenario": "damage-sustain",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-1259.9226783578567 -57) scale(2)"
+  },
+  {
+    "path": "tablet-initial-ledger-control-min.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Ledger control",
+    "transform": "translate(204.73274141662122 322) scale(0.45)"
+  },
+  {
+    "path": "tablet-initial-ledger-bus-min.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Ledger bus",
+    "transform": "translate(204.73274141662122 322) scale(0.45)"
+  },
+  {
+    "path": "tablet-initial-bridge-brace-min.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Bridge brace",
+    "transform": "translate(204.73274141662122 322) scale(0.45)"
+  },
+  {
+    "path": "tablet-initial-tree-maintenance-min.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Tree maintenance",
+    "transform": "translate(204.73274141662122 322) scale(0.45)"
+  },
+  {
+    "path": "tablet-initial-brace-alcove-min.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(204.73274141662122 322) scale(0.45)"
+  },
+  {
+    "path": "tablet-initial-ledger-control-native.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Ledger control",
+    "transform": "translate(74.64101615137756 201) scale(1)"
+  },
+  {
+    "path": "tablet-initial-ledger-bus-native.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Ledger bus",
+    "transform": "translate(-103.38438763306101 201) scale(1)"
+  },
+  {
+    "path": "tablet-initial-bridge-brace-native.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Bridge brace",
+    "transform": "translate(-103.38438763306101 201) scale(1)"
+  },
+  {
+    "path": "tablet-initial-tree-maintenance-native.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Tree maintenance",
+    "transform": "translate(-103.38438763306101 201) scale(1)"
+  },
+  {
+    "path": "tablet-initial-brace-alcove-native.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(-103.38438763306101 201) scale(1)"
+  },
+  {
+    "path": "tablet-initial-ledger-control-max.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Ledger control",
+    "transform": "translate(-100.97422611928562 -179) scale(2)"
+  },
+  {
+    "path": "tablet-initial-ledger-bus-max.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Ledger bus",
+    "transform": "translate(-724.5125168440813 -59) scale(2)"
+  },
+  {
+    "path": "tablet-initial-bridge-brace-max.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Bridge brace",
+    "transform": "translate(-793.7945491468365 240) scale(2)"
+  },
+  {
+    "path": "tablet-initial-tree-maintenance-max.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Tree maintenance",
+    "transform": "translate(-793.7945491468365 -278) scale(2)"
+  },
+  {
+    "path": "tablet-initial-brace-alcove-max.jpg",
+    "device": "tablet",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-974.768775266122 181) scale(2)"
+  },
+  {
+    "path": "tablet-damage-shape-brace-alcove-min.jpg",
+    "device": "tablet",
+    "scenario": "damage-shape",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(204.73274141662122 322) scale(0.45)"
+  },
+  {
+    "path": "tablet-damage-shape-brace-alcove-native.jpg",
+    "device": "tablet",
+    "scenario": "damage-shape",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(-103.38438763306101 201) scale(1)"
+  },
+  {
+    "path": "tablet-damage-shape-brace-alcove-max.jpg",
+    "device": "tablet",
+    "scenario": "damage-shape",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-974.768775266122 61) scale(2)"
+  },
+  {
+    "path": "tablet-damage-sustain-brace-alcove-min.jpg",
+    "device": "tablet",
+    "scenario": "damage-sustain",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(204.73274141662122 322) scale(0.45)"
+  },
+  {
+    "path": "tablet-damage-sustain-brace-alcove-native.jpg",
+    "device": "tablet",
+    "scenario": "damage-sustain",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(-103.38438763306101 201) scale(1)"
+  },
+  {
+    "path": "tablet-damage-sustain-brace-alcove-max.jpg",
+    "device": "tablet",
+    "scenario": "damage-sustain",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-974.768775266122 61) scale(2)"
+  },
+  {
+    "path": "desktop-initial-ledger-control-min.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Ledger control",
+    "transform": "translate(460.73274141662125 268) scale(0.45)"
+  },
+  {
+    "path": "desktop-initial-ledger-bus-min.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Ledger bus",
+    "transform": "translate(460.73274141662125 268) scale(0.45)"
+  },
+  {
+    "path": "desktop-initial-bridge-brace-min.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Bridge brace",
+    "transform": "translate(460.73274141662125 268) scale(0.45)"
+  },
+  {
+    "path": "desktop-initial-tree-maintenance-min.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Tree maintenance",
+    "transform": "translate(460.73274141662125 268) scale(0.45)"
+  },
+  {
+    "path": "desktop-initial-brace-alcove-min.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(460.73274141662125 268) scale(0.45)"
+  },
+  {
+    "path": "desktop-initial-ledger-control-native.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Ledger control",
+    "transform": "translate(241.6283142591583 147) scale(1)"
+  },
+  {
+    "path": "desktop-initial-ledger-bus-native.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Ledger bus",
+    "transform": "translate(241.6283142591583 147) scale(1)"
+  },
+  {
+    "path": "desktop-initial-bridge-brace-native.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Bridge brace",
+    "transform": "translate(241.6283142591583 147) scale(1)"
+  },
+  {
+    "path": "desktop-initial-tree-maintenance-native.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Tree maintenance",
+    "transform": "translate(241.6283142591583 147) scale(1)"
+  },
+  {
+    "path": "desktop-initial-brace-alcove-native.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(241.6283142591583 147) scale(1)"
+  },
+  {
+    "path": "desktop-initial-ledger-control-max.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Ledger control",
+    "transform": "translate(149.2820323027551 -233) scale(2)"
+  },
+  {
+    "path": "desktop-initial-ledger-bus-max.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Ledger bus",
+    "transform": "translate(-462.768775266122 -113) scale(2)"
+  },
+  {
+    "path": "desktop-initial-bridge-brace-max.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Bridge brace",
+    "transform": "translate(-462.768775266122 240) scale(2)"
+  },
+  {
+    "path": "desktop-initial-tree-maintenance-max.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Tree maintenance",
+    "transform": "translate(-462.768775266122 -386) scale(2)"
+  },
+  {
+    "path": "desktop-initial-brace-alcove-max.jpg",
+    "device": "desktop",
+    "scenario": "initial",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-462.768775266122 127) scale(2)"
+  },
+  {
+    "path": "desktop-damage-shape-brace-alcove-min.jpg",
+    "device": "desktop",
+    "scenario": "damage-shape",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(460.73274141662125 268) scale(0.45)"
+  },
+  {
+    "path": "desktop-damage-shape-brace-alcove-native.jpg",
+    "device": "desktop",
+    "scenario": "damage-shape",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(241.6283142591583 147) scale(1)"
+  },
+  {
+    "path": "desktop-damage-shape-brace-alcove-max.jpg",
+    "device": "desktop",
+    "scenario": "damage-shape",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-462.768775266122 7) scale(2)"
+  },
+  {
+    "path": "desktop-damage-sustain-brace-alcove-min.jpg",
+    "device": "desktop",
+    "scenario": "damage-sustain",
+    "zoom": "min",
+    "focus": "Brace alcove",
+    "transform": "translate(460.73274141662125 268) scale(0.45)"
+  },
+  {
+    "path": "desktop-damage-sustain-brace-alcove-native.jpg",
+    "device": "desktop",
+    "scenario": "damage-sustain",
+    "zoom": "native",
+    "focus": "Brace alcove",
+    "transform": "translate(241.6283142591583 147) scale(1)"
+  },
+  {
+    "path": "desktop-damage-sustain-brace-alcove-max.jpg",
+    "device": "desktop",
+    "scenario": "damage-sustain",
+    "zoom": "max",
+    "focus": "Brace alcove",
+    "transform": "translate(-462.768775266122 7) scale(2)"
+  }
+]

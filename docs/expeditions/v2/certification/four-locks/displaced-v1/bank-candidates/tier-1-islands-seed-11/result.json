@@ -1,0 +1,244 @@
+{
+  "packetId": "four-locks-displaced-v1",
+  "generatorVersion": 2,
+  "batchId": "9-12",
+  "sourceTopologyHash": "7039640238f71c17",
+  "candidateHash": "a0a0d0150f4fd8cc",
+  "requestedLimits": {
+    "maxPlannerInvocations": 2,
+    "maxStatesPerInvocation": 8000
+  },
+  "attempts": [
+    {
+      "cardIds": [
+        "tuppence",
+        "wicker",
+        "pip"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 1047,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "wicker",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 31,
+            "rounds": 5
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    },
+    {
+      "cardIds": [
+        "bushel",
+        "dapple",
+        "pip"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "roots"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 978,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "dapple",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 26,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-bf5b37e11cc0ee48",
+    "evidence": {
+      "blueprintHash": "ae68cbe70c6a5a8e",
+      "puzzleFingerprint": "9b28e7812caa1686",
+      "traceHashes": [
+        "6fe359f521e5188e",
+        "6acbc842664e1657"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              4,
+              0,
+              2,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              4,
+              0,
+              0,
+              2
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              0,
+              5,
+              2
+            ],
+            "eligibleBelow": []
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "tuppence",
+          "wicker",
+          "pip"
+        ],
+        "finalHash": "6fe359f521e5188e",
+        "round": 5,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "wicker",
+          "holdId": "wicker@r5#43"
+        },
+        "hashes": [
+          "134b76f1bcb7df88",
+          "2f76e7f6997a07db",
+          "c8e2b070d3adf745",
+          "ce798d597f1b1aee",
+          "f60624bf8a131320",
+          "140db3e1cab80de2",
+          "853922cb6a64b03c",
+          "245eb45c62629a5b",
+          "94927ab46deccf21",
+          "dd086f7a5e991807",
+          "bd767f45f496865c",
+          "f1e5ef93c7877e9a",
+          "94903978ab41a9ed",
+          "4cbb51355cd8cda0",
+          "d32b46106ea2a9b9",
+          "3ca4869ba116437a",
+          "a3949a2c0c1f3a0d",
+          "64865942dd3bd493",
+          "9c9c898ce9ae8a31",
+          "49b25b28c68b0d33",
+          "13d056c6cecfbb77",
+          "f56a866715b4776a",
+          "43cc1beeee463bff",
+          "505e038ddb934018",
+          "bb178e4747e7ce86",
+          "8bd9c66b28f2b760",
+          "5bd158e47d50ac77",
+          "e53927a2ae4547e9",
+          "e57d8a5733b9d17c",
+          "d2ec4032771b057b",
+          "6fe359f521e5188e"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "bushel",
+          "dapple",
+          "pip"
+        ],
+        "finalHash": "6acbc842664e1657",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "dapple",
+          "holdId": "dapple@r4#37"
+        },
+        "hashes": [
+          "ab3dcf33d2ab21ca",
+          "6b3c7e2c91426ef9",
+          "e3d803fa4a8ad8b1",
+          "96f5222e6a93e66d",
+          "15def666048c4771",
+          "a70205494fb71438",
+          "e55a0775d1997ee4",
+          "8a9ab13732995b3c",
+          "7ab5760311bd9db8",
+          "5ee112bc6e51561b",
+          "176af3c80436cda7",
+          "2ede57a31a66baaa",
+          "ed10e16bb458d196",
+          "18230ffad9de33f7",
+          "8d3aebb99a51f2c8",
+          "d6c6eebc7996b395",
+          "08a8255d76aaa9e8",
+          "88f89f542efac9b1",
+          "e15a7e353f6b2af2",
+          "57b95546fcee914f",
+          "df408dc96aa24648",
+          "910bd5444ea0f6f5",
+          "764af3db9b7cd99e",
+          "837895ef4541edae",
+          "6e5cf6532bc9e7b8",
+          "6acbc842664e1657"
+        ]
+      }
+    ]
+  }
+}

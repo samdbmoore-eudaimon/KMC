@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "measuredAt": "2026-10-01T23:58:23.968Z",
+  "host": {
+    "platform": "win32",
+    "arch": "x64",
+    "node": "v24.18.0",
+    "cpu": "11th Gen Intel(R) Core(TM) i7-11800H @ 2.30GHz"
+  },
+  "certificateId": "orchard-v2-7bb0c308bb8ec44f",
+  "measurements": {
+    "reconstruction": {
+      "samples": 100,
+      "medianMs": 15.329899999999952,
+      "p95Ms": 18.555999999999983,
+      "maxMs": 34.45679999999999
+    },
+    "preview": {
+      "samples": 114,
+      "medianMs": 0.40819999999985157,
+      "p95Ms": 1.0137999999999465,
+      "maxMs": 2.968399999999974
+    },
+    "reducer": {
+      "samples": 114,
+      "medianMs": 0.19299999999998363,
+      "p95Ms": 0.5244999999999891,
+      "maxMs": 0.7022999999999229
+    }
+  },
+  "commandCounts": {
+    "move": 40,
+    "request-hint": 4,
+    "edit-draft": 2,
+    "operate": 4,
+    "end-round": 18,
+    "calibrate": 20,
+    "strike": 8,
+    "hold": 14,
+    "dash": 2,
+    "prepare-alcove": 2
+  },
+  "memoryBefore": {
+    "rss": 123092992,
+    "heapTotal": 77832192,
+    "heapUsed": 59489352,
+    "external": 7573251,
+    "arrayBuffers": 982252
+  },
+  "memoryAfter": {
+    "rss": 153399296,
+    "heapTotal": 107061248,
+    "heapUsed": 67082720,
+    "external": 4438056,
+    "arrayBuffers": 137467
+  },
+  "desktopBudgetChecks": {
+    "reconstruction": true,
+    "preview": true,
+    "reducer": true
+  },
+  "limitations": [
+    "Local desktop process only; supported tablet performance remains unmeasured.",
+    "No real browser rendering, drag/zoom, save/reward or whole-bundle performance measurement.",
+    "Command sample includes complete certified direct and alcove routes; no warm-up samples are discarded.",
+    "Heap and RSS snapshots include retained modules and are not a bounded-memory proof."
+  ]
+}

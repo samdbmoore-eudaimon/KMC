@@ -1,0 +1,202 @@
+{
+ "summary": {
+  "family": "unequal-crossing",
+  "tier": 2,
+  "scanned": 8,
+  "built": 8,
+  "accepted": 4,
+  "distinctTopologies": 4,
+  "distinctPuzzles": 3,
+  "maxStates": 6000
+ },
+ "rows": [
+  {
+   "layoutId": "river",
+   "seed": 1,
+   "tier": 2,
+   "topology": "a5d0eab823000ff9",
+   "puzzle": "7edc7fbd889646c6",
+   "contentHash": "f8cc1fec8acac639",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 683
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 646
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 926
+  },
+  {
+   "layoutId": "river",
+   "seed": 2,
+   "tier": 2,
+   "topology": "90a9dd6580d94f90",
+   "puzzle": "3fede6b085eaa6e9",
+   "contentHash": "65b82315fedbac7a",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2252
+  },
+  {
+   "layoutId": "river",
+   "seed": 3,
+   "tier": 2,
+   "topology": "6aaa8456c84aac9b",
+   "puzzle": "7d0c67f1d37c7762",
+   "contentHash": "84cd4cbd68b36aa4",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2458
+  },
+  {
+   "layoutId": "river",
+   "seed": 4,
+   "tier": 2,
+   "topology": "35799fb0f7625b11",
+   "puzzle": "0253f42b6b711eaa",
+   "contentHash": "4fe6ea365e64f3cf",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2224
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 1,
+   "tier": 2,
+   "topology": "dd05dabc2fe76e01",
+   "puzzle": "7edc7fbd889646c6",
+   "contentHash": "19983c3303901020",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 242
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 227
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 370
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 2,
+   "tier": 2,
+   "topology": "1a95156790b5561e",
+   "puzzle": "3fede6b085eaa6e9",
+   "contentHash": "4a4692eef284f3c3",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 3170
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 889
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1889
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 3,
+   "tier": 2,
+   "topology": "b0c53d262ed1272b",
+   "puzzle": "7d0c67f1d37c7762",
+   "contentHash": "77e0e7c0f36f066b",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 3460
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3651
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 4,
+   "tier": 2,
+   "topology": "93df56e8cbdcf535",
+   "puzzle": "0253f42b6b711eaa",
+   "contentHash": "42943385b8e8b7f2",
+   "direct": {
+    "team": "cornix/kernel/beeswax",
+    "status": "success",
+    "states": 1437
+   },
+   "alcove": {
+    "team": "cornix/warden/beeswax",
+    "status": "success",
+    "states": 5956
+   },
+   "secondTargetPlan": {
+    "team": "cornix/kernel/millrace",
+    "plan": "direct-guard"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2960
+  }
+ ]
+}

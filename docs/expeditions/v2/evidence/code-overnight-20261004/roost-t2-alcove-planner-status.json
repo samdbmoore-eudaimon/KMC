@@ -1,0 +1,32 @@
+{
+  "family": "roost",
+  "tier": 2,
+  "seed": 1,
+  "layoutId": "river",
+  "team": [
+    "tuppence",
+    "dapple",
+    "sorrel"
+  ],
+  "planFamily": "alcove-intercept",
+  "status": "unsatisfiable",
+  "metrics": {
+    "planner": "orchard-v2-tactical-planner/1",
+    "planFamily": "alcove-intercept",
+    "statesSpent": 0,
+    "maxStates": 30000,
+    "perTeam": [
+      {
+        "teamIndex": 0,
+        "cardIds": [
+          "tuppence",
+          "dapple",
+          "sorrel"
+        ],
+        "status": "unsatisfiable",
+        "reasonCode": "stat-infeasible"
+      }
+    ],
+    "beamWidth": 120
+  }
+}

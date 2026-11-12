@@ -158,12 +158,28 @@ test("§2/low band: even the weakest possible squad (three of the lowest-BV Comm
   assert.deepEqual(result.shortfalls, []);
 });
 
-test("ENM: the Scruffcrow never attacks a hero directly — pecking a basket is its entire behaviour", () => {
+// Rewritten 2026-09-21 alongside cider-run.test.js's identical fix: peck-lane now shares
+// strikeAdjacentHero with flood-lane (expedition-engine.js), so an unguarded hero in reach is
+// struck instead of the basket being pecked that round. Not catalogued/playable any more (see
+// this file's header), but still real, tested code — the contract it asserts should match.
+test("ENM: an unguarded hero in Scruffcrow's reach is struck instead of the basket being pecked; Guard blocks the strike", () => {
   const board = COUNTING_ORCHARD_CONFIG.board;
-  const units = [{ id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, hp: 3, maxHp: 3, move: 1, pos: "3,-3" }];
   const enemy = { id: "scruffcrow", name: "Scruffcrow", side: "enemy", hp: 2, defence: 4, move: 1, range: 1, damage: 1, pos: "3,-3", delay: 0, behaviour: "peck-lane", laneSequence: [1] };
-  const state = createExpeditionState({ id: "scruffcrow-test", moduleKey: "primary", title: "Scruffcrow test", turnLimit: 4, board, units, enemies: [enemy], objects: [{ id: "basket", kind: "basket", value: 5, pos: "3,-2", lane: 1 }], objective: { family: "exactSum", hexes: ["0,0"], target: 5 } });
-  const resolved = resolveEnemyPhase(endPlayerPhase(state));
-  assert.equal(resolved.units.hero.hp, 3, "adjacent or not, the Scruffcrow only ever pecks a basket, never strikes a hero");
-  assert.equal(resolved.objects.basket.value, 4);
+  const basket = { id: "basket", kind: "basket", value: 5, pos: "3,-2", lane: 1 };
+  const objective = { family: "exactSum", hexes: ["0,0"], target: 5 };
+
+  const exposed = { id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, hp: 3, maxHp: 3, move: 1, pos: "3,-3" };
+  const exposedState = createExpeditionState({ id: "scruffcrow-test", moduleKey: "primary", title: "Scruffcrow test", turnLimit: 4, board, units: [exposed], enemies: [{ ...enemy }], objects: [{ ...basket }], objective });
+  const exposedResolved = resolveEnemyPhase(endPlayerPhase(exposedState));
+  assert.equal(exposedResolved.units.hero.hp, 2, "an unguarded hero standing in range is struck instead of the peck");
+  assert.equal(exposedResolved.objects.basket.value, 5, "the strike replaces the peck this round");
+
+  const guardedState = createExpeditionState({ id: "scruffcrow-test-guarded", moduleKey: "primary", title: "Scruffcrow test", turnLimit: 4, board, units: [{ ...exposed, guarded: true }], enemies: [{ ...enemy }], objects: [{ ...basket }], objective });
+  const guardedResolved = resolveEnemyPhase(endPlayerPhase(guardedState));
+  assert.equal(guardedResolved.units.hero.hp, 3, "Guard blocks the strike entirely");
+  assert.equal(guardedResolved.objects.basket.value, 5, "a blocked strike still isn't a peck");
+
+  const clearState = createExpeditionState({ id: "scruffcrow-test-clear", moduleKey: "primary", title: "Scruffcrow test", turnLimit: 4, board, units: [{ ...exposed, pos: "0,0" }], enemies: [{ ...enemy }], objects: [{ ...basket }], objective });
+  const clearResolved = resolveEnemyPhase(endPlayerPhase(clearState));
+  assert.equal(clearResolved.objects.basket.value, 4, "with nobody exposed, the peck proceeds exactly as before");
 });

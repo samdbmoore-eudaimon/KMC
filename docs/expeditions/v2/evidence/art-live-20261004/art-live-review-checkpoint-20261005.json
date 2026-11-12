@@ -1,0 +1,81 @@
+{
+  "createdAt": "2026-10-05T08:30:43.7695661Z",
+  "buildProvenance": "build-provenance-current.json",
+  "committedVerification": "art-family-committed-verification-20261005.json",
+  "scope": "Actual browser art QA; partial legal states only; no tier certification or eligible rewards",
+  "captures": [
+    {
+      "file": "bough-committed-patch-desktop-native-20261005.jpg",
+      "sha256": "46eccfdc252f06e1613646620efdb4252f5b7f436c4c926ffd6f6a1408196f7d",
+      "bytes": 259474
+    },
+    {
+      "file": "roost-committed-beams-desktop-minimum-20261005.jpg",
+      "sha256": "247c5dbace229413880b4a78dd74bddbfea64bb481ec24e35310648bc79ba5aa",
+      "bytes": 222451
+    },
+    {
+      "file": "roost-committed-beams-desktop-native-20261005.jpg",
+      "sha256": "6b290deed532de0710bd376e1a29440b97cb9d1efe994933653442f7fda1204e",
+      "bytes": 258875
+    },
+    {
+      "file": "roost-committed-beams-phone-minimum-20261005.jpg",
+      "sha256": "ac94536b77e110413a12252e26031a4962d675a99895c0ddb39c163ff6642b8e",
+      "bytes": 101314
+    },
+    {
+      "file": "roost-committed-beams-tablet-minimum-20261005.jpg",
+      "sha256": "1baaf83e1e793eb56e7e65aae917e8c1b578590943ad9d9d1206e58c814090dd",
+      "bytes": 191940
+    },
+    {
+      "file": "unequal-final-pans-desktop-minimum-20261005.jpg",
+      "sha256": "caad18558d5c4f348f8facb9cf06f5db91f94c1607851eb5db4d94676350315a",
+      "bytes": 223121
+    },
+    {
+      "file": "unequal-final-pans-desktop-native-20261005.jpg",
+      "sha256": "86e6fab239efdc563f8aef4dfc555fa41485199b862d130fcd9254cbec14e59b",
+      "bytes": 260541
+    },
+    {
+      "file": "unequal-final-pans-phone-minimum-20261005.jpg",
+      "sha256": "f0c5124266c5413abdf17d4686d227787dd650b6bf09172b790094d94a3ca4a4",
+      "bytes": 102834
+    },
+    {
+      "file": "unequal-final-pans-phone-native-20261005.jpg",
+      "sha256": "6f88c59cc1334793c0aa6b5b1f5bb54412446cd235b987577c5d795f0ba5bf9d",
+      "bytes": 104932
+    },
+    {
+      "file": "unequal-final-pans-tablet-minimum-20261005.jpg",
+      "sha256": "c409235d9139a5a5ca15120ebabc568d1e661e74821c7d0b379fe71fc8443869",
+      "bytes": 194448
+    },
+    {
+      "file": "unequal-final-pans-tablet-native-20261005.jpg",
+      "sha256": "5a2d4831b62a20166fee1e0b7516dd43fbffdb4d1b04ebb41c959724728725a7",
+      "bytes": 219965
+    },
+    {
+      "file": "unequal-phone-find-autoclose-art-20261005.jpg",
+      "sha256": "71da2546bb2e48e7b3c59e71b62bac556bf4f276ddfdf1a9dc2e3144ea7715f2",
+      "bytes": 105784
+    },
+    {
+      "file": "unequal-phone-pan-hud-art-20261005.jpg",
+      "sha256": "9a4b37b7214745741134ddfe75feec68a3b95bc8cd3fb08cd55bc22a3f1d2d32",
+      "bytes": 105092
+    }
+  ],
+  "defects": {
+    "panHud": "Resolved: native phone Left pan and shared totals clear of HUD, independently reviewed at 390x844",
+    "findMenu": "Resolved: automatic collapse after selecting Scruffcrow, independently reviewed at 390x844"
+  },
+  "dependencies": [
+    "Ravine T5 generator contract remains pending",
+    "All 25 certified missions and integrated final App build require final live art review"
+  ]
+}

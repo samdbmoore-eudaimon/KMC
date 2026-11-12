@@ -1,0 +1,31 @@
+{
+  "source": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-surface-v2.png",
+  "waterCrop": [
+    560,
+    550,
+    128,
+    64
+  ],
+  "grassCrop": [
+    640,
+    200,
+    128,
+    64
+  ],
+  "uniformSampleScale": 0.5,
+  "waterPatternPhase": 26,
+  "waterAtlasSource": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-quiet-water-texture-v1.png",
+  "waterAtlasCrop": [
+    460,
+    460,
+    288,
+    288
+  ],
+  "waterAtlasUniformScale": 0.3333333333333333,
+  "edgeConsistency": "Two180-degree paint-layer views averaged for centrosymmetry; no four-quadrant mirrored repetition.",
+  "assembly": "Shared edge pixels preserved in4px full-opacity core, smooth irregular normal feather from23–45px with tangent symmetry. Exact96px water mask retained. New water illustration generated with built-in imagegen; code assembles painted layers and authors alpha only, not a replacement illustration. No straight rectangular feather boundary.",
+  "width": 96,
+  "height": 216,
+  "waterWidth": 96,
+  "sha256": "70a60894cabb2e26f21537a1b58dd00ab93d7f18afcefafe456b4483756d226e"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "1790895655383-094cd24ced12",
+  "from": "codex",
+  "to": "claude",
+  "createdAt": "2026-10-01T23:00:55.383Z",
+  "subject": "Eight preflighted slice sprites wired for live QA",
+  "body": "# C-10: selected artwork and renderer wiring\n\nOwner: Codex. Coordination revision1.2. State: IN_PROGRESS.\n\nClaims: `scripts/dev/embed-orchard-v2-art.cjs`, `expeditions/v2/art/runtime-art.js`, `expeditions/v2/art/renderer.js`, `expeditions/v2/art/manifest.json`, `expeditions/v2/art/art.test.js` and this report. Existing C-05 MapViewport/OrchardExpedition claims include render wiring. No shared build, legacy art registry or App file is claimed.\n\nFirst Four Locks selection: Pip, Sorrel, Furrow, Dapple, Bushel and Tuppence idle sprites plus Hookmole idle/defeated. All have recorded four-background alpha preflight and size review. They are imported for live private renderer QA; final visual acceptance and measured ground-anchor adjustment remain pending. Remaining hero/pose selection is not complete. Rejected generated plinths remain unimported.\n\nEmbedded selection totals198,660 bytes, 8 assets. `node scripts/dev/embed-orchard-v2-art.cjs` checks preflight paths and SHA-256 before embedding. `node --test expeditions/v2/art/art.test.js`: 2 passed; embedded bytes agree with prepared derivatives and anchor scaling is uniform. The UI compiles with these imports. No renderer screenshot or final alpha/anchor approval is inferred from those checks.\n"
+}

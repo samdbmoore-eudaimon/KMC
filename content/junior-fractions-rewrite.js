@@ -114,7 +114,7 @@ export function applyJuniorFractionProgression(lessons) {
         ex("Maya spends 2/5 of her money, then spends 1/4 of what remains. What fraction remains?", ["After the first purchase, 3/5 remains.", "After the second, 3/4 of that remainder remains.", "Calculate 3/4 × 3/5."], "9/20."),
         ex("A class has 3/5 as many laptops as pupils. One quarter of the laptops are being repaired. What fraction of the pupil count is represented by working laptops?", ["Three quarters of the laptops work.", "Find 3/4 of 3/5."], "9/20 of the pupil count."),
         ex("A tank is 2/3 full. After 18 litres are added, it is 5/6 full. Find the tank's capacity.", ["The increase is 5/6 - 2/3 = 1/6 of the tank.", "If 1/6 is 18 litres, multiply by 6."], "108 litres.")
-      ], { q: "A book is read over two days. On day one, 2/7 is read. On day two, 3/5 of the remainder is read. What fraction is unread?", answer: "2/7. After day one, 5/7 remains. Day two leaves 2/5 of that, so 2/5 × 5/7 = 2/7." }, "The word ‘remaining’ changes the whole for the next fraction. Do not add fractions that refer to different starting amounts."),
+      ], { q: "A book is read over two days. On day one, 2/7 is read. On day two, 3/5 of the remainder is read. What fraction is unread?", answer: "2/7. After day one, 5/7 remains.\nDay two leaves 2/5 of that, so 2/5 × 5/7 = 2/7." }, "The word ‘remaining’ changes the whole for the next fraction. Do not add fractions that refer to different starting amounts."),
     ],
     recap: [
       "Primary fraction methods remain the foundation, and the linked lessons are available whenever a refresher is needed.",

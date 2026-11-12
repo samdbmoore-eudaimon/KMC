@@ -1,0 +1,1990 @@
+{
+  "schemaVersion": 1,
+  "packetId": "four-locks-displaced-v1",
+  "generatorVersion": 2,
+  "familyId": "four-locks",
+  "tier": 1,
+  "status": "complete",
+  "complete": true,
+  "limits": {
+    "batchId": "21-24",
+    "newCandidates": 16,
+    "seeds": [
+      21,
+      22,
+      23,
+      24
+    ],
+    "maxPlannerInvocationsPerCandidate": 2,
+    "maxStatesPerInvocation": 8000
+  },
+  "allowedBatches": [
+    "1-4",
+    "5-8",
+    "9-12",
+    "13-16",
+    "17-20",
+    "21-24"
+  ],
+  "requirements": {
+    "entries": 64,
+    "archetypes": [
+      "river",
+      "islands",
+      "hedges",
+      "terraces"
+    ],
+    "topologiesPerArchetype": 8,
+    "puzzlePatterns": 8,
+    "separateCertifiedFallback": true
+  },
+  "coverage": {
+    "materialEntries": 64,
+    "missingEntries": 0,
+    "archetypes": [
+      {
+        "layoutId": "river",
+        "topologies": 16,
+        "missing": 0
+      },
+      {
+        "layoutId": "islands",
+        "topologies": 16,
+        "missing": 0
+      },
+      {
+        "layoutId": "hedges",
+        "topologies": 18,
+        "missing": 0
+      },
+      {
+        "layoutId": "terraces",
+        "topologies": 14,
+        "missing": 0
+      }
+    ],
+    "puzzlePatterns": 25,
+    "missingPuzzlePatterns": 0,
+    "fallbackSeparate": true
+  },
+  "missing": [],
+  "referenceFallback": {
+    "source": "tier-1-river-seed-0",
+    "layoutId": "river",
+    "parameterSeed": 0,
+    "certificateId": "orchard-v2-17b09eb354d2a122",
+    "contentHash": "5cd53407ae9b1e4e",
+    "candidateHash": "4a7a3bc4afb0ecab",
+    "parameters": {
+      "tier": 1,
+      "seed": 0,
+      "layoutId": "river",
+      "maxAttempts": 256,
+      "reservedHexes": [],
+      "deltas": [
+        0,
+        1,
+        1
+      ],
+      "sourceTopologyHash": "4b6f7cceae7ee8db"
+    },
+    "topologyFingerprint": "d76733b080b27c65",
+    "puzzleFingerprint": "e3df1ed932595744"
+  },
+  "entries": [
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-10",
+      "layoutId": "hedges",
+      "parameterSeed": 10,
+      "certificateId": "orchard-v2-d0374ac295bbdb9f",
+      "contentHash": "c32b2e4cd071546b",
+      "candidateHash": "7980f2e39ac35eca",
+      "parameters": {
+        "tier": 1,
+        "seed": 10,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          1,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "0366d90634119a0d"
+      },
+      "topologyFingerprint": "7c816d582f67a769",
+      "puzzleFingerprint": "14b496715c34535a"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-11",
+      "layoutId": "hedges",
+      "parameterSeed": 11,
+      "certificateId": "orchard-v2-64a23d884ca8971d",
+      "contentHash": "0e29bdf5fff7b318",
+      "candidateHash": "fa0c1cba7630c855",
+      "parameters": {
+        "tier": 1,
+        "seed": 11,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          -1,
+          0
+        ],
+        "sourceTopologyHash": "42a4cc3f16d428b6"
+      },
+      "topologyFingerprint": "ed6aea7cc3535021",
+      "puzzleFingerprint": "9b28e7812caa1686"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-13",
+      "layoutId": "hedges",
+      "parameterSeed": 13,
+      "certificateId": "orchard-v2-5732268bcc98ccae",
+      "contentHash": "7b98620db466c816",
+      "candidateHash": "fee8c553149a6cac",
+      "parameters": {
+        "tier": 1,
+        "seed": 13,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "157a955d22918e84"
+      },
+      "topologyFingerprint": "4e7232d027c7e0a9",
+      "puzzleFingerprint": "1119bf8262530c21"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-16",
+      "layoutId": "hedges",
+      "parameterSeed": 16,
+      "certificateId": "orchard-v2-6af65df6da202683",
+      "contentHash": "53264fd6c5311cf7",
+      "candidateHash": "878042ad76b02926",
+      "parameters": {
+        "tier": 1,
+        "seed": 16,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "sourceTopologyHash": "33f592b2180f866f"
+      },
+      "topologyFingerprint": "81803de96c2cce40",
+      "puzzleFingerprint": "fafd2eb23f9798b3"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-17",
+      "layoutId": "hedges",
+      "parameterSeed": 17,
+      "certificateId": "orchard-v2-b7806758087d0299",
+      "contentHash": "d3fc25e3ed2cdaf0",
+      "candidateHash": "538181c921dedede",
+      "parameters": {
+        "tier": 1,
+        "seed": 17,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "9894fad18b0bb6e2"
+      },
+      "topologyFingerprint": "8a3e3c9ebf7bbb8b",
+      "puzzleFingerprint": "21d21b70fc9ead5b"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-18",
+      "layoutId": "hedges",
+      "parameterSeed": 18,
+      "certificateId": "orchard-v2-166052e476ccea79",
+      "contentHash": "6b8d2e66853b82e7",
+      "candidateHash": "788b0b9f5effdc90",
+      "parameters": {
+        "tier": 1,
+        "seed": 18,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "a5ce71082b94779b"
+      },
+      "topologyFingerprint": "b8f7909ef2ebbdcf",
+      "puzzleFingerprint": "fbac2dc2baaf2a3f"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-19",
+      "layoutId": "hedges",
+      "parameterSeed": 19,
+      "certificateId": "orchard-v2-c459a29c463b89cd",
+      "contentHash": "f343154851e9b34f",
+      "candidateHash": "4bfa66d4a5da7191",
+      "parameters": {
+        "tier": 1,
+        "seed": 19,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "592b03d25c1e3efd"
+      },
+      "topologyFingerprint": "13b7920a4054029f",
+      "puzzleFingerprint": "16ceb3271d115c24"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-20",
+      "layoutId": "hedges",
+      "parameterSeed": 20,
+      "certificateId": "orchard-v2-27ab2530f949acf1",
+      "contentHash": "922b3ffc83017cb1",
+      "candidateHash": "d4081fa480bf41c7",
+      "parameters": {
+        "tier": 1,
+        "seed": 20,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "b856814ad50b1aab"
+      },
+      "topologyFingerprint": "015a177072e664c5",
+      "puzzleFingerprint": "595b5e8768f12f9a"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-21",
+      "layoutId": "hedges",
+      "parameterSeed": 21,
+      "certificateId": "orchard-v2-f74b06aea1f19ddb",
+      "contentHash": "a7db3dcae2a3befb",
+      "candidateHash": "5072382eeafc0917",
+      "parameters": {
+        "tier": 1,
+        "seed": 21,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "d53b0f746f54821d"
+      },
+      "topologyFingerprint": "f9f3fcd21965d25b",
+      "puzzleFingerprint": "056a51a51a6fa952"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-23",
+      "layoutId": "hedges",
+      "parameterSeed": 23,
+      "certificateId": "orchard-v2-ab748619b337b074",
+      "contentHash": "d11429c838e9c10b",
+      "candidateHash": "1313f54002e16adb",
+      "parameters": {
+        "tier": 1,
+        "seed": 23,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          -1,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "66133ebf32d043ea"
+      },
+      "topologyFingerprint": "ee90d4b63abd88f7",
+      "puzzleFingerprint": "1a7aca339f650094"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-24",
+      "layoutId": "hedges",
+      "parameterSeed": 24,
+      "certificateId": "orchard-v2-24f08db21972685b",
+      "contentHash": "75db6c7c8896ae69",
+      "candidateHash": "615402bf4661fcd2",
+      "parameters": {
+        "tier": 1,
+        "seed": 24,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "769d5b3108c3a27e"
+      },
+      "topologyFingerprint": "03d7c3a73652bcf2",
+      "puzzleFingerprint": "1683cd2d20ae8fe8"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-3",
+      "layoutId": "hedges",
+      "parameterSeed": 3,
+      "certificateId": "orchard-v2-6eea5ce40a18854d",
+      "contentHash": "91167f929f0a52e5",
+      "candidateHash": "20f90d5fb1fadf58",
+      "parameters": {
+        "tier": 1,
+        "seed": 3,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "113c157c40fda151"
+      },
+      "topologyFingerprint": "d76220dd64f12ca0",
+      "puzzleFingerprint": "c09d919c6426fac5"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-5",
+      "layoutId": "hedges",
+      "parameterSeed": 5,
+      "certificateId": "orchard-v2-8136d48c1cc9f23d",
+      "contentHash": "59d5bf74edfcdb5d",
+      "candidateHash": "d5b8a4eedca09dc3",
+      "parameters": {
+        "tier": 1,
+        "seed": 5,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "a71c363d3cb134d4"
+      },
+      "topologyFingerprint": "54959c7c0f7327b9",
+      "puzzleFingerprint": "d1540070f8506a6b"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-6",
+      "layoutId": "hedges",
+      "parameterSeed": 6,
+      "certificateId": "orchard-v2-e5292df1d25374cc",
+      "contentHash": "9ee7567d5f772cb8",
+      "candidateHash": "ca10095fc4694cde",
+      "parameters": {
+        "tier": 1,
+        "seed": 6,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "ef17f83fe4096c94"
+      },
+      "topologyFingerprint": "520b88570e7917ce",
+      "puzzleFingerprint": "a2ad143b3255be02"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-7",
+      "layoutId": "hedges",
+      "parameterSeed": 7,
+      "certificateId": "orchard-v2-115bb034bb0fab05",
+      "contentHash": "ee08fb7821f2f171",
+      "candidateHash": "9e7bb35cf819f2b5",
+      "parameters": {
+        "tier": 1,
+        "seed": 7,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          1,
+          0,
+          1
+        ],
+        "sourceTopologyHash": "a001221403fdf89d"
+      },
+      "topologyFingerprint": "a420c75ade7ed1e7",
+      "puzzleFingerprint": "5eb29b4af509557b"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-8",
+      "layoutId": "hedges",
+      "parameterSeed": 8,
+      "certificateId": "orchard-v2-4ef9daa183f7562c",
+      "contentHash": "1e637ffe308c3157",
+      "candidateHash": "36fa6b2b62247f64",
+      "parameters": {
+        "tier": 1,
+        "seed": 8,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "e10d48e8b640bef3"
+      },
+      "topologyFingerprint": "a274dee505c88ff8",
+      "puzzleFingerprint": "233da21dd13d4d5a"
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-9",
+      "layoutId": "hedges",
+      "parameterSeed": 9,
+      "certificateId": "orchard-v2-7e14f19f6d8c9e2a",
+      "contentHash": "095979ad14d53f4e",
+      "candidateHash": "c7f1eef91c9ea0ac",
+      "parameters": {
+        "tier": 1,
+        "seed": 9,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          0,
+          1
+        ],
+        "sourceTopologyHash": "ac22d99363a04d28"
+      },
+      "topologyFingerprint": "2dc5190cb46e8d89",
+      "puzzleFingerprint": "9916b89adf3a02bd"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-1",
+      "layoutId": "islands",
+      "parameterSeed": 1,
+      "certificateId": "orchard-v2-70c397790c9aeb20",
+      "contentHash": "a6bab35e687141db",
+      "candidateHash": "ebbaca680cc6c0eb",
+      "parameters": {
+        "tier": 1,
+        "seed": 1,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          -1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "b0a9f1f3dbfe35c4"
+      },
+      "topologyFingerprint": "8571879f1884c4ca",
+      "puzzleFingerprint": "3616a201ff801cd8"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-11",
+      "layoutId": "islands",
+      "parameterSeed": 11,
+      "certificateId": "orchard-v2-bf5b37e11cc0ee48",
+      "contentHash": "ae68cbe70c6a5a8e",
+      "candidateHash": "a0a0d0150f4fd8cc",
+      "parameters": {
+        "tier": 1,
+        "seed": 11,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          1,
+          -1
+        ],
+        "sourceTopologyHash": "7039640238f71c17"
+      },
+      "topologyFingerprint": "0f459750002d9201",
+      "puzzleFingerprint": "9b28e7812caa1686"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-12",
+      "layoutId": "islands",
+      "parameterSeed": 12,
+      "certificateId": "orchard-v2-2c4eae947eae1a85",
+      "contentHash": "c27f1cfad5146119",
+      "candidateHash": "7c0528f16af8d570",
+      "parameters": {
+        "tier": 1,
+        "seed": 12,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          1,
+          1,
+          -1
+        ],
+        "sourceTopologyHash": "4855f37e5dec9c35"
+      },
+      "topologyFingerprint": "c4dd0b41fb2f5330",
+      "puzzleFingerprint": "14b37c48334996d1"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-14",
+      "layoutId": "islands",
+      "parameterSeed": 14,
+      "certificateId": "orchard-v2-56666f3fd6f16e62",
+      "contentHash": "73f8cd362f35b12f",
+      "candidateHash": "de486f6cdc674909",
+      "parameters": {
+        "tier": 1,
+        "seed": 14,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          1,
+          1,
+          -1
+        ],
+        "sourceTopologyHash": "5aca97f40f269a61"
+      },
+      "topologyFingerprint": "34477936126e2c23",
+      "puzzleFingerprint": "087f5411c261c776"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-15",
+      "layoutId": "islands",
+      "parameterSeed": 15,
+      "certificateId": "orchard-v2-c4d5985d3cb8db4c",
+      "contentHash": "b467091198fe7106",
+      "candidateHash": "9475bf75aa7d7896",
+      "parameters": {
+        "tier": 1,
+        "seed": 15,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "1106b435279821b6"
+      },
+      "topologyFingerprint": "a51ced02649caebf",
+      "puzzleFingerprint": "90629376d3ec3369"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-16",
+      "layoutId": "islands",
+      "parameterSeed": 16,
+      "certificateId": "orchard-v2-ba047fcd63747484",
+      "contentHash": "5c6425bbc619c33e",
+      "candidateHash": "62aa9dc1c1420722",
+      "parameters": {
+        "tier": 1,
+        "seed": 16,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "de23f2a6afb94423"
+      },
+      "topologyFingerprint": "b69882106b83a1b9",
+      "puzzleFingerprint": "fafd2eb23f9798b3"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-18",
+      "layoutId": "islands",
+      "parameterSeed": 18,
+      "certificateId": "orchard-v2-d6043f6949474d34",
+      "contentHash": "ed046ee39865d14a",
+      "candidateHash": "35467fa4e0fbd445",
+      "parameters": {
+        "tier": 1,
+        "seed": 18,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          1,
+          -1
+        ],
+        "sourceTopologyHash": "480111a0c84c2ecb"
+      },
+      "topologyFingerprint": "e033b87f175a0a62",
+      "puzzleFingerprint": "fbac2dc2baaf2a3f"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-2",
+      "layoutId": "islands",
+      "parameterSeed": 2,
+      "certificateId": "orchard-v2-0bf00a1df486cb24",
+      "contentHash": "4ba9424ce8307dff",
+      "candidateHash": "6c108a1242592b75",
+      "parameters": {
+        "tier": 1,
+        "seed": 2,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "2731778816d7069f"
+      },
+      "topologyFingerprint": "e0e937da576200d3",
+      "puzzleFingerprint": "c442dab594bb9a8c"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-23",
+      "layoutId": "islands",
+      "parameterSeed": 23,
+      "certificateId": "orchard-v2-7c48e94d412293b0",
+      "contentHash": "5cf601a97984154a",
+      "candidateHash": "c523bbb2fecade03",
+      "parameters": {
+        "tier": 1,
+        "seed": 23,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "f7ccb3f7183e5fbc"
+      },
+      "topologyFingerprint": "480097d5bd431c6c",
+      "puzzleFingerprint": "1a7aca339f650094"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-3",
+      "layoutId": "islands",
+      "parameterSeed": 3,
+      "certificateId": "orchard-v2-beb9dfe2005f35a7",
+      "contentHash": "8981f916f2c472db",
+      "candidateHash": "0214224ac1391c89",
+      "parameters": {
+        "tier": 1,
+        "seed": 3,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          1,
+          1,
+          -1
+        ],
+        "sourceTopologyHash": "b841d45a920b194d"
+      },
+      "topologyFingerprint": "28979c34a064feb1",
+      "puzzleFingerprint": "c09d919c6426fac5"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-4",
+      "layoutId": "islands",
+      "parameterSeed": 4,
+      "certificateId": "orchard-v2-da4a33476439f0a2",
+      "contentHash": "2e91498bb8003a48",
+      "candidateHash": "1c593b01b73e0b00",
+      "parameters": {
+        "tier": 1,
+        "seed": 4,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          1,
+          -1
+        ],
+        "sourceTopologyHash": "cc3356e7f6657c96"
+      },
+      "topologyFingerprint": "a4295c0b988db74a",
+      "puzzleFingerprint": "561b2088b4745d9b"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-5",
+      "layoutId": "islands",
+      "parameterSeed": 5,
+      "certificateId": "orchard-v2-a049609f256e7b4e",
+      "contentHash": "085097c81d892631",
+      "candidateHash": "9d6af7c6024eedd5",
+      "parameters": {
+        "tier": 1,
+        "seed": 5,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "66b7aec8a14b13c3"
+      },
+      "topologyFingerprint": "c105516ae380ba8f",
+      "puzzleFingerprint": "d1540070f8506a6b"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-7",
+      "layoutId": "islands",
+      "parameterSeed": 7,
+      "certificateId": "orchard-v2-6d523ca2acf6e7b7",
+      "contentHash": "214fa923820860b8",
+      "candidateHash": "d17e3a8563c8f4b4",
+      "parameters": {
+        "tier": 1,
+        "seed": 7,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "a0de71f12b905186"
+      },
+      "topologyFingerprint": "0fdf42d460391eed",
+      "puzzleFingerprint": "5eb29b4af509557b"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-8",
+      "layoutId": "islands",
+      "parameterSeed": 8,
+      "certificateId": "orchard-v2-b42549c3b6599e2e",
+      "contentHash": "de969cb48063bf5f",
+      "candidateHash": "14e6de752f9cc140",
+      "parameters": {
+        "tier": 1,
+        "seed": 8,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "355a9f7b1314cbd0"
+      },
+      "topologyFingerprint": "ef01983c56c8ee2d",
+      "puzzleFingerprint": "233da21dd13d4d5a"
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-9",
+      "layoutId": "islands",
+      "parameterSeed": 9,
+      "certificateId": "orchard-v2-600ba32f89cdb94a",
+      "contentHash": "8f3370f7fc19be34",
+      "candidateHash": "7acf8b82a8cee25d",
+      "parameters": {
+        "tier": 1,
+        "seed": 9,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "3759c971e9f0934a"
+      },
+      "topologyFingerprint": "8febf18c98de695d",
+      "puzzleFingerprint": "9916b89adf3a02bd"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-1",
+      "layoutId": "river",
+      "parameterSeed": 1,
+      "certificateId": "orchard-v2-030d1dca182d94ab",
+      "contentHash": "0da01e17593af12c",
+      "candidateHash": "f7cba0509238e227",
+      "parameters": {
+        "tier": 1,
+        "seed": 1,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "ad717b959a7fe764"
+      },
+      "topologyFingerprint": "ec1cfab967f1b900",
+      "puzzleFingerprint": "3616a201ff801cd8"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-11",
+      "layoutId": "river",
+      "parameterSeed": 11,
+      "certificateId": "orchard-v2-33380047c56741f2",
+      "contentHash": "35831dc89ab5da3d",
+      "candidateHash": "93d9685d98d40da8",
+      "parameters": {
+        "tier": 1,
+        "seed": 11,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "a0b2ffbdbd2d0b82"
+      },
+      "topologyFingerprint": "32f9d69afe356fcb",
+      "puzzleFingerprint": "9b28e7812caa1686"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-12",
+      "layoutId": "river",
+      "parameterSeed": 12,
+      "certificateId": "orchard-v2-11ee1b116142bfc0",
+      "contentHash": "c09f5f075ba79aa0",
+      "candidateHash": "c4e7087a887170d3",
+      "parameters": {
+        "tier": 1,
+        "seed": 12,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          0,
+          0
+        ],
+        "sourceTopologyHash": "d63e83b8a9462a4f"
+      },
+      "topologyFingerprint": "8dca3a5cefaea8a1",
+      "puzzleFingerprint": "14b37c48334996d1"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-15",
+      "layoutId": "river",
+      "parameterSeed": 15,
+      "certificateId": "orchard-v2-aa28fd3896267845",
+      "contentHash": "0491e0cd4b1c7fec",
+      "candidateHash": "d669416b82f415b6",
+      "parameters": {
+        "tier": 1,
+        "seed": 15,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "98395fa59c8b76f0"
+      },
+      "topologyFingerprint": "ca70a81cc3beac1d",
+      "puzzleFingerprint": "90629376d3ec3369"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-16",
+      "layoutId": "river",
+      "parameterSeed": 16,
+      "certificateId": "orchard-v2-b1c567099fcbc614",
+      "contentHash": "edaa9136ff2e437f",
+      "candidateHash": "b48be595c3764b84",
+      "parameters": {
+        "tier": 1,
+        "seed": 16,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "bc61be257043bc02"
+      },
+      "topologyFingerprint": "c572e2131e140272",
+      "puzzleFingerprint": "fafd2eb23f9798b3"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-17",
+      "layoutId": "river",
+      "parameterSeed": 17,
+      "certificateId": "orchard-v2-17c644cc9d4161a5",
+      "contentHash": "5f1a90b3d7ad7498",
+      "candidateHash": "99d53121a53d8fa6",
+      "parameters": {
+        "tier": 1,
+        "seed": 17,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "d0fdc54b5b8760fe"
+      },
+      "topologyFingerprint": "f64c5f1c8016242d",
+      "puzzleFingerprint": "21d21b70fc9ead5b"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-18",
+      "layoutId": "river",
+      "parameterSeed": 18,
+      "certificateId": "orchard-v2-7ac95362cea4d257",
+      "contentHash": "6be9966c149a8d03",
+      "candidateHash": "25409e3de1589f42",
+      "parameters": {
+        "tier": 1,
+        "seed": 18,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "9c88c695730a3e58"
+      },
+      "topologyFingerprint": "15d5b627dc1fc1ee",
+      "puzzleFingerprint": "fbac2dc2baaf2a3f"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-19",
+      "layoutId": "river",
+      "parameterSeed": 19,
+      "certificateId": "orchard-v2-6058ba0c890830b1",
+      "contentHash": "9e8d2d7f0e5a7cd2",
+      "candidateHash": "dca155f2ee884cf9",
+      "parameters": {
+        "tier": 1,
+        "seed": 19,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "69f139a0b5843531"
+      },
+      "topologyFingerprint": "3210c5ed7d5ea238",
+      "puzzleFingerprint": "16ceb3271d115c24"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-2",
+      "layoutId": "river",
+      "parameterSeed": 2,
+      "certificateId": "orchard-v2-c00028182093c875",
+      "contentHash": "8d0c0409d1585820",
+      "candidateHash": "45e11785620448e2",
+      "parameters": {
+        "tier": 1,
+        "seed": 2,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          0
+        ],
+        "sourceTopologyHash": "29b5d2c7720fa852"
+      },
+      "topologyFingerprint": "6aae356169924c1c",
+      "puzzleFingerprint": "c442dab594bb9a8c"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-20",
+      "layoutId": "river",
+      "parameterSeed": 20,
+      "certificateId": "orchard-v2-8309ba5137799e74",
+      "contentHash": "164e3bf8792e91af",
+      "candidateHash": "ca97c5dd6c953d0a",
+      "parameters": {
+        "tier": 1,
+        "seed": 20,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          0,
+          1
+        ],
+        "sourceTopologyHash": "c26ada6c341b10dd"
+      },
+      "topologyFingerprint": "8bf398dc7fdf5ff9",
+      "puzzleFingerprint": "595b5e8768f12f9a"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-22",
+      "layoutId": "river",
+      "parameterSeed": 22,
+      "certificateId": "orchard-v2-00432741c7940344",
+      "contentHash": "689860eee24c325f",
+      "candidateHash": "d9d62b4f13645a80",
+      "parameters": {
+        "tier": 1,
+        "seed": 22,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "bd9d3f7ab6a92c19"
+      },
+      "topologyFingerprint": "6f33ec12d83bf33f",
+      "puzzleFingerprint": "9747f1ee1c2c669b"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-23",
+      "layoutId": "river",
+      "parameterSeed": 23,
+      "certificateId": "orchard-v2-c3310bd5f772288c",
+      "contentHash": "cb0ba0bc81744183",
+      "candidateHash": "80bb131fc022b7f2",
+      "parameters": {
+        "tier": 1,
+        "seed": 23,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "eaf3485b75493528"
+      },
+      "topologyFingerprint": "62e1830fd2ad797a",
+      "puzzleFingerprint": "1a7aca339f650094"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-24",
+      "layoutId": "river",
+      "parameterSeed": 24,
+      "certificateId": "orchard-v2-dd05a587b74f9592",
+      "contentHash": "e50af17c897abbbd",
+      "candidateHash": "14947bdabb72104f",
+      "parameters": {
+        "tier": 1,
+        "seed": 24,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          0
+        ],
+        "sourceTopologyHash": "da0d289688ade68b"
+      },
+      "topologyFingerprint": "468cd4b8246d0159",
+      "puzzleFingerprint": "1683cd2d20ae8fe8"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-5",
+      "layoutId": "river",
+      "parameterSeed": 5,
+      "certificateId": "orchard-v2-22b72e54a88676fd",
+      "contentHash": "c1a51e39f7d9f390",
+      "candidateHash": "4874f3d142476bc6",
+      "parameters": {
+        "tier": 1,
+        "seed": 5,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "6463323a2ba4d641"
+      },
+      "topologyFingerprint": "117c3a224c8757ff",
+      "puzzleFingerprint": "d1540070f8506a6b"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-8",
+      "layoutId": "river",
+      "parameterSeed": 8,
+      "certificateId": "orchard-v2-901de4a53df4b370",
+      "contentHash": "31cee99453e394ed",
+      "candidateHash": "053769f246b3ad5d",
+      "parameters": {
+        "tier": 1,
+        "seed": 8,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "45160bcf1ca4db66"
+      },
+      "topologyFingerprint": "2103fb9ba318cc4a",
+      "puzzleFingerprint": "233da21dd13d4d5a"
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-9",
+      "layoutId": "river",
+      "parameterSeed": 9,
+      "certificateId": "orchard-v2-b601e86f6841e232",
+      "contentHash": "080d47eb9e54f494",
+      "candidateHash": "1bec8a017ccb5166",
+      "parameters": {
+        "tier": 1,
+        "seed": 9,
+        "layoutId": "river",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "d029bd4610f9b279"
+      },
+      "topologyFingerprint": "af1d6ca54f6c9968",
+      "puzzleFingerprint": "9916b89adf3a02bd"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-10",
+      "layoutId": "terraces",
+      "parameterSeed": 10,
+      "certificateId": "orchard-v2-c21a77a6328cd317",
+      "contentHash": "25b1c9caa68ab03f",
+      "candidateHash": "98123dd91308c37a",
+      "parameters": {
+        "tier": 1,
+        "seed": 10,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          0,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "1942e40de432f0e0"
+      },
+      "topologyFingerprint": "9a85e0a264e1ed43",
+      "puzzleFingerprint": "14b496715c34535a"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-11",
+      "layoutId": "terraces",
+      "parameterSeed": 11,
+      "certificateId": "orchard-v2-330a2f1c2a01d51d",
+      "contentHash": "750cff59a9e2c6f6",
+      "candidateHash": "3535723ca0f9285b",
+      "parameters": {
+        "tier": 1,
+        "seed": 11,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          -1,
+          -1,
+          0
+        ],
+        "sourceTopologyHash": "72fd1c8036aeeb7b"
+      },
+      "topologyFingerprint": "cbdd42242908a25d",
+      "puzzleFingerprint": "9b28e7812caa1686"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-12",
+      "layoutId": "terraces",
+      "parameterSeed": 12,
+      "certificateId": "orchard-v2-dce7ae4a4015ef83",
+      "contentHash": "85ed1d95f4cd6608",
+      "candidateHash": "5d30738990d06bba",
+      "parameters": {
+        "tier": 1,
+        "seed": 12,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          0,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "385306de713d84f7"
+      },
+      "topologyFingerprint": "53df87741641a5e9",
+      "puzzleFingerprint": "14b37c48334996d1"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-13",
+      "layoutId": "terraces",
+      "parameterSeed": 13,
+      "certificateId": "orchard-v2-4fb11aacd8711f05",
+      "contentHash": "e4f3db8657ed8943",
+      "candidateHash": "8216381f9870b0e2",
+      "parameters": {
+        "tier": 1,
+        "seed": 13,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          0,
+          1
+        ],
+        "sourceTopologyHash": "4b86f7f49dfbe61f"
+      },
+      "topologyFingerprint": "71b40c43a0ae0cba",
+      "puzzleFingerprint": "1119bf8262530c21"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-15",
+      "layoutId": "terraces",
+      "parameterSeed": 15,
+      "certificateId": "orchard-v2-0029ace9030ec8fc",
+      "contentHash": "0b4e788f8b56edf6",
+      "candidateHash": "5cea07f010466bf9",
+      "parameters": {
+        "tier": 1,
+        "seed": 15,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          -1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "6c8c1a9b336fa880"
+      },
+      "topologyFingerprint": "43b6ecc49f85cb69",
+      "puzzleFingerprint": "90629376d3ec3369"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-16",
+      "layoutId": "terraces",
+      "parameterSeed": 16,
+      "certificateId": "orchard-v2-d398d9b25a92a4d7",
+      "contentHash": "e441fb9dcebe77c6",
+      "candidateHash": "cc04e69ebdbfba27",
+      "parameters": {
+        "tier": 1,
+        "seed": 16,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          -1,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "f482d81fd32a44b4"
+      },
+      "topologyFingerprint": "be8a2408e56b272d",
+      "puzzleFingerprint": "fafd2eb23f9798b3"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-2",
+      "layoutId": "terraces",
+      "parameterSeed": 2,
+      "certificateId": "orchard-v2-3b6c3e819c5e1dc4",
+      "contentHash": "b40cc2f76258c802",
+      "candidateHash": "11568a96cead87a1",
+      "parameters": {
+        "tier": 1,
+        "seed": 2,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "1aff8c5e95024639"
+      },
+      "topologyFingerprint": "f9c5b5bdeb552498",
+      "puzzleFingerprint": "c442dab594bb9a8c"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-20",
+      "layoutId": "terraces",
+      "parameterSeed": 20,
+      "certificateId": "orchard-v2-fe6afc64f0a2f075",
+      "contentHash": "8c817fc11ae67a62",
+      "candidateHash": "c0a286cebc9f7011",
+      "parameters": {
+        "tier": 1,
+        "seed": 20,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          -1,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "c3e6e1cd96f75e3a"
+      },
+      "topologyFingerprint": "2f515792c4efc44f",
+      "puzzleFingerprint": "595b5e8768f12f9a"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-3",
+      "layoutId": "terraces",
+      "parameterSeed": 3,
+      "certificateId": "orchard-v2-08035f95a9bda1dc",
+      "contentHash": "15aed1030e397d92",
+      "candidateHash": "e7573c1d47f51890",
+      "parameters": {
+        "tier": 1,
+        "seed": 3,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          1,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "67c8ed0fb751e930"
+      },
+      "topologyFingerprint": "9ce457b42f70b265",
+      "puzzleFingerprint": "c09d919c6426fac5"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-4",
+      "layoutId": "terraces",
+      "parameterSeed": 4,
+      "certificateId": "orchard-v2-2d7d7cb97705e2f0",
+      "contentHash": "fbaffd45bdef0d08",
+      "candidateHash": "7c34ec60283e9f95",
+      "parameters": {
+        "tier": 1,
+        "seed": 4,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          0,
+          0,
+          -1
+        ],
+        "sourceTopologyHash": "597fbf745f65fdcb"
+      },
+      "topologyFingerprint": "a7e2b10c4b169569",
+      "puzzleFingerprint": "561b2088b4745d9b"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-6",
+      "layoutId": "terraces",
+      "parameterSeed": 6,
+      "certificateId": "orchard-v2-2c56f7de271fecb7",
+      "contentHash": "2f26a84b3532fe18",
+      "candidateHash": "c68d220696625109",
+      "parameters": {
+        "tier": 1,
+        "seed": 6,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          1,
+          0,
+          1
+        ],
+        "sourceTopologyHash": "dfd47e6caa62164f"
+      },
+      "topologyFingerprint": "68e9983e19320e0f",
+      "puzzleFingerprint": "a2ad143b3255be02"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-7",
+      "layoutId": "terraces",
+      "parameterSeed": 7,
+      "certificateId": "orchard-v2-52dda398c0e545a5",
+      "contentHash": "e8e0f9e6622d384f",
+      "candidateHash": "983058c95939f44e",
+      "parameters": {
+        "tier": 1,
+        "seed": 7,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          0,
+          0,
+          1,
+          0
+        ],
+        "sourceTopologyHash": "12085320147eeab7"
+      },
+      "topologyFingerprint": "99f17d440f2b0fe9",
+      "puzzleFingerprint": "5eb29b4af509557b"
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-8",
+      "layoutId": "terraces",
+      "parameterSeed": 8,
+      "certificateId": "orchard-v2-e91a6d5c201e1d09",
+      "contentHash": "8cdb3ccebae55e57",
+      "candidateHash": "ec24ba83f7038d68",
+      "parameters": {
+        "tier": 1,
+        "seed": 8,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "sourceTopologyHash": "2862bdb5b9da6d6e"
+      },
+      "topologyFingerprint": "d007bd11e751bd78",
+      "puzzleFingerprint": "233da21dd13d4d5a"
+    },
+    {
+      "source": "tier-1-hedges-seed-0",
+      "layoutId": "hedges",
+      "parameterSeed": 0,
+      "certificateId": "orchard-v2-a76ac63b62658806",
+      "contentHash": "493438f6eef433c7",
+      "candidateHash": "7232b45d996d33aa",
+      "parameters": {
+        "tier": 1,
+        "seed": 0,
+        "layoutId": "hedges",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          -1,
+          1,
+          1
+        ],
+        "sourceTopologyHash": "727c18e54e025208"
+      },
+      "topologyFingerprint": "0df47959cf92d930",
+      "puzzleFingerprint": "e3df1ed932595744"
+    },
+    {
+      "source": "tier-1-islands-seed-0",
+      "layoutId": "islands",
+      "parameterSeed": 0,
+      "certificateId": "orchard-v2-91f754b4a76a9a59",
+      "contentHash": "7de0fb1a90dbbf27",
+      "candidateHash": "a451a6e0c85a5afb",
+      "parameters": {
+        "tier": 1,
+        "seed": 0,
+        "layoutId": "islands",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          1,
+          -1,
+          1,
+          -1
+        ],
+        "sourceTopologyHash": "c0d14ffa78087505"
+      },
+      "topologyFingerprint": "7dd842fe33bb2c4b",
+      "puzzleFingerprint": "e3df1ed932595744"
+    },
+    {
+      "source": "tier-1-terraces-seed-0",
+      "layoutId": "terraces",
+      "parameterSeed": 0,
+      "certificateId": "orchard-v2-3506d26e75f76e17",
+      "contentHash": "e908230d3944c78c",
+      "candidateHash": "0e10a288ea906595",
+      "parameters": {
+        "tier": 1,
+        "seed": 0,
+        "layoutId": "terraces",
+        "maxAttempts": 256,
+        "reservedHexes": [],
+        "deltas": [
+          -1,
+          1,
+          -1,
+          1
+        ],
+        "sourceTopologyHash": "ce0ffa2edb11c155"
+      },
+      "topologyFingerprint": "2dd90c8af9475723",
+      "puzzleFingerprint": "e3df1ed932595744"
+    }
+  ],
+  "rejected": [
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-1",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-12",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-14",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-15",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-2",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-22",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-hedges-seed-4",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-10",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-13",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-17",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-19",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-20",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-21",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-22",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-24",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-islands-seed-6",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-10",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-13",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-14",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-21",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-3",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-4",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-6",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-river-seed-7",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-1",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-14",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-17",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-18",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-19",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-5",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    },
+    {
+      "source": "bank-candidates/tier-1-terraces-seed-9",
+      "reason": "unverified-or-version",
+      "errors": [
+        "independent-certificate-unproved"
+      ],
+      "certificationErrors": [
+        "two-distinct-target-teams-missing",
+        "different-target-output-plans-missing",
+        "physical-alcove-proof-missing"
+      ]
+    }
+  ],
+  "limitations": [
+    "Offline review manifest only; no runtime import or migration.",
+    "Canonical serializations from independently replayed evidence determine counts; hashes alone do not.",
+    "Interrupted/unknown slots are retained and never retried automatically.",
+    "Private App/QA-01, device/child acceptance, native advanced yield and R-07 remain pending."
+  ]
+}

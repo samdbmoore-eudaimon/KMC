@@ -1,0 +1,1391 @@
+{
+  "attempt": {
+    "cardIds": [
+      "tuppence",
+      "wicker",
+      "pip"
+    ],
+    "planFamily": "direct-guard",
+    "avoidOutputChoices": [
+      [
+        "bridge",
+        "shelter"
+      ]
+    ],
+    "requestedMaxStates": 8000,
+    "status": "success",
+    "metrics": {
+      "planner": "orchard-v2-tactical-planner/1",
+      "planFamily": "direct-guard",
+      "statesSpent": 1961,
+      "maxStates": 8000,
+      "perTeam": [
+        {
+          "teamIndex": 0,
+          "cardIds": [
+            "tuppence",
+            "wicker",
+            "pip"
+          ],
+          "status": "success",
+          "commandCount": 34,
+          "rounds": 5
+        }
+      ],
+      "beamWidth": 120
+    },
+    "reportedStateOverage": 0,
+    "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+  },
+  "traces": [
+    {
+      "teamIndex": 0,
+      "cardIds": [
+        "tuppence",
+        "wicker",
+        "pip"
+      ],
+      "planFamily": "direct-guard",
+      "assignment": {
+        "number": "tuppence",
+        "shape": "wicker",
+        "sustain": "pip"
+      },
+      "outputChoice": [
+        "bridge",
+        "storm"
+      ],
+      "committer": "wicker",
+      "beamWidth": 3,
+      "initialRun": {
+        "runId": "plan:four-locks:1:14:0:direct-guard",
+        "blueprint": {
+          "schemaVersion": 2,
+          "moduleKey": "primary",
+          "familyId": "four-locks",
+          "tier": 1,
+          "seed": 14,
+          "parameterSeed": 14,
+          "generatorVersion": 2,
+          "rulesVersion": 2,
+          "attempt": 3,
+          "layoutId": "terraces",
+          "tiles": [
+            {
+              "q": 2,
+              "r": 0,
+              "terrain": "floor"
+            },
+            {
+              "q": 3,
+              "r": 0,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 0,
+              "terrain": "floor"
+            },
+            {
+              "q": 5,
+              "r": 0,
+              "terrain": "hedge"
+            },
+            {
+              "q": 6,
+              "r": 0,
+              "terrain": "hedge"
+            },
+            {
+              "q": 7,
+              "r": 0,
+              "terrain": "roots"
+            },
+            {
+              "q": 8,
+              "r": 0,
+              "terrain": "floor"
+            },
+            {
+              "q": 9,
+              "r": 0,
+              "terrain": "floor"
+            },
+            {
+              "q": 2,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": 3,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": 5,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": 6,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": 7,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": 8,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": 9,
+              "r": 1,
+              "terrain": "floor"
+            },
+            {
+              "q": -1,
+              "r": 2,
+              "terrain": "hedge"
+            },
+            {
+              "q": 0,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 1,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 2,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 3,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 5,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 6,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 7,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 8,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 9,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": 10,
+              "r": 2,
+              "terrain": "floor"
+            },
+            {
+              "q": -1,
+              "r": 3,
+              "terrain": "floor"
+            },
+            {
+              "q": 0,
+              "r": 3,
+              "terrain": "floor"
+            },
+            {
+              "q": 1,
+              "r": 3,
+              "terrain": "hedge"
+            },
+            {
+              "q": 2,
+              "r": 3,
+              "terrain": "hedge"
+            },
+            {
+              "q": 3,
+              "r": 3,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 3,
+              "terrain": "hedge"
+            },
+            {
+              "q": 5,
+              "r": 3,
+              "terrain": "hedge"
+            },
+            {
+              "q": 6,
+              "r": 3,
+              "terrain": "hedge"
+            },
+            {
+              "q": 7,
+              "r": 3,
+              "terrain": "hedge"
+            },
+            {
+              "q": 8,
+              "r": 3,
+              "terrain": "gate",
+              "passageOutputId": "bridge"
+            },
+            {
+              "q": 9,
+              "r": 3,
+              "terrain": "floor"
+            },
+            {
+              "q": 10,
+              "r": 3,
+              "terrain": "floor"
+            },
+            {
+              "q": -2,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": -1,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 0,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 1,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 2,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 3,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 5,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 6,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 7,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 8,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": 9,
+              "r": 4,
+              "terrain": "floor"
+            },
+            {
+              "q": -2,
+              "r": 5,
+              "terrain": "floor"
+            },
+            {
+              "q": -1,
+              "r": 5,
+              "terrain": "floor"
+            },
+            {
+              "q": 0,
+              "r": 5,
+              "terrain": "hedge"
+            },
+            {
+              "q": 1,
+              "r": 5,
+              "terrain": "hedge"
+            },
+            {
+              "q": 2,
+              "r": 5,
+              "terrain": "floor"
+            },
+            {
+              "q": 3,
+              "r": 5,
+              "terrain": "hedge"
+            },
+            {
+              "q": 4,
+              "r": 5,
+              "terrain": "hedge"
+            },
+            {
+              "q": 5,
+              "r": 5,
+              "terrain": "hedge"
+            },
+            {
+              "q": 6,
+              "r": 5,
+              "terrain": "hedge"
+            },
+            {
+              "q": 7,
+              "r": 5,
+              "terrain": "floor"
+            },
+            {
+              "q": 8,
+              "r": 5,
+              "terrain": "floor"
+            },
+            {
+              "q": 9,
+              "r": 5,
+              "terrain": "floor"
+            },
+            {
+              "q": -3,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": -2,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": -1,
+              "r": 6,
+              "terrain": "hedge"
+            },
+            {
+              "q": 0,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": 1,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": 2,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": 3,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": 5,
+              "r": 6,
+              "terrain": "roots"
+            },
+            {
+              "q": 6,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": 7,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": 8,
+              "r": 6,
+              "terrain": "floor"
+            },
+            {
+              "q": -1,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": 0,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": 1,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": 2,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": 3,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": 5,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": 6,
+              "r": 7,
+              "terrain": "floor"
+            },
+            {
+              "q": -2,
+              "r": 8,
+              "terrain": "floor"
+            },
+            {
+              "q": -1,
+              "r": 8,
+              "terrain": "floor"
+            },
+            {
+              "q": 0,
+              "r": 8,
+              "terrain": "floor"
+            },
+            {
+              "q": 1,
+              "r": 8,
+              "terrain": "roots"
+            },
+            {
+              "q": 2,
+              "r": 8,
+              "terrain": "roots"
+            },
+            {
+              "q": 3,
+              "r": 8,
+              "terrain": "floor"
+            },
+            {
+              "q": 4,
+              "r": 8,
+              "terrain": "floor"
+            },
+            {
+              "q": 5,
+              "r": 8,
+              "terrain": "floor"
+            }
+          ],
+          "constructionPacket": {
+            "id": "four-locks-displaced-v1",
+            "version": 1,
+            "topologyPacketId": "passage-displacement-v1",
+            "parameters": {
+              "tier": 1,
+              "seed": 14,
+              "layoutId": "terraces",
+              "maxAttempts": 256,
+              "reservedHexes": [],
+              "deltas": [
+                1,
+                1,
+                1,
+                1
+              ]
+            },
+            "sourceTopologyHash": "764fe55bc711382a"
+          },
+          "stations": [
+            {
+              "id": "control",
+              "hex": "3,4",
+              "name": "Ledger control",
+              "artId": "mechanism-hive-ledger-board-v1",
+              "maxIntegrity": 12
+            },
+            {
+              "id": "number",
+              "hex": "6,4",
+              "name": "Ledger bus",
+              "artId": "mechanism-hive-ledger-board-v1",
+              "maxIntegrity": 12,
+              "capacity": 4
+            },
+            {
+              "id": "shape",
+              "hex": "9,0",
+              "name": "Bridge brace",
+              "artId": "mechanism-plinth",
+              "maxIntegrity": 12,
+              "capacity": 4
+            },
+            {
+              "id": "sustain",
+              "hex": "4,8",
+              "name": "Tree maintenance",
+              "artId": "terrain-apple-tree-v1",
+              "maxIntegrity": 12,
+              "capacity": 4
+            },
+            {
+              "id": "alcove",
+              "hex": "9,4",
+              "name": "Brace alcove",
+              "artId": "mechanism-hive-ledger-board-v1"
+            }
+          ],
+          "puzzle": {
+            "id": "four-locks-ledger",
+            "kind": "sudoku4",
+            "size": 4,
+            "controlId": "control",
+            "controlHex": "3,4",
+            "givens": [
+              {
+                "row": 1,
+                "col": 1,
+                "value": 1
+              },
+              {
+                "row": 1,
+                "col": 2,
+                "value": 3
+              },
+              {
+                "row": 0,
+                "col": 3,
+                "value": 1
+              },
+              {
+                "row": 2,
+                "col": 3,
+                "value": 3
+              },
+              {
+                "row": 3,
+                "col": 1,
+                "value": 3
+              },
+              {
+                "row": 3,
+                "col": 2,
+                "value": 1
+              }
+            ],
+            "cages": [
+              {
+                "cellIds": [
+                  "r2c0",
+                  "r3c0"
+                ],
+                "sum": 3,
+                "id": "cage-0"
+              },
+              {
+                "cellIds": [
+                  "r0c2",
+                  "r1c2"
+                ],
+                "sum": 7,
+                "id": "cage-1"
+              },
+              {
+                "cellIds": [
+                  "r1c3",
+                  "r2c3"
+                ],
+                "sum": 5,
+                "id": "cage-2"
+              }
+            ],
+            "draftSchemaVersion": 1,
+            "networkGroupId": "network",
+            "outputs": [
+              {
+                "id": "bridge",
+                "label": "Bridge",
+                "cost": 2,
+                "trigger": "on-commit",
+                "effect": {
+                  "kind": "passage"
+                }
+              },
+              {
+                "id": "shelter",
+                "label": "Shelter",
+                "cost": 3,
+                "trigger": "phase-start",
+                "effect": {
+                  "kind": "shelter",
+                  "amount": 2,
+                  "targetIds": [
+                    "number",
+                    "shape",
+                    "sustain"
+                  ]
+                }
+              },
+              {
+                "id": "roots",
+                "label": "Roots",
+                "cost": 4,
+                "trigger": "phase-start",
+                "effect": {
+                  "kind": "roots"
+                }
+              },
+              {
+                "id": "storm",
+                "label": "Storm",
+                "cost": 5,
+                "trigger": "phase-start",
+                "effect": {
+                  "kind": "storm"
+                }
+              }
+            ],
+            "outputBudget": 7,
+            "defaultOutputIds": [
+              "bridge",
+              "shelter"
+            ],
+            "solutionParameters": {
+              "grid": [
+                [
+                  3,
+                  2,
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  1,
+                  3,
+                  2
+                ],
+                [
+                  1,
+                  4,
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  3,
+                  1,
+                  4
+                ]
+              ]
+            },
+            "lockGroups": [
+              {
+                "id": "network",
+                "anchor": "3,4",
+                "memberIds": [
+                  "r0c0",
+                  "r0c1",
+                  "r0c2",
+                  "r0c3",
+                  "r1c0",
+                  "r1c1",
+                  "r1c2",
+                  "r1c3",
+                  "r2c0",
+                  "r2c1",
+                  "r2c2",
+                  "r2c3",
+                  "r3c0",
+                  "r3c1",
+                  "r3c2",
+                  "r3c3"
+                ],
+                "effectKinds": [
+                  "jam"
+                ]
+              },
+              {
+                "id": "row-0",
+                "anchor": "3,4",
+                "memberIds": [
+                  "r0c0",
+                  "r0c1",
+                  "r0c2",
+                  "r0c3"
+                ],
+                "effectKinds": [
+                  "jam"
+                ]
+              },
+              {
+                "id": "row-1",
+                "anchor": "3,4",
+                "memberIds": [
+                  "r1c0",
+                  "r1c1",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "effectKinds": [
+                  "jam"
+                ]
+              },
+              {
+                "id": "row-2",
+                "anchor": "3,4",
+                "memberIds": [
+                  "r2c0",
+                  "r2c1",
+                  "r2c2",
+                  "r2c3"
+                ],
+                "effectKinds": [
+                  "jam"
+                ]
+              },
+              {
+                "id": "row-3",
+                "anchor": "3,4",
+                "memberIds": [
+                  "r3c0",
+                  "r3c1",
+                  "r3c2",
+                  "r3c3"
+                ],
+                "effectKinds": [
+                  "jam"
+                ]
+              }
+            ]
+          },
+          "outputs": [
+            {
+              "id": "bridge",
+              "label": "Bridge",
+              "cost": 2,
+              "trigger": "on-commit",
+              "effect": {
+                "kind": "passage"
+              }
+            },
+            {
+              "id": "shelter",
+              "label": "Shelter",
+              "cost": 3,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "shelter",
+                "amount": 2,
+                "targetIds": [
+                  "number",
+                  "shape",
+                  "sustain"
+                ]
+              }
+            },
+            {
+              "id": "roots",
+              "label": "Roots",
+              "cost": 4,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "roots"
+              }
+            },
+            {
+              "id": "storm",
+              "label": "Storm",
+              "cost": 5,
+              "trigger": "phase-start",
+              "effect": {
+                "kind": "storm"
+              }
+            }
+          ],
+          "enemies": [
+            {
+              "id": "jammer-1",
+              "ruleId": "jammer",
+              "artId": "hookmole",
+              "position": "9,1",
+              "wakePhase": 2
+            }
+          ],
+          "hazards": [
+            {
+              "id": "root-drain",
+              "sites": [
+                {
+                  "id": "sustain-site",
+                  "targetId": "sustain"
+                }
+              ],
+              "mutation": {
+                "kind": "none"
+              }
+            }
+          ],
+          "sites": [
+            {
+              "id": "controlled-passage",
+              "anchor": "8,3"
+            }
+          ],
+          "deployment": [
+            "1,2",
+            "0,4",
+            "1,4"
+          ],
+          "deadline": 5,
+          "orchard": {
+            "hex": "7,6",
+            "name": "Ninefold tree",
+            "artId": "terrain-apple-tree-v1"
+          },
+          "orchardMaxIntegrity": 20,
+          "certificateId": null,
+          "commission": {
+            "poweredCount": 2,
+            "selectableOutputIds": [
+              "bridge",
+              "shelter",
+              "roots",
+              "storm"
+            ]
+          }
+        },
+        "cardIds": [
+          "tuppence",
+          "wicker",
+          "pip"
+        ],
+        "deploymentAssignment": {
+          "tuppence": "1,4",
+          "wicker": "1,2",
+          "pip": "0,4"
+        },
+        "profiles": {
+          "tuppence": {
+            "cardId": "tuppence",
+            "name": "Tuppence",
+            "rarity": "common",
+            "stats": [
+              4,
+              1,
+              4,
+              2,
+              2
+            ],
+            "discipline": "arithmetic",
+            "primaryStat": 0,
+            "role": "tank",
+            "roleName": "Guardian",
+            "maxHealth": 12,
+            "moveBudget": 4,
+            "armour": 0,
+            "initiative": 10,
+            "strikeRange": 1,
+            "strikeStat": 4,
+            "dashBudget": 6,
+            "interceptBudget": 2,
+            "hand": [
+              {
+                "key": "exact-blow",
+                "kind": "discipline"
+              },
+              {
+                "key": "shared-charge",
+                "kind": "discipline"
+              },
+              {
+                "key": "stand-together",
+                "kind": "role"
+              },
+              {
+                "key": "second-wind",
+                "kind": "second-wind"
+              }
+            ]
+          },
+          "wicker": {
+            "cardId": "wicker",
+            "name": "Wicker",
+            "rarity": "common",
+            "stats": [
+              1,
+              6,
+              2,
+              2,
+              2
+            ],
+            "discipline": "geometry",
+            "primaryStat": 1,
+            "role": "melee",
+            "roleName": "Mover",
+            "maxHealth": 12,
+            "moveBudget": 4,
+            "armour": 1,
+            "initiative": 10,
+            "strikeRange": 1,
+            "strikeStat": 6,
+            "dashBudget": 6,
+            "interceptBudget": 2,
+            "hand": [
+              {
+                "key": "true-shift",
+                "kind": "discipline"
+              },
+              {
+                "key": "wide-brace",
+                "kind": "discipline"
+              },
+              {
+                "key": "driving-blow",
+                "kind": "role"
+              },
+              {
+                "key": "second-wind",
+                "kind": "second-wind"
+              }
+            ]
+          },
+          "pip": {
+            "cardId": "pip",
+            "name": "Pip",
+            "rarity": "common",
+            "stats": [
+              1,
+              1,
+              3,
+              6,
+              2
+            ],
+            "discipline": "science",
+            "primaryStat": 3,
+            "role": "healer",
+            "roleName": "Mender",
+            "maxHealth": 16,
+            "moveBudget": 4,
+            "armour": 0,
+            "initiative": 10,
+            "strikeRange": 1,
+            "strikeStat": 6,
+            "dashBudget": 6,
+            "interceptBudget": 2,
+            "hand": [
+              {
+                "key": "field-repair",
+                "kind": "discipline"
+              },
+              {
+                "key": "root-shelter",
+                "kind": "discipline"
+              },
+              {
+                "key": "mend-and-mend-again",
+                "kind": "role"
+              },
+              {
+                "key": "second-wind",
+                "kind": "second-wind"
+              }
+            ]
+          }
+        },
+        "initialStateHash": "c68f859891e717cd"
+      },
+      "commands": [
+        {
+          "type": "move",
+          "heroId": "wicker",
+          "expectedRevision": 0,
+          "payload": {
+            "destination": "3,3",
+            "path": null
+          }
+        },
+        {
+          "type": "request-hint",
+          "heroId": null,
+          "expectedRevision": 1,
+          "payload": {
+            "puzzleId": "four-locks-ledger",
+            "stage": 3
+          }
+        },
+        {
+          "type": "edit-draft",
+          "heroId": null,
+          "expectedRevision": 2,
+          "payload": {
+            "puzzleId": "four-locks-ledger",
+            "edit": {
+              "type": "select-outputs",
+              "outputIds": [
+                "bridge",
+                "storm"
+              ]
+            }
+          }
+        },
+        {
+          "type": "operate",
+          "heroId": "wicker",
+          "expectedRevision": 3,
+          "payload": {
+            "draftRevision": 2,
+            "outputIds": [
+              "bridge",
+              "storm"
+            ],
+            "lockGroupId": null
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "tuppence",
+          "expectedRevision": 4,
+          "payload": {
+            "destination": "5,4",
+            "path": null
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "tuppence",
+          "expectedRevision": 5,
+          "payload": {
+            "targetId": "number"
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "pip",
+          "expectedRevision": 6,
+          "payload": {
+            "destination": "2,6",
+            "path": null
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "pip",
+          "expectedRevision": 7,
+          "payload": {
+            "destination": "4,6",
+            "path": null
+          }
+        },
+        {
+          "type": "end-round",
+          "heroId": null,
+          "expectedRevision": 8,
+          "payload": {
+            "forecastRevision": 8
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "wicker",
+          "expectedRevision": 9,
+          "payload": {
+            "destination": "7,2",
+            "path": null
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "wicker",
+          "expectedRevision": 10,
+          "payload": {
+            "destination": "8,1",
+            "path": null
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "tuppence",
+          "expectedRevision": 11,
+          "payload": {
+            "destination": "8,2",
+            "path": null
+          }
+        },
+        {
+          "type": "strike",
+          "heroId": "tuppence",
+          "expectedRevision": 12,
+          "payload": {
+            "targetId": "jammer-1"
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "pip",
+          "expectedRevision": 13,
+          "payload": {
+            "destination": "4,8",
+            "path": null
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "pip",
+          "expectedRevision": 14,
+          "payload": {
+            "targetId": "sustain"
+          }
+        },
+        {
+          "type": "end-round",
+          "heroId": null,
+          "expectedRevision": 15,
+          "payload": {
+            "forecastRevision": 15
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "wicker",
+          "expectedRevision": 16,
+          "payload": {
+            "targetId": "shape"
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "wicker",
+          "expectedRevision": 17,
+          "payload": {
+            "targetId": "shape"
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "tuppence",
+          "expectedRevision": 18,
+          "payload": {
+            "destination": "8,3",
+            "path": null
+          }
+        },
+        {
+          "type": "strike",
+          "heroId": "tuppence",
+          "expectedRevision": 19,
+          "payload": {
+            "targetId": "jammer-1"
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "pip",
+          "expectedRevision": 20,
+          "payload": {
+            "targetId": "sustain"
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "pip",
+          "expectedRevision": 21,
+          "payload": {
+            "targetId": "sustain"
+          }
+        },
+        {
+          "type": "end-round",
+          "heroId": null,
+          "expectedRevision": 22,
+          "payload": {
+            "forecastRevision": 22
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "wicker",
+          "expectedRevision": 23,
+          "payload": {
+            "targetId": "shape"
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "wicker",
+          "expectedRevision": 24,
+          "payload": {
+            "targetId": "shape"
+          }
+        },
+        {
+          "type": "move",
+          "heroId": "tuppence",
+          "expectedRevision": 25,
+          "payload": {
+            "destination": "6,4",
+            "path": null
+          }
+        },
+        {
+          "type": "calibrate",
+          "heroId": "pip",
+          "expectedRevision": 26,
+          "payload": {
+            "targetId": "sustain"
+          }
+        },
+        {
+          "type": "hold",
+          "heroId": "tuppence",
+          "expectedRevision": 27,
+          "payload": {
+            "targetId": "number"
+          }
+        },
+        {
+          "type": "hold",
+          "heroId": "pip",
+          "expectedRevision": 28,
+          "payload": {
+            "targetId": "sustain"
+          }
+        },
+        {
+          "type": "end-round",
+          "heroId": null,
+          "expectedRevision": 29,
+          "payload": {
+            "forecastRevision": 29
+          }
+        },
+        {
+          "type": "hold",
+          "heroId": "tuppence",
+          "expectedRevision": 30,
+          "payload": {
+            "targetId": "number"
+          }
+        },
+        {
+          "type": "hold",
+          "heroId": "wicker",
+          "expectedRevision": 31,
+          "payload": {
+            "targetId": "shape"
+          }
+        },
+        {
+          "type": "hold",
+          "heroId": "pip",
+          "expectedRevision": 32,
+          "payload": {
+            "targetId": "sustain"
+          }
+        },
+        {
+          "type": "end-round",
+          "heroId": null,
+          "expectedRevision": 33,
+          "payload": {
+            "forecastRevision": 33
+          }
+        }
+      ],
+      "perCommandHashes": [
+        "8331da67e2ff41e2",
+        "709fd80085d3be61",
+        "092a7fbee4f3fbdb",
+        "5e678796c3b76853",
+        "4e831670f88a2afd",
+        "7ce69556b04ba2d3",
+        "04798922af04d9b7",
+        "4c0c870431f28061",
+        "2cad3320f94cebdb",
+        "6099e1f72849b834",
+        "2350c3f55433cfd2",
+        "9f71b2da63f97af5",
+        "74a5ac6680bee83f",
+        "534d85209e8e7589",
+        "169513c5fc741bcc",
+        "2cfa42da29254017",
+        "dea790dfda6448c2",
+        "9728f3fc43987be5",
+        "5b700acf662973ba",
+        "c3d6f70376e50e92",
+        "9a51f9f7dedbea0e",
+        "a2b8c8dadbc8a9bf",
+        "6ca4d078198363e9",
+        "b5eed4056d3c0834",
+        "bcadc216fe233ad3",
+        "bb20dd1334fb9196",
+        "362aa41332a9154a",
+        "0cef42b492d67db5",
+        "5385e7e6a25c5945",
+        "2b9f72ebdb239066",
+        "9dad68739727773a",
+        "b04358f4d9f95a85",
+        "8e0b7cef3518a3c4",
+        "3f8731c5573900fc"
+      ],
+      "finalStateHash": "3f8731c5573900fc",
+      "rounds": 5,
+      "commandCount": 34
+    }
+  ]
+}

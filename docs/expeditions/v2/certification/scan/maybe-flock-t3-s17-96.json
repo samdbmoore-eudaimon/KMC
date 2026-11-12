@@ -1,0 +1,6836 @@
+{
+ "summary": {
+  "family": "maybe-flock",
+  "tier": 3,
+  "scanned": 320,
+  "built": 268,
+  "accepted": 170,
+  "distinctTopologies": 170,
+  "distinctPuzzles": 77,
+  "maxStates": 6000
+ },
+ "rows": [
+  {
+   "layoutId": "river",
+   "seed": 17,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 15
+  },
+  {
+   "layoutId": "river",
+   "seed": 18,
+   "tier": 3,
+   "topology": "5bd058955dd6695a",
+   "puzzle": "6d83e7995e49497a",
+   "contentHash": "55195099d5e88c56",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 506
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 6118
+  },
+  {
+   "layoutId": "river",
+   "seed": 19,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 11
+  },
+  {
+   "layoutId": "river",
+   "seed": 20,
+   "tier": 3,
+   "topology": "0f796370a1e81dab",
+   "puzzle": "ec22087403bbe707",
+   "contentHash": "24e19aecd1847861",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 571
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 196
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 454
+  },
+  {
+   "layoutId": "river",
+   "seed": 21,
+   "tier": 3,
+   "topology": "cf1691b7969424c0",
+   "puzzle": "487e38590d01f27a",
+   "contentHash": "f91ffe8e02ec6e45",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 845
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 271
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 603
+  },
+  {
+   "layoutId": "river",
+   "seed": 22,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 12
+  },
+  {
+   "layoutId": "river",
+   "seed": 23,
+   "tier": 3,
+   "topology": "b8b1af8ee98703cd",
+   "puzzle": "bc9603f62a0250fd",
+   "contentHash": "37a22854bd6c2d79",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 424
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 249
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 421
+  },
+  {
+   "layoutId": "river",
+   "seed": 24,
+   "tier": 3,
+   "topology": "1d6c2c3585424d72",
+   "puzzle": "75697e40d780bd5b",
+   "contentHash": "d864b0725f505813",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3260
+  },
+  {
+   "layoutId": "river",
+   "seed": 25,
+   "tier": 3,
+   "topology": "3c772096ec0f4869",
+   "puzzle": "fe2b148aee723349",
+   "contentHash": "bec4ec39db9c1916",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 512
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 196
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 450
+  },
+  {
+   "layoutId": "river",
+   "seed": 26,
+   "tier": 3,
+   "topology": "1cd6e5e58cefa7b2",
+   "puzzle": "6db31e7eef461255",
+   "contentHash": "1b9935953e827394",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 533
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 220
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 444
+  },
+  {
+   "layoutId": "river",
+   "seed": 27,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 28,
+   "tier": 3,
+   "topology": "5a8269ed4c563c2e",
+   "puzzle": "6394a44fbd014eac",
+   "contentHash": "1a4ecf9f5b46cca2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3099
+  },
+  {
+   "layoutId": "river",
+   "seed": 29,
+   "tier": 3,
+   "topology": "c6eddb08d23689eb",
+   "puzzle": "bdc84595728bc5fe",
+   "contentHash": "bb8e865ab1bc8c1b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2193
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 196
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1305
+  },
+  {
+   "layoutId": "river",
+   "seed": 30,
+   "tier": 3,
+   "topology": "a882993d67c13ea2",
+   "puzzle": "cef8bd5254810281",
+   "contentHash": "d1d8a143dafe0faa",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3063
+  },
+  {
+   "layoutId": "river",
+   "seed": 31,
+   "tier": 3,
+   "topology": "b69c9b5da8940bb2",
+   "puzzle": "55dcee0ce2aa4c8f",
+   "contentHash": "613b0df7a49bbfe6",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3140
+  },
+  {
+   "layoutId": "river",
+   "seed": 32,
+   "tier": 3,
+   "topology": "cbc4b469cb7f2772",
+   "puzzle": "a1e0f22be9e36cb0",
+   "contentHash": "cba993efcd6f1f32",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 513
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 202
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 414
+  },
+  {
+   "layoutId": "river",
+   "seed": 33,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 34,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 35,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 36,
+   "tier": 3,
+   "topology": "e74c53c69f0286d5",
+   "puzzle": "139b422cf394e2cf",
+   "contentHash": "e25b55c45e6ee6dd",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3122
+  },
+  {
+   "layoutId": "river",
+   "seed": 37,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 38,
+   "tier": 3,
+   "topology": "ff6ce99f3a22d2d8",
+   "puzzle": "1d6ad84372a391d8",
+   "contentHash": "189870ac5b2fc7a3",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 554
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 530
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 571
+  },
+  {
+   "layoutId": "river",
+   "seed": 39,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 15
+  },
+  {
+   "layoutId": "river",
+   "seed": 40,
+   "tier": 3,
+   "topology": "24cbf67d75f272a2",
+   "puzzle": "595f95b221d1ca01",
+   "contentHash": "718b66c2ec96071b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 435
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 204
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 387
+  },
+  {
+   "layoutId": "river",
+   "seed": 41,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 42,
+   "tier": 3,
+   "topology": "ba05558db5612bee",
+   "puzzle": "a76ce6fac1ae5cd9",
+   "contentHash": "a791a97945686068",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2389
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 199
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1412
+  },
+  {
+   "layoutId": "river",
+   "seed": 43,
+   "tier": 3,
+   "topology": "1b141e93133e3ff0",
+   "puzzle": "139126ab05e65ad0",
+   "contentHash": "e3d8487578ca02ea",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 435
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5709
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2945
+  },
+  {
+   "layoutId": "river",
+   "seed": 44,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 13
+  },
+  {
+   "layoutId": "river",
+   "seed": 45,
+   "tier": 3,
+   "topology": "f6e8f3cccc9779b3",
+   "puzzle": "3a6fb1d81f929323",
+   "contentHash": "99c8bafaf10789fb",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 215
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 207
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 257
+  },
+  {
+   "layoutId": "river",
+   "seed": 46,
+   "tier": 3,
+   "topology": "e3b6a425d1ae147a",
+   "puzzle": "e3edea25df3722ee",
+   "contentHash": "2e8d3c5abe8a22cf",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3073
+  },
+  {
+   "layoutId": "river",
+   "seed": 47,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 12
+  },
+  {
+   "layoutId": "river",
+   "seed": 48,
+   "tier": 3,
+   "topology": "44da0b55888480d6",
+   "puzzle": "17b9331d9f0df516",
+   "contentHash": "88ae73304f94e43b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5338
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4510
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5040
+  },
+  {
+   "layoutId": "river",
+   "seed": 49,
+   "tier": 3,
+   "topology": "ac6f04b5e8e7ed92",
+   "puzzle": "fcb8ab89f817f7ea",
+   "contentHash": "883a70dafa5b1405",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 329
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 462
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 446
+  },
+  {
+   "layoutId": "river",
+   "seed": 50,
+   "tier": 3,
+   "topology": "3206ac550bcc2e3e",
+   "puzzle": "2f69c2a64a735c4d",
+   "contentHash": "5c352bedd57f9d7e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3209
+  },
+  {
+   "layoutId": "river",
+   "seed": 51,
+   "tier": 3,
+   "topology": "3ef8e5e00ce54dd7",
+   "puzzle": "146dfb8038df06bb",
+   "contentHash": "95c6249c8f3e5b4d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 512
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 405
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 503
+  },
+  {
+   "layoutId": "river",
+   "seed": 52,
+   "tier": 3,
+   "topology": "83f88b22193972ad",
+   "puzzle": "698b8ccffbdd732c",
+   "contentHash": "1aa57c5c7217aa27",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 518
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 773
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 750
+  },
+  {
+   "layoutId": "river",
+   "seed": 53,
+   "tier": 3,
+   "topology": "3dd89ae9507cf5c2",
+   "puzzle": "095dbddc3096fdbf",
+   "contentHash": "081e3732a421ae33",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 475
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 196
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 396
+  },
+  {
+   "layoutId": "river",
+   "seed": 54,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 55,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 56,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 12
+  },
+  {
+   "layoutId": "river",
+   "seed": 57,
+   "tier": 3,
+   "topology": "7297c9d0a892cd53",
+   "puzzle": "15f22db49936bb67",
+   "contentHash": "9a21457e55608cf9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5323
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4642
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5351
+  },
+  {
+   "layoutId": "river",
+   "seed": 58,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 59,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 60,
+   "tier": 3,
+   "topology": "edbf9b749de47e73",
+   "puzzle": "90b603afe6909aac",
+   "contentHash": "cd13e48a74187627",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5975
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5347
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5695
+  },
+  {
+   "layoutId": "river",
+   "seed": 61,
+   "tier": 3,
+   "topology": "ee7c529f29e74060",
+   "puzzle": "087b275c2d13191f",
+   "contentHash": "41d565dd91677660",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 560
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 329
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 517
+  },
+  {
+   "layoutId": "river",
+   "seed": 62,
+   "tier": 3,
+   "topology": "99766b3b6da66ed8",
+   "puzzle": "ac81eb9b568493e0",
+   "contentHash": "a21d5e71c766a9f2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3117
+  },
+  {
+   "layoutId": "river",
+   "seed": 63,
+   "tier": 3,
+   "topology": "bdb7ebceccc87635",
+   "puzzle": "db709a92be0464e1",
+   "contentHash": "7f16e00e622b858b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5555
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 501
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3059
+  },
+  {
+   "layoutId": "river",
+   "seed": 64,
+   "tier": 3,
+   "topology": "ce9a188b482a8060",
+   "puzzle": "1f88ecd020cf26eb",
+   "contentHash": "fc7413934d888baa",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3190
+  },
+  {
+   "layoutId": "river",
+   "seed": 65,
+   "tier": 3,
+   "topology": "30a62075c934247a",
+   "puzzle": "fb8c3bb9167d4a9a",
+   "contentHash": "b6c4c5f025b45dbd",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 406
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 258
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 393
+  },
+  {
+   "layoutId": "river",
+   "seed": 66,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 67,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 68,
+   "tier": 3,
+   "topology": "e8962b2e25879b39",
+   "puzzle": "cb86bb066f8d7d2d",
+   "contentHash": "81869001f5cbc564",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3043
+  },
+  {
+   "layoutId": "river",
+   "seed": 69,
+   "tier": 3,
+   "topology": "5bf72ded32bc66e6",
+   "puzzle": "fec33071f7b88562",
+   "contentHash": "95e355855ec87b36",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 476
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 202
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 394
+  },
+  {
+   "layoutId": "river",
+   "seed": 70,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 71,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 12
+  },
+  {
+   "layoutId": "river",
+   "seed": 72,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 73,
+   "tier": 3,
+   "topology": "669c8fcf31a583dc",
+   "puzzle": "a3ad5e72a1ab82e1",
+   "contentHash": "367ee61c63d91a9f",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3261
+  },
+  {
+   "layoutId": "river",
+   "seed": 74,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 75,
+   "tier": 3,
+   "topology": "4ca003980bc26ac7",
+   "puzzle": "c53822f5bb2eab1e",
+   "contentHash": "68d5d60443a6785b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 472
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5097
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2730
+  },
+  {
+   "layoutId": "river",
+   "seed": 76,
+   "tier": 3,
+   "topology": "e91ed35305bac720",
+   "puzzle": "b66acd705268338b",
+   "contentHash": "05a01e9ff174748a",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3078
+  },
+  {
+   "layoutId": "river",
+   "seed": 77,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 78,
+   "tier": 3,
+   "topology": "86255dda48a5f929",
+   "puzzle": "f6a7da0b742724f0",
+   "contentHash": "7f0945ddd8b5ba36",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 566
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 204
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 478
+  },
+  {
+   "layoutId": "river",
+   "seed": 79,
+   "tier": 3,
+   "topology": "245b6dd6bf1eb5d5",
+   "puzzle": "cd2bed6afa9f4b29",
+   "contentHash": "31c77fefa36b9514",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3155
+  },
+  {
+   "layoutId": "river",
+   "seed": 80,
+   "tier": 3,
+   "topology": "3de7c8246f82c53f",
+   "puzzle": "b9f8b1416528a592",
+   "contentHash": "7509ce5305981470",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 521
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 262
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 424
+  },
+  {
+   "layoutId": "river",
+   "seed": 81,
+   "tier": 3,
+   "topology": "dbf686c265ca9011",
+   "puzzle": "ddbecd6c97caa0cf",
+   "contentHash": "8a18ac2c003052e9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3093
+  },
+  {
+   "layoutId": "river",
+   "seed": 82,
+   "tier": 3,
+   "topology": "e7018515a13079fa",
+   "puzzle": "521d8837f211a7e4",
+   "contentHash": "d9a7aa78430bbec1",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3256
+  },
+  {
+   "layoutId": "river",
+   "seed": 83,
+   "tier": 3,
+   "topology": "9c407fbb0ea56184",
+   "puzzle": "b4a9bd4835d70f33",
+   "contentHash": "66d2f40624bb7ffb",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5406
+   },
+   "alcove": {
+    "team": "amberly/barrow/harvestmoon",
+    "status": "success",
+    "states": 4946
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 8198
+  },
+  {
+   "layoutId": "river",
+   "seed": 84,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 16
+  },
+  {
+   "layoutId": "river",
+   "seed": 85,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 86,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 87,
+   "tier": 3,
+   "topology": "c32dfa78e85a30f7",
+   "puzzle": "be3fe36f7cdddeec",
+   "contentHash": "fcb8f5e4c1bdaebb",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 400
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 194
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 360
+  },
+  {
+   "layoutId": "river",
+   "seed": 88,
+   "tier": 3,
+   "topology": "149a8ff5f10bc156",
+   "puzzle": "1befb93fa2fbe29c",
+   "contentHash": "3cd4a4ef212de0e0",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 581
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2649
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1616
+  },
+  {
+   "layoutId": "river",
+   "seed": 89,
+   "tier": 3,
+   "topology": "ffdcfad81720a32f",
+   "puzzle": "b5aa2b16556ab21d",
+   "contentHash": "26b206c6e470070d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3054
+  },
+  {
+   "layoutId": "river",
+   "seed": 90,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 13
+  },
+  {
+   "layoutId": "river",
+   "seed": 91,
+   "tier": 3,
+   "topology": "65a61d156f38f01a",
+   "puzzle": "74346b2a99de8e29",
+   "contentHash": "43679af537d36bba",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5659
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4522
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5347
+  },
+  {
+   "layoutId": "river",
+   "seed": 92,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 93,
+   "tier": 3,
+   "topology": "c150ca42bca33041",
+   "puzzle": "5479a807a1bda614",
+   "contentHash": "e64b7db79ddde984",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3356
+  },
+  {
+   "layoutId": "river",
+   "seed": 94,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 95,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "river",
+   "seed": 96,
+   "tier": 3,
+   "topology": "9be33392be9a369d",
+   "puzzle": "e24b752fd4a5120c",
+   "contentHash": "3d53b43ed0c0db71",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 314
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 463
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 438
+  },
+  {
+   "layoutId": "islands",
+   "seed": 17,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 14
+  },
+  {
+   "layoutId": "islands",
+   "seed": 18,
+   "tier": 3,
+   "topology": "59482fd36d439816",
+   "puzzle": "6d83e7995e49497a",
+   "contentHash": "01cc4e174f7927ec",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 454
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5140
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2585
+  },
+  {
+   "layoutId": "islands",
+   "seed": 19,
+   "tier": 3,
+   "topology": "6ccba0c42d78252d",
+   "puzzle": "297ff0a4c39296f7",
+   "contentHash": "b89a62e2cda6b4d1",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 376
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 202
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 331
+  },
+  {
+   "layoutId": "islands",
+   "seed": 20,
+   "tier": 3,
+   "topology": "c99f5893dbc18892",
+   "puzzle": "ec22087403bbe707",
+   "contentHash": "d8f6312707675ef0",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 436
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2551
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1603
+  },
+  {
+   "layoutId": "islands",
+   "seed": 21,
+   "tier": 3,
+   "topology": "d732883bbc0a3846",
+   "puzzle": "487e38590d01f27a",
+   "contentHash": "65d5234cca161cef",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 379
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 207
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 321
+  },
+  {
+   "layoutId": "islands",
+   "seed": 22,
+   "tier": 3,
+   "topology": "af50108229619557",
+   "puzzle": "c6ccd9067200cfcd",
+   "contentHash": "270265adc1140782",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3058
+  },
+  {
+   "layoutId": "islands",
+   "seed": 23,
+   "tier": 3,
+   "topology": "a8daeb60ef394ee5",
+   "puzzle": "bc9603f62a0250fd",
+   "contentHash": "c2e6bbd1d30b02c6",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2951
+  },
+  {
+   "layoutId": "islands",
+   "seed": 24,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 58
+  },
+  {
+   "layoutId": "islands",
+   "seed": 25,
+   "tier": 3,
+   "topology": "c6016892bebd6f53",
+   "puzzle": "fe2b148aee723349",
+   "contentHash": "c714e179a4f2d47e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2775
+  },
+  {
+   "layoutId": "islands",
+   "seed": 26,
+   "tier": 3,
+   "topology": "3ca4c220eb29ab49",
+   "puzzle": "6db31e7eef461255",
+   "contentHash": "9b41d6d68e816d7b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 485
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 186
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 390
+  },
+  {
+   "layoutId": "islands",
+   "seed": 27,
+   "tier": 3,
+   "topology": "375139d6374bf187",
+   "puzzle": "fccb03558393cfde",
+   "contentHash": "f17c1a47cd49bb68",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 3807
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 206
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2478
+  },
+  {
+   "layoutId": "islands",
+   "seed": 28,
+   "tier": 3,
+   "topology": "e6426e3531ad2e80",
+   "puzzle": "6394a44fbd014eac",
+   "contentHash": "20cd01070477804c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 364
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 204
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 444
+  },
+  {
+   "layoutId": "islands",
+   "seed": 29,
+   "tier": 3,
+   "topology": "39db28f8a7cb7475",
+   "puzzle": "bdc84595728bc5fe",
+   "contentHash": "871768b5e29b17ca",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3394
+  },
+  {
+   "layoutId": "islands",
+   "seed": 30,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 36
+  },
+  {
+   "layoutId": "islands",
+   "seed": 31,
+   "tier": 3,
+   "topology": "cc959538d33c2265",
+   "puzzle": "55dcee0ce2aa4c8f",
+   "contentHash": "de1eb98c8696e133",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 393
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 186
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 325
+  },
+  {
+   "layoutId": "islands",
+   "seed": 32,
+   "tier": 3,
+   "topology": "4f49d0367d15d8b3",
+   "puzzle": "a1e0f22be9e36cb0",
+   "contentHash": "1eec76ce4c981197",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2979
+  },
+  {
+   "layoutId": "islands",
+   "seed": 33,
+   "tier": 3,
+   "topology": "fd841c98acde8fed",
+   "puzzle": "aeebf41c40c3911f",
+   "contentHash": "d2e4c3d701bd9154",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3266
+  },
+  {
+   "layoutId": "islands",
+   "seed": 34,
+   "tier": 3,
+   "topology": "a99604007c524d0d",
+   "puzzle": "55b0cee94877ea8a",
+   "contentHash": "593ba90b39f50b40",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 431
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5120
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2719
+  },
+  {
+   "layoutId": "islands",
+   "seed": 35,
+   "tier": 3,
+   "topology": "b0e9a4b48b53fe5d",
+   "puzzle": "9b00eedfc0ca6cbc",
+   "contentHash": "647bcfe7a6dbbe6e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 453
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5161
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2631
+  },
+  {
+   "layoutId": "islands",
+   "seed": 36,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 33
+  },
+  {
+   "layoutId": "islands",
+   "seed": 37,
+   "tier": 3,
+   "topology": "5b88f710b5462f09",
+   "puzzle": "42c5b7877a0155d4",
+   "contentHash": "e2cfd058ebcafeef",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3083
+  },
+  {
+   "layoutId": "islands",
+   "seed": 38,
+   "tier": 3,
+   "topology": "bbe491835a540552",
+   "puzzle": "1d6ad84372a391d8",
+   "contentHash": "6e85d68a33a5e949",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5419
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 196
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2832
+  },
+  {
+   "layoutId": "islands",
+   "seed": 39,
+   "tier": 3,
+   "topology": "ddcc09151c5904b4",
+   "puzzle": "1bf8537348d7b528",
+   "contentHash": "21caafef436f44d8",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 434
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5314
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2844
+  },
+  {
+   "layoutId": "islands",
+   "seed": 40,
+   "tier": 3,
+   "topology": "20291cde842a1b77",
+   "puzzle": "595f95b221d1ca01",
+   "contentHash": "3cff1a44afed9dfd",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 411
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 211
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 387
+  },
+  {
+   "layoutId": "islands",
+   "seed": 41,
+   "tier": 3,
+   "topology": "0b6b0b20bbcaefcd",
+   "puzzle": "4b8ee5805c55dcfb",
+   "contentHash": "d6b2f1afd6556ade",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 573
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 217
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 596
+  },
+  {
+   "layoutId": "islands",
+   "seed": 42,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 18
+  },
+  {
+   "layoutId": "islands",
+   "seed": 43,
+   "tier": 3,
+   "topology": "a2e88d16f9bda91f",
+   "puzzle": "139126ab05e65ad0",
+   "contentHash": "e0d6ba42307c4ee9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 532
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 533
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 612
+  },
+  {
+   "layoutId": "islands",
+   "seed": 44,
+   "tier": 3,
+   "topology": "a5f6fff400a97949",
+   "puzzle": "4c805aa1c29f8012",
+   "contentHash": "fb09a16b29987d74",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 361
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 214
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 331
+  },
+  {
+   "layoutId": "islands",
+   "seed": 45,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 45
+  },
+  {
+   "layoutId": "islands",
+   "seed": 46,
+   "tier": 3,
+   "topology": "81c559c0da57c20d",
+   "puzzle": "e3edea25df3722ee",
+   "contentHash": "1ca7683ece8ccbe9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2965
+  },
+  {
+   "layoutId": "islands",
+   "seed": 47,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 71
+  },
+  {
+   "layoutId": "islands",
+   "seed": 48,
+   "tier": 3,
+   "topology": "8f3b50d497c2ac85",
+   "puzzle": "17b9331d9f0df516",
+   "contentHash": "66b6ca6e81f2065d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 580
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5531
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2753
+  },
+  {
+   "layoutId": "islands",
+   "seed": 49,
+   "tier": 3,
+   "topology": "82fb1e8a09c7ec77",
+   "puzzle": "fcb8ab89f817f7ea",
+   "contentHash": "adbca559811dcdaa",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 340
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 696
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 550
+  },
+  {
+   "layoutId": "islands",
+   "seed": 50,
+   "tier": 3,
+   "topology": "c138c9b8368ef4a1",
+   "puzzle": "2f69c2a64a735c4d",
+   "contentHash": "f54f749492daeaaf",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 248
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1772
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1054
+  },
+  {
+   "layoutId": "islands",
+   "seed": 51,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 57
+  },
+  {
+   "layoutId": "islands",
+   "seed": 52,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 40
+  },
+  {
+   "layoutId": "islands",
+   "seed": 53,
+   "tier": 3,
+   "topology": "11d7ccbef01004df",
+   "puzzle": "095dbddc3096fdbf",
+   "contentHash": "01b5a6d2f9a1a9a7",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 384
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 196
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 382
+  },
+  {
+   "layoutId": "islands",
+   "seed": 54,
+   "tier": 3,
+   "topology": "690f143fda328cfa",
+   "puzzle": "2a28b419681a483a",
+   "contentHash": "c0a1e2085980e831",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5048
+   },
+   "alcove": {
+    "team": "amberly/barrow/harvestmoon",
+    "status": "success",
+    "states": 5593
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 8181
+  },
+  {
+   "layoutId": "islands",
+   "seed": 55,
+   "tier": 3,
+   "topology": "f078a80a57fd1c03",
+   "puzzle": "114fe515ad96a79e",
+   "contentHash": "e0a46a6b6b29d068",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4771
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5780
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5197
+  },
+  {
+   "layoutId": "islands",
+   "seed": 56,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 79
+  },
+  {
+   "layoutId": "islands",
+   "seed": 57,
+   "tier": 3,
+   "topology": "29cc4cec90610f35",
+   "puzzle": "15f22db49936bb67",
+   "contentHash": "7999d7ab49aa0afe",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3349
+  },
+  {
+   "layoutId": "islands",
+   "seed": 58,
+   "tier": 3,
+   "topology": "7a2fde464ec32ec7",
+   "puzzle": "5a8465c0e3375dfb",
+   "contentHash": "2464cdbfed476618",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5088
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 200
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2914
+  },
+  {
+   "layoutId": "islands",
+   "seed": 59,
+   "tier": 3,
+   "topology": "c238aee67e7c3447",
+   "puzzle": "e9fa97dcbd29ff5f",
+   "contentHash": "a3798101559788c4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5384
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 581
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3362
+  },
+  {
+   "layoutId": "islands",
+   "seed": 60,
+   "tier": 3,
+   "topology": "979b815c79581ccd",
+   "puzzle": "90b603afe6909aac",
+   "contentHash": "4607725eaa4eb021",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3285
+  },
+  {
+   "layoutId": "islands",
+   "seed": 61,
+   "tier": 3,
+   "topology": "2db95af85034c40d",
+   "puzzle": "087b275c2d13191f",
+   "contentHash": "81248436dbc26b1d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 525
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 214
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 454
+  },
+  {
+   "layoutId": "islands",
+   "seed": 62,
+   "tier": 3,
+   "topology": "86d73678da41ee61",
+   "puzzle": "ac81eb9b568493e0",
+   "contentHash": "72c363bb30d2dfc8",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3217
+  },
+  {
+   "layoutId": "islands",
+   "seed": 63,
+   "tier": 3,
+   "topology": "5e5064f004f03529",
+   "puzzle": "db709a92be0464e1",
+   "contentHash": "6943d13becb73468",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 377
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 207
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 477
+  },
+  {
+   "layoutId": "islands",
+   "seed": 64,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 73
+  },
+  {
+   "layoutId": "islands",
+   "seed": 65,
+   "tier": 3,
+   "topology": "108ec4bef80ad603",
+   "puzzle": "fb8c3bb9167d4a9a",
+   "contentHash": "aa03522d4ca4c056",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2050
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 202
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1226
+  },
+  {
+   "layoutId": "islands",
+   "seed": 66,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 63
+  },
+  {
+   "layoutId": "islands",
+   "seed": 67,
+   "tier": 3,
+   "topology": "ff76109f58a2e5c2",
+   "puzzle": "5d9cc651d6cb5022",
+   "contentHash": "92a6a80f56ec8a86",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2268
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 202
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1391
+  },
+  {
+   "layoutId": "islands",
+   "seed": 68,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 129
+  },
+  {
+   "layoutId": "islands",
+   "seed": 69,
+   "tier": 3,
+   "topology": "45b8ef8acbbfaeeb",
+   "puzzle": "fec33071f7b88562",
+   "contentHash": "b3a5e80e9a2c6803",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3336
+  },
+  {
+   "layoutId": "islands",
+   "seed": 70,
+   "tier": 3,
+   "topology": "02bf5a46831f17c7",
+   "puzzle": "0babbdd53a1406de",
+   "contentHash": "53879dc80b8ed04d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2962
+  },
+  {
+   "layoutId": "islands",
+   "seed": 71,
+   "tier": 3,
+   "topology": "4f5f8d2297d9df5f",
+   "puzzle": "fc210c910b9ede22",
+   "contentHash": "9305aeac827b7b49",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3297
+  },
+  {
+   "layoutId": "islands",
+   "seed": 72,
+   "tier": 3,
+   "topology": "044a9757686aaf76",
+   "puzzle": "55bb86d3747cc748",
+   "contentHash": "5330f67e791d948b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5740
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5190
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5315
+  },
+  {
+   "layoutId": "islands",
+   "seed": 73,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 29
+  },
+  {
+   "layoutId": "islands",
+   "seed": 74,
+   "tier": 3,
+   "topology": "1f29011a247e1caf",
+   "puzzle": "8c84e07b152f4e80",
+   "contentHash": "e02e6de940d7013c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 447
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 238
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 420
+  },
+  {
+   "layoutId": "islands",
+   "seed": 75,
+   "tier": 3,
+   "topology": "ce9155a51947ceac",
+   "puzzle": "c53822f5bb2eab1e",
+   "contentHash": "8a7dc7f3c9869bf4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 495
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4909
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2660
+  },
+  {
+   "layoutId": "islands",
+   "seed": 76,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 14
+  },
+  {
+   "layoutId": "islands",
+   "seed": 77,
+   "tier": 3,
+   "topology": "8c5f9004c6bd5269",
+   "puzzle": "58b043efac0bb5cc",
+   "contentHash": "cdc98df4583eec0b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 524
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1869
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1185
+  },
+  {
+   "layoutId": "islands",
+   "seed": 78,
+   "tier": 3,
+   "topology": "d6d8e06eb883511f",
+   "puzzle": "f6a7da0b742724f0",
+   "contentHash": "7ae852edd91f8c16",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3235
+  },
+  {
+   "layoutId": "islands",
+   "seed": 79,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 25
+  },
+  {
+   "layoutId": "islands",
+   "seed": 80,
+   "tier": 3,
+   "topology": "28d74d724349458b",
+   "puzzle": "b9f8b1416528a592",
+   "contentHash": "f8689095874e2f6a",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3033
+  },
+  {
+   "layoutId": "islands",
+   "seed": 81,
+   "tier": 3,
+   "topology": "4fa3e037b4988196",
+   "puzzle": "ddbecd6c97caa0cf",
+   "contentHash": "b5d5b04fddf66ed8",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3015
+  },
+  {
+   "layoutId": "islands",
+   "seed": 82,
+   "tier": 3,
+   "topology": "15f6bf2074dd8321",
+   "puzzle": "521d8837f211a7e4",
+   "contentHash": "c248429ae37940e1",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3210
+  },
+  {
+   "layoutId": "islands",
+   "seed": 83,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 32
+  },
+  {
+   "layoutId": "islands",
+   "seed": 84,
+   "tier": 3,
+   "topology": "a55974f65c3dff3f",
+   "puzzle": "50cc05433292c898",
+   "contentHash": "53c96dafe47943c2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 431
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 630
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 578
+  },
+  {
+   "layoutId": "islands",
+   "seed": 85,
+   "tier": 3,
+   "topology": "bd167bc8292b65b5",
+   "puzzle": "94eac9247e69e437",
+   "contentHash": "1aab6c217ce3a032",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2329
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 237
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1414
+  },
+  {
+   "layoutId": "islands",
+   "seed": 86,
+   "tier": 3,
+   "topology": "c65db0facc692af3",
+   "puzzle": "6eb728f1613fa242",
+   "contentHash": "e84ef369c3374218",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 446
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1756
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1059
+  },
+  {
+   "layoutId": "islands",
+   "seed": 87,
+   "tier": 3,
+   "topology": "4326903d1112be20",
+   "puzzle": "be3fe36f7cdddeec",
+   "contentHash": "68c673d64f9dcec3",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3006
+  },
+  {
+   "layoutId": "islands",
+   "seed": 88,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 87
+  },
+  {
+   "layoutId": "islands",
+   "seed": 89,
+   "tier": 3,
+   "topology": "3fee0d8eacfcc593",
+   "puzzle": "b5aa2b16556ab21d",
+   "contentHash": "1d46732de3de0aba",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 390
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 216
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 499
+  },
+  {
+   "layoutId": "islands",
+   "seed": 90,
+   "tier": 3,
+   "topology": "d81a79d736782186",
+   "puzzle": "b884c710b4643c0b",
+   "contentHash": "806d7ffd75fa5e00",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2862
+  },
+  {
+   "layoutId": "islands",
+   "seed": 91,
+   "tier": 3,
+   "topology": "6884511cc2d09391",
+   "puzzle": "74346b2a99de8e29",
+   "contentHash": "4f1a6c72b3c4b429",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2854
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 196
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1557
+  },
+  {
+   "layoutId": "islands",
+   "seed": 92,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 101
+  },
+  {
+   "layoutId": "islands",
+   "seed": 93,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "islands",
+   "seed": 94,
+   "tier": 3,
+   "topology": "0f2e26f7aa7cafb6",
+   "puzzle": "5d0b66fabaa92ad9",
+   "contentHash": "7f9679e3021189b4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3394
+  },
+  {
+   "layoutId": "islands",
+   "seed": 95,
+   "tier": 3,
+   "topology": "fbaddec68ea057a7",
+   "puzzle": "22454e4576af270e",
+   "contentHash": "2f6e93eb7433f6c4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 548
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4449
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2795
+  },
+  {
+   "layoutId": "islands",
+   "seed": 96,
+   "tier": 3,
+   "status": "unknown",
+   "reasonCode": "flock-crossing-invalid",
+   "ms": 19
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 17,
+   "tier": 3,
+   "topology": "b9985db2cb00b881",
+   "puzzle": "5badaa488c066393",
+   "contentHash": "baf87f586482348d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 497
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 190
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 392
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 18,
+   "tier": 3,
+   "topology": "d346c57170dce456",
+   "puzzle": "6d83e7995e49497a",
+   "contentHash": "04d70ef65358fc07",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3037
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 19,
+   "tier": 3,
+   "topology": "5eae0b0f2486e9a4",
+   "puzzle": "297ff0a4c39296f7",
+   "contentHash": "1e509f3dc9ac9862",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4517
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 360
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2717
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 20,
+   "tier": 3,
+   "topology": "cb0d47ada39cc22e",
+   "puzzle": "ec22087403bbe707",
+   "contentHash": "b588b14c72e847a9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3270
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 21,
+   "tier": 3,
+   "topology": "1bc3b2fe5ab937f1",
+   "puzzle": "487e38590d01f27a",
+   "contentHash": "f15eb34ba74da5f2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4997
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 637
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3023
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 22,
+   "tier": 3,
+   "topology": "b7947bfa63e58585",
+   "puzzle": "c6ccd9067200cfcd",
+   "contentHash": "29bce7e80de62eb7",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3221
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 23,
+   "tier": 3,
+   "topology": "ae51545bc0c72dbc",
+   "puzzle": "bc9603f62a0250fd",
+   "contentHash": "817b533fd6525474",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 214
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 244
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 275
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 24,
+   "tier": 3,
+   "topology": "afd2101bb884af54",
+   "puzzle": "75697e40d780bd5b",
+   "contentHash": "90d2857064adab97",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2037
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 245
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1225
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 25,
+   "tier": 3,
+   "topology": "fdd911821deba8e1",
+   "puzzle": "fe2b148aee723349",
+   "contentHash": "619dac4c899b769b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 541
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 199
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 431
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 26,
+   "tier": 3,
+   "topology": "2f905cb4df517d97",
+   "puzzle": "6db31e7eef461255",
+   "contentHash": "01c48073bca61690",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 194
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 474
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 391
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 27,
+   "tier": 3,
+   "topology": "e1d4b728be3144f7",
+   "puzzle": "fccb03558393cfde",
+   "contentHash": "6c691984a04ea917",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 413
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2058
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1329
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 28,
+   "tier": 3,
+   "topology": "a3021a3df6f8dbd6",
+   "puzzle": "6394a44fbd014eac",
+   "contentHash": "ff78278a49bb1315",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 497
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 197
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 435
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 29,
+   "tier": 3,
+   "topology": "51bbcef0eb24cdc7",
+   "puzzle": "bdc84595728bc5fe",
+   "contentHash": "ed3fb85ab8b2c4dd",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3210
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 30,
+   "tier": 3,
+   "topology": "b96276b77221fc4c",
+   "puzzle": "cef8bd5254810281",
+   "contentHash": "7ce4df5af62fb535",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 395
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 194
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 347
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 31,
+   "tier": 3,
+   "topology": "561f146e1ebd6e81",
+   "puzzle": "55dcee0ce2aa4c8f",
+   "contentHash": "9e26c8877ada34a8",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3248
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 32,
+   "tier": 3,
+   "topology": "2cab7103223a3fc4",
+   "puzzle": "a1e0f22be9e36cb0",
+   "contentHash": "2cb239236e18bda4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3146
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 33,
+   "tier": 3,
+   "topology": "667a79c7669eb498",
+   "puzzle": "aeebf41c40c3911f",
+   "contentHash": "cd8ba5760ebff075",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 414
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 388
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 473
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 34,
+   "tier": 3,
+   "topology": "369c3ae17b6a8466",
+   "puzzle": "55b0cee94877ea8a",
+   "contentHash": "6f47641f90b3febe",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4531
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 596
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2819
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 35,
+   "tier": 3,
+   "topology": "3f6c79f3fc13a568",
+   "puzzle": "9b00eedfc0ca6cbc",
+   "contentHash": "93d6490c5b8f0909",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5395
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 212
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 4025
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 36,
+   "tier": 3,
+   "topology": "68caa7d5fb3d96ae",
+   "puzzle": "139b422cf394e2cf",
+   "contentHash": "464c8cee3dc25f09",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5966
+   },
+   "alcove": {
+    "team": "amberly/barrow/harvestmoon",
+    "status": "success",
+    "states": 5390
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 9321
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 37,
+   "tier": 3,
+   "topology": "cbc90eec8eff075f",
+   "puzzle": "42c5b7877a0155d4",
+   "contentHash": "21075887e1731678",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 492
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 180
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 399
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 38,
+   "tier": 3,
+   "topology": "da7d3785f2c981b6",
+   "puzzle": "1d6ad84372a391d8",
+   "contentHash": "190c561db2303b0c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3076
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 39,
+   "tier": 3,
+   "topology": "b49fc1b9b1567caa",
+   "puzzle": "1bf8537348d7b528",
+   "contentHash": "0e13ffeea1116f6b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2301
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 228
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1331
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 40,
+   "tier": 3,
+   "topology": "8527ce63500af344",
+   "puzzle": "595f95b221d1ca01",
+   "contentHash": "0d2c55cf5f87ea9c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 241
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 754
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 535
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 41,
+   "tier": 3,
+   "topology": "faf576350339746e",
+   "puzzle": "4b8ee5805c55dcfb",
+   "contentHash": "df77039b009b70d2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 399
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 660
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 590
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 42,
+   "tier": 3,
+   "topology": "efe272e67037af95",
+   "puzzle": "a76ce6fac1ae5cd9",
+   "contentHash": "f833100d811b4296",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 390
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 212
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 352
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 43,
+   "tier": 3,
+   "topology": "a87a7ce43ab297cf",
+   "puzzle": "139126ab05e65ad0",
+   "contentHash": "d92d67a7680e7ba2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 495
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 564
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 560
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 44,
+   "tier": 3,
+   "topology": "f2532451e5d95de2",
+   "puzzle": "4c805aa1c29f8012",
+   "contentHash": "b02d17f74d96ea98",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 386
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 204
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 360
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 45,
+   "tier": 3,
+   "topology": "3ebc419873cf477b",
+   "puzzle": "3a6fb1d81f929323",
+   "contentHash": "05cba8b28e63e481",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 200
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 200
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 230
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 46,
+   "tier": 3,
+   "topology": "cee93d7ee8d6c79d",
+   "puzzle": "e3edea25df3722ee",
+   "contentHash": "8a949703fd5ab7d4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3147
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 47,
+   "tier": 3,
+   "topology": "5978f4a1ae6903aa",
+   "puzzle": "dbf0caac50ed07ef",
+   "contentHash": "73341fbdc2a93a10",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 622
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 234
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 489
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 48,
+   "tier": 3,
+   "topology": "000f80c1d9c2e936",
+   "puzzle": "17b9331d9f0df516",
+   "contentHash": "d6cbd827d9c90022",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 544
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4390
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2475
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 49,
+   "tier": 3,
+   "topology": "09563705f73ebac6",
+   "puzzle": "fcb8ab89f817f7ea",
+   "contentHash": "9ae1d2a10aad6b90",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 495
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 307
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 432
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 50,
+   "tier": 3,
+   "topology": "94e767842734460b",
+   "puzzle": "2f69c2a64a735c4d",
+   "contentHash": "e9e114a5f1281552",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 410
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1228
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 863
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 51,
+   "tier": 3,
+   "topology": "eb4b856e62b821bd",
+   "puzzle": "146dfb8038df06bb",
+   "contentHash": "dadbc559f998503a",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3356
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 52,
+   "tier": 3,
+   "topology": "9af97c3a64c6cdfd",
+   "puzzle": "698b8ccffbdd732c",
+   "contentHash": "3545acb8b61318c7",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 537
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 192
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 453
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 53,
+   "tier": 3,
+   "topology": "27535101474edc42",
+   "puzzle": "095dbddc3096fdbf",
+   "contentHash": "395288c082d16d67",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4957
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4294
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5158
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 54,
+   "tier": 3,
+   "topology": "8f1c71cf66cc2548",
+   "puzzle": "2a28b419681a483a",
+   "contentHash": "63373827a83ce15a",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 588
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 310
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 472
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 55,
+   "tier": 3,
+   "topology": "e8f6ba41d5f775ba",
+   "puzzle": "114fe515ad96a79e",
+   "contentHash": "538ece5507d1dc7a",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 463
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 246
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 421
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 56,
+   "tier": 3,
+   "topology": "2da591f83549e1c3",
+   "puzzle": "0000f2555639ed3e",
+   "contentHash": "f434543c6c809ae3",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3137
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 57,
+   "tier": 3,
+   "topology": "3f04db343148ec2f",
+   "puzzle": "15f22db49936bb67",
+   "contentHash": "1a5621cd3c0b0d40",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 438
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2607
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1591
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 58,
+   "tier": 3,
+   "topology": "470cc092db630d01",
+   "puzzle": "5a8465c0e3375dfb",
+   "contentHash": "f828eac8c08a15b7",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 502
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 207
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 419
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 59,
+   "tier": 3,
+   "topology": "20dfca042d559cb3",
+   "puzzle": "e9fa97dcbd29ff5f",
+   "contentHash": "40eb76d4cdfe1e07",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 299
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 342
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 337
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 60,
+   "tier": 3,
+   "topology": "e7213685c1c4bdc6",
+   "puzzle": "90b603afe6909aac",
+   "contentHash": "902eaaf06c251187",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1935
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 7048
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 61,
+   "tier": 3,
+   "topology": "438f5edbc580f15c",
+   "puzzle": "087b275c2d13191f",
+   "contentHash": "d5cf734fdea411d8",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 427
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 243
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 379
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 62,
+   "tier": 3,
+   "topology": "ad7ef9f9983a64ae",
+   "puzzle": "ac81eb9b568493e0",
+   "contentHash": "8831ecce0fc5a2c3",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 399
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 200
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 362
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 63,
+   "tier": 3,
+   "topology": "bf5d54bbe367c608",
+   "puzzle": "db709a92be0464e1",
+   "contentHash": "03eadd32a6546dbd",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 406
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1898
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1164
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 64,
+   "tier": 3,
+   "topology": "7fab74738b9ecb1c",
+   "puzzle": "1f88ecd020cf26eb",
+   "contentHash": "2ca51546b23a4661",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 548
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1295
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 933
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 65,
+   "tier": 3,
+   "topology": "78da6c7cd3d56ffb",
+   "puzzle": "fb8c3bb9167d4a9a",
+   "contentHash": "859841fdded4e702",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 532
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 207
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 427
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 66,
+   "tier": 3,
+   "topology": "da437369df8191d2",
+   "puzzle": "33b4eb135a123d88",
+   "contentHash": "16141f28eca202e7",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5124
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5631
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5481
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 67,
+   "tier": 3,
+   "topology": "336d9b5370e62d5c",
+   "puzzle": "5d9cc651d6cb5022",
+   "contentHash": "6549a7e6a0b7ceab",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 547
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 214
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 493
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 68,
+   "tier": 3,
+   "topology": "9cef8a1be9d79890",
+   "puzzle": "cb86bb066f8d7d2d",
+   "contentHash": "5face4c4bed9a847",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2069
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1995
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2190
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 69,
+   "tier": 3,
+   "topology": "ed8c963df5aff496",
+   "puzzle": "fec33071f7b88562",
+   "contentHash": "856b8fb58aa8cc9c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 452
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 238
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 397
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 70,
+   "tier": 3,
+   "topology": "df994039c71a790e",
+   "puzzle": "0babbdd53a1406de",
+   "contentHash": "f1ae994311ec1cca",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 426
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 235
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 394
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 71,
+   "tier": 3,
+   "topology": "f320a0259a0a2926",
+   "puzzle": "fc210c910b9ede22",
+   "contentHash": "d61e294ceff929f3",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 437
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 202
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 390
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 72,
+   "tier": 3,
+   "topology": "0fa6f45677d60b35",
+   "puzzle": "55bb86d3747cc748",
+   "contentHash": "05744fb18f19f724",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 613
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 242
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 461
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 73,
+   "tier": 3,
+   "topology": "f341099ccdcc6b0b",
+   "puzzle": "a3ad5e72a1ab82e1",
+   "contentHash": "5423360a1a73cb1f",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3104
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 74,
+   "tier": 3,
+   "topology": "5b48620052fb555b",
+   "puzzle": "8c84e07b152f4e80",
+   "contentHash": "b383dc1967483362",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3089
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 75,
+   "tier": 3,
+   "topology": "68dc931905812b5a",
+   "puzzle": "c53822f5bb2eab1e",
+   "contentHash": "30274535cc54941c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1826
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5640
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3502
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 76,
+   "tier": 3,
+   "topology": "833b36f3605ba8a0",
+   "puzzle": "b66acd705268338b",
+   "contentHash": "d76f57c46260412b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3341
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 77,
+   "tier": 3,
+   "topology": "7805a574bba0b083",
+   "puzzle": "58b043efac0bb5cc",
+   "contentHash": "4feea75a310a109b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 504
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 219
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 400
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 78,
+   "tier": 3,
+   "topology": "7a9663e1177b2846",
+   "puzzle": "f6a7da0b742724f0",
+   "contentHash": "4114008483534c8d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 577
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 242
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 449
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 79,
+   "tier": 3,
+   "topology": "89d4ad99aaeca99a",
+   "puzzle": "cd2bed6afa9f4b29",
+   "contentHash": "163f0262d5bf709f",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 475
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5559
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2852
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 80,
+   "tier": 3,
+   "topology": "0d9844fddf91bbd6",
+   "puzzle": "b9f8b1416528a592",
+   "contentHash": "93ed85c906632af8",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 429
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 208
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 380
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 81,
+   "tier": 3,
+   "topology": "b10c471d11f92b0e",
+   "puzzle": "ddbecd6c97caa0cf",
+   "contentHash": "b84797cf52bac8ec",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 355
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 209
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 372
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 82,
+   "tier": 3,
+   "topology": "0d45f07ba53322b8",
+   "puzzle": "521d8837f211a7e4",
+   "contentHash": "313ef60cc63ee8e3",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 511
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 713
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 622
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 83,
+   "tier": 3,
+   "topology": "eecb0b79d76a5f92",
+   "puzzle": "b4a9bd4835d70f33",
+   "contentHash": "e23dd88cefd5909b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1954
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1242
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1683
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 84,
+   "tier": 3,
+   "topology": "a04aa49abbecb14d",
+   "puzzle": "50cc05433292c898",
+   "contentHash": "6d3b7f48078c8daf",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3186
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 85,
+   "tier": 3,
+   "topology": "7db31b2b798b9298",
+   "puzzle": "94eac9247e69e437",
+   "contentHash": "c522d0a6d07a659b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3312
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 86,
+   "tier": 3,
+   "topology": "2b95a9198282308a",
+   "puzzle": "6eb728f1613fa242",
+   "contentHash": "eb417253501f02b4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1192
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1168
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1264
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 87,
+   "tier": 3,
+   "topology": "73f13ee0ff0c1cd7",
+   "puzzle": "be3fe36f7cdddeec",
+   "contentHash": "7d56606a208b4b33",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2320
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 191
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1449
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 88,
+   "tier": 3,
+   "topology": "d65e8a43c1193104",
+   "puzzle": "1befb93fa2fbe29c",
+   "contentHash": "be23637215a0e057",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 382
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 262
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 387
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 89,
+   "tier": 3,
+   "topology": "efa1885a8b46ead1",
+   "puzzle": "b5aa2b16556ab21d",
+   "contentHash": "2cc680665af07e67",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5413
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 205
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2912
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 90,
+   "tier": 3,
+   "topology": "63358af46b880063",
+   "puzzle": "b884c710b4643c0b",
+   "contentHash": "246b7cd6f9ed90bd",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3152
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 91,
+   "tier": 3,
+   "topology": "35117ccdf56e7f2e",
+   "puzzle": "74346b2a99de8e29",
+   "contentHash": "319ef6eb85361312",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1841
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1919
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1965
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 92,
+   "tier": 3,
+   "topology": "a182756230efc099",
+   "puzzle": "ace20daa33671449",
+   "contentHash": "9dcb6072cf885d8f",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 612
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 598
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 631
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 93,
+   "tier": 3,
+   "topology": "8fa267e262adce6d",
+   "puzzle": "5479a807a1bda614",
+   "contentHash": "050b376351e273c2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 644
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 200
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 496
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 94,
+   "tier": 3,
+   "topology": "804619bed6b26ae9",
+   "puzzle": "5d0b66fabaa92ad9",
+   "contentHash": "c80a51c4db1aed43",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 202
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 259
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 278
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 95,
+   "tier": 3,
+   "topology": "63475b15d47b37da",
+   "puzzle": "22454e4576af270e",
+   "contentHash": "80c2716bbdc73e02",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 415
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 206
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 367
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 96,
+   "tier": 3,
+   "topology": "097fba768cd05be9",
+   "puzzle": "e24b752fd4a5120c",
+   "contentHash": "d58f3d3a9ae07627",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 528
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2246
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1497
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 17,
+   "tier": 3,
+   "topology": "52f0703e9a77f1e9",
+   "puzzle": "5badaa488c066393",
+   "contentHash": "28928b08586adfa5",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2734
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 18,
+   "tier": 3,
+   "topology": "18b04bbbc8af95fc",
+   "puzzle": "6d83e7995e49497a",
+   "contentHash": "ac260923e26c473e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1079
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 6171
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 19,
+   "tier": 3,
+   "topology": "43f69c90358e7f57",
+   "puzzle": "297ff0a4c39296f7",
+   "contentHash": "9d02974e83e91ab9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4127
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 3999
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 4304
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 20,
+   "tier": 3,
+   "topology": "15b4f5a6777354d5",
+   "puzzle": "ec22087403bbe707",
+   "contentHash": "c25fbbbe7e767fc1",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3192
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 21,
+   "tier": 3,
+   "topology": "66d136df901d3424",
+   "puzzle": "487e38590d01f27a",
+   "contentHash": "cf547a02586d2285",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3132
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 22,
+   "tier": 3,
+   "topology": "20d94ed7ee91f6c8",
+   "puzzle": "c6ccd9067200cfcd",
+   "contentHash": "40faf05b8a1ab47c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 293
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4738
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3408
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 23,
+   "tier": 3,
+   "topology": "2af1d002ad015ee5",
+   "puzzle": "bc9603f62a0250fd",
+   "contentHash": "1ae463f78bbc0f68",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4278
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 24,
+   "tier": 3,
+   "topology": "f8a556b1aaf02a32",
+   "puzzle": "75697e40d780bd5b",
+   "contentHash": "061f9968427f1bc9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4025
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 25,
+   "tier": 3,
+   "topology": "7f9228e725df9324",
+   "puzzle": "fe2b148aee723349",
+   "contentHash": "e6c954be0a04a8c1",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1095
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 757
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1173
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 26,
+   "tier": 3,
+   "topology": "ed5471b5acc20d52",
+   "puzzle": "6db31e7eef461255",
+   "contentHash": "bc38d5f5ef80b94e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3412
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 27,
+   "tier": 3,
+   "topology": "f92978f5858f883a",
+   "puzzle": "fccb03558393cfde",
+   "contentHash": "819804104a290dfb",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2978
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 28,
+   "tier": 3,
+   "topology": "052c55c7a2a1dad4",
+   "puzzle": "6394a44fbd014eac",
+   "contentHash": "6aa891f75c7ecbb8",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3029
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 29,
+   "tier": 3,
+   "topology": "374fbf7862ac3ac7",
+   "puzzle": "bdc84595728bc5fe",
+   "contentHash": "290d50bd7fbf9360",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2631
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2105
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2354
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 30,
+   "tier": 3,
+   "topology": "56d8bb789a58202f",
+   "puzzle": "cef8bd5254810281",
+   "contentHash": "ab670a6047407dcb",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1440
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1194
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1298
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 31,
+   "tier": 3,
+   "topology": "dabddb33721525cc",
+   "puzzle": "55dcee0ce2aa4c8f",
+   "contentHash": "7e72d31c8a3442f7",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4412
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 346
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2643
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 32,
+   "tier": 3,
+   "topology": "fba4529747a20430",
+   "puzzle": "a1e0f22be9e36cb0",
+   "contentHash": "4acf7473b6535760",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3075
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 33,
+   "tier": 3,
+   "topology": "33be06cf4f1964c8",
+   "puzzle": "aeebf41c40c3911f",
+   "contentHash": "b07cef4710a67b40",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3160
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 34,
+   "tier": 3,
+   "topology": "8e3087def24e4841",
+   "puzzle": "55b0cee94877ea8a",
+   "contentHash": "a92b8d34a5815615",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 501
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2413
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1363
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 35,
+   "tier": 3,
+   "topology": "3be75c01ca791b06",
+   "puzzle": "9b00eedfc0ca6cbc",
+   "contentHash": "0f10091a4119fb9f",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 489
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 192
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 375
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 36,
+   "tier": 3,
+   "topology": "ce4cc81641352ef9",
+   "puzzle": "139b422cf394e2cf",
+   "contentHash": "4214a4c5f9360eb6",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 553
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 2675
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1540
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 37,
+   "tier": 3,
+   "topology": "36dbc4ebae7663b8",
+   "puzzle": "42c5b7877a0155d4",
+   "contentHash": "8e6d3ca250b20a15",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5986
+   },
+   "alcove": {
+    "team": "amberly/barrow/harvestmoon",
+    "status": "success",
+    "states": 5439
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 8062
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 38,
+   "tier": 3,
+   "topology": "7fc94f4f6023df10",
+   "puzzle": "1d6ad84372a391d8",
+   "contentHash": "4af0c1b67e887e6f",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 544
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 839
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 704
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 39,
+   "tier": 3,
+   "topology": "e5acb97f18f2df8c",
+   "puzzle": "1bf8537348d7b528",
+   "contentHash": "fc722c1dc002427c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 816
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1399
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1074
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 40,
+   "tier": 3,
+   "topology": "a62b767107ed40ca",
+   "puzzle": "595f95b221d1ca01",
+   "contentHash": "88b64a50f7077a3d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2910
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 41,
+   "tier": 3,
+   "topology": "6f40466cd327ad0b",
+   "puzzle": "4b8ee5805c55dcfb",
+   "contentHash": "a5c690116987e44e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3217
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 42,
+   "tier": 3,
+   "topology": "26c16ececceaac6d",
+   "puzzle": "a76ce6fac1ae5cd9",
+   "contentHash": "55c7701452254c93",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2868
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 43,
+   "tier": 3,
+   "topology": "3ae2e0179effbd5c",
+   "puzzle": "139126ab05e65ad0",
+   "contentHash": "0a9d46bfb09701fc",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2878
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 44,
+   "tier": 3,
+   "topology": "4a634d2886f998c7",
+   "puzzle": "4c805aa1c29f8012",
+   "contentHash": "7a0c717ec163fc25",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3171
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 45,
+   "tier": 3,
+   "topology": "b3e6ea2a5eb293b1",
+   "puzzle": "3a6fb1d81f929323",
+   "contentHash": "7bda2c2a3a0655f1",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3111
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 46,
+   "tier": 3,
+   "topology": "4092239e6b78be71",
+   "puzzle": "e3edea25df3722ee",
+   "contentHash": "936e5e823431f3f5",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3082
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 47,
+   "tier": 3,
+   "topology": "bd283dcb5feda184",
+   "puzzle": "dbf0caac50ed07ef",
+   "contentHash": "3d0ec461f75f0a28",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 416
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 873
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 611
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 48,
+   "tier": 3,
+   "topology": "2e3782391d5141b2",
+   "puzzle": "17b9331d9f0df516",
+   "contentHash": "1473b8a3fc39a41e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2864
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 49,
+   "tier": 3,
+   "topology": "6ba94013d30da158",
+   "puzzle": "fcb8ab89f817f7ea",
+   "contentHash": "7fe28b8768be8422",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 549
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 5129
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2700
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 50,
+   "tier": 3,
+   "topology": "117a190f562d15f0",
+   "puzzle": "2f69c2a64a735c4d",
+   "contentHash": "c3549fe93df6bc40",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5842
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 8264
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 51,
+   "tier": 3,
+   "topology": "f4868a6e10a99671",
+   "puzzle": "146dfb8038df06bb",
+   "contentHash": "27a58292cc40ef71",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2974
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 52,
+   "tier": 3,
+   "topology": "a0430c7f3578201c",
+   "puzzle": "698b8ccffbdd732c",
+   "contentHash": "99e9b6ca1994588d",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 227
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 4141
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2226
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 53,
+   "tier": 3,
+   "topology": "95d7618be6a9cd98",
+   "puzzle": "095dbddc3096fdbf",
+   "contentHash": "cf314ef7bb65cde0",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2861
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 54,
+   "tier": 3,
+   "topology": "6eafd1cdeb6b25a2",
+   "puzzle": "2a28b419681a483a",
+   "contentHash": "ff8bbe5ecc27c443",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3014
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 55,
+   "tier": 3,
+   "topology": "754305464e17d861",
+   "puzzle": "114fe515ad96a79e",
+   "contentHash": "851acf8078039219",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 523
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 188
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 403
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 56,
+   "tier": 3,
+   "topology": "7980a72fe6740dc0",
+   "puzzle": "0000f2555639ed3e",
+   "contentHash": "0006ab284f4ea9e7",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3016
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 57,
+   "tier": 3,
+   "topology": "ad80529dfbd50bde",
+   "puzzle": "15f22db49936bb67",
+   "contentHash": "a0d7a1c3b6a15f6e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2972
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 58,
+   "tier": 3,
+   "topology": "b0d3d20e1fa45715",
+   "puzzle": "5a8465c0e3375dfb",
+   "contentHash": "55d902c34cd37e6c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2979
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 59,
+   "tier": 3,
+   "topology": "b83912c883bf3e7f",
+   "puzzle": "e9fa97dcbd29ff5f",
+   "contentHash": "96d7c691ae27cbf2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5894
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 288
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3127
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 60,
+   "tier": 3,
+   "topology": "6a6dcde951a6ecda",
+   "puzzle": "90b603afe6909aac",
+   "contentHash": "9c211bee9be5f2f9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 771
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 200
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 490
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 61,
+   "tier": 3,
+   "topology": "3dd40bcddbdbb692",
+   "puzzle": "087b275c2d13191f",
+   "contentHash": "9050e4b56613f9ce",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5150
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1423
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3559
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 62,
+   "tier": 3,
+   "topology": "a5be8cc94771ab72",
+   "puzzle": "ac81eb9b568493e0",
+   "contentHash": "873d78a425b51db1",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4333
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 946
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2870
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 63,
+   "tier": 3,
+   "topology": "b9ea1aa8d3548d73",
+   "puzzle": "db709a92be0464e1",
+   "contentHash": "3b5e2a0518867c6e",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3053
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 64,
+   "tier": 3,
+   "topology": "d8d8e9ad6165254e",
+   "puzzle": "1f88ecd020cf26eb",
+   "contentHash": "7f085fe2a5e0f225",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 288
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 330
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 339
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 65,
+   "tier": 3,
+   "topology": "385d90b66998cdb5",
+   "puzzle": "fb8c3bb9167d4a9a",
+   "contentHash": "e1094ff76aa41536",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3021
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 66,
+   "tier": 3,
+   "topology": "b54bb65c55f167f7",
+   "puzzle": "33b4eb135a123d88",
+   "contentHash": "27e84128cbd5c321",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2385
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 190
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1407
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 67,
+   "tier": 3,
+   "topology": "1fc9a363ddedf694",
+   "puzzle": "5d9cc651d6cb5022",
+   "contentHash": "2df37100f2a89cdd",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 524
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 446
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 601
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 68,
+   "tier": 3,
+   "topology": "2cd00951fbb9c02a",
+   "puzzle": "cb86bb066f8d7d2d",
+   "contentHash": "5b5a2fa721e8a060",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 232
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 287
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 301
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 69,
+   "tier": 3,
+   "topology": "2ae17142bd1c0c85",
+   "puzzle": "fec33071f7b88562",
+   "contentHash": "b999fc2a12f1ef07",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 821
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 744
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 750
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 70,
+   "tier": 3,
+   "topology": "51e99d2d74804202",
+   "puzzle": "0babbdd53a1406de",
+   "contentHash": "7dfd751987fdd5d0",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2998
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 71,
+   "tier": 3,
+   "topology": "76444c2300c65a04",
+   "puzzle": "fc210c910b9ede22",
+   "contentHash": "02d38bca939c22a5",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5974
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 312
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3212
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 72,
+   "tier": 3,
+   "topology": "7817aa3debe2a962",
+   "puzzle": "55bb86d3747cc748",
+   "contentHash": "178496a4b59a322b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 3505
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 8165
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 73,
+   "tier": 3,
+   "topology": "1b9f2b21090cb416",
+   "puzzle": "a3ad5e72a1ab82e1",
+   "contentHash": "ef166226b15ced87",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3005
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 74,
+   "tier": 3,
+   "topology": "142acefa0bb73ef1",
+   "puzzle": "8c84e07b152f4e80",
+   "contentHash": "0239ac7f58718f9c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2986
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 75,
+   "tier": 3,
+   "topology": "6d4e0615fcd4c3c6",
+   "puzzle": "c53822f5bb2eab1e",
+   "contentHash": "3af53b76cad58f3f",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3074
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 76,
+   "tier": 3,
+   "topology": "cc45caed8a76820e",
+   "puzzle": "b66acd705268338b",
+   "contentHash": "708b4993b76227fe",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1249
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 200
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 730
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 77,
+   "tier": 3,
+   "topology": "b8cacdfdadaf1446",
+   "puzzle": "58b043efac0bb5cc",
+   "contentHash": "0aa729b23c9d9ce3",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 4442
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 318
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2333
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 78,
+   "tier": 3,
+   "topology": "4b9c1a186866c05f",
+   "puzzle": "f6a7da0b742724f0",
+   "contentHash": "b0fe4b12c9fefbff",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2843
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 79,
+   "tier": 3,
+   "topology": "e86526fa252707a5",
+   "puzzle": "cd2bed6afa9f4b29",
+   "contentHash": "bc056d570cd867c2",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3051
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 80,
+   "tier": 3,
+   "topology": "cc8cb059e72b171e",
+   "puzzle": "b9f8b1416528a592",
+   "contentHash": "44e74095df9fd67c",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1394
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 1034
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1200
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 81,
+   "tier": 3,
+   "topology": "f5ef61b87dcd8307",
+   "puzzle": "ddbecd6c97caa0cf",
+   "contentHash": "6016ab514ab67012",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 3576
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 9690
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 82,
+   "tier": 3,
+   "topology": "341789e317712578",
+   "puzzle": "521d8837f211a7e4",
+   "contentHash": "9e0d7d221b1d06a9",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2933
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 83,
+   "tier": 3,
+   "topology": "479e117967c564a2",
+   "puzzle": "b4a9bd4835d70f33",
+   "contentHash": "a38afabeb2c03c09",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1059
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 289
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 696
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 84,
+   "tier": 3,
+   "topology": "a9a277a0f81123df",
+   "puzzle": "50cc05433292c898",
+   "contentHash": "d18a2c734f5bfbe6",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2861
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 85,
+   "tier": 3,
+   "topology": "5fe4b08d36433e5e",
+   "puzzle": "94eac9247e69e437",
+   "contentHash": "86ce4e3e1ddd01b5",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2636
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 681
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1858
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 86,
+   "tier": 3,
+   "topology": "cbf74424ab983efb",
+   "puzzle": "6eb728f1613fa242",
+   "contentHash": "97855c0ed245f505",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 229
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 236
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 326
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 87,
+   "tier": 3,
+   "topology": "de19bfee6e98c851",
+   "puzzle": "be3fe36f7cdddeec",
+   "contentHash": "7d638a8e2fc73c5b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3961
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 88,
+   "tier": 3,
+   "topology": "8c35d89dd56670ea",
+   "puzzle": "1befb93fa2fbe29c",
+   "contentHash": "628b9465e2f4d5dc",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3282
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 89,
+   "tier": 3,
+   "topology": "627531391dd814a2",
+   "puzzle": "b5aa2b16556ab21d",
+   "contentHash": "440726b10a66b910",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1380
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 255
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 829
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 90,
+   "tier": 3,
+   "topology": "b733140fc09bb2f8",
+   "puzzle": "b884c710b4643c0b",
+   "contentHash": "0650c1e276d6c31b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 1283
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 704
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 928
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 91,
+   "tier": 3,
+   "topology": "5df53540995a8bef",
+   "puzzle": "74346b2a99de8e29",
+   "contentHash": "4dd33a297cd0c402",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 533
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 452
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 532
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 92,
+   "tier": 3,
+   "topology": "4927bd1ae87ef2f9",
+   "puzzle": "ace20daa33671449",
+   "contentHash": "a0b760837dc523ba",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3067
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 93,
+   "tier": 3,
+   "topology": "06df6b0036c73aa7",
+   "puzzle": "5479a807a1bda614",
+   "contentHash": "1ebf4ee945a291a4",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 536
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 183
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 384
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 94,
+   "tier": 3,
+   "topology": "78964b53b54bf854",
+   "puzzle": "5d0b66fabaa92ad9",
+   "contentHash": "4ad2be4e90933865",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3020
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 95,
+   "tier": 3,
+   "topology": "5195023d6a752042",
+   "puzzle": "22454e4576af270e",
+   "contentHash": "e15a685df6132724",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 5288
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 576
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3006
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 96,
+   "tier": 3,
+   "topology": "a1042b3d5f90ab86",
+   "puzzle": "e24b752fd4a5120c",
+   "contentHash": "c0615f527496592b",
+   "direct": {
+    "team": "barrow/cobweb/amberly",
+    "status": "success",
+    "states": 2458
+   },
+   "alcove": {
+    "team": "amberly/barrow/warden",
+    "status": "success",
+    "states": 207
+   },
+   "secondTargetPlan": {
+    "team": "amberly/barrow/warden",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1338
+  }
+ ]
+}

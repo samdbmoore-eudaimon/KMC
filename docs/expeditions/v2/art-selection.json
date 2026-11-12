@@ -1,0 +1,975 @@
+{
+  "characters": {
+    "pip": {
+      "idle": "hero-pip-idle",
+      "rear": "hero-pip-rear",
+      "action": "hero-pip-action",
+      "exhausted": "hero-pip-exhausted"
+    },
+    "nine": {
+      "idle": "hero-nine-idle",
+      "rear": "hero-nine-rear",
+      "action": "hero-nine-action",
+      "exhausted": "hero-nine-exhausted"
+    },
+    "bramble": {
+      "idle": "hero-bramble-idle",
+      "rear": "hero-bramble-rear",
+      "action": "hero-bramble-action",
+      "exhausted": "hero-bramble-exhausted"
+    },
+    "sorrel": {
+      "idle": "hero-sorrel-idle",
+      "rear": "hero-sorrel-rear",
+      "action": "hero-sorrel-action",
+      "exhausted": "hero-sorrel-exhausted"
+    },
+    "russet": {
+      "idle": "hero-russet-idle",
+      "rear": "hero-russet-rear",
+      "action": "hero-russet-action",
+      "exhausted": "hero-russet-exhausted"
+    },
+    "halfpenny": {
+      "idle": "hero-halfpenny-idle",
+      "rear": "hero-halfpenny-rear",
+      "action": "hero-halfpenny-action",
+      "exhausted": "hero-halfpenny-exhausted"
+    },
+    "wicker": {
+      "idle": "hero-wicker-idle",
+      "rear": "hero-wicker-rear",
+      "action": "hero-wicker-action",
+      "exhausted": "hero-wicker-exhausted"
+    },
+    "furrow": {
+      "idle": "hero-furrow-idle",
+      "rear": "hero-furrow-rear",
+      "action": "hero-furrow-action",
+      "exhausted": "hero-furrow-exhausted"
+    },
+    "dapple": {
+      "idle": "hero-dapple-idle",
+      "rear": "hero-dapple-rear",
+      "action": "hero-dapple-action",
+      "exhausted": "hero-dapple-exhausted"
+    },
+    "bushel": {
+      "idle": "hero-bushel-idle",
+      "rear": "hero-bushel-rear",
+      "action": "hero-bushel-action",
+      "exhausted": "hero-bushel-exhausted"
+    },
+    "tuppence": {
+      "idle": "hero-tuppence-idle",
+      "rear": "hero-tuppence-rear",
+      "action": "hero-tuppence-action",
+      "exhausted": "hero-tuppence-exhausted"
+    },
+    "windfall": {
+      "idle": "hero-windfall-idle",
+      "rear": "hero-windfall-rear",
+      "action": "hero-windfall-action",
+      "exhausted": "hero-windfall-exhausted"
+    },
+    "cornix": {
+      "idle": "hero-cornix-idle",
+      "rear": "hero-cornix-rear",
+      "action": "hero-cornix-action",
+      "exhausted": "hero-cornix-exhausted"
+    },
+    "thistlewick": {
+      "idle": "hero-thistlewick-idle",
+      "rear": "hero-thistlewick-rear",
+      "action": "hero-thistlewick-action",
+      "exhausted": "hero-thistlewick-exhausted"
+    },
+    "beeswax": {
+      "idle": "hero-beeswax-idle",
+      "rear": "hero-beeswax-rear",
+      "action": "hero-beeswax-action",
+      "exhausted": "hero-beeswax-exhausted"
+    },
+    "kernel": {
+      "idle": "hero-kernel-idle",
+      "rear": "hero-kernel-rear",
+      "action": "hero-kernel-action",
+      "exhausted": "hero-kernel-exhausted"
+    },
+    "millrace": {
+      "idle": "hero-millrace-idle",
+      "rear": "hero-millrace-rear",
+      "action": "hero-millrace-action",
+      "exhausted": "hero-millrace-exhausted"
+    },
+    "cobweb": {
+      "idle": "hero-cobweb-idle",
+      "rear": "hero-cobweb-rear",
+      "action": "hero-cobweb-action",
+      "exhausted": "hero-cobweb-exhausted"
+    },
+    "amberly": {
+      "idle": "hero-amberly-idle",
+      "rear": "hero-amberly-rear",
+      "action": "hero-amberly-action",
+      "exhausted": "hero-amberly-exhausted"
+    },
+    "barrow": {
+      "idle": "hero-barrow-idle",
+      "rear": "hero-barrow-rear",
+      "action": "hero-barrow-action",
+      "exhausted": "hero-barrow-exhausted"
+    },
+    "driftwood": {
+      "idle": "hero-driftwood-idle",
+      "rear": "hero-driftwood-rear",
+      "action": "hero-driftwood-action",
+      "exhausted": "hero-driftwood-exhausted"
+    },
+    "gable": {
+      "idle": "hero-gable-idle",
+      "rear": "hero-gable-rear",
+      "action": "hero-gable-action",
+      "exhausted": "hero-gable-exhausted"
+    },
+    "warden": {
+      "idle": "hero-warden-idle",
+      "rear": "hero-warden-rear",
+      "action": "hero-warden-action",
+      "exhausted": "hero-warden-exhausted"
+    },
+    "harvestmoon": {
+      "idle": "hero-harvestmoon-idle",
+      "rear": "hero-harvestmoon-rear",
+      "action": "hero-harvestmoon-action",
+      "exhausted": "hero-harvestmoon-exhausted"
+    },
+    "ninebark": {
+      "idle": "hero-ninebark-idle",
+      "rear": "hero-ninebark-rear",
+      "action": "hero-ninebark-action",
+      "exhausted": "hero-ninebark-exhausted"
+    },
+    "cascade": {
+      "idle": "hero-cascade-idle",
+      "rear": "hero-cascade-rear",
+      "action": "hero-cascade-action",
+      "exhausted": "hero-cascade-exhausted"
+    },
+    "longshadow": {
+      "idle": "hero-longshadow-idle",
+      "rear": "hero-longshadow-rear",
+      "action": "hero-longshadow-action",
+      "exhausted": "hero-longshadow-exhausted"
+    },
+    "gossamer": {
+      "idle": "hero-gossamer-idle",
+      "rear": "hero-gossamer-rear",
+      "action": "hero-gossamer-action",
+      "exhausted": "hero-gossamer-exhausted"
+    },
+    "ninefoldtree": {
+      "idle": "hero-ninefoldtree-idle",
+      "rear": "hero-ninefoldtree-rear",
+      "action": "hero-ninefoldtree-action",
+      "exhausted": "hero-ninefoldtree-exhausted"
+    },
+    "tenthscarecrow": {
+      "idle": "hero-tenthscarecrow-idle",
+      "rear": "hero-tenthscarecrow-rear",
+      "action": "hero-tenthscarecrow-action",
+      "exhausted": "hero-tenthscarecrow-exhausted"
+    }
+  },
+  "enemies": {
+    "hookmole": {
+      "idle": "enemy-hookmole-idle",
+      "rear": "enemy-hookmole-rear",
+      "action": "enemy-hookmole-action",
+      "jam": "enemy-hookmole-jam",
+      "hit": "enemy-hookmole-hit",
+      "defeated": "enemy-hookmole-defeated"
+    },
+    "scruffcrow": {
+      "idle": "enemy-scruffcrow-idle",
+      "action": "enemy-scruffcrow-action",
+      "defeated": "enemy-scruffcrow-defeated"
+    },
+    "strawling": {
+      "idle": "enemy-strawling-idle",
+      "telegraph": "enemy-strawling-telegraph",
+      "hit": "enemy-strawling-hit",
+      "defeated": "enemy-strawling-defeated"
+    },
+    "crosswind": {
+      "idle": "enemy-crosswind-idle",
+      "telegraph": "enemy-crosswind-telegraph",
+      "hit": "enemy-crosswind-hit",
+      "defeated": "enemy-crosswind-defeated"
+    }
+  },
+  "selected": [
+    {
+      "id": "hero-pip-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-pip-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-pip-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-pip-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-pip-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-pip-action-v1.webp"
+    },
+    {
+      "id": "hero-pip-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-pip-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-nine-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-nine-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-nine-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-nine-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-nine-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-nine-action-v1.webp"
+    },
+    {
+      "id": "hero-nine-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-nine-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-bramble-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-bramble-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-bramble-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-bramble-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-bramble-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-bramble-action-v1.webp"
+    },
+    {
+      "id": "hero-bramble-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-bramble-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-sorrel-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-sorrel-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-sorrel-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-sorrel-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-sorrel-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-sorrel-action-v1.webp"
+    },
+    {
+      "id": "hero-sorrel-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-sorrel-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-russet-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-russet-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-russet-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-russet-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-russet-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-russet-action-v1.webp"
+    },
+    {
+      "id": "hero-russet-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-russet-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-halfpenny-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-halfpenny-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-halfpenny-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-halfpenny-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-halfpenny-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-halfpenny-action-v1.webp"
+    },
+    {
+      "id": "hero-halfpenny-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-halfpenny-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-wicker-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-wicker-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-wicker-rear",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-wicker-idle-back-v2.png"
+    },
+    {
+      "id": "hero-wicker-action",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-wicker-action-v3.png"
+    },
+    {
+      "id": "hero-wicker-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-wicker-exhausted-v3.png"
+    },
+    {
+      "id": "hero-furrow-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-furrow-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-furrow-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-furrow-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-furrow-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-furrow-action-v1.webp"
+    },
+    {
+      "id": "hero-furrow-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-furrow-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-dapple-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-dapple-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-dapple-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-dapple-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-dapple-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-dapple-action-v1.webp"
+    },
+    {
+      "id": "hero-dapple-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-dapple-exhausted-v2.png"
+    },
+    {
+      "id": "hero-bushel-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-bushel-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-bushel-rear",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-bushel-idle-back-v2.png"
+    },
+    {
+      "id": "hero-bushel-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-bushel-action-v1.webp"
+    },
+    {
+      "id": "hero-bushel-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-bushel-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-tuppence-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-tuppence-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-tuppence-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-tuppence-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-tuppence-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-tuppence-action-v1.webp"
+    },
+    {
+      "id": "hero-tuppence-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-tuppence-exhausted-v2.png"
+    },
+    {
+      "id": "hero-windfall-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-windfall-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-windfall-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-windfall-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-windfall-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-windfall-action-v1.webp"
+    },
+    {
+      "id": "hero-windfall-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-windfall-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-cornix-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cornix-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-cornix-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cornix-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-cornix-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cornix-action-v1.webp"
+    },
+    {
+      "id": "hero-cornix-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cornix-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-thistlewick-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-thistlewick-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-thistlewick-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-thistlewick-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-thistlewick-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-thistlewick-action-v1.webp"
+    },
+    {
+      "id": "hero-thistlewick-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-thistlewick-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-beeswax-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-beeswax-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-beeswax-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-beeswax-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-beeswax-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-beeswax-action-v1.webp"
+    },
+    {
+      "id": "hero-beeswax-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-beeswax-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-kernel-idle",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-kernel-idle-front-v2.png"
+    },
+    {
+      "id": "hero-kernel-rear",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-kernel-idle-back-v2.png"
+    },
+    {
+      "id": "hero-kernel-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-kernel-action-v1.webp"
+    },
+    {
+      "id": "hero-kernel-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-kernel-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-millrace-idle",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-millrace-idle-front-v2.png"
+    },
+    {
+      "id": "hero-millrace-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-millrace-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-millrace-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-millrace-action-v1.webp"
+    },
+    {
+      "id": "hero-millrace-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-millrace-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-cobweb-idle",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-cobweb-idle-front-v3.png"
+    },
+    {
+      "id": "hero-cobweb-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cobweb-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-cobweb-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cobweb-action-v1.webp"
+    },
+    {
+      "id": "hero-cobweb-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cobweb-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-amberly-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-amberly-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-amberly-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-amberly-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-amberly-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-amberly-action-v1.webp"
+    },
+    {
+      "id": "hero-amberly-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-amberly-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-barrow-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-barrow-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-barrow-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-barrow-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-barrow-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-barrow-action-v1.webp"
+    },
+    {
+      "id": "hero-barrow-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-barrow-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-driftwood-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-driftwood-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-driftwood-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-driftwood-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-driftwood-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-driftwood-action-v1.webp"
+    },
+    {
+      "id": "hero-driftwood-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-driftwood-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-gable-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-gable-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-gable-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-gable-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-gable-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-gable-action-v1.webp"
+    },
+    {
+      "id": "hero-gable-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-gable-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-warden-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-warden-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-warden-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-warden-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-warden-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-warden-action-v1.webp"
+    },
+    {
+      "id": "hero-warden-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-warden-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-harvestmoon-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-harvestmoon-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-harvestmoon-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-harvestmoon-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-harvestmoon-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-harvestmoon-action-v1.webp"
+    },
+    {
+      "id": "hero-harvestmoon-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-harvestmoon-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-ninebark-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninebark-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-ninebark-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninebark-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-ninebark-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninebark-action-v1.webp"
+    },
+    {
+      "id": "hero-ninebark-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninebark-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-cascade-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cascade-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-cascade-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cascade-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-cascade-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cascade-action-v1.webp"
+    },
+    {
+      "id": "hero-cascade-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-cascade-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-longshadow-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-longshadow-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-longshadow-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-longshadow-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-longshadow-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-longshadow-action-v1.webp"
+    },
+    {
+      "id": "hero-longshadow-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-longshadow-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-gossamer-idle",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-gossamer-idle-front-v3.png"
+    },
+    {
+      "id": "hero-gossamer-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-gossamer-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-gossamer-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-gossamer-action-v1.webp"
+    },
+    {
+      "id": "hero-gossamer-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-gossamer-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-ninefoldtree-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninefoldtree-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-ninefoldtree-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninefoldtree-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-ninefoldtree-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninefoldtree-action-v1.webp"
+    },
+    {
+      "id": "hero-ninefoldtree-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-ninefoldtree-exhausted-v1.webp"
+    },
+    {
+      "id": "hero-tenthscarecrow-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-tenthscarecrow-idle-front-v1.webp"
+    },
+    {
+      "id": "hero-tenthscarecrow-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-tenthscarecrow-idle-back-v1.webp"
+    },
+    {
+      "id": "hero-tenthscarecrow-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-tenthscarecrow-action-v1.webp"
+    },
+    {
+      "id": "hero-tenthscarecrow-exhausted",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/characters/po-tenthscarecrow-exhausted-v1.webp"
+    },
+    {
+      "id": "enemy-hookmole-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-hookmole-idle-front-v1.webp"
+    },
+    {
+      "id": "enemy-hookmole-rear",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-hookmole-idle-back-v1.webp"
+    },
+    {
+      "id": "enemy-hookmole-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-hookmole-action-v1.webp"
+    },
+    {
+      "id": "enemy-hookmole-jam",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-hookmole-jam-v1.webp"
+    },
+    {
+      "id": "enemy-hookmole-hit",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-hookmole-hit-v1.png"
+    },
+    {
+      "id": "enemy-hookmole-defeated",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-hookmole-defeated-v1.png"
+    },
+    {
+      "id": "enemy-scruffcrow-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-scruffcrow-perch-v1.png"
+    },
+    {
+      "id": "enemy-scruffcrow-action",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-scruffcrow-peck-v1.png"
+    },
+    {
+      "id": "enemy-scruffcrow-defeated",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-scruffcrow-flee-v1.png"
+    },
+    {
+      "id": "enemy-strawling-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-strawling-idle-v1.png"
+    },
+    {
+      "id": "enemy-strawling-telegraph",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-strawling-telegraph-v1.png"
+    },
+    {
+      "id": "enemy-strawling-hit",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-strawling-hit-v1.png"
+    },
+    {
+      "id": "enemy-strawling-defeated",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-strawling-defeated-v1.png"
+    },
+    {
+      "id": "enemy-crosswind-idle",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-crosswind-idle-v1.png"
+    },
+    {
+      "id": "enemy-crosswind-telegraph",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-crosswind-telegraph-v1.png"
+    },
+    {
+      "id": "enemy-crosswind-hit",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-crosswind-hit-v1.png"
+    },
+    {
+      "id": "enemy-crosswind-defeated",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/enemies/po-crosswind-defeated-v1.png"
+    },
+    {
+      "id": "terrain-hex-grass-v3",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-hex-grass-v3.webp"
+    },
+    {
+      "id": "terrain-path-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-path-v1.webp"
+    },
+    {
+      "id": "terrain-flagstone-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-flagstone-v1.webp"
+    },
+    {
+      "id": "terrain-hedge-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-hedge-v1.webp"
+    },
+    {
+      "id": "terrain-roots-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-roots-v1.webp"
+    },
+    {
+      "id": "terrain-stream-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stream-v1.webp"
+    },
+    {
+      "id": "terrain-stone-bridge-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stone-bridge-v1.webp"
+    },
+    {
+      "id": "terrain-timber-bridge-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-timber-bridge-v1.webp"
+    },
+    {
+      "id": "terrain-apple-tree-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-apple-tree-v1.webp"
+    },
+    {
+      "id": "terrain-start-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-start-v1.webp"
+    },
+    {
+      "id": "terrain-exit-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-exit-v1.webp"
+    },
+    {
+      "id": "terrain-objective-socket-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-objective-socket-v1.webp"
+    },
+    {
+      "id": "mechanism-hive-ledger-board-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-hive-ledger-board-v1.png"
+    },
+    {
+      "id": "mechanism-hive-ledger-corruption-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-hive-ledger-corruption-v1.png"
+    },
+    {
+      "id": "mechanism-hive-ledger-solved-cell-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-hive-ledger-solved-cell-v1.png"
+    },
+    {
+      "id": "mechanism-orchard-lockdown-gate-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-orchard-lockdown-gate-v1.png"
+    },
+    {
+      "id": "mechanism-current-turner-hex-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-current-turner-hex-v1.png"
+    },
+    {
+      "id": "mechanism-rooststorm-wind-dial-v2",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-rooststorm-wind-dial-v2.png"
+    },
+    {
+      "id": "operator-neutral",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-neutral-v1.webp"
+    },
+    {
+      "id": "operator-selected",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-selected-v1.webp"
+    },
+    {
+      "id": "operator-rotate",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-rotate-v1.webp"
+    },
+    {
+      "id": "operator-locked",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-locked-v1.webp"
+    },
+    {
+      "id": "operator-jammed",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-jammed-v1.webp"
+    },
+    {
+      "id": "operator-complete",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/mechanisms/po-operator-complete-v1.webp"
+    },
+    {
+      "id": "balance-empty",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-balance-empty-v1.webp"
+    },
+    {
+      "id": "balance-selected",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-balance-selected-v1.webp"
+    },
+    {
+      "id": "balance-loaded",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-balance-loaded-v1.webp"
+    },
+    {
+      "id": "balance-overloaded",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-balance-overloaded-v1.webp"
+    },
+    {
+      "id": "balance-complete",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-balance-complete-v1.webp"
+    },
+    {
+      "id": "balance-broken",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-balance-broken-v1.webp"
+    },
+    {
+      "id": "objective-unequal-crossing-scale-one-hex-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-scale-one-hex-v1.png"
+    },
+    {
+      "id": "objective-unequal-crossing-scale-under-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-scale-under-v1.png"
+    },
+    {
+      "id": "objective-unequal-crossing-scale-overloaded-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-scale-overloaded-v1.png"
+    },
+    {
+      "id": "objective-unequal-crossing-burrow-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-unequal-crossing-burrow-v1.png"
+    },
+    {
+      "id": "objective-rooststorm-whistle-tower-v2",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-rooststorm-whistle-tower-v2.png"
+    },
+    {
+      "id": "objective-hollow-bough-living-branches-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-hollow-bough-living-branches-v1.png"
+    },
+    {
+      "id": "objective-hollow-bough-memorial-hex-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-hollow-bough-memorial-hex-v1.png"
+    },
+    {
+      "id": "objective-orchard-root-fall-marker-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-orchard-root-fall-marker-v1.png"
+    },
+    {
+      "id": "objective-orchard-living-root-barrier-v1",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/objectives/po-orchard-living-root-barrier-v1.png"
+    },
+    {
+      "id": "ui-hero-card-frame-wide",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-hero-card-frame-wide-v1.png"
+    },
+    {
+      "id": "ui-contextual-button-frame",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-contextual-button-frame-v1.png"
+    },
+    {
+      "id": "ui-contextual-dialog-frame",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-contextual-dialog-frame-v1.png"
+    },
+    {
+      "id": "ui-enemy-intent-plaque",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-enemy-intent-plaque-v1.png"
+    },
+    {
+      "id": "ui-round-objective-frame",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-round-objective-frame-v1.png"
+    },
+    {
+      "id": "ui-first-clear-frame",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-first-clear-frame-v1.png"
+    },
+    {
+      "id": "ui-replay-result-frame",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-replay-result-frame-v1.png"
+    },
+    {
+      "id": "ui-heart-badge",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-heart-badge-v1.png"
+    },
+    {
+      "id": "ui-ap-badge",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-ap-badge-v1.png"
+    },
+    {
+      "id": "background-gorge",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/backgrounds/po-orchard-gorge-v1.webp"
+    },
+    {
+      "id": "equation-frame",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-equation-six-sector-neutral-v1.png"
+    },
+    {
+      "id": "mechanism-plinth",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-mechanism-plinth-normal-v1.png"
+    },
+    {
+      "id": "mechanism-plinth-damaged",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-mechanism-plinth-damaged-v1.png"
+    }
+  ],
+  "excluded": [
+    "carry poses",
+    "proposed enemy factions",
+    "opaque pond/earth-wall stamps",
+    "superseded schematic SVGs"
+  ]
+}

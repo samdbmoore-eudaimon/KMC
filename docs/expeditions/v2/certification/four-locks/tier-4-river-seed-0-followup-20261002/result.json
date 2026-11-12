@@ -1,0 +1,259 @@
+{
+  "candidateStatus": "success",
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 3
+  },
+  "teamSelection": {
+    "directTeam": [
+      "warden",
+      "gossamer",
+      "harvestmoon"
+    ],
+    "secondTeam": [
+      "ninebark",
+      "warden",
+      "longshadow"
+    ],
+    "secondPlanFamily": "alcove-intercept",
+    "alcoveTeam": [
+      "barrow",
+      "harvestmoon",
+      "longshadow"
+    ]
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "warden",
+        "gossamer",
+        "harvestmoon"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 106,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "warden",
+              "gossamer",
+              "harvestmoon"
+            ],
+            "status": "success",
+            "commandCount": 20,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "ninebark",
+        "warden",
+        "longshadow"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 477,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "ninebark",
+              "warden",
+              "longshadow"
+            ],
+            "status": "success",
+            "commandCount": 23,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-82446cb7d436b578",
+    "evidence": {
+      "blueprintHash": "c60599271863ad6c",
+      "structuralFingerprint": "8d400d576b8b09f2",
+      "puzzleFingerprint": "1bf6d3b7ac0a963e",
+      "traceHashes": [
+        "6bce05af4c24516c",
+        "00b5288baaf4d058"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              7,
+              0,
+              7,
+              0,
+              0
+            ],
+            "eligibleBelow": [
+              "barrow"
+            ]
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              8,
+              0,
+              0,
+              4
+            ],
+            "eligibleBelow": [
+              "cobweb"
+            ]
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              6,
+              7,
+              4
+            ],
+            "eligibleBelow": []
+          }
+        ],
+        "exclusions": [
+          {
+            "id": "all-below-target-band",
+            "examined": 1540,
+            "feasible": [],
+            "excluded": true
+          },
+          {
+            "id": "one-legendary-two-commons",
+            "examined": 132,
+            "feasible": [],
+            "excluded": true
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "warden",
+          "gossamer",
+          "harvestmoon"
+        ],
+        "finalHash": "6bce05af4c24516c",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "gossamer",
+          "holdId": "gossamer@r3#30"
+        },
+        "hashes": [
+          "61c8d735496a7e5a",
+          "be3a4810ac654cb1",
+          "92cb4abf27648f4a",
+          "3f3f1411505d842c",
+          "322855eb69d02802",
+          "a5ba03b764dba6f2",
+          "ce39ee4f6bfd8cd6",
+          "f6660969835180ce",
+          "f81180f636313469",
+          "83fba43df23bc44e",
+          "f89d90b4806b8997",
+          "78eea28b268482c8",
+          "16ad99fcb57475e9",
+          "b0d97fb2f4d64def",
+          "225edd26223a69c3",
+          "3b2a3319e3b68822",
+          "da679da84b0db437",
+          "eb9ef404eb1ae0db",
+          "69c29b09461ba4dc",
+          "6bce05af4c24516c"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "ninebark",
+          "warden",
+          "longshadow"
+        ],
+        "finalHash": "00b5288baaf4d058",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "warden",
+          "holdId": "warden@r3#34"
+        },
+        "hashes": [
+          "ad96bacde76715fe",
+          "5e2b1a9b7a68148c",
+          "ac42b861250b3bd0",
+          "99ef1fa18469b390",
+          "91aea32e2a35c7ff",
+          "b8b5f15d88adfc10",
+          "7a0127d11eebbf7c",
+          "f55e3b61f2c822c4",
+          "7a7519e3a6249f0c",
+          "0cd71ce1e4039e38",
+          "88fa0ef0b3d23b0d",
+          "97e1367a2dce81cf",
+          "ce3af341254a2658",
+          "6c110aa68b67673b",
+          "a25cf8678983e16c",
+          "2b869a2708c5157e",
+          "f543b41633d1c5c5",
+          "7f6db9b37bd278e8",
+          "98c9ad408966eb8d",
+          "a7087d8379360f1a",
+          "a20e317e267b0e3b",
+          "597c8f0587e7a3b2",
+          "00b5288baaf4d058"
+        ]
+      }
+    ]
+  }
+}

@@ -1,64 +1,8 @@
-/* Cross-device progress sync via a generated username + PIN, backed by a tiny
-   Cloudflare Worker (see cloudflare-worker/). No accounts, no email, no OAuth —
-   the username+PIN pair is itself the shared secret that locates a save.
-   Every function here is defensive: a sync failure must never throw into the
-   render path or block gameplay, since the app is offline-first and this is
-   the only network I/O it does at all. */
-
-const SYNC_API_BASE = "https://kq-sync.samdbmoore.workers.dev";
-
-function isSyncConfigured() {
-  return !SYNC_API_BASE.includes("REPLACE-ME");
-}
-
-function withTimeout(ms) {
-  const ctrl = new AbortController();
-  const t = setTimeout(() => ctrl.abort(), ms);
-  return { signal: ctrl.signal, cancel: () => clearTimeout(t) };
-}
-
-export function generateSyncCode(displayName) {
-  const slug = (displayName || "player").toLowerCase().replace(/[^a-z0-9]+/g, "").slice(0, 12) || "player";
-  const suffix = Math.floor(10 + Math.random() * 90); // 2 digits, keeps clashing usernames astronomically unlikely
-  const username = `${slug}${suffix}`;
-  const pin = String(Math.floor(100000 + Math.random() * 900000)); // 6 digits
-  return { username, pin };
-}
-
-export async function pushProgress(username, pin, data) {
-  if (!isSyncConfigured() || !username || !pin) return { ok: false, error: "not_configured" };
-  const { signal, cancel } = withTimeout(5000);
-  try {
-    const res = await fetch(`${SYNC_API_BASE}/save`, {
-      method: "POST",
-      signal,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ username, pin, data }),
-    });
-    if (!res.ok) return { ok: false, error: `http_${res.status}` };
-    return await res.json();
-  } catch (e) {
-    return { ok: false, error: "network" };
-  } finally {
-    cancel();
-  }
-}
-
-export async function pullProgress(username, pin) {
-  if (!isSyncConfigured() || !username || !pin) return { ok: false, error: "not_configured" };
-  const { signal, cancel } = withTimeout(5000);
-  try {
-    const url = `${SYNC_API_BASE}/load?username=${encodeURIComponent(username)}&pin=${encodeURIComponent(pin)}`;
-    const res = await fetch(url, { signal });
-    if (res.status === 404) return { ok: false, error: "not_found" };
-    if (!res.ok) return { ok: false, error: `http_${res.status}` };
-    return await res.json();
-  } catch (e) {
-    return { ok: false, error: "network" };
-  } finally {
-    cancel();
-  }
-}
+/* Progress-merge logic, shared by the account-based profile sync (see
+   pushForProfile/pullForProfile in WallabyMaths.jsx and account_profiles on the
+   accounts worker). Every function here is defensive: a merge failure must
+   never throw into the render path or block gameplay, since the app is
+   offline-first. */
 
 // Fields where two independent devices' values can't just be merged, because they represent
 // currency that's earned AND spent together (stars convert into packs; packs convert into

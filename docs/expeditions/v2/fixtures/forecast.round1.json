@@ -1,0 +1,97 @@
+{
+  "revision": 0,
+  "round": 1,
+  "intents": [
+    {
+      "enemyId": "hookmole-1",
+      "ruleId": "jammer",
+      "artId": "hookmole",
+      "verb": "dormant",
+      "targetId": null,
+      "power": 0,
+      "from": "9,2",
+      "path": [],
+      "actualPath": [],
+      "puzzleChange": null,
+      "hpChange": null,
+      "blockedBy": null,
+      "wakePhase": 4,
+      "sector": null
+    }
+  ],
+  "hazards": [
+    {
+      "hazardId": "root-drain",
+      "power": 4,
+      "mutation": null,
+      "sites": [
+        {
+          "siteId": "sustain-site",
+          "blocked": false,
+          "damage": 3
+        }
+      ]
+    }
+  ],
+  "phaseStartEvents": [],
+  "outcome": {
+    "status": "playing",
+    "lossReason": null,
+    "wouldWin": false,
+    "unmet": [
+      {
+        "code": "job-not-held",
+        "params": {
+          "job": "number"
+        }
+      },
+      {
+        "code": "job-not-held",
+        "params": {
+          "job": "shape"
+        }
+      },
+      {
+        "code": "job-not-held",
+        "params": {
+          "job": "sustain"
+        }
+      },
+      {
+        "code": "outputs-short",
+        "params": {
+          "have": 0,
+          "need": 2
+        }
+      }
+    ]
+  },
+  "events": [
+    {
+      "seq": 1,
+      "type": "enemy-idle",
+      "round": 1,
+      "enemyId": "hookmole-1",
+      "reason": "dormant",
+      "wakePhase": 4,
+      "sector": null
+    },
+    {
+      "seq": 2,
+      "type": "orchard-damaged",
+      "round": 1,
+      "amount": 3,
+      "integrityBefore": 20,
+      "integrityAfter": 17,
+      "cause": {
+        "hazardId": "root-drain",
+        "siteId": "sustain-site"
+      }
+    },
+    {
+      "seq": 3,
+      "type": "round-started",
+      "round": 2
+    }
+  ]
+}

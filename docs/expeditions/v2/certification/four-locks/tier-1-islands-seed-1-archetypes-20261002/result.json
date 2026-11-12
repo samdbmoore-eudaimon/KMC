@@ -1,0 +1,279 @@
+{
+  "request": {
+    "tier": 1,
+    "seed": 1,
+    "layoutId": "islands",
+    "reference": false,
+    "evidenceId": "archetypes-20261002"
+  },
+  "candidateStatus": "success",
+  "canonicalFingerprints": {
+    "topology": {
+      "version": 1,
+      "hash": "6f517b00380070b1",
+      "serialization": "[{\"q\":11,\"r\":0,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":0,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"orchard\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":13,\"r\":1,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"sustain\"],\"passage\":false,\"permanent\":false,\"hazards\":[[\"environment\",\"none\",\"sustain\"]]},{\"q\":8,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"alcove\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":13,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":3,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":3,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"number\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"shape\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":4,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":4,\"terrain\":\"bridge\",\"cost\":1,\"anchors\":[],\"passage\":true,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":4,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":5,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":5,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":5,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":5,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":5,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":6,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":6,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":6,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":6,\"terrain\":\"bridge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":6,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":7,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":7,\"terrain\":\"bridge\",\"cost\":1,\"anchors\":[],\"passage\":true,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":7,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"control\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":7,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":8,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":8,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":8,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":8,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"deployment\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":9,\"terrain\":\"bridge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":9,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":10,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"deployment\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"deployment\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":10,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":10,\"terrain\":\"water\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":0,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":11,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":12,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":12,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":12,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":12,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":13,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]}]"
+    },
+    "puzzle": {
+      "version": 1,
+      "hash": "3616a201ff801cd8",
+      "serialization": "{\"kind\":\"sudoku4\",\"clues\":[[0,1],[1,2],[8,2],[10,3],[13,4],[15,1]],\"cages\":[{\"type\":\"sum\",\"members\":[4,5],\"linked\":false},{\"type\":\"sum\",\"members\":[4,6],\"linked\":false}],\"protection\":[{\"members\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],\"effects\":[\"jam\"]},{\"members\":[0,4,8,12],\"effects\":[\"jam\"]},{\"members\":[1,5,9,13],\"effects\":[\"jam\"]},{\"members\":[2,6,10,14],\"effects\":[\"jam\"]},{\"members\":[3,7,11,15],\"effects\":[\"jam\"]}]}"
+    }
+  },
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 3
+  },
+  "teamSelection": {
+    "directTeam": [
+      "tuppence",
+      "furrow",
+      "sorrel"
+    ],
+    "secondTeam": [
+      "bushel",
+      "dapple",
+      "pip"
+    ],
+    "secondPlanFamily": "alcove-intercept",
+    "alcoveTeam": [
+      "bushel",
+      "dapple",
+      "pip"
+    ]
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "tuppence",
+        "furrow",
+        "sorrel"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 737,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "furrow",
+              "sorrel"
+            ],
+            "status": "success",
+            "commandCount": 27,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "bushel",
+        "dapple",
+        "pip"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "roots"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 335,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "dapple",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 30,
+            "rounds": 5
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-2343002d9bd9767a",
+    "evidence": {
+      "blueprintHash": "1f126dba5ec08451",
+      "structuralFingerprint": "250d85fddc6357d8",
+      "puzzleFingerprint": "5fff69ed27f56f08",
+      "traceHashes": [
+        "7714830ad3f081ed",
+        "1489b44dffb052ce"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              4,
+              0,
+              2,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              4,
+              0,
+              0,
+              2
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              0,
+              5,
+              2
+            ],
+            "eligibleBelow": []
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "tuppence",
+          "furrow",
+          "sorrel"
+        ],
+        "finalHash": "7714830ad3f081ed",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "furrow",
+          "holdId": "furrow@r4#36"
+        },
+        "hashes": [
+          "6e77f018a1b939c7",
+          "f638fd0afa4c86cd",
+          "f737d0fe3c805415",
+          "4866e41023eded31",
+          "9a37686f9a91012a",
+          "1f8407cf2d7d0536",
+          "088599aee091315f",
+          "10424dab971f1abe",
+          "b5788de9f0d7ad32",
+          "d6a1b2edcc038f96",
+          "9b0aebf9699105e2",
+          "f120b7b32a924bdc",
+          "3361959939cfd15e",
+          "594a882e3a61cf8b",
+          "d5643c0999f437ec",
+          "63e120fc43683a81",
+          "7dc5a3110752e2e4",
+          "2dcdfe2cb9b17191",
+          "6456de30f90fe7ad",
+          "7efab23ad6e5706f",
+          "5142f3d4df6ab6bd",
+          "b012478e6774852f",
+          "54c2b08c0032c6b5",
+          "d3fa21bcabfd1ee9",
+          "715ca3d902130c54",
+          "78ec49dfa86b8b9c",
+          "7714830ad3f081ed"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "bushel",
+          "dapple",
+          "pip"
+        ],
+        "finalHash": "1489b44dffb052ce",
+        "round": 5,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "dapple",
+          "holdId": "dapple@r5#42"
+        },
+        "hashes": [
+          "6725fcdc4ec7c929",
+          "fb8cb27e4581e153",
+          "27d0d3aab241ab19",
+          "fbf0fc20ff31f7fb",
+          "94cc605c93b86b4f",
+          "d253bb5937e68bd6",
+          "dc10792ed2cf34d3",
+          "41ee52194bc2e6a2",
+          "1a21f2b039099d07",
+          "68078c9d1a9d8e60",
+          "36dd04bd16b908d4",
+          "df2b307c901c4c0d",
+          "43aada428e62c211",
+          "2f115c892187ba22",
+          "9d80dd8d50d4f41a",
+          "3a6cbc9c07271911",
+          "6f2e1d9a7eccde91",
+          "21dba00fcd464650",
+          "66e1b45c37512d3b",
+          "754c50148794ffc7",
+          "cecf5a4f6e38cf58",
+          "edaf6b12613d500d",
+          "3934c781710538f2",
+          "29f2f87ae9786c17",
+          "4253d2b48ecb99fb",
+          "e20030dc61d4ac8b",
+          "d03e27ad4ce7bf16",
+          "5c9027ff1beece6c",
+          "f6444249dd335ed4",
+          "1489b44dffb052ce"
+        ]
+      }
+    ]
+  }
+}

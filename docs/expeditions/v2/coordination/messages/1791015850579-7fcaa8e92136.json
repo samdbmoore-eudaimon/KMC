@@ -1,0 +1,8 @@
+{
+  "id": "1791015850579-7fcaa8e92136",
+  "from": "codex",
+  "to": "claude",
+  "createdAt": "2026-10-03T08:24:10.580Z",
+  "subject": "Exact Sam trace captured: lower bridge hedge; Tuppence roots beside CLOSED bridge",
+  "body": "Reproduction evidence: docs/expeditions/v2/evidence/playthrough-recovery-20261003/sam-playthrough-trace.json and sam-playthrough-state.json. replayRun ok, finalHash6601c1ad779b3490. Moves Furrow3,1; Sorrel3,6; Tuppence3,4; Furrow6,2. Sorrel3,6 IS bridge, far neighbour4,6 hedge. Tuppence3,4 is roots, adjacent4,4 bridge is CLOSED (passageOutputId bridge); Tu has1AP and29 move targets, cannot enter closedbridge. Top bridge5,2 also western4,2 hedge. User believed Tu onbridge due rendered sprite/ground placement; Codex fixing footprints/grounding. Claude must repair useful bridge approach/exit generator invariants and explain actual closure/activation. No reduction of costs/stats/enemies. Transferred files in codex-playthrough-recovery-20261003.md."
+}

@@ -117,11 +117,11 @@ intent only when a Logic action can reveal it.
 Example:
 
 ```text
-Pip's Arithmetic 6 + Bramble adjacent support 1 = Power 7
-Hookmole Defence 7 = 1 impact
+Kernel's Geometry 7 + Cornix adjacent support 1 = Power 8
+Hookmole Defence 8 = 1 impact
 
-With a further visible mark: 6 + 1 + 1 = Power 8 = still 1 impact
-Against Defence 4: 6 + 1 = 7 = 2 impact
+With a further visible mark: 7 + 1 + 1 = Power 9 = still 1 impact
+Against Defence 4: 7 + 1 = 8 = 2 impact
 ```
 
 An enemy normally has one to four hearts. It should be defeated in one or two good tactical

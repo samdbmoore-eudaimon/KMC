@@ -1,0 +1,37 @@
+# Dedicated visual builder recovery: 3 October 2026
+
+Owner: Codex builder. Inherited advisory claim UX-VISUAL-20261003. QA-01 remains failed pending integrated acceptance.
+
+Exact production write scope: `expeditions/v2/art/{renderer.js,placement.js,art.test.js,station-art.test.js}` and `expeditions/v2/ui/{MapViewport.jsx,StationLabels.jsx,StationStatus.jsx,station-labels.js,station-state.js,RiverTerrain.jsx}`. Evidence/tool scope: `scripts/dev/{playthrough-visual-review.jsx,build-playthrough-visual-review.cjs,playthrough-visual.test.mjs}` and `docs/expeditions/v2/evidence/playthrough-recovery-20261003/`. This report records additional work after the scrum transfer. All dirty changes and original saved traces retained. No engine, transferred UI, generator, App or bitmap changes.
+
+Initial independent verification: 13/13 art, station-art and river-layout tests pass. Claude notified through the local mailbox.
+
+## Completed visual work
+
+Inherited placement changes independently checked: five station sprites fit their exact logical pointy hex with a conservative inset, visible hero feet register at centre+8px and the small contact shadow agrees. Permanent station panels are absent; exact polygon footprints identify the prop tile and inspection shows one panel on demand. Existing bitmap bytes and engine coordinates remain unchanged.
+
+Additional production edits in this builder chat are exactly:
+
+- `ui/RiverTerrain.jsx`: CLOSED controlled bridge paints two raised timber leaves with an open water gap and cross cue. It does not render the lowered timber image. Open and closing-pending states retain the usable lowered deck, with distinct accessible state descriptions.
+- `ui/MapViewport.jsx`: supplies real passage state to the bridge renderer; keeps inspection open when keyboard focus enters its controls; adds a 200ms hover dismissal grace so a pointer can cross the gap between its hex and panel. Component teardown clears the timer. Existing per-tap `onMoveTarget(hex)` ABI retained.
+- `ui/StationLabels.jsx`: stops pointer movement bubbling from its interactive panel and maintains hover during pointer entry. Down/up already stop propagation. Close and Escape dismiss; Actions here calls the parent selection callback explicitly.
+
+New files: `scripts/dev/playthrough-visual-review.jsx`, `build-playthrough-visual-review.cjs`, `playthrough-visual.test.mjs` and this report. The fixture reads Sam's preserved snapshot and seven existing production-reducer snapshots. It sends no commands and writes no saves. The test exercises real map components, geometry, event propagation and state hashes rather than source string matching.
+
+## Checks and evidence
+
+- `node --test expeditions/v2/art/art.test.js expeditions/v2/art/station-art.test.js expeditions/v2/ui/river-layout.test.js`: 13 pass, independently repeated after the changes.
+- `node --test scripts/dev/playthrough-visual.test.mjs`: 2 pass. Across all retained states and zooms: each visible station corner lies inside its own polygon and resolves to that exact hit hex; idle/action/exhausted foot bounds agree with the shadow. Hover transfer across the gap, popup pointer movement, keyboard transfer, Close, Escape, touch second-tap dismissal and touch drag send no map selection/movement callback and retain the state hash. Enter/Space each send exactly one destination callback. Raised bridges contain no lowered deck image.
+- Isolated map bundle succeeds. Sandbox dependency resolution needed the scoped approved parent-directory read. No shared App build was run by this builder.
+- Actual in-app browser screenshots: 72 state views (8 states × 3 viewports × 3 zooms), 45 individual station inspections (5 props × 3 viewports × 3 zooms) and 27 centred hero views (idle/exhausted/working × 3 viewports × 3 zooms). Exact viewport sizes are 390×844, 768×1024 and 1280×900; DOM measurement confirms actual camera scales 0.45, 1 and 2. The initial centred-hero capture attempt used reversed QA pan directions; those images and index were corrected before review. All current hero captures include the subject in the viewport.
+- Browser keyboard check: Enter on the exact Ledger control hit polygon opens inspection; focus transfers to Actions here then Close with inspection retained; Escape dismisses. Ordinary station click opens inspection without callback. Only explicit Actions here sends one selection callback. Sam's retained AP remains Tuppence1/Furrow0/Sorrel1. `phone-keyboard-inspection.png` and `phone-tap-inspection.png` capture this result.
+
+Evidence directory: `docs/expeditions/v2/evidence/playthrough-recovery-20261003/`. `visual-matrix-index.json`, `inspection-matrix-index.json` and `hero-matrix-index.json` record every capture's file, measured viewport and scale. Nine `*-contact.png` sheets were visually reviewed: station bounds and exact rings are clear; phone inspection stays inside the viewport; cream/dark status text stays legible over green terrain; open and raised bridges differ; native/maximum hero feet meet the contact area. At minimum zoom sprites are deliberately small and detailed status remains fixed-size inspection text. The 72 no-inspection views have zero station popups. All 45 inspections and 27 hero review views report zero selection callbacks.
+
+`visual-review.html` is the current isolated fixture. `visual-review-provenance.json` records source/retained-state/fixture SHA-256 hashes, counts and limitations. The layout matrix predates the last hover-grace-only change; the fixture was rebuilt and browser keyboard/click evidence captured after that change, without any placement alteration.
+
+## Coordination and remaining acceptance
+
+Claude notified that the original 13 checks pass and that production visual sources are stable for its final-build lock. No concurrent shared build, bitmap generation, generator recertification or original saved-run change occurred. This report was sent to Claude and scrum through the local mailbox.
+
+QA-01 remains failed pending independent integrated review. This is real browser rendering of retained reducer snapshots, not a complete winning live App run. Native phone/tablet touch hardware, browser pointer-hover trajectory (the available browser API has no hover input), child comprehension and full App/save/reward/private-gate acceptance remain unverified here. Hover trajectory and touch gestures are covered by component event tests; browser keyboard and click behavior were checked directly. Claude owns integrated guidance, movement, bridge exit and full build acceptance. The old saved map's hedge defect is preserved in this visual fixture, not silently repaired or certified as playable. No ready-to-play invitation is justified by this report alone.

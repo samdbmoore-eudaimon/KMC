@@ -247,7 +247,7 @@ const revisions = {
             ],
             answer: "−23 m, which is 23 m below sea level",
             conclusion: "The final position is −23 m and the submarine is 23 m below sea level",
-            check: "Measure the net movement: rising 7 m and descending 12 m gives a net descent of 5 m. Five metres below −18 m is −23 m.",
+            check: "Measure the net movement: rising 7 m and descending 12 m gives a net descent of 5 m.\nFive metres below −18 m is −23 m.",
             review: "The final position is −23 m. The net movement was 5 m downward, and −18 − 5 = −23. Its distance below sea level is 23 m.",
             structureId: "placeValue_route_3_digitDetective",
             difficulty: 4
@@ -432,7 +432,7 @@ const revisions = {
             ],
             answer: "18",
             conclusion: "The greatest common factor of 72 and 90 is 18",
-            check: "72 ÷ 18 = 4 and 90 ÷ 18 = 5, so 18 divides both exactly. The remaining quotients 4 and 5 share no factor greater than 1, so the common factor cannot be enlarged.",
+            check: "72 ÷ 18 = 4 and 90 ÷ 18 = 5, so 18 divides both exactly.\nThe remaining quotients 4 and 5 share no factor greater than 1, so the common factor cannot be enlarged.",
             review: "The greatest common factor is 18. It divides both numbers exactly, and the leftover quotients 4 and 5 share no factor greater than 1. This proves that no larger common factor was omitted.",
             structureId: "numberProperties_route_1_countIntegers",
             difficulty: 4
@@ -462,7 +462,7 @@ const revisions = {
             ],
             answer: "12, 24 and 36",
             conclusion: "The first three positive common multiples are 12, 24 and 36",
-            check: "Divide each by both numbers: 12 ÷ 4 = 3 and 12 ÷ 6 = 2; 24 ÷ 4 = 6 and 24 ÷ 6 = 4; 36 ÷ 4 = 9 and 36 ÷ 6 = 6.",
+            check: "Divide each by both numbers: 12 ÷ 4 = 3 and 12 ÷ 6 = 2;\n24 ÷ 4 = 6 and 24 ÷ 6 = 4;\n36 ÷ 4 = 9 and 36 ÷ 6 = 6.",
             structureId: "numberProperties_route_2_modular",
             difficulty: 1
           }),
@@ -492,7 +492,7 @@ const revisions = {
             ],
             answer: "72",
             conclusion: "The lowest common multiple of 18 and 24 is 72",
-            check: "72 ÷ 18 = 4 and 72 ÷ 24 = 3, so 72 is common. Removing a factor of 2 gives 36, which is not divisible by 24, and removing a factor of 3 gives 24, which is not divisible by 18.",
+            check: "72 ÷ 18 = 4 and 72 ÷ 24 = 3, so 72 is common.\nRemoving a factor of 2 gives 36, which is not divisible by 24,\nand removing a factor of 3 gives 24, which is not divisible by 18.",
             structureId: "numberProperties_route_2_modular",
             difficulty: 3
           }),
@@ -510,7 +510,7 @@ const revisions = {
             ],
             answer: "140 seconds",
             conclusion: "The lights will next flash together after 140 seconds",
-            check: "140 ÷ 14 = 10 flashes and 140 ÷ 20 = 7 flashes. Both are whole counts. The factor construction used no unnecessary prime, so this is the first positive meeting time.",
+            check: "140 ÷ 14 = 10 flashes and 140 ÷ 20 = 7 flashes. Both are whole counts.\nThe factor construction used no unnecessary prime, so this is the first positive meeting time.",
             review: "The next shared flash is after 140 seconds. At that time the first light has completed 10 intervals and the second has completed 7 intervals.",
             structureId: "numberProperties_route_2_modular",
             difficulty: 4
@@ -646,7 +646,7 @@ const revisions = {
             ],
             answer: "11 o'clock",
             conclusion: "It will be 11 o'clock",
-            check: "Four full turns use 48 hours. The remaining 2 hours move 9 o'clock to 11 o'clock, and 48 + 2 = 50.",
+            check: "Four full turns use 48 hours.\nThe remaining 2 hours move 9 o'clock to 11 o'clock, and 48 + 2 = 50.",
             structureId: "numberProperties_route_3_digitDetective",
             difficulty: 3
           }),
@@ -715,7 +715,7 @@ const revisions = {
             ],
             answer: "17",
             conclusion: "5 + 2 × 6 = 17 because multiplication is completed before addition",
-            check: "Estimate 2 × 6 as 12, then add 5. An answer a little above 12 is sensible, and substituting the calculated product gives 5 + 12 = 17.",
+            check: "Estimate 2 × 6 as 12, then add 5.\nAn answer a little above 12 is sensible, and substituting the calculated product gives 5 + 12 = 17.",
             structureId: "integerDecimalArithmetic_route_1_multiExpr",
             difficulty: 1
           }),
@@ -730,7 +730,7 @@ const revisions = {
             ],
             answer: "18",
             conclusion: "30 ÷ 5 × 3 = 18",
-            check: "The expression means (30 ÷ 5) × 3. Reversing the first division gives 6 × 5 = 30, then multiplying 6 by 3 gives 18. Calculating 5 × 3 first would change the expression to 30 ÷ (5 × 3), which has brackets not present in the question.",
+            check: "The expression means (30 ÷ 5) × 3.\nReversing the first division gives 6 × 5 = 30, then multiplying 6 by 3 gives 18.\nCalculating 5 × 3 first would change the expression to 30 ÷ (5 × 3), which has brackets not present in the question.",
             structureId: "integerDecimalArithmetic_route_1_multiExpr",
             difficulty: 2
           }),
@@ -745,7 +745,7 @@ const revisions = {
             ],
             answer: "The correct answer is 3; the incorrectly regrouped answer is 12",
             conclusion: "48 ÷ 8 ÷ 2 = 3, while 48 ÷ (8 ÷ 2) = 12",
-            check: "The two expressions are different: (48 ÷ 8) ÷ 2 = 6 ÷ 2 = 3, but 48 ÷ (8 ÷ 2) = 48 ÷ 4 = 12. The written expression has no brackets, so left-to-right order selects 3.",
+            check: "The two expressions are different:\n(48 ÷ 8) ÷ 2 = 6 ÷ 2 = 3,\nbut 48 ÷ (8 ÷ 2) = 48 ÷ 4 = 12.\nThe written expression has no brackets, so left-to-right order selects 3.",
             structureId: "integerDecimalArithmetic_route_1_multiExpr",
             difficulty: 3
           }),
@@ -763,7 +763,7 @@ const revisions = {
             ],
             answer: "21",
             conclusion: "36 ÷ 4 × 3 − 18 ÷ 6 × 2 = 21",
-            check: "Write the implied grouping: ((36 ÷ 4) × 3) − ((18 ÷ 6) × 2) = (9 × 3) − (3 × 2) = 27 − 6 = 21.",
+            check: "Write the implied grouping:\n((36 ÷ 4) × 3) − ((18 ÷ 6) × 2) =\n(9 × 3) − (3 × 2) =\n27 − 6 = 21.",
             review: "The answer is 21. Both division-and-multiplication chains were completed from left to right before the subtraction, so no unwritten brackets were introduced.",
             structureId: "integerDecimalArithmetic_route_1_multiExpr",
             difficulty: 4
@@ -868,7 +868,7 @@ const revisions = {
             ],
             answer: "4:10",
             conclusion: "The time is 4:10",
-            check: "Count on in two parts: 15 minutes takes 3:45 to 4:00, and the remaining 10 minutes takes it to 4:10. The parts total 25 minutes.",
+            check: "Count on in two parts: 15 minutes takes 3:45 to 4:00,\nand the remaining 10 minutes takes it to 4:10.\nThe parts total 25 minutes.",
             structureId: "integerDecimalArithmetic_route_3_clockArith",
             difficulty: 1
           }),
@@ -881,7 +881,7 @@ const revisions = {
             ],
             answer: "7:20",
             conclusion: "The time is 7:20",
-            check: "Work backwards from 7:20: subtract 2 hours to get 5:20, then subtract 50 minutes to return to 4:30.",
+            check: "Work backwards from 7:20: subtract 2 hours to get 5:20,\nthen subtract 50 minutes to return to 4:30.",
             structureId: "integerDecimalArithmetic_route_3_clockArith",
             difficulty: 2
           }),
@@ -895,7 +895,7 @@ const revisions = {
             ],
             answer: "15:25",
             conclusion: "The bus arrives at 15:25",
-            check: "Find the elapsed time: 11:45 to 12:00 is 15 minutes, 12:00 to 15:00 is 3 hours and 15:00 to 15:25 is 25 minutes. The minute parts total 40 minutes, giving 3 hours 40 minutes.",
+            check: "Find the elapsed time: 11:45 to 12:00 is 15 minutes,\n12:00 to 15:00 is 3 hours\nand 15:00 to 15:25 is 25 minutes.\nThe minute parts total 40 minutes, giving 3 hours 40 minutes.",
             structureId: "integerDecimalArithmetic_route_3_clockArith",
             difficulty: 3
           }),
@@ -912,7 +912,7 @@ const revisions = {
             ],
             answer: "20:15 on Monday",
             conclusion: "It is 20:15 on Monday in City A",
-            check: "Move forward six hours from City A: 20:15 Monday + 3 hours 45 minutes = 00:00 Tuesday, then +2 hours 15 minutes = 02:15 Tuesday in City B.",
+            check: "Move forward six hours from City A: 20:15 Monday + 3 hours 45 minutes = 00:00 Tuesday,\nthen +2 hours 15 minutes = 02:15 Tuesday in City B.",
             review: "City A is six hours behind, so the answer is 20:15 on Monday. Adding the six-hour offset returns to 02:15 on Tuesday.",
             structureId: "integerDecimalArithmetic_route_3_clockArith",
             difficulty: 4
@@ -992,7 +992,7 @@ const revisions = {
             ],
             answer: "7,449",
             conclusion: "The largest whole number is 7,449",
-            check: "7,449 rounds down to 7,400 because its tens digit is 4. Increasing it by one gives 7,450, whose tens digit is 5, so that number rounds to 7,500.",
+            check: "7,449 rounds down to 7,400 because its tens digit is 4.\nIncreasing it by one gives 7,450, whose tens digit is 5, so that number rounds to 7,500.",
             review: "The largest possible whole number is 7,449. It lies inside the interval for 7,400, while 7,450 lies on the excluded upper boundary.",
             structureId: "integerDecimalArithmetic_route_4_estimation",
             difficulty: 4
@@ -1056,7 +1056,7 @@ const revisions = {
             ],
             answer: "34",
             conclusion: "When m = 3 and n = 5, p = 34",
-            check: "Group the arithmetic differently: 30 − 5 = 25, then 9 + 25 = 34. This reaches the same result.",
+            check: "Group the arithmetic differently: 30 − 5 = 25,\nthen 9 + 25 = 34.\nThis reaches the same result.",
             structureId: "integerDecimalArithmetic_route_5_numberMachine",
             difficulty: 3
           }),

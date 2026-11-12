@@ -1,4 +1,10 @@
 {
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "test": "node scripts/run_regression.mjs"
+  },
   "dependencies": {
     "@capacitor/android": "^8.4.2",
     "@capacitor/cli": "^8.4.2",

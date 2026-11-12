@@ -1,0 +1,209 @@
+{
+  "candidateStatus": "success",
+  "attempts": [
+    {
+      "cardIds": [
+        "tuppence",
+        "furrow",
+        "sorrel"
+      ],
+      "planFamily": "direct-guard",
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 317,
+        "maxStates": 40000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "furrow",
+              "sorrel"
+            ],
+            "status": "success",
+            "commandCount": 32,
+            "rounds": 5
+          }
+        ],
+        "beamWidth": 120
+      }
+    },
+    {
+      "cardIds": [
+        "bushel",
+        "dapple",
+        "pip"
+      ],
+      "planFamily": "alcove-intercept",
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 718,
+        "maxStates": 40000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "bushel",
+              "dapple",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 25,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      }
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-7bb0c308bb8ec44f",
+    "evidence": {
+      "blueprintHash": "1c74f11469dfbac5",
+      "structuralFingerprint": "ad047523281a0cce",
+      "puzzleFingerprint": "5fff69ed27f56f08",
+      "traceHashes": [
+        "eb243ce597680830",
+        "9b7ed500343d0e41"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              4,
+              0,
+              2,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              4,
+              0,
+              0,
+              2
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              0,
+              5,
+              2
+            ],
+            "eligibleBelow": []
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "tuppence",
+          "furrow",
+          "sorrel"
+        ],
+        "finalHash": "eb243ce597680830",
+        "round": 5,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "hashes": [
+          "51a213a8fe1a2c21",
+          "2c7e8f405e5c59b5",
+          "1f0064aa35c5a123",
+          "23fe41ff9ec4378a",
+          "facc75f60c3193df",
+          "98187bbd1b4dff34",
+          "5d2b5e510f19671c",
+          "d501925acaccef09",
+          "2e9d636b5e18c8d0",
+          "de7b37ddb51c8216",
+          "19354c9ed7d24505",
+          "7bd13f0783fc3070",
+          "617ee6d6aba50b29",
+          "7b39496b7a01b2f8",
+          "8621d3e344d979cc",
+          "d45205aa031b8385",
+          "91c17cc964e287b2",
+          "807a5255fee35bb2",
+          "0b31dcd005a7264b",
+          "c60378a73114d968",
+          "25615d1cd81af881",
+          "98d0adabfe28865a",
+          "63cdfbe2f6220cab",
+          "49b60f7e45c083c3",
+          "7d967b9f19bb8e80",
+          "3bc125a151e3402c",
+          "e5e5372906ce37fc",
+          "289736c978076f0c",
+          "bf710847e7936566",
+          "7ee729787c33e805",
+          "236b34419abcf3d6",
+          "eb243ce597680830"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "bushel",
+          "dapple",
+          "pip"
+        ],
+        "finalHash": "9b7ed500343d0e41",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": true,
+        "hashes": [
+          "dd090a0d6bc236ae",
+          "40d7f5116b58953e",
+          "92e784f326e83ad8",
+          "68e74337e36321ac",
+          "5f16a37206a1471d",
+          "a04b0d0412ab2acf",
+          "45713bc5167cfb0c",
+          "df7ef8d08aac48c5",
+          "d73ab1d059d89fb9",
+          "3a314a3317bab61e",
+          "fdcd2e3b2a9e13fe",
+          "334f51f31a1ce572",
+          "fba4e12cf9989faf",
+          "3acfba8af75db8e9",
+          "2367282ad352ee25",
+          "d47e37fa988f1add",
+          "8643cc0876d82187",
+          "d4ff4a41122d4928",
+          "93cfbcf3be6a64ea",
+          "38574421080edecc",
+          "46780ee075c428c5",
+          "565175dad8a71157",
+          "fa51fd81faeb7918",
+          "fa02d4a4fa113db3",
+          "9b7ed500343d0e41"
+        ]
+      }
+    ]
+  }
+}

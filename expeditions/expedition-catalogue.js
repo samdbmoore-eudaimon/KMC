@@ -56,11 +56,13 @@ export const EXPEDITION_CATALOGUE = {
     // Codex's review: the default squad could never actually use the route its own text names).
     loanSquad: ["bushel", "pip", "nine"],
     // Reference-trace figures from scripts/simulate_cider_run.mjs, for the fixed
-    // REFERENCE_LAYOUT_SEED layout (cider-run.js). Updated 2026-09-18 for the board reshape
-    // (three 120°-spaced spokes, a genuinely adjacent gate): this layout's certified pair is
-    // two far presses on different spokes, a real cross-board trek, so par moved from 2/3 to
-    // the reference trace's actual 3 rounds and 11 hexes of movement.
-    marksPar: { turns: 3, movement: 11 },
+    // REFERENCE_LAYOUT_SEED layout (cider-run.js), read off its guaranteed-safe pair
+    // (layout.safePairIds). Updated 2026-09-21 for the mechanic rebuild (pairCount: 2 —
+    // generateExactPairKernel now certifies two independent pairs per layout, a genuine choice,
+    // not one findable answer): this reference seed's specific safe pair happens to sit close
+    // to both heroes' starting hexes, clearing in round 2 with a single 1-hex move — a property
+    // of this one seed, not a claim that every layout is this cheap.
+    marksPar: { turns: 2, movement: 1 },
   },
   po_nine_across: {
     moduleKey: "primary",
@@ -116,8 +118,11 @@ export const EXPEDITION_CATALOGUE = {
     createState: createHollowBoughAwakens,
     config: HOLLOW_BOUGH_AWAKENS_CONFIG,
     loanSquad: ["pip", "bramble", "nine"],
-    // Reference-trace figures from scripts/simulate_hollow_bough_awakens.mjs.
-    marksPar: { turns: 5, movement: 0 },
+    // Reference-trace figures from scripts/simulate_hollow_bough_awakens.mjs. movement: 1
+    // reflects Bramble's one-hex step clear of Overgrowth's path (2026-09-21, added once an
+    // unguarded hero standing there became a valid strike target too — see
+    // strikeAdjacentHero in expedition-engine.js), not the old memorial-only trace's 0.
+    marksPar: { turns: 5, movement: 1 },
   },
   po_one_short: {
     moduleKey: "primary",

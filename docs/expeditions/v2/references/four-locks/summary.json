@@ -1,0 +1,54 @@
+{
+  "status": "reference-attempts-not-bank-certification",
+  "results": [
+    {
+      "squad": [
+        "bushel",
+        "furrow",
+        "pip"
+      ],
+      "status": "lost",
+      "round": 5,
+      "lossReason": {
+        "code": "deadline",
+        "params": {
+          "unmet": [
+            {
+              "code": "job-not-held",
+              "params": {
+                "job": "number"
+              }
+            },
+            {
+              "code": "outputs-short",
+              "params": {
+                "have": 0,
+                "need": 2
+              }
+            },
+            {
+              "code": "sudoku-incomplete",
+              "params": {}
+            }
+          ]
+        }
+      },
+      "finalHash": "2584867205ffe1b3",
+      "replayOK": true,
+      "commands": 41
+    },
+    {
+      "squad": [
+        "tuppence",
+        "furrow",
+        "sorrel"
+      ],
+      "status": "won",
+      "round": 4,
+      "lossReason": null,
+      "finalHash": "bea753c9ffe4cf36",
+      "replayOK": true,
+      "commands": 34
+    }
+  ]
+}

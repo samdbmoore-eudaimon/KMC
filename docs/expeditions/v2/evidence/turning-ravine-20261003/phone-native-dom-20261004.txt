@@ -1,0 +1,249 @@
+- text: "Turning Ravine T1 reference: private development preview, real controller and reducer. Starts at zero commands; disposable QA progress. Runtime banks remain unavailable."
+- button "Leave route"
+- banner:
+  - strong: Turning Ravine · 1
+  - generic: Round 1/5
+  - generic: Orchard 20/20
+  - generic: "Furrow: 2 AP"
+  - button "Party"
+  - button "Objectives"
+  - button "How to play"
+  - button "First actions"
+  - button "Save & exit"
+- 'region "Battlefield: arrow keys pan, plus and minus zoom, Home shows overview"':
+  - img "Orchard battlefield":
+    - button "Hex 2,0"
+    - button "Reachable hex 3,0"
+    - button "Hex 4,0"
+    - button "Hex 5,0"
+    - button "Hex 6,0"
+    - button "Hex 7,0"
+    - button "Hex 8,0"
+    - button "Hex 9,0"
+    - button "Hex 2,1"
+    - button "Reachable hex 3,1"
+    - button "Reachable hex 4,1"
+    - button "Hex 5,1"
+    - button "Hex 6,1"
+    - button "Hex 7,1"
+    - button "Hex 8,1"
+    - button "Hex 9,1"
+    - button "Reachable hex -1,2"
+    - button "Reachable hex 0,2"
+    - button "Reachable hex 1,2"
+    - button "Reachable hex 2,2"
+    - button "Hex 3,2"
+    - button "Hex 4,2"
+    - button "Hex 5,2"
+    - button "Hex 6,2"
+    - button "Hex 7,2"
+    - button "Hex 8,2"
+    - button "Hex 9,2"
+    - button "Hex 10,2"
+    - button "Reachable hex -1,3"
+    - button "Reachable hex 0,3"
+    - button "Hex 1,3"
+    - button "Reachable hex 2,3"
+    - generic "Passage closed": ×
+    - button "Hex 3,3"
+    - button "Reachable hex 4,3"
+    - button "Hex 5,3"
+    - button "Hex 6,3"
+    - button "Hex 7,3"
+    - button "Hex 8,3"
+    - button "Hex 9,3"
+    - button "Hex 10,3"
+    - button "Hex -2,4"
+    - button "Reachable hex -1,4"
+    - button "Hex 0,4"
+    - button "Reachable hex 1,4"
+    - button "Hex 2,4"
+    - button "Reachable hex 3,4"
+    - button "Reachable hex 4,4"
+    - button "Hex 5,4"
+    - button "Hex 6,4"
+    - button "Hex 7,4"
+    - button "Hex 8,4"
+    - button "Hex 9,4"
+    - button "Reachable hex -2,5"
+    - button "Reachable hex -1,5"
+    - button "Hex 0,5"
+    - button "Reachable hex 1,5"
+    - button "Reachable hex 2,5"
+    - button "Reachable hex 3,5"
+    - button "Reachable hex 4,5"
+    - button "Hex 5,5"
+    - button "Hex 6,5"
+    - button "Hex 7,5"
+    - button "Hex 8,5"
+    - button "Hex 9,5"
+    - button "Reachable hex -3,6"
+    - button "Reachable hex -2,6"
+    - button "Reachable hex -1,6"
+    - button "Reachable hex 0,6"
+    - button "Hex 1,6"
+    - button "Reachable hex 2,6"
+    - button "Reachable hex 3,6"
+    - button "Hex 4,6"
+    - button "Hex 5,6"
+    - button "Hex 6,6"
+    - button "Hex 7,6"
+    - button "Hex 8,6"
+    - button "Reachable hex -1,7"
+    - button "Reachable hex 0,7"
+    - button "Reachable hex 1,7"
+    - button "Reachable hex 2,7"
+    - button "Hex 3,7"
+    - button "Hex 4,7"
+    - button "Hex 5,7"
+    - button "Hex 6,7"
+    - button "Reachable hex -2,8"
+    - button "Reachable hex -1,8"
+    - button "Reachable hex 0,8"
+    - button "Hex 1,8"
+    - button "Hex 2,8"
+    - button "Hex 3,8"
+    - button "Hex 4,8"
+    - button "Hex 5,8"
+    - 'generic "eq1: 2 blank 21 ÷ 30: complete the numbers and operators; circuit off"'
+    - 'generic "eq2: (21 + 13) = 23: not equal; circuit off"'
+    - 'generic "eq3: (13 − 4) = 9: true; circuit off"'
+    - 'img "Wheel A: neutral; active face 2"':
+      - generic: "3"
+      - generic: "8"
+      - generic: "21"
+      - generic: "18"
+      - generic: "2"
+      - generic: "4"
+    - generic: "2"
+    - generic: A
+    - 'img "Wheel O: neutral; active face blank"':
+      - generic: =
+      - generic: +
+      - generic: −
+      - generic: ×
+      - generic: ÷
+    - generic: ·
+    - generic: O
+    - 'img "Wheel B: selected; active face 21"':
+      - generic: "21"
+      - generic: "3"
+      - generic: "2"
+      - generic: "6"
+      - generic: "10"
+      - generic: "7"
+    - generic: "21"
+    - generic: B
+    - 'img "Wheel E: neutral; active face ÷"':
+      - generic: =
+      - generic: +
+      - generic: −
+      - generic: ×
+      - generic: ÷
+    - generic: ÷
+    - generic: E
+    - generic: "30"
+    - generic: eq1
+    - generic: +
+    - 'img "Wheel C: neutral; active face 13"':
+      - generic: "23"
+      - generic: "3"
+      - generic: "14"
+      - generic: "2"
+      - generic: "13"
+      - generic: "11"
+    - generic: "13"
+    - generic: C
+    - generic: =
+    - generic: "23"
+    - generic: eq2
+    - generic: −
+    - 'img "Wheel D: neutral; active face 4"':
+      - generic: "13"
+      - generic: "4"
+      - generic: "6"
+      - generic: "2"
+      - generic: "3"
+      - generic: "7"
+    - generic: "4"
+    - generic: D
+    - generic: "9"
+    - generic: eq3
+    - generic: Turning joint
+    - generic: Cr
+    - generic: Crosswind
+    - generic: 8 ♥
+    - generic: Ravine control
+    - generic: Calibration wheel
+    - generic: Tuppence
+    - generic: 12 ♥ · 2 AP
+    - generic: Brace alcove
+    - generic: Furrow
+    - generic: 11 ♥ · 2 AP
+    - generic: Sorrel
+    - generic: 15 ♥ · 2 AP
+    - generic: Ninefold tree
+    - generic: Wind stabiliser
+- group "Mission checklist":
+  - 'generic "Goal: 0/4 ready"'
+- button "Zoom in": +
+- button "Zoom out": −
+- button "Overview"
+- button "100%" [active]
+- button "Lock camera"
+- button "Minimap"
+- button "↗ Crosswind"
+- group "Battlefield objects and reachable targets":
+  - generic "Find on map"
+- status: Select a hero, then an action. Moves happen only after you confirm.
+- contentinfo:
+  - button "Select Furrow":
+    - strong: Furrow
+    - generic: 11 ♥ · 2 actions
+  - button "Select Sorrel":
+    - strong: Sorrel
+    - generic: 15 ♥ · 2 actions
+  - button "Select Tuppence":
+    - strong: Tuppence
+    - generic: 12 ♥ · 2 actions
+  - region "Turn wheel B":
+    - strong: "Wheel B: draft 21"
+    - generic: "On the map: 21. Turning the draft is free; activation uses 1 action beside 2,3."
+    - button "Turn B anticlockwise": ↶ Anticlockwise
+    - button "Turn B clockwise": Clockwise ↷
+    - button "Close wheel"
+    - generic: "Six faces: 21 · 3 · 2 · 6 · 10 · 7. Read the face under the fixed top notch."
+    - paragraph: "eq1: 2 blank 21 ÷ 30: complete the numbers and operators"
+    - paragraph: "eq2: (21 + 13) = 23: not equal"
+    - generic: "Shared wheel: all linked equations change together. Parentheses show the order; division must give a whole number."
+  - button "Move 1 action":
+    - text: Move
+    - generic: 1 action
+  - button "About Move": "?"
+  - button "Puzzle"
+  - button "Undo"
+  - button "End round"
+  - 'generic "All actions: protection, repairs, alcove and recovery"'
+  - generic "Furrow's four abilities":
+    - button "Dash Make a longer move using this hero’s Speed. Speed determines reach · Reachable hex Ready · 1 action":
+      - strong: Dash
+      - generic: Make a longer move using this hero’s Speed.
+      - generic: Speed determines reach · Reachable hex
+      - generic: Ready · 1 action
+    - button "Intercept Move quickly and mark a visible enemy for stronger strikes. Speed · Reachable hex and visible enemy within strike range Ready · 1 action":
+      - strong: Intercept
+      - generic: Move quickly and mark a visible enemy for stronger strikes.
+      - generic: Speed · Reachable hex and visible enemy within strike range
+      - generic: Ready · 1 action
+    - button "Stand Together Shield this hero and a nearby ally for this enemy turn. Geometry · Another hero or station within 2 hexes, clear view Ready · 1 action":
+      - strong: Stand Together
+      - generic: Shield this hero and a nearby ally for this enemy turn.
+      - generic: Geometry · Another hero or station within 2 hexes, clear view
+      - generic: Ready · 1 action
+    - button "Second Wind Ready one spent ability; optionally step one free adjacent hex. No stat check · This hero’s spent ability Ready · 1 action No spent ability selected. Use an ability first, then choose it to ready again.":
+      - strong: Second Wind
+      - generic: Ready one spent ability; optionally step one free adjacent hex.
+      - generic: No stat check · This hero’s spent ability
+      - generic: Ready · 1 action
+      - generic: No spent ability selected. Use an ability first, then choose it to ready again.
+- generic "QA progress and reducer trace"

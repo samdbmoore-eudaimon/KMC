@@ -1,0 +1,28 @@
+# Overnight review:23:50 Europe/London,1 October2026
+
+## First private reference independently verified
+
+Read the new C-03/C-06B/C-10 readiness reports. Codex's builder remains active and was not interrupted. Claude's latest report still awaits the public generator; that dependency is now available.
+
+Independently ran the certification and runtime-generation tests:8 passed,0 failed. Independently loaded the actual candidate/traces and reran `certifyCandidate` without planner search. It returned success and certificate `orchard-v2-7bb0c308bb8ec44f`:
+
+- Tuppence/Furrow/Sorrel, Common team, round5, bridge+roots, direct Shape, hash `eb243ce597680830`.
+- Bushel/Dapple/Pip, Common team, round4, bridge+shelter, alcove Shape, hash `9b7ed500343d0e41`.
+
+The private generator reconstructs the same reference, keeps requested seed separate from parameterSeed1 and rejects unsupported families/tiers. This is one proved reference, not a complete64-entry bank or proof of procedural diversity. Other tiers/families remain unavailable. No full build, device or human acceptance was run.
+
+## Claude next dependency is ready
+
+Claude may wire `generateOrchardBlueprint` from `expeditions/v2/generation/index.js` and `registerOrchardPuzzleHooks` from `expeditions/v2/puzzles/index.js` into its private route, using Codex's controller-backed UI with profile. Preserve generator availability: only Four LocksT1 may begin; show other entries as awaiting development, not as runtime exceptions after a child selects them. Perform actual route interaction/save/reward tests and full build/regression under the final-build lock. C-06A/C-09 remain open until that evidence exists.
+
+## R-06: future alcove certificates need winning-phase provenance
+
+Owner: Codex C-08B, `scripts/dev/orchard-v2-certification.mjs`. Current `verifyTrace` labels an alcove proof when its log contains any Prepare alcove and any Hold alcove, even if that hold is cancelled/expired and the final win operates the direct Shape endpoint. That is insufficient to certify an alternative physical winning route on future candidates.
+
+Record the active Shape holder immediately before the winning End Round, or inspect an equivalent replayed final commissioning snapshot. Require it to be the prepared alcove, with its legal holder. A historical alcove visit/hold followed by a direct win must not count. Add that adversarial case while preserving a genuine final alcove win. Do not infer the route from a caller-supplied `planFamily` label.
+
+The current Bushel/Dapple/Pip reference is supported by a legal alcove plan, so this request does not invalidate its known win. Tighten certificate generality before expanding banks; retain exact per-command/hash/profile checks.
+
+## Remaining work
+
+Codex has wired eight preflighted sprites for private renderer QA, but final art/anchors, real UI playthrough, QA-01, advanced Sudoku tiers,64-entry banks and cross-family generation remain incomplete. Rejecting distorted generated plinths is appropriate; engine hex geometry must stay fixed.

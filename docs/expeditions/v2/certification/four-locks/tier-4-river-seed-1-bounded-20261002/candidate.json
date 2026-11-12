@@ -1,0 +1,6023 @@
+{
+  "status": "success",
+  "blueprint": {
+    "schemaVersion": 2,
+    "moduleKey": "primary",
+    "familyId": "four-locks",
+    "tier": 4,
+    "seed": 1,
+    "parameterSeed": 1,
+    "generatorVersion": 1,
+    "rulesVersion": 2,
+    "attempt": 0,
+    "layoutId": "river",
+    "tiles": [
+      {
+        "q": 2,
+        "r": 0,
+        "terrain": "hedge"
+      },
+      {
+        "q": 3,
+        "r": 0,
+        "terrain": "floor"
+      },
+      {
+        "q": 4,
+        "r": 0,
+        "terrain": "floor"
+      },
+      {
+        "q": 5,
+        "r": 0,
+        "terrain": "floor"
+      },
+      {
+        "q": 6,
+        "r": 0,
+        "terrain": "water"
+      },
+      {
+        "q": 7,
+        "r": 0,
+        "terrain": "floor"
+      },
+      {
+        "q": 8,
+        "r": 0,
+        "terrain": "floor"
+      },
+      {
+        "q": 9,
+        "r": 0,
+        "terrain": "floor"
+      },
+      {
+        "q": 2,
+        "r": 1,
+        "terrain": "floor"
+      },
+      {
+        "q": 3,
+        "r": 1,
+        "terrain": "floor"
+      },
+      {
+        "q": 4,
+        "r": 1,
+        "terrain": "roots"
+      },
+      {
+        "q": 5,
+        "r": 1,
+        "terrain": "hedge"
+      },
+      {
+        "q": 6,
+        "r": 1,
+        "terrain": "water"
+      },
+      {
+        "q": 7,
+        "r": 1,
+        "terrain": "floor"
+      },
+      {
+        "q": 8,
+        "r": 1,
+        "terrain": "floor"
+      },
+      {
+        "q": 9,
+        "r": 1,
+        "terrain": "floor"
+      },
+      {
+        "q": -1,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 0,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 1,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 2,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 3,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 4,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 5,
+        "r": 2,
+        "terrain": "bridge"
+      },
+      {
+        "q": 6,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 7,
+        "r": 2,
+        "terrain": "hedge"
+      },
+      {
+        "q": 8,
+        "r": 2,
+        "terrain": "hedge"
+      },
+      {
+        "q": 9,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": 10,
+        "r": 2,
+        "terrain": "floor"
+      },
+      {
+        "q": -1,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 0,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 1,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 2,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 3,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 4,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 5,
+        "r": 3,
+        "terrain": "water"
+      },
+      {
+        "q": 6,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 7,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 8,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 9,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": 10,
+        "r": 3,
+        "terrain": "floor"
+      },
+      {
+        "q": -2,
+        "r": 4,
+        "terrain": "roots"
+      },
+      {
+        "q": -1,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 0,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 1,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 2,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 3,
+        "r": 4,
+        "terrain": "hedge"
+      },
+      {
+        "q": 4,
+        "r": 4,
+        "terrain": "bridge",
+        "passageOutputId": "bridge"
+      },
+      {
+        "q": 5,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 6,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 7,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 8,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": 9,
+        "r": 4,
+        "terrain": "floor"
+      },
+      {
+        "q": -2,
+        "r": 5,
+        "terrain": "hedge"
+      },
+      {
+        "q": -1,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 0,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 1,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 2,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 3,
+        "r": 5,
+        "terrain": "hedge"
+      },
+      {
+        "q": 4,
+        "r": 5,
+        "terrain": "water"
+      },
+      {
+        "q": 5,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 6,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 7,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 8,
+        "r": 5,
+        "terrain": "floor"
+      },
+      {
+        "q": 9,
+        "r": 5,
+        "terrain": "roots"
+      },
+      {
+        "q": -3,
+        "r": 6,
+        "terrain": "hedge"
+      },
+      {
+        "q": -2,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": -1,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": 0,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": 1,
+        "r": 6,
+        "terrain": "roots"
+      },
+      {
+        "q": 2,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": 3,
+        "r": 6,
+        "terrain": "bridge"
+      },
+      {
+        "q": 4,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": 5,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": 6,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": 7,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": 8,
+        "r": 6,
+        "terrain": "floor"
+      },
+      {
+        "q": -1,
+        "r": 7,
+        "terrain": "floor"
+      },
+      {
+        "q": 0,
+        "r": 7,
+        "terrain": "floor"
+      },
+      {
+        "q": 1,
+        "r": 7,
+        "terrain": "floor"
+      },
+      {
+        "q": 2,
+        "r": 7,
+        "terrain": "floor"
+      },
+      {
+        "q": 3,
+        "r": 7,
+        "terrain": "water"
+      },
+      {
+        "q": 4,
+        "r": 7,
+        "terrain": "floor"
+      },
+      {
+        "q": 5,
+        "r": 7,
+        "terrain": "floor"
+      },
+      {
+        "q": 6,
+        "r": 7,
+        "terrain": "floor"
+      },
+      {
+        "q": -2,
+        "r": 8,
+        "terrain": "floor"
+      },
+      {
+        "q": -1,
+        "r": 8,
+        "terrain": "roots"
+      },
+      {
+        "q": 0,
+        "r": 8,
+        "terrain": "floor"
+      },
+      {
+        "q": 1,
+        "r": 8,
+        "terrain": "hedge"
+      },
+      {
+        "q": 2,
+        "r": 8,
+        "terrain": "water"
+      },
+      {
+        "q": 3,
+        "r": 8,
+        "terrain": "floor"
+      },
+      {
+        "q": 4,
+        "r": 8,
+        "terrain": "hedge"
+      },
+      {
+        "q": 5,
+        "r": 8,
+        "terrain": "floor"
+      }
+    ],
+    "stations": [
+      {
+        "id": "control",
+        "hex": "2,3",
+        "name": "Ledger control",
+        "artId": "mechanism-hive-ledger-board-v1",
+        "maxIntegrity": 18
+      },
+      {
+        "id": "number",
+        "hex": "5,4",
+        "name": "Ledger bus",
+        "artId": "mechanism-hive-ledger-board-v1",
+        "maxIntegrity": 18,
+        "capacity": 7
+      },
+      {
+        "id": "shape",
+        "hex": "9,0",
+        "name": "Bridge brace",
+        "artId": "mechanism-plinth",
+        "maxIntegrity": 18,
+        "capacity": 7
+      },
+      {
+        "id": "sustain",
+        "hex": "6,7",
+        "name": "Tree maintenance",
+        "artId": "terrain-apple-tree-v1",
+        "maxIntegrity": 18,
+        "capacity": 7
+      },
+      {
+        "id": "alcove",
+        "hex": "9,3",
+        "name": "Brace alcove",
+        "artId": "mechanism-hive-ledger-board-v1"
+      }
+    ],
+    "puzzle": {
+      "kind": "sudoku4",
+      "size": 4,
+      "givens": [
+        {
+          "row": 3,
+          "col": 2,
+          "value": 3
+        }
+      ],
+      "cages": [
+        {
+          "cellIds": [
+            "r1c2",
+            "r2c2",
+            "r3c2"
+          ],
+          "sum": 6,
+          "id": "cage-0"
+        },
+        {
+          "cellIds": [
+            "r0c0",
+            "r0c1"
+          ],
+          "sum": 3,
+          "id": "cage-1"
+        },
+        {
+          "cellIds": [
+            "r1c1",
+            "r2c1",
+            "r2c2"
+          ],
+          "sum": 8,
+          "id": "cage-2"
+        },
+        {
+          "cellIds": [
+            "r2c1",
+            "r2c2"
+          ],
+          "sum": 5,
+          "id": "cage-3"
+        },
+        {
+          "cellIds": [
+            "r2c2",
+            "r3c1",
+            "r3c2"
+          ],
+          "sum": 6,
+          "id": "cage-4"
+        },
+        {
+          "cellIds": [
+            "r0c3",
+            "r1c2",
+            "r1c3"
+          ],
+          "sum": 6,
+          "id": "cage-5"
+        },
+        {
+          "cellIds": [
+            "r0c2",
+            "r1c2",
+            "r1c3"
+          ],
+          "sum": 7,
+          "id": "cage-6"
+        }
+      ],
+      "id": "four-locks-ledger",
+      "controlId": "control",
+      "controlHex": "2,3",
+      "draftSchemaVersion": 1,
+      "networkGroupId": "network",
+      "outputs": [
+        {
+          "id": "bridge",
+          "label": "Bridge",
+          "cost": 2,
+          "trigger": "on-commit",
+          "effect": {
+            "kind": "passage"
+          }
+        },
+        {
+          "id": "shelter",
+          "label": "Shelter",
+          "cost": 3,
+          "trigger": "phase-start",
+          "effect": {
+            "kind": "shelter",
+            "amount": 2,
+            "targetIds": [
+              "number",
+              "shape",
+              "sustain"
+            ]
+          }
+        },
+        {
+          "id": "roots",
+          "label": "Roots",
+          "cost": 4,
+          "trigger": "phase-start",
+          "effect": {
+            "kind": "roots"
+          }
+        },
+        {
+          "id": "storm",
+          "label": "Storm",
+          "cost": 5,
+          "trigger": "phase-start",
+          "effect": {
+            "kind": "storm"
+          }
+        }
+      ],
+      "outputBudget": 8,
+      "defaultOutputIds": [
+        "bridge",
+        "shelter"
+      ],
+      "solutionParameters": {
+        "grid": [
+          [
+            2,
+            1,
+            4,
+            3
+          ],
+          [
+            4,
+            3,
+            2,
+            1
+          ],
+          [
+            3,
+            4,
+            1,
+            2
+          ],
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ]
+      },
+      "lockGroups": [
+        {
+          "id": "network",
+          "anchor": "2,3",
+          "memberIds": [
+            "r0c0",
+            "r0c1",
+            "r0c2",
+            "r0c3",
+            "r1c0",
+            "r1c1",
+            "r1c2",
+            "r1c3",
+            "r2c0",
+            "r2c1",
+            "r2c2",
+            "r2c3",
+            "r3c0",
+            "r3c1",
+            "r3c2",
+            "r3c3"
+          ],
+          "effectKinds": [
+            "jam"
+          ]
+        },
+        {
+          "id": "row-0",
+          "anchor": "2,3",
+          "memberIds": [
+            "r0c0",
+            "r0c1",
+            "r0c2",
+            "r0c3"
+          ],
+          "effectKinds": [
+            "jam"
+          ]
+        },
+        {
+          "id": "row-1",
+          "anchor": "2,3",
+          "memberIds": [
+            "r1c0",
+            "r1c1",
+            "r1c2",
+            "r1c3"
+          ],
+          "effectKinds": [
+            "jam"
+          ]
+        },
+        {
+          "id": "row-2",
+          "anchor": "2,3",
+          "memberIds": [
+            "r2c0",
+            "r2c1",
+            "r2c2",
+            "r2c3"
+          ],
+          "effectKinds": [
+            "jam"
+          ]
+        },
+        {
+          "id": "row-3",
+          "anchor": "2,3",
+          "memberIds": [
+            "r3c0",
+            "r3c1",
+            "r3c2",
+            "r3c3"
+          ],
+          "effectKinds": [
+            "jam"
+          ]
+        }
+      ]
+    },
+    "outputs": [
+      {
+        "id": "bridge",
+        "label": "Bridge",
+        "cost": 2,
+        "trigger": "on-commit",
+        "effect": {
+          "kind": "passage"
+        }
+      },
+      {
+        "id": "shelter",
+        "label": "Shelter",
+        "cost": 3,
+        "trigger": "phase-start",
+        "effect": {
+          "kind": "shelter",
+          "amount": 2,
+          "targetIds": [
+            "number",
+            "shape",
+            "sustain"
+          ]
+        }
+      },
+      {
+        "id": "roots",
+        "label": "Roots",
+        "cost": 4,
+        "trigger": "phase-start",
+        "effect": {
+          "kind": "roots"
+        }
+      },
+      {
+        "id": "storm",
+        "label": "Storm",
+        "cost": 5,
+        "trigger": "phase-start",
+        "effect": {
+          "kind": "storm"
+        }
+      }
+    ],
+    "enemies": [
+      {
+        "id": "jammer-1",
+        "ruleId": "jammer",
+        "artId": "hookmole",
+        "position": "9,1",
+        "wakePhase": 1
+      },
+      {
+        "id": "hunter-1",
+        "ruleId": "hunter",
+        "artId": "scruffcrow",
+        "position": "7,4",
+        "wakePhase": 1
+      },
+      {
+        "id": "breaker-1",
+        "ruleId": "breaker",
+        "artId": "strawling",
+        "position": "7,5",
+        "wakePhase": 1
+      }
+    ],
+    "hazards": [
+      {
+        "id": "root-drain",
+        "sites": [
+          {
+            "id": "sustain-site",
+            "targetId": "sustain"
+          }
+        ],
+        "mutation": {
+          "kind": "none"
+        }
+      }
+    ],
+    "sites": [
+      {
+        "id": "controlled-passage",
+        "anchor": "4,4"
+      }
+    ],
+    "deployment": [
+      "1,3",
+      "0,4",
+      "0,5"
+    ],
+    "deadline": 5,
+    "orchard": {
+      "hex": "8,4",
+      "name": "Ninefold tree",
+      "artId": "terrain-apple-tree-v1"
+    },
+    "orchardMaxIntegrity": 26,
+    "certificateId": null,
+    "structuralFingerprint": "4707e16970b58734",
+    "commission": {
+      "poweredCount": 2,
+      "selectableOutputIds": [
+        "bridge",
+        "shelter",
+        "roots",
+        "storm"
+      ]
+    }
+  },
+  "topologyEvidence": {
+    "open": 76,
+    "closed": 75,
+    "connected": true,
+    "spacing": true,
+    "controlCost": 1,
+    "numberCost": 4,
+    "directCosts": [
+      5,
+      9,
+      8
+    ],
+    "alcoveCost": 9,
+    "exclusiveEdges": 7,
+    "valid": true
+  },
+  "mathematicalEvidence": {
+    "unique": true,
+    "solverNodes": 18,
+    "deductions": {
+      "complete": true,
+      "steps": [
+        {
+          "type": "cage-single",
+          "row": 0,
+          "col": 2,
+          "value": 4,
+          "text": "Row 1, column 3 can only be 4 when its cage total is included.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-0",
+                "cellIds": [
+                  "r1c2",
+                  "r2c2",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    1,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 6,
+                    "values": [
+                      4
+                    ]
+                  },
+                  {
+                    "index": 10,
+                    "values": [
+                      4
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-1",
+                "cellIds": [
+                  "r0c0",
+                  "r0c1"
+                ],
+                "sum": 3,
+                "inputDomains": [
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 0,
+                    "values": [
+                      3,
+                      4
+                    ]
+                  },
+                  {
+                    "index": 1,
+                    "values": [
+                      3,
+                      4
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    2,
+                    4,
+                    2
+                  ],
+                  [
+                    3,
+                    4,
+                    1
+                  ],
+                  [
+                    4,
+                    3,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 5,
+                    "values": [
+                      1
+                    ]
+                  },
+                  {
+                    "index": 9,
+                    "values": [
+                      1,
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    1,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      4
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-5",
+                "cellIds": [
+                  "r0c3",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    1,
+                    3
+                  ],
+                  [
+                    3,
+                    1,
+                    2
+                  ],
+                  [
+                    3,
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 3,
+                    "values": [
+                      4
+                    ]
+                  },
+                  {
+                    "index": 7,
+                    "values": [
+                      4
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-6",
+                "cellIds": [
+                  "r0c2",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "sum": 7,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    4,
+                    1,
+                    2
+                  ],
+                  [
+                    4,
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 2,
+                    "values": [
+                      1,
+                      2
+                    ]
+                  },
+                  {
+                    "index": 7,
+                    "values": [
+                      3
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-5",
+                "cellIds": [
+                  "r0c3",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    1,
+                    2
+                  ],
+                  [
+                    3,
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 3,
+                    "values": [
+                      1,
+                      2
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": [
+            {
+              "sourceReductionIndex": 0,
+              "dependentReductionIndex": 2,
+              "sourceCageId": "cage-0",
+              "dependentCageId": "cage-2",
+              "restored": [
+                {
+                  "index": 10,
+                  "values": [
+                    4
+                  ]
+                }
+              ],
+              "dependentRemovals": [
+                {
+                  "index": 5,
+                  "values": [
+                    1
+                  ]
+                },
+                {
+                  "index": 9,
+                  "values": [
+                    1
+                  ]
+                }
+              ],
+              "counterfactualCompletions": [
+                [
+                  1,
+                  3,
+                  4
+                ],
+                [
+                  2,
+                  4,
+                  2
+                ],
+                [
+                  3,
+                  1,
+                  4
+                ],
+                [
+                  3,
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  3,
+                  1
+                ]
+              ],
+              "text": "The reduced candidates in cage cage-0 restrict the shared cells of cage cage-2, allowing a further cage deduction."
+            },
+            {
+              "sourceReductionIndex": 0,
+              "dependentReductionIndex": 5,
+              "sourceCageId": "cage-0",
+              "dependentCageId": "cage-6",
+              "restored": [
+                {
+                  "index": 6,
+                  "values": [
+                    4
+                  ]
+                }
+              ],
+              "dependentRemovals": [
+                {
+                  "index": 2,
+                  "values": [
+                    1,
+                    2
+                  ]
+                }
+              ],
+              "counterfactualCompletions": [
+                [
+                  1,
+                  4,
+                  2
+                ],
+                [
+                  2,
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  1,
+                  2
+                ],
+                [
+                  4,
+                  2,
+                  1
+                ]
+              ],
+              "text": "The reduced candidates in cage cage-0 restrict the shared cells of cage cage-6, allowing a further cage deduction."
+            },
+            {
+              "sourceReductionIndex": 4,
+              "dependentReductionIndex": 5,
+              "sourceCageId": "cage-5",
+              "dependentCageId": "cage-6",
+              "restored": [
+                {
+                  "index": 7,
+                  "values": [
+                    4
+                  ]
+                }
+              ],
+              "dependentRemovals": [
+                {
+                  "index": 2,
+                  "values": [
+                    1,
+                    2
+                  ]
+                }
+              ],
+              "counterfactualCompletions": [
+                [
+                  1,
+                  2,
+                  4
+                ],
+                [
+                  2,
+                  1,
+                  4
+                ],
+                [
+                  4,
+                  1,
+                  2
+                ],
+                [
+                  4,
+                  2,
+                  1
+                ]
+              ],
+              "text": "The reduced candidates in cage cage-5 restrict the shared cells of cage cage-6, allowing a further cage deduction."
+            },
+            {
+              "sourceReductionIndex": 5,
+              "dependentReductionIndex": 6,
+              "sourceCageId": "cage-6",
+              "dependentCageId": "cage-5",
+              "restored": [
+                {
+                  "index": 7,
+                  "values": [
+                    3
+                  ]
+                }
+              ],
+              "dependentRemovals": [
+                {
+                  "index": 3,
+                  "values": [
+                    1,
+                    2
+                  ]
+                }
+              ],
+              "counterfactualCompletions": [
+                [
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  1,
+                  3
+                ],
+                [
+                  3,
+                  1,
+                  2
+                ],
+                [
+                  3,
+                  2,
+                  1
+                ]
+              ],
+              "text": "The reduced candidates in cage cage-6 restrict the shared cells of cage cage-5, allowing a further cage deduction."
+            }
+          ]
+        },
+        {
+          "type": "cage-single",
+          "row": 0,
+          "col": 3,
+          "value": 3,
+          "text": "Row 1, column 4 can only be 3 when its cage total is included.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-1",
+                "cellIds": [
+                  "r0c0",
+                  "r0c1"
+                ],
+                "sum": 3,
+                "inputDomains": [
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 0,
+                    "values": [
+                      3
+                    ]
+                  },
+                  {
+                    "index": 1,
+                    "values": [
+                      3
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    2,
+                    4,
+                    2
+                  ],
+                  [
+                    3,
+                    4,
+                    1
+                  ],
+                  [
+                    4,
+                    3,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 5,
+                    "values": [
+                      1
+                    ]
+                  },
+                  {
+                    "index": 9,
+                    "values": [
+                      1,
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    1,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      4
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-6",
+                "cellIds": [
+                  "r0c2",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "sum": 7,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    4,
+                    1,
+                    2
+                  ],
+                  [
+                    4,
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 7,
+                    "values": [
+                      3
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-5",
+                "cellIds": [
+                  "r0c3",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    1,
+                    2
+                  ],
+                  [
+                    3,
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 3,
+                    "values": [
+                      1,
+                      2
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": [
+            {
+              "sourceReductionIndex": 3,
+              "dependentReductionIndex": 4,
+              "sourceCageId": "cage-6",
+              "dependentCageId": "cage-5",
+              "restored": [
+                {
+                  "index": 7,
+                  "values": [
+                    3
+                  ]
+                }
+              ],
+              "dependentRemovals": [
+                {
+                  "index": 3,
+                  "values": [
+                    1,
+                    2
+                  ]
+                }
+              ],
+              "counterfactualCompletions": [
+                [
+                  1,
+                  2,
+                  3
+                ],
+                [
+                  2,
+                  1,
+                  3
+                ],
+                [
+                  3,
+                  1,
+                  2
+                ],
+                [
+                  3,
+                  2,
+                  1
+                ]
+              ],
+              "text": "The reduced candidates in cage cage-6 restrict the shared cells of cage cage-5, allowing a further cage deduction."
+            }
+          ]
+        },
+        {
+          "type": "derived-hidden-single",
+          "row": 2,
+          "col": 2,
+          "value": 1,
+          "reasonSteps": [
+            {
+              "type": "naked-pair",
+              "group": 1,
+              "cellIds": [
+                "r1c2",
+                "r1c3"
+              ],
+              "values": [
+                1,
+                2
+              ],
+              "removed": [
+                {
+                  "index": 4,
+                  "values": [
+                    1,
+                    2
+                  ]
+                },
+                {
+                  "index": 5,
+                  "values": [
+                    2
+                  ]
+                }
+              ],
+              "text": "row 2, column 3 and row 2, column 4 use 1 and 2 between them. Remove those values from the other cells in this row."
+            },
+            {
+              "type": "cage-intersection",
+              "cageId": "cage-2",
+              "group": 2,
+              "value": 1,
+              "cellIds": [
+                "r2c2"
+              ],
+              "removed": [
+                {
+                  "index": 8,
+                  "values": [
+                    1
+                  ]
+                },
+                {
+                  "index": 11,
+                  "values": [
+                    1
+                  ]
+                }
+              ],
+              "text": "Cage cage-2 must contain 1, and every possible place for it is in this row. Remove 1 from its other cells."
+            }
+          ],
+          "text": "row 2, column 3 and row 2, column 4 use 1 and 2 between them. Remove those values from the other cells in this row. Cage cage-2 must contain 1, and every possible place for it is in this row. Remove 1 from its other cells. Only row 3, column 3 can now hold 1 in this row.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                3,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    2,
+                    4,
+                    2
+                  ],
+                  [
+                    3,
+                    4,
+                    1
+                  ],
+                  [
+                    4,
+                    3,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 5,
+                    "values": [
+                      1
+                    ]
+                  },
+                  {
+                    "index": 9,
+                    "values": [
+                      1,
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    1,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      4
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "cage-single",
+          "row": 1,
+          "col": 1,
+          "value": 3,
+          "text": "Row 2, column 2 can only be 3 when its cage total is included.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              null,
+              null,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              1,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                3,
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    4,
+                    1
+                  ],
+                  [
+                    4,
+                    3,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 5,
+                    "values": [
+                      1,
+                      2
+                    ]
+                  },
+                  {
+                    "index": 9,
+                    "values": [
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-3",
+                "cellIds": [
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 5,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    4,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 9,
+                    "values": [
+                      3
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1,
+                      4
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-5",
+                "cellIds": [
+                  "r0c3",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 7,
+                    "values": [
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    3,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    4,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 5,
+                    "values": [
+                      4
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": [
+            {
+              "sourceReductionIndex": 1,
+              "dependentReductionIndex": 4,
+              "sourceCageId": "cage-3",
+              "dependentCageId": "cage-2",
+              "restored": [
+                {
+                  "index": 9,
+                  "values": [
+                    3
+                  ]
+                }
+              ],
+              "dependentRemovals": [
+                {
+                  "index": 5,
+                  "values": [
+                    4
+                  ]
+                }
+              ],
+              "counterfactualCompletions": [
+                [
+                  3,
+                  4,
+                  1
+                ],
+                [
+                  4,
+                  3,
+                  1
+                ]
+              ],
+              "text": "The reduced candidates in cage cage-3 restrict the shared cells of cage cage-2, allowing a further cage deduction."
+            }
+          ]
+        },
+        {
+          "type": "single",
+          "row": 1,
+          "col": 2,
+          "value": 2,
+          "text": "Row 2, column 3 can only be 2 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              null,
+              3,
+              null,
+              null
+            ],
+            [
+              null,
+              null,
+              1,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    4,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 9,
+                    "values": [
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1,
+                      4
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-5",
+                "cellIds": [
+                  "r0c3",
+                  "r1c2",
+                  "r1c3"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 7,
+                    "values": [
+                      2
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "single",
+          "row": 1,
+          "col": 3,
+          "value": 1,
+          "text": "Row 2, column 4 can only be 1 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              null,
+              3,
+              2,
+              null
+            ],
+            [
+              null,
+              null,
+              1,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                1,
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    4,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 9,
+                    "values": [
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    1,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1,
+                      4
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "single",
+          "row": 1,
+          "col": 0,
+          "value": 4,
+          "text": "Row 2, column 1 can only be 4 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              null,
+              3,
+              2,
+              1
+            ],
+            [
+              null,
+              null,
+              1,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                3,
+                4
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                1,
+                2,
+                4
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    4,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 9,
+                    "values": [
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3,
+                    4
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1,
+                      4
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "cage-single",
+          "row": 2,
+          "col": 1,
+          "value": 4,
+          "text": "Row 3, column 2 can only be 4 when its cage total is included.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              null,
+              null,
+              1,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                4
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-2",
+                "cellIds": [
+                  "r1c1",
+                  "r2c1",
+                  "r2c2"
+                ],
+                "sum": 8,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    3,
+                    4,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 9,
+                    "values": [
+                      2
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    4
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2,
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1,
+                      4
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "single",
+          "row": 2,
+          "col": 3,
+          "value": 2,
+          "text": "Row 3, column 4 can only be 2 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              null,
+              4,
+              1,
+              null
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2,
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                2,
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2,
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2,
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "single",
+          "row": 2,
+          "col": 0,
+          "value": 3,
+          "text": "Row 3, column 1 can only be 3 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              null,
+              4,
+              1,
+              2
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "cage-single",
+          "row": 3,
+          "col": 1,
+          "value": 2,
+          "text": "Row 4, column 2 can only be 2 when its cage total is included.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              4,
+              1,
+              2
+            ],
+            [
+              null,
+              null,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                1,
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                1,
+                2
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-4",
+                "cellIds": [
+                  "r2c2",
+                  "r3c1",
+                  "r3c2"
+                ],
+                "sum": 6,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    1,
+                    2,
+                    3
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 13,
+                    "values": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "cage-single",
+          "row": 0,
+          "col": 0,
+          "value": 2,
+          "text": "Row 1, column 1 can only be 2 when its cage total is included.",
+          "gridBefore": [
+            [
+              null,
+              null,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              4,
+              1,
+              2
+            ],
+            [
+              null,
+              2,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "reductions": [
+              {
+                "type": "cage-filter",
+                "cageId": "cage-1",
+                "cellIds": [
+                  "r0c0",
+                  "r0c1"
+                ],
+                "sum": 3,
+                "inputDomains": [
+                  [
+                    1,
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    1
+                  ],
+                  [
+                    2
+                  ],
+                  [
+                    3
+                  ],
+                  [
+                    4
+                  ]
+                ],
+                "completions": [
+                  [
+                    2,
+                    1
+                  ]
+                ],
+                "removed": [
+                  {
+                    "index": 0,
+                    "values": [
+                      1
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "cageChains": []
+        },
+        {
+          "type": "single",
+          "row": 0,
+          "col": 1,
+          "value": 1,
+          "text": "Row 1, column 2 can only be 1 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              2,
+              null,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              4,
+              1,
+              2
+            ],
+            [
+              null,
+              2,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "reductions": []
+          },
+          "cageChains": []
+        },
+        {
+          "type": "single",
+          "row": 3,
+          "col": 0,
+          "value": 1,
+          "text": "Row 4, column 1 can only be 1 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              2,
+              1,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              4,
+              1,
+              2
+            ],
+            [
+              null,
+              2,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "reductions": []
+          },
+          "cageChains": []
+        },
+        {
+          "type": "single",
+          "row": 3,
+          "col": 3,
+          "value": 4,
+          "text": "Row 4, column 4 can only be 4 after checking its row, column and box.",
+          "gridBefore": [
+            [
+              2,
+              1,
+              4,
+              3
+            ],
+            [
+              4,
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              4,
+              1,
+              2
+            ],
+            [
+              1,
+              2,
+              3,
+              null
+            ]
+          ],
+          "candidateEvidence": {
+            "valid": true,
+            "candidates": [
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                3
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                1
+              ],
+              [
+                2
+              ],
+              [
+                3
+              ],
+              [
+                4
+              ]
+            ],
+            "reductions": []
+          },
+          "cageChains": []
+        }
+      ],
+      "finalGrid": [
+        [
+          2,
+          1,
+          4,
+          3
+        ],
+        [
+          4,
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          4,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ]
+    },
+    "construction": {
+      "patternIndex": 0,
+      "sourceAttempt": 9797,
+      "canonicalTransform": {
+        "rows": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "cols": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "symbols": [
+          2,
+          3,
+          1,
+          4
+        ]
+      },
+      "targetGivenCount": 1,
+      "targetCageCount": 7,
+      "initialCages": [
+        {
+          "cellIds": [
+            "r1c2",
+            "r2c2",
+            "r3c2"
+          ],
+          "sum": 6,
+          "id": "cage-0"
+        },
+        {
+          "cellIds": [
+            "r0c0",
+            "r0c1"
+          ],
+          "sum": 3,
+          "id": "cage-1"
+        },
+        {
+          "cellIds": [
+            "r1c1",
+            "r2c1",
+            "r2c2"
+          ],
+          "sum": 8,
+          "id": "cage-2"
+        },
+        {
+          "cellIds": [
+            "r2c1",
+            "r2c2"
+          ],
+          "sum": 5,
+          "id": "cage-3"
+        },
+        {
+          "cellIds": [
+            "r2c2",
+            "r3c1",
+            "r3c2"
+          ],
+          "sum": 6,
+          "id": "cage-4"
+        },
+        {
+          "cellIds": [
+            "r0c3",
+            "r1c2",
+            "r1c3"
+          ],
+          "sum": 6,
+          "id": "cage-5"
+        }
+      ],
+      "changes": [
+        {
+          "type": "remove-given",
+          "cellId": "r1c3",
+          "unique": true,
+          "solverNodes": 2
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r3c0",
+          "unique": true,
+          "solverNodes": 3
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r2c1",
+          "unique": true,
+          "solverNodes": 4
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r1c0",
+          "unique": true,
+          "solverNodes": 5
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r0c3",
+          "unique": true,
+          "solverNodes": 6
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r2c2",
+          "unique": true,
+          "solverNodes": 7
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r3c1",
+          "unique": true,
+          "solverNodes": 8
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r0c0",
+          "unique": true,
+          "solverNodes": 9
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r1c2",
+          "unique": true,
+          "solverNodes": 10
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r0c1",
+          "unique": true,
+          "solverNodes": 11
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r3c3",
+          "unique": true,
+          "solverNodes": 12
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r0c2",
+          "unique": true,
+          "solverNodes": 13
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r1c1",
+          "unique": true,
+          "solverNodes": 14
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r2c3",
+          "unique": true,
+          "solverNodes": 15
+        },
+        {
+          "type": "remove-given",
+          "cellId": "r2c0",
+          "unique": true,
+          "solverNodes": 18
+        },
+        {
+          "type": "add-cage",
+          "cellIds": [
+            "r0c2",
+            "r1c2",
+            "r1c3"
+          ],
+          "unique": true,
+          "solverNodes": 18
+        }
+      ]
+    },
+    "rejections": {
+      "geometry": 171,
+      "clueTarget": 0,
+      "cageTarget": 0,
+      "solverUnknown": 0,
+      "humanIncomplete": 0,
+      "techniques": 9
+    }
+  },
+  "puzzleFingerprint": "0e11b3a7cbfd45a0",
+  "certified": false
+}

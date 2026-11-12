@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 2,
+  "rulesVersion": 2,
+  "runId": "fixture-run",
+  "revision": 0,
+  "blueprint": "(see blueprint.fixture.json)",
+  "profiles": {
+    "bushel": {
+      "cardId": "bushel",
+      "name": "Bushel",
+      "rarity": "common",
+      "stats": [
+        5,
+        1,
+        2,
+        3,
+        2
+      ],
+      "discipline": "arithmetic",
+      "primaryStat": 0,
+      "role": "tank",
+      "roleName": "Guardian",
+      "maxHealth": 13,
+      "moveBudget": 4,
+      "armour": 0,
+      "initiative": 10,
+      "strikeRange": 1,
+      "strikeStat": 5,
+      "dashBudget": 6,
+      "interceptBudget": 2,
+      "hand": [
+        {
+          "key": "exact-blow",
+          "kind": "discipline"
+        },
+        {
+          "key": "shared-charge",
+          "kind": "discipline"
+        },
+        {
+          "key": "stand-together",
+          "kind": "role"
+        },
+        {
+          "key": "second-wind",
+          "kind": "second-wind"
+        }
+      ]
+    },
+    "furrow": {
+      "cardId": "furrow",
+      "name": "Furrow",
+      "rarity": "common",
+      "stats": [
+        1,
+        4,
+        2,
+        1,
+        5
+      ],
+      "discipline": "speed",
+      "primaryStat": 4,
+      "role": "tank",
+      "roleName": "Guardian",
+      "maxHealth": 11,
+      "moveBudget": 5,
+      "armour": 1,
+      "initiative": 7,
+      "strikeRange": 1,
+      "strikeStat": 5,
+      "dashBudget": 9,
+      "interceptBudget": 5,
+      "hand": [
+        {
+          "key": "dash",
+          "kind": "discipline"
+        },
+        {
+          "key": "intercept",
+          "kind": "discipline"
+        },
+        {
+          "key": "stand-together",
+          "kind": "role"
+        },
+        {
+          "key": "second-wind",
+          "kind": "second-wind"
+        }
+      ]
+    },
+    "pip": {
+      "cardId": "pip",
+      "name": "Pip",
+      "rarity": "common",
+      "stats": [
+        1,
+        1,
+        3,
+        6,
+        2
+      ],
+      "discipline": "science",
+      "primaryStat": 3,
+      "role": "healer",
+      "roleName": "Mender",
+      "maxHealth": 16,
+      "moveBudget": 4,
+      "armour": 0,
+      "initiative": 10,
+      "strikeRange": 1,
+      "strikeStat": 6,
+      "dashBudget": 6,
+      "interceptBudget": 2,
+      "hand": [
+        {
+          "key": "field-repair",
+          "kind": "discipline"
+        },
+        {
+          "key": "root-shelter",
+          "kind": "discipline"
+        },
+        {
+          "key": "mend-and-mend-again",
+          "kind": "role"
+        },
+        {
+          "key": "second-wind",
+          "kind": "second-wind"
+        }
+      ]
+    }
+  },
+  "round": 1,
+  "status": "playing",
+  "lossReason": null,
+  "heroes": [
+    {
+      "id": "bushel",
+      "cardId": "bushel",
+      "position": "1,3",
+      "hp": 13,
+      "ap": 2,
+      "handReady": {
+        "exact-blow": true,
+        "shared-charge": true,
+        "stand-together": true,
+        "second-wind": true
+      },
+      "refocusUsed": false,
+      "defeated": false,
+      "holding": null
+    },
+    {
+      "id": "furrow",
+      "cardId": "furrow",
+      "position": "0,4",
+      "hp": 11,
+      "ap": 2,
+      "handReady": {
+        "dash": true,
+        "intercept": true,
+        "stand-together": true,
+        "second-wind": true
+      },
+      "refocusUsed": false,
+      "defeated": false,
+      "holding": null
+    },
+    {
+      "id": "pip",
+      "cardId": "pip",
+      "position": "0,5",
+      "hp": 16,
+      "ap": 2,
+      "handReady": {
+        "field-repair": true,
+        "root-shelter": true,
+        "mend-and-mend-again": true,
+        "second-wind": true
+      },
+      "refocusUsed": false,
+      "defeated": false,
+      "holding": null
+    }
+  ],
+  "enemyStates": [
+    {
+      "id": "hookmole-1",
+      "position": "9,2",
+      "hp": 10,
+      "defeated": false
+    }
+  ],
+  "stationStates": {
+    "control": {
+      "charge": 0,
+      "integrity": 12
+    },
+    "number": {
+      "charge": 0,
+      "integrity": 12
+    },
+    "shape": {
+      "charge": 0,
+      "integrity": 12
+    },
+    "sustain": {
+      "charge": 0,
+      "integrity": 12
+    }
+  },
+  "puzzleActive": {
+    "content": {
+      "switches": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "selectedOutputIds": []
+  },
+  "puzzleDraft": {
+    "content": {
+      "switches": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "selectedOutputIds": [
+      "bridge",
+      "shelter"
+    ],
+    "revision": 0
+  },
+  "puzzleValid": false,
+  "activeOutputs": {
+    "bridge": false,
+    "shelter": false
+  },
+  "passages": {
+    "4,4": {
+      "open": false,
+      "closingPending": false
+    }
+  },
+  "orchardIntegrity": 20,
+  "marks": {},
+  "phaseEffects": {
+    "grants": [],
+    "counters": [],
+    "suppressedShelterCells": [],
+    "suppressedSectors": [],
+    "pendingRestore": [],
+    "rootsActive": false,
+    "nestSnapshot": null
+  },
+  "holds": {},
+  "preparedAlcove": false,
+  "comparisonLog": [],
+  "comparisonsUsed": 0,
+  "eventSeq": 0,
+  "events": [],
+  "undo": [],
+  "hintStage": 0,
+  "actionCount": 0,
+  "log": [],
+  "initialRun": {
+    "runId": "fixture-run",
+    "blueprint": "(see blueprint.fixture.json)",
+    "cardIds": [
+      "bushel",
+      "furrow",
+      "pip"
+    ],
+    "deploymentAssignment": {
+      "bushel": "1,3",
+      "furrow": "0,4",
+      "pip": "0,5"
+    },
+    "profiles": {
+      "bushel": {
+        "cardId": "bushel",
+        "name": "Bushel",
+        "rarity": "common",
+        "stats": [
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "discipline": "arithmetic",
+        "primaryStat": 0,
+        "role": "tank",
+        "roleName": "Guardian",
+        "maxHealth": 13,
+        "moveBudget": 4,
+        "armour": 0,
+        "initiative": 10,
+        "strikeRange": 1,
+        "strikeStat": 5,
+        "dashBudget": 6,
+        "interceptBudget": 2,
+        "hand": [
+          {
+            "key": "exact-blow",
+            "kind": "discipline"
+          },
+          {
+            "key": "shared-charge",
+            "kind": "discipline"
+          },
+          {
+            "key": "stand-together",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      },
+      "furrow": {
+        "cardId": "furrow",
+        "name": "Furrow",
+        "rarity": "common",
+        "stats": [
+          1,
+          4,
+          2,
+          1,
+          5
+        ],
+        "discipline": "speed",
+        "primaryStat": 4,
+        "role": "tank",
+        "roleName": "Guardian",
+        "maxHealth": 11,
+        "moveBudget": 5,
+        "armour": 1,
+        "initiative": 7,
+        "strikeRange": 1,
+        "strikeStat": 5,
+        "dashBudget": 9,
+        "interceptBudget": 5,
+        "hand": [
+          {
+            "key": "dash",
+            "kind": "discipline"
+          },
+          {
+            "key": "intercept",
+            "kind": "discipline"
+          },
+          {
+            "key": "stand-together",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      },
+      "pip": {
+        "cardId": "pip",
+        "name": "Pip",
+        "rarity": "common",
+        "stats": [
+          1,
+          1,
+          3,
+          6,
+          2
+        ],
+        "discipline": "science",
+        "primaryStat": 3,
+        "role": "healer",
+        "roleName": "Mender",
+        "maxHealth": 16,
+        "moveBudget": 4,
+        "armour": 0,
+        "initiative": 10,
+        "strikeRange": 1,
+        "strikeStat": 6,
+        "dashBudget": 6,
+        "interceptBudget": 2,
+        "hand": [
+          {
+            "key": "field-repair",
+            "kind": "discipline"
+          },
+          {
+            "key": "root-shelter",
+            "kind": "discipline"
+          },
+          {
+            "key": "mend-and-mend-again",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      }
+    },
+    "initialStateHash": "867a1c95df251e3e"
+  }
+}

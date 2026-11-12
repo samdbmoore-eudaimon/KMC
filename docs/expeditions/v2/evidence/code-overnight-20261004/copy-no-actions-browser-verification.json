@@ -1,0 +1,53 @@
+{
+  "provenance": "Actual browser controls from zero; independently replayed partial run, not a win",
+  "commands": 19,
+  "revision": 19,
+  "round": 3,
+  "allHeroActionsZero": true,
+  "guide": {
+    "id": "walk-to-control",
+    "focus": "control",
+    "title": "Walk a hero to the Scale control",
+    "text": "Activate the balanced crossing at Scale control (2,3). You can solve its puzzle from anywhere for free, but switching it on needs a hero standing on or beside it. Dapple is 1 hex away.",
+    "action": "move"
+  },
+  "intent": {
+    "enemyId": "jammer-1",
+    "ruleId": "jammer",
+    "artId": "hookmole",
+    "verb": "disrupt",
+    "targetId": "control",
+    "power": 4,
+    "from": "6,2",
+    "path": [
+      "5,2",
+      "5,1",
+      "4,1"
+    ],
+    "actualPath": [
+      "5,2",
+      "5,1",
+      "4,1"
+    ],
+    "puzzleChange": {
+      "memberId": "load-5",
+      "groupIds": [
+        "left-pan",
+        "network"
+      ],
+      "kind": "jam",
+      "applied": false
+    },
+    "hpChange": null,
+    "blockedBy": {
+      "code": "out-of-range",
+      "distance": 2,
+      "range": 1
+    },
+    "wakePhase": null,
+    "sector": null
+  },
+  "intentCopy": "Hookmole moves to 4,1 then disrupt Scale control; power 4; changes load-5; blocked: Move closer to the target first..",
+  "phasePreviewCommitted": false,
+  "productionEdited": false
+}

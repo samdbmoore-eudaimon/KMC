@@ -1,0 +1,57 @@
+{
+  "original": "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stream-v1.webp",
+  "originalSha256": "98243824a54691c3a0c5cd3be7190cf43ade46a6f83895ecf2cb3d789f3bd1a2",
+  "sourcePath": "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-raised-front-walls-reuse-v1.png",
+  "runtimePath": "assets/expeditions/production/9fo/v2/river-art-batch/runtime/po-river-raised-front-walls-reuse-v1.webp",
+  "width": 384,
+  "height": 160,
+  "topCentre": [
+    192,
+    -65
+  ],
+  "groundAnchor": [
+    192,
+    133
+  ],
+  "depth": 36,
+  "faces": [
+    [
+      [
+        51.704,
+        16
+      ],
+      [
+        192,
+        97
+      ],
+      [
+        192,
+        133
+      ],
+      [
+        51.704,
+        52
+      ]
+    ],
+    [
+      [
+        192,
+        97
+      ],
+      [
+        332.296,
+        16
+      ],
+      [
+        332.296,
+        52
+      ],
+      [
+        192,
+        133
+      ]
+    ]
+  ],
+  "surfaceRotation": 0,
+  "method": "Existing painted left/right front-wall pixels mapped into exact fixed world-facing wall quads. This is wall-material projection, not a river surface warp. Original highlights/rocks/roots preserved. Never rotate this wall layer with a channel."
+}

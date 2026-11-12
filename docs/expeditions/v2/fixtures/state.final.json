@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 2,
+  "rulesVersion": 2,
+  "runId": "fixture-run",
+  "revision": 27,
+  "round": 4,
+  "status": "won",
+  "lossReason": null,
+  "heroes": [
+    {
+      "id": "bushel",
+      "cardId": "bushel",
+      "position": "6,4",
+      "hp": 13,
+      "ap": 1,
+      "handReady": {
+        "exact-blow": true,
+        "shared-charge": true,
+        "stand-together": true,
+        "second-wind": true
+      },
+      "refocusUsed": false,
+      "defeated": false,
+      "holding": null
+    },
+    {
+      "id": "furrow",
+      "cardId": "furrow",
+      "position": "9,1",
+      "hp": 11,
+      "ap": 1,
+      "handReady": {
+        "dash": true,
+        "intercept": true,
+        "stand-together": true,
+        "second-wind": true
+      },
+      "refocusUsed": false,
+      "defeated": false,
+      "holding": null
+    },
+    {
+      "id": "pip",
+      "cardId": "pip",
+      "position": "5,7",
+      "hp": 16,
+      "ap": 1,
+      "handReady": {
+        "field-repair": true,
+        "root-shelter": true,
+        "mend-and-mend-again": true,
+        "second-wind": true
+      },
+      "refocusUsed": false,
+      "defeated": false,
+      "holding": null
+    }
+  ],
+  "enemyStates": [
+    {
+      "id": "hookmole-1",
+      "position": "6,2",
+      "hp": 10,
+      "defeated": false
+    }
+  ],
+  "stationStates": {
+    "control": {
+      "charge": 0,
+      "integrity": 12
+    },
+    "number": {
+      "charge": 4,
+      "integrity": 12
+    },
+    "shape": {
+      "charge": 4,
+      "integrity": 12
+    },
+    "sustain": {
+      "charge": 4,
+      "integrity": 12
+    }
+  },
+  "puzzleActive": {
+    "content": {
+      "switches": [
+        1,
+        0,
+        1,
+        1
+      ]
+    },
+    "selectedOutputIds": [
+      "bridge",
+      "shelter"
+    ]
+  },
+  "puzzleDraft": {
+    "content": {
+      "switches": [
+        1,
+        0,
+        1,
+        1
+      ]
+    },
+    "selectedOutputIds": [
+      "bridge",
+      "shelter"
+    ],
+    "revision": 3
+  },
+  "puzzleValid": true,
+  "activeOutputs": {
+    "bridge": true,
+    "shelter": true
+  },
+  "passages": {
+    "4,4": {
+      "open": true,
+      "closingPending": false
+    }
+  },
+  "orchardIntegrity": 11,
+  "marks": {},
+  "phaseEffects": {
+    "grants": [],
+    "counters": [],
+    "suppressedShelterCells": [],
+    "suppressedSectors": [],
+    "pendingRestore": [],
+    "rootsActive": false,
+    "nestSnapshot": null
+  },
+  "holds": {},
+  "preparedAlcove": false,
+  "comparisonLog": [],
+  "comparisonsUsed": 0,
+  "eventSeq": 40,
+  "hintStage": 0,
+  "actionCount": 27,
+  "blueprint": "(see blueprint.fixture.json)",
+  "profiles": {
+    "bushel": {
+      "cardId": "bushel",
+      "name": "Bushel",
+      "rarity": "common",
+      "stats": [
+        5,
+        1,
+        2,
+        3,
+        2
+      ],
+      "discipline": "arithmetic",
+      "primaryStat": 0,
+      "role": "tank",
+      "roleName": "Guardian",
+      "maxHealth": 13,
+      "moveBudget": 4,
+      "armour": 0,
+      "initiative": 10,
+      "strikeRange": 1,
+      "strikeStat": 5,
+      "dashBudget": 6,
+      "interceptBudget": 2,
+      "hand": [
+        {
+          "key": "exact-blow",
+          "kind": "discipline"
+        },
+        {
+          "key": "shared-charge",
+          "kind": "discipline"
+        },
+        {
+          "key": "stand-together",
+          "kind": "role"
+        },
+        {
+          "key": "second-wind",
+          "kind": "second-wind"
+        }
+      ]
+    },
+    "furrow": {
+      "cardId": "furrow",
+      "name": "Furrow",
+      "rarity": "common",
+      "stats": [
+        1,
+        4,
+        2,
+        1,
+        5
+      ],
+      "discipline": "speed",
+      "primaryStat": 4,
+      "role": "tank",
+      "roleName": "Guardian",
+      "maxHealth": 11,
+      "moveBudget": 5,
+      "armour": 1,
+      "initiative": 7,
+      "strikeRange": 1,
+      "strikeStat": 5,
+      "dashBudget": 9,
+      "interceptBudget": 5,
+      "hand": [
+        {
+          "key": "dash",
+          "kind": "discipline"
+        },
+        {
+          "key": "intercept",
+          "kind": "discipline"
+        },
+        {
+          "key": "stand-together",
+          "kind": "role"
+        },
+        {
+          "key": "second-wind",
+          "kind": "second-wind"
+        }
+      ]
+    },
+    "pip": {
+      "cardId": "pip",
+      "name": "Pip",
+      "rarity": "common",
+      "stats": [
+        1,
+        1,
+        3,
+        6,
+        2
+      ],
+      "discipline": "science",
+      "primaryStat": 3,
+      "role": "healer",
+      "roleName": "Mender",
+      "maxHealth": 16,
+      "moveBudget": 4,
+      "armour": 0,
+      "initiative": 10,
+      "strikeRange": 1,
+      "strikeStat": 6,
+      "dashBudget": 6,
+      "interceptBudget": 2,
+      "hand": [
+        {
+          "key": "field-repair",
+          "kind": "discipline"
+        },
+        {
+          "key": "root-shelter",
+          "kind": "discipline"
+        },
+        {
+          "key": "mend-and-mend-again",
+          "kind": "role"
+        },
+        {
+          "key": "second-wind",
+          "kind": "second-wind"
+        }
+      ]
+    }
+  },
+  "initialRun": {
+    "runId": "fixture-run",
+    "blueprint": "(see blueprint.fixture.json)",
+    "cardIds": [
+      "bushel",
+      "furrow",
+      "pip"
+    ],
+    "deploymentAssignment": {
+      "bushel": "1,3",
+      "furrow": "0,4",
+      "pip": "0,5"
+    },
+    "profiles": {
+      "bushel": {
+        "cardId": "bushel",
+        "name": "Bushel",
+        "rarity": "common",
+        "stats": [
+          5,
+          1,
+          2,
+          3,
+          2
+        ],
+        "discipline": "arithmetic",
+        "primaryStat": 0,
+        "role": "tank",
+        "roleName": "Guardian",
+        "maxHealth": 13,
+        "moveBudget": 4,
+        "armour": 0,
+        "initiative": 10,
+        "strikeRange": 1,
+        "strikeStat": 5,
+        "dashBudget": 6,
+        "interceptBudget": 2,
+        "hand": [
+          {
+            "key": "exact-blow",
+            "kind": "discipline"
+          },
+          {
+            "key": "shared-charge",
+            "kind": "discipline"
+          },
+          {
+            "key": "stand-together",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      },
+      "furrow": {
+        "cardId": "furrow",
+        "name": "Furrow",
+        "rarity": "common",
+        "stats": [
+          1,
+          4,
+          2,
+          1,
+          5
+        ],
+        "discipline": "speed",
+        "primaryStat": 4,
+        "role": "tank",
+        "roleName": "Guardian",
+        "maxHealth": 11,
+        "moveBudget": 5,
+        "armour": 1,
+        "initiative": 7,
+        "strikeRange": 1,
+        "strikeStat": 5,
+        "dashBudget": 9,
+        "interceptBudget": 5,
+        "hand": [
+          {
+            "key": "dash",
+            "kind": "discipline"
+          },
+          {
+            "key": "intercept",
+            "kind": "discipline"
+          },
+          {
+            "key": "stand-together",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      },
+      "pip": {
+        "cardId": "pip",
+        "name": "Pip",
+        "rarity": "common",
+        "stats": [
+          1,
+          1,
+          3,
+          6,
+          2
+        ],
+        "discipline": "science",
+        "primaryStat": 3,
+        "role": "healer",
+        "roleName": "Mender",
+        "maxHealth": 16,
+        "moveBudget": 4,
+        "armour": 0,
+        "initiative": 10,
+        "strikeRange": 1,
+        "strikeStat": 6,
+        "dashBudget": 6,
+        "interceptBudget": 2,
+        "hand": [
+          {
+            "key": "field-repair",
+            "kind": "discipline"
+          },
+          {
+            "key": "root-shelter",
+            "kind": "discipline"
+          },
+          {
+            "key": "mend-and-mend-again",
+            "kind": "role"
+          },
+          {
+            "key": "second-wind",
+            "kind": "second-wind"
+          }
+        ]
+      }
+    },
+    "initialStateHash": "867a1c95df251e3e"
+  },
+  "undo": [],
+  "events": "40 events (see win-trace replay)",
+  "log": [
+    {
+      "type": "move",
+      "heroId": "bushel",
+      "expectedRevision": 0,
+      "payload": {
+        "destination": "2,4",
+        "path": null
+      }
+    },
+    {
+      "type": "edit-draft",
+      "heroId": null,
+      "expectedRevision": 1,
+      "payload": {
+        "puzzleId": "fixture",
+        "edit": {
+          "type": "set-cell",
+          "row": 0,
+          "col": 0,
+          "value": 1
+        }
+      }
+    },
+    {
+      "type": "edit-draft",
+      "heroId": null,
+      "expectedRevision": 2,
+      "payload": {
+        "puzzleId": "fixture",
+        "edit": {
+          "type": "set-cell",
+          "row": 0,
+          "col": 2,
+          "value": 1
+        }
+      }
+    },
+    {
+      "type": "edit-draft",
+      "heroId": null,
+      "expectedRevision": 3,
+      "payload": {
+        "puzzleId": "fixture",
+        "edit": {
+          "type": "set-cell",
+          "row": 0,
+          "col": 3,
+          "value": 1
+        }
+      }
+    },
+    {
+      "type": "operate",
+      "heroId": "bushel",
+      "expectedRevision": 4,
+      "payload": {
+        "draftRevision": 3,
+        "outputIds": [
+          "bridge",
+          "shelter"
+        ]
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "furrow",
+      "expectedRevision": 5,
+      "payload": {
+        "destination": "5,1",
+        "path": null
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "furrow",
+      "expectedRevision": 6,
+      "payload": {
+        "destination": "9,1",
+        "path": null
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "pip",
+      "expectedRevision": 7,
+      "payload": {
+        "destination": "3,6",
+        "path": null
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "pip",
+      "expectedRevision": 8,
+      "payload": {
+        "destination": "5,7",
+        "path": null
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 9,
+      "payload": {
+        "forecastRevision": 9
+      }
+    },
+    {
+      "type": "move",
+      "heroId": "bushel",
+      "expectedRevision": 10,
+      "payload": {
+        "destination": "6,4",
+        "path": null
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "bushel",
+      "expectedRevision": 11,
+      "payload": {
+        "targetId": "number"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "furrow",
+      "expectedRevision": 12,
+      "payload": {
+        "targetId": "shape"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "furrow",
+      "expectedRevision": 13,
+      "payload": {
+        "targetId": "shape"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "pip",
+      "expectedRevision": 14,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "pip",
+      "expectedRevision": 15,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 16,
+      "payload": {
+        "forecastRevision": 16
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "furrow",
+      "expectedRevision": 17,
+      "payload": {
+        "targetId": "shape"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "furrow",
+      "expectedRevision": 18,
+      "payload": {
+        "targetId": "shape"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "pip",
+      "expectedRevision": 19,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "calibrate",
+      "heroId": "pip",
+      "expectedRevision": 20,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "bushel",
+      "expectedRevision": 21,
+      "payload": {
+        "targetId": "number"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 22,
+      "payload": {
+        "forecastRevision": 22
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "bushel",
+      "expectedRevision": 23,
+      "payload": {
+        "targetId": "number"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "furrow",
+      "expectedRevision": 24,
+      "payload": {
+        "targetId": "shape"
+      }
+    },
+    {
+      "type": "hold",
+      "heroId": "pip",
+      "expectedRevision": 25,
+      "payload": {
+        "targetId": "sustain"
+      }
+    },
+    {
+      "type": "end-round",
+      "heroId": null,
+      "expectedRevision": 26,
+      "payload": {
+        "forecastRevision": 26
+      }
+    }
+  ],
+  "finalStateHash": "ad11f1ecfdc51221"
+}

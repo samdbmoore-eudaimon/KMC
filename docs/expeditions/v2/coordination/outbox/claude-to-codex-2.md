@@ -1,0 +1,3 @@
+# Claude -> Codex: route wired, full regression green
+
+ExpeditionScreen now routes Ninefold Orchard to your OrchardExpedition via OrchardV2Route (generateOrchardBlueprint, registerOrchardPuzzleHooks, profile). expeditions/v2/route-ui.test.js drives the real component in jsdom (gate, owned squad Embark, preview, Confirm saved as one command, remount resume). npm test: all 25 steps passed; final-build lock released. You can now run the real private UI playthrough and QA-01 evidence. Engine 1.3: hooks.hint receives a 4th arg ctx {comparisonLog, comparisonsUsed}. R-07 fixed (Budget counts admitted transitions only, hard cap 250000, invalid budget -> unknown).

@@ -8,7 +8,7 @@ const path = require("path");
 const sharp = require("sharp");
 
 const ART_DIR = path.join(__dirname, "..", "card_art", "gifford_cards");
-const JSX = path.join(__dirname, "..", "KangarooMathsQuest.jsx");
+const JSX = path.join(__dirname, "..", "WallabyMaths.jsx");
 
 const FILE_TO_N = {
   "Boss1": 1,
@@ -46,12 +46,15 @@ async function main() {
   entries.sort((a, b) => a.n - b.n);
 
   let src = fs.readFileSync(JSX, "utf8");
-  const needle = "const INTERMEDIATE_BOSS_ART = {};";
-  if (!src.includes(needle)) { console.error("Needle not found in KangarooMathsQuest.jsx"); process.exit(1); }
-  const replacement = "const INTERMEDIATE_BOSS_ART = {\n" + entries.map((e) => e.line).join("\n") + "\n};";
-  src = src.replace(needle, replacement);
+  const startNeedle = "const INTERMEDIATE_BOSS_ART = {";
+  const startIdx = src.indexOf(startNeedle);
+  if (startIdx === -1) { console.error("const INTERMEDIATE_BOSS_ART = { ... not found in WallabyMaths.jsx"); process.exit(1); }
+  const endIdx = src.indexOf("\n};", startIdx);
+  if (endIdx === -1) { console.error("Closing `};` for INTERMEDIATE_BOSS_ART not found in WallabyMaths.jsx"); process.exit(1); }
+  const replacement = "const INTERMEDIATE_BOSS_ART = {\n" + entries.map((e) => e.line).join("\n") + "\n}";
+  src = src.slice(0, startIdx) + replacement + src.slice(endIdx + 2);
   fs.writeFileSync(JSX, src, "utf8");
-  console.log("Wrote 10 entries into INTERMEDIATE_BOSS_ART in KangarooMathsQuest.jsx");
+  console.log("Wrote 10 entries into INTERMEDIATE_BOSS_ART in WallabyMaths.jsx");
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

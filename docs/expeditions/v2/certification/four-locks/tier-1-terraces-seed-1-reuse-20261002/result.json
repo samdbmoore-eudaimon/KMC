@@ -1,0 +1,279 @@
+{
+  "request": {
+    "tier": 1,
+    "seed": 1,
+    "layoutId": "terraces",
+    "reference": false,
+    "evidenceId": "reuse-20261002"
+  },
+  "sourceProof": {
+    "directory": "tier-1-terraces-seed-1-archetypes-20261002",
+    "candidateHash": "17576a9c85fdeca7",
+    "blueprintHash": "f0a1f73bbe8af8ac",
+    "inheritedTraceHashes": [
+      "3f532a351e9e1a7a"
+    ]
+  },
+  "candidateStatus": "success",
+  "canonicalFingerprints": {
+    "topology": {
+      "version": 1,
+      "hash": "772b36da02f2c5bf",
+      "serialization": "[{\"q\":11,\"r\":0,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"alcove\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":0,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":13,\"r\":1,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"shape\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":2,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"orchard\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":13,\"r\":2,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":3,\"terrain\":\"gate\",\"cost\":1,\"anchors\":[],\"passage\":true,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":3,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":3,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":4,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":4,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":4,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"number\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":12,\"r\":4,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":5,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":5,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":5,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"sustain\"],\"passage\":false,\"permanent\":false,\"hazards\":[[\"environment\",\"none\",\"sustain\"]]},{\"q\":12,\"r\":5,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":6,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":6,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":6,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":11,\"r\":6,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":7,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":7,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":7,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":7,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":7,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":10,\"r\":7,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":8,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":8,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":8,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":8,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":9,\"r\":8,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"deployment\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":9,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"deployment\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"control\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":8,\"r\":9,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[\"deployment\"],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":10,\"terrain\":\"hedge\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":7,\"r\":10,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":0,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":4,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":6,\"r\":11,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":1,\"r\":12,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":12,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":3,\"r\":12,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":5,\"r\":12,\"terrain\":\"floor\",\"cost\":1,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]},{\"q\":2,\"r\":13,\"terrain\":\"roots\",\"cost\":2,\"anchors\":[],\"passage\":false,\"permanent\":false,\"hazards\":[]}]"
+    },
+    "puzzle": {
+      "version": 1,
+      "hash": "3616a201ff801cd8",
+      "serialization": "{\"kind\":\"sudoku4\",\"clues\":[[0,1],[1,2],[8,2],[10,3],[13,4],[15,1]],\"cages\":[{\"type\":\"sum\",\"members\":[4,5],\"linked\":false},{\"type\":\"sum\",\"members\":[4,6],\"linked\":false}],\"protection\":[{\"members\":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],\"effects\":[\"jam\"]},{\"members\":[0,4,8,12],\"effects\":[\"jam\"]},{\"members\":[1,5,9,13],\"effects\":[\"jam\"]},{\"members\":[2,6,10,14],\"effects\":[\"jam\"]},{\"members\":[3,7,11,15],\"effects\":[\"jam\"]}]}"
+    }
+  },
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 2
+  },
+  "teamSelection": {
+    "directTeam": [
+      "tuppence",
+      "furrow",
+      "pip"
+    ],
+    "secondTeam": [
+      "tuppence",
+      "wicker",
+      "pip"
+    ],
+    "secondPlanFamily": "direct-guard",
+    "alcoveTeam": [
+      "bushel",
+      "dapple",
+      "pip"
+    ]
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "tuppence",
+        "furrow",
+        "pip"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 8027,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "furrow",
+              "pip"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 27,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "tuppence",
+        "wicker",
+        "pip"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "shelter"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 3861,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "tuppence",
+              "wicker",
+              "pip"
+            ],
+            "status": "success",
+            "commandCount": 28,
+            "rounds": 4
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "success",
+    "certificateId": "orchard-v2-2bba81eed75cf92d",
+    "evidence": {
+      "blueprintHash": "f0a1f73bbe8af8ac",
+      "structuralFingerprint": "5610fdd76aef1d32",
+      "puzzleFingerprint": "5fff69ed27f56f08",
+      "traceHashes": [
+        "3f532a351e9e1a7a",
+        "928189050f7fc6fa"
+      ],
+      "lowerBand": {
+        "method": "exact-printed-stat-enumeration",
+        "rows": [
+          {
+            "job": "number",
+            "requirement": [
+              4,
+              0,
+              2,
+              0,
+              0
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "shape",
+            "requirement": [
+              0,
+              4,
+              0,
+              0,
+              2
+            ],
+            "eligibleBelow": []
+          },
+          {
+            "job": "sustain",
+            "requirement": [
+              0,
+              0,
+              0,
+              5,
+              2
+            ],
+            "eligibleBelow": []
+          }
+        ]
+      }
+    },
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "bushel",
+          "dapple",
+          "pip"
+        ],
+        "finalHash": "3f532a351e9e1a7a",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "shelter"
+        ],
+        "alcove": true,
+        "winningShape": {
+          "endpoint": "alcove",
+          "heroId": "dapple",
+          "holdId": "dapple@r3#27"
+        },
+        "hashes": [
+          "91deb61a1ab8a9c1",
+          "b4c17a2649a89b61",
+          "a30f2d428161f7a9",
+          "b0c36efe92c87d0d",
+          "e237ceb271555739",
+          "0b05983663c5a573",
+          "5b8b21a441cc006b",
+          "97d8516a25095337",
+          "15117027ec082b9a",
+          "565551ce9eaf5e2b",
+          "ae7c891e7d977c13",
+          "0620dfd1ccaad7f6",
+          "6d3993a9e2158e26",
+          "f77220a94e68b7ee",
+          "1bc9bdad47be4a4a",
+          "f03ae2b8b542f49b",
+          "033c122e6bec2c11",
+          "0c0fd8ba53548de9",
+          "e80de69db0656e5a",
+          "ce78785841029be1",
+          "3f532a351e9e1a7a"
+        ]
+      },
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "tuppence",
+          "wicker",
+          "pip"
+        ],
+        "finalHash": "928189050f7fc6fa",
+        "round": 4,
+        "outputChoice": [
+          "bridge",
+          "roots"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "wicker",
+          "holdId": "wicker@r4#38"
+        },
+        "hashes": [
+          "caf089f223833c95",
+          "0125fefa94985b39",
+          "f21aff80b6074157",
+          "505e46ff0cfe5394",
+          "a4cf8b113296965e",
+          "858eaf7a4e02bd75",
+          "a52ec492d784db0d",
+          "a072d2473107cd44",
+          "0ae145c725c68e6a",
+          "c2eb8be7e67423d6",
+          "607f83ae99e05337",
+          "d922467f2a6a305e",
+          "4445b81ab921348f",
+          "2c57bed4ea5d0ebd",
+          "c42a62923554108f",
+          "917f99b6ccc47f05",
+          "ac2d838bdeecdd28",
+          "d75f968fc53c91a0",
+          "b93778eafcbfc649",
+          "6377874f34a77608",
+          "885eba26e080d305",
+          "38495d2d280b35e6",
+          "9f204d3e720e2325",
+          "4cb8be65a6435736",
+          "f47de1cb05bcd20c",
+          "b1dca5ccc7274eb3",
+          "3cf52c5144cc4564",
+          "928189050f7fc6fa"
+        ]
+      }
+    ]
+  }
+}

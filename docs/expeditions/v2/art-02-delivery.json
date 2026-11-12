@@ -1,0 +1,122 @@
+{
+  "schemaVersion": 1,
+  "status": "isolated-component-qa",
+  "assets": [
+    {
+      "id": "equation-frame",
+      "sourcePath": "assets/expeditions/production/9fo/v2/source/po-equation-six-sector-neutral-v1.png",
+      "category": "structures",
+      "version": 1,
+      "runtimePath": "assets/expeditions/production/9fo/v2/runtime/structures/equation-frame-v1.webp",
+      "width": 512,
+      "height": 512,
+      "bytes": 29666,
+      "sourceBytes": 2166663,
+      "sourceDimensions": [
+        1254,
+        1254
+      ],
+      "sha256": "5bc971737f44da820bf42ddbd92b77416436f5886e02de316b4bebd18c16f15c",
+      "sourceSha256": "4c7266a6b601dc707b36aa09271c2e2c5673aa702b9bbfa9073a44d1f6fd9685",
+      "alpha": true,
+      "visibleBounds": [
+        68,
+        78,
+        445,
+        433
+      ],
+      "groundAnchor": [
+        256,
+        256
+      ],
+      "topCentre": [
+        256,
+        256
+      ],
+      "overlayAnchors": {
+        "sectorCentres": [
+          [
+            256,
+            148
+          ],
+          [
+            349.5307436087194,
+            202
+          ],
+          [
+            349.5307436087194,
+            310
+          ],
+          [
+            256,
+            364
+          ],
+          [
+            162.46925639128062,
+            310
+          ],
+          [
+            162.46925639128062,
+            202
+          ]
+        ],
+        "labelSafeRadius": 24,
+        "fixedPointer": [
+          256,
+          118
+        ],
+        "rotationCentre": [
+          256,
+          256
+        ]
+      },
+      "allowedStates": [
+        "neutral",
+        "selected",
+        "locked",
+        "jammed"
+      ],
+      "reviewStatus": "candidate",
+      "anchorStatus": "measured-sector-layout",
+      "alphaAnalysis": {
+        "visibleBounds": [
+          68,
+          78,
+          445,
+          433
+        ],
+        "transparentPixels": 160717,
+        "visiblePixels": 101427,
+        "components": [
+          101427
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/qa/structures/equation-frame-white.png",
+        "black": "assets/expeditions/production/9fo/v2/qa/structures/equation-frame-black.png",
+        "green": "assets/expeditions/production/9fo/v2/qa/structures/equation-frame-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/qa/structures/equation-frame-cyan.png",
+        "atRuntimeScale": "assets/expeditions/production/9fo/v2/qa/structures/equation-frame-scales.png",
+        "componentStates": "assets/expeditions/production/9fo/v2/qa/structures/daytime-20261002/wheel-four-backgrounds.png",
+        "rotations": "assets/expeditions/production/9fo/v2/qa/structures/daytime-20261002/wheel-six-rotations.png",
+        "geometry": "assets/expeditions/production/9fo/v2/qa/structures/daytime-20261002/wheel-slot-geometry.png",
+        "componentScales": "assets/expeditions/production/9fo/v2/qa/structures/daytime-20261002/wheel-scales.png"
+      },
+      "stateImplementation": "One neutral bitmap with code-driven state rings/sector tint/hub markers, live upright glyphs and separate fixed pointer.",
+      "rendererPath": "expeditions/v2/art/EquationWheel.jsx"
+    }
+  ],
+  "withheld": [
+    "mechanism-plinth-normal-v1/v2/v3",
+    "mechanism-plinth-damaged-v1"
+  ],
+  "limitations": [
+    "Isolated actual-component evidence; not integrated App acceptance.",
+    "48px glyphs are small; readable selected detail and native/max zoom still require live route review.",
+    "EquationWheel is available for integration but current MapViewport has no equation-wheel bindings; no other-family production packet was added.",
+    "ASSET-02 remains exact StationGlyph interim; ASSET-03/04/05 require actual live renderer gap evidence."
+  ]
+}

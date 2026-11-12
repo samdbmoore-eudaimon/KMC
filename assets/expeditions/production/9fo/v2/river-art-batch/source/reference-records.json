@@ -1,0 +1,35 @@
+{
+  "bridge": [
+    "assets/expeditions/production/9fo/runtime/terrain/po-terrain-timber-bridge-v1.webp"
+  ],
+  "straight-first-paint": [
+    "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stream-v1.webp",
+    "assets/expeditions/production/9fo/v2/river-art-batch/source/registration-straight.png"
+  ],
+  "straight-geometry-edit": [
+    "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-attempt-1.png",
+    "assets/expeditions/production/9fo/v2/river-art-batch/source/registration-straight.png"
+  ],
+  "gentle-v1": {
+    "references": [
+      "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-registered-512-v1.png",
+      "assets/expeditions/production/9fo/v2/river-art-batch/source/registration-bend-gentle.png"
+    ],
+    "straightReferenceAtGeneration": "Before later collar assembly: raw straight-surface-v1 PNG uniformly mapped to600square, placed at[-39,-37] on512 registration canvas and exact nominal hex mask. Raw source remains preserved; the registered intermediate subsequently changed during preparation."
+  },
+  "gentle-style-correction-v2": [
+    "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stream-v1.webp",
+    "assets/expeditions/production/9fo/v2/river-art-batch/source/registration-bend-gentle.png"
+  ],
+  "existing-straight-adaptation-v2": [
+    "assets/expeditions/production/9fo/runtime/terrain/po-terrain-stream-v1.webp",
+    "assets/expeditions/production/9fo/v2/river-art-batch/source/registration-straight.png"
+  ],
+  "inspectedAdditionalStyleReferences": [
+    "assets/expeditions/production/9fo/runtime/terrain/po-terrain-hex-grass-v3.webp",
+    "assets/expeditions/production/9fo/mockups/po-unequal-crossing-opening-v1.png"
+  ],
+  "quiet-water-collar-repair-v3": [
+    "assets/expeditions/production/9fo/v2/river-art-batch/source/po-river-straight-registered-512-v2.png"
+  ]
+}

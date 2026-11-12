@@ -1,0 +1,1361 @@
+{
+ "summary": {
+  "family": "hollow-bough",
+  "tier": 5,
+  "scanned": 64,
+  "built": 53,
+  "accepted": 31,
+  "distinctTopologies": 31,
+  "distinctPuzzles": 13,
+  "maxStates": 6000
+ },
+ "rows": [
+  {
+   "layoutId": "river",
+   "seed": 1,
+   "tier": 5,
+   "topology": "a91fb0c9446f95a6",
+   "puzzle": "d0da214fecfba90a",
+   "contentHash": "fc4b47f2b46d91b9",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 2832
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 3699
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 7274
+  },
+  {
+   "layoutId": "river",
+   "seed": 2,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 14
+  },
+  {
+   "layoutId": "river",
+   "seed": 3,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 14
+  },
+  {
+   "layoutId": "river",
+   "seed": 4,
+   "tier": 5,
+   "topology": "9fa3571f59623d08",
+   "puzzle": "8809796df9cbd280",
+   "contentHash": "27950f8e02bb2eb1",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 10650
+  },
+  {
+   "layoutId": "river",
+   "seed": 5,
+   "tier": 5,
+   "topology": "e220436d5da20cba",
+   "puzzle": "18894f401928364d",
+   "contentHash": "081029ab037fe960",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 5501
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 5618
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5987
+  },
+  {
+   "layoutId": "river",
+   "seed": 6,
+   "tier": 5,
+   "topology": "5d8ea690123db21f",
+   "puzzle": "cf1f96b6adaa6895",
+   "contentHash": "cc678916c575f07d",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 513
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 5951
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5549
+  },
+  {
+   "layoutId": "river",
+   "seed": 7,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 9
+  },
+  {
+   "layoutId": "river",
+   "seed": 8,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 12
+  },
+  {
+   "layoutId": "river",
+   "seed": 9,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 11
+  },
+  {
+   "layoutId": "river",
+   "seed": 10,
+   "tier": 5,
+   "topology": "22cf9aeff7675c88",
+   "puzzle": "3fc4dbfbccdc5fec",
+   "contentHash": "99a6fd386eb5ceb1",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 5301
+   },
+   "alcove": {
+    "team": "warden/harvestmoon/ninebark",
+    "status": "success",
+    "states": 1769
+   },
+   "secondTargetPlan": {
+    "team": "warden/harvestmoon/ninebark",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 10768
+  },
+  {
+   "layoutId": "river",
+   "seed": 11,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 12,
+   "tier": 5,
+   "topology": "c44e1ec2dbc09a95",
+   "puzzle": "fc83d64b3e8aa0d4",
+   "contentHash": "3547003345a2eb0c",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 2828
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 5995
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5779
+  },
+  {
+   "layoutId": "river",
+   "seed": 13,
+   "tier": 5,
+   "topology": "145c4f90c726d4ef",
+   "puzzle": "4ef5d80321cef576",
+   "contentHash": "026d85cf44e63346",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 684
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 452
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 804
+  },
+  {
+   "layoutId": "river",
+   "seed": 14,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 13
+  },
+  {
+   "layoutId": "river",
+   "seed": 15,
+   "tier": 5,
+   "topology": "6c15b30f1248ef4c",
+   "puzzle": "2e21a6feedaf7cbf",
+   "contentHash": "117b9104df641c87",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 409
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 780
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 941
+  },
+  {
+   "layoutId": "river",
+   "seed": 16,
+   "tier": 5,
+   "topology": "8fcc88224281fe8d",
+   "puzzle": "cc43e979babcceae",
+   "contentHash": "abf954f2be4dbbd7",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4284
+  },
+  {
+   "layoutId": "islands",
+   "seed": 1,
+   "tier": 5,
+   "topology": "e89a1fe6344b5b13",
+   "puzzle": "d0da214fecfba90a",
+   "contentHash": "4acce00992ec9bc8",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 416
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 921
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1456
+  },
+  {
+   "layoutId": "islands",
+   "seed": 2,
+   "tier": 5,
+   "topology": "4c58b3a8302515e5",
+   "puzzle": "af1f7f6e1ceef8ef",
+   "contentHash": "61057358dd3abda5",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3229
+  },
+  {
+   "layoutId": "islands",
+   "seed": 3,
+   "tier": 5,
+   "topology": "792c25029650e32b",
+   "puzzle": "0a9384501c8d25b1",
+   "contentHash": "3077e07bf4807016",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 10736
+  },
+  {
+   "layoutId": "islands",
+   "seed": 4,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 14
+  },
+  {
+   "layoutId": "islands",
+   "seed": 5,
+   "tier": 5,
+   "topology": "7ce4e1934544a472",
+   "puzzle": "18894f401928364d",
+   "contentHash": "2b1b171ab4b722af",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 4155
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 355
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2125
+  },
+  {
+   "layoutId": "islands",
+   "seed": 6,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 17
+  },
+  {
+   "layoutId": "islands",
+   "seed": 7,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 8
+  },
+  {
+   "layoutId": "islands",
+   "seed": 8,
+   "tier": 5,
+   "topology": "58ae3833fef48932",
+   "puzzle": "d92626a870b17f65",
+   "contentHash": "723a6038f9bc43b1",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 3825
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 730
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2565
+  },
+  {
+   "layoutId": "islands",
+   "seed": 9,
+   "tier": 5,
+   "topology": "921e2ba722238fa6",
+   "puzzle": "5607247f41105770",
+   "contentHash": "9434929d72f76078",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3604
+  },
+  {
+   "layoutId": "islands",
+   "seed": 10,
+   "tier": 5,
+   "topology": "1eafd2db99975612",
+   "puzzle": "3fc4dbfbccdc5fec",
+   "contentHash": "675f503776627bc8",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 4154
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 3265
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5018
+  },
+  {
+   "layoutId": "islands",
+   "seed": 11,
+   "tier": 5,
+   "topology": "92d3f01564598ebc",
+   "puzzle": "f8e1039b568c3426",
+   "contentHash": "8fdbeeb76bd3afc6",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 3927
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 1088
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3340
+  },
+  {
+   "layoutId": "islands",
+   "seed": 12,
+   "tier": 5,
+   "status": "unknown",
+   "reasonCode": "bough-crossing-invalid",
+   "ms": 16
+  },
+  {
+   "layoutId": "islands",
+   "seed": 13,
+   "tier": 5,
+   "topology": "42b1f55fa186740a",
+   "puzzle": "4ef5d80321cef576",
+   "contentHash": "f6b1dfa7f82ee838",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 2641
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 466
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1791
+  },
+  {
+   "layoutId": "islands",
+   "seed": 14,
+   "tier": 5,
+   "topology": "e1afb5e19b7f1f88",
+   "puzzle": "d97ecbe6bc7258e5",
+   "contentHash": "5815be78cc45999f",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 3157
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 823
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2426
+  },
+  {
+   "layoutId": "islands",
+   "seed": 15,
+   "tier": 5,
+   "topology": "745dbd257ab7ffc8",
+   "puzzle": "2e21a6feedaf7cbf",
+   "contentHash": "758d73356fe781e0",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 424
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 2010
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1579
+  },
+  {
+   "layoutId": "islands",
+   "seed": 16,
+   "tier": 5,
+   "topology": "d5cebf31435e13f8",
+   "puzzle": "cc43e979babcceae",
+   "contentHash": "92e29459bcc972f2",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3807
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 1,
+   "tier": 5,
+   "topology": "c4321f065da8f52d",
+   "puzzle": "d0da214fecfba90a",
+   "contentHash": "4edd78c768f0dfb2",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 2453
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 14340
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 2,
+   "tier": 5,
+   "topology": "dbb7505ce30a7783",
+   "puzzle": "af1f7f6e1ceef8ef",
+   "contentHash": "26b1eeadecfbd38c",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3611
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 3,
+   "tier": 5,
+   "topology": "06adaa12696ba7c5",
+   "puzzle": "0a9384501c8d25b1",
+   "contentHash": "ab2b7171a31c9ccc",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 12286
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 4,
+   "tier": 5,
+   "topology": "f4b9890b556b79ac",
+   "puzzle": "8809796df9cbd280",
+   "contentHash": "3c1d3f5405b0e559",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 712
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 1117
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 4906
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 5,
+   "tier": 5,
+   "topology": "0b06b550d4026fa7",
+   "puzzle": "18894f401928364d",
+   "contentHash": "c1039b0bcae5fdf6",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 143
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 922
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1133
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 6,
+   "tier": 5,
+   "topology": "0676589340866d44",
+   "puzzle": "cf1f96b6adaa6895",
+   "contentHash": "8b615f25b9e16ca0",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 7464
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 7,
+   "tier": 5,
+   "topology": "ea3d12de9a13a1a1",
+   "puzzle": "7624d51135ac9912",
+   "contentHash": "dae611a7f5bfde66",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 7046
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 8,
+   "tier": 5,
+   "topology": "2b9c630b572e37c4",
+   "puzzle": "d92626a870b17f65",
+   "contentHash": "d42c653448c799c1",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 565
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 510
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 984
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 9,
+   "tier": 5,
+   "topology": "76de3e03ebed9438",
+   "puzzle": "5607247f41105770",
+   "contentHash": "f2fb962782bfcd6e",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 3474
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 331
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2648
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 10,
+   "tier": 5,
+   "topology": "eaaea27386389a0c",
+   "puzzle": "3fc4dbfbccdc5fec",
+   "contentHash": "0b0af70d2426a18a",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 3720
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 685
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3464
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 11,
+   "tier": 5,
+   "topology": "c05fa5cf08756208",
+   "puzzle": "f8e1039b568c3426",
+   "contentHash": "f4bd36a0b350991d",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 676
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 681
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1406
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 12,
+   "tier": 5,
+   "topology": "b796f84beb2ee5ec",
+   "puzzle": "fc83d64b3e8aa0d4",
+   "contentHash": "30d684c41207ae41",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 549
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 790
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1318
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 13,
+   "tier": 5,
+   "topology": "6726c3c268ea19fd",
+   "puzzle": "4ef5d80321cef576",
+   "contentHash": "ee6bb7324636156d",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 2813
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 892
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2424
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 14,
+   "tier": 5,
+   "topology": "6c78c16a0b505351",
+   "puzzle": "d97ecbe6bc7258e5",
+   "contentHash": "92329868265e4d9f",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4214
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 15,
+   "tier": 5,
+   "topology": "2351e84937bddece",
+   "puzzle": "2e21a6feedaf7cbf",
+   "contentHash": "355cbb4ce2954ae9",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 403
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 1136
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1003
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 16,
+   "tier": 5,
+   "topology": "c32d49d610859cfd",
+   "puzzle": "cc43e979babcceae",
+   "contentHash": "ec8681282049372f",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 4188
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 5422
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 7039
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 1,
+   "tier": 5,
+   "topology": "ae39766c37f3e8bb",
+   "puzzle": "d0da214fecfba90a",
+   "contentHash": "c3e9505920de6848",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 6809
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 2,
+   "tier": 5,
+   "topology": "293794e5d7210d56",
+   "puzzle": "af1f7f6e1ceef8ef",
+   "contentHash": "9da9ec60a8880095",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3903
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 3,
+   "tier": 5,
+   "topology": "45f24922f6b459f9",
+   "puzzle": "0a9384501c8d25b1",
+   "contentHash": "91b7e3f83a8e284d",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 17215
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 4,
+   "tier": 5,
+   "topology": "6140ce8704b108d0",
+   "puzzle": "8809796df9cbd280",
+   "contentHash": "f3b051043837cee1",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 491
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 1020
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 4544
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 5,
+   "tier": 5,
+   "topology": "d06c148cc601b68f",
+   "puzzle": "18894f401928364d",
+   "contentHash": "f892e1d79e58c8e6",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 5648
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 1057
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3771
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 6,
+   "tier": 5,
+   "topology": "9674f838aa5f3b3b",
+   "puzzle": "cf1f96b6adaa6895",
+   "contentHash": "e9eda248187aaa65",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 5824
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 7,
+   "tier": 5,
+   "topology": "4c73e4449de38bef",
+   "puzzle": "7624d51135ac9912",
+   "contentHash": "6cb6ba7bb92b3b7a",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4506
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 8,
+   "tier": 5,
+   "topology": "2a9e30c1175bad9a",
+   "puzzle": "d92626a870b17f65",
+   "contentHash": "576cf3666d3916a7",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 3955
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 9,
+   "tier": 5,
+   "topology": "5bd479034506d40c",
+   "puzzle": "5607247f41105770",
+   "contentHash": "b279a2c0012ba055",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 4854
+   },
+   "alcove": {
+    "team": "warden/harvestmoon/ninebark",
+    "status": "success",
+    "states": 4907
+   },
+   "secondTargetPlan": {
+    "team": "warden/harvestmoon/ninebark",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 11451
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 10,
+   "tier": 5,
+   "topology": "6300a199ba42cca6",
+   "puzzle": "3fc4dbfbccdc5fec",
+   "contentHash": "e6880b68b85fcde5",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 649
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 12017
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 11,
+   "tier": 5,
+   "topology": "c1de83a66dd6ffd9",
+   "puzzle": "f8e1039b568c3426",
+   "contentHash": "e112d9e226cccdd5",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4995
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 12,
+   "tier": 5,
+   "topology": "e899cc6b5575be30",
+   "puzzle": "fc83d64b3e8aa0d4",
+   "contentHash": "06c34312bff723e3",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4613
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 13,
+   "tier": 5,
+   "topology": "545976fa23be5225",
+   "puzzle": "4ef5d80321cef576",
+   "contentHash": "687c46263ca06acd",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 4937
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 14,
+   "tier": 5,
+   "topology": "dae704f45ecba33b",
+   "puzzle": "d97ecbe6bc7258e5",
+   "contentHash": "3d1613cd52290c92",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 3952
+   },
+   "alcove": {
+    "team": "warden/harvestmoon/ninebark",
+    "status": "success",
+    "states": 896
+   },
+   "secondTargetPlan": {
+    "team": "warden/harvestmoon/ninebark",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 7657
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 15,
+   "tier": 5,
+   "topology": "21d0c92dfa9be362",
+   "puzzle": "2e21a6feedaf7cbf",
+   "contentHash": "44844b53a11aa35e",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 478
+   },
+   "alcove": {
+    "team": "ninebark/warden/longshadow",
+    "status": "success",
+    "states": 834
+   },
+   "secondTargetPlan": {
+    "team": "ninebark/warden/longshadow",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1046
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 16,
+   "tier": 5,
+   "topology": "7d1268cbe40280a8",
+   "puzzle": "cc43e979babcceae",
+   "contentHash": "9ecb0b57253ba0d4",
+   "direct": {
+    "team": "warden/gossamer/harvestmoon",
+    "status": "success",
+    "states": 2989
+   },
+   "alcove": {
+    "team": "warden/harvestmoon/ninebark",
+    "status": "success",
+    "states": 360
+   },
+   "secondTargetPlan": {
+    "team": "warden/harvestmoon/ninebark",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 6512
+  }
+ ]
+}

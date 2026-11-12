@@ -1,19 +1,41 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { expeditionRoster } from "./expedition-roster.js";
-import { createCiderRun, generateCiderRunLayout, REFERENCE_LAYOUT_SEED, CIDER_RUN_CONFIG } from "./cider-run.js";
+import { createCiderRun, deliverCertifiedPair, generateCiderRunLayout, REFERENCE_LAYOUT_SEED, CIDER_RUN_CONFIG } from "./cider-run.js";
 import {
   createExpeditionState,
   endPlayerPhase,
   estimateExpeditionMinutes,
   evaluateObjective,
   guardTarget,
+  hexDistance,
   hexNeighbours,
   interactObject,
   moveUnit,
+  reachableHexes,
   resolveEnemyPhase,
   useDisciplineAction,
 } from "./expedition-engine.js";
+
+// A minimal greedy walk to get a unit adjacent to a hex, spending a fresh round's AP if it
+// doesn't fit in one — the exact same strategy deliverCertifiedPair (cider-run.js) uses
+// internally, reimplemented locally here only because that one is wired specifically to the
+// two gate hexes, not an arbitrary destination.
+function walkAdjacent(state, unitId, targetHex, roundBudget = 3) {
+  for (let round = 0; round < roundBudget; round += 1) {
+    for (let guard = 0; guard < 20 && state.units[unitId].ap > 0 && hexDistance(state.units[unitId].pos, targetHex) > 1; guard += 1) {
+      const options = reachableHexes(state, unitId);
+      if (!options.length) break;
+      let best = options[0];
+      for (const opt of options) if (hexDistance(opt.key, targetHex) < hexDistance(best.key, targetHex)) best = opt;
+      if (hexDistance(best.key, targetHex) >= hexDistance(state.units[unitId].pos, targetHex)) break;
+      state = moveUnit(state, unitId, best.key);
+    }
+    if (hexDistance(state.units[unitId].pos, targetHex) <= 1) return state;
+    state = resolveEnemyPhase(endPlayerPhase(state));
+  }
+  return state;
+}
 import { EXPEDITION_TIERS, EXPEDITION_READINESS_BY_LEVEL } from "./expedition-data.js";
 import { assessSquadReadiness } from "./expedition-readiness.js";
 
@@ -43,8 +65,13 @@ test("procedural generation: different seeds produce genuinely different, indepe
     const values = layout.presses.map((p) => p.value);
     let pairCount = 0;
     for (let i = 0; i < values.length; i += 1) for (let j = i + 1; j < values.length; j += 1) if (values[i] + values[j] === layout.target) pairCount += 1;
-    assert.equal(pairCount, 1, `seed: exactly one pair should reach the target, got ${pairCount}`);
+    // 2026-09-21 rebuild: exactly two pairs, not one — a real choice between two independently
+    // certified routes, not a single findable answer to execute (see cider-run.js's header).
+    assert.equal(pairCount, 2, `seed: exactly two pairs should reach the target, got ${pairCount}`);
     assert.ok(!values.includes(layout.target), "no single press may equal the target — the gate genuinely needs a pair, both hexes, not one press on one hex (found live in ~30% of layouts before this check existed)");
+    assert.ok(layout.safePairIds && layout.fastPairIds, "every layout names which pair is the guaranteed-safe one and which is merely deliverable");
+    const soleOverlap = layout.safePairIds.filter((id) => layout.fastPairIds.includes(id));
+    assert.deepEqual(soleOverlap, [], "the two certified pairs never share a press");
   }
 });
 
@@ -86,81 +113,63 @@ test("procedural generation: the same seed always reproduces the exact same layo
   assert.deepEqual(a, b);
 });
 
-test("REF: the loan squad fills the press gate with the one exact pair, fast enough to beat Scruffcrow's flood", () => {
+// Driven by deliverCertifiedPair (cider-run.js) — the exact same greedy simulator the
+// generator's own certifier uses to accept this layout — rather than a hand-transcribed hex
+// sequence. 2026-09-21 rebuild: generateCiderRunLayout now certifies two independent pairs per
+// layout (pairCount: 2, a genuine choice), so a hand-authored trace tied to one specific pair's
+// hex coordinates would silently go stale the next time the generator's output changed. This
+// proves the layout's guaranteed-safe pair (safePairIds) specifically.
+test("REF: the loan squad fills the press gate with the guaranteed-safe pair, fast enough to beat Scruffcrow's flood", () => {
   // Loan squad is Bushel/Pip/Nine, not Pip/Bramble/Nine (2026-09-18: the default squad had no
   // Arithmetic hero to use the map's own named alternate route — see expedition-catalogue.js).
-  // Bushel takes the "0,0" start slot; Pip sits this one out, same as an unneeded third hero
-  // always has on this map. REFERENCE_LAYOUT_SEED's certified pair is press_4 (lane 2, far) +
-  // press_11 (lane 3, far) — both a genuine "reach" trek from the gate, taking three rounds
-  // (isRecoverableAfterOneFloodTick, cider-run.js, additionally guarantees this specific pair
-  // is never a flood target at all, so a slower party is never punished for the extra travel).
   const squad = squadOf(["bushel", "pip", "nine"]);
-  let state = createCiderRun(squad);
-  assert.equal(state.objects.press_4.value, 4);
-  assert.equal(state.objects.press_11.value, 11);
-  assert.equal(state.objective.target, 15);
-  state = moveUnit(state, "nine", "1,-3");
-  state = interactObject(state, "nine", "press_4");
-  state = moveUnit(state, "bushel", "-1,1");
-  state = moveUnit(state, "bushel", "-3,2");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  assert.equal(state.history.filter((h) => h.unitId === "scruffcrow").at(-1).action, "watch", "the one-round delay means Scruffcrow does nothing in round 1");
-  state = moveUnit(state, "nine", "1,-1");
-  state = interactObject(state, "nine", "press_4", "1,-1");
-  state = interactObject(state, "bushel", "press_11");
-  state = moveUnit(state, "bushel", "-1,1");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  state = moveUnit(state, "bushel", "1,0");
-  state = interactObject(state, "bushel", "press_11", "1,0");
+  const state0 = createCiderRun(squad);
+  const layout = generateCiderRunLayout(REFERENCE_LAYOUT_SEED);
+  const [firstId, secondId] = layout.safePairIds;
+  assert.equal(state0.objects[firstId].value + state0.objects[secondId].value, layout.target, "the safe pair really does sum to the printed target");
+  const { success, state } = deliverCertifiedPair(state0, firstId, secondId, CIDER_RUN_CONFIG.turnLimit);
+  assert.ok(success, "the certifier's own simulator must be able to deliver the pair it certified");
   assert.equal(state.status, "won");
   const objective = evaluateObjective(state);
   assert.equal(objective.complete, true);
-  assert.equal(objective.progress, "15/15");
+  assert.equal(objective.progress, `${layout.target}/${layout.target}`);
   assert.ok(state.turn <= CIDER_RUN_CONFIG.turnLimit);
-  assert.equal(state.counters.actions, 10);
 });
 
-test("high-tier squad: an all-Epic squad completes the identical reference trace", () => {
+test("high-tier squad: an all-Epic squad completes the identical guaranteed-safe pair", () => {
   const squad = squadOf(["warden", "ninebark", "cascade"]);
-  let state = createCiderRun(squad);
-  state = moveUnit(state, "cascade", "1,-3");
-  state = interactObject(state, "cascade", "press_4");
-  state = moveUnit(state, "warden", "-1,1");
-  state = moveUnit(state, "warden", "-3,2");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  state = moveUnit(state, "cascade", "1,-1");
-  state = interactObject(state, "cascade", "press_4", "1,-1");
-  state = interactObject(state, "warden", "press_11");
-  state = moveUnit(state, "warden", "-1,1");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  state = moveUnit(state, "warden", "1,0");
-  state = interactObject(state, "warden", "press_11", "1,0");
+  const state0 = createCiderRun(squad);
+  const layout = generateCiderRunLayout(REFERENCE_LAYOUT_SEED);
+  const { success, state } = deliverCertifiedPair(state0, layout.safePairIds[0], layout.safePairIds[1], CIDER_RUN_CONFIG.turnLimit);
+  assert.ok(success, "the same route works for a stronger squad");
   assert.equal(state.status, "won", "the same physical trace works for a stronger squad");
 });
 
 test("Combine: an Arithmetic hero can merge two presses into a fresh value, the map's own 'Arithmetic changes a press value' alternate route", () => {
   const state0 = createCiderRun(squadOf(["bushel", "pip", "nine"]));
   assert.equal(state0.units.bushel.discipline, "arithmetic");
-  // press_9 + press_2 (both lane 1, adjacent to each other) — not the shipped solution, but
-  // proves the mechanism is genuinely usable on this map's own generated objects, the same
+  // Neither of the layout's two certified pairs (safePairIds/fastPairIds) — the two presses
+  // left over once both are accounted for — proves the mechanism is genuinely usable on this
+  // map's own generated objects without disturbing either certified route at all, the same
   // "prove the alternate route is real, not merely named" discipline as Counting Orchard's own
   // Combine test. Combine needs both objects on the ground and adjacent (expedition-engine.js),
-  // so this is collect, carry, drop next to the other, then combine — a minimum of three
-  // actions across two rounds even for the shortest possible case, meaning Scruffcrow's
-  // one-round delay has already lapsed by the time it resolves: press_9, lane 1's highest, sits
-  // alone and unguarded through round 2's enemy phase (press_2 is being carried, so is
-  // flood-immune) and is genuinely flooded to 10 before the combine — itself a small extra
-  // proof the two mechanics interact correctly, not a scripting error. 10 + 2 = 12.
-  let state = moveUnit(state0, "bushel", "1,0");
-  state = interactObject(state, "bushel", "press_2");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  state = moveUnit(state, "bushel", "2,0");
-  state = interactObject(state, "bushel", "press_2"); // drop back at bushel's own hex, adjacent to press_9
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  assert.equal(state.objects.press_9.value, 10, "lane 1's highest unguarded press once both are back on the ground");
-  state = useDisciplineAction(state, "bushel", "combine", { firstId: "press_9", secondId: "press_2" });
-  assert.equal(state.objects.press_9.value, 12);
-  assert.equal(state.objects.press_2.removed, true);
+  // so this is collect, carry, drop next to the other, then combine.
+  const layout = generateCiderRunLayout(REFERENCE_LAYOUT_SEED);
+  const solutionIds = new Set([...layout.safePairIds, ...layout.fastPairIds]);
+  const decoys = Object.keys(state0.objects).filter((id) => !solutionIds.has(id));
+  assert.equal(decoys.length, 2, "exactly two presses are left over once both certified pairs are accounted for");
+  const [firstId, secondId] = decoys;
+  const expected = state0.objects[firstId].value + state0.objects[secondId].value;
+
+  let state = walkAdjacent(state0, "bushel", state0.objects[firstId].pos);
+  if (state.units.bushel.ap < 1) state = resolveEnemyPhase(endPlayerPhase(state));
+  state = interactObject(state, "bushel", firstId);
+  state = walkAdjacent(state, "bushel", state.objects[secondId].pos);
+  if (state.units.bushel.ap < 1) state = resolveEnemyPhase(endPlayerPhase(state));
+  state = interactObject(state, "bushel", firstId); // drop back at bushel's own hex, now adjacent to secondId
+  state = useDisciplineAction(state, "bushel", "combine", { firstId, secondId });
+  assert.equal(state.objects[firstId].value, expected);
+  assert.equal(state.objects[secondId].removed, true);
 });
 
 test("guarding a press protects it from Scruffcrow's flood, which falls to the next-highest unguarded press on that lane instead", () => {
@@ -198,52 +207,49 @@ test("ENM: Scruffcrow advances through the three lanes in a fixed, repeating ord
 // this test, against the first post-redesign reference layout, discovered that layout's
 // certified pair *could* be flooded into a genuinely unrecoverable dead run — no direct pair, no
 // Combine, nothing. That is now a generation-time guarantee instead of a hope: every layout
-// generateCiderRunLayout returns has been checked so that if either solution press is ever the
-// one a flood would hit, a real party can still physically deliver a fresh pair in whatever
-// rounds are left. REFERENCE_LAYOUT_SEED's own certified pair (press_4 lane 2, press_11 lane 3)
-// happens to need no such rescue at all — neither is ever its lane's flood target — so this
-// test instead proves the flood is genuinely live during completely normal play (not merely
-// theoretically possible), and that a lane's flood, even while it's happening, never comes near
-// the printed target: the reference trace above never touches lane 1's presses at all, so
-// Scruffcrow's rotation reaches it and floods press_9 right on schedule, entirely as a
-// side-effect of ordinary play, while the certified pair sails through untouched.
-test("the flood is genuinely live during ordinary play, and never threatens the certified pair", () => {
-  const squad = squadOf(["bushel", "pip", "nine"]);
-  let state = createCiderRun(squad);
-  assert.equal(state.objects.press_4.value + state.objects.press_11.value, state.objective.target, "the certified pair is valid before any flood");
+// generateCiderRunLayout returns has been checked so that if a certified pair's press is ever
+// the one a flood would hit, a real party can still physically deliver a fresh pair in whatever
+// rounds are left.
+//
+// The 2026-09-18 version of this test walked the fixed REFERENCE_LAYOUT_SEED trace by hand and
+// asserted the flood landed on a specific untouched press. That no longer holds in general now
+// that generateCiderRunLayout offers two certified pairs, not one (2026-09-21 rebuild) — the
+// safe pair's own two lanes vary by seed, and for REFERENCE_LAYOUT_SEED specifically the
+// guaranteed-safe pair wins before Scruffcrow ever gets an active turn at all (see
+// scripts/simulate_cider_run.mjs's actual output), so a hand-picked "the flood definitely lands
+// on press X" assertion would just be asserting this one seed's incidental timing. The
+// mechanism itself — a flood that's genuinely live and provably never turns the printed target
+// into a dead run — is already covered generically, across every seed, by "procedural
+// generation: no layout can be flooded into an unrecoverable dead run" above and by the ENM
+// tests below; nothing here duplicated that more narrowly, so nothing needed replacing it.
 
-  // The reference trace's own route: nine fetches lane 2's far press, bushel fetches lane 3's
-  // far press. Lane 1 is never touched, so its highest press (press_9) is exactly what
-  // Scruffcrow's schedule says it should flood, unprompted by anything this test does.
-  state = moveUnit(state, "nine", "1,-3");
-  state = interactObject(state, "nine", "press_4");
-  state = moveUnit(state, "bushel", "-1,1");
-  state = moveUnit(state, "bushel", "-3,2");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  assert.equal(state.objects.press_9.value, 9, "still within the one-round delay");
-
-  state = moveUnit(state, "nine", "1,-1");
-  state = interactObject(state, "nine", "press_4", "1,-1");
-  state = interactObject(state, "bushel", "press_11");
-  state = moveUnit(state, "bushel", "-1,1");
-  state = resolveEnemyPhase(endPlayerPhase(state));
-  assert.equal(state.objects.press_9.value, 10, "lane 1 floods right on schedule, purely because nobody happened to touch it");
-  assert.equal(state.objects.press_4.value + state.objects.press_11.value, state.objective.target, "the certified pair is completely unaffected by a flood on a different lane");
-
-  state = moveUnit(state, "bushel", "1,0");
-  state = interactObject(state, "bushel", "press_11", "1,0");
-  assert.equal(state.status, "won", "the flood happened, in full view, and changed nothing about whether this run wins");
-  assert.equal(evaluateObjective(state).progress, "15/15");
-});
-
-test("ENM: Scruffcrow never attacks a hero directly — flooding a press is its entire behaviour", () => {
+// Rewritten 2026-09-21 (Sam's playtest of The Cider Run: Guard "doesn't do anything" —
+// EXPEDITIONS_CLAUDE_HANDOVER.md). Scruffcrow (and every other lane/erosion-style enemy) now
+// strikes an unguarded hero standing in its reach instead of touching its usual object target
+// that round — see strikeAdjacentHero in expedition-engine.js. The old contract this test
+// named ("never attacks a hero directly") was exactly the gap that made Guard/hp/stats inert
+// on this map; this now asserts the replacement contract instead of the removed one.
+test("ENM: an unguarded hero in Scruffcrow's reach is struck instead of the press flooding; Guard blocks the strike; with nobody exposed, the flood proceeds as before", () => {
   const board = CIDER_RUN_CONFIG.board;
-  const units = [{ id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, hp: 3, maxHp: 3, move: 1, pos: "3,-3" }];
   const enemy = { id: "scruffcrow", name: "Scruffcrow", side: "enemy", hp: 2, defence: 4, move: 1, range: 1, damage: 1, pos: "3,-3", delay: 0, behaviour: "flood-lane", laneSequence: [1] };
-  const state = createExpeditionState({ id: "scruffcrow-flood-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units, enemies: [enemy], objects: [{ id: "press", kind: "press", value: 5, pos: "3,-2", lane: 1 }], objective: { family: "exactSum", hexes: ["0,0"], target: 5 } });
-  const resolved = resolveEnemyPhase(endPlayerPhase(state));
-  assert.equal(resolved.units.hero.hp, 3, "adjacent or not, Scruffcrow only ever floods a press, never strikes a hero");
-  assert.equal(resolved.objects.press.value, 6);
+  const press = { id: "press", kind: "press", value: 5, pos: "3,-2", lane: 1 };
+  const objective = { family: "exactSum", hexes: ["0,0"], target: 5 };
+
+  const exposed = { id: "hero", name: "Hero", stats: [4, 4, 4, 4, 4], hearts: 3, hp: 3, maxHp: 3, move: 1, pos: "3,-3" };
+  const exposedState = createExpeditionState({ id: "scruffcrow-strike-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units: [exposed], enemies: [{ ...enemy }], objects: [{ ...press }], objective });
+  const exposedResolved = resolveEnemyPhase(endPlayerPhase(exposedState));
+  assert.equal(exposedResolved.units.hero.hp, 2, "an unguarded hero standing in range is struck instead of the flood");
+  assert.equal(exposedResolved.objects.press.value, 5, "the strike replaces the flood this round — the press is untouched");
+
+  const guardedState = createExpeditionState({ id: "scruffcrow-strike-guarded-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units: [{ ...exposed, guarded: true }], enemies: [{ ...enemy }], objects: [{ ...press }], objective });
+  const guardedResolved = resolveEnemyPhase(endPlayerPhase(guardedState));
+  assert.equal(guardedResolved.units.hero.hp, 3, "Guard blocks the strike entirely");
+  assert.equal(guardedResolved.objects.press.value, 5, "a blocked strike still isn't a flood — the press is safe that round too");
+
+  const clearState = createExpeditionState({ id: "scruffcrow-flood-test", moduleKey: "primary", title: "test", turnLimit: 4, board, units: [{ ...exposed, pos: "0,0" }], enemies: [{ ...enemy }], objects: [{ ...press }], objective });
+  const clearResolved = resolveEnemyPhase(endPlayerPhase(clearState));
+  assert.equal(clearResolved.units.hero.hp, 3, "no hero in range — nobody is struck");
+  assert.equal(clearResolved.objects.press.value, 6, "with nobody exposed, the flood proceeds exactly as before");
 });
 
 // EXPEDITIONS_CARD_AUDIT.md's Finding 1 (the level-2 readiness band is trivially met by every

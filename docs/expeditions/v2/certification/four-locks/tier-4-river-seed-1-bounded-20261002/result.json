@@ -1,0 +1,223 @@
+{
+  "candidateStatus": "success",
+  "requestedLimits": {
+    "maxStatesPerInvocation": 8000,
+    "maxPlannerInvocations": 3
+  },
+  "plannerAccountingIssue": "R-07, Claude-owned: denied spends inflate statesSpent. Unknown does not establish impossibility.",
+  "attempts": [
+    {
+      "cardIds": [
+        "barrow",
+        "cobweb",
+        "harvestmoon"
+      ],
+      "planFamily": "direct-guard",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "success",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "direct-guard",
+        "statesSpent": 1844,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "barrow",
+              "cobweb",
+              "harvestmoon"
+            ],
+            "status": "success",
+            "commandCount": 20,
+            "rounds": 3
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 0,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "warden",
+        "longshadow",
+        "cascade"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [
+        [
+          "bridge",
+          "storm"
+        ]
+      ],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 8002,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "warden",
+              "longshadow",
+              "cascade"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 2,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    },
+    {
+      "cardIds": [
+        "warden",
+        "longshadow",
+        "cascade"
+      ],
+      "planFamily": "alcove-intercept",
+      "avoidOutputChoices": [],
+      "requestedMaxStates": 8000,
+      "status": "unknown",
+      "reasonCode": "budget-exhausted",
+      "metrics": {
+        "planner": "orchard-v2-tactical-planner/1",
+        "planFamily": "alcove-intercept",
+        "statesSpent": 8024,
+        "maxStates": 8000,
+        "perTeam": [
+          {
+            "teamIndex": 0,
+            "cardIds": [
+              "warden",
+              "longshadow",
+              "cascade"
+            ],
+            "status": "unknown",
+            "reasonCode": "budget-exhausted"
+          }
+        ],
+        "beamWidth": 120
+      },
+      "reportedStateOverage": 24,
+      "accountingNote": "Known R-07: Budget.spend increments used for denied spends. Reported statesSpent may exceed the requested cap; it is not an accepted-reducer-call count. Planner remains unchanged."
+    }
+  ],
+  "certification": {
+    "status": "unknown",
+    "errors": [
+      "two-distinct-target-teams-missing",
+      "different-target-output-plans-missing",
+      "physical-alcove-proof-missing"
+    ],
+    "checks": [
+      {
+        "ok": true,
+        "errors": [],
+        "cardIds": [
+          "barrow",
+          "cobweb",
+          "harvestmoon"
+        ],
+        "finalHash": "031e1708ff88d553",
+        "round": 3,
+        "outputChoice": [
+          "bridge",
+          "storm"
+        ],
+        "alcove": false,
+        "winningShape": {
+          "endpoint": "shape",
+          "heroId": "cobweb",
+          "holdId": "cobweb@r3#36"
+        },
+        "hashes": [
+          "4e9d483d443e16a6",
+          "8900d2d3f7ada218",
+          "f529d29dfea306a4",
+          "ca2eb07202569ee7",
+          "92d5e347c21733b2",
+          "cd4f8f1307759826",
+          "02dd54bf0787512a",
+          "1e4848dc66cb906f",
+          "04cc1db77a298cb8",
+          "d330e40612fa054d",
+          "93a3ec6036fde5df",
+          "4ffb47848bdf076f",
+          "a53c4de4bcf089b3",
+          "b0e1857c3dbd0e2f",
+          "4b92189b207cf1b2",
+          "cb7584f6267014c7",
+          "a2d87a6467f82655",
+          "2ce4b1bf33e2b1de",
+          "7133d1ccd24e191f",
+          "031e1708ff88d553"
+        ]
+      }
+    ],
+    "lowerBand": {
+      "method": "exact-printed-stat-enumeration",
+      "rows": [
+        {
+          "job": "number",
+          "requirement": [
+            7,
+            0,
+            7,
+            0,
+            0
+          ],
+          "eligibleBelow": [
+            "barrow"
+          ]
+        },
+        {
+          "job": "shape",
+          "requirement": [
+            0,
+            8,
+            0,
+            0,
+            4
+          ],
+          "eligibleBelow": [
+            "cobweb"
+          ]
+        },
+        {
+          "job": "sustain",
+          "requirement": [
+            0,
+            0,
+            6,
+            7,
+            4
+          ],
+          "eligibleBelow": []
+        }
+      ],
+      "exclusions": [
+        {
+          "id": "all-below-target-band",
+          "examined": 1540,
+          "feasible": [],
+          "excluded": true
+        },
+        {
+          "id": "one-legendary-two-commons",
+          "examined": 132,
+          "feasible": [],
+          "excluded": true
+        }
+      ]
+    }
+  }
+}

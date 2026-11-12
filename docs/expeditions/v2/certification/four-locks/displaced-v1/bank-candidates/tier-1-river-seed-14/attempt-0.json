@@ -1,0 +1,41 @@
+{
+  "attempt": {
+    "cardIds": [
+      "tuppence",
+      "wicker",
+      "pip"
+    ],
+    "planFamily": "direct-guard",
+    "avoidOutputChoices": [
+      [
+        "bridge",
+        "shelter"
+      ]
+    ],
+    "requestedMaxStates": 8000,
+    "status": "unknown",
+    "reasonCode": "budget-exhausted",
+    "metrics": {
+      "planner": "orchard-v2-tactical-planner/1",
+      "planFamily": "direct-guard",
+      "statesSpent": 8034,
+      "maxStates": 8000,
+      "perTeam": [
+        {
+          "teamIndex": 0,
+          "cardIds": [
+            "tuppence",
+            "wicker",
+            "pip"
+          ],
+          "status": "unknown",
+          "reasonCode": "budget-exhausted"
+        }
+      ],
+      "beamWidth": 120
+    },
+    "reportedStateOverage": 34,
+    "accountingNote": "Known Claude-owned R-07: denied spends inflate statesSpent. Null means interrupted work with unknown spend; never retry that slot."
+  },
+  "traces": []
+}

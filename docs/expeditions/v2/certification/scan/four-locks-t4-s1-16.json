@@ -1,0 +1,1319 @@
+{
+ "summary": {
+  "family": "four-locks",
+  "tier": 4,
+  "scanned": 64,
+  "built": 47,
+  "accepted": 45,
+  "distinctTopologies": 45,
+  "distinctPuzzles": 13,
+  "maxStates": 6000
+ },
+ "rows": [
+  {
+   "layoutId": "river",
+   "seed": 1,
+   "tier": 4,
+   "topology": "3d5f7c6401bd76f5",
+   "puzzle": "0e11b3a7cbfd45a0",
+   "contentHash": "a9f00c8ef23368c1",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1844
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 1918
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 4913
+  },
+  {
+   "layoutId": "river",
+   "seed": 2,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 23
+  },
+  {
+   "layoutId": "river",
+   "seed": 3,
+   "tier": 4,
+   "topology": "6badb97260561e43",
+   "puzzle": "54fc65ebcf471b1a",
+   "contentHash": "34812b7b3b52158a",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2481
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 1881
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5062
+  },
+  {
+   "layoutId": "river",
+   "seed": 4,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 20
+  },
+  {
+   "layoutId": "river",
+   "seed": 5,
+   "tier": 4,
+   "topology": "71aae5faf5334dc7",
+   "puzzle": "d0692d9e8a822b63",
+   "contentHash": "8847dc6183a48e06",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 613
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 943
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 725
+  },
+  {
+   "layoutId": "river",
+   "seed": 6,
+   "tier": 4,
+   "topology": "0ab3f14d8561ba88",
+   "puzzle": "7270e5db723e9f2a",
+   "contentHash": "82b911d7c22f7782",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1623
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 900
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3739
+  },
+  {
+   "layoutId": "river",
+   "seed": 7,
+   "tier": 4,
+   "topology": "9d2661446e4e7909",
+   "puzzle": "146956dc130c20a5",
+   "contentHash": "89981f7cc538f56b",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2694
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 1488
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1953
+  },
+  {
+   "layoutId": "river",
+   "seed": 8,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 10
+  },
+  {
+   "layoutId": "river",
+   "seed": 9,
+   "tier": 4,
+   "topology": "968d689eac70540b",
+   "puzzle": "1ebfb13c2f95952f",
+   "contentHash": "081f749216b6767b",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 133
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 3044
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1509
+  },
+  {
+   "layoutId": "river",
+   "seed": 10,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 17
+  },
+  {
+   "layoutId": "river",
+   "seed": 11,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 20
+  },
+  {
+   "layoutId": "river",
+   "seed": 12,
+   "tier": 4,
+   "topology": "316a1e455a7a17f4",
+   "puzzle": "f79fee8c5643ecd5",
+   "contentHash": "ce7366aadd7ac01b",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1370
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 626
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 965
+  },
+  {
+   "layoutId": "river",
+   "seed": 13,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 22
+  },
+  {
+   "layoutId": "river",
+   "seed": 14,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "sudoku-advanced-attempt-budget",
+   "ms": 71
+  },
+  {
+   "layoutId": "river",
+   "seed": 15,
+   "tier": 4,
+   "topology": "0e665ff23cf2a3b3",
+   "puzzle": "964df23fdd45ca06",
+   "contentHash": "d48d405ea102e77d",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2621
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 4015
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2848
+  },
+  {
+   "layoutId": "river",
+   "seed": 16,
+   "tier": 4,
+   "topology": "7169b7762b8fd947",
+   "puzzle": "bc414dba4d4f20bf",
+   "contentHash": "70fff40a2d3eabdb",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 265
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 227
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 256
+  },
+  {
+   "layoutId": "islands",
+   "seed": 1,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 16
+  },
+  {
+   "layoutId": "islands",
+   "seed": 2,
+   "tier": 4,
+   "topology": "2e6f9046563052bb",
+   "puzzle": "faf938bd844403c4",
+   "contentHash": "1c5a8a34d63cc2b3",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 3076
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 3683
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5307
+  },
+  {
+   "layoutId": "islands",
+   "seed": 3,
+   "tier": 4,
+   "topology": "1acfdb685c50fa29",
+   "puzzle": "54fc65ebcf471b1a",
+   "contentHash": "136a71f7ad4afed6",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2655
+  },
+  {
+   "layoutId": "islands",
+   "seed": 4,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "sudoku-advanced-attempt-budget",
+   "ms": 194
+  },
+  {
+   "layoutId": "islands",
+   "seed": 5,
+   "tier": 4,
+   "topology": "ccd8230e746ff827",
+   "puzzle": "d0692d9e8a822b63",
+   "contentHash": "6229d6bfbc31d1b8",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 687
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 5147
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2580
+  },
+  {
+   "layoutId": "islands",
+   "seed": 6,
+   "tier": 4,
+   "topology": "cf3b7884fc0f4d91",
+   "puzzle": "7270e5db723e9f2a",
+   "contentHash": "d7553aa974a340cc",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 4616
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 2712
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3196
+  },
+  {
+   "layoutId": "islands",
+   "seed": 7,
+   "tier": 4,
+   "topology": "35133814c64a7065",
+   "puzzle": "146956dc130c20a5",
+   "contentHash": "deb31ebc50bac6f3",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 602
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 1051
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 752
+  },
+  {
+   "layoutId": "islands",
+   "seed": 8,
+   "tier": 4,
+   "topology": "e9cad7d8282134fd",
+   "puzzle": "d8063253137778fe",
+   "contentHash": "1ea4b1173e7b9bd8",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2004
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 821
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1334
+  },
+  {
+   "layoutId": "islands",
+   "seed": 9,
+   "tier": 4,
+   "topology": "fc59c28d70478558",
+   "puzzle": "1ebfb13c2f95952f",
+   "contentHash": "1d4d841a8fd779b5",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 634
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 293
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 478
+  },
+  {
+   "layoutId": "islands",
+   "seed": 10,
+   "tier": 4,
+   "topology": "0319140e54ec5e97",
+   "puzzle": "7270e5db723e9f2a",
+   "contentHash": "f99023fcebe0bea5",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 297
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 817
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 708
+  },
+  {
+   "layoutId": "islands",
+   "seed": 11,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 122
+  },
+  {
+   "layoutId": "islands",
+   "seed": 12,
+   "tier": 4,
+   "topology": "8e7a4cd4f1ebf701",
+   "puzzle": "f79fee8c5643ecd5",
+   "contentHash": "3ad41e80029d1339",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "unknown",
+    "states": 6000
+   },
+   "alcove": {
+    "status": "none"
+   },
+   "secondTargetPlan": {
+    "status": "none"
+   },
+   "accepted": false,
+   "status": "rejected-or-unknown",
+   "ms": 2799
+  },
+  {
+   "layoutId": "islands",
+   "seed": 13,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 10
+  },
+  {
+   "layoutId": "islands",
+   "seed": 14,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "sudoku-advanced-attempt-budget",
+   "ms": 88
+  },
+  {
+   "layoutId": "islands",
+   "seed": 15,
+   "tier": 4,
+   "topology": "d5389eb1d1a7a618",
+   "puzzle": "964df23fdd45ca06",
+   "contentHash": "f60bf818594e70eb",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 385
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 2351
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1214
+  },
+  {
+   "layoutId": "islands",
+   "seed": 16,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "crossing-exit-blocked",
+   "ms": 94
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 1,
+   "tier": 4,
+   "topology": "1157a795aae8886c",
+   "puzzle": "0e11b3a7cbfd45a0",
+   "contentHash": "594afef770cc6b96",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2531
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 758
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1671
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 2,
+   "tier": 4,
+   "topology": "e30f0ad6b4afb447",
+   "puzzle": "faf938bd844403c4",
+   "contentHash": "529eaf257cec062c",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1049
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 242
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 574
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 3,
+   "tier": 4,
+   "topology": "b9f2b289b5364b34",
+   "puzzle": "54fc65ebcf471b1a",
+   "contentHash": "b6c08effcc9fc7c4",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1070
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 343
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 665
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 4,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "sudoku-advanced-attempt-budget",
+   "ms": 76
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 5,
+   "tier": 4,
+   "topology": "faaede4fd318f4ee",
+   "puzzle": "d0692d9e8a822b63",
+   "contentHash": "e60417294de56d10",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 828
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 796
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 811
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 6,
+   "tier": 4,
+   "topology": "a4a7aa194d263c84",
+   "puzzle": "7270e5db723e9f2a",
+   "contentHash": "f1ddd265f60d04ae",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 832
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 822
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3151
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 7,
+   "tier": 4,
+   "topology": "b0b180bedbae99d7",
+   "puzzle": "146956dc130c20a5",
+   "contentHash": "f864955991855198",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 684
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 626
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 705
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 8,
+   "tier": 4,
+   "topology": "144b9ff9f90ed824",
+   "puzzle": "d8063253137778fe",
+   "contentHash": "b589a8b9466efa7c",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2623
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 2115
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5098
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 9,
+   "tier": 4,
+   "topology": "32bde5350c1d8c18",
+   "puzzle": "1ebfb13c2f95952f",
+   "contentHash": "98851602ccc85cf1",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2056
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 3223
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2259
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 10,
+   "tier": 4,
+   "topology": "6ac2a57950efe8ac",
+   "puzzle": "7270e5db723e9f2a",
+   "contentHash": "80962b221806ac45",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 158
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 334
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 272
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 11,
+   "tier": 4,
+   "topology": "71837b161ce26b2b",
+   "puzzle": "71bc3443897887ca",
+   "contentHash": "10a8823c40ac3909",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 3825
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 2535
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5085
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 12,
+   "tier": 4,
+   "topology": "47fdb994026a19f1",
+   "puzzle": "f79fee8c5643ecd5",
+   "contentHash": "bf4b93897a28d8c6",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 378
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 1489
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 876
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 13,
+   "tier": 4,
+   "topology": "c8cae7cc8bd81fc9",
+   "puzzle": "a0e7e24fd8aa04ca",
+   "contentHash": "ea18e0544aec63ef",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 113
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 174
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 201
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 14,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "sudoku-advanced-attempt-budget",
+   "ms": 58
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 15,
+   "tier": 4,
+   "topology": "c2cb0fb38597e2d6",
+   "puzzle": "964df23fdd45ca06",
+   "contentHash": "ededd51bd19dacea",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 139
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 274
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 213
+  },
+  {
+   "layoutId": "hedges",
+   "seed": 16,
+   "tier": 4,
+   "topology": "f204024ac41bc217",
+   "puzzle": "bc414dba4d4f20bf",
+   "contentHash": "e7a1f02bf37f63c8",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 302
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 238
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 252
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 1,
+   "tier": 4,
+   "topology": "b6927daa3db3e437",
+   "puzzle": "0e11b3a7cbfd45a0",
+   "contentHash": "b4fea800b016ad19",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2528
+   },
+   "alcove": {
+    "team": "barrow/warden/harvestmoon",
+    "status": "success",
+    "states": 4573
+   },
+   "secondTargetPlan": {
+    "team": "barrow/warden/harvestmoon",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 5228
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 2,
+   "tier": 4,
+   "topology": "41985a223fb655cb",
+   "puzzle": "faf938bd844403c4",
+   "contentHash": "6e80aadc518ccc25",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1846
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 1223
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1343
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 3,
+   "tier": 4,
+   "topology": "0268828a0da4a743",
+   "puzzle": "54fc65ebcf471b1a",
+   "contentHash": "f1b7a3849008220f",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1134
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 5082
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2495
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 4,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "sudoku-advanced-attempt-budget",
+   "ms": 65
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 5,
+   "tier": 4,
+   "topology": "aad5057fb5833a26",
+   "puzzle": "d0692d9e8a822b63",
+   "contentHash": "da7ee1324c3d626b",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 749
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 1087
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 877
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 6,
+   "tier": 4,
+   "topology": "7ab027769eaf5153",
+   "puzzle": "7270e5db723e9f2a",
+   "contentHash": "68c92318d97d60db",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 3985
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 2700
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 2854
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 7,
+   "tier": 4,
+   "topology": "dd24ecae06faf61f",
+   "puzzle": "146956dc130c20a5",
+   "contentHash": "1e3524b9a653d84e",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 744
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 726
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 628
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 8,
+   "tier": 4,
+   "topology": "8757e0c79aa8b426",
+   "puzzle": "d8063253137778fe",
+   "contentHash": "23f6c558699cad85",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 870
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 364
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 580
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 9,
+   "tier": 4,
+   "topology": "2c631d2ccaff7e3d",
+   "puzzle": "1ebfb13c2f95952f",
+   "contentHash": "451aa1b3d80432c4",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 197
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 966
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 505
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 10,
+   "tier": 4,
+   "topology": "3e9a2b94d74c074d",
+   "puzzle": "7270e5db723e9f2a",
+   "contentHash": "cf30bd279bf5a016",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 208
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 209
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 209
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 11,
+   "tier": 4,
+   "topology": "8ec9c8ab28ff3f7a",
+   "puzzle": "71bc3443897887ca",
+   "contentHash": "903b35bbc370aa82",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 1883
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 1206
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1325
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 12,
+   "tier": 4,
+   "topology": "4d36d219a4d45688",
+   "puzzle": "f79fee8c5643ecd5",
+   "contentHash": "fe9889cea1458b2d",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 567
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 766
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 621
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 13,
+   "tier": 4,
+   "topology": "8c7e62788c4bf891",
+   "puzzle": "a0e7e24fd8aa04ca",
+   "contentHash": "07754eb73a3cb3d0",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 2458
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 317
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 1212
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 14,
+   "tier": 4,
+   "status": "unknown",
+   "reasonCode": "sudoku-advanced-attempt-budget",
+   "ms": 58
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 15,
+   "tier": 4,
+   "topology": "8c059ef38c50ce66",
+   "puzzle": "964df23fdd45ca06",
+   "contentHash": "40b1805f7d1bd2d2",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 5134
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 2540
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 3127
+  },
+  {
+   "layoutId": "terraces",
+   "seed": 16,
+   "tier": 4,
+   "topology": "48c3442ecf645cdf",
+   "puzzle": "bc414dba4d4f20bf",
+   "contentHash": "2274a638a6262177",
+   "direct": {
+    "team": "barrow/cobweb/harvestmoon",
+    "status": "success",
+    "states": 489
+   },
+   "alcove": {
+    "team": "warden/longshadow/cascade",
+    "status": "success",
+    "states": 918
+   },
+   "secondTargetPlan": {
+    "team": "warden/longshadow/cascade",
+    "plan": "alcove-intercept"
+   },
+   "accepted": true,
+   "status": "accepted",
+   "ms": 609
+  }
+ ]
+}

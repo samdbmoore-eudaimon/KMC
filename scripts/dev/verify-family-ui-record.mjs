@@ -1,0 +1,14 @@
+import fs from 'node:fs';
+import {replayRun} from '../../expeditions/v2/index.js';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+import {applyOrchardV2Result,orchardV2Bucket,awardKey,tierUnlocked} from '../../expeditions/v2/persistence.js';
+registerOrchardPuzzleHooks();
+const family=process.argv[2]||'roost',root=new URL('../../docs/expeditions/v2/evidence/code-overnight-20261004/',import.meta.url);
+const record=JSON.parse(fs.readFileSync(new URL(`${family}-browser-win-record.json`,root))),progress=JSON.parse(fs.readFileSync(new URL(`${family}-browser-win-progress.json`,root)));
+const replay=replayRun(record,{recordHashes:true}),duplicate=applyOrchardV2Result(progress,{record}),award=orchardV2Bucket(progress).tierAwards[awardKey(record.initialRun.blueprint.familyId,record.initialRun.blueprint.tier)];
+if(!replay.ok||replay.state.status!=='won'||record.commands[0]?.expectedRevision!==0)throw Error('Browser trace must replay from zero commands to won');
+const unlocked=tierUnlocked(progress,record.initialRun.blueprint.familyId,record.initialRun.blueprint.tier);
+if(duplicate!==progress)throw Error('Duplicate award changed progress');
+if(unlocked?(progress.stars!==3||award?.runId!==record.initialRun.runId||award?.finalStateHash!==record.finalStateHash||award?.stars!==3):(progress.stars!==0||award))throw Error('Stored reward does not match tier eligibility');
+const evidence={provenance:'actual-browser-production-controls-disposable-qa',familyId:replay.state.blueprint.familyId,tier:replay.state.blueprint.tier,commands:record.commands.length,round:replay.state.round,status:replay.state.status,finalStateHash:record.finalStateHash,replay:true,stars:progress.stars,repeatedAwardStars:duplicate.stars,initialRevision:record.commands[0].expectedRevision,rewardEligibility:unlocked?'unlocked first clear':'locked QA tier; no stars awarded',runtimeBankCertified:false};
+fs.writeFileSync(new URL(`${family}-browser-win-verification.json`,root),JSON.stringify(evidence,null,2));console.log(JSON.stringify(evidence));

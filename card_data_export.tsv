@@ -1,6 +1,6 @@
 module	set	id	name	rarity	type	bv	arith	geom	logic	sci	speed
 Ninefold Orchard	ninefold_orchard	pip	Pip	common	Science	13	1	1	3	6	2
-Ninefold Orchard	ninefold_orchard	pip_upgraded	Pip (upgraded)	common_upgraded	Science	16	2	1	4	6	3
+Ninefold Orchard	ninefold_orchard	pip_upgraded	Pip (upgraded)	common_upgraded	Science	16	2	1	3	7	3
 Ninefold Orchard	ninefold_orchard	nine	Nine	common	Speed	13	2	1	2	1	7
 Ninefold Orchard	ninefold_orchard	nine_upgraded	Nine (upgraded)	common_upgraded	Speed	16	3	1	3	1	8
 Ninefold Orchard	ninefold_orchard	bramble	Bramble	common	Science	13	2	1	2	7	1
@@ -16,7 +16,7 @@ Ninefold Orchard	ninefold_orchard	wicker_upgraded	Wicker (upgraded)	common_upgra
 Ninefold Orchard	ninefold_orchard	furrow	Furrow	common	Speed	13	1	4	2	1	5
 Ninefold Orchard	ninefold_orchard	furrow_upgraded	Furrow (upgraded)	common_upgraded	Speed	16	1	5	2	2	6
 Ninefold Orchard	ninefold_orchard	dapple	Dapple	common	Speed	13	2	2	1	2	6
-Ninefold Orchard	ninefold_orchard	dapple_upgraded	Dapple (upgraded)	common_upgraded	Speed	16	2	3	2	3	6
+Ninefold Orchard	ninefold_orchard	dapple_upgraded	Dapple (upgraded)	common_upgraded	Speed	16	2	2	2	3	7
 Ninefold Orchard	ninefold_orchard	bushel	Bushel	common	Arithmetic	13	5	1	2	3	2
 Ninefold Orchard	ninefold_orchard	bushel_upgraded	Bushel (upgraded)	common_upgraded	Arithmetic	16	6	2	2	4	2
 Ninefold Orchard	ninefold_orchard	tuppence	Tuppence	common	Arithmetic	13	4	1	4	2	2
@@ -28,7 +28,7 @@ Ninefold Orchard	ninefold_orchard	cornix_upgraded	Cornix (upgraded)	uncommon_upg
 Ninefold Orchard	ninefold_orchard	thistlewick	Thistlewick	uncommon	Logic	21	4	4	5	4	4
 Ninefold Orchard	ninefold_orchard	thistlewick_upgraded	Thistlewick (upgraded)	uncommon_upgraded	Logic	24	5	4	6	5	4
 Ninefold Orchard	ninefold_orchard	beeswax	Beeswax	uncommon	Speed	21	2	2	4	6	7
-Ninefold Orchard	ninefold_orchard	beeswax_upgraded	Beeswax (upgraded)	uncommon_upgraded	Speed	24	3	3	4	7	7
+Ninefold Orchard	ninefold_orchard	beeswax_upgraded	Beeswax (upgraded)	uncommon_upgraded	Speed	24	3	3	4	6	8
 Ninefold Orchard	ninefold_orchard	kernel	Kernel	uncommon	Geometry	21	6	7	3	3	2
 Ninefold Orchard	ninefold_orchard	kernel_upgraded	Kernel (upgraded)	uncommon_upgraded	Geometry	24	7	8	4	3	2
 Ninefold Orchard	ninefold_orchard	millrace	Millrace	uncommon	Science	21	3	3	4	7	4
@@ -89,10 +89,10 @@ Little Reckoning	little_reckoning	flaskfox	Flaskfox	uncommon	Science	21	3	3	4	8	
 Little Reckoning	little_reckoning	flaskfox_upgraded	Flaskfox (upgraded)	uncommon_upgraded	Science	24	4	3	4	9	4
 Little Reckoning	little_reckoning	cheetawat	Cheetawatt	rare	Speed	25	5	4	4	4	8
 Little Reckoning	little_reckoning	fractail	Fractail	uncommon	Speed	21	4	4	3	3	7
-Little Reckoning	little_reckoning	fractail_upgraded	Fractail (upgraded)	uncommon_upgraded	Speed	24	5	5	4	3	7
+Little Reckoning	little_reckoning	fractail_upgraded	Fractail (upgraded)	uncommon_upgraded	Speed	24	5	4	4	3	8
 Little Reckoning	little_reckoning	hexabug	Hexabug	rare	Geometry	25	5	7	5	4	4
 Little Reckoning	little_reckoning	voltbird	Voltbird	uncommon	Speed	21	3	3	4	4	7
-Little Reckoning	little_reckoning	voltbird_upgraded	Voltbird (upgraded)	uncommon_upgraded	Speed	24	4	4	4	5	7
+Little Reckoning	little_reckoning	voltbird_upgraded	Voltbird (upgraded)	uncommon_upgraded	Speed	24	4	4	4	4	8
 Little Reckoning	little_reckoning	probear	Probear	rare	Logic	25	5	5	7	4	4
 Little Reckoning	little_reckoning	seqviper	Seqviper	rare	Arithmetic	25	6	4	5	4	6
 Little Reckoning	little_reckoning	primearch	Primearch	epic	Arithmetic	33	9	5	8	6	5
@@ -149,7 +149,7 @@ Gifford	gifford	gf_nettle_upgraded	Nettle (upgraded)	common_upgraded	Geometry	15
 Gifford	gifford	gf_higgins	Corporal Higgins	common	Logic	12	2	2	3	2	3
 Gifford	gifford	gf_higgins_upgraded	Corporal Higgins (upgraded)	common_upgraded	Logic	15	3	2	4	2	4
 Gifford	gifford	gf_marta	Marta the Grocer	common	Geometry	12	3	4	2	2	1
-Gifford	gifford	gf_marta_upgraded	Marta the Grocer (upgraded)	common_upgraded	Geometry	15	4	4	3	2	2
+Gifford	gifford	gf_marta_upgraded	Marta the Grocer (upgraded)	common_upgraded	Geometry	15	3	5	3	2	2
 Gifford	gifford	gf_jory	Jory Fenwick	common	Logic	12	3	2	3	2	2
 Gifford	gifford	gf_jory_upgraded	Jory Fenwick (upgraded)	common_upgraded	Logic	15	3	3	4	2	3
 Gifford	gifford	gf_ratchet	Ratchet	common	Speed	12	2	2	2	2	4
@@ -157,7 +157,7 @@ Gifford	gifford	gf_ratchet_upgraded	Ratchet (upgraded)	common_upgraded	Speed	15	
 Gifford	gifford	gf_colworth	Magistrate Colworth	common	Logic	12	3	2	4	2	1
 Gifford	gifford	gf_colworth_upgraded	Magistrate Colworth (upgraded)	common_upgraded	Logic	15	4	2	5	2	2
 Gifford	gifford	gf_pip	Pip	common	Geometry	12	2	3	2	2	3
-Gifford	gifford	gf_pip_upgraded	Pip (upgraded)	common_upgraded	Geometry	15	3	3	3	2	4
+Gifford	gifford	gf_pip_upgraded	Pip (upgraded)	common_upgraded	Geometry	15	3	4	3	2	3
 Gifford	gifford	gf_adavoss	Second Examiner Ada Voss	common	Arithmetic	12	4	2	3	2	1
 Gifford	gifford	gf_adavoss_upgraded	Second Examiner Ada Voss (upgraded)	common_upgraded	Arithmetic	15	5	2	4	3	1
 Gifford	intermediate_bosses	boss_intermediate_1	Senior Examiner Vera Kross	boss_L1	Arithmetic	13	4	2	2	1	4

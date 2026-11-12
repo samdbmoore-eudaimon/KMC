@@ -574,14 +574,18 @@ const PLACE_VALUE_STRUCTURES = {
       do { digits = Array.from({ length: total }, () => rand(1, 9)); } while (new Set(digits).size !== total);
       const wantMax = pick([true, false]);
       function permute(arr) { if (arr.length <= 1) return [arr]; const res = []; for (let i = 0; i < arr.length; i++) { const rest = [...arr.slice(0, i), ...arr.slice(i + 1)]; for (const p of permute(rest)) res.push([arr[i], ...p]); } return res; }
-      let best = null, bestPair = null;
+      let best = null, bestPair = null, worst = null;
       for (const perm of permute(digits)) {
         const a = Number(perm.slice(0, k).join(""));
         const b = Number(perm.slice(k).join(""));
         const sum = a + b;
         if (best === null || (wantMax ? sum > best : sum < best)) { best = sum; bestPair = [a, b]; }
+        if (worst === null || (wantMax ? sum < worst : sum > worst)) { worst = sum; }
       }
-      const decoys = [best + 10, best - 10, best + 1, best - 100].filter((x) => x !== best && x > 0);
+      // Two genuine misconceptions: solved for the opposite extreme (easy max/min mixup), and
+      // used the digits in their given order without optimising placement at all.
+      const naiveSum = Number(digits.slice(0, k).join("")) + Number(digits.slice(k).join(""));
+      const decoys = [worst, naiveSum, best + 10, best - 10].filter((x) => x !== best && x > 0);
       const { options, correctIndex } = buildMC(best, decoys);
       return { q: `Using the digits ${digits.join(", ")} exactly once each, split them into two ${k}-digit numbers. What is the ${wantMax ? "largest" : "smallest"} possible sum of the two numbers?`, options, correctIndex,
         hint: "This is a split into two numbers question. Since addition doesn't care which number a digit ends up in, only which PLACE it lands in, put the biggest digits in the two most valuable places (across both numbers) for the largest sum, or the smallest digits there for the smallest sum.",
@@ -663,7 +667,12 @@ const PLACE_VALUE_STRUCTURES = {
           for (const v of ranges[idx]) { const next = ds.slice(); next[freePositions[idx]] = v; search(idx + 1, next); }
         })(0, digits.slice());
         if (matches.length === 1 && matches[0] === target) {
-          const decoys = [target + 10, target - 10, target + 100, target - 1].filter((x) => x !== target && x > 0);
+          // Genuine misreadings of this specific number: digits read in reverse order, and the
+          // first two digits transposed (a classic transcription slip), rather than arbitrary offsets.
+          const reversedNum = Number([...digits].reverse().join(""));
+          const swapped = [...digits]; if (nd >= 2) { [swapped[0], swapped[1]] = [swapped[1], swapped[0]]; }
+          const swappedNum = Number(swapped.join(""));
+          const decoys = [reversedNum, swappedNum, target + 10, target - 10].filter((x) => x !== target && x > 0);
           const { options, correctIndex } = buildMC(target, decoys);
           const clueList = allClues.map((c) => c.text).join(", and ");
           return { q: `A ${nd}-digit number has these clues: ${clueList}. What is the number?`, options, correctIndex,
@@ -686,7 +695,12 @@ const PLACE_VALUE_STRUCTURES = {
     build(d) {
       const value = d === 1 ? rand(1, 12) : rand(13, 100);
       const numeral = PV_toRoman(value);
-      const { options, correctIndex } = buildMC(value, [value + 1, Math.max(1, value - 1), Math.min(100, value + 5), Math.max(1, value - 5)]);
+      // The classic Roman-numeral misconception: reading every symbol as added, ignoring the
+      // subtractive-pair rule (e.g. IV misread as I+V=6 instead of V-I=4). Only differs from
+      // `value` when the numeral actually contains a subtractive pair.
+      const ROMAN_VALS = { I: 1, V: 5, X: 10, L: 50, C: 100 };
+      const additiveReading = [...numeral].reduce((sum, ch) => sum + ROMAN_VALS[ch], 0);
+      const { options, correctIndex } = buildMC(value, [additiveReading, Math.max(1, value - 1), Math.min(100, value + 5), Math.max(1, value - 5)]);
       return { q: `${numeral} is written on an old Ninefold dial. What number does it represent?`, svg: PV_romanTileSvg(numeral), options, correctIndex,
         hint: "Read the symbols from left to right. A smaller symbol before a larger one is subtracted; otherwise the values are added.",
         solution: { scenario: `We need to read the Roman numeral ${numeral}.`, idea: "Roman numerals combine symbols by addition, except when a smaller symbol comes immediately before a larger one.", method: ["Name the value of each symbol.", "Notice any subtractive pair such as IV, IX, XL or XC.", "Combine the values and check the result."], steps: [`Using I = 1, V = 5, X = 10, L = 50 and C = 100, ${numeral} represents ${value}.`], check: `${PV_toRoman(value)} is the standard Roman-numeral form of ${value}.` } };
@@ -1434,11 +1448,11 @@ const TIMES_TABLES_STRUCTURES = {
     difficulties: [1, 2],
     build(d) {
       const table = rand(2, 12);
-      const n = rand(2, 10);
+      const n = rand(3, 10);
       const known = table * n;
       const wantNext = pick([true, false]);
       const targetN = wantNext ? n + 1 : n - 1;
-      if (targetN < 1) return null;
+      if (targetN < 2) return null;
       const answer = wantNext ? known + table : known - table;
       const decoys = [known, known + 1, known + n, answer + table].filter((x) => x !== answer && x > 0);
       const { options, correctIndex } = buildMC(answer, decoys);
@@ -1599,11 +1613,11 @@ const TIMES_TABLES_STRUCTURES = {
     difficulties: [3, 4],
     build(d) {
       const maxFactor = d >= 4 ? 12 : 10;
-      let target, pairs, guard = 0;
+      let target, pairs, rawPairs, guard = 0;
       do {
         const x = rand(2, maxFactor), y = rand(2, maxFactor);
         target = x * y;
-        const rawPairs = [];
+        rawPairs = [];
         for (let i = 2; i <= maxFactor; i++) { if (target % i === 0 && target / i >= 2 && target / i <= maxFactor) rawPairs.push([i, target / i]); }
         const seen = new Set(); pairs = [];
         for (const [p, q] of rawPairs) { const key = [p, q].sort((m, n) => m - n).join(","); if (!seen.has(key)) { seen.add(key); pairs.push([p, q]); } }
@@ -1611,7 +1625,9 @@ const TIMES_TABLES_STRUCTURES = {
       } while (pairs.length < 2 && guard < 100);
       if (pairs.length < 2) return null;
       const answer = pairs.length;
-      const decoys = [answer + 1, answer - 1, answer + 2, pairs.length * 2].filter((x) => x !== answer && x > 0);
+      // rawPairs.length double-counts each asymmetric pair as two orders (e.g. 2×6 and 6×2) —
+      // exactly the "count each pair once, not twice" mistake this question is designed to test.
+      const decoys = [rawPairs.length, answer + 1, answer - 1, answer + 2].filter((x) => x !== answer && x > 0);
       const { options, correctIndex } = buildMC(answer, decoys);
       return { q: `${target} can be made by multiplying two numbers from 2 to ${maxFactor} together. How many DIFFERENT pairs of numbers give ${target}?`, options, correctIndex,
         hint: "This is a find all the factor pairs question. Try every possible first number in the allowed range and check whether it divides evenly, keeping only pairs where BOTH numbers are in range.",
@@ -8361,8 +8377,9 @@ function abQuadSVG(a, b, c, d) {
 function abTriangleWithExteriorSVG(a, b, c, e) {
   return `${SL(30, 170, 180, 170)}${SL(180, 170, 260, 170)}${SL(30, 170, 130, 40)}${SL(180, 170, 130, 40)}${ST(55, 160, a + "°", "middle", 12)}${ST(150, 160, b + "°", "middle", 11)}${ST(215, 160, e + "°", "middle", 12)}${ST(130, 55, c + "°", "middle", 11)}`;
 }
-function abIsoscelesSVG(baseL, baseR, apex) {
-  return `${SL(40, 170, 220, 170)}${SL(40, 170, 130, 40)}${SL(220, 170, 130, 40)}${ST(60, 160, baseL + "°", "middle", 12)}${ST(200, 160, baseR + "°", "middle", 12)}${ST(130, 55, apex + "°", "middle", 12)}`;
+function abIsoscelesSVG(baseL, baseR, apex, unknown = []) {
+  const lbl = (key, val) => (unknown.includes(key) ? "?" : val + "°");
+  return `${SL(40, 170, 220, 170)}${SL(40, 170, 130, 40)}${SL(220, 170, 130, 40)}${ST(60, 160, lbl("baseL", baseL), "middle", 12)}${ST(200, 160, lbl("baseR", baseR), "middle", 12)}${ST(130, 55, lbl("apex", apex), "middle", 12)}`;
 }
 const abCoefWord = (c) => (c === 1 ? "x" : `${c}x`);
 const ANGLE_BASICS_STRUCTURES = {
@@ -8837,7 +8854,7 @@ const ANGLE_BASICS_STRUCTURES = {
         if (!mc) return null;
         return {
           q: `An isosceles triangle has two equal base angles of ${base}° each. What is the size of the apex angle (the angle between the two equal sides)?`,
-          svg: svgBox(abIsoscelesSVG(base, base, apex), 260, 200),
+          svg: svgBox(abIsoscelesSVG(base, base, apex, ["apex"]), 260, 200),
           options: mc.options,
           correctIndex: mc.correctIndex,
           hint: "In an isosceles triangle, the two base angles are equal. All three angles still add up to 180°.",
@@ -8855,7 +8872,7 @@ const ANGLE_BASICS_STRUCTURES = {
       if (!mc) return null;
       return {
         q: `An isosceles triangle has an apex angle of ${apex}°. The two base angles are equal. What is the size of each base angle?`,
-        svg: svgBox(abIsoscelesSVG(base, base, apex), 260, 200),
+        svg: svgBox(abIsoscelesSVG(base, base, apex, ["baseL", "baseR"]), 260, 200),
         options: mc.options,
         correctIndex: mc.correctIndex,
         hint: "The two base angles of an isosceles triangle are equal. Subtract the apex angle from 180° and share the rest equally between them.",
@@ -11236,7 +11253,7 @@ const SPATIAL_PUZZLES_STRUCTURES = {
         const distractors = [correct + 1, correct - 1, correct + 2, stats.F, stats.E, stats.V].filter(x => x !== correct && x > 0);
         const { options, correctIndex } = buildMC(correct, distractors);
         return {
-          q: `A solid shape has ${known1[1]} ${known1[0]} and ${known2[1]} ${known2[0]}. Using Euler's rule (faces + vertices - edges = 2), how many ${missingWord} must it have?`,
+          q: `A solid shape has ${known1[1]} ${known1[0]} and ${known2[1]} ${known2[0]}. How many ${missingWord} must it have?`,
           options, correctIndex,
           hint: "Rearrange Euler's rule (faces + vertices - edges = 2) to make the missing quantity the subject, then substitute the two you know.",
           solution: {

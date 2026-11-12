@@ -1,0 +1,233 @@
+- main:
+  - button "Back"
+  - generic: Ninefold Orchard Expeditions
+  - heading "Four Locks" [level=1]
+  - paragraph: Save the tree before the fifth enemy turn.
+  - button "Tier 1 · cleared" [pressed]
+  - button "Tier 2" [disabled]
+  - button "Tier 3" [disabled]
+  - button "Tier 4" [disabled]
+  - button "Tier 5" [disabled]
+  - generic: The orchard needs three pairs of hands
+  - heading "Your mission" [level=2]
+  - list:
+    - listitem: Solve the number lock and activate two helpful mechanisms.
+    - listitem: Fill the three marked stations with power.
+    - listitem: Put a different hero at or beside each station and Hold through an enemy turn.
+  - paragraph: Each hero has two actions per round. Enemies act only after you confirm End round.
+  - paragraph: Three stars for the first clear of this tier; replay clears award no stars.
+  - heading "Choose your three heroes" [level=2]
+  - paragraph: The starting cards are your collection’s first three, not a recommended team. Tap a job slot, then an owned card. You can change jobs on the battlefield.
+  - region "Team job shortfalls":
+    - strong: This team does not meet every direct job
+    - paragraph: "Pip cannot power the number station directly: Arithmetic 1/4."
+    - paragraph: "Nine cannot keep the bridge steady directly: Geometry 1/4."
+    - paragraph: "Bramble cannot keep the tree alive directly: Speed 1/2."
+    - paragraph: You can still embark for practice. Only the bridge job has a prepared-alcove alternative.
+    - paragraph: A practice attempt uses exactly the same rules. A hero below a job's printed stats cannot Hold that station, so the mission can only be won if another hero of yours meets it (or you use the alcove for the bridge job). Nothing is lowered and nothing is chosen for you.
+  - region "Owned team suggestion":
+    - paragraph:
+      - text: "Owned cards that meet all three direct jobs:"
+      - strong: Bushel, Wicker, Pip
+      - text: . Travel and protection still need a plan.
+    - button "Use this owned team"
+  - 'button "Pip Power the number station Job shortfall: check above" [pressed]':
+    - strong: Pip
+    - generic: Power the number station
+    - generic: "Job shortfall: check above"
+  - 'button "Nine Keep the bridge steady Job shortfall: check above"':
+    - strong: Nine
+    - generic: Keep the bridge steady
+    - generic: "Job shortfall: check above"
+  - 'button "Bramble Keep the tree alive Job shortfall: check above"':
+    - strong: Bramble
+    - generic: Keep the tree alive
+    - generic: "Job shortfall: check above"
+  - strong: Choosing a hero to power the number station
+  - paragraph: "Printed requirements: Arithmetic 4 · Logic 2"
+  - generic "Owned cards":
+    - button "Choose Pip for number" [pressed]:
+      - strong: Pip
+      - generic: Mender · science
+      - emphasis: "Mender: best at repairing and stabilising. Meets the printed requirement to keep the tree alive."
+      - generic: Arithmetic 1 / 4 needed
+      - generic: Logic 3 / 2 needed
+    - button "Choose Nine for number":
+      - strong: Nine
+      - generic: Scout · speed
+      - emphasis: "Scout: best at moving fast. No station job yet. Closest: power the number station (Arithmetic 2/4). Still useful for fighting, protecting and carrying power."
+      - generic: Arithmetic 2 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Bramble for number":
+      - strong: Bramble
+      - generic: Reckoner · science
+      - emphasis: "Reckoner: best at repairing and stabilising. No station job yet. Closest: power the number station (Arithmetic 2/4). Still useful for fighting, protecting and carrying power."
+      - generic: Arithmetic 2 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Sorrel for number":
+      - strong: Sorrel
+      - generic: Mender · science
+      - emphasis: "Mender: best at repairing and stabilising. Meets the printed requirement to keep the tree alive."
+      - generic: Arithmetic 2 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Russet for number":
+      - strong: Russet
+      - generic: Mover · geometry
+      - emphasis: "Mover: best at bracing and shielding. No station job yet. Closest: power the number station (Arithmetic 2/4). Still useful for fighting, protecting and carrying power."
+      - generic: Arithmetic 2 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Halfpenny for number":
+      - strong: Halfpenny
+      - generic: Scout · speed
+      - emphasis: "Scout: best at moving fast. No station job yet. Closest: power the number station (Arithmetic 2/4). Still useful for fighting, protecting and carrying power."
+      - generic: Arithmetic 2 / 4 needed
+      - generic: Logic 3 / 2 needed
+    - button "Choose Wicker for number":
+      - strong: Wicker
+      - generic: Mover · geometry
+      - emphasis: "Mover: best at bracing and shielding. Meets the printed requirement to keep the bridge steady."
+      - generic: Arithmetic 1 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Furrow for number":
+      - strong: Furrow
+      - generic: Guardian · speed
+      - emphasis: "Guardian: best at moving fast. Meets the printed requirement to keep the bridge steady."
+      - generic: Arithmetic 1 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Dapple for number":
+      - strong: Dapple
+      - generic: Reckoner · speed
+      - emphasis: "Reckoner: best at moving fast. Can keep the bridge steady only through the prepared alcove."
+      - generic: Arithmetic 2 / 4 needed
+      - generic: Logic 1 / 2 needed
+    - button "Choose Bushel for number":
+      - strong: Bushel
+      - generic: Guardian · arithmetic
+      - emphasis: "Guardian: best at counting and charging power. Meets the printed requirement to power the number station."
+      - generic: Arithmetic 5 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Tuppence for number":
+      - strong: Tuppence
+      - generic: Guardian · arithmetic
+      - emphasis: "Guardian: best at counting and charging power. Meets the printed requirement to power the number station."
+      - generic: Arithmetic 4 / 4 needed
+      - generic: Logic 4 / 2 needed
+    - button "Choose Windfall for number":
+      - strong: Windfall
+      - generic: Scout · speed
+      - emphasis: "Scout: best at moving fast. No station job yet. Closest: power the number station (Arithmetic 1/4). Still useful for fighting, protecting and carrying power."
+      - generic: Arithmetic 1 / 4 needed
+      - generic: Logic 2 / 2 needed
+    - button "Choose Cornix for number":
+      - strong: Cornix
+      - generic: Guardian · arithmetic
+      - emphasis: "Guardian: best at counting and charging power. Meets the printed requirement to power the number station."
+      - generic: Arithmetic 6 / 4 needed
+      - generic: Logic 6 / 2 needed
+    - button "Choose Thistlewick for number":
+      - strong: Thistlewick
+      - generic: Mover · logic
+      - emphasis: "Mover: best at locking puzzle cells and countering disruption. Meets the printed requirement to power the number station or keep the bridge steady."
+      - generic: Arithmetic 4 / 4 needed
+      - generic: Logic 5 / 2 needed
+    - button "Choose Beeswax for number":
+      - strong: Beeswax
+      - generic: Mender · speed
+      - emphasis: "Mender: best at moving fast. Meets the printed requirement to keep the tree alive. Can also keep the bridge steady through the prepared alcove."
+      - generic: Arithmetic 2 / 4 needed
+      - generic: Logic 4 / 2 needed
+    - button "Choose Kernel for number":
+      - strong: Kernel
+      - generic: Reckoner · geometry
+      - emphasis: "Reckoner: best at bracing and shielding. Meets the printed requirement to power the number station or keep the bridge steady."
+      - generic: Arithmetic 6 / 4 needed
+      - generic: Logic 3 / 2 needed
+    - button "Choose Millrace for number":
+      - strong: Millrace
+      - generic: Scout · science
+      - emphasis: "Scout: best at repairing and stabilising. Meets the printed requirement to keep the tree alive."
+      - generic: Arithmetic 3 / 4 needed
+      - generic: Logic 4 / 2 needed
+    - button "Choose Cobweb for number":
+      - strong: Cobweb
+      - generic: Scout · geometry
+      - emphasis: "Scout: best at bracing and shielding. Meets the printed requirement to power the number station or keep the bridge steady."
+      - generic: Arithmetic 5 / 4 needed
+      - generic: Logic 4 / 2 needed
+    - button "Choose Amberly for number":
+      - strong: Amberly
+      - generic: Mender · logic
+      - emphasis: "Mender: best at locking puzzle cells and countering disruption. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 4 / 4 needed
+      - generic: Logic 7 / 2 needed
+    - button "Choose Barrow for number":
+      - strong: Barrow
+      - generic: Mover · logic
+      - emphasis: "Mover: best at locking puzzle cells and countering disruption. Meets the printed requirement to power the number station or keep the bridge steady."
+      - generic: Arithmetic 7 / 4 needed
+      - generic: Logic 8 / 2 needed
+    - button "Choose Driftwood for number":
+      - strong: Driftwood
+      - generic: Scout · geometry
+      - emphasis: "Scout: best at bracing and shielding. Meets the printed requirement to power the number station or keep the bridge steady."
+      - generic: Arithmetic 4 / 4 needed
+      - generic: Logic 6 / 2 needed
+    - button "Choose Gable for number":
+      - strong: Gable
+      - generic: Mender · logic
+      - emphasis: "Mender: best at locking puzzle cells and countering disruption. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 5 / 4 needed
+      - generic: Logic 6 / 2 needed
+    - button "Choose Warden for number":
+      - strong: Warden
+      - generic: Mover · arithmetic
+      - emphasis: "Mover: best at counting and charging power. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 8 / 4 needed
+      - generic: Logic 8 / 2 needed
+    - button "Choose Harvestmoon for number":
+      - strong: Harvestmoon
+      - generic: Reckoner · logic
+      - emphasis: "Reckoner: best at locking puzzle cells and countering disruption. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 6 / 4 needed
+      - generic: Logic 8 / 2 needed
+    - button "Choose Ninebark for number":
+      - strong: Ninebark
+      - generic: Mover · logic
+      - emphasis: "Mover: best at locking puzzle cells and countering disruption. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 8 / 4 needed
+      - generic: Logic 9 / 2 needed
+    - button "Choose Cascade for number":
+      - strong: Cascade
+      - generic: Guardian · science
+      - emphasis: "Guardian: best at repairing and stabilising. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 8 / 4 needed
+      - generic: Logic 6 / 2 needed
+    - button "Choose Longshadow for number":
+      - strong: Longshadow
+      - generic: Mender · science
+      - emphasis: "Mender: best at repairing and stabilising. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 6 / 4 needed
+      - generic: Logic 7 / 2 needed
+    - button "Choose Gossamer for number":
+      - strong: Gossamer
+      - generic: Guardian · geometry
+      - emphasis: "Guardian: best at bracing and shielding. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 5 / 4 needed
+      - generic: Logic 6 / 2 needed
+    - button "Choose The Ninefold Tree for number":
+      - strong: The Ninefold Tree
+      - generic: Reckoner · arithmetic
+      - emphasis: "Reckoner: best at counting and charging power. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 9 / 4 needed
+      - generic: Logic 9 / 2 needed
+    - button "Choose The Tenth Scarecrow for number":
+      - strong: The Tenth Scarecrow
+      - generic: Reckoner · arithmetic
+      - emphasis: "Reckoner: best at counting and charging power. Meets the printed requirement to power the number station or keep the bridge steady or keep the tree alive."
+      - generic: Arithmetic 10 / 4 needed
+      - generic: Logic 10 / 2 needed
+  - 'generic "Pip: all printed stats and abilities"'
+  - paragraph: "Warned attempt: some assigned jobs need stronger printed stats or the prepared alcove."
+  - button "Embark"
+  - generic "Other expedition families"
+- button "⛶"

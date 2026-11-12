@@ -1,0 +1,52 @@
+{
+  "packetId": "four-locks-displaced-v1",
+  "generatorVersion": 2,
+  "limits": {
+    "candidates": 4,
+    "maxPlannerInvocationsPerCandidate": 2,
+    "maxStatesPerInvocation": 8000
+  },
+  "summaries": [
+    {
+      "layoutId": "river",
+      "seed": 0,
+      "candidateStatus": "success",
+      "status": "success",
+      "certificateId": "orchard-v2-17b09eb354d2a122",
+      "traceCount": 2,
+      "evidence": "tier-1-river-seed-0"
+    },
+    {
+      "layoutId": "islands",
+      "seed": 0,
+      "candidateStatus": "success",
+      "status": "success",
+      "certificateId": "orchard-v2-91f754b4a76a9a59",
+      "traceCount": 2,
+      "evidence": "tier-1-islands-seed-0"
+    },
+    {
+      "layoutId": "hedges",
+      "seed": 0,
+      "candidateStatus": "success",
+      "status": "success",
+      "certificateId": "orchard-v2-a76ac63b62658806",
+      "traceCount": 2,
+      "evidence": "tier-1-hedges-seed-0"
+    },
+    {
+      "layoutId": "terraces",
+      "seed": 0,
+      "candidateStatus": "success",
+      "status": "success",
+      "certificateId": "orchard-v2-3506d26e75f76e17",
+      "traceCount": 2,
+      "evidence": "tier-1-terraces-seed-0"
+    }
+  ],
+  "limitations": [
+    "Separate offline packet; not default generatorVersion1, runtime entry or completed bank.",
+    "All traces are checked with the production reducer. Unknown does not establish impossibility.",
+    "Private App/QA-01, device/child testing and R-07 remain pending."
+  ]
+}

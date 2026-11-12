@@ -1,0 +1,703 @@
+[
+  {
+    "type": "move",
+    "label": "move",
+    "cardKey": null,
+    "apCost": 1,
+    "available": true,
+    "reasonCode": null,
+    "reasonParams": null,
+    "targets": [
+      {
+        "destination": "1,2",
+        "cost": 1
+      },
+      {
+        "destination": "2,2",
+        "cost": 1
+      },
+      {
+        "destination": "0,3",
+        "cost": 1
+      },
+      {
+        "destination": "2,3",
+        "cost": 1
+      }
+    ]
+  },
+  {
+    "type": "strike",
+    "label": "strike",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "hookmole-1",
+      "distance": 8,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": "hookmole-1",
+        "payload": {
+          "targetId": "hookmole-1"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "hookmole-1",
+          "distance": 8,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "guard",
+    "label": "guard",
+    "cardKey": null,
+    "apCost": 1,
+    "available": true,
+    "reasonCode": null,
+    "reasonParams": null,
+    "targets": [
+      {
+        "targetId": "bushel",
+        "payload": {
+          "targetId": "bushel"
+        },
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null
+      },
+      {
+        "targetId": "furrow",
+        "payload": {
+          "targetId": "furrow"
+        },
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null
+      },
+      {
+        "targetId": "pip",
+        "payload": {
+          "targetId": "pip"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "pip",
+          "distance": 2,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "number",
+        "payload": {
+          "targetId": "number"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "number",
+          "distance": 6,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "repair",
+    "label": "repair",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "nothing-to-repair",
+    "reasonParams": {
+      "targetId": "bushel"
+    },
+    "targets": [
+      {
+        "targetId": "bushel",
+        "payload": {
+          "targetId": "bushel"
+        },
+        "legal": false,
+        "reasonCode": "nothing-to-repair",
+        "reasonParams": {
+          "targetId": "bushel"
+        }
+      },
+      {
+        "targetId": "furrow",
+        "payload": {
+          "targetId": "furrow"
+        },
+        "legal": false,
+        "reasonCode": "nothing-to-repair",
+        "reasonParams": {
+          "targetId": "furrow"
+        }
+      },
+      {
+        "targetId": "pip",
+        "payload": {
+          "targetId": "pip"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "pip",
+          "distance": 2,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "number",
+        "payload": {
+          "targetId": "number"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "number",
+          "distance": 6,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "lock",
+    "label": "lock",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "network",
+      "distance": 2,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": "network",
+        "payload": {
+          "targetId": "network"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "network",
+          "distance": 2,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "row-0",
+        "payload": {
+          "targetId": "row-0"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "row-0",
+          "distance": 2,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "row-1",
+        "payload": {
+          "targetId": "row-1"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "row-1",
+          "distance": 2,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "stabilise",
+    "label": "stabilise",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "number",
+      "distance": 6,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": "number",
+        "payload": {
+          "targetId": "number"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "number",
+          "distance": 6,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "shape",
+        "payload": {
+          "targetId": "shape"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "shape",
+          "distance": 8,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "sustain",
+        "payload": {
+          "targetId": "sustain"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "sustain",
+          "distance": 8,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "alcove",
+        "payload": {
+          "targetId": "alcove"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "alcove",
+          "distance": 8,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "calibrate",
+    "label": "calibrate",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "number",
+      "distance": 6,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": "number",
+        "payload": {
+          "targetId": "number"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "number",
+          "distance": 6,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "shape",
+        "payload": {
+          "targetId": "shape"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "shape",
+          "distance": 8,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "sustain",
+        "payload": {
+          "targetId": "sustain"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "sustain",
+          "distance": 8,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "alcove",
+        "payload": {
+          "targetId": "alcove"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "alcove",
+          "distance": 8,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "hold",
+    "label": "hold",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "number",
+      "distance": 6,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": "number",
+        "payload": {
+          "targetId": "number"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "number",
+          "distance": 6,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "shape",
+        "payload": {
+          "targetId": "shape"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "shape",
+          "distance": 8,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "sustain",
+        "payload": {
+          "targetId": "sustain"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "sustain",
+          "distance": 8,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "alcove",
+        "payload": {
+          "targetId": "alcove"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "alcove",
+          "distance": 8,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "prepare-alcove",
+    "label": "prepare-alcove",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "alcove",
+      "distance": 8,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": "alcove",
+        "payload": {
+          "targetId": "alcove"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "alcove",
+          "distance": 8,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "operate",
+    "label": "operate",
+    "cardKey": null,
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "control",
+      "distance": 2,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": null,
+        "payload": {
+          "draftRevision": 0,
+          "outputIds": [
+            "bridge",
+            "shelter"
+          ],
+          "lockGroupId": null
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "control",
+          "distance": 2,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "wait",
+    "label": "wait",
+    "cardKey": null,
+    "apCost": 1,
+    "available": true,
+    "reasonCode": null,
+    "reasonParams": null,
+    "targets": [
+      {
+        "targetId": null,
+        "payload": {},
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null
+      }
+    ]
+  },
+  {
+    "type": "refocus",
+    "label": "refocus",
+    "cardKey": null,
+    "apCost": 2,
+    "available": false,
+    "reasonCode": "card-not-exhausted",
+    "reasonParams": {
+      "cardId": null
+    },
+    "targets": []
+  },
+  {
+    "type": "exact-blow",
+    "label": "exact-blow",
+    "cardKey": "exact-blow",
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "hookmole-1",
+      "distance": 8,
+      "range": 1
+    },
+    "targets": [
+      {
+        "targetId": "hookmole-1",
+        "payload": {
+          "targetId": "hookmole-1"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "hookmole-1",
+          "distance": 8,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "shared-charge",
+    "label": "shared-charge",
+    "cardKey": "shared-charge",
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "out-of-range",
+    "reasonParams": {
+      "targetId": "number",
+      "distance": 6,
+      "range": 2
+    },
+    "targets": [
+      {
+        "targetId": "number",
+        "payload": {
+          "allocations": [
+            {
+              "targetId": "number",
+              "amount": 4
+            }
+          ]
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "number",
+          "distance": 6,
+          "range": 2
+        }
+      },
+      {
+        "targetId": "shape",
+        "payload": {
+          "allocations": [
+            {
+              "targetId": "shape",
+              "amount": 4
+            }
+          ]
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "shape",
+          "distance": 8,
+          "range": 2
+        }
+      },
+      {
+        "targetId": "sustain",
+        "payload": {
+          "allocations": [
+            {
+              "targetId": "sustain",
+              "amount": 4
+            }
+          ]
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "sustain",
+          "distance": 8,
+          "range": 2
+        }
+      },
+      {
+        "targetId": "alcove",
+        "payload": {
+          "allocations": [
+            {
+              "targetId": "alcove",
+              "amount": 4
+            }
+          ]
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "alcove",
+          "distance": 8,
+          "range": 2
+        }
+      }
+    ]
+  },
+  {
+    "type": "stand-together",
+    "label": "stand-together",
+    "cardKey": "stand-together",
+    "apCost": 1,
+    "available": true,
+    "reasonCode": null,
+    "reasonParams": null,
+    "targets": [
+      {
+        "targetId": "bushel",
+        "payload": {
+          "targetId": "bushel"
+        },
+        "legal": false,
+        "reasonCode": "invalid-target",
+        "reasonParams": {
+          "targetId": "bushel"
+        }
+      },
+      {
+        "targetId": "furrow",
+        "payload": {
+          "targetId": "furrow"
+        },
+        "legal": true,
+        "reasonCode": null,
+        "reasonParams": null
+      },
+      {
+        "targetId": "pip",
+        "payload": {
+          "targetId": "pip"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "pip",
+          "distance": 2,
+          "range": 1
+        }
+      },
+      {
+        "targetId": "number",
+        "payload": {
+          "targetId": "number"
+        },
+        "legal": false,
+        "reasonCode": "out-of-range",
+        "reasonParams": {
+          "targetId": "number",
+          "distance": 6,
+          "range": 1
+        }
+      }
+    ]
+  },
+  {
+    "type": "second-wind",
+    "label": "second-wind",
+    "cardKey": "second-wind",
+    "apCost": 1,
+    "available": false,
+    "reasonCode": "card-not-exhausted",
+    "reasonParams": {
+      "cardId": null
+    },
+    "targets": []
+  }
+]

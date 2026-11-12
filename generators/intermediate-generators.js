@@ -3659,7 +3659,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (!decoys) return null;
       const { options, correctIndex } = buildMCStr(String(correct), decoys.map(String));
       return {
-        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)}\n${SE_fmtEq2(d, e, c2)}\nFind the value of ${askX ? 'x' : 'y'}.`,
+        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)},\n${SE_fmtEq2(d, e, c2)}\nFind the value of ${askX ? 'x' : 'y'}.`,
         options, correctIndex,
         hint: 'Scale one or both equations so a variable has matching (or opposite) coefficients, then add or subtract to eliminate it.',
         solution: {
@@ -3694,7 +3694,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (!decoys) return null;
       const { options, correctIndex } = buildMCStr(String(x0), decoys.map(String));
       return {
-        q: `Solve the simultaneous equations:\n${SE_fmtLine(m, c)}\n${SE_fmtEq2(a, b, c2)}\nFind the value of x.`,
+        q: `Solve the simultaneous equations:\n${SE_fmtLine(m, c)},\n${SE_fmtEq2(a, b, c2)}\nFind the value of x.`,
         options, correctIndex,
         hint: 'One equation already gives y in terms of x: substitute that expression directly into the other equation.',
         solution: {
@@ -3732,7 +3732,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (!decoys) return null;
       const { options, correctIndex } = buildMCStr(String(correct), decoys.map(String));
       return {
-        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)}\n${SE_fmtEq2(d, e, c2)}\nFind the value of y. (Hint: multiply the first equation by ${k} to match the x-coefficients.)`,
+        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)},\n${SE_fmtEq2(d, e, c2)}\nFind the value of y.`,
         options, correctIndex,
         hint: `Multiply the first equation by ${k} so both equations have the same x-coefficient, then subtract.`,
         solution: {
@@ -3840,7 +3840,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (!decoys) return null;
       const { options, correctIndex } = buildMCStr(String(correct), decoys.map(String));
       return {
-        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)}\n${SE_fmtEq2(d, -b, c2)}\nFind the value of ${askX ? 'x' : 'y'}.`,
+        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)},\n${SE_fmtEq2(d, -b, c2)}\nFind the value of ${askX ? 'x' : 'y'}.`,
         options, correctIndex,
         hint: 'The y-coefficients are already equal and opposite: adding the two equations removes y immediately.',
         solution: {
@@ -3909,7 +3909,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       const { options, correctIndex } = buildMCStr(String(correct), decoys.map(String));
       const L = a * d / gcd(a, d);
       return {
-        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)}\n${SE_fmtEq2(d, e, c2)}\nFind the value of ${askX ? 'x' : 'y'}.`,
+        q: `Solve the simultaneous equations:\n${SE_fmtEq2(a, b, c1)},\n${SE_fmtEq2(d, e, c2)}\nFind the value of ${askX ? 'x' : 'y'}.`,
         options, correctIndex,
         hint: `Multiply the first equation by ${L / a} and the second by ${L / d} so the x-coefficients both become ${L}.`,
         solution: {
@@ -4044,7 +4044,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (!decoys) return null;
       const { options, correctIndex } = buildMCStr(String(x0), decoys.map(String));
       return {
-        q: `Solve the simultaneous equations:\nx/2 + y/4 = ${c1}\nx/4 - y/2 = ${c2}\nFind the value of x.`,
+        q: `Solve the simultaneous equations:\nx/2 + y/4 = ${c1},\nx/4 - y/2 = ${c2}\nFind the value of x.`,
         options, correctIndex,
         hint: 'Multiply each equation by its lowest common denominator (4) first to clear the fractions.',
         solution: {
@@ -4079,7 +4079,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       const q1s = q1 >= 0 ? `+ ${q1}` : `- ${Math.abs(q1)}`;
       const q2s = q2 >= 0 ? `+ ${q2}` : `- ${Math.abs(q2)}`;
       return {
-        q: `Solve the simultaneous equations:\n${p1}(x ${q1s})${SE_term(b1, 'y', false)} = ${C1}\n${SE_term(d1, 'x', true)} + ${p2}(y ${q2s}) = ${C2}\nFind the value of ${askX ? 'x' : 'y'}.`,
+        q: `Solve the simultaneous equations:\n${p1}(x ${q1s})${SE_term(b1, 'y', false)} = ${C1},\n${SE_term(d1, 'x', true)} + ${p2}(y ${q2s}) = ${C2}\nFind the value of ${askX ? 'x' : 'y'}.`,
         options, correctIndex,
         hint: 'Expand the brackets first: the equations simplify to ordinary linear equations.',
         solution: {
@@ -4181,7 +4181,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (!decoys) return null;
       const { options, correctIndex } = buildMCStr(String(correct), decoys.map(String));
       return {
-        q: `Solve the simultaneous equations:\ny = x^2\n${SE_fmtLine(m, c)}\nFind the larger value of x where the curves meet.`,
+        q: `Solve the simultaneous equations:\ny = x^2,\n${SE_fmtLine(m, c)}\nFind the larger value of x where the curves meet.`,
         options, correctIndex,
         hint: 'Substitute y = x^2 into the linear equation to get a quadratic in x, then factorise.',
         solution: {
@@ -4212,7 +4212,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (!decoys) return null;
       const { options, correctIndex } = buildMCStr(String(correct), decoys.map(String));
       return {
-        q: `Solve the simultaneous equations:\ny = ${k}/x\n${SE_fmtLine(m, c)}\nFind the larger value of x where the graphs meet.`,
+        q: `Solve the simultaneous equations:\ny = ${k}/x,\n${SE_fmtLine(m, c)}\nFind the larger value of x where the graphs meet.`,
         options, correctIndex,
         hint: 'Substitute y = k/x into the linear equation and multiply through by x to clear the fraction, giving a quadratic.',
         solution: {
@@ -4252,7 +4252,7 @@ const SIMULTANEOUS_EQUATIONS_STRUCTURES = {
       if (decoys.length < 4) return null;
       const { options, correctIndex } = buildMCStr(correctStr, decoys);
       return {
-        q: `Solve the simultaneous equations:\ny = x^2\n${SE_fmtLine(m, c)}\nFind the coordinates of both points where the curves meet.`,
+        q: `Solve the simultaneous equations:\ny = x^2,\n${SE_fmtLine(m, c)}\nFind the coordinates of both points where the curves meet.`,
         options, correctIndex,
         hint: 'Solve the resulting quadratic to find both x-values, then use y = x^2 to find each y-value.',
         solution: {
@@ -8077,7 +8077,7 @@ const SURDIC_MODULAR_NUMBER_THEORY_STRUCTURES = {
       if (!distractors) return null;
       const { options, correctIndex } = buildMC(correct, distractors, String);
       return {
-        q: `${a} and ${b} have highest common factor (HCF) ${k}. Using the fact that HCF × LCM = ${a} × ${b}, find their lowest common multiple (LCM).`,
+        q: `${a} and ${b} have highest common factor (HCF) ${k}. Find their lowest common multiple (LCM).`,
         options, correctIndex,
         hint: `Rearrange HCF × LCM = a × b to get LCM = (a × b) ÷ HCF.`,
         solution: {
@@ -8134,7 +8134,7 @@ const ALGEBRAIC_PROOF_STRUCTURES = {
       const mc = buildMC(correct, distractors, (x) => String(x));
       if (!mc) return null;
       return {
-        q: `The identity (a + b)^2 - (a - b)^2 = 4ab holds for all numbers a and b. Using a = ${a} and b = ${b}, what is the value of (a + b)^2 - (a - b)^2?`,
+        q: `Using a = ${a} and b = ${b}, what is the value of (a + b)^2 - (a - b)^2?`,
         options: mc.options,
         correctIndex: mc.correctIndex,
         hint: "Substitute a and b directly into the right-hand side of the identity, 4ab, rather than expanding both brackets separately.",
@@ -8173,7 +8173,7 @@ const ALGEBRAIC_PROOF_STRUCTURES = {
       const mc = buildMC(correct, distractors, (x) => String(x));
       if (!mc) return null;
       return {
-        q: `n^2 - n can be written as n(n - 1), the product of two consecutive integers, so it is always even. Work out the value of n^2 - n when n = ${n}.`,
+        q: `A pupil claims that n^2 - n is always an even number. Check this claim for n = ${n} by working out the value of n^2 - n.`,
         options: mc.options,
         correctIndex: mc.correctIndex,
         hint: "Factorise first: n^2 - n = n(n - 1). One of n and n-1 is always even, so the product is always even.",
@@ -12044,7 +12044,11 @@ const INVARIANTS_AND_PARITY_STRUCTURES = {
     build() {
       const n = rand(4, 15);
       const correct = n * n;
-      const raw = [n * (n + 1), n * (n - 1), 2 * n * n, n * n + n, n * n - n, n * n + 1, n * n - 1, (n - 1) * (n - 1)];
+      // n*n+2/-2 lead the list because they share the correct answer's parity (adding/subtracting
+      // an even number never flips it) — every other candidate here is always the opposite parity
+      // to n*n when n is odd (consecutive-integer products, +-1 shifts), which used to let a
+      // student spot the answer by parity alone instead of using the n^2 pattern.
+      const raw = [n * n + 2, n * n - 2, n * (n + 1), n * (n - 1), 2 * n * n, n * n + n, n * n - n, n * n + 1, n * n - 1, (n - 1) * (n - 1)];
       const distractors = IAP_pickDistinct(correct, raw, 4);
       if (distractors.length < 4) return null;
       const { options, correctIndex } = buildMC(correct, distractors);
@@ -12662,7 +12666,7 @@ const INVARIANTS_AND_PARITY_STRUCTURES = {
       if (distractors.length < 4) return null;
       const { options, correctIndex } = buildMC(correct, distractors);
       return {
-        q: `At a gathering of ${N} people, each person shakes hands with somewhere between 0 and ${N - 1} of the others. Using the pigeonhole principle, what is the minimum number of people guaranteed to have shaken hands the same number of times as each other?`,
+        q: `At a gathering of ${N} people, each person shakes hands with somewhere between 0 and ${N - 1} of the others. What is the minimum number of people guaranteed to have shaken hands the same number of times as each other?`,
         options,
         correctIndex,
         hint: "0 and the maximum possible count can never both occur at the same gathering: think about why, then count how many genuinely different values are left.",
@@ -17521,7 +17525,7 @@ const CIRCLE_THEOREMS_AND_TANGENTS_STRUCTURES = {
       const decoys = [given, 180 - given, 90 - given > 0 ? 90 - given : given + 10, given + 15].filter((v) => v !== given);
       const { options, correctIndex } = buildMC(given, decoys, deg);
       return {
-        q: `TA is a tangent to the circle at T. AB is a chord. Angle between the tangent and chord AT is ${given}°. Using the alternate segment theorem, find the angle ABT in the alternate segment.`,
+        q: `TA is a tangent to the circle at T. AB is a chord. Angle between the tangent and chord AT is ${given}°. Find the angle ABT in the alternate segment.`,
         options, correctIndex, svg,
         hint: `The alternate segment theorem: the angle between a tangent and a chord equals the angle in the alternate segment (the angle subtended by that chord on the far side).`,
         solution: {
@@ -17724,7 +17728,7 @@ const CIRCLE_THEOREMS_AND_TANGENTS_STRUCTURES = {
       const decoys = [x + 2, x - 2 > 0 ? x - 2 : x + 4, x * 2, knownAngle].filter((v) => v !== x);
       const { options, correctIndex } = buildMC(x, decoys);
       return {
-        q: `A, B, C and D lie on a circle, with C and D on the same side of chord AB. Angle ACB = (3x + 6)°, and angle ADB = ${knownAngle}°. Using the fact that angles in the same segment are equal, find x.`,
+        q: `A, B, C and D lie on a circle, with C and D on the same side of chord AB. Angle ACB = (3x + 6)°, and angle ADB = ${knownAngle}°. Find x.`,
         options, correctIndex, svg,
         hint: `Angles in the same segment are equal, so set up and solve the equation 3x + 6 = ${knownAngle}.`,
         solution: {
@@ -17759,7 +17763,7 @@ const CIRCLE_THEOREMS_AND_TANGENTS_STRUCTURES = {
       const decoys = [given, 90 - given, angAtCentreForArc + 10, angAtCentreForArc - 10].filter((v) => v !== answer);
       const { options, correctIndex } = buildMC(answer, decoys, deg);
       return {
-        q: `T is a point on a circle with centre O, and OT is a radius. The angle in the alternate segment for a tangent at T is ${given}°. Using the alternate segment theorem, and then the fact that the angle at the centre is twice the angle at the circumference standing on the same arc, find the angle at the centre standing on that same arc.`,
+        q: `T is a point on a circle with centre O, and OT is a radius. The angle in the alternate segment for a tangent at T is ${given}°. Find the angle at the centre standing on that same arc.`,
         options, correctIndex, svg,
         hint: `Chain two facts: the alternate segment theorem gives you an angle at the circumference; the centre/circumference rule then doubles it.`,
         solution: {
@@ -18306,7 +18310,7 @@ const TRIGONOMETRY_ADVANCED_STRUCTURES = {
         260, 200
       );
       return {
-        q: `Triangle ABC has sides a = BC = ${a} cm, b = CA = ${b} cm, c = AB = ${c} cm. Find angle C (marked "?"), using the cosine rule.`,
+        q: `Triangle ABC has sides a = BC = ${a} cm, b = CA = ${b} cm, c = AB = ${c} cm. Find angle C (marked "?").`,
         options, correctIndex, svg,
         hint: `When all three sides are known, rearrange the cosine rule to find an angle: cos(C) = (a² + b² − c²) ÷ (2ab).`,
         solution: {
@@ -18420,7 +18424,7 @@ const TRIGONOMETRY_ADVANCED_STRUCTURES = {
         280, 210
       );
       return {
-        q: `In the diagram, D lies on AC. Triangle ABD has angle BAD = ${angleA}°, angle ABD = ${angleABD}°, and BD = ${BD} cm. Find AB (marked "?") using the sine rule in triangle ABD.`,
+        q: `In the diagram, D lies on AC. Triangle ABD has angle BAD = ${angleA}°, angle ABD = ${angleABD}°, and BD = ${BD} cm. Find AB (marked "?") in triangle ABD.`,
         options, correctIndex, svg,
         hint: `Focus only on triangle ABD first. You know two angles (so the third, ADB, follows from the angle sum) and one side (BD), which is exactly what the sine rule needs.`,
         solution: {
@@ -18478,7 +18482,7 @@ const TRIGONOMETRY_ADVANCED_STRUCTURES = {
         280, 200
       );
       return {
-        q: `Triangle ABC has CA = ${b} cm, CB = ${a} cm and angle C = ${C}°. Find the area of the triangle, explaining why Area = ½ab sin(C) is the right tool rather than the cosine rule.`,
+        q: `Triangle ABC has CA = ${b} cm, CB = ${a} cm and angle C = ${C}°. Find the area of the triangle.`,
         options, correctIndex, svg,
         hint: `The cosine rule finds a missing side or angle. Since two sides and the included angle are known and the question asks for area, Area = ½ab sin(C) applies directly without first needing the third side.`,
         solution: {
@@ -20818,65 +20822,65 @@ export const INTERMEDIATE_OLYMPIAD_PLAYBOOK = {
   ],
 };
 export const INTERMEDIATE_OLYMPIAD = [
-  { id: "i1", section: "A", q: "Find all values of x satisfying x² − 5x − 24 = 0.", answer: "x = 8 or x = −3", tactic: "Factorise the quadratic.", sol: ["Look for two numbers multiplying to −24 and adding to −5: these are −8 and 3.", "So x² − 5x − 24 = (x−8)(x+3) = 0.", "This gives x = 8 or x = −3."],
+  { id: "i1", section: "A", q: "Find all values of x satisfying x² − 5x − 24 = 0.", answer: "x = 8 or x = −3", tactic: "Factorise the quadratic.", sol: ["STATE: I want the values of x satisfying x² − 5x − 24 = 0.", "WORK: Look for two numbers multiplying to −24 and adding to −5: these are −8 and 3.", "WORK: So x² − 5x − 24 = (x−8)(x+3) = 0.", "CONCLUDE: Either factor could be zero, so x = 8 or x = −3."],
     markScheme: [ { pts: 1, desc: "Found the correct factor pair (−8 and 3)." }, { pts: 1, desc: "Correctly factorised and solved for both values of x." } ] },
-  { id: "i2", section: "B", q: "Two numbers have a sum of 15 and the sum of their squares is 117. Find the two numbers.", answer: "9 and 6", tactic: "Use (a+b)² = a² + 2ab + b² to find the product first.", sol: ["Let the numbers be a and b, with a+b=15 and a²+b²=117.", "(a+b)² = a² + 2ab + b², so 225 = 117 + 2ab, giving ab = 54.", "a and b are roots of t² − 15t + 54 = 0. Factorising: (t−9)(t−6)=0, so t=9 or t=6.", "The two numbers are 9 and 6. Check: 9+6=15, 9²+6²=81+36=117 ✓"],
+  { id: "i2", section: "B", q: "Two numbers have a sum of 15 and the sum of their squares is 117. Find the two numbers.", answer: "9 and 6", tactic: "Use (a+b)² = a² + 2ab + b² to find the product first.", sol: ["STATE: Let the numbers be a and b, with a+b = 15 and a² + b² = 117. I want the values of a and b.", "WORK: (a+b)² = a² + 2ab + b², so 225 = 117 + 2ab, giving ab = 54.", "WORK: a and b are the two roots of t² − 15t + 54 = 0. Factorising: (t−9)(t−6) = 0, so t = 9 or t = 6.", "CONCLUDE: The two numbers are 9 and 6. Check: 9+6=15, 9²+6²=81+36=117 ✓"],
     markScheme: [ { pts: 1, desc: "Used (a+b)² to find ab = 54." }, { pts: 2, desc: "Correctly formed and factorised the quadratic for the two numbers." }, { pts: 1, desc: "Checked both conditions." } ] },
-  { id: "i3", section: "A", q: "Find the smallest positive whole number that leaves remainder 2 when divided by 7 and remainder 3 when divided by 5.", answer: "23", tactic: "List numbers satisfying the first condition, then test the second.", sol: ["Numbers leaving remainder 2 mod 7: 2, 9, 16, 23, 30, ...", "Test each against remainder 3 mod 5: 2 mod 5 = 2 (no); 9 mod 5 = 4 (no); 16 mod 5 = 1 (no); 23 mod 5 = 3 (yes).", "The smallest such number is 23."],
+  { id: "i3", section: "A", q: "Find the smallest positive whole number that leaves remainder 2 when divided by 7 and remainder 3 when divided by 5.", answer: "23", tactic: "List numbers satisfying the first condition, then test the second.", sol: ["STATE: I want the smallest positive whole number that leaves remainder 2 when divided by 7 and remainder 3 when divided by 5.", "WORK: Numbers leaving remainder 2 mod 7, in order: 2, 9, 16, 23, 30, ...", "WORK: Test each against remainder 3 mod 5: 2 mod 5 = 2 (no); 9 mod 5 = 4 (no); 16 mod 5 = 1 (no); 23 mod 5 = 3 (yes).", "CONCLUDE: The smallest such number is 23."],
     markScheme: [ { pts: 1, desc: "Correctly listed numbers satisfying the first condition." }, { pts: 1, desc: "Correctly tested each against the second condition to find 23." } ] },
-  { id: "i4", section: "A", q: "Find the minimum value of x + 25/x for x > 0.", answer: "10 (at x = 5)", tactic: "Apply AM-GM to x and 25/x.", sol: ["By AM-GM, x + 25/x ≥ 2√(x × 25/x) = 2√25 = 10.", "Equality holds when x = 25/x, i.e. x² = 25, so x = 5 (since x > 0)."],
+  { id: "i4", section: "A", q: "Find the minimum value of x + 25/x for x > 0.", answer: "10 (at x = 5)", tactic: "Apply AM-GM to x and 25/x.", sol: ["COMPREHEND: x is a positive number, and I want the smallest possible value of x + 25/x.", "LINK: For two positive quantities with a fixed product, AM-GM says their sum is minimised when the two quantities are equal: here x and 25/x have product 25, fixed regardless of x.", "EXPLAIN: Apply AM-GM to x and 25/x to get a lower bound on the sum, then find the x that achieves equality.", "APPLY: By AM-GM, x + 25/x ≥ 2√(x × 25/x) = 2√25 = 10.", "REVIEW: Equality in AM-GM holds exactly when the two quantities are equal: x = 25/x, i.e. x² = 25, so x = 5 (taking the positive root since x > 0). At x=5: 5 + 25/5 = 5 + 5 = 10, confirming the minimum of 10 is achieved."],
     markScheme: [ { pts: 1, desc: "Correctly applied AM-GM to get the bound 10." }, { pts: 1, desc: "Correctly found the equality case x = 5." } ] },
-  { id: "i5", section: "A", q: "A function satisfies f(xy) = f(x) + f(y) for all positive x, y, and f(2) = 1. Find f(8).", answer: "3", tactic: "Build up values using the given rule.", sol: ["f(4) = f(2×2) = f(2) + f(2) = 1 + 1 = 2.", "f(8) = f(4×2) = f(4) + f(2) = 2 + 1 = 3."],
+  { id: "i5", section: "A", q: "A function satisfies f(xy) = f(x) + f(y) for all positive x, y, and f(2) = 1. Find f(8).", answer: "3", tactic: "Build up values using the given rule.", sol: ["STATE: f(xy) = f(x) + f(y) for all positive x, y, and f(2) = 1. I want f(8).", "WORK: f(4) = f(2×2) = f(2) + f(2) = 1 + 1 = 2.", "WORK: f(8) = f(4×2) = f(4) + f(2) = 2 + 1 = 3.", "CONCLUDE: f(8) = 3."],
     markScheme: [ { pts: 1, desc: "Correctly found f(4) = 2." }, { pts: 1, desc: "Correctly found f(8) = 3." } ] },
-  { id: "i6", section: "A", q: "A chord subtends an angle of 70° at the centre of a circle. Find the angle it subtends at the circumference, on the major arc.", answer: "35°", tactic: "Use the circle theorem: the angle at the centre is twice the angle at the circumference.", sol: ["The angle at the centre (70°) is always twice the angle at the circumference standing on the same arc.", "So the circumference angle is 70° ÷ 2 = 35°."],
+  { id: "i6", section: "A", q: "A chord subtends an angle of 70° at the centre of a circle. Find the angle it subtends at the circumference, on the major arc.", answer: "35°", tactic: "Use the circle theorem: the angle at the centre is twice the angle at the circumference.", sol: ["STATE: A chord subtends 70° at the centre of a circle. I want the angle it subtends at the circumference, on the major arc.", "WORK: The angle at the centre (70°) is always twice the angle at the circumference standing on the same arc, so the circumference angle is 70° ÷ 2.", "CONCLUDE: The angle at the circumference is 35°."],
     markScheme: [ { pts: 1, desc: "Correctly identified and applied the centre-circumference angle theorem." }, { pts: 1, desc: "Computed the correct angle (35°)." } ] },
-  { id: "i7", section: "B", q: "Prove that 4ⁿ − 1 is divisible by 3, for every positive whole number n.", answer: "Proof (by induction).", tactic: "Use induction.", sol: ["BASE CASE (n=1): 4¹−1 = 3, divisible by 3.", "INDUCTIVE STEP: assume 4^k − 1 = 3m for some whole number m, so 4^k = 3m+1.", "Then 4^(k+1) − 1 = 4×4^k − 1 = 4(3m+1) − 1 = 12m + 4 − 1 = 12m + 3 = 3(4m+1), divisible by 3.", "The base case holds and each true case forces the next, so 4ⁿ−1 is divisible by 3 for every positive whole number n."],
+  { id: "i7", section: "B", q: "Prove that 4ⁿ − 1 is divisible by 3, for every positive whole number n.", answer: "Proof (by induction).", tactic: "Use induction.", sol: ["COMPREHEND: I want to show 4ⁿ − 1 is divisible by 3 for every positive whole number n.", "LINK: A statement about every positive whole number n is proved by induction: check a base case, then show truth at n=k forces truth at n=k+1.", "EXPLAIN: Verify n=1 directly, then assume 4^k − 1 is a multiple of 3 and show 4^(k+1) − 1 must be too.", "APPLY: BASE CASE (n=1): 4¹−1 = 3, divisible by 3.", "APPLY: INDUCTIVE STEP: assume 4^k − 1 = 3m for some whole number m, so 4^k = 3m+1.", "APPLY: Then 4^(k+1) − 1 = 4×4^k − 1 = 4(3m+1) − 1 = 12m + 4 − 1 = 12m + 3 = 3(4m+1), divisible by 3.", "REVIEW: The base case holds and each true case forces the next, so by induction 4ⁿ−1 is divisible by 3 for every positive whole number n."],
     markScheme: [ { pts: 1, desc: "Correctly verified the base case." }, { pts: 2, desc: "Correctly carried out the inductive step." }, { pts: 1, desc: "Concluded the induction correctly." } ] },
-  { id: "i8", section: "B", q: "Prove that there is no smallest positive rational number.", answer: "Proof — no smallest exists.", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["Suppose, for contradiction, that there IS a smallest positive rational number, call it r.", "Consider r/2. Since r is positive, r/2 is also positive and rational.", "But r/2 < r, so r/2 is a smaller positive rational number — contradicting that r was the smallest.", "The assumption must be false, so there is no smallest positive rational number."],
+  { id: "i8", section: "B", q: "Prove that there is no smallest positive rational number.", answer: "Proof — no smallest exists.", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["COMPREHEND: I want to show there is no smallest positive rational number.", "LINK: 'No such number exists' statements are proved by contradiction: assume one exists and find something that breaks the assumption.", "EXPLAIN: Assume a smallest positive rational r exists, then produce a positive rational smaller than r.", "APPLY: Suppose, for contradiction, that there IS a smallest positive rational number, call it r.", "APPLY: Consider r/2. Since r is positive, r/2 is also positive and rational, and r/2 < r.", "REVIEW: r/2 is a smaller positive rational than r, contradicting that r was the smallest. The assumption must be false, so there is no smallest positive rational number."],
     markScheme: [ { pts: 1, desc: "Explicitly assumed a smallest positive rational r exists." }, { pts: 2, desc: "Correctly used r/2 to find a smaller positive rational." }, { pts: 1, desc: "Concluded the contradiction correctly." } ] },
-  { id: "i9", section: "A", topic: "invariantsAndParity", q: "Prove that among any 7 whole numbers, two must leave the same remainder when divided by 6.", answer: "Proof — always true.", tactic: "Use the pigeonhole principle with remainder classes.", sol: ["Dividing by 6 gives 6 possible remainders (0-5), the 'holes'. There are 7 numbers, the 'pigeons'.", "If every remainder class held at most 1 number, at most 6 numbers could be placed in total.", "But there are 7 numbers, more than 6, so two numbers must share the same remainder mod 6."],
+  { id: "i9", section: "A", topic: "invariantsAndParity", q: "Prove that among any 7 whole numbers, two must leave the same remainder when divided by 6.", answer: "Proof — always true.", tactic: "Use the pigeonhole principle with remainder classes.", sol: ["COMPREHEND: I have 7 whole numbers, and I want to show two of them must leave the same remainder on division by 6.", "LINK: This is a pigeonhole problem: the remainders are the 'holes' and the numbers are the 'pigeons'.", "EXPLAIN: Count the possible remainders, then show there are too many numbers for each to get its own remainder.", "APPLY: Dividing by 6 gives 6 possible remainders (0-5), the holes. There are 7 numbers, the pigeons. If every remainder class held at most 1 number, at most 6 numbers could be placed in total.", "REVIEW: There are 7 numbers, more than 6, so two numbers must share the same remainder mod 6."],
     markScheme: [ { pts: 1, desc: "Identified the 6 remainder classes as the holes." }, { pts: 1, desc: "Applied the pigeonhole principle correctly to conclude a repeat is forced." } ] },
-  { id: "i10", section: "B", q: "A sequence starts at 4. Each term is obtained from the previous by either adding 6 or subtracting 9. Can the sequence ever reach 50?", answer: "No, it's impossible.", tactic: "Find an invariant: track the remainder mod 3.", sol: ["Both possible changes, +6 and −9, are multiples of 3, so every move changes the term by a multiple of 3.", "Changing a number by a multiple of 3 never changes its remainder when divided by 3.", "The starting value 4 leaves remainder 1 mod 3, so every term in the sequence must also leave remainder 1 mod 3.", "50 divided by 3 leaves remainder 2, not 1, so 50 can never be reached."],
+  { id: "i10", section: "B", q: "A sequence starts at 4. Each term is obtained from the previous by either adding 6 or subtracting 9. Can the sequence ever reach 50?", answer: "No, it's impossible.", tactic: "Find an invariant: track the remainder mod 3.", sol: ["COMPREHEND: The sequence starts at 4, and each step is +6 or −9. I want to know whether it can ever reach 50.", "LINK: Both moves are multiples of 3, so a quantity that only ever changes by a multiple of 3 — the remainder mod 3 — is an invariant of the process.", "EXPLAIN: Find the remainder of the start value and of 50, both mod 3; if they differ, 50 is unreachable.", "APPLY: Both possible changes, +6 and −9, are multiples of 3, so every move changes the term by a multiple of 3, which never changes its remainder mod 3.", "APPLY: The starting value 4 leaves remainder 1 mod 3, so every term in the sequence must also leave remainder 1 mod 3.", "REVIEW: 50 divided by 3 leaves remainder 2, not 1, so 50 can never be reached."],
     markScheme: [ { pts: 1, desc: "Identified remainder mod 3 as the invariant to track." }, { pts: 1, desc: "Showed both moves preserve this remainder." }, { pts: 1, desc: "Computed the starting remainder (1) and 50's remainder (2) correctly." }, { pts: 1, desc: "Concluded correctly that 50 is unreachable." } ] },
-  { id: "i11", section: "B", q: "A 6×6 board is coloured like a chessboard (18 black, 18 white). Two black squares are removed, leaving 34 squares (16 black, 18 white). Can these be tiled exactly by 17 dominoes?", answer: "No, it's impossible.", tactic: "Use a colouring argument: each domino covers one square of each colour.", sol: ["Every domino covers two adjacent squares, and adjacent squares on a chessboard colouring are always different colours.", "So a full tiling by 17 dominoes must cover exactly 17 black and 17 white squares.", "Only 16 black squares remain (18−2), which is fewer than the 17 needed.", "So no such tiling is possible."],
+  { id: "i11", section: "B", q: "A 6×6 board is coloured like a chessboard (18 black, 18 white). Two black squares are removed, leaving 34 squares (16 black, 18 white). Can these be tiled exactly by 17 dominoes?", answer: "No, it's impossible.", tactic: "Use a colouring argument: each domino covers one square of each colour.", sol: ["COMPREHEND: A 6×6 chessboard-coloured board (18 black, 18 white) has two black squares removed, leaving 16 black and 18 white. I want to know if the remaining 34 squares can be tiled by 17 dominoes.", "LINK: This is a colouring argument: every domino covers two adjacent squares, and adjacent squares on a chessboard colouring always have different colours.", "EXPLAIN: Count how many black and white squares a full tiling would need, and compare with how many are actually available.", "APPLY: A full tiling by 17 dominoes must cover exactly 17 black and 17 white squares, since each domino covers one of each colour.", "REVIEW: Only 16 black squares remain (18−2), fewer than the 17 needed, so no such tiling is possible."],
     markScheme: [ { pts: 1, desc: "Identified that each domino covers one black and one white square." }, { pts: 1, desc: "Stated a tiling needs 17 of each colour." }, { pts: 2, desc: "Correctly used the remaining colour counts (16 black, 18 white) to conclude impossibility." } ] },
-  { id: "i12", section: "A", q: "A quadratic x² − 6x − 3 = 0 has roots p and q. Without solving for p and q individually, find p² + q².", answer: "42", tactic: "Use p+q and pq directly, without solving the quadratic.", sol: ["Comparing with x² − (sum)x + (product): p+q = 6 and pq = −3.", "p² + q² = (p+q)² − 2pq = 36 − 2(−3) = 36 + 6 = 42."],
+  { id: "i12", section: "A", q: "A quadratic x² − 6x − 3 = 0 has roots p and q. Without solving for p and q individually, find p² + q².", answer: "42", tactic: "Use p+q and pq directly, without solving the quadratic.", sol: ["STATE: p and q are the roots of x² − 6x − 3 = 0. I want p² + q², without solving for p and q individually.", "WORK: Comparing with x² − (sum)x + (product), p+q = 6 and pq = −3.", "WORK: p² + q² = (p+q)² − 2pq = 36 − 2(−3) = 36 + 6.", "CONCLUDE: p² + q² = 42."],
     markScheme: [ { pts: 1, desc: "Correctly identified p+q = 6 and pq = −3." }, { pts: 1, desc: "Correctly applied the identity to reach 42." } ] },
-  { id: "i13", section: "A", q: "Two positive numbers multiply to 49. Find the minimum possible value of their sum.", answer: "14 (at 7 and 7)", tactic: "Apply AM-GM to the two numbers.", sol: ["By AM-GM, a + b ≥ 2√(ab) = 2√49 = 14.", "Equality holds when a = b, and since a×a=49 gives a=7, this minimum is achieved at a=b=7."],
+  { id: "i13", section: "A", q: "Two positive numbers multiply to 49. Find the minimum possible value of their sum.", answer: "14 (at 7 and 7)", tactic: "Apply AM-GM to the two numbers.", sol: ["COMPREHEND: Two positive numbers multiply to 49, and I want the smallest possible value of their sum.", "LINK: For two positive numbers with a fixed product, AM-GM bounds their sum below, with equality when the numbers are equal.", "EXPLAIN: Apply AM-GM to the two numbers to get a lower bound on the sum, then find the pair achieving equality.", "APPLY: By AM-GM, a + b ≥ 2√(ab) = 2√49 = 14.", "REVIEW: Equality holds when a = b; since a×a=49 gives a=7, this minimum of 14 is achieved at a=b=7."],
     markScheme: [ { pts: 1, desc: "Correctly applied AM-GM to get the bound 14." }, { pts: 1, desc: "Correctly identified the equality case (7 and 7)." } ] },
-  { id: "i14", section: "A", q: "Prove that the sum of any three consecutive whole numbers is always a multiple of 3.", answer: "Proof.", tactic: "Introduce a letter for the smallest number.", sol: ["Let the three consecutive whole numbers be n, n+1, n+2.", "Their sum is n + (n+1) + (n+2) = 3n + 3 = 3(n+1).", "This is 3 times a whole number, so it is always a multiple of 3."],
+  { id: "i14", section: "A", q: "Prove that the sum of any three consecutive whole numbers is always a multiple of 3.", answer: "Proof.", tactic: "Introduce a letter for the smallest number.", sol: ["STATE: I want to show the sum of any three consecutive whole numbers is always a multiple of 3. Let the three consecutive whole numbers be n, n+1, n+2.", "WORK: Their sum is n + (n+1) + (n+2) = 3n + 3 = 3(n+1).", "CONCLUDE: This is 3 times a whole number, so the sum is always a multiple of 3."],
     markScheme: [ { pts: 1, desc: "Defined the three consecutive numbers correctly." }, { pts: 1, desc: "Correctly simplified the sum to 3(n+1)." } ] },
-  { id: "i15", section: "B", q: "Find all pairs of positive whole numbers (x, y) satisfying 4x + 3y = 27.", answer: "(6,1) and (3,5)", tactic: "Isolate one variable and test systematically.", sol: ["Isolate x: x = (27 − 3y)/4. Since x must be positive, 3y < 27, so y ≤ 8 (y=9 gives x=0, not positive).", "Test y = 1 to 8: only y=1 (24/4=6) and y=5 (12/4=3) give whole numbers.", "The solutions are (x,y) = (6,1) and (3,5)."],
+  { id: "i15", section: "B", q: "Find all pairs of positive whole numbers (x, y) satisfying 4x + 3y = 27.", answer: "(6,1) and (3,5)", tactic: "Isolate one variable and test systematically.", sol: ["STATE: I want all pairs of positive whole numbers (x,y) satisfying 4x + 3y = 27.", "WORK: Isolate x: x = (27 − 3y)/4. Since x must be positive, 3y < 27, so y ≤ 8 (y=9 gives x=0, not positive).", "WORK: Test y = 1 to 8: only y=1 (x=24/4=6) and y=5 (x=12/4=3) give whole numbers.", "CONCLUDE: The solutions are (x,y) = (6,1) and (3,5)."],
     markScheme: [ { pts: 1, desc: "Isolated x correctly and found the upper bound for y." }, { pts: 2, desc: "Systematically tested and correctly found both valid pairs." }, { pts: 1, desc: "Correctly excluded y=9 (giving x=0, not positive)." } ] },
-  { id: "i16", section: "A", q: "A cyclic quadrilateral has opposite angles 105° and (2x+15)°. Find x.", answer: "30", tactic: "Use the cyclic quadrilateral angle fact: opposite angles sum to 180°.", sol: ["Opposite angles in a cyclic quadrilateral always sum to 180°.", "105 + (2x+15) = 180, so 2x + 120 = 180, giving 2x = 60.", "x = 30."],
+  { id: "i16", section: "A", q: "A cyclic quadrilateral has opposite angles 105° and (2x+15)°. Find x.", answer: "30", tactic: "Use the cyclic quadrilateral angle fact: opposite angles sum to 180°.", sol: ["STATE: A cyclic quadrilateral has opposite angles 105° and (2x+15)°. I want x.", "WORK: Opposite angles in a cyclic quadrilateral always sum to 180°, so 105 + (2x+15) = 180.", "WORK: This gives 2x + 120 = 180, so 2x = 60.", "CONCLUDE: x = 30."],
     markScheme: [ { pts: 1, desc: "Used the correct cyclic quadrilateral fact." }, { pts: 1, desc: "Solved correctly for x = 30." } ] },
-  { id: "i17", section: "A", q: "A function satisfies f(x+1) = f(x) + 3 for all x, and f(0) = 2. Find f(10).", answer: "32", tactic: "Build up a general formula from the rule.", sol: ["Each step of +1 in the input adds 3 to the output, so f(n) = f(0) + 3n = 2 + 3n.", "f(10) = 2 + 3(10) = 32."],
+  { id: "i17", section: "A", q: "A function satisfies f(x+1) = f(x) + 3 for all x, and f(0) = 2. Find f(10).", answer: "32", tactic: "Build up a general formula from the rule.", sol: ["STATE: f(x+1) = f(x) + 3 for all x, and f(0) = 2. I want f(10).", "WORK: Each step of +1 in the input adds 3 to the output, so f(n) = f(0) + 3n = 2 + 3n.", "CONCLUDE: f(10) = 2 + 3(10) = 32."],
     markScheme: [ { pts: 1, desc: "Correctly derived the general formula f(n) = 2 + 3n." }, { pts: 1, desc: "Computed f(10) = 32 correctly." } ] },
-  { id: "i18", section: "A", q: "Prove that the product of two consecutive even numbers is always divisible by 8.", answer: "Proof.", tactic: "Introduce a letter and factorise.", sol: ["Let the two consecutive even numbers be 2n and 2n+2.", "Their product is 2n(2n+2) = 4n(n+1).", "n(n+1) is a product of two consecutive whole numbers, so one of them is always even, meaning n(n+1) = 2m for some whole number m.", "So the product is 4 × 2m = 8m, a multiple of 8."],
+  { id: "i18", section: "A", q: "Prove that the product of two consecutive even numbers is always divisible by 8.", answer: "Proof.", tactic: "Introduce a letter and factorise.", sol: ["STATE: I want to show the product of two consecutive even numbers is always divisible by 8. Let the two consecutive even numbers be 2n and 2n+2.", "WORK: Their product is 2n(2n+2) = 4n(n+1).", "WORK: n(n+1) is a product of two consecutive whole numbers, so one of them is always even, meaning n(n+1) = 2m for some whole number m.", "CONCLUDE: The product is 4 × 2m = 8m, a multiple of 8, so it is always divisible by 8."],
     markScheme: [ { pts: 1, desc: "Defined the two consecutive even numbers correctly." }, { pts: 1, desc: "Correctly factorised the product to 4n(n+1)." }, { pts: 2, desc: "Correctly argued n(n+1) is always even and concluded divisibility by 8." } ] },
-  { id: "i19", section: "A", q: "In a group of 13 people, prove that at least two people share a birth month.", answer: "Proof — always true.", tactic: "Apply the pigeonhole principle.", sol: ["There are 12 possible birth months (holes) and 13 people (pigeons).", "If every month held at most 1 person, at most 12 people could be placed in total.", "But there are 13 people, more than 12, so at least one month must contain 2 or more people."],
+  { id: "i19", section: "A", q: "In a group of 13 people, prove that at least two people share a birth month.", answer: "Proof — always true.", tactic: "Apply the pigeonhole principle.", sol: ["COMPREHEND: There are 13 people, and I want to show at least two of them share a birth month.", "LINK: This is a pigeonhole problem: the 12 months are the 'holes' and the 13 people are the 'pigeons'.", "EXPLAIN: Show that spreading 13 people across only 12 months one-per-month is impossible.", "APPLY: If every month held at most 1 person, at most 12 people could be placed in total.", "REVIEW: There are 13 people, more than 12, so at least one month must contain 2 or more people."],
     markScheme: [ { pts: 1, desc: "Identified the 12 months as the holes." }, { pts: 1, desc: "Applied the pigeonhole principle correctly." } ] },
-  { id: "i20", section: "B", q: "Three different positive whole numbers have a sum of 21. What is the SMALLEST that the largest of them could possibly be?", answer: "8", tactic: "Push to extremes: make the numbers as close together as possible.", sol: ["To minimise the largest number, make all three numbers as close together as possible.", "21 ÷ 3 = 7 exactly, and the three closest different whole numbers are 6, 7, 8, which sum to exactly 21.", "Could the largest be 7 or less? Then all three are different and at most 7, so the biggest possible sum is 5+6+7=18, less than 21 — impossible.", "So the largest cannot be 7 or less, but 8 works. The smallest possible value of the largest number is 8."],
+  { id: "i20", section: "B", q: "Three different positive whole numbers have a sum of 21. What is the SMALLEST that the largest of them could possibly be?", answer: "8", tactic: "Push to extremes: make the numbers as close together as possible.", sol: ["COMPREHEND: Three different positive whole numbers sum to 21, and I want the smallest possible value of the LARGEST of them.", "LINK: This is an extremal problem: to make the largest number as small as possible, push the three numbers as close together as they can be.", "EXPLAIN: Find the closest possible trio of distinct whole numbers summing to 21, then check that no smaller largest value is possible.", "APPLY: 21 ÷ 3 = 7 exactly, and the three closest different whole numbers are 6, 7, 8, which sum to exactly 21.", "APPLY: Could the largest be 7 or less? Then all three are different and at most 7, so the biggest possible sum is 5+6+7=18, less than 21 — impossible.", "REVIEW: So the largest cannot be 7 or less, but 8 works (via 6, 7, 8). The smallest possible value of the largest number is 8."],
     markScheme: [ { pts: 1, desc: "Stated the strategy of making the numbers as close together as possible." }, { pts: 1, desc: "Found 6,7,8 summing to exactly 21." }, { pts: 2, desc: "Showed the largest being 7 or less is impossible." } ] },
-  { id: "i21", section: "B", q: "Prove that 2 + 4 + 6 + ... + 2n = n(n+1) for every positive whole number n, using induction.", answer: "Proof (by induction).", tactic: "Use induction.", sol: ["BASE CASE (n=1): LHS = 2. RHS = 1(2) = 2. They match.", "INDUCTIVE STEP: assume 2+4+...+2k = k(k+1). Add 2(k+1) to both sides: k(k+1) + 2(k+1) = (k+1)(k+2), matching the formula at n=k+1.", "The base case holds and each true case forces the next, so the formula holds for every positive whole number n."],
+  { id: "i21", section: "B", q: "Prove that 2 + 4 + 6 + ... + 2n = n(n+1) for every positive whole number n, using induction.", answer: "Proof (by induction).", tactic: "Use induction.", sol: ["COMPREHEND: I want to show 2+4+6+...+2n = n(n+1) for every positive whole number n.", "LINK: A statement about every positive whole number n is proved by induction: a base case, then truth at n=k forcing truth at n=k+1.", "EXPLAIN: Verify n=1 directly, then assume the formula holds for n=k and show it must then hold for n=k+1.", "APPLY: BASE CASE (n=1): LHS = 2. RHS = 1(2) = 2. They match.", "APPLY: INDUCTIVE STEP: assume 2+4+...+2k = k(k+1). Add 2(k+1) to both sides: k(k+1) + 2(k+1) = (k+1)(k+2), matching the formula at n=k+1.", "REVIEW: The base case holds and each true case forces the next, so by induction the formula holds for every positive whole number n."],
     markScheme: [ { pts: 1, desc: "Correctly verified the base case." }, { pts: 2, desc: "Correctly carried out the inductive step." }, { pts: 1, desc: "Concluded the induction correctly." } ] },
-  { id: "i22", section: "A", q: "Solve the inequality (x−2)(x+5) ≥ 0, stating the boundary values.", answer: "x ≤ −5 or x ≥ 2", tactic: "Find the roots, then test the sign in each region.", sol: ["The expression is zero at x=2 and x=−5 — these are the boundary values.", "Since the coefficient of x² is positive, the expression is positive OUTSIDE the roots and negative between them.", "So (x−2)(x+5) ≥ 0 for x ≤ −5 or x ≥ 2, including the boundary values themselves (since the inequality is ≥, not >)."],
+  { id: "i22", section: "A", q: "Solve the inequality (x−2)(x+5) ≥ 0, stating the boundary values.", answer: "x ≤ −5 or x ≥ 2", tactic: "Find the roots, then test the sign in each region.", sol: ["COMPREHEND: I want to solve (x−2)(x+5) ≥ 0, and state the boundary values.", "LINK: A quadratic inequality is solved by finding where the expression is zero, then testing its sign in each region those roots create.", "EXPLAIN: Find the roots (the boundary values), then use the shape of the graph (a positive-leading quadratic) to decide which regions satisfy the inequality.", "APPLY: The expression is zero at x=2 and x=−5 — these are the boundary values.", "APPLY: Since the coefficient of x² is positive, the expression is positive OUTSIDE the roots and negative between them.", "REVIEW: So (x−2)(x+5) ≥ 0 for x ≤ −5 or x ≥ 2. Because the inequality is ≥ rather than >, the boundary values x=−5 and x=2 themselves are included, where the expression equals exactly 0."],
     markScheme: [ { pts: 1, desc: "Correctly found both roots (boundary values)." }, { pts: 2, desc: "Correctly determined the sign pattern and the solution regions." }, { pts: 1, desc: "Correctly included the boundary values (≥, not >)." } ] },
-  { id: "i23", section: "B", q: "A rectangle has a perimeter of 40 cm. Using AM-GM, find the maximum possible area, and state the shape achieving it.", answer: "100 cm² (a square, 10cm × 10cm)", tactic: "Use the perimeter to fix the sum of length and width, then apply AM-GM.", sol: ["Perimeter 40 means 2(l+w)=40, so l+w=20.", "By AM-GM, l+w ≥ 2√(lw), so 20 ≥ 2√(lw), giving √(lw) ≤ 10, so lw ≤ 100.", "Equality (the maximum) holds when l = w, i.e. l=w=10 — a square."],
+  { id: "i23", section: "B", q: "A rectangle has a perimeter of 40 cm. Using AM-GM, find the maximum possible area, and state the shape achieving it.", answer: "100 cm² (a square, 10cm × 10cm)", tactic: "Use the perimeter to fix the sum of length and width, then apply AM-GM.", sol: ["COMPREHEND: A rectangle has perimeter 40 cm, and I want its maximum possible area and the shape achieving it.", "LINK: The perimeter fixes the sum of length and width, and AM-GM bounds the product of two positive numbers with a fixed sum, with equality when they are equal.", "EXPLAIN: Use the perimeter to find l+w, then apply AM-GM to bound the area lw, and find the equality case.", "APPLY: Perimeter 40 means 2(l+w)=40, so l+w=20.", "APPLY: By AM-GM, l+w ≥ 2√(lw), so 20 ≥ 2√(lw), giving √(lw) ≤ 10, so lw ≤ 100.", "REVIEW: Equality — the maximum — holds exactly when l = w, i.e. l=w=10, a square of area 100 cm², so the maximum possible area is 100 cm²."],
     markScheme: [ { pts: 1, desc: "Correctly found l+w=20 from the perimeter." }, { pts: 2, desc: "Correctly applied AM-GM to bound the area at 100." }, { pts: 1, desc: "Correctly identified the square (10×10) as the equality case." } ] },
-  { id: "i24", section: "B", q: "A 5×5 grid of lamps are all OFF. Each move toggles (flips) exactly one lamp. After 13 moves, could all 25 lamps be back OFF?", answer: "No, it's impossible.", tactic: "Find an invariant: track the parity of the number of lamps that are ON.", sol: ["Each move toggles exactly one lamp, so the number of lamps that are ON changes by exactly 1 every move (up or down).", "Changing a count by 1 always flips its parity. Starting from 0 lamps ON (even), after an odd number of moves the count of ON lamps must be odd.", "13 is odd, so after 13 moves the number of ON lamps must be odd — it cannot be 0.", "All lamps OFF means 0 lamps ON, which is even, so this is impossible after 13 moves."],
+  { id: "i24", section: "B", q: "A 5×5 grid of lamps are all OFF. Each move toggles (flips) exactly one lamp. After 13 moves, could all 25 lamps be back OFF?", answer: "No, it's impossible.", tactic: "Find an invariant: track the parity of the number of lamps that are ON.", sol: ["COMPREHEND: 25 lamps start OFF, and each of 13 moves toggles exactly one lamp. I want to know whether all 25 could be OFF again after 13 moves.", "LINK: Track the parity (odd or even-ness) of the number of lamps that are ON — an invariant that each move changes in a fixed, predictable way.", "EXPLAIN: Show how each move affects this parity, then compare the parity forced by 13 moves with the parity needed for all lamps OFF.", "APPLY: Each move toggles exactly one lamp, so the number of lamps ON changes by exactly 1 every move, which always flips its parity.", "APPLY: Starting from 0 lamps ON (even), after an odd number of moves the count of ON lamps must be odd. 13 is odd, so after 13 moves the number of ON lamps must be odd.", "REVIEW: All lamps OFF means 0 lamps ON, which is even — but 13 moves forces an odd count, so this is impossible."],
     markScheme: [ { pts: 1, desc: "Identified the count of ON lamps as the invariant to track." }, { pts: 1, desc: "Explained that each move changes this count by exactly 1." }, { pts: 1, desc: "Linked the odd number of moves (13) to the parity of the final count." }, { pts: 1, desc: "Concluded correctly that 0 (even) is impossible after 13 (odd) moves." } ] },
-  { id: "i25", section: "B", q: "A function satisfies f(2x+1) = 2f(x) + 3 for all x, and f(1) = 5. Find f(7).", answer: "29", tactic: "Apply the rule twice, building up from the given value.", sol: ["To find f(3), set 2x+1=3, so x=1: f(3) = 2f(1) + 3 = 2(5) + 3 = 13.", "To find f(7), set 2x+1=7, so x=3: f(7) = 2f(3) + 3 = 2(13) + 3 = 29."],
+  { id: "i25", section: "B", q: "A function satisfies f(2x+1) = 2f(x) + 3 for all x, and f(1) = 5. Find f(7).", answer: "29", tactic: "Apply the rule twice, building up from the given value.", sol: ["STATE: f(2x+1) = 2f(x) + 3 for all x, and f(1) = 5. I want f(7).", "WORK: To find f(3), set 2x+1=3, so x=1: f(3) = 2f(1) + 3 = 2(5) + 3 = 13.", "WORK: To find f(7), set 2x+1=7, so x=3: f(7) = 2f(3) + 3 = 2(13) + 3 = 29.", "CONCLUDE: f(7) = 29."],
     markScheme: [ { pts: 1, desc: "Correctly identified which x-value to substitute for each step." }, { pts: 1, desc: "Correctly found f(3) = 13." }, { pts: 1, desc: "Correctly found f(7) = 29." } ] },
-  { id: "i26", section: "A", q: "How many different 3-digit codes can be formed using digits 1-9 (repeats allowed), such that the code is even (its last digit is even)?", answer: "324", tactic: "Count in order, choosing the constrained position first.", sol: ["The last digit must be even: 2, 4, 6, or 8 — 4 choices.", "The first and second digits can be any of the 9 digits, independently, since repeats are allowed: 9 choices each.", "Total: 9 × 9 × 4 = 324."],
+  { id: "i26", section: "A", q: "How many different 3-digit codes can be formed using digits 1-9 (repeats allowed), such that the code is even (its last digit is even)?", answer: "324", tactic: "Count in order, choosing the constrained position first.", sol: ["STATE: I want the number of 3-digit codes using digits 1-9 (repeats allowed) that are even (last digit even).", "WORK: The last digit must be even: 2, 4, 6, or 8 — 4 choices.", "WORK: The first and second digits can independently be any of the 9 digits, since repeats are allowed: 9 choices each.", "CONCLUDE: Total: 9 × 9 × 4 = 324."],
     markScheme: [ { pts: 1, desc: "Correctly identified 4 choices for the constrained last digit." }, { pts: 1, desc: "Correctly multiplied by 9 choices for each of the other two digits." } ] },
-  { id: "i27", section: "A", q: "A quadratic 2x² − 8x + 3 = 0 has roots p and q. Find p² + q².", answer: "13", tactic: "Use p+q = −b/a and pq = c/a directly.", sol: ["For ax²+bx+c=0: p+q = −b/a = 8/2 = 4, and pq = c/a = 3/2.", "p² + q² = (p+q)² − 2pq = 16 − 3 = 13."],
+  { id: "i27", section: "A", q: "A quadratic 2x² − 8x + 3 = 0 has roots p and q. Find p² + q².", answer: "13", tactic: "Use p+q = −b/a and pq = c/a directly.", sol: ["STATE: p and q are the roots of 2x² − 8x + 3 = 0. I want p² + q².", "WORK: For ax²+bx+c=0: p+q = −b/a = 8/2 = 4, and pq = c/a = 3/2.", "WORK: p² + q² = (p+q)² − 2pq = 16 − 3.", "CONCLUDE: p² + q² = 13."],
     markScheme: [ { pts: 1, desc: "Correctly found p+q = 4 and pq = 3/2 from the coefficients." }, { pts: 1, desc: "Correctly applied the identity to reach 13." } ] },
-  { id: "i28", section: "B", q: "Find the remainder when 3¹⁰⁰ is divided by 7.", answer: "4", tactic: "Find the repeating cycle of powers modulo 7.", sol: ["Powers of 3 mod 7 cycle: 3¹≡3, 3²≡2, 3³≡6, 3⁴≡4, 3⁵≡5, 3⁶≡1, then the cycle repeats — a cycle of length 6.", "100 = 16×6 + 4, so 3¹⁰⁰ sits at position 4 of the cycle.", "Position 4 in the cycle is 4, so the remainder is 4."],
+  { id: "i28", section: "B", q: "Find the remainder when 3¹⁰⁰ is divided by 7.", answer: "4", tactic: "Find the repeating cycle of powers modulo 7.", sol: ["STATE: I want the remainder when 3¹⁰⁰ is divided by 7.", "WORK: Powers of 3 mod 7 cycle: 3¹≡3, 3²≡2, 3³≡6, 3⁴≡4, 3⁵≡5, 3⁶≡1, then the cycle repeats — a cycle of length 6.", "WORK: 100 = 16×6 + 4, so 3¹⁰⁰ sits at position 4 of the cycle.", "CONCLUDE: Position 4 in the cycle is 4, so the remainder is 4."],
     markScheme: [ { pts: 1, desc: "Found the repeating cycle of powers of 3 mod 7 (length 6)." }, { pts: 1, desc: "Correctly used 100 mod 6 to find the position in the cycle." }, { pts: 1, desc: "Concluded the correct remainder (4)." } ] },
-  { id: "i29", section: "B", q: "Four different positive whole numbers multiply to 24. Find the combination that minimises their sum.", answer: "1, 2, 3, 4 (sum 10)", tactic: "Search systematically for sets of 4 distinct factors.", sol: ["24 = 2³ × 3. To use 4 DIFFERENT positive whole number factors multiplying to 24, try the smallest possible factors first: 1, 2, 3, 4 multiply to 1×2×3×4=24 exactly.", "Any other set of 4 distinct positive whole numbers multiplying to 24 would need to reuse a factor or include a larger gap, which only increases the sum.", "So the minimising combination is 1, 2, 3, 4, with sum 1+2+3+4=10."],
+  { id: "i29", section: "B", q: "Four different positive whole numbers multiply to 24. Find the combination that minimises their sum.", answer: "1, 2, 3, 4 (sum 10)", tactic: "Search systematically for sets of 4 distinct factors.", sol: ["COMPREHEND: Four different positive whole numbers multiply to 24, and I want the combination that minimises their sum.", "LINK: This is an extremal factoring problem: for a fixed product, using the smallest possible distinct factors tends to minimise the sum.", "EXPLAIN: Try the smallest possible set of 4 distinct factors of 24 first, then check no other distinct 4-factor set gives a smaller sum.", "APPLY: 24 = 2³ × 3. Trying the smallest possible distinct factors: 1, 2, 3, 4 multiply to 1×2×3×4=24 exactly.", "APPLY: Any other set of 4 distinct positive whole numbers multiplying to 24 would need to reuse a larger factor or include a bigger gap between values, which only increases the sum.", "REVIEW: So the minimising combination is 1, 2, 3, 4, with sum 1+2+3+4=10, and no other distinct factor set does better."],
     markScheme: [ { pts: 2, desc: "Correctly found the factor set 1,2,3,4 multiplying to 24." }, { pts: 1, desc: "Checked no other distinct 4-factor set achieves a smaller sum." }, { pts: 1, desc: "Stated the correct minimum sum (10)." } ] },
-  { id: "i30", section: "A", q: "Prove that if x is a positive whole number and x² is even, then x must be even.", answer: "Proof.", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["Suppose, for contradiction, that x² is even but x is ODD.", "Since x is odd, write x = 2k+1 for some whole number k. Then x² = 4k²+4k+1 = 2(2k²+2k)+1, which is ODD.", "This contradicts the assumption that x² is even.", "So the assumption (x odd) must be false — whenever x² is even, x itself must be even."],
+  { id: "i30", section: "A", q: "Prove that if x is a positive whole number and x² is even, then x must be even.", answer: "Proof.", tactic: "Assume the opposite, and hunt for a contradiction.", sol: ["COMPREHEND: x is a positive whole number and x² is even, and I want to show x itself must be even.", "LINK: This is proved by contradiction: assume x is odd instead, and show that forces x² to be odd too.", "EXPLAIN: Write an odd x as 2k+1, expand x², and check its parity.", "APPLY: Suppose, for contradiction, that x² is even but x is ODD.", "APPLY: Since x is odd, write x = 2k+1 for some whole number k. Then x² = 4k²+4k+1 = 2(2k²+2k)+1, which is ODD.", "REVIEW: This contradicts the assumption that x² is even, so the assumption (x odd) must be false — whenever x² is even, x itself must be even."],
     markScheme: [ { pts: 1, desc: "Explicitly assumed the opposite (x odd)." }, { pts: 2, desc: "Correctly expanded (2k+1)² and showed it is odd." }, { pts: 1, desc: "Identified the contradiction and concluded correctly." } ] },
 ];
 export const INTERMEDIATE_RARITY = JUNIOR_RARITY;

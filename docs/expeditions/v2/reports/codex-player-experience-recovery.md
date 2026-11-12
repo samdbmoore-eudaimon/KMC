@@ -1,0 +1,70 @@
+# Four Locks player-experience recovery
+
+Owner: Codex. Priority P0. QA-01 remains failed/pending.
+
+Additional exact claim before edits: `scripts/dev/prepare-orchard-recovery-kit.cjs`, selected optimisation-only derivatives/QA under `assets/expeditions/production/9fo/v2/recovery/`. Existing diamond-like painted terrain is reused as surface material on exact code-drawn regular hex tops, following the existing accepted projection technique, rather than stretching its silhouette to define geometry. Shadows/walls and hit polygons are separate.
+
+Exact claims before edits: existing `expeditions/v2/ui/{OrchardExpedition.jsx,MapViewport.jsx,Briefing.jsx,AbilityHand.jsx,ActionPreview.jsx,PuzzlePanel.jsx,feedback.js,ui.test.js}`, new `expeditions/v2/ui/{MissionSetup.jsx,action-guide.js,recovery.css.js,Guide.jsx}`, new selected reuse registry/metadata `expeditions/v2/art/{scene-kit.js,scene-kit.json}`, existing selected art embed/preparation if required, new `scripts/dev/{build-orchard-recovery-preview.cjs,orchard-recovery-preview.jsx,test-orchard-recovery.mjs}`, evidence under `docs/expeditions/v2/evidence/player-recovery/` and this report. C-05/C-10 locks held. No Claude-owned engine, route, persistence, App or legacy registry edits.
+
+## Baseline inspection and concrete restoration
+
+Actual served App opened at http://localhost:8734 in Codex in-app browser on 2 October. Fresh browser storage shows first-use family/account onboarding, not Sam's existing profile. No live progress or browser state is injected. Integrated route source confirms plain select/fieldset setup, gradient battlefield and coloured terrain polygons. Existing illustrated legacy assets are present but unused by v2. Baseline route capture still pending through an eligible local profile or a clearly identified development controller-route fixture.
+
+Restore the existing squad backdrop, parchment briefing panel, portrait wells, selection corners and Embark frame. Keep one prominent Four Locks mission with tier and owned-card selection; move future families into a collapsed secondary view. Three job slots explain task and required printed stats; clicking a card assigns the explicitly selected slot without silent reassignment. Use existing card portrait callback, sprite fallback only if unavailable.
+
+Board: scenic orchard gorge behind exact axial hit polygons. Select only existing terrain/chrome assets rather than importing whole legacy registries. Review projection anchors and uniform scale before use; painted terrain cannot move gameplay centres. Keep StationGlyph exact interim for unsupported station top geometry. Compact HUD, map-linked checklist, portrait hero rail and contextual action purposes; expand all remaining legal options instead of removing them.
+
+Opening teaching: three short, reopenable map-linked stages; opt-in first-action guide follows accepted engine events. Explain two AP per hero, free draft versus paid activation, station charge/Hold and enemy confirmation. Use production previews/factors/events for results and enemy recap. Actual browser flow is required before acceptance; controller-route fixture evidence will be labelled separately from shared App evidence.
+
+## Implemented and ready for integration review
+
+Restored 13 selected existing scenery, terrain and UI assets, optimised without altering their original files. Added the gorge, squad backdrop, parchment mission frame, portrait/action frames, selection corners and familiar Embark control. Terrain artwork supplies material inside exact regular code hexes; the painted diamond silhouette does not define centres or hit polygons. Four Locks is prominent; future families are secondary. Owned cards only, explicit job assignment, printed requirements beside candidates, duplicate-squad guard, warned attempts and alcove alternative retained.
+
+Added three map-linked teaching stages and a reopenable, opt-in guide progressing from accepted engine events. Resumes bypass forced onboarding. Contextual station/enemy actions and all 12 base actions remain accessible; every hand card explains purpose, cost, target/range and governing stat. Unavailable actions remain inspectable and explain their shortfall. Confirm executes once, while preview spends nothing. Puzzle drafting is free; saved mechanisms have explicit costs/effects and activation previews its one-action cost. Enemy forecast, ordered recap, health/power/AP results and loss/retry explanations use production data. Disrupted Sudoku cells use human row/column names and identify mechanism effects switched off.
+
+Kept the goal checklist collapsed on phone, the board dominant, map names readable through zoom and details in scrollable drawers. Protected caption text from decorative bitmap frames after browser review. No engine thresholds, costs, enemies, printed stats, private gate or legacy functionality was changed. StationGlyph remains the documented interim for unsupported painted station tops; rejected plinth bitmaps are not imported.
+
+## Executable checks and outcomes
+
+| Check | Outcome |
+|---|---|
+| `node --test expeditions/v2/ui/ui.test.js expeditions/v2/art/art.test.js scripts/dev/test-orchard-wheel.mjs expeditions/v2/route-ui.test.js` | 14 passed: exact projection/camera, private gate, feedback, selected sprites, six-sector wheel and real shared ExpeditionScreen route begin/dispatch/remount |
+| `node --test scripts/dev/test-orchard-recovery.mjs` | 5 passed: actual browser winning trace, every preview/result match, failed attempt/rewards, asset hashes/budget and real controller UI learning flow |
+| Latest UI/recovery rerun after feedback fixes | 11 passed; new learning-flow check covers free keypad editing, unavailable ability inspection, event-driven guidance, pure preview and duplicate Confirm executing once |
+| `node scripts/validate_expedition_alpha.cjs <11 selected transparent recovery WebPs>` | All 11 passed; all four white/black/orchard-green/cyan composites inspected in `assets/expeditions/production/9fo/v2/recovery/qa/selected-kit-contact.png` |
+| `node scripts/dev/build-orchard-recovery-preview.cjs` | Separate offline controller-route QA HTML produced; shared App bundles untouched |
+
+Selected reuse kit: 873,056 bytes; existing selected sprites/wheel: 1,404,116 bytes; combined selected artwork: 2,277,172 bytes, under 12 MiB. Source/runtime paths, hashes, sizes and alpha QA paths are in `expeditions/v2/art/scene-kit.json`. Bundled QA HTML is approximately 9.36 MB. Existing typeless-module and React act deprecation warnings are non-failing; no package or Claude-owned test edits were made.
+
+## Browser playthrough and evidence
+
+Actual Codex in-app browser at `http://localhost:8734/docs/expeditions/v2/evidence/player-recovery/controller-route-preview.html`; responsive viewport sizes 1280×900, 768×1024 and 390×844. This is a clearly labelled development controller-route fixture using the actual OrchardV2Route, private gate, generator, puzzle hooks, controller, production reducer and progress updates. Its local QA collection is disposable and uses sprite fallback portraits. No browser state injection or reducer substitution was used to claim interactive success.
+
+First complete UI win: Tuppence, Furrow and Sorrel, Bridge + Shelter, round 5, 41 accepted commands including manual keypad edits and mechanism selection. Save & exit and normal route remount resumed the accepted position/AP/draft without blocking onboarding. First-clear progress records three stars. The first win screenshot and award metadata were retained; its full command record was not captured before the production award correctly cleared activeRun. This limitation is explicit.
+
+Second complete UI win: same owned squad and mechanisms, Shared Charge used, solved draft via the normal Show solution control, round 5, 31 accepted commands. A passive fixture observer captured the accepted reducer record before the award cleared activeRun; it calls production dispatch once and neither changes its inputs nor replaces its result. Replay awarded zero stars and total progress remained three. `winning-replay-trace.json` replays every command legally through production `replayRun`, final canonical hash `1e3ad163b6f385f2`, all heroes alive and all three holds present immediately before the successful enemy phase. Holds expire during the phase by the real rules. `production-replay-verification.json` retains all intermediate hashes. Every command's production preview preserved source state and matched actual cost, changed entities, factors, outputs, events and status.
+
+Failed UI attempt: five confirmed enemy phases without completing jobs, real deadline loss, zero stars. Its saved record is in `failed-attempt-progress.json` and production replay passes. An additional eight-command UI failure after activation captured active enemy movement, Sudoku disruption and deadline; `failed-active-enemy-trace.json` is supplementary evidence.
+
+All evidence paths are under `docs/expeditions/v2/evidence/player-recovery/`. Primary review selection:
+
+- `setup-desktop-final.jpg`, `setup-tablet-final.jpg`, `setup-phone-final.jpg`
+- `battlefield-desktop-final.jpg`, `battlefield-phone-final.jpg`, `battlefield-tablet.jpg`, desktop min/max zoom captures
+- `briefing-desktop.jpg`, `briefing-stage2-desktop.jpg`, `briefing-stage3-desktop.jpg`, corresponding phone stages
+- Movement preview/result on desktop, tablet and phone; puzzle draft and activation preview/result on desktop, tablet and phone
+- `station-power-preview-desktop.jpg`, `station-hold-preview-desktop.jpg`, `station-actions-tablet.jpg`, `station-actions-phone.jpg`
+- `ability-explanation-desktop.jpg`, `ability-preview-desktop.jpg`, `ability-explanation-phone-final.jpg`, `ability-unavailable-phone-final.jpg`
+- Active enemy forecast/recap on desktop, tablet and phone; `combat-preview-desktop.jpg`, `combat-preview-phone.jpg`, `combat-result-desktop.jpg`
+- `win-first-clear-desktop.jpg`, `replay-zero-stars-desktop.jpg`, `win-replay-tablet.jpg`; failed result on desktop, tablet and phone
+
+Older non-final captures remain preserved. They predate the final caption-backing and constant-size station-name refinements; they demonstrate the recorded actions, not the exact final decoration. `README.md` in the evidence directory identifies scope and representative captures.
+
+## Outstanding acceptance and next owner actions
+
+QA-01 remains FAILED/PENDING; this is not a finished preview for Sam. The actual shared App in fresh browser storage stops at account onboarding. No account was created and no eligible live profile was injected. Therefore actual integrated App browser screenshots, the final shared build, full legacy regression/bundle smoke and its storage/reward round trip remain Claude's integration work under the final-build lock. No engine ABI change is required by this recovery. Claude should build current imports, confirm real portrait callbacks, preserve exact gate and run the shared checks, then supply eligible private route evidence.
+
+Scrum must review the illustrated setup, board and first-turn teaching against the accepted mock-ups and Sam's feedback. Physical touch devices, child comprehension and five-minute timing have not been tested. Browser viewport checks are not device acceptance. At minimum zoom the broad board requires pan/focus navigation on a narrow phone; contextual checklist and object controls provide access to off-screen stations. The missing supported bitmap station tops remain an explicit art limitation. Further families/bank expansion stay behind this P0 review gate.
+
+All changes are confined to the exact claims above. Claude-owned engine, route, persistence, App, legacy registries and shared HTML files remain untouched. C-05/C-10 locks can be released after this handoff; the review status remains pending, not completed.
+
+Handoff published 2 October 2026: Claude mailbox `1790945232920-768ef82e5535`, scrum mailbox `1790945233760-3ac31fce6085`. C-05 and C-10 locks released. Additional eight-command failed trace also production-replay verified: deadline loss, canonical hash `5901970e3e8279ff`. No unresolved executable-check failures remain in this scoped recovery; acceptance limitations above remain open.

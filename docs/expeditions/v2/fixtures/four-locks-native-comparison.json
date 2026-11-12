@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 1,
+  "command": "node scripts/dev/compare-four-locks-native.mjs",
+  "packetId": "native-adjacent-v1",
+  "limits": {
+    "requests": 16,
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "maxAttempts": 256,
+    "solverNodeBudget": 100000,
+    "fallbackAttempts": 0,
+    "plannerInvocations": 0
+  },
+  "summary": [
+    {
+      "tier": 4,
+      "requests": 8,
+      "successes": 0,
+      "unknowns": 8,
+      "canonicalPatterns": 0,
+      "rejections": {
+        "geometry": 0,
+        "clueTarget": 169,
+        "cageTarget": 0,
+        "solverUnknown": 0,
+        "humanIncomplete": 6,
+        "techniques": 1873
+      },
+      "baselineSuccesses": 7,
+      "baselinePatterns": 4
+    },
+    {
+      "tier": 5,
+      "requests": 8,
+      "successes": 0,
+      "unknowns": 8,
+      "canonicalPatterns": 0,
+      "rejections": {
+        "geometry": 0,
+        "clueTarget": 453,
+        "cageTarget": 0,
+        "solverUnknown": 0,
+        "humanIncomplete": 0,
+        "techniques": 1595
+      },
+      "baselineSuccesses": 5,
+      "baselinePatterns": 3
+    }
+  ],
+  "records": [
+    {
+      "tier": 4,
+      "seed": 0,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 21,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 235
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "ef962226e2fd8bff",
+        "rejections": {
+          "geometry": 72,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 2
+        }
+      }
+    },
+    {
+      "tier": 4,
+      "seed": 1,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 24,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 2,
+          "techniques": 230
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "3528f9422ad4f661",
+        "rejections": {
+          "geometry": 171,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 9
+        }
+      }
+    },
+    {
+      "tier": 4,
+      "seed": 2,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 17,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 239
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "da94f91c1feb67e5",
+        "rejections": {
+          "geometry": 18,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 1
+        }
+      }
+    },
+    {
+      "tier": 4,
+      "seed": 3,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 23,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 233
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "e6d87fbdc0839a46",
+        "rejections": {
+          "geometry": 44,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 4
+        }
+      }
+    },
+    {
+      "tier": 4,
+      "seed": 4,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 17,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 239
+        }
+      },
+      "baseline": {
+        "status": "unknown",
+        "rejections": {
+          "geometry": 239,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 17
+        }
+      }
+    },
+    {
+      "tier": 4,
+      "seed": 5,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 21,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 2,
+          "techniques": 233
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "ef962226e2fd8bff",
+        "rejections": {
+          "geometry": 137,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 8
+        }
+      }
+    },
+    {
+      "tier": 4,
+      "seed": 6,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 19,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 2,
+          "techniques": 235
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "ef962226e2fd8bff",
+        "rejections": {
+          "geometry": 152,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 8
+        }
+      }
+    },
+    {
+      "tier": 4,
+      "seed": 7,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 27,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 229
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "ef962226e2fd8bff",
+        "rejections": {
+          "geometry": 89,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 4
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 0,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 71,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 185
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "e97a33693f842a68",
+        "rejections": {
+          "geometry": 205,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 22
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 1,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 62,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 194
+        }
+      },
+      "baseline": {
+        "status": "unknown",
+        "rejections": {
+          "geometry": 244,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 12
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 2,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 48,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 208
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "ef962226e2fd8bff",
+        "rejections": {
+          "geometry": 91,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 6
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 3,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 55,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 201
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "ef962226e2fd8bff",
+        "rejections": {
+          "geometry": 223,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 12
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 4,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 53,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 203
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "a50d0af32ed285ba",
+        "rejections": {
+          "geometry": 193,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 9
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 5,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 54,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 202
+        }
+      },
+      "baseline": {
+        "status": "unknown",
+        "rejections": {
+          "geometry": 230,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 26
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 6,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 50,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 206
+        }
+      },
+      "baseline": {
+        "status": "unknown",
+        "rejections": {
+          "geometry": 243,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 13
+        }
+      }
+    },
+    {
+      "tier": 5,
+      "seed": 7,
+      "status": "unknown",
+      "pattern": null,
+      "result": {
+        "status": "unknown",
+        "packetId": "native-adjacent-v1",
+        "reasonCode": "native-attempt-budget",
+        "attempts": 256,
+        "nativeAttempts": 256,
+        "rejections": {
+          "geometry": 0,
+          "clueTarget": 60,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 196
+        }
+      },
+      "baseline": {
+        "status": "success",
+        "puzzleHash": "ef962226e2fd8bff",
+        "rejections": {
+          "geometry": 79,
+          "clueTarget": 0,
+          "cageTarget": 0,
+          "solverUnknown": 0,
+          "humanIncomplete": 0,
+          "techniques": 4
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Separate offline mathematical packet; no tactical certification or runtime import.",
+    "Existing baseline results are read from the prior inventory, not regenerated.",
+    "Canonical patterns exclude digit/sum/label changes. Unknown is not impossibility.",
+    "The default generator and all certified outputs remain unchanged."
+  ]
+}

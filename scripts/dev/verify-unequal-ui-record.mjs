@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import {replayRun} from '../../expeditions/v2/index.js';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+import {applyOrchardV2Result,previewOrchardV2Award} from '../../expeditions/v2/persistence.js';
+registerOrchardPuzzleHooks();
+const root=new URL('../../docs/expeditions/v2/evidence/code-overnight-20261004/',import.meta.url),record=JSON.parse(fs.readFileSync(new URL('unequal-browser-win-record.json',root))),progress=JSON.parse(fs.readFileSync(new URL('unequal-browser-win-progress.json',root)));
+const replay=replayRun(record,{recordHashes:true});
+if(!replay.ok||replay.state.status!=='won'||record.commands.length!==27||record.commands[0].expectedRevision!==0)throw Error('Browser winning trace did not replay from revision zero');
+const duplicate=applyOrchardV2Result(progress,{record});
+const award=previewOrchardV2Award(progress,record);
+if(!award.locked||progress.stars!==0||duplicate.stars!==0)throw Error('Locked QA tier should not grant a reward');
+const evidence={provenance:'actual-browser-production-controls-disposable-qa',familyId:replay.state.blueprint.familyId,tier:replay.state.blueprint.tier,commands:record.commands.length,round:replay.state.round,status:replay.state.status,finalStateHash:record.finalStateHash,replay:true,stars:progress.stars,repeatedAwardStars:duplicate.stars,rewardEligibility:'locked QA tier; no stars awarded',initialRevision:record.commands[0].expectedRevision};
+fs.writeFileSync(new URL('unequal-browser-win-verification.json',root),JSON.stringify(evidence,null,2));console.log(JSON.stringify(evidence));

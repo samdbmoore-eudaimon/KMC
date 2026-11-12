@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import re
+import sys
 import time
 from pathlib import Path
 
@@ -155,6 +156,10 @@ def main():
 
     ordinary = [row for row in gifford_rows if row["set"] == "gifford" and row["rarity"] != "generic"]
     bosses = [row for row in gifford_rows if row["set"] == "intermediate_bosses"]
+    requested = {name.casefold() for name in sys.argv[1:]}
+    if requested:
+        ordinary = [row for row in ordinary if visible_name(row["name"]).casefold() in requested]
+        bosses = [row for row in bosses if visible_name(row["name"]).casefold() in requested]
     paired = {visible_name(row["name"]) for row in ordinary if row["id"].endswith("_upgraded")}
     outputs = []
 

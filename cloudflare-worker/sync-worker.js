@@ -1,4 +1,4 @@
-/* Kangaroo Maths Quest sync worker.
+/* Wallaby Maths sync worker.
    Two routes, no auth beyond the username+PIN pair itself acting as a shared secret —
    this is a public key-value lookup, not a session/account system. */
 

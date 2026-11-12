@@ -1,0 +1,955 @@
+{
+  "schemaVersion": 1,
+  "ownerThread": "01a10869-af91-7490-9f19-c99e0842fcc1",
+  "status": "isolated-review",
+  "assets": {
+    "team": {
+      "id": "team",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-contextual-button-frame-v1.png",
+      "sourceSha256": "9227f624923645deb36b472b5663fa0bfe2711b6148025afd07efa495a875910",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/team.webp",
+      "width": 512,
+      "height": 171,
+      "bytes": 28604,
+      "sha256": "f0f059250e2906af0a5661577d3534f93db092220e3c4c14f10a2f332cee4f58",
+      "alpha": true,
+      "visibleBounds": [
+        41,
+        0,
+        470,
+        169
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          41,
+          0,
+          470,
+          169
+        ],
+        "transparentPixels": 38077,
+        "visiblePixels": 49475,
+        "components": [
+          49475
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 512,
+        "height": 171,
+        "portraitCircle": [
+          148.5,
+          85.3,
+          39
+        ],
+        "textSafeArea": [
+          214,
+          62,
+          176,
+          54
+        ],
+        "recommendedSize": [
+          360,
+          120
+        ],
+        "minimumSize": [
+          300,
+          100
+        ],
+        "portraitObjectPosition": "50% 38%",
+        "longNameLines": 2
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/team-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/team-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/team-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/team-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "available": {
+      "id": "available",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-available-v1.webp",
+      "sourceSha256": "be58d70796d32333ebd58dad9a7c5fa2c8c2286583632940779c4de51418edd6",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/available.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 19992,
+      "sha256": "6c0466c81e0f1f954e5b11080f3474ca05ffc46fa2feee1aee30d8cf0ba34f02",
+      "alpha": true,
+      "visibleBounds": [
+        20,
+        0,
+        360,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          20,
+          0,
+          360,
+          192
+        ],
+        "transparentPixels": 19148,
+        "visiblePixels": 49972,
+        "components": [
+          49972
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/available-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/available-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/available-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/available-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "selected": {
+      "id": "selected",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-selected-v1.webp",
+      "sourceSha256": "5b3a0df8265ea830b39bf60526f5f82400b86b475ce6a98c0907c1c211e87d9e",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/selected.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 22540,
+      "sha256": "445de4dacb23727a9e5233ce6068ae6d957f9de05500d11b2b46410f239adce8",
+      "alpha": true,
+      "visibleBounds": [
+        14,
+        0,
+        360,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          14,
+          0,
+          360,
+          192
+        ],
+        "transparentPixels": 18697,
+        "visiblePixels": 50423,
+        "components": [
+          50421,
+          2
+        ],
+        "componentCount": 2,
+        "detachedPixels": 2,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/selected-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/selected-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/selected-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/selected-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "pressed": {
+      "id": "pressed",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-pressed-v1.webp",
+      "sourceSha256": "c5ba6a2b97b12fb7b245e1c535d24734bdb39b0fa92fa3c10268febe86c04fab",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/pressed.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 18086,
+      "sha256": "ab3982865cbb84c62abc552de86f2597c7eff65dfc2a3a8747127820eedaba8f",
+      "alpha": true,
+      "visibleBounds": [
+        21,
+        0,
+        360,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          21,
+          0,
+          360,
+          192
+        ],
+        "transparentPixels": 17632,
+        "visiblePixels": 51488,
+        "components": [
+          51484,
+          1,
+          1,
+          1,
+          1
+        ],
+        "componentCount": 5,
+        "detachedPixels": 4,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/pressed-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/pressed-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/pressed-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/pressed-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "focused": {
+      "id": "focused",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-focused-v1.webp",
+      "sourceSha256": "f0e510e73406eec058ebd4f70498ef30419d52525d408af2043344a7041b52ad",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/focused.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 22250,
+      "sha256": "f34562a73855e8140afc80a733edb4026f2a2b42d5c1be6c42dbc05c252e8413",
+      "alpha": true,
+      "visibleBounds": [
+        18,
+        0,
+        358,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          18,
+          0,
+          358,
+          192
+        ],
+        "transparentPixels": 18847,
+        "visiblePixels": 50273,
+        "components": [
+          50272,
+          1
+        ],
+        "componentCount": 2,
+        "detachedPixels": 1,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/focused-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/focused-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/focused-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/focused-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "disabled": {
+      "id": "disabled",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-disabled-v1.webp",
+      "sourceSha256": "e3955cd18994b17dcfc20237f26f3d50a8e1b2c1fe8e5d95e8a0fd04e23e0501",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/disabled.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 16512,
+      "sha256": "3caec56ca285015a20093f063dcd503200d3f9760b73718fce3ec9f44ed0fbf8",
+      "alpha": true,
+      "visibleBounds": [
+        24,
+        0,
+        360,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          24,
+          0,
+          360,
+          192
+        ],
+        "transparentPixels": 18369,
+        "visiblePixels": 50751,
+        "components": [
+          50750,
+          1
+        ],
+        "componentCount": 2,
+        "detachedPixels": 1,
+        "checkerboardHeuristicPass": false
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/disabled-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/disabled-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/disabled-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/disabled-cyan.png"
+      },
+      "reviewStatus": "withheld-validator-neutral-silver-warning",
+      "liveAcceptance": false,
+      "runtimeSelected": false
+    },
+    "spent": {
+      "id": "spent",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-spent-v1.webp",
+      "sourceSha256": "ba29c821e9163406d837eba7596f6b91f204e1a250d88781563f088ccc821340",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/spent.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 19106,
+      "sha256": "ad303909d3a11419faa60b368d63f9e719f0e2985af49b1b741b3f13b95a24ff",
+      "alpha": true,
+      "visibleBounds": [
+        10,
+        0,
+        353,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          10,
+          0,
+          353,
+          192
+        ],
+        "transparentPixels": 18746,
+        "visiblePixels": 50374,
+        "components": [
+          50372,
+          1,
+          1
+        ],
+        "componentCount": 3,
+        "detachedPixels": 2,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/spent-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/spent-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/spent-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/spent-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "danger": {
+      "id": "danger",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-danger-v1.webp",
+      "sourceSha256": "677418c950fbbc93436459cccc5cd6ee35650278283de58ebf380a854294b278",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/danger.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 21464,
+      "sha256": "3b1018edd9392100de7a582527935f4cc4b47720b9d7a178b5af9ef5165d8e73",
+      "alpha": true,
+      "visibleBounds": [
+        16,
+        0,
+        357,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          16,
+          0,
+          357,
+          192
+        ],
+        "transparentPixels": 19419,
+        "visiblePixels": 49701,
+        "components": [
+          49700,
+          1
+        ],
+        "componentCount": 2,
+        "detachedPixels": 1,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/danger-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/danger-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/danger-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/danger-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "confirm": {
+      "id": "confirm",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-button-confirm-v1.webp",
+      "sourceSha256": "1957650b369c6634b040d052aa98723ee83ae53e150603bf411d7b18fb2f771b",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/confirm.webp",
+      "width": 360,
+      "height": 192,
+      "bytes": 21896,
+      "sha256": "ba264aa6df1157ef63d4937c93f915d46cae235a3fa760f5f15040f55aa51b07",
+      "alpha": true,
+      "visibleBounds": [
+        21,
+        0,
+        360,
+        192
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          21,
+          0,
+          360,
+          192
+        ],
+        "transparentPixels": 19073,
+        "visiblePixels": 50047,
+        "components": [
+          50047
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 360,
+        "height": 192,
+        "iconCircle": [
+          92,
+          96,
+          53
+        ],
+        "textSafeArea": [
+          170,
+          64,
+          139,
+          71
+        ],
+        "recommendedSize": [
+          240,
+          128
+        ],
+        "minimumSize": [
+          216,
+          115.2
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/confirm-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/confirm-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/confirm-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/confirm-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    },
+    "panel": {
+      "id": "panel",
+      "sourcePath": "assets/expeditions/production/9fo/runtime/ui/po-contextual-dialog-frame-v1.png",
+      "sourceSha256": "a6979cb4ad55e29311771952c056a1dea0f3ce2d80dda6fc5a2555bbf699a131",
+      "runtimePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/runtime/panel.webp",
+      "width": 512,
+      "height": 256,
+      "bytes": 44072,
+      "sha256": "51f0055e56ddd70d42f5425b4117f5a459add7cd497ae44c3a914c51485ff510",
+      "alpha": true,
+      "visibleBounds": [
+        6,
+        6,
+        506,
+        250
+      ],
+      "alphaAnalysis": {
+        "visibleBounds": [
+          6,
+          6,
+          506,
+          250
+        ],
+        "transparentPixels": 37077,
+        "visiblePixels": 93995,
+        "components": [
+          93995
+        ],
+        "componentCount": 1,
+        "detachedPixels": 0,
+        "checkerboardHeuristicPass": true
+      },
+      "geometry": {
+        "width": 512,
+        "height": 256,
+        "textSafeArea": [
+          80,
+          65,
+          352,
+          131
+        ]
+      },
+      "qaPaths": {
+        "white": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/panel-white.png",
+        "black": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/panel-black.png",
+        "green": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/panel-green.png",
+        "cyan": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/qa/panel-cyan.png"
+      },
+      "reviewStatus": "candidate",
+      "liveAcceptance": false
+    }
+  },
+  "portraits": {
+    "pip": {
+      "id": "pip",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/pip.webp",
+      "bytes": 20228,
+      "sha256": "fb54f2e6fac7bbe5c40b76fc2362f56ab3edce5fd83485d52a87d694f165623a",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "nine": {
+      "id": "nine",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/nine.webp",
+      "bytes": 15418,
+      "sha256": "984f2cc21660ae53b05a043f4fa046b5b069fe8dfc95c0452a18cd09f55b3790",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "bramble": {
+      "id": "bramble",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/bramble.webp",
+      "bytes": 15226,
+      "sha256": "4f1a2a095112446ab4c9e7ab4ef54307bed92f12316dc127bc02d9328f58cdd4",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "sorrel": {
+      "id": "sorrel",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/sorrel.webp",
+      "bytes": 15850,
+      "sha256": "3ae54273c7e6215bf4b8576229c64a190af0f6b7e092e45e0de022b9a89c0180",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "russet": {
+      "id": "russet",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/russet.webp",
+      "bytes": 17106,
+      "sha256": "a342a0012930f203661928a1cdb62af696b839ba2ebf58d2d5d172b098630f3a",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "halfpenny": {
+      "id": "halfpenny",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/halfpenny.webp",
+      "bytes": 17492,
+      "sha256": "149e32001b31ad592bf812bf806bb83d747d0d616c91d8c4369fb8ff7d46d2a6",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "wicker": {
+      "id": "wicker",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/wicker.webp",
+      "bytes": 14352,
+      "sha256": "0ae669ed1e681f8edaa3c005061f61e885572acad8bdd0ad27427eb7f26c799c",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "furrow": {
+      "id": "furrow",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/furrow.webp",
+      "bytes": 12366,
+      "sha256": "10518dd7ead859bbf0ac52a4ebb68fb3dcaa669a82c79cba5b46ea6a167236ab",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "dapple": {
+      "id": "dapple",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/dapple.webp",
+      "bytes": 18632,
+      "sha256": "cff53f8489e0c83c15731a8047d52667d9df4dcb2cdff06956f14e64b5b07670",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "bushel": {
+      "id": "bushel",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/bushel.webp",
+      "bytes": 15808,
+      "sha256": "2f3224ad23a89daeefe0e020332768e9a7731404abf1102fc05d2c4efb44ada1",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "tuppence": {
+      "id": "tuppence",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/tuppence.webp",
+      "bytes": 17502,
+      "sha256": "dfd5d3f41aece1e0deab6879c0ac987e967029387e2d81c9f7bf721ffe4255a4",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "windfall": {
+      "id": "windfall",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/windfall.webp",
+      "bytes": 22496,
+      "sha256": "27c2aaa371ac27fc6d8d6f60a87a4a235170e96ad2207fb81e516c2bfb844b4f",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "cornix": {
+      "id": "cornix",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/cornix.webp",
+      "bytes": 14724,
+      "sha256": "3adab9e6b56bcbbed3438382864b7de8216b3606c3a40449d7cde9225d569e13",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "thistlewick": {
+      "id": "thistlewick",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/thistlewick.webp",
+      "bytes": 18532,
+      "sha256": "a57f6d9d1a4b19450f6d9e9e66695fa15b557ede473153643334c7df61ce4539",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "beeswax": {
+      "id": "beeswax",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/beeswax.webp",
+      "bytes": 19662,
+      "sha256": "9f33b1f10e20e48f0879b5b1867eec7137f534a7b3b318be45dfdc9c3357dab6",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "kernel": {
+      "id": "kernel",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/kernel.webp",
+      "bytes": 17070,
+      "sha256": "107416edb5158773d671d047cf61e5833763c00fae34f8256070991a3ebe7f34",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "millrace": {
+      "id": "millrace",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/millrace.webp",
+      "bytes": 19440,
+      "sha256": "851443ec80f97b9a28cfccd65ba8bc8b567fa4737e1d2ba9e4f8626769d7c7e1",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "cobweb": {
+      "id": "cobweb",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/cobweb.webp",
+      "bytes": 21224,
+      "sha256": "51f217ba92761e17e6fc568d1b8b134bf6dc38861ad38631500ac8ec821fbcbd",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "amberly": {
+      "id": "amberly",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/amberly.webp",
+      "bytes": 14912,
+      "sha256": "cfdb4dcbd05d894ab8d6296954107008f6726495db4d89a72b92994a6875ced2",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "barrow": {
+      "id": "barrow",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/barrow.webp",
+      "bytes": 16402,
+      "sha256": "28f4a0d40f0188a28e67a4489f05bcb94610d5e325f7a78685642087616dcc4b",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "driftwood": {
+      "id": "driftwood",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/driftwood.webp",
+      "bytes": 17868,
+      "sha256": "24114786d0b3746f3e45be8e026f91646ecce8f5dee185695078636d8c1aec01",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "gable": {
+      "id": "gable",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/gable.webp",
+      "bytes": 17774,
+      "sha256": "15e410bfbf1219141b6321f4acce832608bc186611a9de5b34e723127ab40437",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "warden": {
+      "id": "warden",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/warden.webp",
+      "bytes": 18408,
+      "sha256": "eb07782e270ec301e17eea200df17d9d297443f5fb1b7b0132a5e7e9eea97653",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "harvestmoon": {
+      "id": "harvestmoon",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/harvestmoon.webp",
+      "bytes": 11952,
+      "sha256": "2bd2b174cb65f4a042b489ff97c1da8365eaecb5eb2326e7f980857255f4d218",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "ninebark": {
+      "id": "ninebark",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/ninebark.webp",
+      "bytes": 18338,
+      "sha256": "1f9859861baf96af489ac5308f96092cc41bb8a73b17250fc96d90ff8141bd46",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "cascade": {
+      "id": "cascade",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/cascade.webp",
+      "bytes": 24698,
+      "sha256": "5b6ca45ea34e7a3ef5a56093a88a10694c27a485430656094cc8585af1072360",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "longshadow": {
+      "id": "longshadow",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/longshadow.webp",
+      "bytes": 15540,
+      "sha256": "c6da670bf0f4a69be3cdd3a70c4d70552aee06d081a6ae747787d28e61b8fa84",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "gossamer": {
+      "id": "gossamer",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/gossamer.webp",
+      "bytes": 14230,
+      "sha256": "d878883c9c9a1fe76256f6554361b9b5b2bb344ecd0ab6c18e59068336bc6fd5",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "ninefoldtree": {
+      "id": "ninefoldtree",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/ninefoldtree.webp",
+      "bytes": 20672,
+      "sha256": "1d078006fdc6b2e73a97ae41bc7669148b048b90f2e33003919d668fdd92b9e2",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    },
+    "tenthscarecrow": {
+      "id": "tenthscarecrow",
+      "source": "wm-9fo-card-art.js:NFO_CHARACTER_ART",
+      "referencePath": "assets/expeditions/production/9fo/v2/ui-frame-batch-20261004/portrait-references/tenthscarecrow.webp",
+      "bytes": 21668,
+      "sha256": "ff9d235dfd2b2efaa053adb5a829d76b4e7fd9df6d31ab94d667b7e5cfb51a59",
+      "width": 360,
+      "height": 420,
+      "runtimeImport": false
+    }
+  },
+  "selectedBytes": 218010,
+  "contract": "Keep aspect ratio. Separate circle and text DOM layers; live text wraps. Original avatarForCard portraits only. Icon glyphs in code. State labels and disabled semantics remain live. Portrait reference copies are QA only, never a second runtime import.",
+  "disabledState": {
+    "base": "available",
+    "treatment": "CSS grayscale(1), live unavailable label and DOM disabled/aria-disabled semantics. Original silver disabled candidate staged: alpha validator flags neutral silver, no validator change or hidden pixel repair."
+  }
+}

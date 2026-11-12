@@ -83,7 +83,7 @@ export function applyPrimaryEditorP05(lessons) {
     { 3: { q: "Paint is mixed blue to yellow in the ratio 3:5. If 27 ml of blue is used, how much yellow is needed and how much paint is made altogether?", steps: ["Three blue parts are worth 27 ml, so one part is 27 ÷ 3 = 9 ml.", "Five yellow parts are 5 × 9 = 45 ml.", "Total paint is 27 + 45 = 72 ml."], answer: "45 ml of yellow paint and 72 ml altogether." } },
     { 1: { steps: ["Add the two counts to find the total: 15 + 18 = 33.", "Simplify 15:33 by dividing both parts by 3: 5:11."] },
       2: { steps: ["Add the two counts to find the total: 20 + 16 = 36.", "Simplify 20:36 by dividing both parts by 4: 5:9."] },
-      3: { q: "Red and blue counters are in the ratio 3:5. There are 14 more blue counters than red counters. How many counters of each colour are there?", steps: ["The difference in the ratio is 5 − 3 = 2 parts.", "Two parts are worth 14, so one part is 14 ÷ 2 = 7.", "Red: 3 × 7 = 21. Blue: 5 × 7 = 35."], answer: "There are 21 red counters and 35 blue counters." } },
+      3: { q: "Red and blue counters are in the ratio 3:5. There are 14 more blue counters than red counters. How many counters of each colour are there?", steps: ["The difference in the ratio is 5 − 3 = 2 parts.", "Two parts are worth 14, so one part is 14 ÷ 2 = 7.", "Red: 3 × 7 = 21.", "Blue: 5 × 7 = 35."], answer: "There are 21 red counters and 35 blue counters." } },
     { 3: { q: "Stars and moons are in the ratio 4:3. There are 36 stars. How many moons are there, what is the total, and what fraction are moons?", steps: ["Four parts are worth 36, so one part is 36 ÷ 4 = 9.", "Moons: 3 × 9 = 27.", "Total: 36 + 27 = 63.", "Moon fraction: 27/63 = 3/7."], answer: "There are 27 moons, 63 stickers altogether, and 3/7 are moons." } },
     { 3: { q: "Which of 14:21, 18:28 and 22:33 are equivalent to 2:3? Explain each decision.", steps: ["14:21 divides by 7 to give 2:3, so it is equivalent.", "For 18:28, the cross-products are 18 × 3 = 54 and 28 × 2 = 56, so it is not equivalent.", "22:33 divides by 11 to give 2:3, so it is equivalent."], answer: "14:21 and 22:33 are equivalent to 2:3; 18:28 is not." } },
     { 3: { q: "Simplify 126:198 completely and show why your answer cannot be simplified again.", steps: ["Both numbers are divisible by 18: 126 ÷ 18 = 7 and 198 ÷ 18 = 11.", "The ratio becomes 7:11.", "Seven and 11 are different prime numbers, so their only common factor is 1."], answer: "126:198 simplifies to 7:11." } },
@@ -162,11 +162,11 @@ export function applyPrimaryEditorP05(lessons) {
     "The serving count changes from 6 to 15. One scale factor must be applied to all three ingredients."
   ];
   const ratioHardChecks = [
-    "27 ÷ 3 = 9 and 45 ÷ 5 = 9 ml per part; 27 + 45 = 72.",
+    "27 ÷ 3 = 9 and 45 ÷ 5 = 9 ml per part.\n27 + 45 = 72.",
     "35 − 21 = 14 and 21:35 simplifies by 7 to 3:5.",
-    "36:27 simplifies by 9 to 4:3, while 36 + 27 = 63 and 27/63 = 3/7.",
+    "36:27 simplifies by 9 to 4:3.\n36 + 27 = 63 and 27/63 = 3/7.",
     "14:21 and 22:33 both simplify to 2:3. For 18:28, cross-products 54 and 56 are unequal.",
-    "7 × 18 = 126 and 11 × 18 = 198; prime numbers 7 and 11 share no factor greater than 1.",
+    "7 × 18 = 126 and 11 × 18 = 198.\nPrime numbers 7 and 11 share no factor greater than 1.",
     "18.75 ÷ 3 = 6.25 and 25 ÷ 4 = 6.25 spoons per part.",
     "24 + 48 + 60 = 132 and 24:48:60 divides by 12 to give 2:4:5.",
     "1,050 ÷ 420 = 2.5, 450 ÷ 180 = 2.5 and 5 ÷ 2 = 2.5."

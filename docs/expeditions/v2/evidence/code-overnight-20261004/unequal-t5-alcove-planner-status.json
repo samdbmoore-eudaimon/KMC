@@ -1,0 +1,29 @@
+{
+  "family": "unequal",
+  "tier": 5,
+  "seed": 1,
+  "layoutId": "river",
+  "team": [
+    "warden",
+    "gossamer",
+    "harvestmoon"
+  ],
+  "planFamily": "alcove-intercept",
+  "status": "unknown",
+  "reasonCode": "unequal-crossing-invalid",
+  "violations": [
+    {
+      "crossing": "5,2",
+      "controlled": false,
+      "regionsTouched": 1,
+      "neighbours": [
+        "6,2:hedge",
+        "6,1:water",
+        "5,1:roots",
+        "4,2:floor",
+        "4,3:floor",
+        "5,3:water"
+      ]
+    }
+  ]
+}

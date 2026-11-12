@@ -1,0 +1,13 @@
+import PaintedButton from './PaintedButton.jsx';
+import React,{useState} from 'react';
+import {missionChecklist,puzzleGuide} from './action-guide.js';
+import {orchardV2Family} from '../catalogue.js';
+export default function Briefing({state,onFocus,onClose,onGuide}) {
+  const [step,setStep]=useState(0),station=id=>state.blueprint.stations.find(s=>s.id===id);
+  const focus=id=>onFocus(id==='orchard'?{...state.blueprint.orchard,id,kind:'orchard'}:{...station(id),kind:'station'});
+  const show=id=>{focus(id);onClose();};
+  const puzzle=puzzleGuide(state),family=orchardV2Family(state.blueprint.familyId);
+  const stages=[{title:'1. Save the orchard',text:`The roots and enemies threaten the Ninefold tree. You have until the end of enemy turn ${state.blueprint.deadline}. Each hero starts each round with two actions. Enemies act only after you confirm End round.`,ids:['orchard','control']},{title:`2. ${puzzle.title}`,text:`${puzzle.brief} Editing the draft is free from anywhere. A hero at or beside ${station('control').name} spends one action to activate it: preview, then confirm.`,ids:['control']},{title:'3. Work together',text:'Add power to the three marked stations, then put a different hero at or beside each and choose Hold. Hold means stay working there through the enemy turn; moving stops it. Keep the correct puzzle, enough active effects, all three stations and every hero alive through that turn.',ids:['number','shape','sustain','alcove']}];
+  return <section className="ov-drawer" aria-label="Expedition briefing"><small>{family?.title} · {step+1} of 3</small><h2>{stages[step].title}</h2><p className="ov-brief-stage">{stages[step].text}</p><div className="ov-row">{stages[step].ids.map(id=><PaintedButton key={id} onClick={()=>show(id)}>Show {id==='orchard'?state.blueprint.orchard.name:station(id)?.name}</PaintedButton>)}</div>{step===2&&<><h3>Your live checklist</h3>{missionChecklist(state).map(item=><p key={item.id}>{item.ready?'✓':'○'} {item.name}{item.detail?`: ${item.detail}`:''}</p>)}<p>Charge is stored station power. Printed card stats determine who can Hold each job. The prepared alcove is an alternative for the bridge job.</p></>}<div className="ov-row">{step>0&&<PaintedButton onClick={()=>setStep(step-1)}>Previous</PaintedButton>}{step<2?<PaintedButton className="ov-confirm" onClick={()=>{setStep(step+1);focus(step===0?'control':'number');}}>Next</PaintedButton>:<PaintedButton className="ov-confirm" onClick={()=>{onGuide?.();onClose();}}>Guide my first actions</PaintedButton>}<PaintedButton onClick={onClose}>Return to board</PaintedButton></div></section>;
+}
+

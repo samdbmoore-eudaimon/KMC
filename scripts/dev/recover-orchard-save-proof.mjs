@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import {registerOrchardPuzzleHooks} from '../../expeditions/v2/puzzles/index.js';
+import {recoverLegacyBridgeRecord} from '../../expeditions/v2/save-recovery.js';
+import {planOrchardContinuation} from './orchard-v2-tactical-planner.mjs';
+import {exportRunRecord,replayRun} from '../../expeditions/v2/run.js';
+registerOrchardPuzzleHooks();
+const source=JSON.parse(fs.readFileSync('docs/expeditions/v2/evidence/playthrough-recovery-20261003/sam-playthrough-trace.json'));
+const recovered=recoverLegacyBridgeRecord(source);
+if(!recovered.ok)throw Error(recovered.reason);
+const dir='docs/expeditions/v2/evidence/autonomous-recovery-20261003';fs.mkdirSync(dir,{recursive:true});
+fs.writeFileSync(`${dir}/sam-repaired-record.json`,JSON.stringify(exportRunRecord(recovered.state),null,2));
+const plan=planOrchardContinuation({state:recovered.state,maxStates:40000,beamWidth:24});
+fs.writeFileSync(`${dir}/saved-map-continuation-proof.json`,JSON.stringify({...recovered.provenance,status:plan.status,statesSpent:plan.statesSpent,reasonCode:plan.reasonCode,winningCommands:plan.traces[0]?.commands.length},null,2));
+if(plan.status!=='success')throw Error(`Continuation: ${plan.reasonCode}`);
+const proof=plan.traces[0];fs.writeFileSync(`${dir}/sam-winning-continuation.json`,JSON.stringify(proof,null,2));
+const replay=replayRun(proof);if(!replay.ok||replay.state.status!=='won')throw Error('Continuation replay failed');
+console.log(JSON.stringify({status:plan.status,statesSpent:plan.statesSpent,commands:proof.commands.length,retained:source.commands.length,round:replay.state.round,finalHash:replay.finalHash}));

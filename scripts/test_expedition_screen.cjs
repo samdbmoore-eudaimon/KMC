@@ -27,8 +27,11 @@ const source = `
   const noop = () => null;
 
   // Briefing renders for every module, since all three now have a playable entry.
-  const primaryBriefing = renderToString(<ExpeditionScreen activeModule="primary" progress={noopProgress} setProgress={noop} setScreen={noop} cards={PRIMARY_CARDS} avatarForCard={noop} />);
-  if (!primaryBriefing.includes("The Unequal Crossing") || !primaryBriefing.includes("Begin the expedition") || !primaryBriefing.includes("Pip")) throw new Error("Primary Expedition briefing did not render");
+  // Ninefold Orchard now routes to the private Orchard v2 engine: nothing renders without the exact private profile.
+  const ungated = renderToString(<ExpeditionScreen activeModule="primary" progress={noopProgress} setProgress={noop} setScreen={noop} cards={PRIMARY_CARDS} avatarForCard={noop} currentProfile={{ name: "Alex", avatar: "card:primary:pip" }} />);
+  if (ungated !== "") throw new Error("Primary Expedition v2 route rendered for a non-private profile");
+  const primaryV2 = renderToString(<ExpeditionScreen activeModule="primary" progress={{ ...noopProgress, cards: { pip: 1, bushel: 1, furrow: 1 } }} setProgress={noop} setScreen={noop} cards={PRIMARY_CARDS} avatarForCard={noop} currentProfile={{ name: "Eudaimon", avatar: "card:intermediate:gf_rooke" }} />);
+  if (!primaryV2.includes("Ninefold Orchard Expeditions")) throw new Error("Primary Expedition v2 entry did not render for the private profile");
 
   const juniorBriefing = renderToString(<ExpeditionScreen activeModule="junior" progress={noopProgress} setProgress={noop} setScreen={noop} cards={JUNIOR_CARDS} avatarForCard={noop} />);
   if (!juniorBriefing.includes("The Smudged Stones") || !juniorBriefing.includes("Begin the expedition")) throw new Error("Junior Expedition briefing did not render");

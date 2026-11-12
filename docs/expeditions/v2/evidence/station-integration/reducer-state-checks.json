@@ -1,0 +1,531 @@
+[
+  {
+    "id": "initial",
+    "status": "playing",
+    "round": 1,
+    "commands": 0,
+    "states": [
+      {
+        "id": "control",
+        "name": "Ledger control",
+        "cues": [],
+        "lines": [
+          "Inactive",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger control. Inactive. Integrity 12/12"
+      },
+      {
+        "id": "number",
+        "name": "Ledger bus",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "shape",
+        "name": "Bridge brace",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "sustain",
+        "name": "Tree maintenance",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "alcove",
+        "name": "Brace alcove",
+        "cues": [],
+        "lines": [
+          "Not prepared"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Brace alcove. Not prepared"
+      }
+    ]
+  },
+  {
+    "id": "active",
+    "status": "playing",
+    "round": 1,
+    "commands": 3,
+    "states": [
+      {
+        "id": "control",
+        "name": "Ledger control",
+        "cues": [
+          "ready"
+        ],
+        "lines": [
+          "Active",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "id": "number",
+        "name": "Ledger bus",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "shape",
+        "name": "Bridge brace",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "sustain",
+        "name": "Tree maintenance",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "alcove",
+        "name": "Brace alcove",
+        "cues": [],
+        "lines": [
+          "Not prepared"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Brace alcove. Not prepared"
+      }
+    ]
+  },
+  {
+    "id": "three-held",
+    "status": "playing",
+    "round": 5,
+    "commands": 30,
+    "states": [
+      {
+        "id": "control",
+        "name": "Ledger control",
+        "cues": [
+          "ready"
+        ],
+        "lines": [
+          "Active",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger control. Active. Integrity 12/12"
+      },
+      {
+        "id": "number",
+        "name": "Ledger bus",
+        "cues": [
+          "ready",
+          "working"
+        ],
+        "lines": [
+          "Power 4/4 · ready",
+          "Held: Tuppence",
+          "Integrity 12/12"
+        ],
+        "holder": "tuppence",
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger bus. Power 4/4 · ready. Held: Tuppence. Integrity 12/12"
+      },
+      {
+        "id": "shape",
+        "name": "Bridge brace",
+        "cues": [
+          "ready",
+          "working"
+        ],
+        "lines": [
+          "Power 4/4 · ready",
+          "Held: Furrow",
+          "Integrity 12/12"
+        ],
+        "holder": "furrow",
+        "damaged": false,
+        "corrupted": false,
+        "label": "Bridge brace. Power 4/4 · ready. Held: Furrow. Integrity 12/12"
+      },
+      {
+        "id": "sustain",
+        "name": "Tree maintenance",
+        "cues": [
+          "ready",
+          "working"
+        ],
+        "lines": [
+          "Power 4/4 · ready",
+          "Held: Sorrel",
+          "Integrity 12/12"
+        ],
+        "holder": "sorrel",
+        "damaged": false,
+        "corrupted": false,
+        "label": "Tree maintenance. Power 4/4 · ready. Held: Sorrel. Integrity 12/12"
+      },
+      {
+        "id": "alcove",
+        "name": "Brace alcove",
+        "cues": [],
+        "lines": [
+          "Not prepared"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Brace alcove. Not prepared"
+      }
+    ]
+  },
+  {
+    "id": "corrupted",
+    "status": "lost",
+    "round": 5,
+    "commands": 8,
+    "states": [
+      {
+        "id": "control",
+        "name": "Ledger control",
+        "cues": [
+          "corrupted"
+        ],
+        "lines": [
+          "Corrupted",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": true,
+        "label": "Ledger control. Corrupted. Integrity 12/12"
+      },
+      {
+        "id": "number",
+        "name": "Ledger bus",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger bus. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "shape",
+        "name": "Bridge brace",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Bridge brace. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "sustain",
+        "name": "Tree maintenance",
+        "cues": [],
+        "lines": [
+          "Power 0/4",
+          "Integrity 12/12"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Tree maintenance. Power 0/4. Integrity 12/12"
+      },
+      {
+        "id": "alcove",
+        "name": "Brace alcove",
+        "cues": [],
+        "lines": [
+          "Not prepared"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Brace alcove. Not prepared"
+      }
+    ]
+  },
+  {
+    "id": "damage-number",
+    "status": "playing",
+    "round": 3,
+    "commands": 14,
+    "states": [
+      {
+        "id": "control",
+        "name": "Ledger control",
+        "cues": [
+          "ready",
+          "damage"
+        ],
+        "lines": [
+          "Active",
+          "Damaged · Integrity 10/16"
+        ],
+        "damaged": true,
+        "corrupted": false,
+        "label": "Ledger control. Active. Damaged · Integrity 10/16"
+      },
+      {
+        "id": "number",
+        "name": "Ledger bus",
+        "cues": [
+          "ready",
+          "working",
+          "damage"
+        ],
+        "lines": [
+          "Power 7/7 · ready",
+          "Held: The Ninefold Tree",
+          "Damaged · Integrity 11/16"
+        ],
+        "holder": "ninefoldtree",
+        "damaged": true,
+        "corrupted": false,
+        "label": "Ledger bus. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "id": "shape",
+        "name": "Bridge brace",
+        "cues": [],
+        "lines": [
+          "Power 0/7",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "id": "sustain",
+        "name": "Tree maintenance",
+        "cues": [],
+        "lines": [
+          "Power 0/7",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      },
+      {
+        "id": "alcove",
+        "name": "Brace alcove",
+        "cues": [
+          "prepared",
+          "working"
+        ],
+        "lines": [
+          "Prepared",
+          "Held: Gossamer"
+        ],
+        "holder": "gossamer",
+        "damaged": false,
+        "corrupted": false,
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      }
+    ]
+  },
+  {
+    "id": "damage-shape",
+    "status": "playing",
+    "round": 4,
+    "commands": 13,
+    "states": [
+      {
+        "id": "control",
+        "name": "Ledger control",
+        "cues": [
+          "corrupted"
+        ],
+        "lines": [
+          "Corrupted",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": true,
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "id": "number",
+        "name": "Ledger bus",
+        "cues": [],
+        "lines": [
+          "Power 0/7",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "id": "shape",
+        "name": "Bridge brace",
+        "cues": [
+          "ready",
+          "working",
+          "damage"
+        ],
+        "lines": [
+          "Power 7/7 · ready",
+          "Held: The Ninefold Tree",
+          "Damaged · Integrity 9/16"
+        ],
+        "holder": "ninefoldtree",
+        "damaged": true,
+        "corrupted": false,
+        "label": "Bridge brace. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 9/16"
+      },
+      {
+        "id": "sustain",
+        "name": "Tree maintenance",
+        "cues": [],
+        "lines": [
+          "Power 0/7",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Tree maintenance. Power 0/7. Integrity 16/16"
+      },
+      {
+        "id": "alcove",
+        "name": "Brace alcove",
+        "cues": [
+          "prepared",
+          "damage"
+        ],
+        "lines": [
+          "Prepared",
+          "Bridge damaged"
+        ],
+        "damaged": true,
+        "corrupted": false,
+        "label": "Brace alcove. Prepared. Bridge damaged"
+      }
+    ]
+  },
+  {
+    "id": "damage-sustain",
+    "status": "playing",
+    "round": 3,
+    "commands": 14,
+    "states": [
+      {
+        "id": "control",
+        "name": "Ledger control",
+        "cues": [
+          "corrupted"
+        ],
+        "lines": [
+          "Corrupted",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": true,
+        "label": "Ledger control. Corrupted. Integrity 16/16"
+      },
+      {
+        "id": "number",
+        "name": "Ledger bus",
+        "cues": [],
+        "lines": [
+          "Power 0/7",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Ledger bus. Power 0/7. Integrity 16/16"
+      },
+      {
+        "id": "shape",
+        "name": "Bridge brace",
+        "cues": [],
+        "lines": [
+          "Power 0/7",
+          "Integrity 16/16"
+        ],
+        "damaged": false,
+        "corrupted": false,
+        "label": "Bridge brace. Power 0/7. Integrity 16/16"
+      },
+      {
+        "id": "sustain",
+        "name": "Tree maintenance",
+        "cues": [
+          "ready",
+          "working",
+          "damage"
+        ],
+        "lines": [
+          "Power 7/7 · ready",
+          "Held: The Ninefold Tree",
+          "Damaged · Integrity 11/16"
+        ],
+        "holder": "ninefoldtree",
+        "damaged": true,
+        "corrupted": false,
+        "label": "Tree maintenance. Power 7/7 · ready. Held: The Ninefold Tree. Damaged · Integrity 11/16"
+      },
+      {
+        "id": "alcove",
+        "name": "Brace alcove",
+        "cues": [
+          "prepared",
+          "working"
+        ],
+        "lines": [
+          "Prepared",
+          "Held: Gossamer"
+        ],
+        "holder": "gossamer",
+        "damaged": false,
+        "corrupted": false,
+        "label": "Brace alcove. Prepared. Held: Gossamer"
+      }
+    ]
+  }
+]

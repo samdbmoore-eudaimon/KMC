@@ -1,0 +1,197 @@
+{
+  "status": "design-checks-only",
+  "rosterCounts": [
+    {
+      "tier": 1,
+      "direct": 1724,
+      "alcove": 1065,
+      "combined": 1975,
+      "epicAssignments": []
+    },
+    {
+      "tier": 2,
+      "direct": 608,
+      "alcove": 266,
+      "combined": 608,
+      "epicAssignments": []
+    },
+    {
+      "tier": 3,
+      "direct": 170,
+      "alcove": 127,
+      "combined": 210,
+      "epicAssignments": []
+    },
+    {
+      "tier": 4,
+      "direct": 68,
+      "alcove": 71,
+      "combined": 93,
+      "epicAssignments": []
+    },
+    {
+      "tier": 5,
+      "direct": 25,
+      "alcove": 33,
+      "combined": 33,
+      "epicAssignments": [
+        {
+          "number": "warden",
+          "shape": "harvestmoon",
+          "sustain": "longshadow",
+          "route": "alcove"
+        },
+        {
+          "number": "warden",
+          "shape": "longshadow",
+          "sustain": "harvestmoon",
+          "route": "alcove"
+        },
+        {
+          "number": "warden",
+          "shape": "gossamer",
+          "sustain": "harvestmoon",
+          "route": "direct"
+        },
+        {
+          "number": "warden",
+          "shape": "gossamer",
+          "sustain": "longshadow",
+          "route": "direct"
+        },
+        {
+          "number": "ninebark",
+          "shape": "warden",
+          "sustain": "harvestmoon",
+          "route": "alcove"
+        },
+        {
+          "number": "ninebark",
+          "shape": "warden",
+          "sustain": "longshadow",
+          "route": "alcove"
+        },
+        {
+          "number": "ninebark",
+          "shape": "harvestmoon",
+          "sustain": "longshadow",
+          "route": "alcove"
+        },
+        {
+          "number": "ninebark",
+          "shape": "longshadow",
+          "sustain": "harvestmoon",
+          "route": "alcove"
+        },
+        {
+          "number": "ninebark",
+          "shape": "gossamer",
+          "sustain": "harvestmoon",
+          "route": "direct"
+        },
+        {
+          "number": "ninebark",
+          "shape": "gossamer",
+          "sustain": "longshadow",
+          "route": "direct"
+        }
+      ]
+    }
+  ],
+  "footprintCells": 92,
+  "packingPatchCells": 19,
+  "sudokuReferenceSolutions": [
+    [
+      [
+        1,
+        3,
+        4,
+        2
+      ],
+      [
+        4,
+        2,
+        1,
+        3
+      ],
+      [
+        2,
+        4,
+        3,
+        1
+      ],
+      [
+        3,
+        1,
+        2,
+        4
+      ]
+    ]
+  ],
+  "rotationReferenceSolutions": [
+    {
+      "a": 4,
+      "b": 6,
+      "c": 5,
+      "op": "×"
+    }
+  ],
+  "balanceReferenceSolutions": [
+    {
+      "left": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "right": [
+        4,
+        7
+      ]
+    },
+    {
+      "left": [
+        2,
+        4,
+        5
+      ],
+      "right": [
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "left": [
+        1,
+        3,
+        7
+      ],
+      "right": [
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "left": [
+        4,
+        7
+      ],
+      "right": [
+        1,
+        2,
+        3,
+        5
+      ]
+    }
+  ],
+  "notValidated": [
+    "production engine",
+    "tactical traces",
+    "64-entry banks",
+    "generated clue ladders",
+    "runtime viewport",
+    "child pacing"
+  ]
+}
